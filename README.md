@@ -98,7 +98,7 @@ Checkout our [releases](https://github.com/yunify/qingcloud-sdk-java/releases) a
 ## Reference Documentations
 
 - [QingCloud Documentation Overview](https://docs.qingcloud.com)
-- [QingCloud IaaS APIs](https://docs.qingcloud.com/api/index.html)
+- [QingCloud IaaS APIs](https://docs.qingcloud.com/product/api/)
 
 ## Contributing
 
