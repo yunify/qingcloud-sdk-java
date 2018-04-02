@@ -63,7 +63,7 @@ public class InstanceTest {
         context.setPort(443);
         context.setZone("pek3b");
         context.setApiLang("zh-cn"); // optional, set return message i18n, default to us-en
-        InstanceService service = new InstanceService(prodEnv);
+        InstanceService service = new InstanceService(context);
 
         InstanceService.DescribeInstancesInput input = new InstanceService.DescribeInstancesInput();
         input.setLimit(1);
