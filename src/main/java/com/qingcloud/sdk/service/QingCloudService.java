@@ -245,6 +245,10 @@ public class QingCloudService {
         return new MongoService(this.envContext, zone);
     }
 
+    public MonitorService getMonitorService(String zone) {
+        return new MonitorService(this.envContext, zone);
+    }
+
     public NicService getNicService(String zone) {
         return new NicService(this.envContext, zone);
     }
@@ -323,6 +327,10 @@ public class QingCloudService {
 
     public MongoService getMongoService() {
         return new MongoService(this.envContext);
+    }
+
+    public MonitorService getMonitorService() {
+        return new MonitorService(this.envContext);
     }
 
     public NicService getNicService() {

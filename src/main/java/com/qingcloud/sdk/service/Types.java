@@ -3563,18 +3563,6 @@ public class Types {
             return this.device;
         }
 
-        private DHCPOptionModel dHCPOptions;
-
-        @ParamAnnotation(paramType = "query", paramName = "dhcp_options")
-        public void setDHCPOptions(DHCPOptionModel dHCPOptions) {
-            this.dHCPOptions = dHCPOptions;
-        }
-
-        @ParamAnnotation(paramType = "query", paramName = "dhcp_options")
-        public DHCPOptionModel getDHCPOptions() {
-            return this.dHCPOptions;
-        }
-
         private List<DNSAliasModel> dNSAliases;
 
         @ParamAnnotation(paramType = "query", paramName = "dns_aliases")
@@ -3647,18 +3635,6 @@ public class Types {
             return this.image;
         }
 
-        private String imageID;
-
-        @ParamAnnotation(paramType = "query", paramName = "image_id")
-        public void setImageID(String imageID) {
-            this.imageID = imageID;
-        }
-
-        @ParamAnnotation(paramType = "query", paramName = "image_id")
-        public String getImageID() {
-            return this.imageID;
-        }
-
         private Integer instanceClass;
 
         @ParamAnnotation(paramType = "query", paramName = "instance_class")
@@ -3729,18 +3705,6 @@ public class Types {
         @ParamAnnotation(paramType = "query", paramName = "memory_current")
         public Integer getMemoryCurrent() {
             return this.memoryCurrent;
-        }
-
-        private String privateIP;
-
-        @ParamAnnotation(paramType = "query", paramName = "private_ip")
-        public void setPrivateIP(String privateIP) {
-            this.privateIP = privateIP;
-        }
-
-        @ParamAnnotation(paramType = "query", paramName = "private_ip")
-        public String getPrivateIP() {
-            return this.privateIP;
         }
 
         private SecurityGroupModel securityGroup;
@@ -3853,15 +3817,15 @@ public class Types {
             return this.volumes;
         }
 
-        private List<InstanceVxNetModel> vxNets;
+        private List<NICVxNetModel> vxNets;
 
         @ParamAnnotation(paramType = "query", paramName = "vxnets")
-        public void setVxNets(List<InstanceVxNetModel> vxNets) {
+        public void setVxNets(List<NICVxNetModel> vxNets) {
             this.vxNets = vxNets;
         }
 
         @ParamAnnotation(paramType = "query", paramName = "vxnets")
-        public List<InstanceVxNetModel> getVxNets() {
+        public List<NICVxNetModel> getVxNets() {
             return this.vxNets;
         }
 
@@ -4263,6 +4227,18 @@ public class Types {
     }
 
     public static class KeyPairModel implements ParamValidate {
+        private String createTime;
+
+        @ParamAnnotation(paramType = "query", paramName = "create_time")
+        public void setCreateTime(String createTime) {
+            this.createTime = createTime;
+        }
+
+        @ParamAnnotation(paramType = "query", paramName = "create_time")
+        public String getCreateTime() {
+            return this.createTime;
+        }
+
         private String description;
 
         @ParamAnnotation(paramType = "query", paramName = "description")
@@ -4324,6 +4300,30 @@ public class Types {
             return this.keyPairName;
         }
 
+        private String owner;
+
+        @ParamAnnotation(paramType = "query", paramName = "owner")
+        public void setOwner(String owner) {
+            this.owner = owner;
+        }
+
+        @ParamAnnotation(paramType = "query", paramName = "owner")
+        public String getOwner() {
+            return this.owner;
+        }
+
+        private String privKey;
+
+        @ParamAnnotation(paramType = "query", paramName = "priv_key")
+        public void setPrivKey(String privKey) {
+            this.privKey = privKey;
+        }
+
+        @ParamAnnotation(paramType = "query", paramName = "priv_key")
+        public String getPrivKey() {
+            return this.privKey;
+        }
+
         private String pubKey;
 
         @ParamAnnotation(paramType = "query", paramName = "pub_key")
@@ -4334,6 +4334,18 @@ public class Types {
         @ParamAnnotation(paramType = "query", paramName = "pub_key")
         public String getPubKey() {
             return this.pubKey;
+        }
+
+        private String resourceIDs;
+
+        @ParamAnnotation(paramType = "query", paramName = "resource_ids")
+        public void setResourceIDs(String resourceIDs) {
+            this.resourceIDs = resourceIDs;
+        }
+
+        @ParamAnnotation(paramType = "query", paramName = "resource_ids")
+        public String getResourceIDs() {
+            return this.resourceIDs;
         }
 
         private List<TagModel> tags;
@@ -5197,28 +5209,16 @@ public class Types {
     }
 
     public static class MeterModel implements ParamValidate {
-        private Model data;
+        private List<Object> data;
 
         @ParamAnnotation(paramType = "query", paramName = "data")
-        public void setData(Model data) {
+        public void setData(List<Object> data) {
             this.data = data;
         }
 
         @ParamAnnotation(paramType = "query", paramName = "data")
-        public Model getData() {
+        public List<Object> getData() {
             return this.data;
-        }
-
-        private List<Object> dataSet;
-
-        @ParamAnnotation(paramType = "query", paramName = "data_set")
-        public void setDataSet(List<Object> dataSet) {
-            this.dataSet = dataSet;
-        }
-
-        @ParamAnnotation(paramType = "query", paramName = "data_set")
-        public List<Object> getDataSet() {
-            return this.dataSet;
         }
 
         private String meterID;
@@ -5259,10 +5259,10 @@ public class Types {
 
 
         public String validateParam() throws QCException {
-            if (this.getDataSet() != null && this.getDataSet().size() > 0 ) {
-                for (int i = 0 ; i < this.getDataSet().size(); i++ ) {
+            if (this.getData() != null && this.getData().size() > 0 ) {
+                for (int i = 0 ; i < this.getData().size(); i++ ) {
                     
-                    String vValidate = (String)this.getDataSet().get(i);
+                    String vValidate = (String)this.getData().get(i);
                     
 
                     //if (!QCStringUtil.isEmpty(vValidate)) {
@@ -5805,6 +5805,18 @@ public class Types {
             return this.createTime;
         }
 
+        private NICEIPModel eIP;
+
+        @ParamAnnotation(paramType = "query", paramName = "eip")
+        public void setEIP(NICEIPModel eIP) {
+            this.eIP = eIP;
+        }
+
+        @ParamAnnotation(paramType = "query", paramName = "eip")
+        public NICEIPModel getEIP() {
+            return this.eIP;
+        }
+
         private String instanceID;
 
         @ParamAnnotation(paramType = "query", paramName = "instance_id")
@@ -5996,6 +6008,49 @@ public class Types {
         }
     }
 
+    public static class NICEIPModel implements ParamValidate {
+        private Integer bandwidth;
+
+        @ParamAnnotation(paramType = "query", paramName = "bandwidth")
+        public void setBandwidth(Integer bandwidth) {
+            this.bandwidth = bandwidth;
+        }
+
+        @ParamAnnotation(paramType = "query", paramName = "bandwidth")
+        public Integer getBandwidth() {
+            return this.bandwidth;
+        }
+
+        private String eIPAddr;
+
+        @ParamAnnotation(paramType = "query", paramName = "eip_addr")
+        public void setEIPAddr(String eIPAddr) {
+            this.eIPAddr = eIPAddr;
+        }
+
+        @ParamAnnotation(paramType = "query", paramName = "eip_addr")
+        public String getEIPAddr() {
+            return this.eIPAddr;
+        }
+
+        private String eIPID;
+
+        @ParamAnnotation(paramType = "query", paramName = "eip_id")
+        public void setEIPID(String eIPID) {
+            this.eIPID = eIPID;
+        }
+
+        @ParamAnnotation(paramType = "query", paramName = "eip_id")
+        public String getEIPID() {
+            return this.eIPID;
+        }
+
+
+        public String validateParam() throws QCException {
+            return null;
+        }
+    }
+
     public static class NICIPModel implements ParamValidate {
         private String nICID;
 
@@ -6019,6 +6074,85 @@ public class Types {
         @ParamAnnotation(paramType = "query", paramName = "private_ip")
         public String getPrivateIP() {
             return this.privateIP;
+        }
+
+
+        public String validateParam() throws QCException {
+            return null;
+        }
+    }
+
+    public static class NICVxNetModel implements ParamValidate {
+        private String nICID;
+
+        @ParamAnnotation(paramType = "query", paramName = "nic_id")
+        public void setNICID(String nICID) {
+            this.nICID = nICID;
+        }
+
+        @ParamAnnotation(paramType = "query", paramName = "nic_id")
+        public String getNICID() {
+            return this.nICID;
+        }
+
+        private String privateIP;
+
+        @ParamAnnotation(paramType = "query", paramName = "private_ip")
+        public void setPrivateIP(String privateIP) {
+            this.privateIP = privateIP;
+        }
+
+        @ParamAnnotation(paramType = "query", paramName = "private_ip")
+        public String getPrivateIP() {
+            return this.privateIP;
+        }
+
+        private Integer role;
+
+        @ParamAnnotation(paramType = "query", paramName = "role")
+        public void setRole(Integer role) {
+            this.role = role;
+        }
+
+        @ParamAnnotation(paramType = "query", paramName = "role")
+        public Integer getRole() {
+            return this.role;
+        }
+
+        private String vxNetID;
+
+        @ParamAnnotation(paramType = "query", paramName = "vxnet_id")
+        public void setVxNetID(String vxNetID) {
+            this.vxNetID = vxNetID;
+        }
+
+        @ParamAnnotation(paramType = "query", paramName = "vxnet_id")
+        public String getVxNetID() {
+            return this.vxNetID;
+        }
+
+        private String vxNetName;
+
+        @ParamAnnotation(paramType = "query", paramName = "vxnet_name")
+        public void setVxNetName(String vxNetName) {
+            this.vxNetName = vxNetName;
+        }
+
+        @ParamAnnotation(paramType = "query", paramName = "vxnet_name")
+        public String getVxNetName() {
+            return this.vxNetName;
+        }
+
+        private Integer vxNetType;
+
+        @ParamAnnotation(paramType = "query", paramName = "vxnet_type")
+        public void setVxNetType(Integer vxNetType) {
+            this.vxNetType = vxNetType;
+        }
+
+        @ParamAnnotation(paramType = "query", paramName = "vxnet_type")
+        public Integer getVxNetType() {
+            return this.vxNetType;
         }
 
 
@@ -7609,6 +7743,18 @@ public class Types {
             return this.transitionStatus;
         }
 
+        private String vpcNetwork;
+
+        @ParamAnnotation(paramType = "query", paramName = "vpc_network")
+        public void setVpcNetwork(String vpcNetwork) {
+            this.vpcNetwork = vpcNetwork;
+        }
+
+        @ParamAnnotation(paramType = "query", paramName = "vpc_network")
+        public String getVpcNetwork() {
+            return this.vpcNetwork;
+        }
+
         private List<VxNetModel> vxNets;
 
         @ParamAnnotation(paramType = "query", paramName = "vxnets")
@@ -7724,6 +7870,18 @@ public class Types {
         @ParamAnnotation(paramType = "query", paramName = "create_time")
         public String getCreateTime() {
             return this.createTime;
+        }
+
+        private List<RouterStaticEntrySimpleModel> entrySet;
+
+        @ParamAnnotation(paramType = "query", paramName = "entry_set")
+        public void setEntrySet(List<RouterStaticEntrySimpleModel> entrySet) {
+            this.entrySet = entrySet;
+        }
+
+        @ParamAnnotation(paramType = "query", paramName = "entry_set")
+        public List<RouterStaticEntrySimpleModel> getEntrySet() {
+            return this.entrySet;
         }
 
         private String routerID;
@@ -7847,6 +8005,42 @@ public class Types {
             return this.val6;
         }
 
+        private String val7;
+
+        @ParamAnnotation(paramType = "query", paramName = "val7")
+        public void setVal7(String val7) {
+            this.val7 = val7;
+        }
+
+        @ParamAnnotation(paramType = "query", paramName = "val7")
+        public String getVal7() {
+            return this.val7;
+        }
+
+        private String val8;
+
+        @ParamAnnotation(paramType = "query", paramName = "val8")
+        public void setVal8(String val8) {
+            this.val8 = val8;
+        }
+
+        @ParamAnnotation(paramType = "query", paramName = "val8")
+        public String getVal8() {
+            return this.val8;
+        }
+
+        private String val9;
+
+        @ParamAnnotation(paramType = "query", paramName = "val9")
+        public void setVal9(String val9) {
+            this.val9 = val9;
+        }
+
+        @ParamAnnotation(paramType = "query", paramName = "val9")
+        public String getVal9() {
+            return this.val9;
+        }
+
         private String vxNetID;
 
         @ParamAnnotation(paramType = "query", paramName = "vxnet_id")
@@ -7861,6 +8055,16 @@ public class Types {
 
 
         public String validateParam() throws QCException {
+            if (this.getEntrySet() != null && this.getEntrySet().size() > 0 ) {
+                for (int i = 0 ; i < this.getEntrySet().size(); i++ ) {
+                    
+                    return null;
+
+                    //if (!QCStringUtil.isEmpty(vValidate)) {
+                    //    return vValidate;
+                    // }
+                }
+            }
             String[]staticTypeValidValues = {"1", "2", "3", "4", "5", "6", "7", "8"};
             boolean staticTypeIsValid = false;
             for (String v : staticTypeValidValues) {
@@ -7915,6 +8119,61 @@ public class Types {
         @ParamAnnotation(paramType = "query", paramName = "router_static_entry_name")
         public String getRouterStaticEntryName() {
             return this.routerStaticEntryName;
+        }
+
+        private String routerStaticID;
+
+        @ParamAnnotation(paramType = "query", paramName = "router_static_id")
+        public void setRouterStaticID(String routerStaticID) {
+            this.routerStaticID = routerStaticID;
+        }
+
+        @ParamAnnotation(paramType = "query", paramName = "router_static_id")
+        public String getRouterStaticID() {
+            return this.routerStaticID;
+        }
+
+        private String val1;
+
+        @ParamAnnotation(paramType = "query", paramName = "val1")
+        public void setVal1(String val1) {
+            this.val1 = val1;
+        }
+
+        @ParamAnnotation(paramType = "query", paramName = "val1")
+        public String getVal1() {
+            return this.val1;
+        }
+
+        private String val2;
+
+        @ParamAnnotation(paramType = "query", paramName = "val2")
+        public void setVal2(String val2) {
+            this.val2 = val2;
+        }
+
+        @ParamAnnotation(paramType = "query", paramName = "val2")
+        public String getVal2() {
+            return this.val2;
+        }
+
+
+        public String validateParam() throws QCException {
+            return null;
+        }
+    }
+
+    public static class RouterStaticEntrySimpleModel implements ParamValidate {
+        private String routerStaticEntryID;
+
+        @ParamAnnotation(paramType = "query", paramName = "router_static_entry_id")
+        public void setRouterStaticEntryID(String routerStaticEntryID) {
+            this.routerStaticEntryID = routerStaticEntryID;
+        }
+
+        @ParamAnnotation(paramType = "query", paramName = "router_static_entry_id")
+        public String getRouterStaticEntryID() {
+            return this.routerStaticEntryID;
         }
 
         private String val1;
@@ -9026,15 +9285,15 @@ public class Types {
             return this.description;
         }
 
-        private String headChain;
+        private Integer headChain;
 
         @ParamAnnotation(paramType = "query", paramName = "head_chain")
-        public void setHeadChain(String headChain) {
+        public void setHeadChain(Integer headChain) {
             this.headChain = headChain;
         }
 
         @ParamAnnotation(paramType = "query", paramName = "head_chain")
-        public String getHeadChain() {
+        public Integer getHeadChain() {
             return this.headChain;
         }
 
@@ -9185,15 +9444,15 @@ public class Types {
         }
 
     	// SnapshotType's available values: 0, 1
-        private String snapshotType;
+        private Integer snapshotType;
 
         @ParamAnnotation(paramType = "query", paramName = "snapshot_type")
-        public void setSnapshotType(String snapshotType) {
+        public void setSnapshotType(Integer snapshotType) {
             this.snapshotType = snapshotType;
         }
 
         @ParamAnnotation(paramType = "query", paramName = "snapshot_type")
-        public String getSnapshotType() {
+        public Integer getSnapshotType() {
             return this.snapshotType;
         }
 
@@ -9339,17 +9598,14 @@ public class Types {
             if (!isTakenIsValid) {
                 throw new QCException("IsTaken value " + this.getIsTaken() + "is invalid");
             }
-            String[] snapshotTypeValidValues = {
-                "0", "1"
-            };
-
+            String[]snapshotTypeValidValues = {"0", "1"};
             boolean snapshotTypeIsValid = false;
             for (String v : snapshotTypeValidValues) {
-                if (v.equals(this.getSnapshotType())) {
+                if (v.equals(this.getSnapshotType()+"")) {
                     snapshotTypeIsValid = true;
                 }
                 Boolean snapshotTypeIsRequired = Boolean.FALSE;
-                if (snapshotTypeIsRequired.equals(Boolean.FALSE) && this.getSnapshotType() == null) {
+                if (snapshotTypeIsRequired.equals(Boolean.FALSE) && this.getSnapshotType()==null) {
                     snapshotTypeIsValid = true;
                 }
             }

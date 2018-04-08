@@ -913,16 +913,16 @@ public class NicService {
 
     public static class ModifyNicAttributesInput extends IaasParamBody {
         // Required
-        private String nICID;
+        private String nIC;
 
-        @ParamAnnotation(paramType = "query", paramName = "nic_id")
-        public void setNICID(String nICID) {
-            this.nICID = nICID;
+        @ParamAnnotation(paramType = "query", paramName = "nic")
+        public void setNIC(String nIC) {
+            this.nIC = nIC;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "nic_id")
-        public String getNICID() {
-            return this.nICID;
+        @ParamAnnotation(paramType = "query", paramName = "nic")
+        public String getNIC() {
+            return this.nIC;
         }
 
         private String nICName;
@@ -962,8 +962,8 @@ public class NicService {
         }
 
         public String validateParam() throws QCException {
-            if (QCStringUtil.isEmpty(this.getNICID())) {
-                throw new QCException("NICID is required");
+            if (QCStringUtil.isEmpty(this.getNIC())) {
+                throw new QCException("NIC is required");
             }
             return null;
         }

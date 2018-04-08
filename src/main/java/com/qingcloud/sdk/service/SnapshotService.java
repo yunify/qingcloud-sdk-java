@@ -905,6 +905,18 @@ public class SnapshotService {
             return this.searchWord;
         }
 
+        private String snapshotTime;
+
+        @ParamAnnotation(paramType = "query", paramName = "snapshot_time")
+        public void setSnapshotTime(String snapshotTime) {
+            this.snapshotTime = snapshotTime;
+        }
+
+        @ParamAnnotation(paramType = "query", paramName = "snapshot_time")
+        public String getSnapshotTime() {
+            return this.snapshotTime;
+        }
+
     	// SnapshotType's available values: 0, 1
         private Integer snapshotType;
 
@@ -1037,6 +1049,18 @@ public class SnapshotService {
         @ParamAnnotation(paramType = "query", paramName = "snapshot_set")
         public List<SnapshotModel> getSnapshotSet() {
             return this.snapshotSet;
+        }
+
+        private Integer totalCount;
+
+        @ParamAnnotation(paramType = "query", paramName = "total_count")
+        public void setTotalCount(Integer totalCount) {
+            this.totalCount = totalCount;
+        }
+
+        @ParamAnnotation(paramType = "query", paramName = "total_count")
+        public Integer getTotalCount() {
+            return this.totalCount;
         }
 
     }

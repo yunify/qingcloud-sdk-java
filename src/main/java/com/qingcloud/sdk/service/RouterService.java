@@ -1050,16 +1050,16 @@ public class RouterService {
             return this.routerStatic;
         }
 
-        private String routerStaticEntryID;
+        private String routerStaticEntries;
 
-        @ParamAnnotation(paramType = "query", paramName = "router_static_entry_id")
-        public void setRouterStaticEntryID(String routerStaticEntryID) {
-            this.routerStaticEntryID = routerStaticEntryID;
+        @ParamAnnotation(paramType = "query", paramName = "router_static_entries")
+        public void setRouterStaticEntries(String routerStaticEntries) {
+            this.routerStaticEntries = routerStaticEntries;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "router_static_entry_id")
-        public String getRouterStaticEntryID() {
-            return this.routerStaticEntryID;
+        @ParamAnnotation(paramType = "query", paramName = "router_static_entries")
+        public String getRouterStaticEntries() {
+            return this.routerStaticEntries;
         }
 
         public String validateParam() throws QCException {
@@ -2209,6 +2209,19 @@ public class RouterService {
             return this.macConfSample;
         }
 
+    	// Platform's available values: linux, windows, mac
+        private String platform;
+
+        @ParamAnnotation(paramType = "query", paramName = "platform")
+        public void setPlatform(String platform) {
+            this.platform = platform;
+        }
+
+        @ParamAnnotation(paramType = "query", paramName = "platform")
+        public String getPlatform() {
+            return this.platform;
+        }
+
         private Integer retCode;
 
         @ParamAnnotation(paramType = "query", paramName = "ret_code")
@@ -3063,6 +3076,42 @@ public class RouterService {
         @ParamAnnotation(paramType = "query", paramName = "val6")
         public String getVal6() {
             return this.val6;
+        }
+
+        private String val7;
+
+        @ParamAnnotation(paramType = "query", paramName = "val7")
+        public void setVal7(String val7) {
+            this.val7 = val7;
+        }
+
+        @ParamAnnotation(paramType = "query", paramName = "val7")
+        public String getVal7() {
+            return this.val7;
+        }
+
+        private String val8;
+
+        @ParamAnnotation(paramType = "query", paramName = "val8")
+        public void setVal8(String val8) {
+            this.val8 = val8;
+        }
+
+        @ParamAnnotation(paramType = "query", paramName = "val8")
+        public String getVal8() {
+            return this.val8;
+        }
+
+        private String val9;
+
+        @ParamAnnotation(paramType = "query", paramName = "val9")
+        public void setVal9(String val9) {
+            this.val9 = val9;
+        }
+
+        @ParamAnnotation(paramType = "query", paramName = "val9")
+        public String getVal9() {
+            return this.val9;
         }
 
         public String validateParam() throws QCException {
