@@ -1,10 +1,6 @@
 # QingCloud SDK for Java
 
-<span style="display: inline-block">
-[![Build Status]()]()
-[![API Reference](http://img.shields.io/badge/api-reference-green.svg)](http://docs.qingcloud.com)
-[![License](http://img.shields.io/badge/license-apache%20v2-blue.svg)](https://github.com/yunify/qingcloud-sdk-java/blob/master/LICENSE)
-</span>
+
 
 The official QingCloud SDK for the Java programming language.
 
@@ -67,7 +63,7 @@ public class InstanceTest {
         context.setPort(443);
         context.setZone("pek3b");
         context.setApiLang("zh-cn"); // optional, set return message i18n, default to us-en
-        InstanceService service = new InstanceService(prodEnv);
+        InstanceService service = new InstanceService(context);
 
         InstanceService.DescribeInstancesInput input = new InstanceService.DescribeInstancesInput();
         input.setLimit(1);
@@ -102,7 +98,7 @@ Checkout our [releases](https://github.com/yunify/qingcloud-sdk-java/releases) a
 ## Reference Documentations
 
 - [QingCloud Documentation Overview](https://docs.qingcloud.com)
-- [QingCloud IaaS APIs](https://docs.qingcloud.com/api/index.html)
+- [QingCloud IaaS APIs](https://docs.qingcloud.com/product/api/)
 
 ## Contributing
 
