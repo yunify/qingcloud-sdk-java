@@ -43,7 +43,7 @@ public class InstanceTest {
         EnvContext context = new EnvContext("ACCESS_KEY_ID_EXAMPLE", "SECRET_ACCESS_KEY_EXAMPLE");
         context.setProtocol("https");
         context.setHost("api.qingcloud.com");
-        context.setPort(443);
+        context.setPort("443");
         context.setZone("pek3b");
         context.setApiLang("zh-cn"); // optional, set return message i18n, default to us-en
         InstanceService service = new InstanceService(context);
