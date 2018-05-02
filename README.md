@@ -24,26 +24,9 @@ Add dependency to `pom.xml`
 ```xml
 <dependencies>
     <dependency>
-        <groupId>com.qingcloud</groupId>
-        <artifactId>java-sdk</artifactId>
-        <version>1.0</version>
-    </dependency>
-    <dependency>
-        <groupId>com.alibaba</groupId>
-        <artifactId>fastjson</artifactId>
-        <version>1.2.46</version>
-    </dependency>
-
-    <dependency>
-        <groupId>com.squareup.okhttp3</groupId>
-        <artifactId>okhttp</artifactId>
-        <version>3.7.0</version>
-    </dependency>
-
-    <dependency>
-        <groupId>com.squareup.okhttp3</groupId>
-        <artifactId>logging-interceptor</artifactId>
-        <version>3.7.0</version>
+      <groupId>com.qingcloud</groupId>
+      <artifactId>qingcloud-sdk-java</artifactId>
+      <version>1.0.0</version>
     </dependency>
 <dependencies>
 ```
