@@ -126,8 +126,7 @@ public class QCOkHttpRequestClient {
         } else {
             url = String.format("%s?%s", requestUrl, uri);
         }
-        logger.log(Level.INFO, url);
-        System.out.println(String.format("url: %s", url));
+        logger.log(Level.FINE, url);
 
         okhttp3.Request.Builder builder = new okhttp3.Request.Builder();
         builder.addHeader(QCConstant.PARAM_KEY_USER_AGENT, QCStringUtil.getUserAgent());
