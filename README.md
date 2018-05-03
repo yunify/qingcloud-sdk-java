@@ -54,12 +54,11 @@ public class InstanceTest {
         try {
             InstanceService.DescribeInstancesOutput output = service.describeInstances(input);
             for (Types.InstanceModel model : output.getInstanceSet()) {
-                Utils.printModel(model);
                 System.out.println("==================");
                 System.out.println(model.getInstanceID());
                 System.out.println(model.getInstanceName());
-                System.out.println(model.getImageID());
-                for (Types.InstanceVxNetModel vxNetModel : model.getVxNets()) {
+                System.out.println(model.getImage().getImageID());
+                for (Types.NICVxNetModel vxNetModel : model.getVxNets()) {
                     System.out.println("==================");
                     System.out.println(vxNetModel.getVxNetID());
                     System.out.println(vxNetModel.getVxNetType());
