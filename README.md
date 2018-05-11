@@ -24,26 +24,9 @@ Add dependency to `pom.xml`
 ```xml
 <dependencies>
     <dependency>
-        <groupId>com.qingcloud</groupId>
-        <artifactId>java-sdk</artifactId>
-        <version>1.0</version>
-    </dependency>
-    <dependency>
-        <groupId>com.alibaba</groupId>
-        <artifactId>fastjson</artifactId>
-        <version>1.2.46</version>
-    </dependency>
-
-    <dependency>
-        <groupId>com.squareup.okhttp3</groupId>
-        <artifactId>okhttp</artifactId>
-        <version>3.7.0</version>
-    </dependency>
-
-    <dependency>
-        <groupId>com.squareup.okhttp3</groupId>
-        <artifactId>logging-interceptor</artifactId>
-        <version>3.7.0</version>
+      <groupId>com.qingcloud</groupId>
+      <artifactId>qingcloud-sdk-java</artifactId>
+      <version>1.0.0</version>
     </dependency>
 <dependencies>
 ```
@@ -60,7 +43,7 @@ public class InstanceTest {
         EnvContext context = new EnvContext("ACCESS_KEY_ID_EXAMPLE", "SECRET_ACCESS_KEY_EXAMPLE");
         context.setProtocol("https");
         context.setHost("api.qingcloud.com");
-        context.setPort(443);
+        context.setPort("443");
         context.setZone("pek3b");
         context.setApiLang("zh-cn"); // optional, set return message i18n, default to us-en
         InstanceService service = new InstanceService(context);
@@ -71,12 +54,11 @@ public class InstanceTest {
         try {
             InstanceService.DescribeInstancesOutput output = service.describeInstances(input);
             for (Types.InstanceModel model : output.getInstanceSet()) {
-                Utils.printModel(model);
                 System.out.println("==================");
                 System.out.println(model.getInstanceID());
                 System.out.println(model.getInstanceName());
-                System.out.println(model.getImageID());
-                for (Types.InstanceVxNetModel vxNetModel : model.getVxNets()) {
+                System.out.println(model.getImage().getImageID());
+                for (Types.NICVxNetModel vxNetModel : model.getVxNets()) {
                     System.out.println("==================");
                     System.out.println(vxNetModel.getVxNetID());
                     System.out.println(vxNetModel.getVxNetType());
