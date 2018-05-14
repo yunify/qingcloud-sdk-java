@@ -16,6 +16,7 @@
 
 package com.qingcloud.sdk.service;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.qingcloud.sdk.config.EnvContext;
 import com.qingcloud.sdk.constants.QCConstant;
 import com.qingcloud.sdk.model.OutputModel;
@@ -24,8 +25,8 @@ import com.qingcloud.sdk.request.ResourceRequestFactory;
 import com.qingcloud.sdk.exception.QCException;
 import com.qingcloud.sdk.model.IaasParamBody;
 import com.qingcloud.sdk.service.Types.*;
-import com.qingcloud.sdk.annotation.ParamAnnotation;
 import com.qingcloud.sdk.utils.QCStringUtil;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.HashMap;
 import java.util.List;
@@ -63,7 +64,7 @@ public class SharedStorageService {
         context.put("APIName", "AttachToS2SharedTarget");
         context.put("ServiceName", "AttachToS2SharedTarget");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/AttachToS2SharedTarget");
+        context.put("RequestURI", "/iaas/AttachToS2SharedTarget");
 
         input.setAction("AttachToS2SharedTarget");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -97,7 +98,7 @@ public class SharedStorageService {
         context.put("APIName", "AttachToS2SharedTarget");
         context.put("ServiceName", "AttachToS2SharedTarget");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/AttachToS2SharedTarget");
+        context.put("RequestURI", "/iaas/AttachToS2SharedTarget");
 
         input.setAction("AttachToS2SharedTarget");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -117,12 +118,12 @@ public class SharedStorageService {
         // Required
         private String sharedTarget;
 
-        @ParamAnnotation(paramType = "query", paramName = "shared_target")
+        @JsonProperty(value = "shared_target")
         public void setSharedTarget(String sharedTarget) {
             this.sharedTarget = sharedTarget;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "shared_target")
+        @JsonProperty(value = "shared_target")
         public String getSharedTarget() {
             return this.sharedTarget;
         }
@@ -130,12 +131,12 @@ public class SharedStorageService {
         // Required
         private List<String> volumes;
 
-        @ParamAnnotation(paramType = "query", paramName = "volumes")
+        @JsonProperty(value = "volumes")
         public void setVolumes(List<String> volumes) {
             this.volumes = volumes;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "volumes")
+        @JsonProperty(value = "volumes")
         public List<String> getVolumes() {
             return this.volumes;
         }
@@ -148,39 +149,40 @@ public class SharedStorageService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class AttachToS2SharedTargetOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
 
         private S2SharedTargetModel sharedTarget;
 
-        @ParamAnnotation(paramType = "query", paramName = "shared_target")
+        @JsonProperty(value = "shared_target")
         public void setSharedTarget(S2SharedTargetModel sharedTarget) {
             this.sharedTarget = sharedTarget;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "shared_target")
+        @JsonProperty(value = "shared_target")
         public S2SharedTargetModel getSharedTarget() {
             return this.sharedTarget;
         }
@@ -204,7 +206,7 @@ public class SharedStorageService {
         context.put("APIName", "ChangeS2ServerVxnet");
         context.put("ServiceName", "ChangeS2ServerVxnet");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ChangeS2ServerVxnet");
+        context.put("RequestURI", "/iaas/ChangeS2ServerVxnet");
 
         input.setAction("ChangeS2ServerVxnet");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -238,7 +240,7 @@ public class SharedStorageService {
         context.put("APIName", "ChangeS2ServerVxNet");
         context.put("ServiceName", "ChangeS2ServerVxnet");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ChangeS2ServerVxnet");
+        context.put("RequestURI", "/iaas/ChangeS2ServerVxnet");
 
         input.setAction("ChangeS2ServerVxNet");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -257,12 +259,12 @@ public class SharedStorageService {
     public static class ChangeS2ServerVxNetInput extends IaasParamBody {
         private String privateIP;
 
-        @ParamAnnotation(paramType = "query", paramName = "private_ip")
+        @JsonProperty(value = "private_ip")
         public void setPrivateIP(String privateIP) {
             this.privateIP = privateIP;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "private_ip")
+        @JsonProperty(value = "private_ip")
         public String getPrivateIP() {
             return this.privateIP;
         }
@@ -270,12 +272,12 @@ public class SharedStorageService {
         // Required
         private String s2Server;
 
-        @ParamAnnotation(paramType = "query", paramName = "s2_server")
+        @JsonProperty(value = "s2_server")
         public void setS2Server(String s2Server) {
             this.s2Server = s2Server;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "s2_server")
+        @JsonProperty(value = "s2_server")
         public String getS2Server() {
             return this.s2Server;
         }
@@ -283,12 +285,12 @@ public class SharedStorageService {
         // Required
         private String vxNet;
 
-        @ParamAnnotation(paramType = "query", paramName = "vxnet")
+        @JsonProperty(value = "vxnet")
         public void setVxNet(String vxNet) {
             this.vxNet = vxNet;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "vxnet")
+        @JsonProperty(value = "vxnet")
         public String getVxNet() {
             return this.vxNet;
         }
@@ -304,39 +306,40 @@ public class SharedStorageService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class ChangeS2ServerVxNetOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -360,7 +363,7 @@ public class SharedStorageService {
         context.put("APIName", "CreateS2Server");
         context.put("ServiceName", "CreateS2Server");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/CreateS2Server");
+        context.put("RequestURI", "/iaas/CreateS2Server");
 
         input.setAction("CreateS2Server");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -394,7 +397,7 @@ public class SharedStorageService {
         context.put("APIName", "CreateS2Server");
         context.put("ServiceName", "CreateS2Server");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/CreateS2Server");
+        context.put("RequestURI", "/iaas/CreateS2Server");
 
         input.setAction("CreateS2Server");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -413,24 +416,24 @@ public class SharedStorageService {
     public static class CreateS2ServerInput extends IaasParamBody {
         private String description;
 
-        @ParamAnnotation(paramType = "query", paramName = "description")
+        @JsonProperty(value = "description")
         public void setDescription(String description) {
             this.description = description;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "description")
+        @JsonProperty(value = "description")
         public String getDescription() {
             return this.description;
         }
 
         private String privateIP;
 
-        @ParamAnnotation(paramType = "query", paramName = "private_ip")
+        @JsonProperty(value = "private_ip")
         public void setPrivateIP(String privateIP) {
             this.privateIP = privateIP;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "private_ip")
+        @JsonProperty(value = "private_ip")
         public String getPrivateIP() {
             return this.privateIP;
         }
@@ -438,48 +441,48 @@ public class SharedStorageService {
     	// S2Class's available values: 0, 1
         private Integer s2Class;
 
-        @ParamAnnotation(paramType = "query", paramName = "s2_class")
+        @JsonProperty(value = "s2_class")
         public void setS2Class(Integer s2Class) {
             this.s2Class = s2Class;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "s2_class")
+        @JsonProperty(value = "s2_class")
         public Integer getS2Class() {
             return this.s2Class;
         }
 
         private String s2ServerName;
 
-        @ParamAnnotation(paramType = "query", paramName = "s2_server_name")
+        @JsonProperty(value = "s2_server_name")
         public void setS2ServerName(String s2ServerName) {
             this.s2ServerName = s2ServerName;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "s2_server_name")
+        @JsonProperty(value = "s2_server_name")
         public String getS2ServerName() {
             return this.s2ServerName;
         }
 
         private String serviceType;
 
-        @ParamAnnotation(paramType = "query", paramName = "service_type")
+        @JsonProperty(value = "service_type")
         public void setServiceType(String serviceType) {
             this.serviceType = serviceType;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "service_type")
+        @JsonProperty(value = "service_type")
         public String getServiceType() {
             return this.serviceType;
         }
 
         private String vxNet;
 
-        @ParamAnnotation(paramType = "query", paramName = "vxnet")
+        @JsonProperty(value = "vxnet")
         public void setVxNet(String vxNet) {
             this.vxNet = vxNet;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "vxnet")
+        @JsonProperty(value = "vxnet")
         public String getVxNet() {
             return this.vxNet;
         }
@@ -504,51 +507,52 @@ public class SharedStorageService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class CreateS2ServerOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
 
         private String s2Server;
 
-        @ParamAnnotation(paramType = "query", paramName = "s2_server")
+        @JsonProperty(value = "s2_server")
         public void setS2Server(String s2Server) {
             this.s2Server = s2Server;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "s2_server")
+        @JsonProperty(value = "s2_server")
         public String getS2Server() {
             return this.s2Server;
         }
@@ -572,7 +576,7 @@ public class SharedStorageService {
         context.put("APIName", "CreateS2SharedTarget");
         context.put("ServiceName", "CreateS2SharedTarget");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/CreateS2SharedTarget");
+        context.put("RequestURI", "/iaas/CreateS2SharedTarget");
 
         input.setAction("CreateS2SharedTarget");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -606,7 +610,7 @@ public class SharedStorageService {
         context.put("APIName", "CreateS2SharedTarget");
         context.put("ServiceName", "CreateS2SharedTarget");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/CreateS2SharedTarget");
+        context.put("RequestURI", "/iaas/CreateS2SharedTarget");
 
         input.setAction("CreateS2SharedTarget");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -625,12 +629,12 @@ public class SharedStorageService {
     public static class CreateS2SharedTargetInput extends IaasParamBody {
         private String description;
 
-        @ParamAnnotation(paramType = "query", paramName = "description")
+        @JsonProperty(value = "description")
         public void setDescription(String description) {
             this.description = description;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "description")
+        @JsonProperty(value = "description")
         public String getDescription() {
             return this.description;
         }
@@ -638,48 +642,48 @@ public class SharedStorageService {
         // Required
         private String exportName;
 
-        @ParamAnnotation(paramType = "query", paramName = "export_name")
+        @JsonProperty(value = "export_name")
         public void setExportName(String exportName) {
             this.exportName = exportName;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "export_name")
+        @JsonProperty(value = "export_name")
         public String getExportName() {
             return this.exportName;
         }
 
         private String exportNameNfs;
 
-        @ParamAnnotation(paramType = "query", paramName = "export_name_nfs")
+        @JsonProperty(value = "export_name_nfs")
         public void setExportNameNfs(String exportNameNfs) {
             this.exportNameNfs = exportNameNfs;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "export_name_nfs")
+        @JsonProperty(value = "export_name_nfs")
         public String getExportNameNfs() {
             return this.exportNameNfs;
         }
 
         private List<String> initiatorNames;
 
-        @ParamAnnotation(paramType = "query", paramName = "initiator_names")
+        @JsonProperty(value = "initiator_names")
         public void setInitiatorNames(List<String> initiatorNames) {
             this.initiatorNames = initiatorNames;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "initiator_names")
+        @JsonProperty(value = "initiator_names")
         public List<String> getInitiatorNames() {
             return this.initiatorNames;
         }
 
         private String s2Group;
 
-        @ParamAnnotation(paramType = "query", paramName = "s2_group")
+        @JsonProperty(value = "s2_group")
         public void setS2Group(String s2Group) {
             this.s2Group = s2Group;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "s2_group")
+        @JsonProperty(value = "s2_group")
         public String getS2Group() {
             return this.s2Group;
         }
@@ -687,12 +691,12 @@ public class SharedStorageService {
         // Required
         private String s2ServerID;
 
-        @ParamAnnotation(paramType = "query", paramName = "s2_server_id")
+        @JsonProperty(value = "s2_server_id")
         public void setS2ServerID(String s2ServerID) {
             this.s2ServerID = s2ServerID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "s2_server_id")
+        @JsonProperty(value = "s2_server_id")
         public String getS2ServerID() {
             return this.s2ServerID;
         }
@@ -701,24 +705,24 @@ public class SharedStorageService {
         // Required
         private String targetType;
 
-        @ParamAnnotation(paramType = "query", paramName = "target_type")
+        @JsonProperty(value = "target_type")
         public void setTargetType(String targetType) {
             this.targetType = targetType;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "target_type")
+        @JsonProperty(value = "target_type")
         public String getTargetType() {
             return this.targetType;
         }
 
         private List<String> volumes;
 
-        @ParamAnnotation(paramType = "query", paramName = "volumes")
+        @JsonProperty(value = "volumes")
         public void setVolumes(List<String> volumes) {
             this.volumes = volumes;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "volumes")
+        @JsonProperty(value = "volumes")
         public List<String> getVolumes() {
             return this.volumes;
         }
@@ -755,39 +759,40 @@ public class SharedStorageService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class CreateS2SharedTargetOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
 
         private String s2SharedTarget;
 
-        @ParamAnnotation(paramType = "query", paramName = "s2_shared_target")
+        @JsonProperty(value = "s2_shared_target")
         public void setS2SharedTarget(String s2SharedTarget) {
             this.s2SharedTarget = s2SharedTarget;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "s2_shared_target")
+        @JsonProperty(value = "s2_shared_target")
         public String getS2SharedTarget() {
             return this.s2SharedTarget;
         }
@@ -811,7 +816,7 @@ public class SharedStorageService {
         context.put("APIName", "DeleteS2Servers");
         context.put("ServiceName", "DeleteS2Servers");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DeleteS2Servers");
+        context.put("RequestURI", "/iaas/DeleteS2Servers");
 
         input.setAction("DeleteS2Servers");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -845,7 +850,7 @@ public class SharedStorageService {
         context.put("APIName", "DeleteS2Servers");
         context.put("ServiceName", "DeleteS2Servers");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DeleteS2Servers");
+        context.put("RequestURI", "/iaas/DeleteS2Servers");
 
         input.setAction("DeleteS2Servers");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -865,12 +870,12 @@ public class SharedStorageService {
         // Required
         private List<String> s2Servers;
 
-        @ParamAnnotation(paramType = "query", paramName = "s2_servers")
+        @JsonProperty(value = "s2_servers")
         public void setS2Servers(List<String> s2Servers) {
             this.s2Servers = s2Servers;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "s2_servers")
+        @JsonProperty(value = "s2_servers")
         public List<String> getS2Servers() {
             return this.s2Servers;
         }
@@ -880,51 +885,52 @@ public class SharedStorageService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class DeleteS2ServersOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
 
         private List<String> s2Servers;
 
-        @ParamAnnotation(paramType = "query", paramName = "s2_servers")
+        @JsonProperty(value = "s2_servers")
         public void setS2Servers(List<String> s2Servers) {
             this.s2Servers = s2Servers;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "s2_servers")
+        @JsonProperty(value = "s2_servers")
         public List<String> getS2Servers() {
             return this.s2Servers;
         }
@@ -948,7 +954,7 @@ public class SharedStorageService {
         context.put("APIName", "DeleteS2SharedTargets");
         context.put("ServiceName", "DeleteS2SharedTargets");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DeleteS2SharedTargets");
+        context.put("RequestURI", "/iaas/DeleteS2SharedTargets");
 
         input.setAction("DeleteS2SharedTargets");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -982,7 +988,7 @@ public class SharedStorageService {
         context.put("APIName", "DeleteS2SharedTargets");
         context.put("ServiceName", "DeleteS2SharedTargets");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DeleteS2SharedTargets");
+        context.put("RequestURI", "/iaas/DeleteS2SharedTargets");
 
         input.setAction("DeleteS2SharedTargets");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1002,12 +1008,12 @@ public class SharedStorageService {
         // Required
         private List<String> sharedTargets;
 
-        @ParamAnnotation(paramType = "query", paramName = "shared_targets")
+        @JsonProperty(value = "shared_targets")
         public void setSharedTargets(List<String> sharedTargets) {
             this.sharedTargets = sharedTargets;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "shared_targets")
+        @JsonProperty(value = "shared_targets")
         public List<String> getSharedTargets() {
             return this.sharedTargets;
         }
@@ -1017,39 +1023,40 @@ public class SharedStorageService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class DeleteS2SharedTargetsOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
 
         private List<String> sharedTargets;
 
-        @ParamAnnotation(paramType = "query", paramName = "shared_targets")
+        @JsonProperty(value = "shared_targets")
         public void setSharedTargets(List<String> sharedTargets) {
             this.sharedTargets = sharedTargets;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "shared_targets")
+        @JsonProperty(value = "shared_targets")
         public List<String> getSharedTargets() {
             return this.sharedTargets;
         }
@@ -1073,7 +1080,7 @@ public class SharedStorageService {
         context.put("APIName", "DescribeS2DefaultParameters");
         context.put("ServiceName", "DescribeS2DefaultParameters");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeS2DefaultParameters");
+        context.put("RequestURI", "/iaas/DescribeS2DefaultParameters");
 
         input.setAction("DescribeS2DefaultParameters");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1107,7 +1114,7 @@ public class SharedStorageService {
         context.put("APIName", "DescribeS2DefaultParameters");
         context.put("ServiceName", "DescribeS2DefaultParameters");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeS2DefaultParameters");
+        context.put("RequestURI", "/iaas/DescribeS2DefaultParameters");
 
         input.setAction("DescribeS2DefaultParameters");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1126,24 +1133,24 @@ public class SharedStorageService {
     public static class DescribeS2DefaultParametersInput extends IaasParamBody {
         private Integer limit;
 
-        @ParamAnnotation(paramType = "query", paramName = "limit")
+        @JsonProperty(value = "limit")
         public void setLimit(Integer limit) {
             this.limit = limit;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "limit")
+        @JsonProperty(value = "limit")
         public Integer getLimit() {
             return this.limit;
         }
 
         private Integer offset;
 
-        @ParamAnnotation(paramType = "query", paramName = "offset")
+        @JsonProperty(value = "offset")
         public void setOffset(Integer offset) {
             this.offset = offset;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "offset")
+        @JsonProperty(value = "offset")
         public Integer getOffset() {
             return this.offset;
         }
@@ -1151,12 +1158,12 @@ public class SharedStorageService {
     	// ServiceType's available values: vsan
         private String serviceType;
 
-        @ParamAnnotation(paramType = "query", paramName = "service_type")
+        @JsonProperty(value = "service_type")
         public void setServiceType(String serviceType) {
             this.serviceType = serviceType;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "service_type")
+        @JsonProperty(value = "service_type")
         public String getServiceType() {
             return this.serviceType;
         }
@@ -1164,12 +1171,12 @@ public class SharedStorageService {
     	// TargetType's available values: ISCSI
         private String targetType;
 
-        @ParamAnnotation(paramType = "query", paramName = "target_type")
+        @JsonProperty(value = "target_type")
         public void setTargetType(String targetType) {
             this.targetType = targetType;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "target_type")
+        @JsonProperty(value = "target_type")
         public String getTargetType() {
             return this.targetType;
         }
@@ -1215,51 +1222,52 @@ public class SharedStorageService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class DescribeS2DefaultParametersOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
 
         private List<S2DefaultParametersModel> s2DefaultParametersSet;
 
-        @ParamAnnotation(paramType = "query", paramName = "s2_default_parameters_set")
+        @JsonProperty(value = "s2_default_parameters_set")
         public void setS2DefaultParametersSet(List<S2DefaultParametersModel> s2DefaultParametersSet) {
             this.s2DefaultParametersSet = s2DefaultParametersSet;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "s2_default_parameters_set")
+        @JsonProperty(value = "s2_default_parameters_set")
         public List<S2DefaultParametersModel> getS2DefaultParametersSet() {
             return this.s2DefaultParametersSet;
         }
 
         private Integer totalCount;
 
-        @ParamAnnotation(paramType = "query", paramName = "total_count")
+        @JsonProperty(value = "total_count")
         public void setTotalCount(Integer totalCount) {
             this.totalCount = totalCount;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "total_count")
+        @JsonProperty(value = "total_count")
         public Integer getTotalCount() {
             return this.totalCount;
         }
@@ -1283,7 +1291,7 @@ public class SharedStorageService {
         context.put("APIName", "DescribeS2Servers");
         context.put("ServiceName", "DescribeS2Servers");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeS2Servers");
+        context.put("RequestURI", "/iaas/DescribeS2Servers");
 
         input.setAction("DescribeS2Servers");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1317,7 +1325,7 @@ public class SharedStorageService {
         context.put("APIName", "DescribeS2Servers");
         context.put("ServiceName", "DescribeS2Servers");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeS2Servers");
+        context.put("RequestURI", "/iaas/DescribeS2Servers");
 
         input.setAction("DescribeS2Servers");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1336,84 +1344,84 @@ public class SharedStorageService {
     public static class DescribeS2ServersInput extends IaasParamBody {
         private Integer limit;
 
-        @ParamAnnotation(paramType = "query", paramName = "limit")
+        @JsonProperty(value = "limit")
         public void setLimit(Integer limit) {
             this.limit = limit;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "limit")
+        @JsonProperty(value = "limit")
         public Integer getLimit() {
             return this.limit;
         }
 
         private Integer offset;
 
-        @ParamAnnotation(paramType = "query", paramName = "offset")
+        @JsonProperty(value = "offset")
         public void setOffset(Integer offset) {
             this.offset = offset;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "offset")
+        @JsonProperty(value = "offset")
         public Integer getOffset() {
             return this.offset;
         }
 
         private List<String> s2Servers;
 
-        @ParamAnnotation(paramType = "query", paramName = "s2_servers")
+        @JsonProperty(value = "s2_servers")
         public void setS2Servers(List<String> s2Servers) {
             this.s2Servers = s2Servers;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "s2_servers")
+        @JsonProperty(value = "s2_servers")
         public List<String> getS2Servers() {
             return this.s2Servers;
         }
 
         private String searchWord;
 
-        @ParamAnnotation(paramType = "query", paramName = "search_word")
+        @JsonProperty(value = "search_word")
         public void setSearchWord(String searchWord) {
             this.searchWord = searchWord;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "search_word")
+        @JsonProperty(value = "search_word")
         public String getSearchWord() {
             return this.searchWord;
         }
 
         private List<String> status;
 
-        @ParamAnnotation(paramType = "query", paramName = "status")
+        @JsonProperty(value = "status")
         public void setStatus(List<String> status) {
             this.status = status;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "status")
+        @JsonProperty(value = "status")
         public List<String> getStatus() {
             return this.status;
         }
 
         private List<String> tags;
 
-        @ParamAnnotation(paramType = "query", paramName = "tags")
+        @JsonProperty(value = "tags")
         public void setTags(List<String> tags) {
             this.tags = tags;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "tags")
+        @JsonProperty(value = "tags")
         public List<String> getTags() {
             return this.tags;
         }
 
         private Integer verbose;
 
-        @ParamAnnotation(paramType = "query", paramName = "verbose")
+        @JsonProperty(value = "verbose")
         public void setVerbose(Integer verbose) {
             this.verbose = verbose;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "verbose")
+        @JsonProperty(value = "verbose")
         public Integer getVerbose() {
             return this.verbose;
         }
@@ -1423,51 +1431,52 @@ public class SharedStorageService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class DescribeS2ServersOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
 
         private List<S2ServerModel> s2ServerSet;
 
-        @ParamAnnotation(paramType = "query", paramName = "s2_server_set")
+        @JsonProperty(value = "s2_server_set")
         public void setS2ServerSet(List<S2ServerModel> s2ServerSet) {
             this.s2ServerSet = s2ServerSet;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "s2_server_set")
+        @JsonProperty(value = "s2_server_set")
         public List<S2ServerModel> getS2ServerSet() {
             return this.s2ServerSet;
         }
 
         private Integer totalCount;
 
-        @ParamAnnotation(paramType = "query", paramName = "total_count")
+        @JsonProperty(value = "total_count")
         public void setTotalCount(Integer totalCount) {
             this.totalCount = totalCount;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "total_count")
+        @JsonProperty(value = "total_count")
         public Integer getTotalCount() {
             return this.totalCount;
         }
@@ -1491,7 +1500,7 @@ public class SharedStorageService {
         context.put("APIName", "DescribeS2SharedTargets");
         context.put("ServiceName", "DescribeS2SharedTargets");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeS2SharedTargets");
+        context.put("RequestURI", "/iaas/DescribeS2SharedTargets");
 
         input.setAction("DescribeS2SharedTargets");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1525,7 +1534,7 @@ public class SharedStorageService {
         context.put("APIName", "DescribeS2SharedTargets");
         context.put("ServiceName", "DescribeS2SharedTargets");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeS2SharedTargets");
+        context.put("RequestURI", "/iaas/DescribeS2SharedTargets");
 
         input.setAction("DescribeS2SharedTargets");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1544,72 +1553,72 @@ public class SharedStorageService {
     public static class DescribeS2SharedTargetsInput extends IaasParamBody {
         private Integer limit;
 
-        @ParamAnnotation(paramType = "query", paramName = "limit")
+        @JsonProperty(value = "limit")
         public void setLimit(Integer limit) {
             this.limit = limit;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "limit")
+        @JsonProperty(value = "limit")
         public Integer getLimit() {
             return this.limit;
         }
 
         private Integer offset;
 
-        @ParamAnnotation(paramType = "query", paramName = "offset")
+        @JsonProperty(value = "offset")
         public void setOffset(Integer offset) {
             this.offset = offset;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "offset")
+        @JsonProperty(value = "offset")
         public Integer getOffset() {
             return this.offset;
         }
 
         private String s2ServerID;
 
-        @ParamAnnotation(paramType = "query", paramName = "s2_server_id")
+        @JsonProperty(value = "s2_server_id")
         public void setS2ServerID(String s2ServerID) {
             this.s2ServerID = s2ServerID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "s2_server_id")
+        @JsonProperty(value = "s2_server_id")
         public String getS2ServerID() {
             return this.s2ServerID;
         }
 
         private String searchWord;
 
-        @ParamAnnotation(paramType = "query", paramName = "search_word")
+        @JsonProperty(value = "search_word")
         public void setSearchWord(String searchWord) {
             this.searchWord = searchWord;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "search_word")
+        @JsonProperty(value = "search_word")
         public String getSearchWord() {
             return this.searchWord;
         }
 
         private List<String> sharedTargets;
 
-        @ParamAnnotation(paramType = "query", paramName = "shared_targets")
+        @JsonProperty(value = "shared_targets")
         public void setSharedTargets(List<String> sharedTargets) {
             this.sharedTargets = sharedTargets;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "shared_targets")
+        @JsonProperty(value = "shared_targets")
         public List<String> getSharedTargets() {
             return this.sharedTargets;
         }
 
         private Integer verbose;
 
-        @ParamAnnotation(paramType = "query", paramName = "verbose")
+        @JsonProperty(value = "verbose")
         public void setVerbose(Integer verbose) {
             this.verbose = verbose;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "verbose")
+        @JsonProperty(value = "verbose")
         public Integer getVerbose() {
             return this.verbose;
         }
@@ -1619,51 +1628,52 @@ public class SharedStorageService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class DescribeS2SharedTargetsOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
 
         private List<S2SharedTargetModel> sharedTargetSet;
 
-        @ParamAnnotation(paramType = "query", paramName = "shared_target_set")
+        @JsonProperty(value = "shared_target_set")
         public void setSharedTargetSet(List<S2SharedTargetModel> sharedTargetSet) {
             this.sharedTargetSet = sharedTargetSet;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "shared_target_set")
+        @JsonProperty(value = "shared_target_set")
         public List<S2SharedTargetModel> getSharedTargetSet() {
             return this.sharedTargetSet;
         }
 
         private Integer totalCount;
 
-        @ParamAnnotation(paramType = "query", paramName = "total_count")
+        @JsonProperty(value = "total_count")
         public void setTotalCount(Integer totalCount) {
             this.totalCount = totalCount;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "total_count")
+        @JsonProperty(value = "total_count")
         public Integer getTotalCount() {
             return this.totalCount;
         }
@@ -1687,7 +1697,7 @@ public class SharedStorageService {
         context.put("APIName", "DetachFromS2SharedTarget");
         context.put("ServiceName", "DetachFromS2SharedTarget");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DetachFromS2SharedTarget");
+        context.put("RequestURI", "/iaas/DetachFromS2SharedTarget");
 
         input.setAction("DetachFromS2SharedTarget");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1721,7 +1731,7 @@ public class SharedStorageService {
         context.put("APIName", "DetachFromS2SharedTarget");
         context.put("ServiceName", "DetachFromS2SharedTarget");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DetachFromS2SharedTarget");
+        context.put("RequestURI", "/iaas/DetachFromS2SharedTarget");
 
         input.setAction("DetachFromS2SharedTarget");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1741,12 +1751,12 @@ public class SharedStorageService {
         // Required
         private String sharedTarget;
 
-        @ParamAnnotation(paramType = "query", paramName = "shared_target")
+        @JsonProperty(value = "shared_target")
         public void setSharedTarget(String sharedTarget) {
             this.sharedTarget = sharedTarget;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "shared_target")
+        @JsonProperty(value = "shared_target")
         public String getSharedTarget() {
             return this.sharedTarget;
         }
@@ -1754,12 +1764,12 @@ public class SharedStorageService {
         // Required
         private List<String> volumes;
 
-        @ParamAnnotation(paramType = "query", paramName = "volumes")
+        @JsonProperty(value = "volumes")
         public void setVolumes(List<String> volumes) {
             this.volumes = volumes;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "volumes")
+        @JsonProperty(value = "volumes")
         public List<String> getVolumes() {
             return this.volumes;
         }
@@ -1772,39 +1782,40 @@ public class SharedStorageService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class DetachFromS2SharedTargetOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
 
         private S2SharedTargetModel sharedTarget;
 
-        @ParamAnnotation(paramType = "query", paramName = "shared_target")
+        @JsonProperty(value = "shared_target")
         public void setSharedTarget(S2SharedTargetModel sharedTarget) {
             this.sharedTarget = sharedTarget;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "shared_target")
+        @JsonProperty(value = "shared_target")
         public S2SharedTargetModel getSharedTarget() {
             return this.sharedTarget;
         }
@@ -1828,7 +1839,7 @@ public class SharedStorageService {
         context.put("APIName", "DisableS2SharedTargets");
         context.put("ServiceName", "DisableS2SharedTargets");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DisableS2SharedTargets");
+        context.put("RequestURI", "/iaas/DisableS2SharedTargets");
 
         input.setAction("DisableS2SharedTargets");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1862,7 +1873,7 @@ public class SharedStorageService {
         context.put("APIName", "DisableS2SharedTargets");
         context.put("ServiceName", "DisableS2SharedTargets");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DisableS2SharedTargets");
+        context.put("RequestURI", "/iaas/DisableS2SharedTargets");
 
         input.setAction("DisableS2SharedTargets");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1882,12 +1893,12 @@ public class SharedStorageService {
         // Required
         private List<String> sharedTargets;
 
-        @ParamAnnotation(paramType = "query", paramName = "shared_targets")
+        @JsonProperty(value = "shared_targets")
         public void setSharedTargets(List<String> sharedTargets) {
             this.sharedTargets = sharedTargets;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "shared_targets")
+        @JsonProperty(value = "shared_targets")
         public List<String> getSharedTargets() {
             return this.sharedTargets;
         }
@@ -1897,39 +1908,40 @@ public class SharedStorageService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class DisableS2SharedTargetsOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
 
         private List<String> sharedTargets;
 
-        @ParamAnnotation(paramType = "query", paramName = "shared_targets")
+        @JsonProperty(value = "shared_targets")
         public void setSharedTargets(List<String> sharedTargets) {
             this.sharedTargets = sharedTargets;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "shared_targets")
+        @JsonProperty(value = "shared_targets")
         public List<String> getSharedTargets() {
             return this.sharedTargets;
         }
@@ -1953,7 +1965,7 @@ public class SharedStorageService {
         context.put("APIName", "EnableS2SharedTargets");
         context.put("ServiceName", "EnableS2SharedTargets");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/EnableS2SharedTargets");
+        context.put("RequestURI", "/iaas/EnableS2SharedTargets");
 
         input.setAction("EnableS2SharedTargets");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1987,7 +1999,7 @@ public class SharedStorageService {
         context.put("APIName", "EnableS2SharedTargets");
         context.put("ServiceName", "EnableS2SharedTargets");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/EnableS2SharedTargets");
+        context.put("RequestURI", "/iaas/EnableS2SharedTargets");
 
         input.setAction("EnableS2SharedTargets");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2007,12 +2019,12 @@ public class SharedStorageService {
         // Required
         private List<String> sharedTargets;
 
-        @ParamAnnotation(paramType = "query", paramName = "shared_targets")
+        @JsonProperty(value = "shared_targets")
         public void setSharedTargets(List<String> sharedTargets) {
             this.sharedTargets = sharedTargets;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "shared_targets")
+        @JsonProperty(value = "shared_targets")
         public List<String> getSharedTargets() {
             return this.sharedTargets;
         }
@@ -2022,39 +2034,40 @@ public class SharedStorageService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class EnableS2SharedTargetsOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
 
         private List<String> sharedTargets;
 
-        @ParamAnnotation(paramType = "query", paramName = "shared_targets")
+        @JsonProperty(value = "shared_targets")
         public void setSharedTargets(List<String> sharedTargets) {
             this.sharedTargets = sharedTargets;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "shared_targets")
+        @JsonProperty(value = "shared_targets")
         public List<String> getSharedTargets() {
             return this.sharedTargets;
         }
@@ -2078,7 +2091,7 @@ public class SharedStorageService {
         context.put("APIName", "ModifyS2Server");
         context.put("ServiceName", "ModifyS2Server");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ModifyS2Server");
+        context.put("RequestURI", "/iaas/ModifyS2Server");
 
         input.setAction("ModifyS2Server");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2112,7 +2125,7 @@ public class SharedStorageService {
         context.put("APIName", "ModifyS2Server");
         context.put("ServiceName", "ModifyS2Server");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ModifyS2Server");
+        context.put("RequestURI", "/iaas/ModifyS2Server");
 
         input.setAction("ModifyS2Server");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2131,12 +2144,12 @@ public class SharedStorageService {
     public static class ModifyS2ServerInput extends IaasParamBody {
         private String description;
 
-        @ParamAnnotation(paramType = "query", paramName = "description")
+        @JsonProperty(value = "description")
         public void setDescription(String description) {
             this.description = description;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "description")
+        @JsonProperty(value = "description")
         public String getDescription() {
             return this.description;
         }
@@ -2144,24 +2157,24 @@ public class SharedStorageService {
         // Required
         private String s2Server;
 
-        @ParamAnnotation(paramType = "query", paramName = "s2_server")
+        @JsonProperty(value = "s2_server")
         public void setS2Server(String s2Server) {
             this.s2Server = s2Server;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "s2_server")
+        @JsonProperty(value = "s2_server")
         public String getS2Server() {
             return this.s2Server;
         }
 
         private String s2ServerName;
 
-        @ParamAnnotation(paramType = "query", paramName = "s2_server_name")
+        @JsonProperty(value = "s2_server_name")
         public void setS2ServerName(String s2ServerName) {
             this.s2ServerName = s2ServerName;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "s2_server_name")
+        @JsonProperty(value = "s2_server_name")
         public String getS2ServerName() {
             return this.s2ServerName;
         }
@@ -2174,27 +2187,28 @@ public class SharedStorageService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class ModifyS2ServerOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -2218,7 +2232,7 @@ public class SharedStorageService {
         context.put("APIName", "ModifyS2SharedTargets");
         context.put("ServiceName", "ModifyS2SharedTargets");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ModifyS2SharedTargets");
+        context.put("RequestURI", "/iaas/ModifyS2SharedTargets");
 
         input.setAction("ModifyS2SharedTargets");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2252,7 +2266,7 @@ public class SharedStorageService {
         context.put("APIName", "ModifyS2SharedTargets");
         context.put("ServiceName", "ModifyS2SharedTargets");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ModifyS2SharedTargets");
+        context.put("RequestURI", "/iaas/ModifyS2SharedTargets");
 
         input.setAction("ModifyS2SharedTargets");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2271,12 +2285,12 @@ public class SharedStorageService {
     public static class ModifyS2SharedTargetsInput extends IaasParamBody {
         private List<String> initiatorNames;
 
-        @ParamAnnotation(paramType = "query", paramName = "initiator_names")
+        @JsonProperty(value = "initiator_names")
         public void setInitiatorNames(List<String> initiatorNames) {
             this.initiatorNames = initiatorNames;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "initiator_names")
+        @JsonProperty(value = "initiator_names")
         public List<String> getInitiatorNames() {
             return this.initiatorNames;
         }
@@ -2284,12 +2298,12 @@ public class SharedStorageService {
         // Required
         private String operation;
 
-        @ParamAnnotation(paramType = "query", paramName = "operation")
+        @JsonProperty(value = "operation")
         public void setOperation(String operation) {
             this.operation = operation;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "operation")
+        @JsonProperty(value = "operation")
         public String getOperation() {
             return this.operation;
         }
@@ -2297,12 +2311,12 @@ public class SharedStorageService {
         // Required
         private List<String> parameters;
 
-        @ParamAnnotation(paramType = "query", paramName = "parameters")
+        @JsonProperty(value = "parameters")
         public void setParameters(List<String> parameters) {
             this.parameters = parameters;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "parameters")
+        @JsonProperty(value = "parameters")
         public List<String> getParameters() {
             return this.parameters;
         }
@@ -2310,12 +2324,12 @@ public class SharedStorageService {
         // Required
         private List<String> sharedTargets;
 
-        @ParamAnnotation(paramType = "query", paramName = "shared_targets")
+        @JsonProperty(value = "shared_targets")
         public void setSharedTargets(List<String> sharedTargets) {
             this.sharedTargets = sharedTargets;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "shared_targets")
+        @JsonProperty(value = "shared_targets")
         public List<String> getSharedTargets() {
             return this.sharedTargets;
         }
@@ -2328,27 +2342,28 @@ public class SharedStorageService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class ModifyS2SharedTargetsOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -2372,7 +2387,7 @@ public class SharedStorageService {
         context.put("APIName", "PowerOffS2Servers");
         context.put("ServiceName", "PowerOffS2Servers");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/PowerOffS2Servers");
+        context.put("RequestURI", "/iaas/PowerOffS2Servers");
 
         input.setAction("PowerOffS2Servers");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2406,7 +2421,7 @@ public class SharedStorageService {
         context.put("APIName", "PowerOffS2Servers");
         context.put("ServiceName", "PowerOffS2Servers");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/PowerOffS2Servers");
+        context.put("RequestURI", "/iaas/PowerOffS2Servers");
 
         input.setAction("PowerOffS2Servers");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2426,12 +2441,12 @@ public class SharedStorageService {
         // Required
         private String s2Servers;
 
-        @ParamAnnotation(paramType = "query", paramName = "s2_servers")
+        @JsonProperty(value = "s2_servers")
         public void setS2Servers(String s2Servers) {
             this.s2Servers = s2Servers;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "s2_servers")
+        @JsonProperty(value = "s2_servers")
         public String getS2Servers() {
             return this.s2Servers;
         }
@@ -2444,39 +2459,40 @@ public class SharedStorageService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class PowerOffS2ServersOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -2500,7 +2516,7 @@ public class SharedStorageService {
         context.put("APIName", "PowerOnS2Servers");
         context.put("ServiceName", "PowerOnS2Servers");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/PowerOnS2Servers");
+        context.put("RequestURI", "/iaas/PowerOnS2Servers");
 
         input.setAction("PowerOnS2Servers");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2534,7 +2550,7 @@ public class SharedStorageService {
         context.put("APIName", "PowerOnS2Servers");
         context.put("ServiceName", "PowerOnS2Servers");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/PowerOnS2Servers");
+        context.put("RequestURI", "/iaas/PowerOnS2Servers");
 
         input.setAction("PowerOnS2Servers");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2554,12 +2570,12 @@ public class SharedStorageService {
         // Required
         private List<String> s2Servers;
 
-        @ParamAnnotation(paramType = "query", paramName = "s2_servers")
+        @JsonProperty(value = "s2_servers")
         public void setS2Servers(List<String> s2Servers) {
             this.s2Servers = s2Servers;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "s2_servers")
+        @JsonProperty(value = "s2_servers")
         public List<String> getS2Servers() {
             return this.s2Servers;
         }
@@ -2569,39 +2585,40 @@ public class SharedStorageService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class PowerOnS2ServersOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -2625,7 +2642,7 @@ public class SharedStorageService {
         context.put("APIName", "ResizeS2Servers");
         context.put("ServiceName", "ResizeS2Servers");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ResizeS2Servers");
+        context.put("RequestURI", "/iaas/ResizeS2Servers");
 
         input.setAction("ResizeS2Servers");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2659,7 +2676,7 @@ public class SharedStorageService {
         context.put("APIName", "ResizeS2Servers");
         context.put("ServiceName", "ResizeS2Servers");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ResizeS2Servers");
+        context.put("RequestURI", "/iaas/ResizeS2Servers");
 
         input.setAction("ResizeS2Servers");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2679,12 +2696,12 @@ public class SharedStorageService {
         // Required
         private String s2Server;
 
-        @ParamAnnotation(paramType = "query", paramName = "s2_server")
+        @JsonProperty(value = "s2_server")
         public void setS2Server(String s2Server) {
             this.s2Server = s2Server;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "s2_server")
+        @JsonProperty(value = "s2_server")
         public String getS2Server() {
             return this.s2Server;
         }
@@ -2692,12 +2709,12 @@ public class SharedStorageService {
         // Required
         private Integer s2ServerType;
 
-        @ParamAnnotation(paramType = "query", paramName = "s2_server_type")
+        @JsonProperty(value = "s2_server_type")
         public void setS2ServerType(Integer s2ServerType) {
             this.s2ServerType = s2ServerType;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "s2_server_type")
+        @JsonProperty(value = "s2_server_type")
         public Integer getS2ServerType() {
             return this.s2ServerType;
         }
@@ -2713,39 +2730,40 @@ public class SharedStorageService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class ResizeS2ServersOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -2769,7 +2787,7 @@ public class SharedStorageService {
         context.put("APIName", "UpdateS2Servers");
         context.put("ServiceName", "UpdateS2Servers");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/UpdateS2Servers");
+        context.put("RequestURI", "/iaas/UpdateS2Servers");
 
         input.setAction("UpdateS2Servers");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2803,7 +2821,7 @@ public class SharedStorageService {
         context.put("APIName", "UpdateS2Servers");
         context.put("ServiceName", "UpdateS2Servers");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/UpdateS2Servers");
+        context.put("RequestURI", "/iaas/UpdateS2Servers");
 
         input.setAction("UpdateS2Servers");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2823,12 +2841,12 @@ public class SharedStorageService {
         // Required
         private List<String> s2Servers;
 
-        @ParamAnnotation(paramType = "query", paramName = "s2_servers")
+        @JsonProperty(value = "s2_servers")
         public void setS2Servers(List<String> s2Servers) {
             this.s2Servers = s2Servers;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "s2_servers")
+        @JsonProperty(value = "s2_servers")
         public List<String> getS2Servers() {
             return this.s2Servers;
         }
@@ -2838,39 +2856,40 @@ public class SharedStorageService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class UpdateS2ServersOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }

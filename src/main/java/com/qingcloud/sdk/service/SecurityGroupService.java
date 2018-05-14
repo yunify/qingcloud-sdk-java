@@ -16,6 +16,7 @@
 
 package com.qingcloud.sdk.service;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.qingcloud.sdk.config.EnvContext;
 import com.qingcloud.sdk.constants.QCConstant;
 import com.qingcloud.sdk.model.OutputModel;
@@ -24,8 +25,8 @@ import com.qingcloud.sdk.request.ResourceRequestFactory;
 import com.qingcloud.sdk.exception.QCException;
 import com.qingcloud.sdk.model.IaasParamBody;
 import com.qingcloud.sdk.service.Types.*;
-import com.qingcloud.sdk.annotation.ParamAnnotation;
 import com.qingcloud.sdk.utils.QCStringUtil;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.HashMap;
 import java.util.List;
@@ -63,7 +64,7 @@ public class SecurityGroupService {
         context.put("APIName", "AddSecurityGroupRules");
         context.put("ServiceName", "AddSecurityGroupRules");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/AddSecurityGroupRules");
+        context.put("RequestURI", "/iaas/AddSecurityGroupRules");
 
         input.setAction("AddSecurityGroupRules");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -97,7 +98,7 @@ public class SecurityGroupService {
         context.put("APIName", "AddSecurityGroupRules");
         context.put("ServiceName", "AddSecurityGroupRules");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/AddSecurityGroupRules");
+        context.put("RequestURI", "/iaas/AddSecurityGroupRules");
 
         input.setAction("AddSecurityGroupRules");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -117,12 +118,12 @@ public class SecurityGroupService {
         // Required
         private List<SecurityGroupRuleModel> rules;
 
-        @ParamAnnotation(paramType = "query", paramName = "rules")
+        @JsonProperty(value = "rules")
         public void setRules(List<SecurityGroupRuleModel> rules) {
             this.rules = rules;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "rules")
+        @JsonProperty(value = "rules")
         public List<SecurityGroupRuleModel> getRules() {
             return this.rules;
         }
@@ -130,12 +131,12 @@ public class SecurityGroupService {
         // Required
         private String securityGroup;
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group")
+        @JsonProperty(value = "security_group")
         public void setSecurityGroup(String securityGroup) {
             this.securityGroup = securityGroup;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group")
+        @JsonProperty(value = "security_group")
         public String getSecurityGroup() {
             return this.securityGroup;
         }
@@ -158,39 +159,40 @@ public class SecurityGroupService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class AddSecurityGroupRulesOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
 
         private List<String> securityGroupRules;
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group_rules")
+        @JsonProperty(value = "security_group_rules")
         public void setSecurityGroupRules(List<String> securityGroupRules) {
             this.securityGroupRules = securityGroupRules;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group_rules")
+        @JsonProperty(value = "security_group_rules")
         public List<String> getSecurityGroupRules() {
             return this.securityGroupRules;
         }
@@ -214,7 +216,7 @@ public class SecurityGroupService {
         context.put("APIName", "ApplySecurityGroup");
         context.put("ServiceName", "ApplySecurityGroup");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ApplySecurityGroup");
+        context.put("RequestURI", "/iaas/ApplySecurityGroup");
 
         input.setAction("ApplySecurityGroup");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -248,7 +250,7 @@ public class SecurityGroupService {
         context.put("APIName", "ApplySecurityGroup");
         context.put("ServiceName", "ApplySecurityGroup");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ApplySecurityGroup");
+        context.put("RequestURI", "/iaas/ApplySecurityGroup");
 
         input.setAction("ApplySecurityGroup");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -267,12 +269,12 @@ public class SecurityGroupService {
     public static class ApplySecurityGroupInput extends IaasParamBody {
         private List<String> instances;
 
-        @ParamAnnotation(paramType = "query", paramName = "instances")
+        @JsonProperty(value = "instances")
         public void setInstances(List<String> instances) {
             this.instances = instances;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "instances")
+        @JsonProperty(value = "instances")
         public List<String> getInstances() {
             return this.instances;
         }
@@ -280,12 +282,12 @@ public class SecurityGroupService {
         // Required
         private String securityGroup;
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group")
+        @JsonProperty(value = "security_group")
         public void setSecurityGroup(String securityGroup) {
             this.securityGroup = securityGroup;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group")
+        @JsonProperty(value = "security_group")
         public String getSecurityGroup() {
             return this.securityGroup;
         }
@@ -298,39 +300,40 @@ public class SecurityGroupService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class ApplySecurityGroupOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -354,7 +357,7 @@ public class SecurityGroupService {
         context.put("APIName", "CreateSecurityGroup");
         context.put("ServiceName", "CreateSecurityGroup");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/CreateSecurityGroup");
+        context.put("RequestURI", "/iaas/CreateSecurityGroup");
 
         input.setAction("CreateSecurityGroup");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -388,7 +391,7 @@ public class SecurityGroupService {
         context.put("APIName", "CreateSecurityGroup");
         context.put("ServiceName", "CreateSecurityGroup");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/CreateSecurityGroup");
+        context.put("RequestURI", "/iaas/CreateSecurityGroup");
 
         input.setAction("CreateSecurityGroup");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -407,12 +410,12 @@ public class SecurityGroupService {
     public static class CreateSecurityGroupInput extends IaasParamBody {
         private String securityGroupName;
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group_name")
+        @JsonProperty(value = "security_group_name")
         public void setSecurityGroupName(String securityGroupName) {
             this.securityGroupName = securityGroupName;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group_name")
+        @JsonProperty(value = "security_group_name")
         public String getSecurityGroupName() {
             return this.securityGroupName;
         }
@@ -422,39 +425,40 @@ public class SecurityGroupService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class CreateSecurityGroupOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
 
         private String securityGroupID;
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group_id")
+        @JsonProperty(value = "security_group_id")
         public void setSecurityGroupID(String securityGroupID) {
             this.securityGroupID = securityGroupID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group_id")
+        @JsonProperty(value = "security_group_id")
         public String getSecurityGroupID() {
             return this.securityGroupID;
         }
@@ -478,7 +482,7 @@ public class SecurityGroupService {
         context.put("APIName", "CreateSecurityGroupIPSet");
         context.put("ServiceName", "CreateSecurityGroupIPSet");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/CreateSecurityGroupIPSet");
+        context.put("RequestURI", "/iaas/CreateSecurityGroupIPSet");
 
         input.setAction("CreateSecurityGroupIPSet");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -512,7 +516,7 @@ public class SecurityGroupService {
         context.put("APIName", "CreateSecurityGroupIPSet");
         context.put("ServiceName", "CreateSecurityGroupIPSet");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/CreateSecurityGroupIPSet");
+        context.put("RequestURI", "/iaas/CreateSecurityGroupIPSet");
 
         input.setAction("CreateSecurityGroupIPSet");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -533,24 +537,24 @@ public class SecurityGroupService {
         // Required
         private Integer iPSetType;
 
-        @ParamAnnotation(paramType = "query", paramName = "ipset_type")
+        @JsonProperty(value = "ipset_type")
         public void setIPSetType(Integer iPSetType) {
             this.iPSetType = iPSetType;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ipset_type")
+        @JsonProperty(value = "ipset_type")
         public Integer getIPSetType() {
             return this.iPSetType;
         }
 
         private String securityGroupIPSetName;
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group_ipset_name")
+        @JsonProperty(value = "security_group_ipset_name")
         public void setSecurityGroupIPSetName(String securityGroupIPSetName) {
             this.securityGroupIPSetName = securityGroupIPSetName;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group_ipset_name")
+        @JsonProperty(value = "security_group_ipset_name")
         public String getSecurityGroupIPSetName() {
             return this.securityGroupIPSetName;
         }
@@ -558,12 +562,12 @@ public class SecurityGroupService {
         // Required
         private String val;
 
-        @ParamAnnotation(paramType = "query", paramName = "val")
+        @JsonProperty(value = "val")
         public void setVal(String val) {
             this.val = val;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "val")
+        @JsonProperty(value = "val")
         public String getVal() {
             return this.val;
         }
@@ -594,39 +598,40 @@ public class SecurityGroupService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class CreateSecurityGroupIPSetOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
 
         private String securityGroupIPSetID;
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group_ipset_id")
+        @JsonProperty(value = "security_group_ipset_id")
         public void setSecurityGroupIPSetID(String securityGroupIPSetID) {
             this.securityGroupIPSetID = securityGroupIPSetID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group_ipset_id")
+        @JsonProperty(value = "security_group_ipset_id")
         public String getSecurityGroupIPSetID() {
             return this.securityGroupIPSetID;
         }
@@ -650,7 +655,7 @@ public class SecurityGroupService {
         context.put("APIName", "CreateSecurityGroupSnapshot");
         context.put("ServiceName", "CreateSecurityGroupSnapshot");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/CreateSecurityGroupSnapshot");
+        context.put("RequestURI", "/iaas/CreateSecurityGroupSnapshot");
 
         input.setAction("CreateSecurityGroupSnapshot");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -684,7 +689,7 @@ public class SecurityGroupService {
         context.put("APIName", "CreateSecurityGroupSnapshot");
         context.put("ServiceName", "CreateSecurityGroupSnapshot");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/CreateSecurityGroupSnapshot");
+        context.put("RequestURI", "/iaas/CreateSecurityGroupSnapshot");
 
         input.setAction("CreateSecurityGroupSnapshot");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -703,12 +708,12 @@ public class SecurityGroupService {
     public static class CreateSecurityGroupSnapshotInput extends IaasParamBody {
         private String name;
 
-        @ParamAnnotation(paramType = "query", paramName = "name")
+        @JsonProperty(value = "name")
         public void setName(String name) {
             this.name = name;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "name")
+        @JsonProperty(value = "name")
         public String getName() {
             return this.name;
         }
@@ -716,12 +721,12 @@ public class SecurityGroupService {
         // Required
         private String securityGroup;
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group")
+        @JsonProperty(value = "security_group")
         public void setSecurityGroup(String securityGroup) {
             this.securityGroup = securityGroup;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group")
+        @JsonProperty(value = "security_group")
         public String getSecurityGroup() {
             return this.securityGroup;
         }
@@ -734,51 +739,52 @@ public class SecurityGroupService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class CreateSecurityGroupSnapshotOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
 
         private String securityGroupID;
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group_id")
+        @JsonProperty(value = "security_group_id")
         public void setSecurityGroupID(String securityGroupID) {
             this.securityGroupID = securityGroupID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group_id")
+        @JsonProperty(value = "security_group_id")
         public String getSecurityGroupID() {
             return this.securityGroupID;
         }
 
         private String securityGroupSnapshotID;
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group_snapshot_id")
+        @JsonProperty(value = "security_group_snapshot_id")
         public void setSecurityGroupSnapshotID(String securityGroupSnapshotID) {
             this.securityGroupSnapshotID = securityGroupSnapshotID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group_snapshot_id")
+        @JsonProperty(value = "security_group_snapshot_id")
         public String getSecurityGroupSnapshotID() {
             return this.securityGroupSnapshotID;
         }
@@ -802,7 +808,7 @@ public class SecurityGroupService {
         context.put("APIName", "DeleteSecurityGroupIPSets");
         context.put("ServiceName", "DeleteSecurityGroupIPSets");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DeleteSecurityGroupIPSets");
+        context.put("RequestURI", "/iaas/DeleteSecurityGroupIPSets");
 
         input.setAction("DeleteSecurityGroupIPSets");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -836,7 +842,7 @@ public class SecurityGroupService {
         context.put("APIName", "DeleteSecurityGroupIPSets");
         context.put("ServiceName", "DeleteSecurityGroupIPSets");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DeleteSecurityGroupIPSets");
+        context.put("RequestURI", "/iaas/DeleteSecurityGroupIPSets");
 
         input.setAction("DeleteSecurityGroupIPSets");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -856,12 +862,12 @@ public class SecurityGroupService {
         // Required
         private List<String> securityGroupIPSets;
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group_ipsets")
+        @JsonProperty(value = "security_group_ipsets")
         public void setSecurityGroupIPSets(List<String> securityGroupIPSets) {
             this.securityGroupIPSets = securityGroupIPSets;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group_ipsets")
+        @JsonProperty(value = "security_group_ipsets")
         public List<String> getSecurityGroupIPSets() {
             return this.securityGroupIPSets;
         }
@@ -871,39 +877,40 @@ public class SecurityGroupService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class DeleteSecurityGroupIPSetsOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
 
         private List<String> securityGroupIPSets;
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group_ipsets")
+        @JsonProperty(value = "security_group_ipsets")
         public void setSecurityGroupIPSets(List<String> securityGroupIPSets) {
             this.securityGroupIPSets = securityGroupIPSets;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group_ipsets")
+        @JsonProperty(value = "security_group_ipsets")
         public List<String> getSecurityGroupIPSets() {
             return this.securityGroupIPSets;
         }
@@ -927,7 +934,7 @@ public class SecurityGroupService {
         context.put("APIName", "DeleteSecurityGroupRules");
         context.put("ServiceName", "DeleteSecurityGroupRules");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DeleteSecurityGroupRules");
+        context.put("RequestURI", "/iaas/DeleteSecurityGroupRules");
 
         input.setAction("DeleteSecurityGroupRules");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -961,7 +968,7 @@ public class SecurityGroupService {
         context.put("APIName", "DeleteSecurityGroupRules");
         context.put("ServiceName", "DeleteSecurityGroupRules");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DeleteSecurityGroupRules");
+        context.put("RequestURI", "/iaas/DeleteSecurityGroupRules");
 
         input.setAction("DeleteSecurityGroupRules");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -981,12 +988,12 @@ public class SecurityGroupService {
         // Required
         private List<String> securityGroupRules;
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group_rules")
+        @JsonProperty(value = "security_group_rules")
         public void setSecurityGroupRules(List<String> securityGroupRules) {
             this.securityGroupRules = securityGroupRules;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group_rules")
+        @JsonProperty(value = "security_group_rules")
         public List<String> getSecurityGroupRules() {
             return this.securityGroupRules;
         }
@@ -996,39 +1003,40 @@ public class SecurityGroupService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class DeleteSecurityGroupRulesOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
 
         private List<String> securityGroupRules;
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group_rules")
+        @JsonProperty(value = "security_group_rules")
         public void setSecurityGroupRules(List<String> securityGroupRules) {
             this.securityGroupRules = securityGroupRules;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group_rules")
+        @JsonProperty(value = "security_group_rules")
         public List<String> getSecurityGroupRules() {
             return this.securityGroupRules;
         }
@@ -1052,7 +1060,7 @@ public class SecurityGroupService {
         context.put("APIName", "DeleteSecurityGroupSnapshots");
         context.put("ServiceName", "DeleteSecurityGroupSnapshots");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DeleteSecurityGroupSnapshots");
+        context.put("RequestURI", "/iaas/DeleteSecurityGroupSnapshots");
 
         input.setAction("DeleteSecurityGroupSnapshots");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1086,7 +1094,7 @@ public class SecurityGroupService {
         context.put("APIName", "DeleteSecurityGroupSnapshots");
         context.put("ServiceName", "DeleteSecurityGroupSnapshots");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DeleteSecurityGroupSnapshots");
+        context.put("RequestURI", "/iaas/DeleteSecurityGroupSnapshots");
 
         input.setAction("DeleteSecurityGroupSnapshots");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1106,12 +1114,12 @@ public class SecurityGroupService {
         // Required
         private List<String> securityGroupSnapshots;
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group_snapshots")
+        @JsonProperty(value = "security_group_snapshots")
         public void setSecurityGroupSnapshots(List<String> securityGroupSnapshots) {
             this.securityGroupSnapshots = securityGroupSnapshots;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group_snapshots")
+        @JsonProperty(value = "security_group_snapshots")
         public List<String> getSecurityGroupSnapshots() {
             return this.securityGroupSnapshots;
         }
@@ -1121,39 +1129,40 @@ public class SecurityGroupService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class DeleteSecurityGroupSnapshotsOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
 
         private List<String> securityGroupSnapshots;
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group_snapshots")
+        @JsonProperty(value = "security_group_snapshots")
         public void setSecurityGroupSnapshots(List<String> securityGroupSnapshots) {
             this.securityGroupSnapshots = securityGroupSnapshots;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group_snapshots")
+        @JsonProperty(value = "security_group_snapshots")
         public List<String> getSecurityGroupSnapshots() {
             return this.securityGroupSnapshots;
         }
@@ -1177,7 +1186,7 @@ public class SecurityGroupService {
         context.put("APIName", "DeleteSecurityGroups");
         context.put("ServiceName", "DeleteSecurityGroups");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DeleteSecurityGroups");
+        context.put("RequestURI", "/iaas/DeleteSecurityGroups");
 
         input.setAction("DeleteSecurityGroups");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1211,7 +1220,7 @@ public class SecurityGroupService {
         context.put("APIName", "DeleteSecurityGroups");
         context.put("ServiceName", "DeleteSecurityGroups");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DeleteSecurityGroups");
+        context.put("RequestURI", "/iaas/DeleteSecurityGroups");
 
         input.setAction("DeleteSecurityGroups");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1231,12 +1240,12 @@ public class SecurityGroupService {
         // Required
         private List<String> securityGroups;
 
-        @ParamAnnotation(paramType = "query", paramName = "security_groups")
+        @JsonProperty(value = "security_groups")
         public void setSecurityGroups(List<String> securityGroups) {
             this.securityGroups = securityGroups;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "security_groups")
+        @JsonProperty(value = "security_groups")
         public List<String> getSecurityGroups() {
             return this.securityGroups;
         }
@@ -1246,39 +1255,40 @@ public class SecurityGroupService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class DeleteSecurityGroupsOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
 
         private List<String> securityGroups;
 
-        @ParamAnnotation(paramType = "query", paramName = "security_groups")
+        @JsonProperty(value = "security_groups")
         public void setSecurityGroups(List<String> securityGroups) {
             this.securityGroups = securityGroups;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "security_groups")
+        @JsonProperty(value = "security_groups")
         public List<String> getSecurityGroups() {
             return this.securityGroups;
         }
@@ -1302,7 +1312,7 @@ public class SecurityGroupService {
         context.put("APIName", "DescribeSecurityGroupIPSets");
         context.put("ServiceName", "DescribeSecurityGroupIPSets");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeSecurityGroupIPSets");
+        context.put("RequestURI", "/iaas/DescribeSecurityGroupIPSets");
 
         input.setAction("DescribeSecurityGroupIPSets");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1336,7 +1346,7 @@ public class SecurityGroupService {
         context.put("APIName", "DescribeSecurityGroupIPSets");
         context.put("ServiceName", "DescribeSecurityGroupIPSets");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeSecurityGroupIPSets");
+        context.put("RequestURI", "/iaas/DescribeSecurityGroupIPSets");
 
         input.setAction("DescribeSecurityGroupIPSets");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1356,84 +1366,84 @@ public class SecurityGroupService {
     	// IPSetType's available values: 0, 1
         private Integer iPSetType;
 
-        @ParamAnnotation(paramType = "query", paramName = "ipset_type")
+        @JsonProperty(value = "ipset_type")
         public void setIPSetType(Integer iPSetType) {
             this.iPSetType = iPSetType;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ipset_type")
+        @JsonProperty(value = "ipset_type")
         public Integer getIPSetType() {
             return this.iPSetType;
         }
 
         private Integer limit;
 
-        @ParamAnnotation(paramType = "query", paramName = "limit")
+        @JsonProperty(value = "limit")
         public void setLimit(Integer limit) {
             this.limit = limit;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "limit")
+        @JsonProperty(value = "limit")
         public Integer getLimit() {
             return this.limit;
         }
 
         private Integer offset;
 
-        @ParamAnnotation(paramType = "query", paramName = "offset")
+        @JsonProperty(value = "offset")
         public void setOffset(Integer offset) {
             this.offset = offset;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "offset")
+        @JsonProperty(value = "offset")
         public Integer getOffset() {
             return this.offset;
         }
 
         private String securityGroupIPSetName;
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group_ipset_name")
+        @JsonProperty(value = "security_group_ipset_name")
         public void setSecurityGroupIPSetName(String securityGroupIPSetName) {
             this.securityGroupIPSetName = securityGroupIPSetName;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group_ipset_name")
+        @JsonProperty(value = "security_group_ipset_name")
         public String getSecurityGroupIPSetName() {
             return this.securityGroupIPSetName;
         }
 
         private List<String> securityGroupIPSets;
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group_ipsets")
+        @JsonProperty(value = "security_group_ipsets")
         public void setSecurityGroupIPSets(List<String> securityGroupIPSets) {
             this.securityGroupIPSets = securityGroupIPSets;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group_ipsets")
+        @JsonProperty(value = "security_group_ipsets")
         public List<String> getSecurityGroupIPSets() {
             return this.securityGroupIPSets;
         }
 
         private List<String> tags;
 
-        @ParamAnnotation(paramType = "query", paramName = "tags")
+        @JsonProperty(value = "tags")
         public void setTags(List<String> tags) {
             this.tags = tags;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "tags")
+        @JsonProperty(value = "tags")
         public List<String> getTags() {
             return this.tags;
         }
 
         private Integer verbose;
 
-        @ParamAnnotation(paramType = "query", paramName = "verbose")
+        @JsonProperty(value = "verbose")
         public void setVerbose(Integer verbose) {
             this.verbose = verbose;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "verbose")
+        @JsonProperty(value = "verbose")
         public Integer getVerbose() {
             return this.verbose;
         }
@@ -1458,51 +1468,52 @@ public class SecurityGroupService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class DescribeSecurityGroupIPSetsOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
 
         private List<SecurityGroupIPSetModel> securityGroupIPSetSet;
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group_ipset_set")
+        @JsonProperty(value = "security_group_ipset_set")
         public void setSecurityGroupIPSetSet(List<SecurityGroupIPSetModel> securityGroupIPSetSet) {
             this.securityGroupIPSetSet = securityGroupIPSetSet;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group_ipset_set")
+        @JsonProperty(value = "security_group_ipset_set")
         public List<SecurityGroupIPSetModel> getSecurityGroupIPSetSet() {
             return this.securityGroupIPSetSet;
         }
 
         private Integer totalCount;
 
-        @ParamAnnotation(paramType = "query", paramName = "total_count")
+        @JsonProperty(value = "total_count")
         public void setTotalCount(Integer totalCount) {
             this.totalCount = totalCount;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "total_count")
+        @JsonProperty(value = "total_count")
         public Integer getTotalCount() {
             return this.totalCount;
         }
@@ -1526,7 +1537,7 @@ public class SecurityGroupService {
         context.put("APIName", "DescribeSecurityGroupRules");
         context.put("ServiceName", "DescribeSecurityGroupRules");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeSecurityGroupRules");
+        context.put("RequestURI", "/iaas/DescribeSecurityGroupRules");
 
         input.setAction("DescribeSecurityGroupRules");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1560,7 +1571,7 @@ public class SecurityGroupService {
         context.put("APIName", "DescribeSecurityGroupRules");
         context.put("ServiceName", "DescribeSecurityGroupRules");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeSecurityGroupRules");
+        context.put("RequestURI", "/iaas/DescribeSecurityGroupRules");
 
         input.setAction("DescribeSecurityGroupRules");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1580,60 +1591,60 @@ public class SecurityGroupService {
     	// Direction's available values: 0, 1
         private Integer direction;
 
-        @ParamAnnotation(paramType = "query", paramName = "direction")
+        @JsonProperty(value = "direction")
         public void setDirection(Integer direction) {
             this.direction = direction;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "direction")
+        @JsonProperty(value = "direction")
         public Integer getDirection() {
             return this.direction;
         }
 
         private Integer limit;
 
-        @ParamAnnotation(paramType = "query", paramName = "limit")
+        @JsonProperty(value = "limit")
         public void setLimit(Integer limit) {
             this.limit = limit;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "limit")
+        @JsonProperty(value = "limit")
         public Integer getLimit() {
             return this.limit;
         }
 
         private Integer offset;
 
-        @ParamAnnotation(paramType = "query", paramName = "offset")
+        @JsonProperty(value = "offset")
         public void setOffset(Integer offset) {
             this.offset = offset;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "offset")
+        @JsonProperty(value = "offset")
         public Integer getOffset() {
             return this.offset;
         }
 
         private String securityGroup;
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group")
+        @JsonProperty(value = "security_group")
         public void setSecurityGroup(String securityGroup) {
             this.securityGroup = securityGroup;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group")
+        @JsonProperty(value = "security_group")
         public String getSecurityGroup() {
             return this.securityGroup;
         }
 
         private List<String> securityGroupRules;
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group_rules")
+        @JsonProperty(value = "security_group_rules")
         public void setSecurityGroupRules(List<String> securityGroupRules) {
             this.securityGroupRules = securityGroupRules;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group_rules")
+        @JsonProperty(value = "security_group_rules")
         public List<String> getSecurityGroupRules() {
             return this.securityGroupRules;
         }
@@ -1658,51 +1669,52 @@ public class SecurityGroupService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class DescribeSecurityGroupRulesOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
 
         private List<SecurityGroupRuleModel> securityGroupRuleSet;
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group_rule_set")
+        @JsonProperty(value = "security_group_rule_set")
         public void setSecurityGroupRuleSet(List<SecurityGroupRuleModel> securityGroupRuleSet) {
             this.securityGroupRuleSet = securityGroupRuleSet;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group_rule_set")
+        @JsonProperty(value = "security_group_rule_set")
         public List<SecurityGroupRuleModel> getSecurityGroupRuleSet() {
             return this.securityGroupRuleSet;
         }
 
         private Integer totalCount;
 
-        @ParamAnnotation(paramType = "query", paramName = "total_count")
+        @JsonProperty(value = "total_count")
         public void setTotalCount(Integer totalCount) {
             this.totalCount = totalCount;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "total_count")
+        @JsonProperty(value = "total_count")
         public Integer getTotalCount() {
             return this.totalCount;
         }
@@ -1726,7 +1738,7 @@ public class SecurityGroupService {
         context.put("APIName", "DescribeSecurityGroupSnapshots");
         context.put("ServiceName", "DescribeSecurityGroupSnapshots");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeSecurityGroupSnapshots");
+        context.put("RequestURI", "/iaas/DescribeSecurityGroupSnapshots");
 
         input.setAction("DescribeSecurityGroupSnapshots");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1760,7 +1772,7 @@ public class SecurityGroupService {
         context.put("APIName", "DescribeSecurityGroupSnapshots");
         context.put("ServiceName", "DescribeSecurityGroupSnapshots");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeSecurityGroupSnapshots");
+        context.put("RequestURI", "/iaas/DescribeSecurityGroupSnapshots");
 
         input.setAction("DescribeSecurityGroupSnapshots");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1779,36 +1791,36 @@ public class SecurityGroupService {
     public static class DescribeSecurityGroupSnapshotsInput extends IaasParamBody {
         private Integer limit;
 
-        @ParamAnnotation(paramType = "query", paramName = "limit")
+        @JsonProperty(value = "limit")
         public void setLimit(Integer limit) {
             this.limit = limit;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "limit")
+        @JsonProperty(value = "limit")
         public Integer getLimit() {
             return this.limit;
         }
 
         private Integer offset;
 
-        @ParamAnnotation(paramType = "query", paramName = "offset")
+        @JsonProperty(value = "offset")
         public void setOffset(Integer offset) {
             this.offset = offset;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "offset")
+        @JsonProperty(value = "offset")
         public Integer getOffset() {
             return this.offset;
         }
 
         private Integer reverse;
 
-        @ParamAnnotation(paramType = "query", paramName = "reverse")
+        @JsonProperty(value = "reverse")
         public void setReverse(Integer reverse) {
             this.reverse = reverse;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "reverse")
+        @JsonProperty(value = "reverse")
         public Integer getReverse() {
             return this.reverse;
         }
@@ -1816,24 +1828,24 @@ public class SecurityGroupService {
         // Required
         private String securityGroup;
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group")
+        @JsonProperty(value = "security_group")
         public void setSecurityGroup(String securityGroup) {
             this.securityGroup = securityGroup;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group")
+        @JsonProperty(value = "security_group")
         public String getSecurityGroup() {
             return this.securityGroup;
         }
 
         private List<String> securityGroupSnapshots;
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group_snapshots")
+        @JsonProperty(value = "security_group_snapshots")
         public void setSecurityGroupSnapshots(List<String> securityGroupSnapshots) {
             this.securityGroupSnapshots = securityGroupSnapshots;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group_snapshots")
+        @JsonProperty(value = "security_group_snapshots")
         public List<String> getSecurityGroupSnapshots() {
             return this.securityGroupSnapshots;
         }
@@ -1846,51 +1858,52 @@ public class SecurityGroupService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class DescribeSecurityGroupSnapshotsOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
 
         private List<SecurityGroupSnapshotModel> securityGroupSnapshotSet;
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group_snapshot_set")
+        @JsonProperty(value = "security_group_snapshot_set")
         public void setSecurityGroupSnapshotSet(List<SecurityGroupSnapshotModel> securityGroupSnapshotSet) {
             this.securityGroupSnapshotSet = securityGroupSnapshotSet;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group_snapshot_set")
+        @JsonProperty(value = "security_group_snapshot_set")
         public List<SecurityGroupSnapshotModel> getSecurityGroupSnapshotSet() {
             return this.securityGroupSnapshotSet;
         }
 
         private Integer totalCount;
 
-        @ParamAnnotation(paramType = "query", paramName = "total_count")
+        @JsonProperty(value = "total_count")
         public void setTotalCount(Integer totalCount) {
             this.totalCount = totalCount;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "total_count")
+        @JsonProperty(value = "total_count")
         public Integer getTotalCount() {
             return this.totalCount;
         }
@@ -1914,7 +1927,7 @@ public class SecurityGroupService {
         context.put("APIName", "DescribeSecurityGroups");
         context.put("ServiceName", "DescribeSecurityGroups");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeSecurityGroups");
+        context.put("RequestURI", "/iaas/DescribeSecurityGroups");
 
         input.setAction("DescribeSecurityGroups");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1948,7 +1961,7 @@ public class SecurityGroupService {
         context.put("APIName", "DescribeSecurityGroups");
         context.put("ServiceName", "DescribeSecurityGroups");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeSecurityGroups");
+        context.put("RequestURI", "/iaas/DescribeSecurityGroups");
 
         input.setAction("DescribeSecurityGroups");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1967,72 +1980,72 @@ public class SecurityGroupService {
     public static class DescribeSecurityGroupsInput extends IaasParamBody {
         private Integer limit;
 
-        @ParamAnnotation(paramType = "query", paramName = "limit")
+        @JsonProperty(value = "limit")
         public void setLimit(Integer limit) {
             this.limit = limit;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "limit")
+        @JsonProperty(value = "limit")
         public Integer getLimit() {
             return this.limit;
         }
 
         private Integer offset;
 
-        @ParamAnnotation(paramType = "query", paramName = "offset")
+        @JsonProperty(value = "offset")
         public void setOffset(Integer offset) {
             this.offset = offset;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "offset")
+        @JsonProperty(value = "offset")
         public Integer getOffset() {
             return this.offset;
         }
 
         private String searchWord;
 
-        @ParamAnnotation(paramType = "query", paramName = "search_word")
+        @JsonProperty(value = "search_word")
         public void setSearchWord(String searchWord) {
             this.searchWord = searchWord;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "search_word")
+        @JsonProperty(value = "search_word")
         public String getSearchWord() {
             return this.searchWord;
         }
 
         private List<String> securityGroups;
 
-        @ParamAnnotation(paramType = "query", paramName = "security_groups")
+        @JsonProperty(value = "security_groups")
         public void setSecurityGroups(List<String> securityGroups) {
             this.securityGroups = securityGroups;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "security_groups")
+        @JsonProperty(value = "security_groups")
         public List<String> getSecurityGroups() {
             return this.securityGroups;
         }
 
         private List<String> tags;
 
-        @ParamAnnotation(paramType = "query", paramName = "tags")
+        @JsonProperty(value = "tags")
         public void setTags(List<String> tags) {
             this.tags = tags;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "tags")
+        @JsonProperty(value = "tags")
         public List<String> getTags() {
             return this.tags;
         }
 
         private Integer verbose;
 
-        @ParamAnnotation(paramType = "query", paramName = "verbose")
+        @JsonProperty(value = "verbose")
         public void setVerbose(Integer verbose) {
             this.verbose = verbose;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "verbose")
+        @JsonProperty(value = "verbose")
         public Integer getVerbose() {
             return this.verbose;
         }
@@ -2042,51 +2055,52 @@ public class SecurityGroupService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class DescribeSecurityGroupsOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
 
         private List<SecurityGroupModel> securityGroupSet;
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group_set")
+        @JsonProperty(value = "security_group_set")
         public void setSecurityGroupSet(List<SecurityGroupModel> securityGroupSet) {
             this.securityGroupSet = securityGroupSet;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group_set")
+        @JsonProperty(value = "security_group_set")
         public List<SecurityGroupModel> getSecurityGroupSet() {
             return this.securityGroupSet;
         }
 
         private Integer totalCount;
 
-        @ParamAnnotation(paramType = "query", paramName = "total_count")
+        @JsonProperty(value = "total_count")
         public void setTotalCount(Integer totalCount) {
             this.totalCount = totalCount;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "total_count")
+        @JsonProperty(value = "total_count")
         public Integer getTotalCount() {
             return this.totalCount;
         }
@@ -2110,7 +2124,7 @@ public class SecurityGroupService {
         context.put("APIName", "ModifySecurityGroupAttributes");
         context.put("ServiceName", "ModifySecurityGroupAttributes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ModifySecurityGroupAttributes");
+        context.put("RequestURI", "/iaas/ModifySecurityGroupAttributes");
 
         input.setAction("ModifySecurityGroupAttributes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2144,7 +2158,7 @@ public class SecurityGroupService {
         context.put("APIName", "ModifySecurityGroupAttributes");
         context.put("ServiceName", "ModifySecurityGroupAttributes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ModifySecurityGroupAttributes");
+        context.put("RequestURI", "/iaas/ModifySecurityGroupAttributes");
 
         input.setAction("ModifySecurityGroupAttributes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2163,12 +2177,12 @@ public class SecurityGroupService {
     public static class ModifySecurityGroupAttributesInput extends IaasParamBody {
         private String description;
 
-        @ParamAnnotation(paramType = "query", paramName = "description")
+        @JsonProperty(value = "description")
         public void setDescription(String description) {
             this.description = description;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "description")
+        @JsonProperty(value = "description")
         public String getDescription() {
             return this.description;
         }
@@ -2176,24 +2190,24 @@ public class SecurityGroupService {
         // Required
         private String securityGroup;
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group")
+        @JsonProperty(value = "security_group")
         public void setSecurityGroup(String securityGroup) {
             this.securityGroup = securityGroup;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group")
+        @JsonProperty(value = "security_group")
         public String getSecurityGroup() {
             return this.securityGroup;
         }
 
         private String securityGroupName;
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group_name")
+        @JsonProperty(value = "security_group_name")
         public void setSecurityGroupName(String securityGroupName) {
             this.securityGroupName = securityGroupName;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group_name")
+        @JsonProperty(value = "security_group_name")
         public String getSecurityGroupName() {
             return this.securityGroupName;
         }
@@ -2206,39 +2220,40 @@ public class SecurityGroupService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class ModifySecurityGroupAttributesOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
 
         private String securityGroupID;
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group_id")
+        @JsonProperty(value = "security_group_id")
         public void setSecurityGroupID(String securityGroupID) {
             this.securityGroupID = securityGroupID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group_id")
+        @JsonProperty(value = "security_group_id")
         public String getSecurityGroupID() {
             return this.securityGroupID;
         }
@@ -2262,7 +2277,7 @@ public class SecurityGroupService {
         context.put("APIName", "ModifySecurityGroupIPSetAttributes");
         context.put("ServiceName", "ModifySecurityGroupIPSetAttributes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ModifySecurityGroupIPSetAttributes");
+        context.put("RequestURI", "/iaas/ModifySecurityGroupIPSetAttributes");
 
         input.setAction("ModifySecurityGroupIPSetAttributes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2296,7 +2311,7 @@ public class SecurityGroupService {
         context.put("APIName", "ModifySecurityGroupIPSetAttributes");
         context.put("ServiceName", "ModifySecurityGroupIPSetAttributes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ModifySecurityGroupIPSetAttributes");
+        context.put("RequestURI", "/iaas/ModifySecurityGroupIPSetAttributes");
 
         input.setAction("ModifySecurityGroupIPSetAttributes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2315,12 +2330,12 @@ public class SecurityGroupService {
     public static class ModifySecurityGroupIPSetAttributesInput extends IaasParamBody {
         private String description;
 
-        @ParamAnnotation(paramType = "query", paramName = "description")
+        @JsonProperty(value = "description")
         public void setDescription(String description) {
             this.description = description;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "description")
+        @JsonProperty(value = "description")
         public String getDescription() {
             return this.description;
         }
@@ -2328,36 +2343,36 @@ public class SecurityGroupService {
         // Required
         private String securityGroupIPSet;
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group_ipset")
+        @JsonProperty(value = "security_group_ipset")
         public void setSecurityGroupIPSet(String securityGroupIPSet) {
             this.securityGroupIPSet = securityGroupIPSet;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group_ipset")
+        @JsonProperty(value = "security_group_ipset")
         public String getSecurityGroupIPSet() {
             return this.securityGroupIPSet;
         }
 
         private String securityGroupIPSetName;
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group_ipset_name")
+        @JsonProperty(value = "security_group_ipset_name")
         public void setSecurityGroupIPSetName(String securityGroupIPSetName) {
             this.securityGroupIPSetName = securityGroupIPSetName;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group_ipset_name")
+        @JsonProperty(value = "security_group_ipset_name")
         public String getSecurityGroupIPSetName() {
             return this.securityGroupIPSetName;
         }
 
         private String val;
 
-        @ParamAnnotation(paramType = "query", paramName = "val")
+        @JsonProperty(value = "val")
         public void setVal(String val) {
             this.val = val;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "val")
+        @JsonProperty(value = "val")
         public String getVal() {
             return this.val;
         }
@@ -2370,39 +2385,40 @@ public class SecurityGroupService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class ModifySecurityGroupIPSetAttributesOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
 
         private String securityGroupIPSetID;
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group_ipset_id")
+        @JsonProperty(value = "security_group_ipset_id")
         public void setSecurityGroupIPSetID(String securityGroupIPSetID) {
             this.securityGroupIPSetID = securityGroupIPSetID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group_ipset_id")
+        @JsonProperty(value = "security_group_ipset_id")
         public String getSecurityGroupIPSetID() {
             return this.securityGroupIPSetID;
         }
@@ -2426,7 +2442,7 @@ public class SecurityGroupService {
         context.put("APIName", "ModifySecurityGroupRuleAttributes");
         context.put("ServiceName", "ModifySecurityGroupRuleAttributes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ModifySecurityGroupRuleAttributes");
+        context.put("RequestURI", "/iaas/ModifySecurityGroupRuleAttributes");
 
         input.setAction("ModifySecurityGroupRuleAttributes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2460,7 +2476,7 @@ public class SecurityGroupService {
         context.put("APIName", "ModifySecurityGroupRuleAttributes");
         context.put("ServiceName", "ModifySecurityGroupRuleAttributes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ModifySecurityGroupRuleAttributes");
+        context.put("RequestURI", "/iaas/ModifySecurityGroupRuleAttributes");
 
         input.setAction("ModifySecurityGroupRuleAttributes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2480,36 +2496,36 @@ public class SecurityGroupService {
     	// Direction's available values: 0, 1
         private Integer direction;
 
-        @ParamAnnotation(paramType = "query", paramName = "direction")
+        @JsonProperty(value = "direction")
         public void setDirection(Integer direction) {
             this.direction = direction;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "direction")
+        @JsonProperty(value = "direction")
         public Integer getDirection() {
             return this.direction;
         }
 
         private Integer priority;
 
-        @ParamAnnotation(paramType = "query", paramName = "priority")
+        @JsonProperty(value = "priority")
         public void setPriority(Integer priority) {
             this.priority = priority;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "priority")
+        @JsonProperty(value = "priority")
         public Integer getPriority() {
             return this.priority;
         }
 
         private String protocol;
 
-        @ParamAnnotation(paramType = "query", paramName = "protocol")
+        @JsonProperty(value = "protocol")
         public void setProtocol(String protocol) {
             this.protocol = protocol;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "protocol")
+        @JsonProperty(value = "protocol")
         public String getProtocol() {
             return this.protocol;
         }
@@ -2517,24 +2533,24 @@ public class SecurityGroupService {
     	// RuleAction's available values: accept, drop
         private String ruleAction;
 
-        @ParamAnnotation(paramType = "query", paramName = "rule_action")
+        @JsonProperty(value = "rule_action")
         public void setRuleAction(String ruleAction) {
             this.ruleAction = ruleAction;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "rule_action")
+        @JsonProperty(value = "rule_action")
         public String getRuleAction() {
             return this.ruleAction;
         }
 
         private String securityGroup;
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group")
+        @JsonProperty(value = "security_group")
         public void setSecurityGroup(String securityGroup) {
             this.securityGroup = securityGroup;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group")
+        @JsonProperty(value = "security_group")
         public String getSecurityGroup() {
             return this.securityGroup;
         }
@@ -2542,60 +2558,60 @@ public class SecurityGroupService {
         // Required
         private String securityGroupRule;
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group_rule")
+        @JsonProperty(value = "security_group_rule")
         public void setSecurityGroupRule(String securityGroupRule) {
             this.securityGroupRule = securityGroupRule;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group_rule")
+        @JsonProperty(value = "security_group_rule")
         public String getSecurityGroupRule() {
             return this.securityGroupRule;
         }
 
         private String securityGroupRuleName;
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group_rule_name")
+        @JsonProperty(value = "security_group_rule_name")
         public void setSecurityGroupRuleName(String securityGroupRuleName) {
             this.securityGroupRuleName = securityGroupRuleName;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group_rule_name")
+        @JsonProperty(value = "security_group_rule_name")
         public String getSecurityGroupRuleName() {
             return this.securityGroupRuleName;
         }
 
         private String val1;
 
-        @ParamAnnotation(paramType = "query", paramName = "val1")
+        @JsonProperty(value = "val1")
         public void setVal1(String val1) {
             this.val1 = val1;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "val1")
+        @JsonProperty(value = "val1")
         public String getVal1() {
             return this.val1;
         }
 
         private String val2;
 
-        @ParamAnnotation(paramType = "query", paramName = "val2")
+        @JsonProperty(value = "val2")
         public void setVal2(String val2) {
             this.val2 = val2;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "val2")
+        @JsonProperty(value = "val2")
         public String getVal2() {
             return this.val2;
         }
 
         private String val3;
 
-        @ParamAnnotation(paramType = "query", paramName = "val3")
+        @JsonProperty(value = "val3")
         public void setVal3(String val3) {
             this.val3 = val3;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "val3")
+        @JsonProperty(value = "val3")
         public String getVal3() {
             return this.val3;
         }
@@ -2641,39 +2657,40 @@ public class SecurityGroupService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class ModifySecurityGroupRuleAttributesOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
 
         private String securityGroupRuleID;
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group_rule_id")
+        @JsonProperty(value = "security_group_rule_id")
         public void setSecurityGroupRuleID(String securityGroupRuleID) {
             this.securityGroupRuleID = securityGroupRuleID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group_rule_id")
+        @JsonProperty(value = "security_group_rule_id")
         public String getSecurityGroupRuleID() {
             return this.securityGroupRuleID;
         }
@@ -2697,7 +2714,7 @@ public class SecurityGroupService {
         context.put("APIName", "RollbackSecurityGroup");
         context.put("ServiceName", "RollbackSecurityGroup");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/RollbackSecurityGroup");
+        context.put("RequestURI", "/iaas/RollbackSecurityGroup");
 
         input.setAction("RollbackSecurityGroup");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2731,7 +2748,7 @@ public class SecurityGroupService {
         context.put("APIName", "RollbackSecurityGroup");
         context.put("ServiceName", "RollbackSecurityGroup");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/RollbackSecurityGroup");
+        context.put("RequestURI", "/iaas/RollbackSecurityGroup");
 
         input.setAction("RollbackSecurityGroup");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2751,12 +2768,12 @@ public class SecurityGroupService {
         // Required
         private String securityGroup;
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group")
+        @JsonProperty(value = "security_group")
         public void setSecurityGroup(String securityGroup) {
             this.securityGroup = securityGroup;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group")
+        @JsonProperty(value = "security_group")
         public String getSecurityGroup() {
             return this.securityGroup;
         }
@@ -2764,12 +2781,12 @@ public class SecurityGroupService {
         // Required
         private String securityGroupSnapshot;
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group_snapshot")
+        @JsonProperty(value = "security_group_snapshot")
         public void setSecurityGroupSnapshot(String securityGroupSnapshot) {
             this.securityGroupSnapshot = securityGroupSnapshot;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group_snapshot")
+        @JsonProperty(value = "security_group_snapshot")
         public String getSecurityGroupSnapshot() {
             return this.securityGroupSnapshot;
         }
@@ -2785,51 +2802,52 @@ public class SecurityGroupService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class RollbackSecurityGroupOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
 
         private String securityGroupID;
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group_id")
+        @JsonProperty(value = "security_group_id")
         public void setSecurityGroupID(String securityGroupID) {
             this.securityGroupID = securityGroupID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group_id")
+        @JsonProperty(value = "security_group_id")
         public String getSecurityGroupID() {
             return this.securityGroupID;
         }
 
         private String securityGroupSnapshotID;
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group_snapshot_id")
+        @JsonProperty(value = "security_group_snapshot_id")
         public void setSecurityGroupSnapshotID(String securityGroupSnapshotID) {
             this.securityGroupSnapshotID = securityGroupSnapshotID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group_snapshot_id")
+        @JsonProperty(value = "security_group_snapshot_id")
         public String getSecurityGroupSnapshotID() {
             return this.securityGroupSnapshotID;
         }

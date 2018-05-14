@@ -16,6 +16,7 @@
 
 package com.qingcloud.sdk.service;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.qingcloud.sdk.config.EnvContext;
 import com.qingcloud.sdk.constants.QCConstant;
 import com.qingcloud.sdk.model.OutputModel;
@@ -24,8 +25,8 @@ import com.qingcloud.sdk.request.ResourceRequestFactory;
 import com.qingcloud.sdk.exception.QCException;
 import com.qingcloud.sdk.model.IaasParamBody;
 import com.qingcloud.sdk.service.Types.*;
-import com.qingcloud.sdk.annotation.ParamAnnotation;
 import com.qingcloud.sdk.utils.QCStringUtil;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.HashMap;
 import java.util.List;
@@ -63,7 +64,7 @@ public class MongoService {
         context.put("APIName", "AddMongoInstances");
         context.put("ServiceName", "AddMongoInstances");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/AddMongoInstances");
+        context.put("RequestURI", "/iaas/AddMongoInstances");
 
         input.setAction("AddMongoInstances");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -97,7 +98,7 @@ public class MongoService {
         context.put("APIName", "AddMongoInstances");
         context.put("ServiceName", "AddMongoInstances");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/AddMongoInstances");
+        context.put("RequestURI", "/iaas/AddMongoInstances");
 
         input.setAction("AddMongoInstances");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -116,36 +117,36 @@ public class MongoService {
     public static class AddMongoInstancesInput extends IaasParamBody {
         private String mongo;
 
-        @ParamAnnotation(paramType = "query", paramName = "mongo")
+        @JsonProperty(value = "mongo")
         public void setMongo(String mongo) {
             this.mongo = mongo;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "mongo")
+        @JsonProperty(value = "mongo")
         public String getMongo() {
             return this.mongo;
         }
 
         private Integer nodeCount;
 
-        @ParamAnnotation(paramType = "query", paramName = "node_count")
+        @JsonProperty(value = "node_count")
         public void setNodeCount(Integer nodeCount) {
             this.nodeCount = nodeCount;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "node_count")
+        @JsonProperty(value = "node_count")
         public Integer getNodeCount() {
             return this.nodeCount;
         }
 
         private List<MongoPrivateIPModel> privateIPs;
 
-        @ParamAnnotation(paramType = "query", paramName = "private_ips")
+        @JsonProperty(value = "private_ips")
         public void setPrivateIPs(List<MongoPrivateIPModel> privateIPs) {
             this.privateIPs = privateIPs;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "private_ips")
+        @JsonProperty(value = "private_ips")
         public List<MongoPrivateIPModel> getPrivateIPs() {
             return this.privateIPs;
         }
@@ -165,63 +166,64 @@ public class MongoService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class AddMongoInstancesOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private String mongo;
 
-        @ParamAnnotation(paramType = "query", paramName = "mongo")
+        @JsonProperty(value = "mongo")
         public void setMongo(String mongo) {
             this.mongo = mongo;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "mongo")
+        @JsonProperty(value = "mongo")
         public String getMongo() {
             return this.mongo;
         }
 
         private List<String> mongoNode;
 
-        @ParamAnnotation(paramType = "query", paramName = "mongo_node")
+        @JsonProperty(value = "mongo_node")
         public void setMongoNode(List<String> mongoNode) {
             this.mongoNode = mongoNode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "mongo_node")
+        @JsonProperty(value = "mongo_node")
         public List<String> getMongoNode() {
             return this.mongoNode;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -245,7 +247,7 @@ public class MongoService {
         context.put("APIName", "ChangeMongoVxnet");
         context.put("ServiceName", "ChangeMongoVxnet");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ChangeMongoVxnet");
+        context.put("RequestURI", "/iaas/ChangeMongoVxnet");
 
         input.setAction("ChangeMongoVxnet");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -279,7 +281,7 @@ public class MongoService {
         context.put("APIName", "ChangeMongoVxNet");
         context.put("ServiceName", "ChangeMongoVxnet");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ChangeMongoVxnet");
+        context.put("RequestURI", "/iaas/ChangeMongoVxnet");
 
         input.setAction("ChangeMongoVxNet");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -299,24 +301,24 @@ public class MongoService {
         // Required
         private String mongo;
 
-        @ParamAnnotation(paramType = "query", paramName = "mongo")
+        @JsonProperty(value = "mongo")
         public void setMongo(String mongo) {
             this.mongo = mongo;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "mongo")
+        @JsonProperty(value = "mongo")
         public String getMongo() {
             return this.mongo;
         }
 
         private List<MongoPrivateIPModel> privateIPs;
 
-        @ParamAnnotation(paramType = "query", paramName = "private_ips")
+        @JsonProperty(value = "private_ips")
         public void setPrivateIPs(List<MongoPrivateIPModel> privateIPs) {
             this.privateIPs = privateIPs;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "private_ips")
+        @JsonProperty(value = "private_ips")
         public List<MongoPrivateIPModel> getPrivateIPs() {
             return this.privateIPs;
         }
@@ -324,12 +326,12 @@ public class MongoService {
         // Required
         private String vxNet;
 
-        @ParamAnnotation(paramType = "query", paramName = "vxnet")
+        @JsonProperty(value = "vxnet")
         public void setVxNet(String vxNet) {
             this.vxNet = vxNet;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "vxnet")
+        @JsonProperty(value = "vxnet")
         public String getVxNet() {
             return this.vxNet;
         }
@@ -355,51 +357,52 @@ public class MongoService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class ChangeMongoVxNetOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private String mongo;
 
-        @ParamAnnotation(paramType = "query", paramName = "mongo")
+        @JsonProperty(value = "mongo")
         public void setMongo(String mongo) {
             this.mongo = mongo;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "mongo")
+        @JsonProperty(value = "mongo")
         public String getMongo() {
             return this.mongo;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -423,7 +426,7 @@ public class MongoService {
         context.put("APIName", "CreateMongo");
         context.put("ServiceName", "CreateMongo");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/CreateMongo");
+        context.put("RequestURI", "/iaas/CreateMongo");
 
         input.setAction("CreateMongo");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -457,7 +460,7 @@ public class MongoService {
         context.put("APIName", "CreateMongo");
         context.put("ServiceName", "CreateMongo");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/CreateMongo");
+        context.put("RequestURI", "/iaas/CreateMongo");
 
         input.setAction("CreateMongo");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -476,48 +479,48 @@ public class MongoService {
     public static class CreateMongoInput extends IaasParamBody {
         private Integer autoBackupTime;
 
-        @ParamAnnotation(paramType = "query", paramName = "auto_backup_time")
+        @JsonProperty(value = "auto_backup_time")
         public void setAutoBackupTime(Integer autoBackupTime) {
             this.autoBackupTime = autoBackupTime;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "auto_backup_time")
+        @JsonProperty(value = "auto_backup_time")
         public Integer getAutoBackupTime() {
             return this.autoBackupTime;
         }
 
         private String description;
 
-        @ParamAnnotation(paramType = "query", paramName = "description")
+        @JsonProperty(value = "description")
         public void setDescription(String description) {
             this.description = description;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "description")
+        @JsonProperty(value = "description")
         public String getDescription() {
             return this.description;
         }
 
         private String mongoName;
 
-        @ParamAnnotation(paramType = "query", paramName = "mongo_name")
+        @JsonProperty(value = "mongo_name")
         public void setMongoName(String mongoName) {
             this.mongoName = mongoName;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "mongo_name")
+        @JsonProperty(value = "mongo_name")
         public String getMongoName() {
             return this.mongoName;
         }
 
         private String mongoPassword;
 
-        @ParamAnnotation(paramType = "query", paramName = "mongo_password")
+        @JsonProperty(value = "mongo_password")
         public void setMongoPassword(String mongoPassword) {
             this.mongoPassword = mongoPassword;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "mongo_password")
+        @JsonProperty(value = "mongo_password")
         public String getMongoPassword() {
             return this.mongoPassword;
         }
@@ -525,60 +528,60 @@ public class MongoService {
         // Required
         private Integer mongoType;
 
-        @ParamAnnotation(paramType = "query", paramName = "mongo_type")
+        @JsonProperty(value = "mongo_type")
         public void setMongoType(Integer mongoType) {
             this.mongoType = mongoType;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "mongo_type")
+        @JsonProperty(value = "mongo_type")
         public Integer getMongoType() {
             return this.mongoType;
         }
 
         private String mongoUsername;
 
-        @ParamAnnotation(paramType = "query", paramName = "mongo_username")
+        @JsonProperty(value = "mongo_username")
         public void setMongoUsername(String mongoUsername) {
             this.mongoUsername = mongoUsername;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "mongo_username")
+        @JsonProperty(value = "mongo_username")
         public String getMongoUsername() {
             return this.mongoUsername;
         }
 
         private String mongoVersion;
 
-        @ParamAnnotation(paramType = "query", paramName = "mongo_version")
+        @JsonProperty(value = "mongo_version")
         public void setMongoVersion(String mongoVersion) {
             this.mongoVersion = mongoVersion;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "mongo_version")
+        @JsonProperty(value = "mongo_version")
         public String getMongoVersion() {
             return this.mongoVersion;
         }
 
         private List<MongoPrivateIPModel> privateIPs;
 
-        @ParamAnnotation(paramType = "query", paramName = "private_ips")
+        @JsonProperty(value = "private_ips")
         public void setPrivateIPs(List<MongoPrivateIPModel> privateIPs) {
             this.privateIPs = privateIPs;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "private_ips")
+        @JsonProperty(value = "private_ips")
         public List<MongoPrivateIPModel> getPrivateIPs() {
             return this.privateIPs;
         }
 
         private Integer resourceClass;
 
-        @ParamAnnotation(paramType = "query", paramName = "resource_class")
+        @JsonProperty(value = "resource_class")
         public void setResourceClass(Integer resourceClass) {
             this.resourceClass = resourceClass;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "resource_class")
+        @JsonProperty(value = "resource_class")
         public Integer getResourceClass() {
             return this.resourceClass;
         }
@@ -586,12 +589,12 @@ public class MongoService {
         // Required
         private Integer storageSize;
 
-        @ParamAnnotation(paramType = "query", paramName = "storage_size")
+        @JsonProperty(value = "storage_size")
         public void setStorageSize(Integer storageSize) {
             this.storageSize = storageSize;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "storage_size")
+        @JsonProperty(value = "storage_size")
         public Integer getStorageSize() {
             return this.storageSize;
         }
@@ -599,12 +602,12 @@ public class MongoService {
         // Required
         private String vxNet;
 
-        @ParamAnnotation(paramType = "query", paramName = "vxnet")
+        @JsonProperty(value = "vxnet")
         public void setVxNet(String vxNet) {
             this.vxNet = vxNet;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "vxnet")
+        @JsonProperty(value = "vxnet")
         public String getVxNet() {
             return this.vxNet;
         }
@@ -633,51 +636,52 @@ public class MongoService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class CreateMongoOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private String mongo;
 
-        @ParamAnnotation(paramType = "query", paramName = "mongo")
+        @JsonProperty(value = "mongo")
         public void setMongo(String mongo) {
             this.mongo = mongo;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "mongo")
+        @JsonProperty(value = "mongo")
         public String getMongo() {
             return this.mongo;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -701,7 +705,7 @@ public class MongoService {
         context.put("APIName", "CreateMongoFromSnapshot");
         context.put("ServiceName", "CreateMongoFromSnapshot");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/CreateMongoFromSnapshot");
+        context.put("RequestURI", "/iaas/CreateMongoFromSnapshot");
 
         input.setAction("CreateMongoFromSnapshot");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -735,7 +739,7 @@ public class MongoService {
         context.put("APIName", "CreateMongoFromSnapshot");
         context.put("ServiceName", "CreateMongoFromSnapshot");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/CreateMongoFromSnapshot");
+        context.put("RequestURI", "/iaas/CreateMongoFromSnapshot");
 
         input.setAction("CreateMongoFromSnapshot");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -754,96 +758,96 @@ public class MongoService {
     public static class CreateMongoFromSnapshotInput extends IaasParamBody {
         private Integer autoBackupTime;
 
-        @ParamAnnotation(paramType = "query", paramName = "auto_backup_time")
+        @JsonProperty(value = "auto_backup_time")
         public void setAutoBackupTime(Integer autoBackupTime) {
             this.autoBackupTime = autoBackupTime;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "auto_backup_time")
+        @JsonProperty(value = "auto_backup_time")
         public Integer getAutoBackupTime() {
             return this.autoBackupTime;
         }
 
         private String mongoName;
 
-        @ParamAnnotation(paramType = "query", paramName = "mongo_name")
+        @JsonProperty(value = "mongo_name")
         public void setMongoName(String mongoName) {
             this.mongoName = mongoName;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "mongo_name")
+        @JsonProperty(value = "mongo_name")
         public String getMongoName() {
             return this.mongoName;
         }
 
         private Integer mongoType;
 
-        @ParamAnnotation(paramType = "query", paramName = "mongo_type")
+        @JsonProperty(value = "mongo_type")
         public void setMongoType(Integer mongoType) {
             this.mongoType = mongoType;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "mongo_type")
+        @JsonProperty(value = "mongo_type")
         public Integer getMongoType() {
             return this.mongoType;
         }
 
         private Integer mongoVersion;
 
-        @ParamAnnotation(paramType = "query", paramName = "mongo_version")
+        @JsonProperty(value = "mongo_version")
         public void setMongoVersion(Integer mongoVersion) {
             this.mongoVersion = mongoVersion;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "mongo_version")
+        @JsonProperty(value = "mongo_version")
         public Integer getMongoVersion() {
             return this.mongoVersion;
         }
 
         private Integer resourceClass;
 
-        @ParamAnnotation(paramType = "query", paramName = "resource_class")
+        @JsonProperty(value = "resource_class")
         public void setResourceClass(Integer resourceClass) {
             this.resourceClass = resourceClass;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "resource_class")
+        @JsonProperty(value = "resource_class")
         public Integer getResourceClass() {
             return this.resourceClass;
         }
 
         private String snapshot;
 
-        @ParamAnnotation(paramType = "query", paramName = "snapshot")
+        @JsonProperty(value = "snapshot")
         public void setSnapshot(String snapshot) {
             this.snapshot = snapshot;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "snapshot")
+        @JsonProperty(value = "snapshot")
         public String getSnapshot() {
             return this.snapshot;
         }
 
         private Integer storageSize;
 
-        @ParamAnnotation(paramType = "query", paramName = "storage_size")
+        @JsonProperty(value = "storage_size")
         public void setStorageSize(Integer storageSize) {
             this.storageSize = storageSize;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "storage_size")
+        @JsonProperty(value = "storage_size")
         public Integer getStorageSize() {
             return this.storageSize;
         }
 
         private String vxNet;
 
-        @ParamAnnotation(paramType = "query", paramName = "vxnet")
+        @JsonProperty(value = "vxnet")
         public void setVxNet(String vxNet) {
             this.vxNet = vxNet;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "vxnet")
+        @JsonProperty(value = "vxnet")
         public String getVxNet() {
             return this.vxNet;
         }
@@ -853,51 +857,52 @@ public class MongoService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class CreateMongoFromSnapshotOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private String mongo;
 
-        @ParamAnnotation(paramType = "query", paramName = "mongo")
+        @JsonProperty(value = "mongo")
         public void setMongo(String mongo) {
             this.mongo = mongo;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "mongo")
+        @JsonProperty(value = "mongo")
         public String getMongo() {
             return this.mongo;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -921,7 +926,7 @@ public class MongoService {
         context.put("APIName", "DeleteMongos");
         context.put("ServiceName", "DeleteMongos");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DeleteMongos");
+        context.put("RequestURI", "/iaas/DeleteMongos");
 
         input.setAction("DeleteMongos");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -955,7 +960,7 @@ public class MongoService {
         context.put("APIName", "DeleteMongos");
         context.put("ServiceName", "DeleteMongos");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DeleteMongos");
+        context.put("RequestURI", "/iaas/DeleteMongos");
 
         input.setAction("DeleteMongos");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -975,12 +980,12 @@ public class MongoService {
         // Required
         private List<String> mongos;
 
-        @ParamAnnotation(paramType = "query", paramName = "mongos")
+        @JsonProperty(value = "mongos")
         public void setMongos(List<String> mongos) {
             this.mongos = mongos;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "mongos")
+        @JsonProperty(value = "mongos")
         public List<String> getMongos() {
             return this.mongos;
         }
@@ -990,51 +995,52 @@ public class MongoService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class DeleteMongosOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private List<String> mongos;
 
-        @ParamAnnotation(paramType = "query", paramName = "mongos")
+        @JsonProperty(value = "mongos")
         public void setMongos(List<String> mongos) {
             this.mongos = mongos;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "mongos")
+        @JsonProperty(value = "mongos")
         public List<String> getMongos() {
             return this.mongos;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -1058,7 +1064,7 @@ public class MongoService {
         context.put("APIName", "DescribeMongoNodes");
         context.put("ServiceName", "DescribeMongoNodes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeMongoNodes");
+        context.put("RequestURI", "/iaas/DescribeMongoNodes");
 
         input.setAction("DescribeMongoNodes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1092,7 +1098,7 @@ public class MongoService {
         context.put("APIName", "DescribeMongoNodes");
         context.put("ServiceName", "DescribeMongoNodes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeMongoNodes");
+        context.put("RequestURI", "/iaas/DescribeMongoNodes");
 
         input.setAction("DescribeMongoNodes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1111,12 +1117,12 @@ public class MongoService {
     public static class DescribeMongoNodesInput extends IaasParamBody {
         private Integer limit;
 
-        @ParamAnnotation(paramType = "query", paramName = "limit")
+        @JsonProperty(value = "limit")
         public void setLimit(Integer limit) {
             this.limit = limit;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "limit")
+        @JsonProperty(value = "limit")
         public Integer getLimit() {
             return this.limit;
         }
@@ -1124,36 +1130,36 @@ public class MongoService {
         // Required
         private String mongo;
 
-        @ParamAnnotation(paramType = "query", paramName = "mongo")
+        @JsonProperty(value = "mongo")
         public void setMongo(String mongo) {
             this.mongo = mongo;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "mongo")
+        @JsonProperty(value = "mongo")
         public String getMongo() {
             return this.mongo;
         }
 
         private Integer offset;
 
-        @ParamAnnotation(paramType = "query", paramName = "offset")
+        @JsonProperty(value = "offset")
         public void setOffset(Integer offset) {
             this.offset = offset;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "offset")
+        @JsonProperty(value = "offset")
         public Integer getOffset() {
             return this.offset;
         }
 
         private List<String> status;
 
-        @ParamAnnotation(paramType = "query", paramName = "status")
+        @JsonProperty(value = "status")
         public void setStatus(List<String> status) {
             this.status = status;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "status")
+        @JsonProperty(value = "status")
         public List<String> getStatus() {
             return this.status;
         }
@@ -1166,51 +1172,52 @@ public class MongoService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class DescribeMongoNodesOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private List<MongoNodeModel> mongoNodeSet;
 
-        @ParamAnnotation(paramType = "query", paramName = "mongo_node_set")
+        @JsonProperty(value = "mongo_node_set")
         public void setMongoNodeSet(List<MongoNodeModel> mongoNodeSet) {
             this.mongoNodeSet = mongoNodeSet;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "mongo_node_set")
+        @JsonProperty(value = "mongo_node_set")
         public List<MongoNodeModel> getMongoNodeSet() {
             return this.mongoNodeSet;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
 
         private Integer totalCount;
 
-        @ParamAnnotation(paramType = "query", paramName = "total_count")
+        @JsonProperty(value = "total_count")
         public void setTotalCount(Integer totalCount) {
             this.totalCount = totalCount;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "total_count")
+        @JsonProperty(value = "total_count")
         public Integer getTotalCount() {
             return this.totalCount;
         }
@@ -1234,7 +1241,7 @@ public class MongoService {
         context.put("APIName", "DescribeMongoParameters");
         context.put("ServiceName", "DescribeMongoParameters");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeMongoParameters");
+        context.put("RequestURI", "/iaas/DescribeMongoParameters");
 
         input.setAction("DescribeMongoParameters");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1268,7 +1275,7 @@ public class MongoService {
         context.put("APIName", "DescribeMongoParameters");
         context.put("ServiceName", "DescribeMongoParameters");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeMongoParameters");
+        context.put("RequestURI", "/iaas/DescribeMongoParameters");
 
         input.setAction("DescribeMongoParameters");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1287,12 +1294,12 @@ public class MongoService {
     public static class DescribeMongoParametersInput extends IaasParamBody {
         private Integer limit;
 
-        @ParamAnnotation(paramType = "query", paramName = "limit")
+        @JsonProperty(value = "limit")
         public void setLimit(Integer limit) {
             this.limit = limit;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "limit")
+        @JsonProperty(value = "limit")
         public Integer getLimit() {
             return this.limit;
         }
@@ -1300,24 +1307,24 @@ public class MongoService {
         // Required
         private String mongo;
 
-        @ParamAnnotation(paramType = "query", paramName = "mongo")
+        @JsonProperty(value = "mongo")
         public void setMongo(String mongo) {
             this.mongo = mongo;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "mongo")
+        @JsonProperty(value = "mongo")
         public String getMongo() {
             return this.mongo;
         }
 
         private Integer offset;
 
-        @ParamAnnotation(paramType = "query", paramName = "offset")
+        @JsonProperty(value = "offset")
         public void setOffset(Integer offset) {
             this.offset = offset;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "offset")
+        @JsonProperty(value = "offset")
         public Integer getOffset() {
             return this.offset;
         }
@@ -1330,51 +1337,52 @@ public class MongoService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class DescribeMongoParametersOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private List<MongoParameterModel> parameterSet;
 
-        @ParamAnnotation(paramType = "query", paramName = "parameter_set")
+        @JsonProperty(value = "parameter_set")
         public void setParameterSet(List<MongoParameterModel> parameterSet) {
             this.parameterSet = parameterSet;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "parameter_set")
+        @JsonProperty(value = "parameter_set")
         public List<MongoParameterModel> getParameterSet() {
             return this.parameterSet;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
 
         private Integer totalCount;
 
-        @ParamAnnotation(paramType = "query", paramName = "total_count")
+        @JsonProperty(value = "total_count")
         public void setTotalCount(Integer totalCount) {
             this.totalCount = totalCount;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "total_count")
+        @JsonProperty(value = "total_count")
         public Integer getTotalCount() {
             return this.totalCount;
         }
@@ -1398,7 +1406,7 @@ public class MongoService {
         context.put("APIName", "DescribeMongos");
         context.put("ServiceName", "DescribeMongos");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeMongos");
+        context.put("RequestURI", "/iaas/DescribeMongos");
 
         input.setAction("DescribeMongos");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1432,7 +1440,7 @@ public class MongoService {
         context.put("APIName", "DescribeMongos");
         context.put("ServiceName", "DescribeMongos");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeMongos");
+        context.put("RequestURI", "/iaas/DescribeMongos");
 
         input.setAction("DescribeMongos");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1451,84 +1459,84 @@ public class MongoService {
     public static class DescribeMongosInput extends IaasParamBody {
         private Integer limit;
 
-        @ParamAnnotation(paramType = "query", paramName = "limit")
+        @JsonProperty(value = "limit")
         public void setLimit(Integer limit) {
             this.limit = limit;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "limit")
+        @JsonProperty(value = "limit")
         public Integer getLimit() {
             return this.limit;
         }
 
         private String mongoName;
 
-        @ParamAnnotation(paramType = "query", paramName = "mongo_name")
+        @JsonProperty(value = "mongo_name")
         public void setMongoName(String mongoName) {
             this.mongoName = mongoName;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "mongo_name")
+        @JsonProperty(value = "mongo_name")
         public String getMongoName() {
             return this.mongoName;
         }
 
         private List<String> mongos;
 
-        @ParamAnnotation(paramType = "query", paramName = "mongos")
+        @JsonProperty(value = "mongos")
         public void setMongos(List<String> mongos) {
             this.mongos = mongos;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "mongos")
+        @JsonProperty(value = "mongos")
         public List<String> getMongos() {
             return this.mongos;
         }
 
         private Integer offset;
 
-        @ParamAnnotation(paramType = "query", paramName = "offset")
+        @JsonProperty(value = "offset")
         public void setOffset(Integer offset) {
             this.offset = offset;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "offset")
+        @JsonProperty(value = "offset")
         public Integer getOffset() {
             return this.offset;
         }
 
         private List<String> status;
 
-        @ParamAnnotation(paramType = "query", paramName = "status")
+        @JsonProperty(value = "status")
         public void setStatus(List<String> status) {
             this.status = status;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "status")
+        @JsonProperty(value = "status")
         public List<String> getStatus() {
             return this.status;
         }
 
         private List<String> tags;
 
-        @ParamAnnotation(paramType = "query", paramName = "tags")
+        @JsonProperty(value = "tags")
         public void setTags(List<String> tags) {
             this.tags = tags;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "tags")
+        @JsonProperty(value = "tags")
         public List<String> getTags() {
             return this.tags;
         }
 
         private Integer verbose;
 
-        @ParamAnnotation(paramType = "query", paramName = "verbose")
+        @JsonProperty(value = "verbose")
         public void setVerbose(Integer verbose) {
             this.verbose = verbose;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "verbose")
+        @JsonProperty(value = "verbose")
         public Integer getVerbose() {
             return this.verbose;
         }
@@ -1538,51 +1546,52 @@ public class MongoService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class DescribeMongosOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private List<MongoModel> mongoSet;
 
-        @ParamAnnotation(paramType = "query", paramName = "mongo_set")
+        @JsonProperty(value = "mongo_set")
         public void setMongoSet(List<MongoModel> mongoSet) {
             this.mongoSet = mongoSet;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "mongo_set")
+        @JsonProperty(value = "mongo_set")
         public List<MongoModel> getMongoSet() {
             return this.mongoSet;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
 
         private Integer totalCount;
 
-        @ParamAnnotation(paramType = "query", paramName = "total_count")
+        @JsonProperty(value = "total_count")
         public void setTotalCount(Integer totalCount) {
             this.totalCount = totalCount;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "total_count")
+        @JsonProperty(value = "total_count")
         public Integer getTotalCount() {
             return this.totalCount;
         }
@@ -1606,7 +1615,7 @@ public class MongoService {
         context.put("APIName", "GetMongoMonitor");
         context.put("ServiceName", "GetMongoMonitor");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/GetMongoMonitor");
+        context.put("RequestURI", "/iaas/GetMongoMonitor");
 
         input.setAction("GetMongoMonitor");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1640,7 +1649,7 @@ public class MongoService {
         context.put("APIName", "GetMongoMonitor");
         context.put("ServiceName", "GetMongoMonitor");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/GetMongoMonitor");
+        context.put("RequestURI", "/iaas/GetMongoMonitor");
 
         input.setAction("GetMongoMonitor");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1660,12 +1669,12 @@ public class MongoService {
         // Required
         private String endTime;
 
-        @ParamAnnotation(paramType = "query", paramName = "end_time")
+        @JsonProperty(value = "end_time")
         public void setEndTime(String endTime) {
             this.endTime = endTime;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "end_time")
+        @JsonProperty(value = "end_time")
         public String getEndTime() {
             return this.endTime;
         }
@@ -1673,12 +1682,12 @@ public class MongoService {
         // Required
         private List<String> meters;
 
-        @ParamAnnotation(paramType = "query", paramName = "meters")
+        @JsonProperty(value = "meters")
         public void setMeters(List<String> meters) {
             this.meters = meters;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "meters")
+        @JsonProperty(value = "meters")
         public List<String> getMeters() {
             return this.meters;
         }
@@ -1686,12 +1695,12 @@ public class MongoService {
         // Required
         private String resource;
 
-        @ParamAnnotation(paramType = "query", paramName = "resource")
+        @JsonProperty(value = "resource")
         public void setResource(String resource) {
             this.resource = resource;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "resource")
+        @JsonProperty(value = "resource")
         public String getResource() {
             return this.resource;
         }
@@ -1699,12 +1708,12 @@ public class MongoService {
         // Required
         private String startTime;
 
-        @ParamAnnotation(paramType = "query", paramName = "start_time")
+        @JsonProperty(value = "start_time")
         public void setStartTime(String startTime) {
             this.startTime = startTime;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "start_time")
+        @JsonProperty(value = "start_time")
         public String getStartTime() {
             return this.startTime;
         }
@@ -1713,12 +1722,12 @@ public class MongoService {
         // Required
         private String step;
 
-        @ParamAnnotation(paramType = "query", paramName = "step")
+        @JsonProperty(value = "step")
         public void setStep(String step) {
             this.step = step;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "step")
+        @JsonProperty(value = "step")
         public String getStep() {
             return this.step;
         }
@@ -1752,51 +1761,52 @@ public class MongoService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class GetMongoMonitorOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private List<MeterModel> meterSet;
 
-        @ParamAnnotation(paramType = "query", paramName = "meter_set")
+        @JsonProperty(value = "meter_set")
         public void setMeterSet(List<MeterModel> meterSet) {
             this.meterSet = meterSet;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "meter_set")
+        @JsonProperty(value = "meter_set")
         public List<MeterModel> getMeterSet() {
             return this.meterSet;
         }
 
         private String resourceID;
 
-        @ParamAnnotation(paramType = "query", paramName = "resource_id")
+        @JsonProperty(value = "resource_id")
         public void setResourceID(String resourceID) {
             this.resourceID = resourceID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "resource_id")
+        @JsonProperty(value = "resource_id")
         public String getResourceID() {
             return this.resourceID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -1820,7 +1830,7 @@ public class MongoService {
         context.put("APIName", "ModifyMongoAttributes");
         context.put("ServiceName", "ModifyMongoAttributes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ModifyMongoAttributes");
+        context.put("RequestURI", "/iaas/ModifyMongoAttributes");
 
         input.setAction("ModifyMongoAttributes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1854,7 +1864,7 @@ public class MongoService {
         context.put("APIName", "ModifyMongoAttributes");
         context.put("ServiceName", "ModifyMongoAttributes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ModifyMongoAttributes");
+        context.put("RequestURI", "/iaas/ModifyMongoAttributes");
 
         input.setAction("ModifyMongoAttributes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1873,24 +1883,24 @@ public class MongoService {
     public static class ModifyMongoAttributesInput extends IaasParamBody {
         private Integer autoBackupTime;
 
-        @ParamAnnotation(paramType = "query", paramName = "auto_backup_time")
+        @JsonProperty(value = "auto_backup_time")
         public void setAutoBackupTime(Integer autoBackupTime) {
             this.autoBackupTime = autoBackupTime;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "auto_backup_time")
+        @JsonProperty(value = "auto_backup_time")
         public Integer getAutoBackupTime() {
             return this.autoBackupTime;
         }
 
         private String description;
 
-        @ParamAnnotation(paramType = "query", paramName = "description")
+        @JsonProperty(value = "description")
         public void setDescription(String description) {
             this.description = description;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "description")
+        @JsonProperty(value = "description")
         public String getDescription() {
             return this.description;
         }
@@ -1898,24 +1908,24 @@ public class MongoService {
         // Required
         private String mongo;
 
-        @ParamAnnotation(paramType = "query", paramName = "mongo")
+        @JsonProperty(value = "mongo")
         public void setMongo(String mongo) {
             this.mongo = mongo;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "mongo")
+        @JsonProperty(value = "mongo")
         public String getMongo() {
             return this.mongo;
         }
 
         private String mongoName;
 
-        @ParamAnnotation(paramType = "query", paramName = "mongo_name")
+        @JsonProperty(value = "mongo_name")
         public void setMongoName(String mongoName) {
             this.mongoName = mongoName;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "mongo_name")
+        @JsonProperty(value = "mongo_name")
         public String getMongoName() {
             return this.mongoName;
         }
@@ -1928,39 +1938,40 @@ public class MongoService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class ModifyMongoAttributesOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String mongo;
 
-        @ParamAnnotation(paramType = "query", paramName = "mongo")
+        @JsonProperty(value = "mongo")
         public void setMongo(String mongo) {
             this.mongo = mongo;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "mongo")
+        @JsonProperty(value = "mongo")
         public String getMongo() {
             return this.mongo;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -1984,7 +1995,7 @@ public class MongoService {
         context.put("APIName", "ModifyMongoInstances");
         context.put("ServiceName", "ModifyMongoInstances");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ModifyMongoInstances");
+        context.put("RequestURI", "/iaas/ModifyMongoInstances");
 
         input.setAction("ModifyMongoInstances");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2018,7 +2029,7 @@ public class MongoService {
         context.put("APIName", "ModifyMongoInstances");
         context.put("ServiceName", "ModifyMongoInstances");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ModifyMongoInstances");
+        context.put("RequestURI", "/iaas/ModifyMongoInstances");
 
         input.setAction("ModifyMongoInstances");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2038,24 +2049,24 @@ public class MongoService {
         // Required
         private String mongo;
 
-        @ParamAnnotation(paramType = "query", paramName = "mongo")
+        @JsonProperty(value = "mongo")
         public void setMongo(String mongo) {
             this.mongo = mongo;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "mongo")
+        @JsonProperty(value = "mongo")
         public String getMongo() {
             return this.mongo;
         }
 
         private List<MongoPrivateIPModel> privateIPs;
 
-        @ParamAnnotation(paramType = "query", paramName = "private_ips")
+        @JsonProperty(value = "private_ips")
         public void setPrivateIPs(List<MongoPrivateIPModel> privateIPs) {
             this.privateIPs = privateIPs;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "private_ips")
+        @JsonProperty(value = "private_ips")
         public List<MongoPrivateIPModel> getPrivateIPs() {
             return this.privateIPs;
         }
@@ -2078,51 +2089,52 @@ public class MongoService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class ModifyMongoInstancesOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private String mongo;
 
-        @ParamAnnotation(paramType = "query", paramName = "mongo")
+        @JsonProperty(value = "mongo")
         public void setMongo(String mongo) {
             this.mongo = mongo;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "mongo")
+        @JsonProperty(value = "mongo")
         public String getMongo() {
             return this.mongo;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -2146,7 +2158,7 @@ public class MongoService {
         context.put("APIName", "RemoveMongoInstances");
         context.put("ServiceName", "RemoveMongoInstances");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/RemoveMongoInstances");
+        context.put("RequestURI", "/iaas/RemoveMongoInstances");
 
         input.setAction("RemoveMongoInstances");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2180,7 +2192,7 @@ public class MongoService {
         context.put("APIName", "RemoveMongoInstances");
         context.put("ServiceName", "RemoveMongoInstances");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/RemoveMongoInstances");
+        context.put("RequestURI", "/iaas/RemoveMongoInstances");
 
         input.setAction("RemoveMongoInstances");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2200,12 +2212,12 @@ public class MongoService {
         // Required
         private String mongo;
 
-        @ParamAnnotation(paramType = "query", paramName = "mongo")
+        @JsonProperty(value = "mongo")
         public void setMongo(String mongo) {
             this.mongo = mongo;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "mongo")
+        @JsonProperty(value = "mongo")
         public String getMongo() {
             return this.mongo;
         }
@@ -2213,12 +2225,12 @@ public class MongoService {
         // Required
         private List<String> mongoInstances;
 
-        @ParamAnnotation(paramType = "query", paramName = "mongo_instances")
+        @JsonProperty(value = "mongo_instances")
         public void setMongoInstances(List<String> mongoInstances) {
             this.mongoInstances = mongoInstances;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "mongo_instances")
+        @JsonProperty(value = "mongo_instances")
         public List<String> getMongoInstances() {
             return this.mongoInstances;
         }
@@ -2231,51 +2243,52 @@ public class MongoService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class RemoveMongoInstancesOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private String mongo;
 
-        @ParamAnnotation(paramType = "query", paramName = "mongo")
+        @JsonProperty(value = "mongo")
         public void setMongo(String mongo) {
             this.mongo = mongo;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "mongo")
+        @JsonProperty(value = "mongo")
         public String getMongo() {
             return this.mongo;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -2299,7 +2312,7 @@ public class MongoService {
         context.put("APIName", "ResizeMongos");
         context.put("ServiceName", "ResizeMongos");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ResizeMongos");
+        context.put("RequestURI", "/iaas/ResizeMongos");
 
         input.setAction("ResizeMongos");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2333,7 +2346,7 @@ public class MongoService {
         context.put("APIName", "ResizeMongos");
         context.put("ServiceName", "ResizeMongos");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ResizeMongos");
+        context.put("RequestURI", "/iaas/ResizeMongos");
 
         input.setAction("ResizeMongos");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2352,12 +2365,12 @@ public class MongoService {
     public static class ResizeMongosInput extends IaasParamBody {
         private Integer mongoType;
 
-        @ParamAnnotation(paramType = "query", paramName = "mongo_type")
+        @JsonProperty(value = "mongo_type")
         public void setMongoType(Integer mongoType) {
             this.mongoType = mongoType;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "mongo_type")
+        @JsonProperty(value = "mongo_type")
         public Integer getMongoType() {
             return this.mongoType;
         }
@@ -2365,24 +2378,24 @@ public class MongoService {
         // Required
         private List<String> mongos;
 
-        @ParamAnnotation(paramType = "query", paramName = "mongos")
+        @JsonProperty(value = "mongos")
         public void setMongos(List<String> mongos) {
             this.mongos = mongos;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "mongos")
+        @JsonProperty(value = "mongos")
         public List<String> getMongos() {
             return this.mongos;
         }
 
         private Integer storageSize;
 
-        @ParamAnnotation(paramType = "query", paramName = "storage_size")
+        @JsonProperty(value = "storage_size")
         public void setStorageSize(Integer storageSize) {
             this.storageSize = storageSize;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "storage_size")
+        @JsonProperty(value = "storage_size")
         public Integer getStorageSize() {
             return this.storageSize;
         }
@@ -2392,51 +2405,52 @@ public class MongoService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class ResizeMongosOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private List<String> mongos;
 
-        @ParamAnnotation(paramType = "query", paramName = "mongos")
+        @JsonProperty(value = "mongos")
         public void setMongos(List<String> mongos) {
             this.mongos = mongos;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "mongos")
+        @JsonProperty(value = "mongos")
         public List<String> getMongos() {
             return this.mongos;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -2460,7 +2474,7 @@ public class MongoService {
         context.put("APIName", "StartMongos");
         context.put("ServiceName", "StartMongos");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/StartMongos");
+        context.put("RequestURI", "/iaas/StartMongos");
 
         input.setAction("StartMongos");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2494,7 +2508,7 @@ public class MongoService {
         context.put("APIName", "StartMongos");
         context.put("ServiceName", "StartMongos");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/StartMongos");
+        context.put("RequestURI", "/iaas/StartMongos");
 
         input.setAction("StartMongos");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2514,12 +2528,12 @@ public class MongoService {
         // Required
         private String mongos;
 
-        @ParamAnnotation(paramType = "query", paramName = "mongos")
+        @JsonProperty(value = "mongos")
         public void setMongos(String mongos) {
             this.mongos = mongos;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "mongos")
+        @JsonProperty(value = "mongos")
         public String getMongos() {
             return this.mongos;
         }
@@ -2532,39 +2546,40 @@ public class MongoService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class StartMongosOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -2588,7 +2603,7 @@ public class MongoService {
         context.put("APIName", "StopMongos");
         context.put("ServiceName", "StopMongos");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/StopMongos");
+        context.put("RequestURI", "/iaas/StopMongos");
 
         input.setAction("StopMongos");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2622,7 +2637,7 @@ public class MongoService {
         context.put("APIName", "StopMongos");
         context.put("ServiceName", "StopMongos");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/StopMongos");
+        context.put("RequestURI", "/iaas/StopMongos");
 
         input.setAction("StopMongos");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2642,12 +2657,12 @@ public class MongoService {
         // Required
         private List<String> mongos;
 
-        @ParamAnnotation(paramType = "query", paramName = "mongos")
+        @JsonProperty(value = "mongos")
         public void setMongos(List<String> mongos) {
             this.mongos = mongos;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "mongos")
+        @JsonProperty(value = "mongos")
         public List<String> getMongos() {
             return this.mongos;
         }
@@ -2657,39 +2672,40 @@ public class MongoService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class StopMongosOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }

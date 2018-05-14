@@ -16,6 +16,7 @@
 
 package com.qingcloud.sdk.service;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.qingcloud.sdk.config.EnvContext;
 import com.qingcloud.sdk.constants.QCConstant;
 import com.qingcloud.sdk.model.OutputModel;
@@ -24,8 +25,8 @@ import com.qingcloud.sdk.request.ResourceRequestFactory;
 import com.qingcloud.sdk.exception.QCException;
 import com.qingcloud.sdk.model.IaasParamBody;
 import com.qingcloud.sdk.service.Types.*;
-import com.qingcloud.sdk.annotation.ParamAnnotation;
 import com.qingcloud.sdk.utils.QCStringUtil;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.HashMap;
 import java.util.List;
@@ -73,7 +74,7 @@ public class QingCloudService {
         context.put("APIName", "DescribeZones");
         context.put("ServiceName", "DescribeZones");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeZones");
+        context.put("RequestURI", "/iaas/DescribeZones");
 
         input.setAction("DescribeZones");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -107,7 +108,7 @@ public class QingCloudService {
         context.put("APIName", "DescribeZones");
         context.put("ServiceName", "DescribeZones");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeZones");
+        context.put("RequestURI", "/iaas/DescribeZones");
 
         input.setAction("DescribeZones");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -126,24 +127,24 @@ public class QingCloudService {
     public static class DescribeZonesInput extends IaasParamBody {
         private List<String> status;
 
-        @ParamAnnotation(paramType = "query", paramName = "status")
+        @JsonProperty(value = "status")
         public void setStatus(List<String> status) {
             this.status = status;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "status")
+        @JsonProperty(value = "status")
         public List<String> getStatus() {
             return this.status;
         }
 
         private List<String> zones;
 
-        @ParamAnnotation(paramType = "query", paramName = "zones")
+        @JsonProperty(value = "zones")
         public void setZones(List<String> zones) {
             this.zones = zones;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "zones")
+        @JsonProperty(value = "zones")
         public List<String> getZones() {
             return this.zones;
         }
@@ -153,51 +154,52 @@ public class QingCloudService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class DescribeZonesOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
 
         private Integer totalCount;
 
-        @ParamAnnotation(paramType = "query", paramName = "total_count")
+        @JsonProperty(value = "total_count")
         public void setTotalCount(Integer totalCount) {
             this.totalCount = totalCount;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "total_count")
+        @JsonProperty(value = "total_count")
         public Integer getTotalCount() {
             return this.totalCount;
         }
 
         private List<ZoneModel> zoneSet;
 
-        @ParamAnnotation(paramType = "query", paramName = "zone_set")
+        @JsonProperty(value = "zone_set")
         public void setZoneSet(List<ZoneModel> zoneSet) {
             this.zoneSet = zoneSet;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "zone_set")
+        @JsonProperty(value = "zone_set")
         public List<ZoneModel> getZoneSet() {
             return this.zoneSet;
         }

@@ -16,6 +16,7 @@
 
 package com.qingcloud.sdk.service;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.qingcloud.sdk.config.EnvContext;
 import com.qingcloud.sdk.constants.QCConstant;
 import com.qingcloud.sdk.model.OutputModel;
@@ -24,8 +25,8 @@ import com.qingcloud.sdk.request.ResourceRequestFactory;
 import com.qingcloud.sdk.exception.QCException;
 import com.qingcloud.sdk.model.IaasParamBody;
 import com.qingcloud.sdk.service.Types.*;
-import com.qingcloud.sdk.annotation.ParamAnnotation;
 import com.qingcloud.sdk.utils.QCStringUtil;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.HashMap;
 import java.util.List;
@@ -63,7 +64,7 @@ public class VolumeService {
         context.put("APIName", "AttachVolumes");
         context.put("ServiceName", "AttachVolumes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/AttachVolumes");
+        context.put("RequestURI", "/iaas/AttachVolumes");
 
         input.setAction("AttachVolumes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -97,7 +98,7 @@ public class VolumeService {
         context.put("APIName", "AttachVolumes");
         context.put("ServiceName", "AttachVolumes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/AttachVolumes");
+        context.put("RequestURI", "/iaas/AttachVolumes");
 
         input.setAction("AttachVolumes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -117,12 +118,12 @@ public class VolumeService {
         // Required
         private String instance;
 
-        @ParamAnnotation(paramType = "query", paramName = "instance")
+        @JsonProperty(value = "instance")
         public void setInstance(String instance) {
             this.instance = instance;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "instance")
+        @JsonProperty(value = "instance")
         public String getInstance() {
             return this.instance;
         }
@@ -130,12 +131,12 @@ public class VolumeService {
         // Required
         private List<String> volumes;
 
-        @ParamAnnotation(paramType = "query", paramName = "volumes")
+        @JsonProperty(value = "volumes")
         public void setVolumes(List<String> volumes) {
             this.volumes = volumes;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "volumes")
+        @JsonProperty(value = "volumes")
         public List<String> getVolumes() {
             return this.volumes;
         }
@@ -148,39 +149,40 @@ public class VolumeService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class AttachVolumesOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -204,7 +206,7 @@ public class VolumeService {
         context.put("APIName", "CreateVolumes");
         context.put("ServiceName", "CreateVolumes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/CreateVolumes");
+        context.put("RequestURI", "/iaas/CreateVolumes");
 
         input.setAction("CreateVolumes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -238,7 +240,7 @@ public class VolumeService {
         context.put("APIName", "CreateVolumes");
         context.put("ServiceName", "CreateVolumes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/CreateVolumes");
+        context.put("RequestURI", "/iaas/CreateVolumes");
 
         input.setAction("CreateVolumes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -257,12 +259,12 @@ public class VolumeService {
     public static class CreateVolumesInput extends IaasParamBody {
         private Integer count;
 
-        @ParamAnnotation(paramType = "query", paramName = "count")
+        @JsonProperty(value = "count")
         public void setCount(Integer count) {
             this.count = count;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "count")
+        @JsonProperty(value = "count")
         public Integer getCount() {
             return this.count;
         }
@@ -270,24 +272,24 @@ public class VolumeService {
         // Required
         private Integer size;
 
-        @ParamAnnotation(paramType = "query", paramName = "size")
+        @JsonProperty(value = "size")
         public void setSize(Integer size) {
             this.size = size;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "size")
+        @JsonProperty(value = "size")
         public Integer getSize() {
             return this.size;
         }
 
         private String volumeName;
 
-        @ParamAnnotation(paramType = "query", paramName = "volume_name")
+        @JsonProperty(value = "volume_name")
         public void setVolumeName(String volumeName) {
             this.volumeName = volumeName;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "volume_name")
+        @JsonProperty(value = "volume_name")
         public String getVolumeName() {
             return this.volumeName;
         }
@@ -295,12 +297,12 @@ public class VolumeService {
     	// VolumeType's available values: 0, 1, 2, 3
         private Integer volumeType;
 
-        @ParamAnnotation(paramType = "query", paramName = "volume_type")
+        @JsonProperty(value = "volume_type")
         public void setVolumeType(Integer volumeType) {
             this.volumeType = volumeType;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "volume_type")
+        @JsonProperty(value = "volume_type")
         public Integer getVolumeType() {
             return this.volumeType;
         }
@@ -328,51 +330,52 @@ public class VolumeService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class CreateVolumesOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
 
         private List<String> volumes;
 
-        @ParamAnnotation(paramType = "query", paramName = "volumes")
+        @JsonProperty(value = "volumes")
         public void setVolumes(List<String> volumes) {
             this.volumes = volumes;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "volumes")
+        @JsonProperty(value = "volumes")
         public List<String> getVolumes() {
             return this.volumes;
         }
@@ -396,7 +399,7 @@ public class VolumeService {
         context.put("APIName", "DeleteVolumes");
         context.put("ServiceName", "DeleteVolumes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DeleteVolumes");
+        context.put("RequestURI", "/iaas/DeleteVolumes");
 
         input.setAction("DeleteVolumes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -430,7 +433,7 @@ public class VolumeService {
         context.put("APIName", "DeleteVolumes");
         context.put("ServiceName", "DeleteVolumes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DeleteVolumes");
+        context.put("RequestURI", "/iaas/DeleteVolumes");
 
         input.setAction("DeleteVolumes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -450,12 +453,12 @@ public class VolumeService {
         // Required
         private List<String> volumes;
 
-        @ParamAnnotation(paramType = "query", paramName = "volumes")
+        @JsonProperty(value = "volumes")
         public void setVolumes(List<String> volumes) {
             this.volumes = volumes;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "volumes")
+        @JsonProperty(value = "volumes")
         public List<String> getVolumes() {
             return this.volumes;
         }
@@ -465,39 +468,40 @@ public class VolumeService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class DeleteVolumesOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -521,7 +525,7 @@ public class VolumeService {
         context.put("APIName", "DescribeVolumes");
         context.put("ServiceName", "DescribeVolumes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeVolumes");
+        context.put("RequestURI", "/iaas/DescribeVolumes");
 
         input.setAction("DescribeVolumes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -555,7 +559,7 @@ public class VolumeService {
         context.put("APIName", "DescribeVolumes");
         context.put("ServiceName", "DescribeVolumes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeVolumes");
+        context.put("RequestURI", "/iaas/DescribeVolumes");
 
         input.setAction("DescribeVolumes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -574,60 +578,60 @@ public class VolumeService {
     public static class DescribeVolumesInput extends IaasParamBody {
         private Integer limit;
 
-        @ParamAnnotation(paramType = "query", paramName = "limit")
+        @JsonProperty(value = "limit")
         public void setLimit(Integer limit) {
             this.limit = limit;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "limit")
+        @JsonProperty(value = "limit")
         public Integer getLimit() {
             return this.limit;
         }
 
         private Integer offset;
 
-        @ParamAnnotation(paramType = "query", paramName = "offset")
+        @JsonProperty(value = "offset")
         public void setOffset(Integer offset) {
             this.offset = offset;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "offset")
+        @JsonProperty(value = "offset")
         public Integer getOffset() {
             return this.offset;
         }
 
         private String searchWord;
 
-        @ParamAnnotation(paramType = "query", paramName = "search_word")
+        @JsonProperty(value = "search_word")
         public void setSearchWord(String searchWord) {
             this.searchWord = searchWord;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "search_word")
+        @JsonProperty(value = "search_word")
         public String getSearchWord() {
             return this.searchWord;
         }
 
         private List<String> status;
 
-        @ParamAnnotation(paramType = "query", paramName = "status")
+        @JsonProperty(value = "status")
         public void setStatus(List<String> status) {
             this.status = status;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "status")
+        @JsonProperty(value = "status")
         public List<String> getStatus() {
             return this.status;
         }
 
         private List<String> tags;
 
-        @ParamAnnotation(paramType = "query", paramName = "tags")
+        @JsonProperty(value = "tags")
         public void setTags(List<String> tags) {
             this.tags = tags;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "tags")
+        @JsonProperty(value = "tags")
         public List<String> getTags() {
             return this.tags;
         }
@@ -635,12 +639,12 @@ public class VolumeService {
     	// Verbose's available values: 0, 1
         private Integer verbose;
 
-        @ParamAnnotation(paramType = "query", paramName = "verbose")
+        @JsonProperty(value = "verbose")
         public void setVerbose(Integer verbose) {
             this.verbose = verbose;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "verbose")
+        @JsonProperty(value = "verbose")
         public Integer getVerbose() {
             return this.verbose;
         }
@@ -648,24 +652,24 @@ public class VolumeService {
     	// VolumeType's available values: 0, 1, 2, 3
         private Integer volumeType;
 
-        @ParamAnnotation(paramType = "query", paramName = "volume_type")
+        @JsonProperty(value = "volume_type")
         public void setVolumeType(Integer volumeType) {
             this.volumeType = volumeType;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "volume_type")
+        @JsonProperty(value = "volume_type")
         public Integer getVolumeType() {
             return this.volumeType;
         }
 
         private List<String> volumes;
 
-        @ParamAnnotation(paramType = "query", paramName = "volumes")
+        @JsonProperty(value = "volumes")
         public void setVolumes(List<String> volumes) {
             this.volumes = volumes;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "volumes")
+        @JsonProperty(value = "volumes")
         public List<String> getVolumes() {
             return this.volumes;
         }
@@ -705,51 +709,52 @@ public class VolumeService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class DescribeVolumesOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
 
         private Integer totalCount;
 
-        @ParamAnnotation(paramType = "query", paramName = "total_count")
+        @JsonProperty(value = "total_count")
         public void setTotalCount(Integer totalCount) {
             this.totalCount = totalCount;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "total_count")
+        @JsonProperty(value = "total_count")
         public Integer getTotalCount() {
             return this.totalCount;
         }
 
         private List<VolumeModel> volumeSet;
 
-        @ParamAnnotation(paramType = "query", paramName = "volume_set")
+        @JsonProperty(value = "volume_set")
         public void setVolumeSet(List<VolumeModel> volumeSet) {
             this.volumeSet = volumeSet;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "volume_set")
+        @JsonProperty(value = "volume_set")
         public List<VolumeModel> getVolumeSet() {
             return this.volumeSet;
         }
@@ -773,7 +778,7 @@ public class VolumeService {
         context.put("APIName", "DetachVolumes");
         context.put("ServiceName", "DetachVolumes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DetachVolumes");
+        context.put("RequestURI", "/iaas/DetachVolumes");
 
         input.setAction("DetachVolumes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -807,7 +812,7 @@ public class VolumeService {
         context.put("APIName", "DetachVolumes");
         context.put("ServiceName", "DetachVolumes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DetachVolumes");
+        context.put("RequestURI", "/iaas/DetachVolumes");
 
         input.setAction("DetachVolumes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -827,12 +832,12 @@ public class VolumeService {
         // Required
         private String instance;
 
-        @ParamAnnotation(paramType = "query", paramName = "instance")
+        @JsonProperty(value = "instance")
         public void setInstance(String instance) {
             this.instance = instance;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "instance")
+        @JsonProperty(value = "instance")
         public String getInstance() {
             return this.instance;
         }
@@ -840,12 +845,12 @@ public class VolumeService {
         // Required
         private List<String> volumes;
 
-        @ParamAnnotation(paramType = "query", paramName = "volumes")
+        @JsonProperty(value = "volumes")
         public void setVolumes(List<String> volumes) {
             this.volumes = volumes;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "volumes")
+        @JsonProperty(value = "volumes")
         public List<String> getVolumes() {
             return this.volumes;
         }
@@ -858,39 +863,40 @@ public class VolumeService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class DetachVolumesOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -914,7 +920,7 @@ public class VolumeService {
         context.put("APIName", "ModifyVolumeAttributes");
         context.put("ServiceName", "ModifyVolumeAttributes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ModifyVolumeAttributes");
+        context.put("RequestURI", "/iaas/ModifyVolumeAttributes");
 
         input.setAction("ModifyVolumeAttributes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -948,7 +954,7 @@ public class VolumeService {
         context.put("APIName", "ModifyVolumeAttributes");
         context.put("ServiceName", "ModifyVolumeAttributes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ModifyVolumeAttributes");
+        context.put("RequestURI", "/iaas/ModifyVolumeAttributes");
 
         input.setAction("ModifyVolumeAttributes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -967,12 +973,12 @@ public class VolumeService {
     public static class ModifyVolumeAttributesInput extends IaasParamBody {
         private String description;
 
-        @ParamAnnotation(paramType = "query", paramName = "description")
+        @JsonProperty(value = "description")
         public void setDescription(String description) {
             this.description = description;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "description")
+        @JsonProperty(value = "description")
         public String getDescription() {
             return this.description;
         }
@@ -980,24 +986,24 @@ public class VolumeService {
         // Required
         private String volume;
 
-        @ParamAnnotation(paramType = "query", paramName = "volume")
+        @JsonProperty(value = "volume")
         public void setVolume(String volume) {
             this.volume = volume;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "volume")
+        @JsonProperty(value = "volume")
         public String getVolume() {
             return this.volume;
         }
 
         private String volumeName;
 
-        @ParamAnnotation(paramType = "query", paramName = "volume_name")
+        @JsonProperty(value = "volume_name")
         public void setVolumeName(String volumeName) {
             this.volumeName = volumeName;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "volume_name")
+        @JsonProperty(value = "volume_name")
         public String getVolumeName() {
             return this.volumeName;
         }
@@ -1010,27 +1016,28 @@ public class VolumeService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class ModifyVolumeAttributesOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -1054,7 +1061,7 @@ public class VolumeService {
         context.put("APIName", "ResizeVolumes");
         context.put("ServiceName", "ResizeVolumes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ResizeVolumes");
+        context.put("RequestURI", "/iaas/ResizeVolumes");
 
         input.setAction("ResizeVolumes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1088,7 +1095,7 @@ public class VolumeService {
         context.put("APIName", "ResizeVolumes");
         context.put("ServiceName", "ResizeVolumes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ResizeVolumes");
+        context.put("RequestURI", "/iaas/ResizeVolumes");
 
         input.setAction("ResizeVolumes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1108,12 +1115,12 @@ public class VolumeService {
         // Required
         private Integer size;
 
-        @ParamAnnotation(paramType = "query", paramName = "size")
+        @JsonProperty(value = "size")
         public void setSize(Integer size) {
             this.size = size;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "size")
+        @JsonProperty(value = "size")
         public Integer getSize() {
             return this.size;
         }
@@ -1121,12 +1128,12 @@ public class VolumeService {
         // Required
         private List<String> volumes;
 
-        @ParamAnnotation(paramType = "query", paramName = "volumes")
+        @JsonProperty(value = "volumes")
         public void setVolumes(List<String> volumes) {
             this.volumes = volumes;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "volumes")
+        @JsonProperty(value = "volumes")
         public List<String> getVolumes() {
             return this.volumes;
         }
@@ -1139,39 +1146,40 @@ public class VolumeService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class ResizeVolumesOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }

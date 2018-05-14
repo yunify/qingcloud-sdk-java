@@ -21,7 +21,9 @@ import com.qingcloud.sdk.constants.QCConstant;
 import com.qingcloud.sdk.exception.QCException;
 import com.qingcloud.sdk.model.OutputModel;
 import com.qingcloud.sdk.model.RequestInputModel;
-import com.qingcloud.sdk.utils.*;
+import com.qingcloud.sdk.utils.QCJSONUtil;
+import com.qingcloud.sdk.utils.QCParamInvokeUtil;
+import com.qingcloud.sdk.utils.QCStringUtil;
 import okhttp3.Request;
 
 import java.util.Map;
@@ -29,15 +31,12 @@ import java.util.Map;
 /** Created by karooli on 16/9/23. */
 public class QCRequest implements ResourceRequest {
 
-    private Request buildRequest(Map context, RequestInputModel inputModel) {
+    private Request buildRequest(Map context, RequestInputModel inputModel) throws QCException {
         String method = (String) context.get(QCConstant.PARAM_KEY_REQUEST_METHOD);
         EnvContext envContext = (EnvContext) context.get(QCConstant.ENV_CONTEXT_KEY);
         String requestUrl = envContext.getRequestUrl();
 
-        Map<String, String> parameters = QCJSONUtil.getRequestParams(inputModel, QCConstant.PARAM_TYPE_QUERY);
-
-        String uri = QCSignatureUtil.generateUrl(method, envContext.getUri(), parameters,
-                envContext.getAccessKey(), envContext.getAccessSecret(), envContext.getApiLang());
+        String uri = QCJSONUtil.parseRequestParams(inputModel, envContext, method);
 
         if (QCConstant.REQUEST_METHOD_POST.equalsIgnoreCase(method)) {
             return QCOkHttpRequestClient.getInstance().buildPostRequest(requestUrl, uri);
@@ -63,7 +62,7 @@ public class QCRequest implements ResourceRequest {
         }
     }
 
-    public OutputModel sendApiRequest(Map context, RequestInputModel inputModel, Class outputClass) throws QCException {
+    public OutputModel sendApiRequest(Map context, RequestInputModel inputModel, Class<? extends OutputModel> outputClass) throws QCException {
         String validate = inputModel.validateParam();
         EnvContext envContext = (EnvContext) context.get(QCConstant.ENV_CONTEXT_KEY);
         String envValidate = envContext.validateParam();
@@ -83,10 +82,10 @@ public class QCRequest implements ResourceRequest {
         OutputModel model = null;
         try {
             model = (OutputModel) outputClass.newInstance();
+            QCOkHttpRequestClient.fillErrorModel(QCConstant.REQUEST_ERROR_CODE, validate, model);
         } catch (InstantiationException | IllegalAccessException e) {
             e.printStackTrace();
         }
-        QCOkHttpRequestClient.fillErrorModel(QCConstant.REQUEST_ERROR_CODE, validate, model);
         return model;
     }
 }

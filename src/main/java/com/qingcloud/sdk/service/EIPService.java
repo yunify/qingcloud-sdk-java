@@ -16,6 +16,7 @@
 
 package com.qingcloud.sdk.service;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.qingcloud.sdk.config.EnvContext;
 import com.qingcloud.sdk.constants.QCConstant;
 import com.qingcloud.sdk.model.OutputModel;
@@ -24,8 +25,8 @@ import com.qingcloud.sdk.request.ResourceRequestFactory;
 import com.qingcloud.sdk.exception.QCException;
 import com.qingcloud.sdk.model.IaasParamBody;
 import com.qingcloud.sdk.service.Types.*;
-import com.qingcloud.sdk.annotation.ParamAnnotation;
 import com.qingcloud.sdk.utils.QCStringUtil;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.HashMap;
 import java.util.List;
@@ -63,7 +64,7 @@ public class EIPService {
         context.put("APIName", "AllocateEips");
         context.put("ServiceName", "AllocateEips");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/AllocateEips");
+        context.put("RequestURI", "/iaas/AllocateEips");
 
         input.setAction("AllocateEips");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -97,7 +98,7 @@ public class EIPService {
         context.put("APIName", "AllocateEIPs");
         context.put("ServiceName", "AllocateEips");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/AllocateEips");
+        context.put("RequestURI", "/iaas/AllocateEips");
 
         input.setAction("AllocateEIPs");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -117,12 +118,12 @@ public class EIPService {
         // Required
         private Integer bandwidth;
 
-        @ParamAnnotation(paramType = "query", paramName = "bandwidth")
+        @JsonProperty(value = "bandwidth")
         public void setBandwidth(Integer bandwidth) {
             this.bandwidth = bandwidth;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "bandwidth")
+        @JsonProperty(value = "bandwidth")
         public Integer getBandwidth() {
             return this.bandwidth;
         }
@@ -130,36 +131,36 @@ public class EIPService {
     	// BillingMode's available values: bandwidth, traffic
         private String billingMode;
 
-        @ParamAnnotation(paramType = "query", paramName = "billing_mode")
+        @JsonProperty(value = "billing_mode")
         public void setBillingMode(String billingMode) {
             this.billingMode = billingMode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "billing_mode")
+        @JsonProperty(value = "billing_mode")
         public String getBillingMode() {
             return this.billingMode;
         }
 
         private Integer count;
 
-        @ParamAnnotation(paramType = "query", paramName = "count")
+        @JsonProperty(value = "count")
         public void setCount(Integer count) {
             this.count = count;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "count")
+        @JsonProperty(value = "count")
         public Integer getCount() {
             return this.count;
         }
 
         private String eIPName;
 
-        @ParamAnnotation(paramType = "query", paramName = "eip_name")
+        @JsonProperty(value = "eip_name")
         public void setEIPName(String eIPName) {
             this.eIPName = eIPName;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "eip_name")
+        @JsonProperty(value = "eip_name")
         public String getEIPName() {
             return this.eIPName;
         }
@@ -167,12 +168,12 @@ public class EIPService {
     	// NeedICP's available values: 0, 1
         private Integer needICP;
 
-        @ParamAnnotation(paramType = "query", paramName = "need_icp")
+        @JsonProperty(value = "need_icp")
         public void setNeedICP(Integer needICP) {
             this.needICP = needICP;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "need_icp")
+        @JsonProperty(value = "need_icp")
         public Integer getNeedICP() {
             return this.needICP;
         }
@@ -218,39 +219,40 @@ public class EIPService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class AllocateEIPsOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private List<String> eIPs;
 
-        @ParamAnnotation(paramType = "query", paramName = "eips")
+        @JsonProperty(value = "eips")
         public void setEIPs(List<String> eIPs) {
             this.eIPs = eIPs;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "eips")
+        @JsonProperty(value = "eips")
         public List<String> getEIPs() {
             return this.eIPs;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -274,7 +276,7 @@ public class EIPService {
         context.put("APIName", "AssociateEip");
         context.put("ServiceName", "AssociateEip");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/AssociateEip");
+        context.put("RequestURI", "/iaas/AssociateEip");
 
         input.setAction("AssociateEip");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -308,7 +310,7 @@ public class EIPService {
         context.put("APIName", "AssociateEIP");
         context.put("ServiceName", "AssociateEip");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/AssociateEip");
+        context.put("RequestURI", "/iaas/AssociateEip");
 
         input.setAction("AssociateEIP");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -328,12 +330,12 @@ public class EIPService {
         // Required
         private String eIP;
 
-        @ParamAnnotation(paramType = "query", paramName = "eip")
+        @JsonProperty(value = "eip")
         public void setEIP(String eIP) {
             this.eIP = eIP;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "eip")
+        @JsonProperty(value = "eip")
         public String getEIP() {
             return this.eIP;
         }
@@ -341,12 +343,12 @@ public class EIPService {
         // Required
         private String instance;
 
-        @ParamAnnotation(paramType = "query", paramName = "instance")
+        @JsonProperty(value = "instance")
         public void setInstance(String instance) {
             this.instance = instance;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "instance")
+        @JsonProperty(value = "instance")
         public String getInstance() {
             return this.instance;
         }
@@ -362,39 +364,40 @@ public class EIPService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class AssociateEIPOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -418,7 +421,7 @@ public class EIPService {
         context.put("APIName", "ChangeEipsBandwidth");
         context.put("ServiceName", "ChangeEipsBandwidth");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ChangeEipsBandwidth");
+        context.put("RequestURI", "/iaas/ChangeEipsBandwidth");
 
         input.setAction("ChangeEipsBandwidth");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -452,7 +455,7 @@ public class EIPService {
         context.put("APIName", "ChangeEIPsBandwidth");
         context.put("ServiceName", "ChangeEipsBandwidth");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ChangeEipsBandwidth");
+        context.put("RequestURI", "/iaas/ChangeEipsBandwidth");
 
         input.setAction("ChangeEIPsBandwidth");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -472,12 +475,12 @@ public class EIPService {
         // Required
         private Integer bandwidth;
 
-        @ParamAnnotation(paramType = "query", paramName = "bandwidth")
+        @JsonProperty(value = "bandwidth")
         public void setBandwidth(Integer bandwidth) {
             this.bandwidth = bandwidth;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "bandwidth")
+        @JsonProperty(value = "bandwidth")
         public Integer getBandwidth() {
             return this.bandwidth;
         }
@@ -485,12 +488,12 @@ public class EIPService {
         // Required
         private List<String> eIPs;
 
-        @ParamAnnotation(paramType = "query", paramName = "eips")
+        @JsonProperty(value = "eips")
         public void setEIPs(List<String> eIPs) {
             this.eIPs = eIPs;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "eips")
+        @JsonProperty(value = "eips")
         public List<String> getEIPs() {
             return this.eIPs;
         }
@@ -503,39 +506,40 @@ public class EIPService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class ChangeEIPsBandwidthOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -559,7 +563,7 @@ public class EIPService {
         context.put("APIName", "ChangeEipsBillingMode");
         context.put("ServiceName", "ChangeEipsBillingMode");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ChangeEipsBillingMode");
+        context.put("RequestURI", "/iaas/ChangeEipsBillingMode");
 
         input.setAction("ChangeEipsBillingMode");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -593,7 +597,7 @@ public class EIPService {
         context.put("APIName", "ChangeEIPsBillingMode");
         context.put("ServiceName", "ChangeEipsBillingMode");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ChangeEipsBillingMode");
+        context.put("RequestURI", "/iaas/ChangeEipsBillingMode");
 
         input.setAction("ChangeEIPsBillingMode");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -614,24 +618,24 @@ public class EIPService {
         // Required
         private String billingMode;
 
-        @ParamAnnotation(paramType = "query", paramName = "billing_mode")
+        @JsonProperty(value = "billing_mode")
         public void setBillingMode(String billingMode) {
             this.billingMode = billingMode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "billing_mode")
+        @JsonProperty(value = "billing_mode")
         public String getBillingMode() {
             return this.billingMode;
         }
 
         private String eIPGroup;
 
-        @ParamAnnotation(paramType = "query", paramName = "eip_group")
+        @JsonProperty(value = "eip_group")
         public void setEIPGroup(String eIPGroup) {
             this.eIPGroup = eIPGroup;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "eip_group")
+        @JsonProperty(value = "eip_group")
         public String getEIPGroup() {
             return this.eIPGroup;
         }
@@ -639,12 +643,12 @@ public class EIPService {
         // Required
         private List<String> eIPs;
 
-        @ParamAnnotation(paramType = "query", paramName = "eips")
+        @JsonProperty(value = "eips")
         public void setEIPs(List<String> eIPs) {
             this.eIPs = eIPs;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "eips")
+        @JsonProperty(value = "eips")
         public List<String> getEIPs() {
             return this.eIPs;
         }
@@ -675,39 +679,40 @@ public class EIPService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class ChangeEIPsBillingModeOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -731,7 +736,7 @@ public class EIPService {
         context.put("APIName", "DescribeEips");
         context.put("ServiceName", "DescribeEips");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeEips");
+        context.put("RequestURI", "/iaas/DescribeEips");
 
         input.setAction("DescribeEips");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -765,7 +770,7 @@ public class EIPService {
         context.put("APIName", "DescribeEIPs");
         context.put("ServiceName", "DescribeEips");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeEips");
+        context.put("RequestURI", "/iaas/DescribeEips");
 
         input.setAction("DescribeEIPs");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -784,96 +789,96 @@ public class EIPService {
     public static class DescribeEIPsInput extends IaasParamBody {
         private List<String> eIPs;
 
-        @ParamAnnotation(paramType = "query", paramName = "eips")
+        @JsonProperty(value = "eips")
         public void setEIPs(List<String> eIPs) {
             this.eIPs = eIPs;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "eips")
+        @JsonProperty(value = "eips")
         public List<String> getEIPs() {
             return this.eIPs;
         }
 
         private String instanceID;
 
-        @ParamAnnotation(paramType = "query", paramName = "instance_id")
+        @JsonProperty(value = "instance_id")
         public void setInstanceID(String instanceID) {
             this.instanceID = instanceID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "instance_id")
+        @JsonProperty(value = "instance_id")
         public String getInstanceID() {
             return this.instanceID;
         }
 
         private Integer limit;
 
-        @ParamAnnotation(paramType = "query", paramName = "limit")
+        @JsonProperty(value = "limit")
         public void setLimit(Integer limit) {
             this.limit = limit;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "limit")
+        @JsonProperty(value = "limit")
         public Integer getLimit() {
             return this.limit;
         }
 
         private Integer offset;
 
-        @ParamAnnotation(paramType = "query", paramName = "offset")
+        @JsonProperty(value = "offset")
         public void setOffset(Integer offset) {
             this.offset = offset;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "offset")
+        @JsonProperty(value = "offset")
         public Integer getOffset() {
             return this.offset;
         }
 
         private String searchWord;
 
-        @ParamAnnotation(paramType = "query", paramName = "search_word")
+        @JsonProperty(value = "search_word")
         public void setSearchWord(String searchWord) {
             this.searchWord = searchWord;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "search_word")
+        @JsonProperty(value = "search_word")
         public String getSearchWord() {
             return this.searchWord;
         }
 
         private List<String> status;
 
-        @ParamAnnotation(paramType = "query", paramName = "status")
+        @JsonProperty(value = "status")
         public void setStatus(List<String> status) {
             this.status = status;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "status")
+        @JsonProperty(value = "status")
         public List<String> getStatus() {
             return this.status;
         }
 
         private List<String> tags;
 
-        @ParamAnnotation(paramType = "query", paramName = "tags")
+        @JsonProperty(value = "tags")
         public void setTags(List<String> tags) {
             this.tags = tags;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "tags")
+        @JsonProperty(value = "tags")
         public List<String> getTags() {
             return this.tags;
         }
 
         private Integer verbose;
 
-        @ParamAnnotation(paramType = "query", paramName = "verbose")
+        @JsonProperty(value = "verbose")
         public void setVerbose(Integer verbose) {
             this.verbose = verbose;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "verbose")
+        @JsonProperty(value = "verbose")
         public Integer getVerbose() {
             return this.verbose;
         }
@@ -883,51 +888,52 @@ public class EIPService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class DescribeEIPsOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private List<EIPModel> eIPSet;
 
-        @ParamAnnotation(paramType = "query", paramName = "eip_set")
+        @JsonProperty(value = "eip_set")
         public void setEIPSet(List<EIPModel> eIPSet) {
             this.eIPSet = eIPSet;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "eip_set")
+        @JsonProperty(value = "eip_set")
         public List<EIPModel> getEIPSet() {
             return this.eIPSet;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
 
         private Integer totalCount;
 
-        @ParamAnnotation(paramType = "query", paramName = "total_count")
+        @JsonProperty(value = "total_count")
         public void setTotalCount(Integer totalCount) {
             this.totalCount = totalCount;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "total_count")
+        @JsonProperty(value = "total_count")
         public Integer getTotalCount() {
             return this.totalCount;
         }
@@ -951,7 +957,7 @@ public class EIPService {
         context.put("APIName", "DissociateEips");
         context.put("ServiceName", "DissociateEips");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DissociateEips");
+        context.put("RequestURI", "/iaas/DissociateEips");
 
         input.setAction("DissociateEips");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -985,7 +991,7 @@ public class EIPService {
         context.put("APIName", "DissociateEIPs");
         context.put("ServiceName", "DissociateEips");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DissociateEips");
+        context.put("RequestURI", "/iaas/DissociateEips");
 
         input.setAction("DissociateEIPs");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1005,12 +1011,12 @@ public class EIPService {
         // Required
         private List<String> eIPs;
 
-        @ParamAnnotation(paramType = "query", paramName = "eips")
+        @JsonProperty(value = "eips")
         public void setEIPs(List<String> eIPs) {
             this.eIPs = eIPs;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "eips")
+        @JsonProperty(value = "eips")
         public List<String> getEIPs() {
             return this.eIPs;
         }
@@ -1020,39 +1026,40 @@ public class EIPService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class DissociateEIPsOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -1076,7 +1083,7 @@ public class EIPService {
         context.put("APIName", "ModifyEipAttributes");
         context.put("ServiceName", "ModifyEipAttributes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ModifyEipAttributes");
+        context.put("RequestURI", "/iaas/ModifyEipAttributes");
 
         input.setAction("ModifyEipAttributes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1110,7 +1117,7 @@ public class EIPService {
         context.put("APIName", "ModifyEIPAttributes");
         context.put("ServiceName", "ModifyEipAttributes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ModifyEipAttributes");
+        context.put("RequestURI", "/iaas/ModifyEipAttributes");
 
         input.setAction("ModifyEIPAttributes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1129,12 +1136,12 @@ public class EIPService {
     public static class ModifyEIPAttributesInput extends IaasParamBody {
         private String description;
 
-        @ParamAnnotation(paramType = "query", paramName = "description")
+        @JsonProperty(value = "description")
         public void setDescription(String description) {
             this.description = description;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "description")
+        @JsonProperty(value = "description")
         public String getDescription() {
             return this.description;
         }
@@ -1142,24 +1149,24 @@ public class EIPService {
         // Required
         private String eIP;
 
-        @ParamAnnotation(paramType = "query", paramName = "eip")
+        @JsonProperty(value = "eip")
         public void setEIP(String eIP) {
             this.eIP = eIP;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "eip")
+        @JsonProperty(value = "eip")
         public String getEIP() {
             return this.eIP;
         }
 
         private String eIPName;
 
-        @ParamAnnotation(paramType = "query", paramName = "eip_name")
+        @JsonProperty(value = "eip_name")
         public void setEIPName(String eIPName) {
             this.eIPName = eIPName;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "eip_name")
+        @JsonProperty(value = "eip_name")
         public String getEIPName() {
             return this.eIPName;
         }
@@ -1172,39 +1179,40 @@ public class EIPService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class ModifyEIPAttributesOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String eIPID;
 
-        @ParamAnnotation(paramType = "query", paramName = "eip_id")
+        @JsonProperty(value = "eip_id")
         public void setEIPID(String eIPID) {
             this.eIPID = eIPID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "eip_id")
+        @JsonProperty(value = "eip_id")
         public String getEIPID() {
             return this.eIPID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -1228,7 +1236,7 @@ public class EIPService {
         context.put("APIName", "ReleaseEips");
         context.put("ServiceName", "ReleaseEips");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ReleaseEips");
+        context.put("RequestURI", "/iaas/ReleaseEips");
 
         input.setAction("ReleaseEips");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1262,7 +1270,7 @@ public class EIPService {
         context.put("APIName", "ReleaseEIPs");
         context.put("ServiceName", "ReleaseEips");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ReleaseEips");
+        context.put("RequestURI", "/iaas/ReleaseEips");
 
         input.setAction("ReleaseEIPs");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1282,12 +1290,12 @@ public class EIPService {
         // Required
         private List<String> eIPs;
 
-        @ParamAnnotation(paramType = "query", paramName = "eips")
+        @JsonProperty(value = "eips")
         public void setEIPs(List<String> eIPs) {
             this.eIPs = eIPs;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "eips")
+        @JsonProperty(value = "eips")
         public List<String> getEIPs() {
             return this.eIPs;
         }
@@ -1297,39 +1305,40 @@ public class EIPService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class ReleaseEIPsOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }

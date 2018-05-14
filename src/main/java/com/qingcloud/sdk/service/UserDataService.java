@@ -16,6 +16,7 @@
 
 package com.qingcloud.sdk.service;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.qingcloud.sdk.config.EnvContext;
 import com.qingcloud.sdk.constants.QCConstant;
 import com.qingcloud.sdk.model.OutputModel;
@@ -24,8 +25,8 @@ import com.qingcloud.sdk.request.ResourceRequestFactory;
 import com.qingcloud.sdk.exception.QCException;
 import com.qingcloud.sdk.model.IaasParamBody;
 import com.qingcloud.sdk.service.Types.*;
-import com.qingcloud.sdk.annotation.ParamAnnotation;
 import com.qingcloud.sdk.utils.QCStringUtil;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.HashMap;
 import java.util.List;
@@ -63,7 +64,7 @@ public class UserDataService {
         context.put("APIName", "UploadUserDataAttachment");
         context.put("ServiceName", "UploadUserDataAttachment");
         context.put("RequestMethod", "POST");
-        context.put("RequestURI", "/UploadUserDataAttachment");
+        context.put("RequestURI", "/iaas/UploadUserDataAttachment");
 
         input.setAction("UploadUserDataAttachment");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -97,7 +98,7 @@ public class UserDataService {
         context.put("APIName", "UploadUserDataAttachment");
         context.put("ServiceName", "UploadUserDataAttachment");
         context.put("RequestMethod", "POST");
-        context.put("RequestURI", "/UploadUserDataAttachment");
+        context.put("RequestURI", "/iaas/UploadUserDataAttachment");
 
         input.setAction("UploadUserDataAttachment");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -117,24 +118,24 @@ public class UserDataService {
         // Required
         private String attachmentContent;
 
-        @ParamAnnotation(paramType = "query", paramName = "attachment_content")
+        @JsonProperty(value = "attachment_content")
         public void setAttachmentContent(String attachmentContent) {
             this.attachmentContent = attachmentContent;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "attachment_content")
+        @JsonProperty(value = "attachment_content")
         public String getAttachmentContent() {
             return this.attachmentContent;
         }
 
         private String attachmentName;
 
-        @ParamAnnotation(paramType = "query", paramName = "attachment_name")
+        @JsonProperty(value = "attachment_name")
         public void setAttachmentName(String attachmentName) {
             this.attachmentName = attachmentName;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "attachment_name")
+        @JsonProperty(value = "attachment_name")
         public String getAttachmentName() {
             return this.attachmentName;
         }
@@ -147,39 +148,40 @@ public class UserDataService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class UploadUserDataAttachmentOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String attachmentID;
 
-        @ParamAnnotation(paramType = "query", paramName = "attachment_id")
+        @JsonProperty(value = "attachment_id")
         public void setAttachmentID(String attachmentID) {
             this.attachmentID = attachmentID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "attachment_id")
+        @JsonProperty(value = "attachment_id")
         public String getAttachmentID() {
             return this.attachmentID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }

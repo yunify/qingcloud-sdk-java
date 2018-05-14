@@ -16,216 +16,102 @@
 
 package com.qingcloud.sdk.utils;
 
-import com.alibaba.fastjson.JSONArray;
-import com.alibaba.fastjson.JSONObject;
-import com.qingcloud.sdk.annotation.ParamAnnotation;
-import com.qingcloud.sdk.service.Types;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.qingcloud.sdk.config.EnvContext;
+import com.qingcloud.sdk.constants.QCConstant;
+import com.qingcloud.sdk.exception.QCException;
+import com.qingcloud.sdk.model.RequestInputModel;
 
-import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.lang.reflect.ParameterizedType;
+import java.io.UnsupportedEncodingException;
 import java.math.BigDecimal;
 import java.util.*;
 
-import static com.qingcloud.sdk.constants.QCConstant.INVALID_MONITOR_DATA;
+import static com.qingcloud.sdk.constants.QCConstant.ENCODING_UTF8;
+import static com.qingcloud.sdk.utils.QCSignatureUtil.computeIaasSignature;
+import static com.qingcloud.sdk.utils.QCSignatureUtil.formatIso8601Date;
+import static com.qingcloud.sdk.utils.QCStringUtil.percentEncode;
 
 public class QCJSONUtil {
 
-    private static final List<Class> PRIMITIVE_TYPES = new ArrayList<>(Arrays.asList(String.class, Integer.class, Double.class, Long.class, Float.class, null, BigDecimal.class));
+    private static final List<Class> PRIMITIVE_TYPES = new ArrayList<>(Arrays.asList(Boolean.class, String.class, Integer.class, Double.class, Long.class, Float.class, null, BigDecimal.class));
 
-    public static Map<String, String> getRequestParams(Object model, String paramType) {
-        return getRequestParamsRecursive(model, paramType, null);
-    }
+    public static String parseRequestParams(RequestInputModel inputModel, EnvContext envContext, String httpMethod) throws QCException {
+        ObjectMapper oMapper = new ObjectMapper();
+        Map<String, Object> parameters = oMapper.convertValue(inputModel, Map.class);
 
-    private static Map<String, String> getRequestParamsRecursive(Object model, String paramType, String prefix) {
-        if (model == null) {
-            return null;
-        }
+        parameters.put("version", "1");
+        parameters.put("signature_version", "1");
+        parameters.put("signature_method", "HmacSHA256");
+        parameters.put("access_key_id", envContext.getAccessKey());
+        parameters.put("api_lang", envContext.getApiLang());
+        parameters.put("time_stamp", formatIso8601Date(new Date()));
 
-        Map<String, String> params = new HashMap<>();
-        Class cls = model.getClass();
-        while (cls != Object.class) {
-            Field[] fields = cls.getDeclaredFields();
-            Map<String, Field> fieldMap = new HashMap<>();
-            for (Field field : fields) {
-                if (field.getType() == boolean.class) {
-                    fieldMap.put(String.format("is%s", capitalize(field.getName())), field);
-                } else {
-                    fieldMap.put(String.format("get%s", capitalize(field.getName())), field);
-                }
-            }
+        String uri = null;
+        StringBuilder sbUri = new StringBuilder();
 
-            Method[] methods = cls.getDeclaredMethods();
+        // sort keys
+        String[] keys = parameters.keySet().toArray(new String[] {});
+        Arrays.sort(keys);
 
-            for (Method method : methods) {
-                ParamAnnotation annotation = method.getAnnotation(ParamAnnotation.class);
-                Field field = fieldMap.get(method.getName());
-                if (annotation == null || !annotation.paramType().equals(paramType) || method.getReturnType() == void.class) {
+        try {
+            for (String key : keys) {
+                Object value = parameters.get(key);
+                if (value == null) {
                     continue;
                 }
-
-                String paramName = annotation.paramName();
-                if (QCStringUtil.isEmpty(paramName)) {
-                    paramName = field.getName();
-                }
-
-                Object paramValue = null;
-                try {
-                    paramValue = method.invoke(model);
-                } catch (IllegalAccessException | InvocationTargetException e) {
-                    e.printStackTrace();
-                }
-                if (paramValue == null) {
-                    continue;
-                }
-
-                if (PRIMITIVE_TYPES.contains(paramValue.getClass())) {
-                    putPrimitiveParams(params, paramName, paramValue, prefix);
-                } else if (paramValue instanceof List) {
-                    int seq = 0;
-
-                    for (Object paramItem : (List) paramValue) {
-                        seq += 1;
-                        if (!PRIMITIVE_TYPES.contains(paramItem.getClass())) {
-                            ParameterizedType listType = (ParameterizedType) field.getGenericType();
-                            Class<?> listClass = (Class<?>) listType.getActualTypeArguments()[0];
-                            if (listClass != Object.class) {
-                                Map<String, String> nestedParams = getRequestParamsRecursive(paramItem, paramType, String.format("%s.%d", paramName, seq));
-                                params.putAll(nestedParams);
-                                continue;
-                            }
-                        }
-                        putPrimitiveParams(params, String.format("%s.%d", paramName, seq), paramItem, prefix);
+                String encodedKey, encodedVal;
+                if (PRIMITIVE_TYPES.contains(value.getClass())){
+                    String valueStr = String.valueOf(value);
+                    encodedKey = percentEncode(key, ENCODING_UTF8);
+                    encodedVal = percentEncode(valueStr, QCConstant.ENCODING_UTF8);
+                    sbUri.append(encodedKey).append("=").append(encodedVal).append("&");
+                } else if (value instanceof List) {
+                    int count = ((List) value).size();
+                    List<String> listKeys = new ArrayList<>();
+                    for (int i = 0; i < count; i++) {
+                        encodedKey = percentEncode(String.format("%s.%d", key, i+1), ENCODING_UTF8);
+                        listKeys.add(encodedKey);
                     }
-                } else if (paramValue instanceof Map) {
-                    for (Object key : ((Map) paramValue).keySet()) {
-                        Object val = ((Map) paramValue).get(key);
-                        if (PRIMITIVE_TYPES.contains(val.getClass())) {
-                            putPrimitiveParams(params, String.valueOf(key), val, prefix);
-                        } else {
-                            Map<String, String> nestedParams = getRequestParamsRecursive(val, paramType, String.format("%s.%s", paramName, key));
-                            params.putAll(nestedParams);
-                        }
-                    }
-                }
-            }
-            cls = cls.getSuperclass();
-        }
+                    Collections.sort(listKeys);
+                    for (int i = 0; i < count; i++) {
+                        encodedKey = listKeys.get(i);
+                        Object item = ((List) value).get(i);
 
-        return params;
-    }
-
-    public static void parseResponse(Map response, Object model) throws InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
-        if (model == null || response == null) {
-            return;
-        }
-
-        Class cls = model.getClass();
-        while (cls != Object.class) {
-            Method[] methods = cls.getDeclaredMethods();
-            Field[] fields = cls.getDeclaredFields();
-            Map<String, Field> fieldMap = new HashMap<>();
-            for (Field field : fields) {
-                fieldMap.put(String.format("set%s", capitalize(field.getName())), field);
-            }
-            for (Method method : methods) {
-                ParamAnnotation annotation = method.getAnnotation(ParamAnnotation.class);
-                if (annotation == null || method.getReturnType() != void.class) {
-                    continue;
-                }
-                String jsonKey = annotation.paramName();
-                Field field = fieldMap.get(method.getName());
-
-                if (response.keySet().contains(jsonKey)) {
-                    Object jsonValue = response.get(jsonKey);
-                    if (jsonValue == null) {
-                        continue;
-                    }
-                    if (PRIMITIVE_TYPES.contains(jsonValue.getClass())) {
-                        jsonValue = isNull(jsonValue, model) ? null : jsonValue;
-                        if (jsonValue == null || jsonValue.getClass() == field.getType()) {
-                            method.invoke(model, jsonValue);
-                        } else if (field.getType() == String.class) {
-                            method.invoke(model, String.valueOf(jsonValue));
-                        }
-                    } else if (jsonValue instanceof JSONArray) {
-                        List list = new ArrayList();
-                        for (Object jsonItem : (JSONArray) jsonValue) {
-                            if (PRIMITIVE_TYPES.contains(jsonItem.getClass())) {
-                                jsonItem = isNull(jsonItem, model) ? null : jsonItem;
-                                list.add(jsonItem);
-                            } else {
-                                ParameterizedType listType = (ParameterizedType) field.getGenericType();
-                                Class<?> listClass = (Class<?>) listType.getActualTypeArguments()[0];
-                                if (listClass != Object.class) {
-                                    Object nestedModel = listClass.getConstructor().newInstance();
-                                    parseResponse((Map) jsonItem, nestedModel);
-                                    list.add(nestedModel);
+                        if (item instanceof String) {
+                            String itemStr = (String) item;
+                            encodedVal = percentEncode(itemStr, ENCODING_UTF8);
+                            sbUri.append(encodedKey).append("=").append(encodedVal).append("&");
+                        } else if (item instanceof Map) {
+                            // specified handler for GetMonitors post structure
+                            for (Object itemKey : ((Map) item).keySet()) {
+                                String deepEncodedKey = String.format("%s.%s", encodedKey, percentEncode((String) itemKey, ENCODING_UTF8));
+                                Object deepItem = ((Map) item).get(itemKey);
+                                String deepItemStr;
+                                if (deepItem instanceof String) {
+                                    deepItemStr = (String) deepItem;
                                 } else {
-                                    if (jsonItem instanceof JSONArray) {
-                                        // monitor data parse
-                                        // refer to (monitor-compress)[https://docs.qingcloud.com/product/api/action/monitor/compress.html#monitor-compress]
-                                        List nestedModel = new ArrayList();
-                                        for (Object deepItem : (JSONArray) jsonItem)  {
-                                            if (deepItem instanceof JSONArray) {
-                                                List deepNested = new ArrayList();
-                                                for (Object deeper : (JSONArray) deepItem) {
-                                                    deeper = isNull(deeper, model) ? null : deeper;
-                                                    deepNested.add(deeper);
-                                                }
-                                                nestedModel.add(deepNested);
-                                            } else {
-                                                deepItem = isNull(deepItem, model) ? null : deepItem;
-                                                nestedModel.add(deepItem);
-                                            }
-                                        }
-                                        list.add(nestedModel);
-                                    } else {
-                                        list.add(jsonItem);
-                                    }
+                                    deepItemStr = oMapper.writeValueAsString(deepItem);
                                 }
+                                encodedVal = percentEncode(deepItemStr, ENCODING_UTF8);
+                                sbUri.append(deepEncodedKey).append("=").append(encodedVal).append("&");
                             }
+                        } else {
+                            throw new QCException(String.format("Failed to parse input model: %s!", oMapper.writeValueAsString(inputModel)));
                         }
-                        method.invoke(model, list);
-                    } else if (jsonValue instanceof JSONObject) {
-                        Class<?> fieldCls = field.getType();
-                        if (fieldCls == Map.class) {
-                            method.invoke(model, jsonValue);
-                            continue;
-                        }
-                        Object nestedModel = fieldCls.getConstructor().newInstance();
-                        parseResponse((Map) jsonValue, nestedModel);
-                        method.invoke(model, nestedModel);
                     }
+                } else {
+                    throw new QCException(String.format("Failed to parse input model: %s!", oMapper.writeValueAsString(inputModel)));
                 }
             }
-
-            cls = cls.getSuperclass();
-        }
-    }
-
-    private static void putPrimitiveParams(Map<String, String> params, String key, Object val, String prefix) {
-        if (!QCStringUtil.isEmpty(prefix)) {
-            key = String.format("%s.%s", prefix, key);
+            String tmp = sbUri.toString();
+            String uriNotSigned = tmp.substring(0, tmp.length()-1);
+            String signature = computeIaasSignature(httpMethod, envContext.getUri(), uriNotSigned, envContext.getAccessSecret());
+            uri = String.format("%s&signature=%s", uriNotSigned, signature);
+        } catch (UnsupportedEncodingException | JsonProcessingException e) {
+            e.printStackTrace();
         }
 
-        params.put(key, String.valueOf(val));
-    }
-
-    private static boolean isNull(Object jsonValue, Object model) {
-        if (jsonValue instanceof String) {
-            if (QCStringUtil.isEmpty((String) jsonValue)) {
-                return true;
-            }
-            if (model instanceof Types.MeterModel && INVALID_MONITOR_DATA.equals(jsonValue)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    private static String capitalize(String word) {
-        return String.format("%s%s", word.substring(0, 1).toUpperCase(), word.substring(1));
+        return uri;
     }
 }

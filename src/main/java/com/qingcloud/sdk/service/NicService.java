@@ -16,6 +16,7 @@
 
 package com.qingcloud.sdk.service;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.qingcloud.sdk.config.EnvContext;
 import com.qingcloud.sdk.constants.QCConstant;
 import com.qingcloud.sdk.model.OutputModel;
@@ -24,8 +25,8 @@ import com.qingcloud.sdk.request.ResourceRequestFactory;
 import com.qingcloud.sdk.exception.QCException;
 import com.qingcloud.sdk.model.IaasParamBody;
 import com.qingcloud.sdk.service.Types.*;
-import com.qingcloud.sdk.annotation.ParamAnnotation;
 import com.qingcloud.sdk.utils.QCStringUtil;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.HashMap;
 import java.util.List;
@@ -63,7 +64,7 @@ public class NicService {
         context.put("APIName", "AttachNics");
         context.put("ServiceName", "AttachNics");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/AttachNics");
+        context.put("RequestURI", "/iaas/AttachNics");
 
         input.setAction("AttachNics");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -97,7 +98,7 @@ public class NicService {
         context.put("APIName", "AttachNics");
         context.put("ServiceName", "AttachNics");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/AttachNics");
+        context.put("RequestURI", "/iaas/AttachNics");
 
         input.setAction("AttachNics");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -117,12 +118,12 @@ public class NicService {
         // Required
         private String instance;
 
-        @ParamAnnotation(paramType = "query", paramName = "instance")
+        @JsonProperty(value = "instance")
         public void setInstance(String instance) {
             this.instance = instance;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "instance")
+        @JsonProperty(value = "instance")
         public String getInstance() {
             return this.instance;
         }
@@ -130,12 +131,12 @@ public class NicService {
         // Required
         private List<String> nics;
 
-        @ParamAnnotation(paramType = "query", paramName = "nics")
+        @JsonProperty(value = "nics")
         public void setNics(List<String> nics) {
             this.nics = nics;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "nics")
+        @JsonProperty(value = "nics")
         public List<String> getNics() {
             return this.nics;
         }
@@ -148,39 +149,40 @@ public class NicService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class AttachNicsOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -204,7 +206,7 @@ public class NicService {
         context.put("APIName", "CreateNics");
         context.put("ServiceName", "CreateNics");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/CreateNics");
+        context.put("RequestURI", "/iaas/CreateNics");
 
         input.setAction("CreateNics");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -238,7 +240,7 @@ public class NicService {
         context.put("APIName", "CreateNics");
         context.put("ServiceName", "CreateNics");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/CreateNics");
+        context.put("RequestURI", "/iaas/CreateNics");
 
         input.setAction("CreateNics");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -257,36 +259,36 @@ public class NicService {
     public static class CreateNicsInput extends IaasParamBody {
         private Integer count;
 
-        @ParamAnnotation(paramType = "query", paramName = "count")
+        @JsonProperty(value = "count")
         public void setCount(Integer count) {
             this.count = count;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "count")
+        @JsonProperty(value = "count")
         public Integer getCount() {
             return this.count;
         }
 
         private String nICName;
 
-        @ParamAnnotation(paramType = "query", paramName = "nic_name")
+        @JsonProperty(value = "nic_name")
         public void setNICName(String nICName) {
             this.nICName = nICName;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "nic_name")
+        @JsonProperty(value = "nic_name")
         public String getNICName() {
             return this.nICName;
         }
 
         private List<String> privateIPs;
 
-        @ParamAnnotation(paramType = "query", paramName = "private_ips")
+        @JsonProperty(value = "private_ips")
         public void setPrivateIPs(List<String> privateIPs) {
             this.privateIPs = privateIPs;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "private_ips")
+        @JsonProperty(value = "private_ips")
         public List<String> getPrivateIPs() {
             return this.privateIPs;
         }
@@ -294,12 +296,12 @@ public class NicService {
         // Required
         private String vxNet;
 
-        @ParamAnnotation(paramType = "query", paramName = "vxnet")
+        @JsonProperty(value = "vxnet")
         public void setVxNet(String vxNet) {
             this.vxNet = vxNet;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "vxnet")
+        @JsonProperty(value = "vxnet")
         public String getVxNet() {
             return this.vxNet;
         }
@@ -312,39 +314,40 @@ public class NicService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class CreateNicsOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private List<NICIPModel> nics;
 
-        @ParamAnnotation(paramType = "query", paramName = "nics")
+        @JsonProperty(value = "nics")
         public void setNics(List<NICIPModel> nics) {
             this.nics = nics;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "nics")
+        @JsonProperty(value = "nics")
         public List<NICIPModel> getNics() {
             return this.nics;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -368,7 +371,7 @@ public class NicService {
         context.put("APIName", "DeleteNics");
         context.put("ServiceName", "DeleteNics");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DeleteNics");
+        context.put("RequestURI", "/iaas/DeleteNics");
 
         input.setAction("DeleteNics");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -402,7 +405,7 @@ public class NicService {
         context.put("APIName", "DeleteNics");
         context.put("ServiceName", "DeleteNics");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DeleteNics");
+        context.put("RequestURI", "/iaas/DeleteNics");
 
         input.setAction("DeleteNics");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -422,12 +425,12 @@ public class NicService {
         // Required
         private List<String> nics;
 
-        @ParamAnnotation(paramType = "query", paramName = "nics")
+        @JsonProperty(value = "nics")
         public void setNics(List<String> nics) {
             this.nics = nics;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "nics")
+        @JsonProperty(value = "nics")
         public List<String> getNics() {
             return this.nics;
         }
@@ -437,27 +440,28 @@ public class NicService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class DeleteNicsOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -481,7 +485,7 @@ public class NicService {
         context.put("APIName", "DescribeNics");
         context.put("ServiceName", "DescribeNics");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeNics");
+        context.put("RequestURI", "/iaas/DescribeNics");
 
         input.setAction("DescribeNics");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -515,7 +519,7 @@ public class NicService {
         context.put("APIName", "DescribeNics");
         context.put("ServiceName", "DescribeNics");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeNics");
+        context.put("RequestURI", "/iaas/DescribeNics");
 
         input.setAction("DescribeNics");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -534,60 +538,60 @@ public class NicService {
     public static class DescribeNicsInput extends IaasParamBody {
         private List<String> instances;
 
-        @ParamAnnotation(paramType = "query", paramName = "instances")
+        @JsonProperty(value = "instances")
         public void setInstances(List<String> instances) {
             this.instances = instances;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "instances")
+        @JsonProperty(value = "instances")
         public List<String> getInstances() {
             return this.instances;
         }
 
         private Integer limit;
 
-        @ParamAnnotation(paramType = "query", paramName = "limit")
+        @JsonProperty(value = "limit")
         public void setLimit(Integer limit) {
             this.limit = limit;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "limit")
+        @JsonProperty(value = "limit")
         public Integer getLimit() {
             return this.limit;
         }
 
         private String nICName;
 
-        @ParamAnnotation(paramType = "query", paramName = "nic_name")
+        @JsonProperty(value = "nic_name")
         public void setNICName(String nICName) {
             this.nICName = nICName;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "nic_name")
+        @JsonProperty(value = "nic_name")
         public String getNICName() {
             return this.nICName;
         }
 
         private List<String> nics;
 
-        @ParamAnnotation(paramType = "query", paramName = "nics")
+        @JsonProperty(value = "nics")
         public void setNics(List<String> nics) {
             this.nics = nics;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "nics")
+        @JsonProperty(value = "nics")
         public List<String> getNics() {
             return this.nics;
         }
 
         private Integer offset;
 
-        @ParamAnnotation(paramType = "query", paramName = "offset")
+        @JsonProperty(value = "offset")
         public void setOffset(Integer offset) {
             this.offset = offset;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "offset")
+        @JsonProperty(value = "offset")
         public Integer getOffset() {
             return this.offset;
         }
@@ -595,12 +599,12 @@ public class NicService {
     	// Status's available values: available, in-use
         private String status;
 
-        @ParamAnnotation(paramType = "query", paramName = "status")
+        @JsonProperty(value = "status")
         public void setStatus(String status) {
             this.status = status;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "status")
+        @JsonProperty(value = "status")
         public String getStatus() {
             return this.status;
         }
@@ -608,24 +612,24 @@ public class NicService {
     	// VxNetType's available values: 0, 1
         private Integer vxNetType;
 
-        @ParamAnnotation(paramType = "query", paramName = "vxnet_type")
+        @JsonProperty(value = "vxnet_type")
         public void setVxNetType(Integer vxNetType) {
             this.vxNetType = vxNetType;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "vxnet_type")
+        @JsonProperty(value = "vxnet_type")
         public Integer getVxNetType() {
             return this.vxNetType;
         }
 
         private List<String> vxNets;
 
-        @ParamAnnotation(paramType = "query", paramName = "vxnets")
+        @JsonProperty(value = "vxnets")
         public void setVxNets(List<String> vxNets) {
             this.vxNets = vxNets;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "vxnets")
+        @JsonProperty(value = "vxnets")
         public List<String> getVxNets() {
             return this.vxNets;
         }
@@ -668,51 +672,52 @@ public class NicService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class DescribeNicsOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private List<NICModel> nICSet;
 
-        @ParamAnnotation(paramType = "query", paramName = "nic_set")
+        @JsonProperty(value = "nic_set")
         public void setNICSet(List<NICModel> nICSet) {
             this.nICSet = nICSet;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "nic_set")
+        @JsonProperty(value = "nic_set")
         public List<NICModel> getNICSet() {
             return this.nICSet;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
 
         private Integer totalCount;
 
-        @ParamAnnotation(paramType = "query", paramName = "total_count")
+        @JsonProperty(value = "total_count")
         public void setTotalCount(Integer totalCount) {
             this.totalCount = totalCount;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "total_count")
+        @JsonProperty(value = "total_count")
         public Integer getTotalCount() {
             return this.totalCount;
         }
@@ -736,7 +741,7 @@ public class NicService {
         context.put("APIName", "DetachNics");
         context.put("ServiceName", "DetachNics");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DetachNics");
+        context.put("RequestURI", "/iaas/DetachNics");
 
         input.setAction("DetachNics");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -770,7 +775,7 @@ public class NicService {
         context.put("APIName", "DetachNics");
         context.put("ServiceName", "DetachNics");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DetachNics");
+        context.put("RequestURI", "/iaas/DetachNics");
 
         input.setAction("DetachNics");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -790,12 +795,12 @@ public class NicService {
         // Required
         private List<String> nics;
 
-        @ParamAnnotation(paramType = "query", paramName = "nics")
+        @JsonProperty(value = "nics")
         public void setNics(List<String> nics) {
             this.nics = nics;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "nics")
+        @JsonProperty(value = "nics")
         public List<String> getNics() {
             return this.nics;
         }
@@ -805,39 +810,40 @@ public class NicService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class DetachNicsOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -861,7 +867,7 @@ public class NicService {
         context.put("APIName", "ModifyNicAttributes");
         context.put("ServiceName", "ModifyNicAttributes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ModifyNicAttributes");
+        context.put("RequestURI", "/iaas/ModifyNicAttributes");
 
         input.setAction("ModifyNicAttributes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -895,7 +901,7 @@ public class NicService {
         context.put("APIName", "ModifyNicAttributes");
         context.put("ServiceName", "ModifyNicAttributes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ModifyNicAttributes");
+        context.put("RequestURI", "/iaas/ModifyNicAttributes");
 
         input.setAction("ModifyNicAttributes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -915,48 +921,48 @@ public class NicService {
         // Required
         private String nIC;
 
-        @ParamAnnotation(paramType = "query", paramName = "nic")
+        @JsonProperty(value = "nic")
         public void setNIC(String nIC) {
             this.nIC = nIC;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "nic")
+        @JsonProperty(value = "nic")
         public String getNIC() {
             return this.nIC;
         }
 
         private String nICName;
 
-        @ParamAnnotation(paramType = "query", paramName = "nic_name")
+        @JsonProperty(value = "nic_name")
         public void setNICName(String nICName) {
             this.nICName = nICName;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "nic_name")
+        @JsonProperty(value = "nic_name")
         public String getNICName() {
             return this.nICName;
         }
 
         private String privateIP;
 
-        @ParamAnnotation(paramType = "query", paramName = "private_ip")
+        @JsonProperty(value = "private_ip")
         public void setPrivateIP(String privateIP) {
             this.privateIP = privateIP;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "private_ip")
+        @JsonProperty(value = "private_ip")
         public String getPrivateIP() {
             return this.privateIP;
         }
 
         private String vxNet;
 
-        @ParamAnnotation(paramType = "query", paramName = "vxnet")
+        @JsonProperty(value = "vxnet")
         public void setVxNet(String vxNet) {
             this.vxNet = vxNet;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "vxnet")
+        @JsonProperty(value = "vxnet")
         public String getVxNet() {
             return this.vxNet;
         }
@@ -969,27 +975,28 @@ public class NicService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class ModifyNicAttributesOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }

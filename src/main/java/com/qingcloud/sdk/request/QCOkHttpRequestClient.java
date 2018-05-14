@@ -16,34 +16,29 @@
 
 package com.qingcloud.sdk.request;
 
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONException;
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.qingcloud.sdk.constants.QCConstant;
 import com.qingcloud.sdk.exception.QCException;
 import com.qingcloud.sdk.model.OutputModel;
-import com.qingcloud.sdk.utils.QCJSONUtil;
-import com.qingcloud.sdk.utils.QCLoggerUtil;
 import com.qingcloud.sdk.utils.QCParamInvokeUtil;
 import com.qingcloud.sdk.utils.QCStringUtil;
 import okhttp3.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.SSLSocketFactory;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509TrustManager;
 import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
 import java.net.SocketTimeoutException;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /** Created by karoo . */
 public class QCOkHttpRequestClient {
 
-    private static final Logger logger = QCLoggerUtil.setLoggerHandler(QCOkHttpRequestClient.class.getName());
+    private static final Logger logger = LoggerFactory.getLogger(QCOkHttpRequestClient.class);
 
     private OkHttpClient client = null;
     private OkHttpClient unsafeClient = null;
@@ -93,7 +88,7 @@ public class QCOkHttpRequestClient {
 
             return builder.build();
         } catch (Exception e) {
-            logger.log(Level.SEVERE, e.getMessage());
+            logger.error(e.getMessage());
             throw new RuntimeException(e);
         }
     }
@@ -126,8 +121,7 @@ public class QCOkHttpRequestClient {
         } else {
             url = String.format("%s?%s", requestUrl, uri);
         }
-        logger.log(Level.INFO, url);
-        System.out.println(String.format("url: %s", url));
+        logger.debug("get url: {}", url);
 
         okhttp3.Request.Builder builder = new okhttp3.Request.Builder();
         builder.addHeader(QCConstant.PARAM_KEY_USER_AGENT, QCStringUtil.getUserAgent());
@@ -140,17 +134,17 @@ public class QCOkHttpRequestClient {
      * @param body: content to put in post body of the same form as uri in buildGetRequest
      */
     public okhttp3.Request buildPostRequest(String requestUrl, String body) {
+        logger.debug("post body: {}", body);
         RequestBody requestBody = RequestBody.create(MediaType.parse("application/x-www-form-urlencoded; charset=utf-8"), body);
-        logger.log(Level.INFO, body);
         return new okhttp3.Request.Builder().url(requestUrl).post(requestBody).build();
     }
 
-    public OutputModel requestAction(okhttp3.Request request, boolean bSafe, Class outputClass) throws QCException {
+    public OutputModel requestAction(okhttp3.Request request, boolean bSafe, Class<? extends OutputModel> outputClass) throws QCException {
         Call okhttpCall = getRequestCall(bSafe, request);
         OutputModel model = (OutputModel) QCParamInvokeUtil.getOutputModel(outputClass);
         try {
             Response response = okhttpCall.execute();
-            parseResponseToModel(response, model);
+            model = parseResponseToModel(response, outputClass);
         } catch (SocketTimeoutException exception) {
             model.setRetCode(5101);
             model.setMessage(String.format("[%s] Connection Timeout! Retry later or contact with admin", request.url().toString()));
@@ -174,11 +168,11 @@ public class QCOkHttpRequestClient {
                 try {
                     if (callBack != null) {
                         OutputModel m = QCParamInvokeUtil.getOutputModel(callBack);
-                        parseResponseToModel(response, m);
+                        m = parseResponseToModel(response, m.getClass());
                         callBack.onAPIResponse(m);
                     }
                 } catch (Exception e) {
-                    logger.log(Level.SEVERE, e.getMessage());
+                    logger.error(e.getMessage());
                     onOkhttpFailure(e.getMessage(), callBack);
                 } finally {
                     if (response != null) {
@@ -197,30 +191,19 @@ public class QCOkHttpRequestClient {
                 callBack.onAPIResponse(m);
             }
         } catch (Exception e) {
-            logger.log(Level.SEVERE, e.getMessage());
+            logger.error(e.getMessage());
         }
     }
 
-    private void parseResponseToModel(okhttp3.Response response, OutputModel target) {
-        try {
-            String responseString = response.body().string();
-            Map o = (Map) JSON.parse(responseString);
-            QCJSONUtil.parseResponse(o, target);
-        } catch (JSONException | IOException | NoSuchMethodException | InstantiationException | InvocationTargetException | IllegalAccessException e) {
-            e.printStackTrace();
-            target.setRetCode(5000);
-            target.setMessage("Fail to parse response");
-        }
+    private OutputModel parseResponseToModel(okhttp3.Response response, Class<? extends OutputModel> clazz) throws IOException {
+        String responseString = response.body().string();
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.enable(DeserializationFeature.ACCEPT_EMPTY_STRING_AS_NULL_OBJECT);
+        return mapper.readValue(responseString, clazz);
     }
 
-    public static void fillErrorModel(int code, Object content, OutputModel model) {
-        Map error = new HashMap<>();
-        error.put(QCConstant.QC_CODE_FIELD_NAME, code);
-        error.put(QCConstant.QC_MESSAGE_FIELD_NAME, content);
-        try {
-            QCJSONUtil.parseResponse(error, model);
-        } catch (InvocationTargetException | IllegalAccessException | InstantiationException | NoSuchMethodException e) {
-            e.printStackTrace();
-        }
+    static void fillErrorModel(int code, String content, OutputModel model) {
+        model.setRetCode(code);
+        model.setMessage(content);
     }
 }

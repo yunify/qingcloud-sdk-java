@@ -16,6 +16,7 @@
 
 package com.qingcloud.sdk.service;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.qingcloud.sdk.config.EnvContext;
 import com.qingcloud.sdk.constants.QCConstant;
 import com.qingcloud.sdk.model.OutputModel;
@@ -24,8 +25,8 @@ import com.qingcloud.sdk.request.ResourceRequestFactory;
 import com.qingcloud.sdk.exception.QCException;
 import com.qingcloud.sdk.model.IaasParamBody;
 import com.qingcloud.sdk.service.Types.*;
-import com.qingcloud.sdk.annotation.ParamAnnotation;
 import com.qingcloud.sdk.utils.QCStringUtil;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.HashMap;
 import java.util.List;
@@ -63,7 +64,7 @@ public class InstanceService {
         context.put("APIName", "CeaseInstances");
         context.put("ServiceName", "CeaseInstances");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/CeaseInstances");
+        context.put("RequestURI", "/iaas/CeaseInstances");
 
         input.setAction("CeaseInstances");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -97,7 +98,7 @@ public class InstanceService {
         context.put("APIName", "CeaseInstances");
         context.put("ServiceName", "CeaseInstances");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/CeaseInstances");
+        context.put("RequestURI", "/iaas/CeaseInstances");
 
         input.setAction("CeaseInstances");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -117,12 +118,12 @@ public class InstanceService {
         // Required
         private List<String> instances;
 
-        @ParamAnnotation(paramType = "query", paramName = "instances")
+        @JsonProperty(value = "instances")
         public void setInstances(List<String> instances) {
             this.instances = instances;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "instances")
+        @JsonProperty(value = "instances")
         public List<String> getInstances() {
             return this.instances;
         }
@@ -132,39 +133,40 @@ public class InstanceService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class CeaseInstancesOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -188,7 +190,7 @@ public class InstanceService {
         context.put("APIName", "DescribeInstanceTypes");
         context.put("ServiceName", "DescribeInstanceTypes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeInstanceTypes");
+        context.put("RequestURI", "/iaas/DescribeInstanceTypes");
 
         input.setAction("DescribeInstanceTypes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -222,7 +224,7 @@ public class InstanceService {
         context.put("APIName", "DescribeInstanceTypes");
         context.put("ServiceName", "DescribeInstanceTypes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeInstanceTypes");
+        context.put("RequestURI", "/iaas/DescribeInstanceTypes");
 
         input.setAction("DescribeInstanceTypes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -241,12 +243,12 @@ public class InstanceService {
     public static class DescribeInstanceTypesInput extends IaasParamBody {
         private List<String> instanceTypes;
 
-        @ParamAnnotation(paramType = "query", paramName = "instance_types")
+        @JsonProperty(value = "instance_types")
         public void setInstanceTypes(List<String> instanceTypes) {
             this.instanceTypes = instanceTypes;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "instance_types")
+        @JsonProperty(value = "instance_types")
         public List<String> getInstanceTypes() {
             return this.instanceTypes;
         }
@@ -256,51 +258,52 @@ public class InstanceService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class DescribeInstanceTypesOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private List<InstanceTypeModel> instanceTypeSet;
 
-        @ParamAnnotation(paramType = "query", paramName = "instance_type_set")
+        @JsonProperty(value = "instance_type_set")
         public void setInstanceTypeSet(List<InstanceTypeModel> instanceTypeSet) {
             this.instanceTypeSet = instanceTypeSet;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "instance_type_set")
+        @JsonProperty(value = "instance_type_set")
         public List<InstanceTypeModel> getInstanceTypeSet() {
             return this.instanceTypeSet;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
 
         private Integer totalCount;
 
-        @ParamAnnotation(paramType = "query", paramName = "total_count")
+        @JsonProperty(value = "total_count")
         public void setTotalCount(Integer totalCount) {
             this.totalCount = totalCount;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "total_count")
+        @JsonProperty(value = "total_count")
         public Integer getTotalCount() {
             return this.totalCount;
         }
@@ -324,7 +327,7 @@ public class InstanceService {
         context.put("APIName", "DescribeInstances");
         context.put("ServiceName", "DescribeInstances");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeInstances");
+        context.put("RequestURI", "/iaas/DescribeInstances");
 
         input.setAction("DescribeInstances");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -358,7 +361,7 @@ public class InstanceService {
         context.put("APIName", "DescribeInstances");
         context.put("ServiceName", "DescribeInstances");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeInstances");
+        context.put("RequestURI", "/iaas/DescribeInstances");
 
         input.setAction("DescribeInstances");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -377,12 +380,12 @@ public class InstanceService {
     public static class DescribeInstancesInput extends IaasParamBody {
         private List<String> imageID;
 
-        @ParamAnnotation(paramType = "query", paramName = "image_id")
+        @JsonProperty(value = "image_id")
         public void setImageID(List<String> imageID) {
             this.imageID = imageID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "image_id")
+        @JsonProperty(value = "image_id")
         public List<String> getImageID() {
             return this.imageID;
         }
@@ -390,108 +393,108 @@ public class InstanceService {
     	// InstanceClass's available values: 0, 1
         private Integer instanceClass;
 
-        @ParamAnnotation(paramType = "query", paramName = "instance_class")
+        @JsonProperty(value = "instance_class")
         public void setInstanceClass(Integer instanceClass) {
             this.instanceClass = instanceClass;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "instance_class")
+        @JsonProperty(value = "instance_class")
         public Integer getInstanceClass() {
             return this.instanceClass;
         }
 
         private List<String> instanceType;
 
-        @ParamAnnotation(paramType = "query", paramName = "instance_type")
+        @JsonProperty(value = "instance_type")
         public void setInstanceType(List<String> instanceType) {
             this.instanceType = instanceType;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "instance_type")
+        @JsonProperty(value = "instance_type")
         public List<String> getInstanceType() {
             return this.instanceType;
         }
 
         private List<String> instances;
 
-        @ParamAnnotation(paramType = "query", paramName = "instances")
+        @JsonProperty(value = "instances")
         public void setInstances(List<String> instances) {
             this.instances = instances;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "instances")
+        @JsonProperty(value = "instances")
         public List<String> getInstances() {
             return this.instances;
         }
 
         private Integer isClusterNode;
 
-        @ParamAnnotation(paramType = "query", paramName = "is_cluster_node")
+        @JsonProperty(value = "is_cluster_node")
         public void setIsClusterNode(Integer isClusterNode) {
             this.isClusterNode = isClusterNode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "is_cluster_node")
+        @JsonProperty(value = "is_cluster_node")
         public Integer getIsClusterNode() {
             return this.isClusterNode;
         }
 
         private Integer limit;
 
-        @ParamAnnotation(paramType = "query", paramName = "limit")
+        @JsonProperty(value = "limit")
         public void setLimit(Integer limit) {
             this.limit = limit;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "limit")
+        @JsonProperty(value = "limit")
         public Integer getLimit() {
             return this.limit;
         }
 
         private Integer offset;
 
-        @ParamAnnotation(paramType = "query", paramName = "offset")
+        @JsonProperty(value = "offset")
         public void setOffset(Integer offset) {
             this.offset = offset;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "offset")
+        @JsonProperty(value = "offset")
         public Integer getOffset() {
             return this.offset;
         }
 
         private String searchWord;
 
-        @ParamAnnotation(paramType = "query", paramName = "search_word")
+        @JsonProperty(value = "search_word")
         public void setSearchWord(String searchWord) {
             this.searchWord = searchWord;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "search_word")
+        @JsonProperty(value = "search_word")
         public String getSearchWord() {
             return this.searchWord;
         }
 
         private List<String> status;
 
-        @ParamAnnotation(paramType = "query", paramName = "status")
+        @JsonProperty(value = "status")
         public void setStatus(List<String> status) {
             this.status = status;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "status")
+        @JsonProperty(value = "status")
         public List<String> getStatus() {
             return this.status;
         }
 
         private List<String> tags;
 
-        @ParamAnnotation(paramType = "query", paramName = "tags")
+        @JsonProperty(value = "tags")
         public void setTags(List<String> tags) {
             this.tags = tags;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "tags")
+        @JsonProperty(value = "tags")
         public List<String> getTags() {
             return this.tags;
         }
@@ -499,12 +502,12 @@ public class InstanceService {
     	// Verbose's available values: 0, 1
         private Integer verbose;
 
-        @ParamAnnotation(paramType = "query", paramName = "verbose")
+        @JsonProperty(value = "verbose")
         public void setVerbose(Integer verbose) {
             this.verbose = verbose;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "verbose")
+        @JsonProperty(value = "verbose")
         public Integer getVerbose() {
             return this.verbose;
         }
@@ -544,51 +547,52 @@ public class InstanceService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class DescribeInstancesOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private List<InstanceModel> instanceSet;
 
-        @ParamAnnotation(paramType = "query", paramName = "instance_set")
+        @JsonProperty(value = "instance_set")
         public void setInstanceSet(List<InstanceModel> instanceSet) {
             this.instanceSet = instanceSet;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "instance_set")
+        @JsonProperty(value = "instance_set")
         public List<InstanceModel> getInstanceSet() {
             return this.instanceSet;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
 
         private Integer totalCount;
 
-        @ParamAnnotation(paramType = "query", paramName = "total_count")
+        @JsonProperty(value = "total_count")
         public void setTotalCount(Integer totalCount) {
             this.totalCount = totalCount;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "total_count")
+        @JsonProperty(value = "total_count")
         public Integer getTotalCount() {
             return this.totalCount;
         }
@@ -612,7 +616,7 @@ public class InstanceService {
         context.put("APIName", "ModifyInstanceAttributes");
         context.put("ServiceName", "ModifyInstanceAttributes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ModifyInstanceAttributes");
+        context.put("RequestURI", "/iaas/ModifyInstanceAttributes");
 
         input.setAction("ModifyInstanceAttributes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -646,7 +650,7 @@ public class InstanceService {
         context.put("APIName", "ModifyInstanceAttributes");
         context.put("ServiceName", "ModifyInstanceAttributes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ModifyInstanceAttributes");
+        context.put("RequestURI", "/iaas/ModifyInstanceAttributes");
 
         input.setAction("ModifyInstanceAttributes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -665,12 +669,12 @@ public class InstanceService {
     public static class ModifyInstanceAttributesInput extends IaasParamBody {
         private String description;
 
-        @ParamAnnotation(paramType = "query", paramName = "description")
+        @JsonProperty(value = "description")
         public void setDescription(String description) {
             this.description = description;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "description")
+        @JsonProperty(value = "description")
         public String getDescription() {
             return this.description;
         }
@@ -678,24 +682,24 @@ public class InstanceService {
         // Required
         private String instance;
 
-        @ParamAnnotation(paramType = "query", paramName = "instance")
+        @JsonProperty(value = "instance")
         public void setInstance(String instance) {
             this.instance = instance;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "instance")
+        @JsonProperty(value = "instance")
         public String getInstance() {
             return this.instance;
         }
 
         private String instanceName;
 
-        @ParamAnnotation(paramType = "query", paramName = "instance_name")
+        @JsonProperty(value = "instance_name")
         public void setInstanceName(String instanceName) {
             this.instanceName = instanceName;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "instance_name")
+        @JsonProperty(value = "instance_name")
         public String getInstanceName() {
             return this.instanceName;
         }
@@ -708,27 +712,28 @@ public class InstanceService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class ModifyInstanceAttributesOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -752,7 +757,7 @@ public class InstanceService {
         context.put("APIName", "ResetInstances");
         context.put("ServiceName", "ResetInstances");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ResetInstances");
+        context.put("RequestURI", "/iaas/ResetInstances");
 
         input.setAction("ResetInstances");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -786,7 +791,7 @@ public class InstanceService {
         context.put("APIName", "ResetInstances");
         context.put("ServiceName", "ResetInstances");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ResetInstances");
+        context.put("RequestURI", "/iaas/ResetInstances");
 
         input.setAction("ResetInstances");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -806,24 +811,24 @@ public class InstanceService {
         // Required
         private List<String> instances;
 
-        @ParamAnnotation(paramType = "query", paramName = "instances")
+        @JsonProperty(value = "instances")
         public void setInstances(List<String> instances) {
             this.instances = instances;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "instances")
+        @JsonProperty(value = "instances")
         public List<String> getInstances() {
             return this.instances;
         }
 
         private String loginKeyPair;
 
-        @ParamAnnotation(paramType = "query", paramName = "login_keypair")
+        @JsonProperty(value = "login_keypair")
         public void setLoginKeyPair(String loginKeyPair) {
             this.loginKeyPair = loginKeyPair;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "login_keypair")
+        @JsonProperty(value = "login_keypair")
         public String getLoginKeyPair() {
             return this.loginKeyPair;
         }
@@ -832,24 +837,24 @@ public class InstanceService {
         // Required
         private String loginMode;
 
-        @ParamAnnotation(paramType = "query", paramName = "login_mode")
+        @JsonProperty(value = "login_mode")
         public void setLoginMode(String loginMode) {
             this.loginMode = loginMode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "login_mode")
+        @JsonProperty(value = "login_mode")
         public String getLoginMode() {
             return this.loginMode;
         }
 
         private String loginPasswd;
 
-        @ParamAnnotation(paramType = "query", paramName = "login_passwd")
+        @JsonProperty(value = "login_passwd")
         public void setLoginPasswd(String loginPasswd) {
             this.loginPasswd = loginPasswd;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "login_passwd")
+        @JsonProperty(value = "login_passwd")
         public String getLoginPasswd() {
             return this.loginPasswd;
         }
@@ -857,12 +862,12 @@ public class InstanceService {
     	// NeedNewSID's available values: 0, 1
         private Integer needNewSID;
 
-        @ParamAnnotation(paramType = "query", paramName = "need_newsid")
+        @JsonProperty(value = "need_newsid")
         public void setNeedNewSID(Integer needNewSID) {
             this.needNewSID = needNewSID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "need_newsid")
+        @JsonProperty(value = "need_newsid")
         public Integer getNeedNewSID() {
             return this.needNewSID;
         }
@@ -908,39 +913,40 @@ public class InstanceService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class ResetInstancesOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -964,7 +970,7 @@ public class InstanceService {
         context.put("APIName", "ResizeInstances");
         context.put("ServiceName", "ResizeInstances");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ResizeInstances");
+        context.put("RequestURI", "/iaas/ResizeInstances");
 
         input.setAction("ResizeInstances");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -998,7 +1004,7 @@ public class InstanceService {
         context.put("APIName", "ResizeInstances");
         context.put("ServiceName", "ResizeInstances");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ResizeInstances");
+        context.put("RequestURI", "/iaas/ResizeInstances");
 
         input.setAction("ResizeInstances");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1018,24 +1024,24 @@ public class InstanceService {
     	// CPU's available values: 1, 2, 4, 8, 16
         private Integer cPU;
 
-        @ParamAnnotation(paramType = "query", paramName = "cpu")
+        @JsonProperty(value = "cpu")
         public void setCPU(Integer cPU) {
             this.cPU = cPU;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cpu")
+        @JsonProperty(value = "cpu")
         public Integer getCPU() {
             return this.cPU;
         }
 
         private String instanceType;
 
-        @ParamAnnotation(paramType = "query", paramName = "instance_type")
+        @JsonProperty(value = "instance_type")
         public void setInstanceType(String instanceType) {
             this.instanceType = instanceType;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "instance_type")
+        @JsonProperty(value = "instance_type")
         public String getInstanceType() {
             return this.instanceType;
         }
@@ -1043,12 +1049,12 @@ public class InstanceService {
         // Required
         private List<String> instances;
 
-        @ParamAnnotation(paramType = "query", paramName = "instances")
+        @JsonProperty(value = "instances")
         public void setInstances(List<String> instances) {
             this.instances = instances;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "instances")
+        @JsonProperty(value = "instances")
         public List<String> getInstances() {
             return this.instances;
         }
@@ -1056,12 +1062,12 @@ public class InstanceService {
     	// Memory's available values: 1024, 2048, 4096, 6144, 8192, 12288, 16384, 24576, 32768
         private Integer memory;
 
-        @ParamAnnotation(paramType = "query", paramName = "memory")
+        @JsonProperty(value = "memory")
         public void setMemory(Integer memory) {
             this.memory = memory;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "memory")
+        @JsonProperty(value = "memory")
         public Integer getMemory() {
             return this.memory;
         }
@@ -1101,39 +1107,40 @@ public class InstanceService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class ResizeInstancesOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -1157,7 +1164,7 @@ public class InstanceService {
         context.put("APIName", "RestartInstances");
         context.put("ServiceName", "RestartInstances");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/RestartInstances");
+        context.put("RequestURI", "/iaas/RestartInstances");
 
         input.setAction("RestartInstances");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1191,7 +1198,7 @@ public class InstanceService {
         context.put("APIName", "RestartInstances");
         context.put("ServiceName", "RestartInstances");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/RestartInstances");
+        context.put("RequestURI", "/iaas/RestartInstances");
 
         input.setAction("RestartInstances");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1211,12 +1218,12 @@ public class InstanceService {
         // Required
         private List<String> instances;
 
-        @ParamAnnotation(paramType = "query", paramName = "instances")
+        @JsonProperty(value = "instances")
         public void setInstances(List<String> instances) {
             this.instances = instances;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "instances")
+        @JsonProperty(value = "instances")
         public List<String> getInstances() {
             return this.instances;
         }
@@ -1226,39 +1233,40 @@ public class InstanceService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class RestartInstancesOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -1282,7 +1290,7 @@ public class InstanceService {
         context.put("APIName", "RunInstances");
         context.put("ServiceName", "RunInstances");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/RunInstances");
+        context.put("RequestURI", "/iaas/RunInstances");
 
         input.setAction("RunInstances");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1316,7 +1324,7 @@ public class InstanceService {
         context.put("APIName", "RunInstances");
         context.put("ServiceName", "RunInstances");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/RunInstances");
+        context.put("RequestURI", "/iaas/RunInstances");
 
         input.setAction("RunInstances");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1335,24 +1343,24 @@ public class InstanceService {
     public static class RunInstancesInput extends IaasParamBody {
         private String billingID;
 
-        @ParamAnnotation(paramType = "query", paramName = "billing_id")
+        @JsonProperty(value = "billing_id")
         public void setBillingID(String billingID) {
             this.billingID = billingID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "billing_id")
+        @JsonProperty(value = "billing_id")
         public String getBillingID() {
             return this.billingID;
         }
 
         private Integer count;
 
-        @ParamAnnotation(paramType = "query", paramName = "count")
+        @JsonProperty(value = "count")
         public void setCount(Integer count) {
             this.count = count;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "count")
+        @JsonProperty(value = "count")
         public Integer getCount() {
             return this.count;
         }
@@ -1360,12 +1368,12 @@ public class InstanceService {
     	// CPU's available values: 1, 2, 4, 8, 16
         private Integer cPU;
 
-        @ParamAnnotation(paramType = "query", paramName = "cpu")
+        @JsonProperty(value = "cpu")
         public void setCPU(Integer cPU) {
             this.cPU = cPU;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cpu")
+        @JsonProperty(value = "cpu")
         public Integer getCPU() {
             return this.cPU;
         }
@@ -1373,24 +1381,24 @@ public class InstanceService {
     	// CPUMax's available values: 1, 2, 4, 8, 16
         private Integer cPUMax;
 
-        @ParamAnnotation(paramType = "query", paramName = "cpu_max")
+        @JsonProperty(value = "cpu_max")
         public void setCPUMax(Integer cPUMax) {
             this.cPUMax = cPUMax;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cpu_max")
+        @JsonProperty(value = "cpu_max")
         public Integer getCPUMax() {
             return this.cPUMax;
         }
 
         private String hostname;
 
-        @ParamAnnotation(paramType = "query", paramName = "hostname")
+        @JsonProperty(value = "hostname")
         public void setHostname(String hostname) {
             this.hostname = hostname;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "hostname")
+        @JsonProperty(value = "hostname")
         public String getHostname() {
             return this.hostname;
         }
@@ -1398,12 +1406,12 @@ public class InstanceService {
         // Required
         private String imageID;
 
-        @ParamAnnotation(paramType = "query", paramName = "image_id")
+        @JsonProperty(value = "image_id")
         public void setImageID(String imageID) {
             this.imageID = imageID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "image_id")
+        @JsonProperty(value = "image_id")
         public String getImageID() {
             return this.imageID;
         }
@@ -1411,48 +1419,48 @@ public class InstanceService {
     	// InstanceClass's available values: 0, 1
         private Integer instanceClass;
 
-        @ParamAnnotation(paramType = "query", paramName = "instance_class")
+        @JsonProperty(value = "instance_class")
         public void setInstanceClass(Integer instanceClass) {
             this.instanceClass = instanceClass;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "instance_class")
+        @JsonProperty(value = "instance_class")
         public Integer getInstanceClass() {
             return this.instanceClass;
         }
 
         private String instanceName;
 
-        @ParamAnnotation(paramType = "query", paramName = "instance_name")
+        @JsonProperty(value = "instance_name")
         public void setInstanceName(String instanceName) {
             this.instanceName = instanceName;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "instance_name")
+        @JsonProperty(value = "instance_name")
         public String getInstanceName() {
             return this.instanceName;
         }
 
         private String instanceType;
 
-        @ParamAnnotation(paramType = "query", paramName = "instance_type")
+        @JsonProperty(value = "instance_type")
         public void setInstanceType(String instanceType) {
             this.instanceType = instanceType;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "instance_type")
+        @JsonProperty(value = "instance_type")
         public String getInstanceType() {
             return this.instanceType;
         }
 
         private String loginKeyPair;
 
-        @ParamAnnotation(paramType = "query", paramName = "login_keypair")
+        @JsonProperty(value = "login_keypair")
         public void setLoginKeyPair(String loginKeyPair) {
             this.loginKeyPair = loginKeyPair;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "login_keypair")
+        @JsonProperty(value = "login_keypair")
         public String getLoginKeyPair() {
             return this.loginKeyPair;
         }
@@ -1461,24 +1469,24 @@ public class InstanceService {
         // Required
         private String loginMode;
 
-        @ParamAnnotation(paramType = "query", paramName = "login_mode")
+        @JsonProperty(value = "login_mode")
         public void setLoginMode(String loginMode) {
             this.loginMode = loginMode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "login_mode")
+        @JsonProperty(value = "login_mode")
         public String getLoginMode() {
             return this.loginMode;
         }
 
         private String loginPasswd;
 
-        @ParamAnnotation(paramType = "query", paramName = "login_passwd")
+        @JsonProperty(value = "login_passwd")
         public void setLoginPasswd(String loginPasswd) {
             this.loginPasswd = loginPasswd;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "login_passwd")
+        @JsonProperty(value = "login_passwd")
         public String getLoginPasswd() {
             return this.loginPasswd;
         }
@@ -1486,12 +1494,12 @@ public class InstanceService {
     	// MemMax's available values: 1024, 2048, 4096, 6144, 8192, 12288, 16384, 24576, 32768
         private Integer memMax;
 
-        @ParamAnnotation(paramType = "query", paramName = "mem_max")
+        @JsonProperty(value = "mem_max")
         public void setMemMax(Integer memMax) {
             this.memMax = memMax;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "mem_max")
+        @JsonProperty(value = "mem_max")
         public Integer getMemMax() {
             return this.memMax;
         }
@@ -1499,12 +1507,12 @@ public class InstanceService {
     	// Memory's available values: 1024, 2048, 4096, 6144, 8192, 12288, 16384, 24576, 32768
         private Integer memory;
 
-        @ParamAnnotation(paramType = "query", paramName = "memory")
+        @JsonProperty(value = "memory")
         public void setMemory(Integer memory) {
             this.memory = memory;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "memory")
+        @JsonProperty(value = "memory")
         public Integer getMemory() {
             return this.memory;
         }
@@ -1512,12 +1520,12 @@ public class InstanceService {
     	// NeedNewSID's available values: 0, 1
         private Integer needNewSID;
 
-        @ParamAnnotation(paramType = "query", paramName = "need_newsid")
+        @JsonProperty(value = "need_newsid")
         public void setNeedNewSID(Integer needNewSID) {
             this.needNewSID = needNewSID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "need_newsid")
+        @JsonProperty(value = "need_newsid")
         public Integer getNeedNewSID() {
             return this.needNewSID;
         }
@@ -1525,60 +1533,60 @@ public class InstanceService {
     	// NeedUserdata's available values: 0, 1
         private Integer needUserdata;
 
-        @ParamAnnotation(paramType = "query", paramName = "need_userdata")
+        @JsonProperty(value = "need_userdata")
         public void setNeedUserdata(Integer needUserdata) {
             this.needUserdata = needUserdata;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "need_userdata")
+        @JsonProperty(value = "need_userdata")
         public Integer getNeedUserdata() {
             return this.needUserdata;
         }
 
         private String securityGroup;
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group")
+        @JsonProperty(value = "security_group")
         public void setSecurityGroup(String securityGroup) {
             this.securityGroup = securityGroup;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group")
+        @JsonProperty(value = "security_group")
         public String getSecurityGroup() {
             return this.securityGroup;
         }
 
         private String uIType;
 
-        @ParamAnnotation(paramType = "query", paramName = "ui_type")
+        @JsonProperty(value = "ui_type")
         public void setUIType(String uIType) {
             this.uIType = uIType;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ui_type")
+        @JsonProperty(value = "ui_type")
         public String getUIType() {
             return this.uIType;
         }
 
         private String userdataFile;
 
-        @ParamAnnotation(paramType = "query", paramName = "userdata_file")
+        @JsonProperty(value = "userdata_file")
         public void setUserdataFile(String userdataFile) {
             this.userdataFile = userdataFile;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "userdata_file")
+        @JsonProperty(value = "userdata_file")
         public String getUserdataFile() {
             return this.userdataFile;
         }
 
         private String userdataPath;
 
-        @ParamAnnotation(paramType = "query", paramName = "userdata_path")
+        @JsonProperty(value = "userdata_path")
         public void setUserdataPath(String userdataPath) {
             this.userdataPath = userdataPath;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "userdata_path")
+        @JsonProperty(value = "userdata_path")
         public String getUserdataPath() {
             return this.userdataPath;
         }
@@ -1586,48 +1594,48 @@ public class InstanceService {
     	// UserdataType's available values: plain, exec, tar
         private String userdataType;
 
-        @ParamAnnotation(paramType = "query", paramName = "userdata_type")
+        @JsonProperty(value = "userdata_type")
         public void setUserdataType(String userdataType) {
             this.userdataType = userdataType;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "userdata_type")
+        @JsonProperty(value = "userdata_type")
         public String getUserdataType() {
             return this.userdataType;
         }
 
         private String userdataValue;
 
-        @ParamAnnotation(paramType = "query", paramName = "userdata_value")
+        @JsonProperty(value = "userdata_value")
         public void setUserdataValue(String userdataValue) {
             this.userdataValue = userdataValue;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "userdata_value")
+        @JsonProperty(value = "userdata_value")
         public String getUserdataValue() {
             return this.userdataValue;
         }
 
         private List<String> volumes;
 
-        @ParamAnnotation(paramType = "query", paramName = "volumes")
+        @JsonProperty(value = "volumes")
         public void setVolumes(List<String> volumes) {
             this.volumes = volumes;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "volumes")
+        @JsonProperty(value = "volumes")
         public List<String> getVolumes() {
             return this.volumes;
         }
 
         private List<String> vxNets;
 
-        @ParamAnnotation(paramType = "query", paramName = "vxnets")
+        @JsonProperty(value = "vxnets")
         public void setVxNets(List<String> vxNets) {
             this.vxNets = vxNets;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "vxnets")
+        @JsonProperty(value = "vxnets")
         public List<String> getVxNets() {
             return this.vxNets;
         }
@@ -1784,51 +1792,52 @@ public class InstanceService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class RunInstancesOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private List<String> instances;
 
-        @ParamAnnotation(paramType = "query", paramName = "instances")
+        @JsonProperty(value = "instances")
         public void setInstances(List<String> instances) {
             this.instances = instances;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "instances")
+        @JsonProperty(value = "instances")
         public List<String> getInstances() {
             return this.instances;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -1852,7 +1861,7 @@ public class InstanceService {
         context.put("APIName", "StartInstances");
         context.put("ServiceName", "StartInstances");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/StartInstances");
+        context.put("RequestURI", "/iaas/StartInstances");
 
         input.setAction("StartInstances");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1886,7 +1895,7 @@ public class InstanceService {
         context.put("APIName", "StartInstances");
         context.put("ServiceName", "StartInstances");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/StartInstances");
+        context.put("RequestURI", "/iaas/StartInstances");
 
         input.setAction("StartInstances");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1906,12 +1915,12 @@ public class InstanceService {
         // Required
         private List<String> instances;
 
-        @ParamAnnotation(paramType = "query", paramName = "instances")
+        @JsonProperty(value = "instances")
         public void setInstances(List<String> instances) {
             this.instances = instances;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "instances")
+        @JsonProperty(value = "instances")
         public List<String> getInstances() {
             return this.instances;
         }
@@ -1921,39 +1930,40 @@ public class InstanceService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class StartInstancesOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -1977,7 +1987,7 @@ public class InstanceService {
         context.put("APIName", "StopInstances");
         context.put("ServiceName", "StopInstances");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/StopInstances");
+        context.put("RequestURI", "/iaas/StopInstances");
 
         input.setAction("StopInstances");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2011,7 +2021,7 @@ public class InstanceService {
         context.put("APIName", "StopInstances");
         context.put("ServiceName", "StopInstances");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/StopInstances");
+        context.put("RequestURI", "/iaas/StopInstances");
 
         input.setAction("StopInstances");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2031,12 +2041,12 @@ public class InstanceService {
     	// Force's available values: 0, 1
         private Integer force;
 
-        @ParamAnnotation(paramType = "query", paramName = "force")
+        @JsonProperty(value = "force")
         public void setForce(Integer force) {
             this.force = force;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "force")
+        @JsonProperty(value = "force")
         public Integer getForce() {
             return this.force;
         }
@@ -2044,12 +2054,12 @@ public class InstanceService {
         // Required
         private List<String> instances;
 
-        @ParamAnnotation(paramType = "query", paramName = "instances")
+        @JsonProperty(value = "instances")
         public void setInstances(List<String> instances) {
             this.instances = instances;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "instances")
+        @JsonProperty(value = "instances")
         public List<String> getInstances() {
             return this.instances;
         }
@@ -2074,39 +2084,40 @@ public class InstanceService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class StopInstancesOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -2130,7 +2141,7 @@ public class InstanceService {
         context.put("APIName", "TerminateInstances");
         context.put("ServiceName", "TerminateInstances");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/TerminateInstances");
+        context.put("RequestURI", "/iaas/TerminateInstances");
 
         input.setAction("TerminateInstances");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2164,7 +2175,7 @@ public class InstanceService {
         context.put("APIName", "TerminateInstances");
         context.put("ServiceName", "TerminateInstances");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/TerminateInstances");
+        context.put("RequestURI", "/iaas/TerminateInstances");
 
         input.setAction("TerminateInstances");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2184,12 +2195,12 @@ public class InstanceService {
         // Required
         private List<String> instances;
 
-        @ParamAnnotation(paramType = "query", paramName = "instances")
+        @JsonProperty(value = "instances")
         public void setInstances(List<String> instances) {
             this.instances = instances;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "instances")
+        @JsonProperty(value = "instances")
         public List<String> getInstances() {
             return this.instances;
         }
@@ -2199,39 +2210,40 @@ public class InstanceService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class TerminateInstancesOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }

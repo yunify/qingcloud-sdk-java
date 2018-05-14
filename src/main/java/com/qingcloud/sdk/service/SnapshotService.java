@@ -16,6 +16,7 @@
 
 package com.qingcloud.sdk.service;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.qingcloud.sdk.config.EnvContext;
 import com.qingcloud.sdk.constants.QCConstant;
 import com.qingcloud.sdk.model.OutputModel;
@@ -24,8 +25,8 @@ import com.qingcloud.sdk.request.ResourceRequestFactory;
 import com.qingcloud.sdk.exception.QCException;
 import com.qingcloud.sdk.model.IaasParamBody;
 import com.qingcloud.sdk.service.Types.*;
-import com.qingcloud.sdk.annotation.ParamAnnotation;
 import com.qingcloud.sdk.utils.QCStringUtil;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.HashMap;
 import java.util.List;
@@ -63,7 +64,7 @@ public class SnapshotService {
         context.put("APIName", "ApplySnapshots");
         context.put("ServiceName", "ApplySnapshots");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ApplySnapshots");
+        context.put("RequestURI", "/iaas/ApplySnapshots");
 
         input.setAction("ApplySnapshots");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -97,7 +98,7 @@ public class SnapshotService {
         context.put("APIName", "ApplySnapshots");
         context.put("ServiceName", "ApplySnapshots");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ApplySnapshots");
+        context.put("RequestURI", "/iaas/ApplySnapshots");
 
         input.setAction("ApplySnapshots");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -117,12 +118,12 @@ public class SnapshotService {
         // Required
         private List<String> snapshots;
 
-        @ParamAnnotation(paramType = "query", paramName = "snapshots")
+        @JsonProperty(value = "snapshots")
         public void setSnapshots(List<String> snapshots) {
             this.snapshots = snapshots;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "snapshots")
+        @JsonProperty(value = "snapshots")
         public List<String> getSnapshots() {
             return this.snapshots;
         }
@@ -132,39 +133,40 @@ public class SnapshotService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class ApplySnapshotsOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -188,7 +190,7 @@ public class SnapshotService {
         context.put("APIName", "CaptureInstanceFromSnapshot");
         context.put("ServiceName", "CaptureInstanceFromSnapshot");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/CaptureInstanceFromSnapshot");
+        context.put("RequestURI", "/iaas/CaptureInstanceFromSnapshot");
 
         input.setAction("CaptureInstanceFromSnapshot");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -222,7 +224,7 @@ public class SnapshotService {
         context.put("APIName", "CaptureInstanceFromSnapshot");
         context.put("ServiceName", "CaptureInstanceFromSnapshot");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/CaptureInstanceFromSnapshot");
+        context.put("RequestURI", "/iaas/CaptureInstanceFromSnapshot");
 
         input.setAction("CaptureInstanceFromSnapshot");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -241,12 +243,12 @@ public class SnapshotService {
     public static class CaptureInstanceFromSnapshotInput extends IaasParamBody {
         private String imageName;
 
-        @ParamAnnotation(paramType = "query", paramName = "image_name")
+        @JsonProperty(value = "image_name")
         public void setImageName(String imageName) {
             this.imageName = imageName;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "image_name")
+        @JsonProperty(value = "image_name")
         public String getImageName() {
             return this.imageName;
         }
@@ -254,12 +256,12 @@ public class SnapshotService {
         // Required
         private String snapshot;
 
-        @ParamAnnotation(paramType = "query", paramName = "snapshot")
+        @JsonProperty(value = "snapshot")
         public void setSnapshot(String snapshot) {
             this.snapshot = snapshot;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "snapshot")
+        @JsonProperty(value = "snapshot")
         public String getSnapshot() {
             return this.snapshot;
         }
@@ -272,51 +274,52 @@ public class SnapshotService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class CaptureInstanceFromSnapshotOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String imageID;
 
-        @ParamAnnotation(paramType = "query", paramName = "image_id")
+        @JsonProperty(value = "image_id")
         public void setImageID(String imageID) {
             this.imageID = imageID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "image_id")
+        @JsonProperty(value = "image_id")
         public String getImageID() {
             return this.imageID;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -340,7 +343,7 @@ public class SnapshotService {
         context.put("APIName", "CreateSnapshots");
         context.put("ServiceName", "CreateSnapshots");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/CreateSnapshots");
+        context.put("RequestURI", "/iaas/CreateSnapshots");
 
         input.setAction("CreateSnapshots");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -374,7 +377,7 @@ public class SnapshotService {
         context.put("APIName", "CreateSnapshots");
         context.put("ServiceName", "CreateSnapshots");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/CreateSnapshots");
+        context.put("RequestURI", "/iaas/CreateSnapshots");
 
         input.setAction("CreateSnapshots");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -394,12 +397,12 @@ public class SnapshotService {
     	// IsFull's available values: 0, 1
         private Integer isFull;
 
-        @ParamAnnotation(paramType = "query", paramName = "is_full")
+        @JsonProperty(value = "is_full")
         public void setIsFull(Integer isFull) {
             this.isFull = isFull;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "is_full")
+        @JsonProperty(value = "is_full")
         public Integer getIsFull() {
             return this.isFull;
         }
@@ -407,36 +410,36 @@ public class SnapshotService {
         // Required
         private List<String> resources;
 
-        @ParamAnnotation(paramType = "query", paramName = "resources")
+        @JsonProperty(value = "resources")
         public void setResources(List<String> resources) {
             this.resources = resources;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "resources")
+        @JsonProperty(value = "resources")
         public List<String> getResources() {
             return this.resources;
         }
 
         private String serviceParams;
 
-        @ParamAnnotation(paramType = "query", paramName = "service_params")
+        @JsonProperty(value = "service_params")
         public void setServiceParams(String serviceParams) {
             this.serviceParams = serviceParams;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "service_params")
+        @JsonProperty(value = "service_params")
         public String getServiceParams() {
             return this.serviceParams;
         }
 
         private String snapshotName;
 
-        @ParamAnnotation(paramType = "query", paramName = "snapshot_name")
+        @JsonProperty(value = "snapshot_name")
         public void setSnapshotName(String snapshotName) {
             this.snapshotName = snapshotName;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "snapshot_name")
+        @JsonProperty(value = "snapshot_name")
         public String getSnapshotName() {
             return this.snapshotName;
         }
@@ -461,51 +464,52 @@ public class SnapshotService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class CreateSnapshotsOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
 
         private List<String> snapshots;
 
-        @ParamAnnotation(paramType = "query", paramName = "snapshots")
+        @JsonProperty(value = "snapshots")
         public void setSnapshots(List<String> snapshots) {
             this.snapshots = snapshots;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "snapshots")
+        @JsonProperty(value = "snapshots")
         public List<String> getSnapshots() {
             return this.snapshots;
         }
@@ -529,7 +533,7 @@ public class SnapshotService {
         context.put("APIName", "CreateVolumeFromSnapshot");
         context.put("ServiceName", "CreateVolumeFromSnapshot");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/CreateVolumeFromSnapshot");
+        context.put("RequestURI", "/iaas/CreateVolumeFromSnapshot");
 
         input.setAction("CreateVolumeFromSnapshot");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -563,7 +567,7 @@ public class SnapshotService {
         context.put("APIName", "CreateVolumeFromSnapshot");
         context.put("ServiceName", "CreateVolumeFromSnapshot");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/CreateVolumeFromSnapshot");
+        context.put("RequestURI", "/iaas/CreateVolumeFromSnapshot");
 
         input.setAction("CreateVolumeFromSnapshot");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -583,24 +587,24 @@ public class SnapshotService {
         // Required
         private String snapshot;
 
-        @ParamAnnotation(paramType = "query", paramName = "snapshot")
+        @JsonProperty(value = "snapshot")
         public void setSnapshot(String snapshot) {
             this.snapshot = snapshot;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "snapshot")
+        @JsonProperty(value = "snapshot")
         public String getSnapshot() {
             return this.snapshot;
         }
 
         private String volumeName;
 
-        @ParamAnnotation(paramType = "query", paramName = "volume_name")
+        @JsonProperty(value = "volume_name")
         public void setVolumeName(String volumeName) {
             this.volumeName = volumeName;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "volume_name")
+        @JsonProperty(value = "volume_name")
         public String getVolumeName() {
             return this.volumeName;
         }
@@ -613,51 +617,52 @@ public class SnapshotService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class CreateVolumeFromSnapshotOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
 
         private String volumeID;
 
-        @ParamAnnotation(paramType = "query", paramName = "volume_id")
+        @JsonProperty(value = "volume_id")
         public void setVolumeID(String volumeID) {
             this.volumeID = volumeID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "volume_id")
+        @JsonProperty(value = "volume_id")
         public String getVolumeID() {
             return this.volumeID;
         }
@@ -681,7 +686,7 @@ public class SnapshotService {
         context.put("APIName", "DeleteSnapshots");
         context.put("ServiceName", "DeleteSnapshots");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DeleteSnapshots");
+        context.put("RequestURI", "/iaas/DeleteSnapshots");
 
         input.setAction("DeleteSnapshots");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -715,7 +720,7 @@ public class SnapshotService {
         context.put("APIName", "DeleteSnapshots");
         context.put("ServiceName", "DeleteSnapshots");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DeleteSnapshots");
+        context.put("RequestURI", "/iaas/DeleteSnapshots");
 
         input.setAction("DeleteSnapshots");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -735,12 +740,12 @@ public class SnapshotService {
         // Required
         private List<String> snapshots;
 
-        @ParamAnnotation(paramType = "query", paramName = "snapshots")
+        @JsonProperty(value = "snapshots")
         public void setSnapshots(List<String> snapshots) {
             this.snapshots = snapshots;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "snapshots")
+        @JsonProperty(value = "snapshots")
         public List<String> getSnapshots() {
             return this.snapshots;
         }
@@ -750,39 +755,40 @@ public class SnapshotService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class DeleteSnapshotsOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -806,7 +812,7 @@ public class SnapshotService {
         context.put("APIName", "DescribeSnapshots");
         context.put("ServiceName", "DescribeSnapshots");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeSnapshots");
+        context.put("RequestURI", "/iaas/DescribeSnapshots");
 
         input.setAction("DescribeSnapshots");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -840,7 +846,7 @@ public class SnapshotService {
         context.put("APIName", "DescribeSnapshots");
         context.put("ServiceName", "DescribeSnapshots");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeSnapshots");
+        context.put("RequestURI", "/iaas/DescribeSnapshots");
 
         input.setAction("DescribeSnapshots");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -859,60 +865,60 @@ public class SnapshotService {
     public static class DescribeSnapshotsInput extends IaasParamBody {
         private Integer limit;
 
-        @ParamAnnotation(paramType = "query", paramName = "limit")
+        @JsonProperty(value = "limit")
         public void setLimit(Integer limit) {
             this.limit = limit;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "limit")
+        @JsonProperty(value = "limit")
         public Integer getLimit() {
             return this.limit;
         }
 
         private Integer offset;
 
-        @ParamAnnotation(paramType = "query", paramName = "offset")
+        @JsonProperty(value = "offset")
         public void setOffset(Integer offset) {
             this.offset = offset;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "offset")
+        @JsonProperty(value = "offset")
         public Integer getOffset() {
             return this.offset;
         }
 
         private String resourceID;
 
-        @ParamAnnotation(paramType = "query", paramName = "resource_id")
+        @JsonProperty(value = "resource_id")
         public void setResourceID(String resourceID) {
             this.resourceID = resourceID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "resource_id")
+        @JsonProperty(value = "resource_id")
         public String getResourceID() {
             return this.resourceID;
         }
 
         private String searchWord;
 
-        @ParamAnnotation(paramType = "query", paramName = "search_word")
+        @JsonProperty(value = "search_word")
         public void setSearchWord(String searchWord) {
             this.searchWord = searchWord;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "search_word")
+        @JsonProperty(value = "search_word")
         public String getSearchWord() {
             return this.searchWord;
         }
 
         private String snapshotTime;
 
-        @ParamAnnotation(paramType = "query", paramName = "snapshot_time")
+        @JsonProperty(value = "snapshot_time")
         public void setSnapshotTime(String snapshotTime) {
             this.snapshotTime = snapshotTime;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "snapshot_time")
+        @JsonProperty(value = "snapshot_time")
         public String getSnapshotTime() {
             return this.snapshotTime;
         }
@@ -920,48 +926,48 @@ public class SnapshotService {
     	// SnapshotType's available values: 0, 1
         private Integer snapshotType;
 
-        @ParamAnnotation(paramType = "query", paramName = "snapshot_type")
+        @JsonProperty(value = "snapshot_type")
         public void setSnapshotType(Integer snapshotType) {
             this.snapshotType = snapshotType;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "snapshot_type")
+        @JsonProperty(value = "snapshot_type")
         public Integer getSnapshotType() {
             return this.snapshotType;
         }
 
         private List<String> snapshots;
 
-        @ParamAnnotation(paramType = "query", paramName = "snapshots")
+        @JsonProperty(value = "snapshots")
         public void setSnapshots(List<String> snapshots) {
             this.snapshots = snapshots;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "snapshots")
+        @JsonProperty(value = "snapshots")
         public List<String> getSnapshots() {
             return this.snapshots;
         }
 
         private List<String> status;
 
-        @ParamAnnotation(paramType = "query", paramName = "status")
+        @JsonProperty(value = "status")
         public void setStatus(List<String> status) {
             this.status = status;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "status")
+        @JsonProperty(value = "status")
         public List<String> getStatus() {
             return this.status;
         }
 
         private List<String> tags;
 
-        @ParamAnnotation(paramType = "query", paramName = "tags")
+        @JsonProperty(value = "tags")
         public void setTags(List<String> tags) {
             this.tags = tags;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "tags")
+        @JsonProperty(value = "tags")
         public List<String> getTags() {
             return this.tags;
         }
@@ -969,12 +975,12 @@ public class SnapshotService {
     	// Verbose's available values: 0, 1
         private Integer verbose;
 
-        @ParamAnnotation(paramType = "query", paramName = "verbose")
+        @JsonProperty(value = "verbose")
         public void setVerbose(Integer verbose) {
             this.verbose = verbose;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "verbose")
+        @JsonProperty(value = "verbose")
         public Integer getVerbose() {
             return this.verbose;
         }
@@ -1014,51 +1020,52 @@ public class SnapshotService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class DescribeSnapshotsOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
 
         private List<SnapshotModel> snapshotSet;
 
-        @ParamAnnotation(paramType = "query", paramName = "snapshot_set")
+        @JsonProperty(value = "snapshot_set")
         public void setSnapshotSet(List<SnapshotModel> snapshotSet) {
             this.snapshotSet = snapshotSet;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "snapshot_set")
+        @JsonProperty(value = "snapshot_set")
         public List<SnapshotModel> getSnapshotSet() {
             return this.snapshotSet;
         }
 
         private Integer totalCount;
 
-        @ParamAnnotation(paramType = "query", paramName = "total_count")
+        @JsonProperty(value = "total_count")
         public void setTotalCount(Integer totalCount) {
             this.totalCount = totalCount;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "total_count")
+        @JsonProperty(value = "total_count")
         public Integer getTotalCount() {
             return this.totalCount;
         }
@@ -1082,7 +1089,7 @@ public class SnapshotService {
         context.put("APIName", "ModifySnapshotAttributes");
         context.put("ServiceName", "ModifySnapshotAttributes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ModifySnapshotAttributes");
+        context.put("RequestURI", "/iaas/ModifySnapshotAttributes");
 
         input.setAction("ModifySnapshotAttributes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1116,7 +1123,7 @@ public class SnapshotService {
         context.put("APIName", "ModifySnapshotAttributes");
         context.put("ServiceName", "ModifySnapshotAttributes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ModifySnapshotAttributes");
+        context.put("RequestURI", "/iaas/ModifySnapshotAttributes");
 
         input.setAction("ModifySnapshotAttributes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1135,12 +1142,12 @@ public class SnapshotService {
     public static class ModifySnapshotAttributesInput extends IaasParamBody {
         private String description;
 
-        @ParamAnnotation(paramType = "query", paramName = "description")
+        @JsonProperty(value = "description")
         public void setDescription(String description) {
             this.description = description;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "description")
+        @JsonProperty(value = "description")
         public String getDescription() {
             return this.description;
         }
@@ -1148,24 +1155,24 @@ public class SnapshotService {
         // Required
         private String snapshot;
 
-        @ParamAnnotation(paramType = "query", paramName = "snapshot")
+        @JsonProperty(value = "snapshot")
         public void setSnapshot(String snapshot) {
             this.snapshot = snapshot;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "snapshot")
+        @JsonProperty(value = "snapshot")
         public String getSnapshot() {
             return this.snapshot;
         }
 
         private String snapshotName;
 
-        @ParamAnnotation(paramType = "query", paramName = "snapshot_name")
+        @JsonProperty(value = "snapshot_name")
         public void setSnapshotName(String snapshotName) {
             this.snapshotName = snapshotName;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "snapshot_name")
+        @JsonProperty(value = "snapshot_name")
         public String getSnapshotName() {
             return this.snapshotName;
         }
@@ -1178,27 +1185,28 @@ public class SnapshotService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class ModifySnapshotAttributesOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }

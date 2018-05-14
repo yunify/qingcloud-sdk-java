@@ -20,9 +20,10 @@
 package com.qingcloud.sdk.service;
 
 import com.qingcloud.sdk.exception.QCException;
-import com.qingcloud.sdk.annotation.ParamAnnotation;
 import com.qingcloud.sdk.utils.QCStringUtil;
 import com.qingcloud.sdk.request.ParamValidate;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.util.List;
 import java.util.Map;
@@ -32,6 +33,7 @@ public class Types {
     public class Model {}
 
 {{range $_, $customizedType := $customizedTypes}}
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class {{$customizedType.ID | camelCase}}Model implements ParamValidate {
         {{- template "RenderProperties" passThrough $customizedType "" "query"}}
 

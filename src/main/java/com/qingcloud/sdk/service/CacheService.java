@@ -16,6 +16,7 @@
 
 package com.qingcloud.sdk.service;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.qingcloud.sdk.config.EnvContext;
 import com.qingcloud.sdk.constants.QCConstant;
 import com.qingcloud.sdk.model.OutputModel;
@@ -24,8 +25,8 @@ import com.qingcloud.sdk.request.ResourceRequestFactory;
 import com.qingcloud.sdk.exception.QCException;
 import com.qingcloud.sdk.model.IaasParamBody;
 import com.qingcloud.sdk.service.Types.*;
-import com.qingcloud.sdk.annotation.ParamAnnotation;
 import com.qingcloud.sdk.utils.QCStringUtil;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.HashMap;
 import java.util.List;
@@ -63,7 +64,7 @@ public class CacheService {
         context.put("APIName", "AddCacheNodes");
         context.put("ServiceName", "AddCacheNodes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/AddCacheNodes");
+        context.put("RequestURI", "/iaas/AddCacheNodes");
 
         input.setAction("AddCacheNodes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -97,7 +98,7 @@ public class CacheService {
         context.put("APIName", "AddCacheNodes");
         context.put("ServiceName", "AddCacheNodes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/AddCacheNodes");
+        context.put("RequestURI", "/iaas/AddCacheNodes");
 
         input.setAction("AddCacheNodes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -117,12 +118,12 @@ public class CacheService {
         // Required
         private String cache;
 
-        @ParamAnnotation(paramType = "query", paramName = "cache")
+        @JsonProperty(value = "cache")
         public void setCache(String cache) {
             this.cache = cache;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cache")
+        @JsonProperty(value = "cache")
         public String getCache() {
             return this.cache;
         }
@@ -130,24 +131,24 @@ public class CacheService {
         // Required
         private Integer nodeCount;
 
-        @ParamAnnotation(paramType = "query", paramName = "node_count")
+        @JsonProperty(value = "node_count")
         public void setNodeCount(Integer nodeCount) {
             this.nodeCount = nodeCount;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "node_count")
+        @JsonProperty(value = "node_count")
         public Integer getNodeCount() {
             return this.nodeCount;
         }
 
         private List<CachePrivateIPModel> privateIPs;
 
-        @ParamAnnotation(paramType = "query", paramName = "private_ips")
+        @JsonProperty(value = "private_ips")
         public void setPrivateIPs(List<CachePrivateIPModel> privateIPs) {
             this.privateIPs = privateIPs;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "private_ips")
+        @JsonProperty(value = "private_ips")
         public List<CachePrivateIPModel> getPrivateIPs() {
             return this.privateIPs;
         }
@@ -173,51 +174,52 @@ public class CacheService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class AddCacheNodesOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private List<String> cacheNodes;
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_nodes")
+        @JsonProperty(value = "cache_nodes")
         public void setCacheNodes(List<String> cacheNodes) {
             this.cacheNodes = cacheNodes;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_nodes")
+        @JsonProperty(value = "cache_nodes")
         public List<String> getCacheNodes() {
             return this.cacheNodes;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -241,7 +243,7 @@ public class CacheService {
         context.put("APIName", "ApplyCacheParameterGroup");
         context.put("ServiceName", "ApplyCacheParameterGroup");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ApplyCacheParameterGroup");
+        context.put("RequestURI", "/iaas/ApplyCacheParameterGroup");
 
         input.setAction("ApplyCacheParameterGroup");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -275,7 +277,7 @@ public class CacheService {
         context.put("APIName", "ApplyCacheParameterGroup");
         context.put("ServiceName", "ApplyCacheParameterGroup");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ApplyCacheParameterGroup");
+        context.put("RequestURI", "/iaas/ApplyCacheParameterGroup");
 
         input.setAction("ApplyCacheParameterGroup");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -295,24 +297,24 @@ public class CacheService {
         // Required
         private String cacheParameterGroup;
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_parameter_group")
+        @JsonProperty(value = "cache_parameter_group")
         public void setCacheParameterGroup(String cacheParameterGroup) {
             this.cacheParameterGroup = cacheParameterGroup;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_parameter_group")
+        @JsonProperty(value = "cache_parameter_group")
         public String getCacheParameterGroup() {
             return this.cacheParameterGroup;
         }
 
         private List<String> caches;
 
-        @ParamAnnotation(paramType = "query", paramName = "caches")
+        @JsonProperty(value = "caches")
         public void setCaches(List<String> caches) {
             this.caches = caches;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "caches")
+        @JsonProperty(value = "caches")
         public List<String> getCaches() {
             return this.caches;
         }
@@ -325,39 +327,40 @@ public class CacheService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class ApplyCacheParameterGroupOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -381,7 +384,7 @@ public class CacheService {
         context.put("APIName", "ChangeCacheVxnet");
         context.put("ServiceName", "ChangeCacheVxnet");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ChangeCacheVxnet");
+        context.put("RequestURI", "/iaas/ChangeCacheVxnet");
 
         input.setAction("ChangeCacheVxnet");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -415,7 +418,7 @@ public class CacheService {
         context.put("APIName", "ChangeCacheVxNet");
         context.put("ServiceName", "ChangeCacheVxnet");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ChangeCacheVxnet");
+        context.put("RequestURI", "/iaas/ChangeCacheVxnet");
 
         input.setAction("ChangeCacheVxNet");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -435,24 +438,24 @@ public class CacheService {
         // Required
         private String cache;
 
-        @ParamAnnotation(paramType = "query", paramName = "cache")
+        @JsonProperty(value = "cache")
         public void setCache(String cache) {
             this.cache = cache;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cache")
+        @JsonProperty(value = "cache")
         public String getCache() {
             return this.cache;
         }
 
         private List<CachePrivateIPModel> privateIPs;
 
-        @ParamAnnotation(paramType = "query", paramName = "private_ips")
+        @JsonProperty(value = "private_ips")
         public void setPrivateIPs(List<CachePrivateIPModel> privateIPs) {
             this.privateIPs = privateIPs;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "private_ips")
+        @JsonProperty(value = "private_ips")
         public List<CachePrivateIPModel> getPrivateIPs() {
             return this.privateIPs;
         }
@@ -460,12 +463,12 @@ public class CacheService {
         // Required
         private String vxNet;
 
-        @ParamAnnotation(paramType = "query", paramName = "vxnet")
+        @JsonProperty(value = "vxnet")
         public void setVxNet(String vxNet) {
             this.vxNet = vxNet;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "vxnet")
+        @JsonProperty(value = "vxnet")
         public String getVxNet() {
             return this.vxNet;
         }
@@ -491,63 +494,64 @@ public class CacheService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class ChangeCacheVxNetOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String cacheID;
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_id")
+        @JsonProperty(value = "cache_id")
         public void setCacheID(String cacheID) {
             this.cacheID = cacheID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_id")
+        @JsonProperty(value = "cache_id")
         public String getCacheID() {
             return this.cacheID;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
 
         private String vxNetID;
 
-        @ParamAnnotation(paramType = "query", paramName = "vxnet_id")
+        @JsonProperty(value = "vxnet_id")
         public void setVxNetID(String vxNetID) {
             this.vxNetID = vxNetID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "vxnet_id")
+        @JsonProperty(value = "vxnet_id")
         public String getVxNetID() {
             return this.vxNetID;
         }
@@ -571,7 +575,7 @@ public class CacheService {
         context.put("APIName", "CreateCache");
         context.put("ServiceName", "CreateCache");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/CreateCache");
+        context.put("RequestURI", "/iaas/CreateCache");
 
         input.setAction("CreateCache");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -605,7 +609,7 @@ public class CacheService {
         context.put("APIName", "CreateCache");
         context.put("ServiceName", "CreateCache");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/CreateCache");
+        context.put("RequestURI", "/iaas/CreateCache");
 
         input.setAction("CreateCache");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -624,12 +628,12 @@ public class CacheService {
     public static class CreateCacheInput extends IaasParamBody {
         private Integer autoBackupTime;
 
-        @ParamAnnotation(paramType = "query", paramName = "auto_backup_time")
+        @JsonProperty(value = "auto_backup_time")
         public void setAutoBackupTime(Integer autoBackupTime) {
             this.autoBackupTime = autoBackupTime;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "auto_backup_time")
+        @JsonProperty(value = "auto_backup_time")
         public Integer getAutoBackupTime() {
             return this.autoBackupTime;
         }
@@ -637,36 +641,36 @@ public class CacheService {
     	// CacheClass's available values: 0, 1
         private Integer cacheClass;
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_class")
+        @JsonProperty(value = "cache_class")
         public void setCacheClass(Integer cacheClass) {
             this.cacheClass = cacheClass;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_class")
+        @JsonProperty(value = "cache_class")
         public Integer getCacheClass() {
             return this.cacheClass;
         }
 
         private String cacheName;
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_name")
+        @JsonProperty(value = "cache_name")
         public void setCacheName(String cacheName) {
             this.cacheName = cacheName;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_name")
+        @JsonProperty(value = "cache_name")
         public String getCacheName() {
             return this.cacheName;
         }
 
         private String cacheParameterGroup;
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_parameter_group")
+        @JsonProperty(value = "cache_parameter_group")
         public void setCacheParameterGroup(String cacheParameterGroup) {
             this.cacheParameterGroup = cacheParameterGroup;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_parameter_group")
+        @JsonProperty(value = "cache_parameter_group")
         public String getCacheParameterGroup() {
             return this.cacheParameterGroup;
         }
@@ -674,12 +678,12 @@ public class CacheService {
         // Required
         private Integer cacheSize;
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_size")
+        @JsonProperty(value = "cache_size")
         public void setCacheSize(Integer cacheSize) {
             this.cacheSize = cacheSize;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_size")
+        @JsonProperty(value = "cache_size")
         public Integer getCacheSize() {
             return this.cacheSize;
         }
@@ -687,72 +691,72 @@ public class CacheService {
         // Required
         private String cacheType;
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_type")
+        @JsonProperty(value = "cache_type")
         public void setCacheType(String cacheType) {
             this.cacheType = cacheType;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_type")
+        @JsonProperty(value = "cache_type")
         public String getCacheType() {
             return this.cacheType;
         }
 
         private Integer masterCount;
 
-        @ParamAnnotation(paramType = "query", paramName = "master_count")
+        @JsonProperty(value = "master_count")
         public void setMasterCount(Integer masterCount) {
             this.masterCount = masterCount;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "master_count")
+        @JsonProperty(value = "master_count")
         public Integer getMasterCount() {
             return this.masterCount;
         }
 
         private Integer networkType;
 
-        @ParamAnnotation(paramType = "query", paramName = "network_type")
+        @JsonProperty(value = "network_type")
         public void setNetworkType(Integer networkType) {
             this.networkType = networkType;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "network_type")
+        @JsonProperty(value = "network_type")
         public Integer getNetworkType() {
             return this.networkType;
         }
 
         private Integer nodeCount;
 
-        @ParamAnnotation(paramType = "query", paramName = "node_count")
+        @JsonProperty(value = "node_count")
         public void setNodeCount(Integer nodeCount) {
             this.nodeCount = nodeCount;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "node_count")
+        @JsonProperty(value = "node_count")
         public Integer getNodeCount() {
             return this.nodeCount;
         }
 
         private List<CachePrivateIPModel> privateIPs;
 
-        @ParamAnnotation(paramType = "query", paramName = "private_ips")
+        @JsonProperty(value = "private_ips")
         public void setPrivateIPs(List<CachePrivateIPModel> privateIPs) {
             this.privateIPs = privateIPs;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "private_ips")
+        @JsonProperty(value = "private_ips")
         public List<CachePrivateIPModel> getPrivateIPs() {
             return this.privateIPs;
         }
 
         private Integer replicateCount;
 
-        @ParamAnnotation(paramType = "query", paramName = "replicate_count")
+        @JsonProperty(value = "replicate_count")
         public void setReplicateCount(Integer replicateCount) {
             this.replicateCount = replicateCount;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "replicate_count")
+        @JsonProperty(value = "replicate_count")
         public Integer getReplicateCount() {
             return this.replicateCount;
         }
@@ -760,12 +764,12 @@ public class CacheService {
         // Required
         private String vxNet;
 
-        @ParamAnnotation(paramType = "query", paramName = "vxnet")
+        @JsonProperty(value = "vxnet")
         public void setVxNet(String vxNet) {
             this.vxNet = vxNet;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "vxnet")
+        @JsonProperty(value = "vxnet")
         public String getVxNet() {
             return this.vxNet;
         }
@@ -809,63 +813,64 @@ public class CacheService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class CreateCacheOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String cacheID;
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_id")
+        @JsonProperty(value = "cache_id")
         public void setCacheID(String cacheID) {
             this.cacheID = cacheID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_id")
+        @JsonProperty(value = "cache_id")
         public String getCacheID() {
             return this.cacheID;
         }
 
         private List<String> cacheNodes;
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_nodes")
+        @JsonProperty(value = "cache_nodes")
         public void setCacheNodes(List<String> cacheNodes) {
             this.cacheNodes = cacheNodes;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_nodes")
+        @JsonProperty(value = "cache_nodes")
         public List<String> getCacheNodes() {
             return this.cacheNodes;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -889,7 +894,7 @@ public class CacheService {
         context.put("APIName", "CreateCacheFromSnapshot");
         context.put("ServiceName", "CreateCacheFromSnapshot");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/CreateCacheFromSnapshot");
+        context.put("RequestURI", "/iaas/CreateCacheFromSnapshot");
 
         input.setAction("CreateCacheFromSnapshot");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -923,7 +928,7 @@ public class CacheService {
         context.put("APIName", "CreateCacheFromSnapshot");
         context.put("ServiceName", "CreateCacheFromSnapshot");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/CreateCacheFromSnapshot");
+        context.put("RequestURI", "/iaas/CreateCacheFromSnapshot");
 
         input.setAction("CreateCacheFromSnapshot");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -942,12 +947,12 @@ public class CacheService {
     public static class CreateCacheFromSnapshotInput extends IaasParamBody {
         private Integer autoBackupTime;
 
-        @ParamAnnotation(paramType = "query", paramName = "auto_backup_time")
+        @JsonProperty(value = "auto_backup_time")
         public void setAutoBackupTime(Integer autoBackupTime) {
             this.autoBackupTime = autoBackupTime;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "auto_backup_time")
+        @JsonProperty(value = "auto_backup_time")
         public Integer getAutoBackupTime() {
             return this.autoBackupTime;
         }
@@ -955,96 +960,96 @@ public class CacheService {
     	// CacheClass's available values: 0, 1
         private Integer cacheClass;
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_class")
+        @JsonProperty(value = "cache_class")
         public void setCacheClass(Integer cacheClass) {
             this.cacheClass = cacheClass;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_class")
+        @JsonProperty(value = "cache_class")
         public Integer getCacheClass() {
             return this.cacheClass;
         }
 
         private String cacheName;
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_name")
+        @JsonProperty(value = "cache_name")
         public void setCacheName(String cacheName) {
             this.cacheName = cacheName;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_name")
+        @JsonProperty(value = "cache_name")
         public String getCacheName() {
             return this.cacheName;
         }
 
         private String cacheParameterGroup;
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_parameter_group")
+        @JsonProperty(value = "cache_parameter_group")
         public void setCacheParameterGroup(String cacheParameterGroup) {
             this.cacheParameterGroup = cacheParameterGroup;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_parameter_group")
+        @JsonProperty(value = "cache_parameter_group")
         public String getCacheParameterGroup() {
             return this.cacheParameterGroup;
         }
 
         private Integer cacheSize;
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_size")
+        @JsonProperty(value = "cache_size")
         public void setCacheSize(Integer cacheSize) {
             this.cacheSize = cacheSize;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_size")
+        @JsonProperty(value = "cache_size")
         public Integer getCacheSize() {
             return this.cacheSize;
         }
 
         private String cacheType;
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_type")
+        @JsonProperty(value = "cache_type")
         public void setCacheType(String cacheType) {
             this.cacheType = cacheType;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_type")
+        @JsonProperty(value = "cache_type")
         public String getCacheType() {
             return this.cacheType;
         }
 
         private Integer networkType;
 
-        @ParamAnnotation(paramType = "query", paramName = "network_type")
+        @JsonProperty(value = "network_type")
         public void setNetworkType(Integer networkType) {
             this.networkType = networkType;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "network_type")
+        @JsonProperty(value = "network_type")
         public Integer getNetworkType() {
             return this.networkType;
         }
 
         private Integer nodeCount;
 
-        @ParamAnnotation(paramType = "query", paramName = "node_count")
+        @JsonProperty(value = "node_count")
         public void setNodeCount(Integer nodeCount) {
             this.nodeCount = nodeCount;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "node_count")
+        @JsonProperty(value = "node_count")
         public Integer getNodeCount() {
             return this.nodeCount;
         }
 
         private List<CachePrivateIPModel> privateIPs;
 
-        @ParamAnnotation(paramType = "query", paramName = "private_ips")
+        @JsonProperty(value = "private_ips")
         public void setPrivateIPs(List<CachePrivateIPModel> privateIPs) {
             this.privateIPs = privateIPs;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "private_ips")
+        @JsonProperty(value = "private_ips")
         public List<CachePrivateIPModel> getPrivateIPs() {
             return this.privateIPs;
         }
@@ -1052,12 +1057,12 @@ public class CacheService {
         // Required
         private String snapshot;
 
-        @ParamAnnotation(paramType = "query", paramName = "snapshot")
+        @JsonProperty(value = "snapshot")
         public void setSnapshot(String snapshot) {
             this.snapshot = snapshot;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "snapshot")
+        @JsonProperty(value = "snapshot")
         public String getSnapshot() {
             return this.snapshot;
         }
@@ -1065,12 +1070,12 @@ public class CacheService {
         // Required
         private String vxNet;
 
-        @ParamAnnotation(paramType = "query", paramName = "vxnet")
+        @JsonProperty(value = "vxnet")
         public void setVxNet(String vxNet) {
             this.vxNet = vxNet;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "vxnet")
+        @JsonProperty(value = "vxnet")
         public String getVxNet() {
             return this.vxNet;
         }
@@ -1111,63 +1116,64 @@ public class CacheService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class CreateCacheFromSnapshotOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String cacheID;
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_id")
+        @JsonProperty(value = "cache_id")
         public void setCacheID(String cacheID) {
             this.cacheID = cacheID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_id")
+        @JsonProperty(value = "cache_id")
         public String getCacheID() {
             return this.cacheID;
         }
 
         private List<String> cacheNodes;
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_nodes")
+        @JsonProperty(value = "cache_nodes")
         public void setCacheNodes(List<String> cacheNodes) {
             this.cacheNodes = cacheNodes;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_nodes")
+        @JsonProperty(value = "cache_nodes")
         public List<String> getCacheNodes() {
             return this.cacheNodes;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -1191,7 +1197,7 @@ public class CacheService {
         context.put("APIName", "CreateCacheParameterGroup");
         context.put("ServiceName", "CreateCacheParameterGroup");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/CreateCacheParameterGroup");
+        context.put("RequestURI", "/iaas/CreateCacheParameterGroup");
 
         input.setAction("CreateCacheParameterGroup");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1225,7 +1231,7 @@ public class CacheService {
         context.put("APIName", "CreateCacheParameterGroup");
         context.put("ServiceName", "CreateCacheParameterGroup");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/CreateCacheParameterGroup");
+        context.put("RequestURI", "/iaas/CreateCacheParameterGroup");
 
         input.setAction("CreateCacheParameterGroup");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1244,12 +1250,12 @@ public class CacheService {
     public static class CreateCacheParameterGroupInput extends IaasParamBody {
         private String cacheParameterGroupName;
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_parameter_group_name")
+        @JsonProperty(value = "cache_parameter_group_name")
         public void setCacheParameterGroupName(String cacheParameterGroupName) {
             this.cacheParameterGroupName = cacheParameterGroupName;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_parameter_group_name")
+        @JsonProperty(value = "cache_parameter_group_name")
         public String getCacheParameterGroupName() {
             return this.cacheParameterGroupName;
         }
@@ -1258,12 +1264,12 @@ public class CacheService {
         // Required
         private String cacheType;
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_type")
+        @JsonProperty(value = "cache_type")
         public void setCacheType(String cacheType) {
             this.cacheType = cacheType;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_type")
+        @JsonProperty(value = "cache_type")
         public String getCacheType() {
             return this.cacheType;
         }
@@ -1294,39 +1300,40 @@ public class CacheService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class CreateCacheParameterGroupOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String cacheParameterGroupID;
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_parameter_group_id")
+        @JsonProperty(value = "cache_parameter_group_id")
         public void setCacheParameterGroupID(String cacheParameterGroupID) {
             this.cacheParameterGroupID = cacheParameterGroupID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_parameter_group_id")
+        @JsonProperty(value = "cache_parameter_group_id")
         public String getCacheParameterGroupID() {
             return this.cacheParameterGroupID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -1350,7 +1357,7 @@ public class CacheService {
         context.put("APIName", "DeleteCacheNodes");
         context.put("ServiceName", "DeleteCacheNodes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DeleteCacheNodes");
+        context.put("RequestURI", "/iaas/DeleteCacheNodes");
 
         input.setAction("DeleteCacheNodes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1384,7 +1391,7 @@ public class CacheService {
         context.put("APIName", "DeleteCacheNodes");
         context.put("ServiceName", "DeleteCacheNodes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DeleteCacheNodes");
+        context.put("RequestURI", "/iaas/DeleteCacheNodes");
 
         input.setAction("DeleteCacheNodes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1404,12 +1411,12 @@ public class CacheService {
         // Required
         private String cache;
 
-        @ParamAnnotation(paramType = "query", paramName = "cache")
+        @JsonProperty(value = "cache")
         public void setCache(String cache) {
             this.cache = cache;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cache")
+        @JsonProperty(value = "cache")
         public String getCache() {
             return this.cache;
         }
@@ -1417,12 +1424,12 @@ public class CacheService {
         // Required
         private List<String> cacheNodes;
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_nodes")
+        @JsonProperty(value = "cache_nodes")
         public void setCacheNodes(List<String> cacheNodes) {
             this.cacheNodes = cacheNodes;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_nodes")
+        @JsonProperty(value = "cache_nodes")
         public List<String> getCacheNodes() {
             return this.cacheNodes;
         }
@@ -1435,51 +1442,52 @@ public class CacheService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class DeleteCacheNodesOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private List<String> cacheNodes;
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_nodes")
+        @JsonProperty(value = "cache_nodes")
         public void setCacheNodes(List<String> cacheNodes) {
             this.cacheNodes = cacheNodes;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_nodes")
+        @JsonProperty(value = "cache_nodes")
         public List<String> getCacheNodes() {
             return this.cacheNodes;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -1503,7 +1511,7 @@ public class CacheService {
         context.put("APIName", "DeleteCacheParameterGroups");
         context.put("ServiceName", "DeleteCacheParameterGroups");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DeleteCacheParameterGroups");
+        context.put("RequestURI", "/iaas/DeleteCacheParameterGroups");
 
         input.setAction("DeleteCacheParameterGroups");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1537,7 +1545,7 @@ public class CacheService {
         context.put("APIName", "DeleteCacheParameterGroups");
         context.put("ServiceName", "DeleteCacheParameterGroups");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DeleteCacheParameterGroups");
+        context.put("RequestURI", "/iaas/DeleteCacheParameterGroups");
 
         input.setAction("DeleteCacheParameterGroups");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1557,12 +1565,12 @@ public class CacheService {
         // Required
         private List<String> cacheParameterGroups;
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_parameter_groups")
+        @JsonProperty(value = "cache_parameter_groups")
         public void setCacheParameterGroups(List<String> cacheParameterGroups) {
             this.cacheParameterGroups = cacheParameterGroups;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_parameter_groups")
+        @JsonProperty(value = "cache_parameter_groups")
         public List<String> getCacheParameterGroups() {
             return this.cacheParameterGroups;
         }
@@ -1572,39 +1580,40 @@ public class CacheService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class DeleteCacheParameterGroupsOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private List<String> parameterGroups;
 
-        @ParamAnnotation(paramType = "query", paramName = "parameter_groups")
+        @JsonProperty(value = "parameter_groups")
         public void setParameterGroups(List<String> parameterGroups) {
             this.parameterGroups = parameterGroups;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "parameter_groups")
+        @JsonProperty(value = "parameter_groups")
         public List<String> getParameterGroups() {
             return this.parameterGroups;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -1628,7 +1637,7 @@ public class CacheService {
         context.put("APIName", "DeleteCaches");
         context.put("ServiceName", "DeleteCaches");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DeleteCaches");
+        context.put("RequestURI", "/iaas/DeleteCaches");
 
         input.setAction("DeleteCaches");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1662,7 +1671,7 @@ public class CacheService {
         context.put("APIName", "DeleteCaches");
         context.put("ServiceName", "DeleteCaches");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DeleteCaches");
+        context.put("RequestURI", "/iaas/DeleteCaches");
 
         input.setAction("DeleteCaches");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1682,12 +1691,12 @@ public class CacheService {
         // Required
         private List<String> caches;
 
-        @ParamAnnotation(paramType = "query", paramName = "caches")
+        @JsonProperty(value = "caches")
         public void setCaches(List<String> caches) {
             this.caches = caches;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "caches")
+        @JsonProperty(value = "caches")
         public List<String> getCaches() {
             return this.caches;
         }
@@ -1697,51 +1706,52 @@ public class CacheService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class DeleteCachesOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private List<String> cacheIDs;
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_ids")
+        @JsonProperty(value = "cache_ids")
         public void setCacheIDs(List<String> cacheIDs) {
             this.cacheIDs = cacheIDs;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_ids")
+        @JsonProperty(value = "cache_ids")
         public List<String> getCacheIDs() {
             return this.cacheIDs;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -1765,7 +1775,7 @@ public class CacheService {
         context.put("APIName", "DescribeCacheNodes");
         context.put("ServiceName", "DescribeCacheNodes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeCacheNodes");
+        context.put("RequestURI", "/iaas/DescribeCacheNodes");
 
         input.setAction("DescribeCacheNodes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1799,7 +1809,7 @@ public class CacheService {
         context.put("APIName", "DescribeCacheNodes");
         context.put("ServiceName", "DescribeCacheNodes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeCacheNodes");
+        context.put("RequestURI", "/iaas/DescribeCacheNodes");
 
         input.setAction("DescribeCacheNodes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1818,84 +1828,84 @@ public class CacheService {
     public static class DescribeCacheNodesInput extends IaasParamBody {
         private String cache;
 
-        @ParamAnnotation(paramType = "query", paramName = "cache")
+        @JsonProperty(value = "cache")
         public void setCache(String cache) {
             this.cache = cache;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cache")
+        @JsonProperty(value = "cache")
         public String getCache() {
             return this.cache;
         }
 
         private List<String> cacheNodes;
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_nodes")
+        @JsonProperty(value = "cache_nodes")
         public void setCacheNodes(List<String> cacheNodes) {
             this.cacheNodes = cacheNodes;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_nodes")
+        @JsonProperty(value = "cache_nodes")
         public List<String> getCacheNodes() {
             return this.cacheNodes;
         }
 
         private Integer limit;
 
-        @ParamAnnotation(paramType = "query", paramName = "limit")
+        @JsonProperty(value = "limit")
         public void setLimit(Integer limit) {
             this.limit = limit;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "limit")
+        @JsonProperty(value = "limit")
         public Integer getLimit() {
             return this.limit;
         }
 
         private Integer offset;
 
-        @ParamAnnotation(paramType = "query", paramName = "offset")
+        @JsonProperty(value = "offset")
         public void setOffset(Integer offset) {
             this.offset = offset;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "offset")
+        @JsonProperty(value = "offset")
         public Integer getOffset() {
             return this.offset;
         }
 
         private String searchWord;
 
-        @ParamAnnotation(paramType = "query", paramName = "search_word")
+        @JsonProperty(value = "search_word")
         public void setSearchWord(String searchWord) {
             this.searchWord = searchWord;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "search_word")
+        @JsonProperty(value = "search_word")
         public String getSearchWord() {
             return this.searchWord;
         }
 
         private List<String> status;
 
-        @ParamAnnotation(paramType = "query", paramName = "status")
+        @JsonProperty(value = "status")
         public void setStatus(List<String> status) {
             this.status = status;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "status")
+        @JsonProperty(value = "status")
         public List<String> getStatus() {
             return this.status;
         }
 
         private Integer verbose;
 
-        @ParamAnnotation(paramType = "query", paramName = "verbose")
+        @JsonProperty(value = "verbose")
         public void setVerbose(Integer verbose) {
             this.verbose = verbose;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "verbose")
+        @JsonProperty(value = "verbose")
         public Integer getVerbose() {
             return this.verbose;
         }
@@ -1905,51 +1915,52 @@ public class CacheService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class DescribeCacheNodesOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private List<CacheNodeModel> cacheNodeSet;
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_node_set")
+        @JsonProperty(value = "cache_node_set")
         public void setCacheNodeSet(List<CacheNodeModel> cacheNodeSet) {
             this.cacheNodeSet = cacheNodeSet;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_node_set")
+        @JsonProperty(value = "cache_node_set")
         public List<CacheNodeModel> getCacheNodeSet() {
             return this.cacheNodeSet;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
 
         private Integer totalCount;
 
-        @ParamAnnotation(paramType = "query", paramName = "total_count")
+        @JsonProperty(value = "total_count")
         public void setTotalCount(Integer totalCount) {
             this.totalCount = totalCount;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "total_count")
+        @JsonProperty(value = "total_count")
         public Integer getTotalCount() {
             return this.totalCount;
         }
@@ -1973,7 +1984,7 @@ public class CacheService {
         context.put("APIName", "DescribeCacheParameterGroups");
         context.put("ServiceName", "DescribeCacheParameterGroups");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeCacheParameterGroups");
+        context.put("RequestURI", "/iaas/DescribeCacheParameterGroups");
 
         input.setAction("DescribeCacheParameterGroups");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2007,7 +2018,7 @@ public class CacheService {
         context.put("APIName", "DescribeCacheParameterGroups");
         context.put("ServiceName", "DescribeCacheParameterGroups");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeCacheParameterGroups");
+        context.put("RequestURI", "/iaas/DescribeCacheParameterGroups");
 
         input.setAction("DescribeCacheParameterGroups");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2026,72 +2037,72 @@ public class CacheService {
     public static class DescribeCacheParameterGroupsInput extends IaasParamBody {
         private List<String> cacheParameterGroups;
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_parameter_groups")
+        @JsonProperty(value = "cache_parameter_groups")
         public void setCacheParameterGroups(List<String> cacheParameterGroups) {
             this.cacheParameterGroups = cacheParameterGroups;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_parameter_groups")
+        @JsonProperty(value = "cache_parameter_groups")
         public List<String> getCacheParameterGroups() {
             return this.cacheParameterGroups;
         }
 
         private String cacheType;
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_type")
+        @JsonProperty(value = "cache_type")
         public void setCacheType(String cacheType) {
             this.cacheType = cacheType;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_type")
+        @JsonProperty(value = "cache_type")
         public String getCacheType() {
             return this.cacheType;
         }
 
         private Integer limit;
 
-        @ParamAnnotation(paramType = "query", paramName = "limit")
+        @JsonProperty(value = "limit")
         public void setLimit(Integer limit) {
             this.limit = limit;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "limit")
+        @JsonProperty(value = "limit")
         public Integer getLimit() {
             return this.limit;
         }
 
         private Integer offset;
 
-        @ParamAnnotation(paramType = "query", paramName = "offset")
+        @JsonProperty(value = "offset")
         public void setOffset(Integer offset) {
             this.offset = offset;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "offset")
+        @JsonProperty(value = "offset")
         public Integer getOffset() {
             return this.offset;
         }
 
         private String searchWord;
 
-        @ParamAnnotation(paramType = "query", paramName = "search_word")
+        @JsonProperty(value = "search_word")
         public void setSearchWord(String searchWord) {
             this.searchWord = searchWord;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "search_word")
+        @JsonProperty(value = "search_word")
         public String getSearchWord() {
             return this.searchWord;
         }
 
         private Integer verbose;
 
-        @ParamAnnotation(paramType = "query", paramName = "verbose")
+        @JsonProperty(value = "verbose")
         public void setVerbose(Integer verbose) {
             this.verbose = verbose;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "verbose")
+        @JsonProperty(value = "verbose")
         public Integer getVerbose() {
             return this.verbose;
         }
@@ -2101,51 +2112,52 @@ public class CacheService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class DescribeCacheParameterGroupsOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private List<CacheParameterGroupModel> cacheParameterGroupSet;
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_parameter_group_set")
+        @JsonProperty(value = "cache_parameter_group_set")
         public void setCacheParameterGroupSet(List<CacheParameterGroupModel> cacheParameterGroupSet) {
             this.cacheParameterGroupSet = cacheParameterGroupSet;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_parameter_group_set")
+        @JsonProperty(value = "cache_parameter_group_set")
         public List<CacheParameterGroupModel> getCacheParameterGroupSet() {
             return this.cacheParameterGroupSet;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
 
         private Integer totalCount;
 
-        @ParamAnnotation(paramType = "query", paramName = "total_count")
+        @JsonProperty(value = "total_count")
         public void setTotalCount(Integer totalCount) {
             this.totalCount = totalCount;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "total_count")
+        @JsonProperty(value = "total_count")
         public Integer getTotalCount() {
             return this.totalCount;
         }
@@ -2169,7 +2181,7 @@ public class CacheService {
         context.put("APIName", "DescribeCacheParameters");
         context.put("ServiceName", "DescribeCacheParameters");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeCacheParameters");
+        context.put("RequestURI", "/iaas/DescribeCacheParameters");
 
         input.setAction("DescribeCacheParameters");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2203,7 +2215,7 @@ public class CacheService {
         context.put("APIName", "DescribeCacheParameters");
         context.put("ServiceName", "DescribeCacheParameters");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeCacheParameters");
+        context.put("RequestURI", "/iaas/DescribeCacheParameters");
 
         input.setAction("DescribeCacheParameters");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2223,24 +2235,24 @@ public class CacheService {
         // Required
         private String cacheParameterGroup;
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_parameter_group")
+        @JsonProperty(value = "cache_parameter_group")
         public void setCacheParameterGroup(String cacheParameterGroup) {
             this.cacheParameterGroup = cacheParameterGroup;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_parameter_group")
+        @JsonProperty(value = "cache_parameter_group")
         public String getCacheParameterGroup() {
             return this.cacheParameterGroup;
         }
 
         private Integer verbose;
 
-        @ParamAnnotation(paramType = "query", paramName = "verbose")
+        @JsonProperty(value = "verbose")
         public void setVerbose(Integer verbose) {
             this.verbose = verbose;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "verbose")
+        @JsonProperty(value = "verbose")
         public Integer getVerbose() {
             return this.verbose;
         }
@@ -2253,51 +2265,52 @@ public class CacheService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class DescribeCacheParametersOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private List<CacheParameterModel> cacheParameterSet;
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_parameter_set")
+        @JsonProperty(value = "cache_parameter_set")
         public void setCacheParameterSet(List<CacheParameterModel> cacheParameterSet) {
             this.cacheParameterSet = cacheParameterSet;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_parameter_set")
+        @JsonProperty(value = "cache_parameter_set")
         public List<CacheParameterModel> getCacheParameterSet() {
             return this.cacheParameterSet;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
 
         private Integer totalCount;
 
-        @ParamAnnotation(paramType = "query", paramName = "total_count")
+        @JsonProperty(value = "total_count")
         public void setTotalCount(Integer totalCount) {
             this.totalCount = totalCount;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "total_count")
+        @JsonProperty(value = "total_count")
         public Integer getTotalCount() {
             return this.totalCount;
         }
@@ -2321,7 +2334,7 @@ public class CacheService {
         context.put("APIName", "DescribeCaches");
         context.put("ServiceName", "DescribeCaches");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeCaches");
+        context.put("RequestURI", "/iaas/DescribeCaches");
 
         input.setAction("DescribeCaches");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2355,7 +2368,7 @@ public class CacheService {
         context.put("APIName", "DescribeCaches");
         context.put("ServiceName", "DescribeCaches");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeCaches");
+        context.put("RequestURI", "/iaas/DescribeCaches");
 
         input.setAction("DescribeCaches");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2374,96 +2387,96 @@ public class CacheService {
     public static class DescribeCachesInput extends IaasParamBody {
         private List<String> cacheType;
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_type")
+        @JsonProperty(value = "cache_type")
         public void setCacheType(List<String> cacheType) {
             this.cacheType = cacheType;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_type")
+        @JsonProperty(value = "cache_type")
         public List<String> getCacheType() {
             return this.cacheType;
         }
 
         private List<String> caches;
 
-        @ParamAnnotation(paramType = "query", paramName = "caches")
+        @JsonProperty(value = "caches")
         public void setCaches(List<String> caches) {
             this.caches = caches;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "caches")
+        @JsonProperty(value = "caches")
         public List<String> getCaches() {
             return this.caches;
         }
 
         private Integer limit;
 
-        @ParamAnnotation(paramType = "query", paramName = "limit")
+        @JsonProperty(value = "limit")
         public void setLimit(Integer limit) {
             this.limit = limit;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "limit")
+        @JsonProperty(value = "limit")
         public Integer getLimit() {
             return this.limit;
         }
 
         private Integer offset;
 
-        @ParamAnnotation(paramType = "query", paramName = "offset")
+        @JsonProperty(value = "offset")
         public void setOffset(Integer offset) {
             this.offset = offset;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "offset")
+        @JsonProperty(value = "offset")
         public Integer getOffset() {
             return this.offset;
         }
 
         private String searchWord;
 
-        @ParamAnnotation(paramType = "query", paramName = "search_word")
+        @JsonProperty(value = "search_word")
         public void setSearchWord(String searchWord) {
             this.searchWord = searchWord;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "search_word")
+        @JsonProperty(value = "search_word")
         public String getSearchWord() {
             return this.searchWord;
         }
 
         private List<String> status;
 
-        @ParamAnnotation(paramType = "query", paramName = "status")
+        @JsonProperty(value = "status")
         public void setStatus(List<String> status) {
             this.status = status;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "status")
+        @JsonProperty(value = "status")
         public List<String> getStatus() {
             return this.status;
         }
 
         private List<String> tags;
 
-        @ParamAnnotation(paramType = "query", paramName = "tags")
+        @JsonProperty(value = "tags")
         public void setTags(List<String> tags) {
             this.tags = tags;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "tags")
+        @JsonProperty(value = "tags")
         public List<String> getTags() {
             return this.tags;
         }
 
         private Integer verbose;
 
-        @ParamAnnotation(paramType = "query", paramName = "verbose")
+        @JsonProperty(value = "verbose")
         public void setVerbose(Integer verbose) {
             this.verbose = verbose;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "verbose")
+        @JsonProperty(value = "verbose")
         public Integer getVerbose() {
             return this.verbose;
         }
@@ -2473,51 +2486,52 @@ public class CacheService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class DescribeCachesOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private List<CacheModel> cacheSet;
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_set")
+        @JsonProperty(value = "cache_set")
         public void setCacheSet(List<CacheModel> cacheSet) {
             this.cacheSet = cacheSet;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_set")
+        @JsonProperty(value = "cache_set")
         public List<CacheModel> getCacheSet() {
             return this.cacheSet;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
 
         private Integer totalCount;
 
-        @ParamAnnotation(paramType = "query", paramName = "total_count")
+        @JsonProperty(value = "total_count")
         public void setTotalCount(Integer totalCount) {
             this.totalCount = totalCount;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "total_count")
+        @JsonProperty(value = "total_count")
         public Integer getTotalCount() {
             return this.totalCount;
         }
@@ -2541,7 +2555,7 @@ public class CacheService {
         context.put("APIName", "GetCacheMonitor");
         context.put("ServiceName", "GetCacheMonitor");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/GetCacheMonitor");
+        context.put("RequestURI", "/iaas/GetCacheMonitor");
 
         input.setAction("GetCacheMonitor");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2575,7 +2589,7 @@ public class CacheService {
         context.put("APIName", "GetCacheMonitor");
         context.put("ServiceName", "GetCacheMonitor");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/GetCacheMonitor");
+        context.put("RequestURI", "/iaas/GetCacheMonitor");
 
         input.setAction("GetCacheMonitor");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2595,12 +2609,12 @@ public class CacheService {
         // Required
         private String endTime;
 
-        @ParamAnnotation(paramType = "query", paramName = "end_time")
+        @JsonProperty(value = "end_time")
         public void setEndTime(String endTime) {
             this.endTime = endTime;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "end_time")
+        @JsonProperty(value = "end_time")
         public String getEndTime() {
             return this.endTime;
         }
@@ -2608,12 +2622,12 @@ public class CacheService {
         // Required
         private List<String> meters;
 
-        @ParamAnnotation(paramType = "query", paramName = "meters")
+        @JsonProperty(value = "meters")
         public void setMeters(List<String> meters) {
             this.meters = meters;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "meters")
+        @JsonProperty(value = "meters")
         public List<String> getMeters() {
             return this.meters;
         }
@@ -2621,12 +2635,12 @@ public class CacheService {
         // Required
         private String resource;
 
-        @ParamAnnotation(paramType = "query", paramName = "resource")
+        @JsonProperty(value = "resource")
         public void setResource(String resource) {
             this.resource = resource;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "resource")
+        @JsonProperty(value = "resource")
         public String getResource() {
             return this.resource;
         }
@@ -2634,12 +2648,12 @@ public class CacheService {
         // Required
         private String startTime;
 
-        @ParamAnnotation(paramType = "query", paramName = "start_time")
+        @JsonProperty(value = "start_time")
         public void setStartTime(String startTime) {
             this.startTime = startTime;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "start_time")
+        @JsonProperty(value = "start_time")
         public String getStartTime() {
             return this.startTime;
         }
@@ -2648,12 +2662,12 @@ public class CacheService {
         // Required
         private String step;
 
-        @ParamAnnotation(paramType = "query", paramName = "step")
+        @JsonProperty(value = "step")
         public void setStep(String step) {
             this.step = step;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "step")
+        @JsonProperty(value = "step")
         public String getStep() {
             return this.step;
         }
@@ -2687,51 +2701,52 @@ public class CacheService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class GetCacheMonitorOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private List<MeterModel> meterSet;
 
-        @ParamAnnotation(paramType = "query", paramName = "meter_set")
+        @JsonProperty(value = "meter_set")
         public void setMeterSet(List<MeterModel> meterSet) {
             this.meterSet = meterSet;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "meter_set")
+        @JsonProperty(value = "meter_set")
         public List<MeterModel> getMeterSet() {
             return this.meterSet;
         }
 
         private String resourceID;
 
-        @ParamAnnotation(paramType = "query", paramName = "resource_id")
+        @JsonProperty(value = "resource_id")
         public void setResourceID(String resourceID) {
             this.resourceID = resourceID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "resource_id")
+        @JsonProperty(value = "resource_id")
         public String getResourceID() {
             return this.resourceID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -2755,7 +2770,7 @@ public class CacheService {
         context.put("APIName", "ModifyCacheAttributes");
         context.put("ServiceName", "ModifyCacheAttributes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ModifyCacheAttributes");
+        context.put("RequestURI", "/iaas/ModifyCacheAttributes");
 
         input.setAction("ModifyCacheAttributes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2789,7 +2804,7 @@ public class CacheService {
         context.put("APIName", "ModifyCacheAttributes");
         context.put("ServiceName", "ModifyCacheAttributes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ModifyCacheAttributes");
+        context.put("RequestURI", "/iaas/ModifyCacheAttributes");
 
         input.setAction("ModifyCacheAttributes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2808,12 +2823,12 @@ public class CacheService {
     public static class ModifyCacheAttributesInput extends IaasParamBody {
         private Integer autoBackupTime;
 
-        @ParamAnnotation(paramType = "query", paramName = "auto_backup_time")
+        @JsonProperty(value = "auto_backup_time")
         public void setAutoBackupTime(Integer autoBackupTime) {
             this.autoBackupTime = autoBackupTime;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "auto_backup_time")
+        @JsonProperty(value = "auto_backup_time")
         public Integer getAutoBackupTime() {
             return this.autoBackupTime;
         }
@@ -2821,36 +2836,36 @@ public class CacheService {
         // Required
         private String cache;
 
-        @ParamAnnotation(paramType = "query", paramName = "cache")
+        @JsonProperty(value = "cache")
         public void setCache(String cache) {
             this.cache = cache;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cache")
+        @JsonProperty(value = "cache")
         public String getCache() {
             return this.cache;
         }
 
         private String cacheName;
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_name")
+        @JsonProperty(value = "cache_name")
         public void setCacheName(String cacheName) {
             this.cacheName = cacheName;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_name")
+        @JsonProperty(value = "cache_name")
         public String getCacheName() {
             return this.cacheName;
         }
 
         private String description;
 
-        @ParamAnnotation(paramType = "query", paramName = "description")
+        @JsonProperty(value = "description")
         public void setDescription(String description) {
             this.description = description;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "description")
+        @JsonProperty(value = "description")
         public String getDescription() {
             return this.description;
         }
@@ -2863,27 +2878,28 @@ public class CacheService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class ModifyCacheAttributesOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -2907,7 +2923,7 @@ public class CacheService {
         context.put("APIName", "ModifyCacheNodeAttributes");
         context.put("ServiceName", "ModifyCacheNodeAttributes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ModifyCacheNodeAttributes");
+        context.put("RequestURI", "/iaas/ModifyCacheNodeAttributes");
 
         input.setAction("ModifyCacheNodeAttributes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2941,7 +2957,7 @@ public class CacheService {
         context.put("APIName", "ModifyCacheNodeAttributes");
         context.put("ServiceName", "ModifyCacheNodeAttributes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ModifyCacheNodeAttributes");
+        context.put("RequestURI", "/iaas/ModifyCacheNodeAttributes");
 
         input.setAction("ModifyCacheNodeAttributes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2961,24 +2977,24 @@ public class CacheService {
         // Required
         private String cacheNode;
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_node")
+        @JsonProperty(value = "cache_node")
         public void setCacheNode(String cacheNode) {
             this.cacheNode = cacheNode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_node")
+        @JsonProperty(value = "cache_node")
         public String getCacheNode() {
             return this.cacheNode;
         }
 
         private String cacheNodeName;
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_node_name")
+        @JsonProperty(value = "cache_node_name")
         public void setCacheNodeName(String cacheNodeName) {
             this.cacheNodeName = cacheNodeName;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_node_name")
+        @JsonProperty(value = "cache_node_name")
         public String getCacheNodeName() {
             return this.cacheNodeName;
         }
@@ -2991,27 +3007,28 @@ public class CacheService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class ModifyCacheNodeAttributesOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -3035,7 +3052,7 @@ public class CacheService {
         context.put("APIName", "ModifyCacheParameterGroupAttributes");
         context.put("ServiceName", "ModifyCacheParameterGroupAttributes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ModifyCacheParameterGroupAttributes");
+        context.put("RequestURI", "/iaas/ModifyCacheParameterGroupAttributes");
 
         input.setAction("ModifyCacheParameterGroupAttributes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -3069,7 +3086,7 @@ public class CacheService {
         context.put("APIName", "ModifyCacheParameterGroupAttributes");
         context.put("ServiceName", "ModifyCacheParameterGroupAttributes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ModifyCacheParameterGroupAttributes");
+        context.put("RequestURI", "/iaas/ModifyCacheParameterGroupAttributes");
 
         input.setAction("ModifyCacheParameterGroupAttributes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -3089,36 +3106,36 @@ public class CacheService {
         // Required
         private String cacheParameterGroup;
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_parameter_group")
+        @JsonProperty(value = "cache_parameter_group")
         public void setCacheParameterGroup(String cacheParameterGroup) {
             this.cacheParameterGroup = cacheParameterGroup;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_parameter_group")
+        @JsonProperty(value = "cache_parameter_group")
         public String getCacheParameterGroup() {
             return this.cacheParameterGroup;
         }
 
         private String cacheParameterGroupName;
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_parameter_group_name")
+        @JsonProperty(value = "cache_parameter_group_name")
         public void setCacheParameterGroupName(String cacheParameterGroupName) {
             this.cacheParameterGroupName = cacheParameterGroupName;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_parameter_group_name")
+        @JsonProperty(value = "cache_parameter_group_name")
         public String getCacheParameterGroupName() {
             return this.cacheParameterGroupName;
         }
 
         private String description;
 
-        @ParamAnnotation(paramType = "query", paramName = "description")
+        @JsonProperty(value = "description")
         public void setDescription(String description) {
             this.description = description;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "description")
+        @JsonProperty(value = "description")
         public String getDescription() {
             return this.description;
         }
@@ -3131,39 +3148,40 @@ public class CacheService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class ModifyCacheParameterGroupAttributesOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String cacheParameterGroupID;
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_parameter_group_id")
+        @JsonProperty(value = "cache_parameter_group_id")
         public void setCacheParameterGroupID(String cacheParameterGroupID) {
             this.cacheParameterGroupID = cacheParameterGroupID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_parameter_group_id")
+        @JsonProperty(value = "cache_parameter_group_id")
         public String getCacheParameterGroupID() {
             return this.cacheParameterGroupID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -3187,7 +3205,7 @@ public class CacheService {
         context.put("APIName", "ResetCacheParameters");
         context.put("ServiceName", "ResetCacheParameters");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ResetCacheParameters");
+        context.put("RequestURI", "/iaas/ResetCacheParameters");
 
         input.setAction("ResetCacheParameters");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -3221,7 +3239,7 @@ public class CacheService {
         context.put("APIName", "ResetCacheParameters");
         context.put("ServiceName", "ResetCacheParameters");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ResetCacheParameters");
+        context.put("RequestURI", "/iaas/ResetCacheParameters");
 
         input.setAction("ResetCacheParameters");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -3241,24 +3259,24 @@ public class CacheService {
         // Required
         private String cacheParameterGroup;
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_parameter_group")
+        @JsonProperty(value = "cache_parameter_group")
         public void setCacheParameterGroup(String cacheParameterGroup) {
             this.cacheParameterGroup = cacheParameterGroup;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_parameter_group")
+        @JsonProperty(value = "cache_parameter_group")
         public String getCacheParameterGroup() {
             return this.cacheParameterGroup;
         }
 
         private List<String> cacheParameterNames;
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_parameter_names")
+        @JsonProperty(value = "cache_parameter_names")
         public void setCacheParameterNames(List<String> cacheParameterNames) {
             this.cacheParameterNames = cacheParameterNames;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_parameter_names")
+        @JsonProperty(value = "cache_parameter_names")
         public List<String> getCacheParameterNames() {
             return this.cacheParameterNames;
         }
@@ -3271,27 +3289,28 @@ public class CacheService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class ResetCacheParametersOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -3315,7 +3334,7 @@ public class CacheService {
         context.put("APIName", "ResizeCaches");
         context.put("ServiceName", "ResizeCaches");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ResizeCaches");
+        context.put("RequestURI", "/iaas/ResizeCaches");
 
         input.setAction("ResizeCaches");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -3349,7 +3368,7 @@ public class CacheService {
         context.put("APIName", "ResizeCaches");
         context.put("ServiceName", "ResizeCaches");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ResizeCaches");
+        context.put("RequestURI", "/iaas/ResizeCaches");
 
         input.setAction("ResizeCaches");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -3369,12 +3388,12 @@ public class CacheService {
         // Required
         private Integer cacheSize;
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_size")
+        @JsonProperty(value = "cache_size")
         public void setCacheSize(Integer cacheSize) {
             this.cacheSize = cacheSize;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_size")
+        @JsonProperty(value = "cache_size")
         public Integer getCacheSize() {
             return this.cacheSize;
         }
@@ -3382,12 +3401,12 @@ public class CacheService {
         // Required
         private List<String> caches;
 
-        @ParamAnnotation(paramType = "query", paramName = "caches")
+        @JsonProperty(value = "caches")
         public void setCaches(List<String> caches) {
             this.caches = caches;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "caches")
+        @JsonProperty(value = "caches")
         public List<String> getCaches() {
             return this.caches;
         }
@@ -3400,39 +3419,40 @@ public class CacheService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class ResizeCachesOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -3456,7 +3476,7 @@ public class CacheService {
         context.put("APIName", "RestartCacheNodes");
         context.put("ServiceName", "RestartCacheNodes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/RestartCacheNodes");
+        context.put("RequestURI", "/iaas/RestartCacheNodes");
 
         input.setAction("RestartCacheNodes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -3490,7 +3510,7 @@ public class CacheService {
         context.put("APIName", "RestartCacheNodes");
         context.put("ServiceName", "RestartCacheNodes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/RestartCacheNodes");
+        context.put("RequestURI", "/iaas/RestartCacheNodes");
 
         input.setAction("RestartCacheNodes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -3510,12 +3530,12 @@ public class CacheService {
         // Required
         private String cache;
 
-        @ParamAnnotation(paramType = "query", paramName = "cache")
+        @JsonProperty(value = "cache")
         public void setCache(String cache) {
             this.cache = cache;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cache")
+        @JsonProperty(value = "cache")
         public String getCache() {
             return this.cache;
         }
@@ -3523,12 +3543,12 @@ public class CacheService {
         // Required
         private List<String> cacheNodes;
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_nodes")
+        @JsonProperty(value = "cache_nodes")
         public void setCacheNodes(List<String> cacheNodes) {
             this.cacheNodes = cacheNodes;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_nodes")
+        @JsonProperty(value = "cache_nodes")
         public List<String> getCacheNodes() {
             return this.cacheNodes;
         }
@@ -3541,39 +3561,40 @@ public class CacheService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class RestartCacheNodesOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -3597,7 +3618,7 @@ public class CacheService {
         context.put("APIName", "RestartCaches");
         context.put("ServiceName", "RestartCaches");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/RestartCaches");
+        context.put("RequestURI", "/iaas/RestartCaches");
 
         input.setAction("RestartCaches");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -3631,7 +3652,7 @@ public class CacheService {
         context.put("APIName", "RestartCaches");
         context.put("ServiceName", "RestartCaches");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/RestartCaches");
+        context.put("RequestURI", "/iaas/RestartCaches");
 
         input.setAction("RestartCaches");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -3651,12 +3672,12 @@ public class CacheService {
         // Required
         private List<String> caches;
 
-        @ParamAnnotation(paramType = "query", paramName = "caches")
+        @JsonProperty(value = "caches")
         public void setCaches(List<String> caches) {
             this.caches = caches;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "caches")
+        @JsonProperty(value = "caches")
         public List<String> getCaches() {
             return this.caches;
         }
@@ -3666,39 +3687,40 @@ public class CacheService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class RestartCachesOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -3722,7 +3744,7 @@ public class CacheService {
         context.put("APIName", "StartCaches");
         context.put("ServiceName", "StartCaches");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/StartCaches");
+        context.put("RequestURI", "/iaas/StartCaches");
 
         input.setAction("StartCaches");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -3756,7 +3778,7 @@ public class CacheService {
         context.put("APIName", "StartCaches");
         context.put("ServiceName", "StartCaches");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/StartCaches");
+        context.put("RequestURI", "/iaas/StartCaches");
 
         input.setAction("StartCaches");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -3776,12 +3798,12 @@ public class CacheService {
         // Required
         private List<String> caches;
 
-        @ParamAnnotation(paramType = "query", paramName = "caches")
+        @JsonProperty(value = "caches")
         public void setCaches(List<String> caches) {
             this.caches = caches;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "caches")
+        @JsonProperty(value = "caches")
         public List<String> getCaches() {
             return this.caches;
         }
@@ -3791,51 +3813,52 @@ public class CacheService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class StartCachesOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private List<String> cacheIDs;
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_ids")
+        @JsonProperty(value = "cache_ids")
         public void setCacheIDs(List<String> cacheIDs) {
             this.cacheIDs = cacheIDs;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_ids")
+        @JsonProperty(value = "cache_ids")
         public List<String> getCacheIDs() {
             return this.cacheIDs;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -3859,7 +3882,7 @@ public class CacheService {
         context.put("APIName", "StopCaches");
         context.put("ServiceName", "StopCaches");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/StopCaches");
+        context.put("RequestURI", "/iaas/StopCaches");
 
         input.setAction("StopCaches");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -3893,7 +3916,7 @@ public class CacheService {
         context.put("APIName", "StopCaches");
         context.put("ServiceName", "StopCaches");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/StopCaches");
+        context.put("RequestURI", "/iaas/StopCaches");
 
         input.setAction("StopCaches");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -3913,12 +3936,12 @@ public class CacheService {
         // Required
         private List<String> caches;
 
-        @ParamAnnotation(paramType = "query", paramName = "caches")
+        @JsonProperty(value = "caches")
         public void setCaches(List<String> caches) {
             this.caches = caches;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "caches")
+        @JsonProperty(value = "caches")
         public List<String> getCaches() {
             return this.caches;
         }
@@ -3928,51 +3951,52 @@ public class CacheService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class StopCachesOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private List<String> cacheIDs;
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_ids")
+        @JsonProperty(value = "cache_ids")
         public void setCacheIDs(List<String> cacheIDs) {
             this.cacheIDs = cacheIDs;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_ids")
+        @JsonProperty(value = "cache_ids")
         public List<String> getCacheIDs() {
             return this.cacheIDs;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -3996,7 +4020,7 @@ public class CacheService {
         context.put("APIName", "UpdateCache");
         context.put("ServiceName", "UpdateCache");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/UpdateCache");
+        context.put("RequestURI", "/iaas/UpdateCache");
 
         input.setAction("UpdateCache");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -4030,7 +4054,7 @@ public class CacheService {
         context.put("APIName", "UpdateCache");
         context.put("ServiceName", "UpdateCache");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/UpdateCache");
+        context.put("RequestURI", "/iaas/UpdateCache");
 
         input.setAction("UpdateCache");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -4050,24 +4074,24 @@ public class CacheService {
         // Required
         private String cache;
 
-        @ParamAnnotation(paramType = "query", paramName = "cache")
+        @JsonProperty(value = "cache")
         public void setCache(String cache) {
             this.cache = cache;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cache")
+        @JsonProperty(value = "cache")
         public String getCache() {
             return this.cache;
         }
 
         private List<CachePrivateIPModel> privateIPs;
 
-        @ParamAnnotation(paramType = "query", paramName = "private_ips")
+        @JsonProperty(value = "private_ips")
         public void setPrivateIPs(List<CachePrivateIPModel> privateIPs) {
             this.privateIPs = privateIPs;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "private_ips")
+        @JsonProperty(value = "private_ips")
         public List<CachePrivateIPModel> getPrivateIPs() {
             return this.privateIPs;
         }
@@ -4090,39 +4114,40 @@ public class CacheService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class UpdateCacheOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -4146,7 +4171,7 @@ public class CacheService {
         context.put("APIName", "UpdateCacheParameters");
         context.put("ServiceName", "UpdateCacheParameters");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/UpdateCacheParameters");
+        context.put("RequestURI", "/iaas/UpdateCacheParameters");
 
         input.setAction("UpdateCacheParameters");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -4180,7 +4205,7 @@ public class CacheService {
         context.put("APIName", "UpdateCacheParameters");
         context.put("ServiceName", "UpdateCacheParameters");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/UpdateCacheParameters");
+        context.put("RequestURI", "/iaas/UpdateCacheParameters");
 
         input.setAction("UpdateCacheParameters");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -4200,12 +4225,12 @@ public class CacheService {
         // Required
         private String cacheParameterGroup;
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_parameter_group")
+        @JsonProperty(value = "cache_parameter_group")
         public void setCacheParameterGroup(String cacheParameterGroup) {
             this.cacheParameterGroup = cacheParameterGroup;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cache_parameter_group")
+        @JsonProperty(value = "cache_parameter_group")
         public String getCacheParameterGroup() {
             return this.cacheParameterGroup;
         }
@@ -4213,12 +4238,12 @@ public class CacheService {
         // Required
         private CacheParameterModel parameters;
 
-        @ParamAnnotation(paramType = "query", paramName = "parameters")
+        @JsonProperty(value = "parameters")
         public void setParameters(CacheParameterModel parameters) {
             this.parameters = parameters;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "parameters")
+        @JsonProperty(value = "parameters")
         public CacheParameterModel getParameters() {
             return this.parameters;
         }
@@ -4231,27 +4256,28 @@ public class CacheService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class UpdateCacheParametersOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }

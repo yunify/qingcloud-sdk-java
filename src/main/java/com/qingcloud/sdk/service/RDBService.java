@@ -16,6 +16,7 @@
 
 package com.qingcloud.sdk.service;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.qingcloud.sdk.config.EnvContext;
 import com.qingcloud.sdk.constants.QCConstant;
 import com.qingcloud.sdk.model.OutputModel;
@@ -24,8 +25,8 @@ import com.qingcloud.sdk.request.ResourceRequestFactory;
 import com.qingcloud.sdk.exception.QCException;
 import com.qingcloud.sdk.model.IaasParamBody;
 import com.qingcloud.sdk.service.Types.*;
-import com.qingcloud.sdk.annotation.ParamAnnotation;
 import com.qingcloud.sdk.utils.QCStringUtil;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.HashMap;
 import java.util.List;
@@ -63,7 +64,7 @@ public class RDBService {
         context.put("APIName", "ApplyRDBParameterGroup");
         context.put("ServiceName", "ApplyRDBParameterGroup");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ApplyRDBParameterGroup");
+        context.put("RequestURI", "/iaas/ApplyRDBParameterGroup");
 
         input.setAction("ApplyRDBParameterGroup");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -97,7 +98,7 @@ public class RDBService {
         context.put("APIName", "ApplyRDBParameterGroup");
         context.put("ServiceName", "ApplyRDBParameterGroup");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ApplyRDBParameterGroup");
+        context.put("RequestURI", "/iaas/ApplyRDBParameterGroup");
 
         input.setAction("ApplyRDBParameterGroup");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -117,12 +118,12 @@ public class RDBService {
         // Required
         private String rDB;
 
-        @ParamAnnotation(paramType = "query", paramName = "rdb")
+        @JsonProperty(value = "rdb")
         public void setRDB(String rDB) {
             this.rDB = rDB;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "rdb")
+        @JsonProperty(value = "rdb")
         public String getRDB() {
             return this.rDB;
         }
@@ -135,51 +136,52 @@ public class RDBService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class ApplyRDBParameterGroupOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private String rDB;
 
-        @ParamAnnotation(paramType = "query", paramName = "rdb")
+        @JsonProperty(value = "rdb")
         public void setRDB(String rDB) {
             this.rDB = rDB;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "rdb")
+        @JsonProperty(value = "rdb")
         public String getRDB() {
             return this.rDB;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -203,7 +205,7 @@ public class RDBService {
         context.put("APIName", "CeaseRDBInstance");
         context.put("ServiceName", "CeaseRDBInstance");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/CeaseRDBInstance");
+        context.put("RequestURI", "/iaas/CeaseRDBInstance");
 
         input.setAction("CeaseRDBInstance");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -237,7 +239,7 @@ public class RDBService {
         context.put("APIName", "CeaseRDBInstance");
         context.put("ServiceName", "CeaseRDBInstance");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/CeaseRDBInstance");
+        context.put("RequestURI", "/iaas/CeaseRDBInstance");
 
         input.setAction("CeaseRDBInstance");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -257,12 +259,12 @@ public class RDBService {
         // Required
         private String rDB;
 
-        @ParamAnnotation(paramType = "query", paramName = "rdb")
+        @JsonProperty(value = "rdb")
         public void setRDB(String rDB) {
             this.rDB = rDB;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "rdb")
+        @JsonProperty(value = "rdb")
         public String getRDB() {
             return this.rDB;
         }
@@ -270,12 +272,12 @@ public class RDBService {
         // Required
         private String rDBInstance;
 
-        @ParamAnnotation(paramType = "query", paramName = "rdb_instance")
+        @JsonProperty(value = "rdb_instance")
         public void setRDBInstance(String rDBInstance) {
             this.rDBInstance = rDBInstance;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "rdb_instance")
+        @JsonProperty(value = "rdb_instance")
         public String getRDBInstance() {
             return this.rDBInstance;
         }
@@ -291,39 +293,40 @@ public class RDBService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class CeaseRDBInstanceOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -347,7 +350,7 @@ public class RDBService {
         context.put("APIName", "CopyRDBInstanceFilesToFTP");
         context.put("ServiceName", "CopyRDBInstanceFilesToFTP");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/CopyRDBInstanceFilesToFTP");
+        context.put("RequestURI", "/iaas/CopyRDBInstanceFilesToFTP");
 
         input.setAction("CopyRDBInstanceFilesToFTP");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -381,7 +384,7 @@ public class RDBService {
         context.put("APIName", "CopyRDBInstanceFilesToFTP");
         context.put("ServiceName", "CopyRDBInstanceFilesToFTP");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/CopyRDBInstanceFilesToFTP");
+        context.put("RequestURI", "/iaas/CopyRDBInstanceFilesToFTP");
 
         input.setAction("CopyRDBInstanceFilesToFTP");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -401,12 +404,12 @@ public class RDBService {
         // Required
         private List<String> files;
 
-        @ParamAnnotation(paramType = "query", paramName = "files")
+        @JsonProperty(value = "files")
         public void setFiles(List<String> files) {
             this.files = files;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "files")
+        @JsonProperty(value = "files")
         public List<String> getFiles() {
             return this.files;
         }
@@ -414,12 +417,12 @@ public class RDBService {
         // Required
         private String rDBInstance;
 
-        @ParamAnnotation(paramType = "query", paramName = "rdb_instance")
+        @JsonProperty(value = "rdb_instance")
         public void setRDBInstance(String rDBInstance) {
             this.rDBInstance = rDBInstance;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "rdb_instance")
+        @JsonProperty(value = "rdb_instance")
         public String getRDBInstance() {
             return this.rDBInstance;
         }
@@ -432,51 +435,52 @@ public class RDBService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class CopyRDBInstanceFilesToFTPOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private String rDBInstance;
 
-        @ParamAnnotation(paramType = "query", paramName = "rdb_instance")
+        @JsonProperty(value = "rdb_instance")
         public void setRDBInstance(String rDBInstance) {
             this.rDBInstance = rDBInstance;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "rdb_instance")
+        @JsonProperty(value = "rdb_instance")
         public String getRDBInstance() {
             return this.rDBInstance;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -500,7 +504,7 @@ public class RDBService {
         context.put("APIName", "CreateRDB");
         context.put("ServiceName", "CreateRDB");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/CreateRDB");
+        context.put("RequestURI", "/iaas/CreateRDB");
 
         input.setAction("CreateRDB");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -534,7 +538,7 @@ public class RDBService {
         context.put("APIName", "CreateRDB");
         context.put("ServiceName", "CreateRDB");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/CreateRDB");
+        context.put("RequestURI", "/iaas/CreateRDB");
 
         input.setAction("CreateRDB");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -553,24 +557,24 @@ public class RDBService {
     public static class CreateRDBInput extends IaasParamBody {
         private Integer autoBackupTime;
 
-        @ParamAnnotation(paramType = "query", paramName = "auto_backup_time")
+        @JsonProperty(value = "auto_backup_time")
         public void setAutoBackupTime(Integer autoBackupTime) {
             this.autoBackupTime = autoBackupTime;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "auto_backup_time")
+        @JsonProperty(value = "auto_backup_time")
         public Integer getAutoBackupTime() {
             return this.autoBackupTime;
         }
 
         private String description;
 
-        @ParamAnnotation(paramType = "query", paramName = "description")
+        @JsonProperty(value = "description")
         public void setDescription(String description) {
             this.description = description;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "description")
+        @JsonProperty(value = "description")
         public String getDescription() {
             return this.description;
         }
@@ -578,60 +582,60 @@ public class RDBService {
     	// EngineVersion's available values: mysql,5.5, mysql,5.6, mysql,5.7, psql,9.3, psql,9.4
         private String engineVersion;
 
-        @ParamAnnotation(paramType = "query", paramName = "engine_version")
+        @JsonProperty(value = "engine_version")
         public void setEngineVersion(String engineVersion) {
             this.engineVersion = engineVersion;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "engine_version")
+        @JsonProperty(value = "engine_version")
         public String getEngineVersion() {
             return this.engineVersion;
         }
 
         private Integer nodeCount;
 
-        @ParamAnnotation(paramType = "query", paramName = "node_count")
+        @JsonProperty(value = "node_count")
         public void setNodeCount(Integer nodeCount) {
             this.nodeCount = nodeCount;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "node_count")
+        @JsonProperty(value = "node_count")
         public Integer getNodeCount() {
             return this.nodeCount;
         }
 
         private List<RDBPrivateIPModel> privateIPs;
 
-        @ParamAnnotation(paramType = "query", paramName = "private_ips")
+        @JsonProperty(value = "private_ips")
         public void setPrivateIPs(List<RDBPrivateIPModel> privateIPs) {
             this.privateIPs = privateIPs;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "private_ips")
+        @JsonProperty(value = "private_ips")
         public List<RDBPrivateIPModel> getPrivateIPs() {
             return this.privateIPs;
         }
 
         private Integer proxyCount;
 
-        @ParamAnnotation(paramType = "query", paramName = "proxy_count")
+        @JsonProperty(value = "proxy_count")
         public void setProxyCount(Integer proxyCount) {
             this.proxyCount = proxyCount;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "proxy_count")
+        @JsonProperty(value = "proxy_count")
         public Integer getProxyCount() {
             return this.proxyCount;
         }
 
         private Integer rDBClass;
 
-        @ParamAnnotation(paramType = "query", paramName = "rdb_class")
+        @JsonProperty(value = "rdb_class")
         public void setRDBClass(Integer rDBClass) {
             this.rDBClass = rDBClass;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "rdb_class")
+        @JsonProperty(value = "rdb_class")
         public Integer getRDBClass() {
             return this.rDBClass;
         }
@@ -639,24 +643,24 @@ public class RDBService {
     	// RDBEngine's available values: mysql, psql
         private String rDBEngine;
 
-        @ParamAnnotation(paramType = "query", paramName = "rdb_engine")
+        @JsonProperty(value = "rdb_engine")
         public void setRDBEngine(String rDBEngine) {
             this.rDBEngine = rDBEngine;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "rdb_engine")
+        @JsonProperty(value = "rdb_engine")
         public String getRDBEngine() {
             return this.rDBEngine;
         }
 
         private String rDBName;
 
-        @ParamAnnotation(paramType = "query", paramName = "rdb_name")
+        @JsonProperty(value = "rdb_name")
         public void setRDBName(String rDBName) {
             this.rDBName = rDBName;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "rdb_name")
+        @JsonProperty(value = "rdb_name")
         public String getRDBName() {
             return this.rDBName;
         }
@@ -664,12 +668,12 @@ public class RDBService {
         // Required
         private String rDBPassword;
 
-        @ParamAnnotation(paramType = "query", paramName = "rdb_password")
+        @JsonProperty(value = "rdb_password")
         public void setRDBPassword(String rDBPassword) {
             this.rDBPassword = rDBPassword;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "rdb_password")
+        @JsonProperty(value = "rdb_password")
         public String getRDBPassword() {
             return this.rDBPassword;
         }
@@ -678,12 +682,12 @@ public class RDBService {
         // Required
         private Integer rDBType;
 
-        @ParamAnnotation(paramType = "query", paramName = "rdb_type")
+        @JsonProperty(value = "rdb_type")
         public void setRDBType(Integer rDBType) {
             this.rDBType = rDBType;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "rdb_type")
+        @JsonProperty(value = "rdb_type")
         public Integer getRDBType() {
             return this.rDBType;
         }
@@ -691,12 +695,12 @@ public class RDBService {
         // Required
         private String rDBUsername;
 
-        @ParamAnnotation(paramType = "query", paramName = "rdb_username")
+        @JsonProperty(value = "rdb_username")
         public void setRDBUsername(String rDBUsername) {
             this.rDBUsername = rDBUsername;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "rdb_username")
+        @JsonProperty(value = "rdb_username")
         public String getRDBUsername() {
             return this.rDBUsername;
         }
@@ -704,12 +708,12 @@ public class RDBService {
         // Required
         private Integer storageSize;
 
-        @ParamAnnotation(paramType = "query", paramName = "storage_size")
+        @JsonProperty(value = "storage_size")
         public void setStorageSize(Integer storageSize) {
             this.storageSize = storageSize;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "storage_size")
+        @JsonProperty(value = "storage_size")
         public Integer getStorageSize() {
             return this.storageSize;
         }
@@ -717,12 +721,12 @@ public class RDBService {
         // Required
         private String vxNet;
 
-        @ParamAnnotation(paramType = "query", paramName = "vxnet")
+        @JsonProperty(value = "vxnet")
         public void setVxNet(String vxNet) {
             this.vxNet = vxNet;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "vxnet")
+        @JsonProperty(value = "vxnet")
         public String getVxNet() {
             return this.vxNet;
         }
@@ -808,51 +812,52 @@ public class RDBService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class CreateRDBOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private String rDB;
 
-        @ParamAnnotation(paramType = "query", paramName = "rdb")
+        @JsonProperty(value = "rdb")
         public void setRDB(String rDB) {
             this.rDB = rDB;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "rdb")
+        @JsonProperty(value = "rdb")
         public String getRDB() {
             return this.rDB;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -876,7 +881,7 @@ public class RDBService {
         context.put("APIName", "CreateRDBFromSnapshot");
         context.put("ServiceName", "CreateRDBFromSnapshot");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/CreateRDBFromSnapshot");
+        context.put("RequestURI", "/iaas/CreateRDBFromSnapshot");
 
         input.setAction("CreateRDBFromSnapshot");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -910,7 +915,7 @@ public class RDBService {
         context.put("APIName", "CreateRDBFromSnapshot");
         context.put("ServiceName", "CreateRDBFromSnapshot");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/CreateRDBFromSnapshot");
+        context.put("RequestURI", "/iaas/CreateRDBFromSnapshot");
 
         input.setAction("CreateRDBFromSnapshot");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -929,24 +934,24 @@ public class RDBService {
     public static class CreateRDBFromSnapshotInput extends IaasParamBody {
         private Integer autoBackupTime;
 
-        @ParamAnnotation(paramType = "query", paramName = "auto_backup_time")
+        @JsonProperty(value = "auto_backup_time")
         public void setAutoBackupTime(Integer autoBackupTime) {
             this.autoBackupTime = autoBackupTime;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "auto_backup_time")
+        @JsonProperty(value = "auto_backup_time")
         public Integer getAutoBackupTime() {
             return this.autoBackupTime;
         }
 
         private String description;
 
-        @ParamAnnotation(paramType = "query", paramName = "description")
+        @JsonProperty(value = "description")
         public void setDescription(String description) {
             this.description = description;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "description")
+        @JsonProperty(value = "description")
         public String getDescription() {
             return this.description;
         }
@@ -954,48 +959,48 @@ public class RDBService {
     	// EngineVersion's available values: mysql,5.5, mysql,5.6, mysql,5.7, psql,9.3, psql,9.4
         private String engineVersion;
 
-        @ParamAnnotation(paramType = "query", paramName = "engine_version")
+        @JsonProperty(value = "engine_version")
         public void setEngineVersion(String engineVersion) {
             this.engineVersion = engineVersion;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "engine_version")
+        @JsonProperty(value = "engine_version")
         public String getEngineVersion() {
             return this.engineVersion;
         }
 
         private Integer nodeCount;
 
-        @ParamAnnotation(paramType = "query", paramName = "node_count")
+        @JsonProperty(value = "node_count")
         public void setNodeCount(Integer nodeCount) {
             this.nodeCount = nodeCount;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "node_count")
+        @JsonProperty(value = "node_count")
         public Integer getNodeCount() {
             return this.nodeCount;
         }
 
         private List<RDBPrivateIPModel> privateIPs;
 
-        @ParamAnnotation(paramType = "query", paramName = "private_ips")
+        @JsonProperty(value = "private_ips")
         public void setPrivateIPs(List<RDBPrivateIPModel> privateIPs) {
             this.privateIPs = privateIPs;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "private_ips")
+        @JsonProperty(value = "private_ips")
         public List<RDBPrivateIPModel> getPrivateIPs() {
             return this.privateIPs;
         }
 
         private Integer proxyCount;
 
-        @ParamAnnotation(paramType = "query", paramName = "proxy_count")
+        @JsonProperty(value = "proxy_count")
         public void setProxyCount(Integer proxyCount) {
             this.proxyCount = proxyCount;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "proxy_count")
+        @JsonProperty(value = "proxy_count")
         public Integer getProxyCount() {
             return this.proxyCount;
         }
@@ -1003,24 +1008,24 @@ public class RDBService {
     	// RDBEngine's available values: mysql, psql
         private String rDBEngine;
 
-        @ParamAnnotation(paramType = "query", paramName = "rdb_engine")
+        @JsonProperty(value = "rdb_engine")
         public void setRDBEngine(String rDBEngine) {
             this.rDBEngine = rDBEngine;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "rdb_engine")
+        @JsonProperty(value = "rdb_engine")
         public String getRDBEngine() {
             return this.rDBEngine;
         }
 
         private String rDBName;
 
-        @ParamAnnotation(paramType = "query", paramName = "rdb_name")
+        @JsonProperty(value = "rdb_name")
         public void setRDBName(String rDBName) {
             this.rDBName = rDBName;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "rdb_name")
+        @JsonProperty(value = "rdb_name")
         public String getRDBName() {
             return this.rDBName;
         }
@@ -1029,12 +1034,12 @@ public class RDBService {
         // Required
         private Integer rDBType;
 
-        @ParamAnnotation(paramType = "query", paramName = "rdb_type")
+        @JsonProperty(value = "rdb_type")
         public void setRDBType(Integer rDBType) {
             this.rDBType = rDBType;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "rdb_type")
+        @JsonProperty(value = "rdb_type")
         public Integer getRDBType() {
             return this.rDBType;
         }
@@ -1042,24 +1047,24 @@ public class RDBService {
         // Required
         private String snapshot;
 
-        @ParamAnnotation(paramType = "query", paramName = "snapshot")
+        @JsonProperty(value = "snapshot")
         public void setSnapshot(String snapshot) {
             this.snapshot = snapshot;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "snapshot")
+        @JsonProperty(value = "snapshot")
         public String getSnapshot() {
             return this.snapshot;
         }
 
         private Integer storageSize;
 
-        @ParamAnnotation(paramType = "query", paramName = "storage_size")
+        @JsonProperty(value = "storage_size")
         public void setStorageSize(Integer storageSize) {
             this.storageSize = storageSize;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "storage_size")
+        @JsonProperty(value = "storage_size")
         public Integer getStorageSize() {
             return this.storageSize;
         }
@@ -1067,12 +1072,12 @@ public class RDBService {
         // Required
         private String vxNet;
 
-        @ParamAnnotation(paramType = "query", paramName = "vxnet")
+        @JsonProperty(value = "vxnet")
         public void setVxNet(String vxNet) {
             this.vxNet = vxNet;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "vxnet")
+        @JsonProperty(value = "vxnet")
         public String getVxNet() {
             return this.vxNet;
         }
@@ -1152,51 +1157,52 @@ public class RDBService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class CreateRDBFromSnapshotOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private String rDB;
 
-        @ParamAnnotation(paramType = "query", paramName = "rdb")
+        @JsonProperty(value = "rdb")
         public void setRDB(String rDB) {
             this.rDB = rDB;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "rdb")
+        @JsonProperty(value = "rdb")
         public String getRDB() {
             return this.rDB;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -1220,7 +1226,7 @@ public class RDBService {
         context.put("APIName", "CreateTempRDBInstanceFromSnapshot");
         context.put("ServiceName", "CreateTempRDBInstanceFromSnapshot");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/CreateTempRDBInstanceFromSnapshot");
+        context.put("RequestURI", "/iaas/CreateTempRDBInstanceFromSnapshot");
 
         input.setAction("CreateTempRDBInstanceFromSnapshot");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1254,7 +1260,7 @@ public class RDBService {
         context.put("APIName", "CreateTempRDBInstanceFromSnapshot");
         context.put("ServiceName", "CreateTempRDBInstanceFromSnapshot");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/CreateTempRDBInstanceFromSnapshot");
+        context.put("RequestURI", "/iaas/CreateTempRDBInstanceFromSnapshot");
 
         input.setAction("CreateTempRDBInstanceFromSnapshot");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1274,12 +1280,12 @@ public class RDBService {
         // Required
         private String rDB;
 
-        @ParamAnnotation(paramType = "query", paramName = "rdb")
+        @JsonProperty(value = "rdb")
         public void setRDB(String rDB) {
             this.rDB = rDB;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "rdb")
+        @JsonProperty(value = "rdb")
         public String getRDB() {
             return this.rDB;
         }
@@ -1287,12 +1293,12 @@ public class RDBService {
         // Required
         private String snapshot;
 
-        @ParamAnnotation(paramType = "query", paramName = "snapshot")
+        @JsonProperty(value = "snapshot")
         public void setSnapshot(String snapshot) {
             this.snapshot = snapshot;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "snapshot")
+        @JsonProperty(value = "snapshot")
         public String getSnapshot() {
             return this.snapshot;
         }
@@ -1308,51 +1314,52 @@ public class RDBService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class CreateTempRDBInstanceFromSnapshotOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private String rDB;
 
-        @ParamAnnotation(paramType = "query", paramName = "rdb")
+        @JsonProperty(value = "rdb")
         public void setRDB(String rDB) {
             this.rDB = rDB;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "rdb")
+        @JsonProperty(value = "rdb")
         public String getRDB() {
             return this.rDB;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -1376,7 +1383,7 @@ public class RDBService {
         context.put("APIName", "DeleteRDBs");
         context.put("ServiceName", "DeleteRDBs");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DeleteRDBs");
+        context.put("RequestURI", "/iaas/DeleteRDBs");
 
         input.setAction("DeleteRDBs");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1410,7 +1417,7 @@ public class RDBService {
         context.put("APIName", "DeleteRDBs");
         context.put("ServiceName", "DeleteRDBs");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DeleteRDBs");
+        context.put("RequestURI", "/iaas/DeleteRDBs");
 
         input.setAction("DeleteRDBs");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1430,12 +1437,12 @@ public class RDBService {
         // Required
         private List<String> rDBs;
 
-        @ParamAnnotation(paramType = "query", paramName = "rdbs")
+        @JsonProperty(value = "rdbs")
         public void setRDBs(List<String> rDBs) {
             this.rDBs = rDBs;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "rdbs")
+        @JsonProperty(value = "rdbs")
         public List<String> getRDBs() {
             return this.rDBs;
         }
@@ -1445,51 +1452,52 @@ public class RDBService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class DeleteRDBsOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private List<String> rDBs;
 
-        @ParamAnnotation(paramType = "query", paramName = "rdbs")
+        @JsonProperty(value = "rdbs")
         public void setRDBs(List<String> rDBs) {
             this.rDBs = rDBs;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "rdbs")
+        @JsonProperty(value = "rdbs")
         public List<String> getRDBs() {
             return this.rDBs;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -1513,7 +1521,7 @@ public class RDBService {
         context.put("APIName", "DescribeRDBParameters");
         context.put("ServiceName", "DescribeRDBParameters");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeRDBParameters");
+        context.put("RequestURI", "/iaas/DescribeRDBParameters");
 
         input.setAction("DescribeRDBParameters");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1547,7 +1555,7 @@ public class RDBService {
         context.put("APIName", "DescribeRDBParameters");
         context.put("ServiceName", "DescribeRDBParameters");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeRDBParameters");
+        context.put("RequestURI", "/iaas/DescribeRDBParameters");
 
         input.setAction("DescribeRDBParameters");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1566,36 +1574,36 @@ public class RDBService {
     public static class DescribeRDBParametersInput extends IaasParamBody {
         private Integer limit;
 
-        @ParamAnnotation(paramType = "query", paramName = "limit")
+        @JsonProperty(value = "limit")
         public void setLimit(Integer limit) {
             this.limit = limit;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "limit")
+        @JsonProperty(value = "limit")
         public Integer getLimit() {
             return this.limit;
         }
 
         private Integer offset;
 
-        @ParamAnnotation(paramType = "query", paramName = "offset")
+        @JsonProperty(value = "offset")
         public void setOffset(Integer offset) {
             this.offset = offset;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "offset")
+        @JsonProperty(value = "offset")
         public Integer getOffset() {
             return this.offset;
         }
 
         private String parameterGroup;
 
-        @ParamAnnotation(paramType = "query", paramName = "parameter_group")
+        @JsonProperty(value = "parameter_group")
         public void setParameterGroup(String parameterGroup) {
             this.parameterGroup = parameterGroup;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "parameter_group")
+        @JsonProperty(value = "parameter_group")
         public String getParameterGroup() {
             return this.parameterGroup;
         }
@@ -1603,12 +1611,12 @@ public class RDBService {
         // Required
         private String rDB;
 
-        @ParamAnnotation(paramType = "query", paramName = "rdb")
+        @JsonProperty(value = "rdb")
         public void setRDB(String rDB) {
             this.rDB = rDB;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "rdb")
+        @JsonProperty(value = "rdb")
         public String getRDB() {
             return this.rDB;
         }
@@ -1621,51 +1629,52 @@ public class RDBService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class DescribeRDBParametersOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private List<RDBParameterModel> parameterSet;
 
-        @ParamAnnotation(paramType = "query", paramName = "parameter_set")
+        @JsonProperty(value = "parameter_set")
         public void setParameterSet(List<RDBParameterModel> parameterSet) {
             this.parameterSet = parameterSet;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "parameter_set")
+        @JsonProperty(value = "parameter_set")
         public List<RDBParameterModel> getParameterSet() {
             return this.parameterSet;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
 
         private Integer totalCount;
 
-        @ParamAnnotation(paramType = "query", paramName = "total_count")
+        @JsonProperty(value = "total_count")
         public void setTotalCount(Integer totalCount) {
             this.totalCount = totalCount;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "total_count")
+        @JsonProperty(value = "total_count")
         public Integer getTotalCount() {
             return this.totalCount;
         }
@@ -1689,7 +1698,7 @@ public class RDBService {
         context.put("APIName", "DescribeRDBs");
         context.put("ServiceName", "DescribeRDBs");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeRDBs");
+        context.put("RequestURI", "/iaas/DescribeRDBs");
 
         input.setAction("DescribeRDBs");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1723,7 +1732,7 @@ public class RDBService {
         context.put("APIName", "DescribeRDBs");
         context.put("ServiceName", "DescribeRDBs");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeRDBs");
+        context.put("RequestURI", "/iaas/DescribeRDBs");
 
         input.setAction("DescribeRDBs");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1742,108 +1751,108 @@ public class RDBService {
     public static class DescribeRDBsInput extends IaasParamBody {
         private Integer limit;
 
-        @ParamAnnotation(paramType = "query", paramName = "limit")
+        @JsonProperty(value = "limit")
         public void setLimit(Integer limit) {
             this.limit = limit;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "limit")
+        @JsonProperty(value = "limit")
         public Integer getLimit() {
             return this.limit;
         }
 
         private Integer offset;
 
-        @ParamAnnotation(paramType = "query", paramName = "offset")
+        @JsonProperty(value = "offset")
         public void setOffset(Integer offset) {
             this.offset = offset;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "offset")
+        @JsonProperty(value = "offset")
         public Integer getOffset() {
             return this.offset;
         }
 
         private String rDBEngine;
 
-        @ParamAnnotation(paramType = "query", paramName = "rdb_engine")
+        @JsonProperty(value = "rdb_engine")
         public void setRDBEngine(String rDBEngine) {
             this.rDBEngine = rDBEngine;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "rdb_engine")
+        @JsonProperty(value = "rdb_engine")
         public String getRDBEngine() {
             return this.rDBEngine;
         }
 
         private String rDBName;
 
-        @ParamAnnotation(paramType = "query", paramName = "rdb_name")
+        @JsonProperty(value = "rdb_name")
         public void setRDBName(String rDBName) {
             this.rDBName = rDBName;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "rdb_name")
+        @JsonProperty(value = "rdb_name")
         public String getRDBName() {
             return this.rDBName;
         }
 
         private List<String> rDBs;
 
-        @ParamAnnotation(paramType = "query", paramName = "rdbs")
+        @JsonProperty(value = "rdbs")
         public void setRDBs(List<String> rDBs) {
             this.rDBs = rDBs;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "rdbs")
+        @JsonProperty(value = "rdbs")
         public List<String> getRDBs() {
             return this.rDBs;
         }
 
         private String searchWord;
 
-        @ParamAnnotation(paramType = "query", paramName = "search_word")
+        @JsonProperty(value = "search_word")
         public void setSearchWord(String searchWord) {
             this.searchWord = searchWord;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "search_word")
+        @JsonProperty(value = "search_word")
         public String getSearchWord() {
             return this.searchWord;
         }
 
         private List<String> status;
 
-        @ParamAnnotation(paramType = "query", paramName = "status")
+        @JsonProperty(value = "status")
         public void setStatus(List<String> status) {
             this.status = status;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "status")
+        @JsonProperty(value = "status")
         public List<String> getStatus() {
             return this.status;
         }
 
         private List<String> tags;
 
-        @ParamAnnotation(paramType = "query", paramName = "tags")
+        @JsonProperty(value = "tags")
         public void setTags(List<String> tags) {
             this.tags = tags;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "tags")
+        @JsonProperty(value = "tags")
         public List<String> getTags() {
             return this.tags;
         }
 
         private Integer verbose;
 
-        @ParamAnnotation(paramType = "query", paramName = "verbose")
+        @JsonProperty(value = "verbose")
         public void setVerbose(Integer verbose) {
             this.verbose = verbose;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "verbose")
+        @JsonProperty(value = "verbose")
         public Integer getVerbose() {
             return this.verbose;
         }
@@ -1853,51 +1862,52 @@ public class RDBService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class DescribeRDBsOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private List<RDBModel> rDBSet;
 
-        @ParamAnnotation(paramType = "query", paramName = "rdb_set")
+        @JsonProperty(value = "rdb_set")
         public void setRDBSet(List<RDBModel> rDBSet) {
             this.rDBSet = rDBSet;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "rdb_set")
+        @JsonProperty(value = "rdb_set")
         public List<RDBModel> getRDBSet() {
             return this.rDBSet;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
 
         private Integer totalCount;
 
-        @ParamAnnotation(paramType = "query", paramName = "total_count")
+        @JsonProperty(value = "total_count")
         public void setTotalCount(Integer totalCount) {
             this.totalCount = totalCount;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "total_count")
+        @JsonProperty(value = "total_count")
         public Integer getTotalCount() {
             return this.totalCount;
         }
@@ -1921,7 +1931,7 @@ public class RDBService {
         context.put("APIName", "GetRDBInstanceFiles");
         context.put("ServiceName", "GetRDBInstanceFiles");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/GetRDBInstanceFiles");
+        context.put("RequestURI", "/iaas/GetRDBInstanceFiles");
 
         input.setAction("GetRDBInstanceFiles");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1955,7 +1965,7 @@ public class RDBService {
         context.put("APIName", "GetRDBInstanceFiles");
         context.put("ServiceName", "GetRDBInstanceFiles");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/GetRDBInstanceFiles");
+        context.put("RequestURI", "/iaas/GetRDBInstanceFiles");
 
         input.setAction("GetRDBInstanceFiles");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1975,12 +1985,12 @@ public class RDBService {
         // Required
         private String rDBInstance;
 
-        @ParamAnnotation(paramType = "query", paramName = "rdb_instance")
+        @JsonProperty(value = "rdb_instance")
         public void setRDBInstance(String rDBInstance) {
             this.rDBInstance = rDBInstance;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "rdb_instance")
+        @JsonProperty(value = "rdb_instance")
         public String getRDBInstance() {
             return this.rDBInstance;
         }
@@ -1993,51 +2003,52 @@ public class RDBService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class GetRDBInstanceFilesOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private RDBFileModel files;
 
-        @ParamAnnotation(paramType = "query", paramName = "files")
+        @JsonProperty(value = "files")
         public void setFiles(RDBFileModel files) {
             this.files = files;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "files")
+        @JsonProperty(value = "files")
         public RDBFileModel getFiles() {
             return this.files;
         }
 
         private String rDBInstance;
 
-        @ParamAnnotation(paramType = "query", paramName = "rdb_instance")
+        @JsonProperty(value = "rdb_instance")
         public void setRDBInstance(String rDBInstance) {
             this.rDBInstance = rDBInstance;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "rdb_instance")
+        @JsonProperty(value = "rdb_instance")
         public String getRDBInstance() {
             return this.rDBInstance;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -2061,7 +2072,7 @@ public class RDBService {
         context.put("APIName", "GetRDBMonitor");
         context.put("ServiceName", "GetRDBMonitor");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/GetRDBMonitor");
+        context.put("RequestURI", "/iaas/GetRDBMonitor");
 
         input.setAction("GetRDBMonitor");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2095,7 +2106,7 @@ public class RDBService {
         context.put("APIName", "GetRDBMonitor");
         context.put("ServiceName", "GetRDBMonitor");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/GetRDBMonitor");
+        context.put("RequestURI", "/iaas/GetRDBMonitor");
 
         input.setAction("GetRDBMonitor");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2115,12 +2126,12 @@ public class RDBService {
         // Required
         private String endTime;
 
-        @ParamAnnotation(paramType = "query", paramName = "end_time")
+        @JsonProperty(value = "end_time")
         public void setEndTime(String endTime) {
             this.endTime = endTime;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "end_time")
+        @JsonProperty(value = "end_time")
         public String getEndTime() {
             return this.endTime;
         }
@@ -2128,12 +2139,12 @@ public class RDBService {
         // Required
         private List<String> meters;
 
-        @ParamAnnotation(paramType = "query", paramName = "meters")
+        @JsonProperty(value = "meters")
         public void setMeters(List<String> meters) {
             this.meters = meters;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "meters")
+        @JsonProperty(value = "meters")
         public List<String> getMeters() {
             return this.meters;
         }
@@ -2141,24 +2152,24 @@ public class RDBService {
         // Required
         private String rDBEngine;
 
-        @ParamAnnotation(paramType = "query", paramName = "rdb_engine")
+        @JsonProperty(value = "rdb_engine")
         public void setRDBEngine(String rDBEngine) {
             this.rDBEngine = rDBEngine;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "rdb_engine")
+        @JsonProperty(value = "rdb_engine")
         public String getRDBEngine() {
             return this.rDBEngine;
         }
 
         private String rDBInstance;
 
-        @ParamAnnotation(paramType = "query", paramName = "rdb_instance")
+        @JsonProperty(value = "rdb_instance")
         public void setRDBInstance(String rDBInstance) {
             this.rDBInstance = rDBInstance;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "rdb_instance")
+        @JsonProperty(value = "rdb_instance")
         public String getRDBInstance() {
             return this.rDBInstance;
         }
@@ -2166,12 +2177,12 @@ public class RDBService {
         // Required
         private String resource;
 
-        @ParamAnnotation(paramType = "query", paramName = "resource")
+        @JsonProperty(value = "resource")
         public void setResource(String resource) {
             this.resource = resource;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "resource")
+        @JsonProperty(value = "resource")
         public String getResource() {
             return this.resource;
         }
@@ -2179,12 +2190,12 @@ public class RDBService {
         // Required
         private String role;
 
-        @ParamAnnotation(paramType = "query", paramName = "role")
+        @JsonProperty(value = "role")
         public void setRole(String role) {
             this.role = role;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "role")
+        @JsonProperty(value = "role")
         public String getRole() {
             return this.role;
         }
@@ -2192,12 +2203,12 @@ public class RDBService {
         // Required
         private String startTime;
 
-        @ParamAnnotation(paramType = "query", paramName = "start_time")
+        @JsonProperty(value = "start_time")
         public void setStartTime(String startTime) {
             this.startTime = startTime;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "start_time")
+        @JsonProperty(value = "start_time")
         public String getStartTime() {
             return this.startTime;
         }
@@ -2206,12 +2217,12 @@ public class RDBService {
         // Required
         private String step;
 
-        @ParamAnnotation(paramType = "query", paramName = "step")
+        @JsonProperty(value = "step")
         public void setStep(String step) {
             this.step = step;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "step")
+        @JsonProperty(value = "step")
         public String getStep() {
             return this.step;
         }
@@ -2251,51 +2262,52 @@ public class RDBService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class GetRDBMonitorOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private List<MeterModel> meterSet;
 
-        @ParamAnnotation(paramType = "query", paramName = "meter_set")
+        @JsonProperty(value = "meter_set")
         public void setMeterSet(List<MeterModel> meterSet) {
             this.meterSet = meterSet;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "meter_set")
+        @JsonProperty(value = "meter_set")
         public List<MeterModel> getMeterSet() {
             return this.meterSet;
         }
 
         private String resourceID;
 
-        @ParamAnnotation(paramType = "query", paramName = "resource_id")
+        @JsonProperty(value = "resource_id")
         public void setResourceID(String resourceID) {
             this.resourceID = resourceID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "resource_id")
+        @JsonProperty(value = "resource_id")
         public String getResourceID() {
             return this.resourceID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -2319,7 +2331,7 @@ public class RDBService {
         context.put("APIName", "ModifyRDBParameters");
         context.put("ServiceName", "ModifyRDBParameters");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ModifyRDBParameters");
+        context.put("RequestURI", "/iaas/ModifyRDBParameters");
 
         input.setAction("ModifyRDBParameters");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2353,7 +2365,7 @@ public class RDBService {
         context.put("APIName", "ModifyRDBParameters");
         context.put("ServiceName", "ModifyRDBParameters");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ModifyRDBParameters");
+        context.put("RequestURI", "/iaas/ModifyRDBParameters");
 
         input.setAction("ModifyRDBParameters");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2372,12 +2384,12 @@ public class RDBService {
     public static class ModifyRDBParametersInput extends IaasParamBody {
         private List<RDBParametersModel> parameters;
 
-        @ParamAnnotation(paramType = "query", paramName = "parameters")
+        @JsonProperty(value = "parameters")
         public void setParameters(List<RDBParametersModel> parameters) {
             this.parameters = parameters;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "parameters")
+        @JsonProperty(value = "parameters")
         public List<RDBParametersModel> getParameters() {
             return this.parameters;
         }
@@ -2385,12 +2397,12 @@ public class RDBService {
         // Required
         private String rDB;
 
-        @ParamAnnotation(paramType = "query", paramName = "rdb")
+        @JsonProperty(value = "rdb")
         public void setRDB(String rDB) {
             this.rDB = rDB;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "rdb")
+        @JsonProperty(value = "rdb")
         public String getRDB() {
             return this.rDB;
         }
@@ -2413,39 +2425,40 @@ public class RDBService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class ModifyRDBParametersOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String rDB;
 
-        @ParamAnnotation(paramType = "query", paramName = "rdb")
+        @JsonProperty(value = "rdb")
         public void setRDB(String rDB) {
             this.rDB = rDB;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "rdb")
+        @JsonProperty(value = "rdb")
         public String getRDB() {
             return this.rDB;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -2469,7 +2482,7 @@ public class RDBService {
         context.put("APIName", "RDBsJoinVxnet");
         context.put("ServiceName", "RDBsJoinVxnet");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/RDBsJoinVxnet");
+        context.put("RequestURI", "/iaas/RDBsJoinVxnet");
 
         input.setAction("RDBsJoinVxnet");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2503,7 +2516,7 @@ public class RDBService {
         context.put("APIName", "RDBsJoinVxNet");
         context.put("ServiceName", "RDBsJoinVxnet");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/RDBsJoinVxnet");
+        context.put("RequestURI", "/iaas/RDBsJoinVxnet");
 
         input.setAction("RDBsJoinVxNet");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2523,12 +2536,12 @@ public class RDBService {
         // Required
         private List<String> rDBs;
 
-        @ParamAnnotation(paramType = "query", paramName = "rdbs")
+        @JsonProperty(value = "rdbs")
         public void setRDBs(List<String> rDBs) {
             this.rDBs = rDBs;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "rdbs")
+        @JsonProperty(value = "rdbs")
         public List<String> getRDBs() {
             return this.rDBs;
         }
@@ -2536,12 +2549,12 @@ public class RDBService {
         // Required
         private String vxNet;
 
-        @ParamAnnotation(paramType = "query", paramName = "vxnet")
+        @JsonProperty(value = "vxnet")
         public void setVxNet(String vxNet) {
             this.vxNet = vxNet;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "vxnet")
+        @JsonProperty(value = "vxnet")
         public String getVxNet() {
             return this.vxNet;
         }
@@ -2554,63 +2567,64 @@ public class RDBService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class RDBsJoinVxNetOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private List<String> rDBs;
 
-        @ParamAnnotation(paramType = "query", paramName = "rdbs")
+        @JsonProperty(value = "rdbs")
         public void setRDBs(List<String> rDBs) {
             this.rDBs = rDBs;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "rdbs")
+        @JsonProperty(value = "rdbs")
         public List<String> getRDBs() {
             return this.rDBs;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
 
         private String vxNet;
 
-        @ParamAnnotation(paramType = "query", paramName = "vxnet")
+        @JsonProperty(value = "vxnet")
         public void setVxNet(String vxNet) {
             this.vxNet = vxNet;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "vxnet")
+        @JsonProperty(value = "vxnet")
         public String getVxNet() {
             return this.vxNet;
         }
@@ -2634,7 +2648,7 @@ public class RDBService {
         context.put("APIName", "RDBsLeaveVxnet");
         context.put("ServiceName", "RDBsLeaveVxnet");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/RDBsLeaveVxnet");
+        context.put("RequestURI", "/iaas/RDBsLeaveVxnet");
 
         input.setAction("RDBsLeaveVxnet");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2668,7 +2682,7 @@ public class RDBService {
         context.put("APIName", "RDBsLeaveVxNet");
         context.put("ServiceName", "RDBsLeaveVxnet");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/RDBsLeaveVxnet");
+        context.put("RequestURI", "/iaas/RDBsLeaveVxnet");
 
         input.setAction("RDBsLeaveVxNet");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2688,12 +2702,12 @@ public class RDBService {
         // Required
         private List<String> rDBs;
 
-        @ParamAnnotation(paramType = "query", paramName = "rdbs")
+        @JsonProperty(value = "rdbs")
         public void setRDBs(List<String> rDBs) {
             this.rDBs = rDBs;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "rdbs")
+        @JsonProperty(value = "rdbs")
         public List<String> getRDBs() {
             return this.rDBs;
         }
@@ -2701,12 +2715,12 @@ public class RDBService {
         // Required
         private String vxNet;
 
-        @ParamAnnotation(paramType = "query", paramName = "vxnet")
+        @JsonProperty(value = "vxnet")
         public void setVxNet(String vxNet) {
             this.vxNet = vxNet;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "vxnet")
+        @JsonProperty(value = "vxnet")
         public String getVxNet() {
             return this.vxNet;
         }
@@ -2719,39 +2733,40 @@ public class RDBService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class RDBsLeaveVxNetOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -2775,7 +2790,7 @@ public class RDBService {
         context.put("APIName", "ResizeRDBs");
         context.put("ServiceName", "ResizeRDBs");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ResizeRDBs");
+        context.put("RequestURI", "/iaas/ResizeRDBs");
 
         input.setAction("ResizeRDBs");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2809,7 +2824,7 @@ public class RDBService {
         context.put("APIName", "ResizeRDBs");
         context.put("ServiceName", "ResizeRDBs");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ResizeRDBs");
+        context.put("RequestURI", "/iaas/ResizeRDBs");
 
         input.setAction("ResizeRDBs");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2829,12 +2844,12 @@ public class RDBService {
     	// RDBType's available values: 1, 2, 4, 8, 16, 32
         private Integer rDBType;
 
-        @ParamAnnotation(paramType = "query", paramName = "rdb_type")
+        @JsonProperty(value = "rdb_type")
         public void setRDBType(Integer rDBType) {
             this.rDBType = rDBType;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "rdb_type")
+        @JsonProperty(value = "rdb_type")
         public Integer getRDBType() {
             return this.rDBType;
         }
@@ -2842,24 +2857,24 @@ public class RDBService {
         // Required
         private List<String> rDBs;
 
-        @ParamAnnotation(paramType = "query", paramName = "rdbs")
+        @JsonProperty(value = "rdbs")
         public void setRDBs(List<String> rDBs) {
             this.rDBs = rDBs;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "rdbs")
+        @JsonProperty(value = "rdbs")
         public List<String> getRDBs() {
             return this.rDBs;
         }
 
         private Integer storageSize;
 
-        @ParamAnnotation(paramType = "query", paramName = "storage_size")
+        @JsonProperty(value = "storage_size")
         public void setStorageSize(Integer storageSize) {
             this.storageSize = storageSize;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "storage_size")
+        @JsonProperty(value = "storage_size")
         public Integer getStorageSize() {
             return this.storageSize;
         }
@@ -2884,51 +2899,52 @@ public class RDBService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class ResizeRDBsOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private List<String> rDBs;
 
-        @ParamAnnotation(paramType = "query", paramName = "rdbs")
+        @JsonProperty(value = "rdbs")
         public void setRDBs(List<String> rDBs) {
             this.rDBs = rDBs;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "rdbs")
+        @JsonProperty(value = "rdbs")
         public List<String> getRDBs() {
             return this.rDBs;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -2952,7 +2968,7 @@ public class RDBService {
         context.put("APIName", "StartRDBs");
         context.put("ServiceName", "StartRDBs");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/StartRDBs");
+        context.put("RequestURI", "/iaas/StartRDBs");
 
         input.setAction("StartRDBs");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2986,7 +3002,7 @@ public class RDBService {
         context.put("APIName", "StartRDBs");
         context.put("ServiceName", "StartRDBs");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/StartRDBs");
+        context.put("RequestURI", "/iaas/StartRDBs");
 
         input.setAction("StartRDBs");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -3006,12 +3022,12 @@ public class RDBService {
         // Required
         private List<String> rDBs;
 
-        @ParamAnnotation(paramType = "query", paramName = "rdbs")
+        @JsonProperty(value = "rdbs")
         public void setRDBs(List<String> rDBs) {
             this.rDBs = rDBs;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "rdbs")
+        @JsonProperty(value = "rdbs")
         public List<String> getRDBs() {
             return this.rDBs;
         }
@@ -3021,51 +3037,52 @@ public class RDBService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class StartRDBsOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private List<String> rDBs;
 
-        @ParamAnnotation(paramType = "query", paramName = "rdbs")
+        @JsonProperty(value = "rdbs")
         public void setRDBs(List<String> rDBs) {
             this.rDBs = rDBs;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "rdbs")
+        @JsonProperty(value = "rdbs")
         public List<String> getRDBs() {
             return this.rDBs;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -3089,7 +3106,7 @@ public class RDBService {
         context.put("APIName", "StopRDBs");
         context.put("ServiceName", "StopRDBs");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/StopRDBs");
+        context.put("RequestURI", "/iaas/StopRDBs");
 
         input.setAction("StopRDBs");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -3123,7 +3140,7 @@ public class RDBService {
         context.put("APIName", "StopRDBs");
         context.put("ServiceName", "StopRDBs");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/StopRDBs");
+        context.put("RequestURI", "/iaas/StopRDBs");
 
         input.setAction("StopRDBs");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -3143,12 +3160,12 @@ public class RDBService {
         // Required
         private List<String> rDBs;
 
-        @ParamAnnotation(paramType = "query", paramName = "rdbs")
+        @JsonProperty(value = "rdbs")
         public void setRDBs(List<String> rDBs) {
             this.rDBs = rDBs;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "rdbs")
+        @JsonProperty(value = "rdbs")
         public List<String> getRDBs() {
             return this.rDBs;
         }
@@ -3158,51 +3175,52 @@ public class RDBService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class StopRDBsOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private List<String> rDBs;
 
-        @ParamAnnotation(paramType = "query", paramName = "rdbs")
+        @JsonProperty(value = "rdbs")
         public void setRDBs(List<String> rDBs) {
             this.rDBs = rDBs;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "rdbs")
+        @JsonProperty(value = "rdbs")
         public List<String> getRDBs() {
             return this.rDBs;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }

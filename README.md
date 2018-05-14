@@ -19,7 +19,7 @@ qy_secret_access_key: MVZ0iOfnfivjxL7W5o7oOumMQkk89OcoIavvUiuF
 
 ### Installation
 
-Add dependency to `pom.xml`
+Pull and package this repository to get `qingcloud-sdk-java.jar`, put the jar into your project directory and add below dependency into your pom file.
 
 ```xml
 <dependencies>
@@ -29,9 +29,9 @@ Add dependency to `pom.xml`
         <version>1.0</version>
     </dependency>
     <dependency>
-        <groupId>com.alibaba</groupId>
-        <artifactId>fastjson</artifactId>
-        <version>1.2.46</version>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-databind</artifactId>
+        <version>2.9.5</version>
     </dependency>
 
     <dependency>
@@ -48,6 +48,8 @@ Add dependency to `pom.xml`
 <dependencies>
 ```
 
+> We're working on publishing the SDK to central maven repository, and we'll update installation readme once done.
+
 ### Usage
 
 Now you are ready to code. You can read the detailed guides in the list below to have a clear understanding.
@@ -56,11 +58,14 @@ Now you are ready to code. You can read the detailed guides in the list below to
 
 ```java
 public class InstanceTest {
+    private static Logger logger = LoggerFactory.getLogger(InstanceTest.class);
+
+    @Test
     public void testDescribeInstances() {
         EnvContext context = new EnvContext("ACCESS_KEY_ID_EXAMPLE", "SECRET_ACCESS_KEY_EXAMPLE");
         context.setProtocol("https");
         context.setHost("api.qingcloud.com");
-        context.setPort(443);
+        context.setPort("443");
         context.setZone("pek3b");
         context.setApiLang("zh-cn"); // optional, set return message i18n, default to us-en
         InstanceService service = new InstanceService(context);
@@ -76,7 +81,7 @@ public class InstanceTest {
                 System.out.println(model.getInstanceID());
                 System.out.println(model.getInstanceName());
                 System.out.println(model.getImageID());
-                for (Types.InstanceVxNetModel vxNetModel : model.getVxNets()) {
+                for (Types.NICVxNetModel vxNetModel : model.getVxNets()) {
                     System.out.println("==================");
                     System.out.println(vxNetModel.getVxNetID());
                     System.out.println(vxNetModel.getVxNetType());

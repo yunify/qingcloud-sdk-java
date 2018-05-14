@@ -16,6 +16,7 @@
 
 package com.qingcloud.sdk.service;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.qingcloud.sdk.config.EnvContext;
 import com.qingcloud.sdk.constants.QCConstant;
 import com.qingcloud.sdk.model.OutputModel;
@@ -24,8 +25,8 @@ import com.qingcloud.sdk.request.ResourceRequestFactory;
 import com.qingcloud.sdk.exception.QCException;
 import com.qingcloud.sdk.model.IaasParamBody;
 import com.qingcloud.sdk.service.Types.*;
-import com.qingcloud.sdk.annotation.ParamAnnotation;
 import com.qingcloud.sdk.utils.QCStringUtil;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.HashMap;
 import java.util.List;
@@ -63,7 +64,7 @@ public class ImageService {
         context.put("APIName", "CaptureInstance");
         context.put("ServiceName", "CaptureInstance");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/CaptureInstance");
+        context.put("RequestURI", "/iaas/CaptureInstance");
 
         input.setAction("CaptureInstance");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -97,7 +98,7 @@ public class ImageService {
         context.put("APIName", "CaptureInstance");
         context.put("ServiceName", "CaptureInstance");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/CaptureInstance");
+        context.put("RequestURI", "/iaas/CaptureInstance");
 
         input.setAction("CaptureInstance");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -116,12 +117,12 @@ public class ImageService {
     public static class CaptureInstanceInput extends IaasParamBody {
         private String imageName;
 
-        @ParamAnnotation(paramType = "query", paramName = "image_name")
+        @JsonProperty(value = "image_name")
         public void setImageName(String imageName) {
             this.imageName = imageName;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "image_name")
+        @JsonProperty(value = "image_name")
         public String getImageName() {
             return this.imageName;
         }
@@ -129,12 +130,12 @@ public class ImageService {
         // Required
         private String instance;
 
-        @ParamAnnotation(paramType = "query", paramName = "instance")
+        @JsonProperty(value = "instance")
         public void setInstance(String instance) {
             this.instance = instance;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "instance")
+        @JsonProperty(value = "instance")
         public String getInstance() {
             return this.instance;
         }
@@ -147,51 +148,52 @@ public class ImageService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class CaptureInstanceOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String imageID;
 
-        @ParamAnnotation(paramType = "query", paramName = "image_id")
+        @JsonProperty(value = "image_id")
         public void setImageID(String imageID) {
             this.imageID = imageID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "image_id")
+        @JsonProperty(value = "image_id")
         public String getImageID() {
             return this.imageID;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -215,7 +217,7 @@ public class ImageService {
         context.put("APIName", "DeleteImages");
         context.put("ServiceName", "DeleteImages");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DeleteImages");
+        context.put("RequestURI", "/iaas/DeleteImages");
 
         input.setAction("DeleteImages");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -249,7 +251,7 @@ public class ImageService {
         context.put("APIName", "DeleteImages");
         context.put("ServiceName", "DeleteImages");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DeleteImages");
+        context.put("RequestURI", "/iaas/DeleteImages");
 
         input.setAction("DeleteImages");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -269,12 +271,12 @@ public class ImageService {
         // Required
         private List<String> images;
 
-        @ParamAnnotation(paramType = "query", paramName = "images")
+        @JsonProperty(value = "images")
         public void setImages(List<String> images) {
             this.images = images;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "images")
+        @JsonProperty(value = "images")
         public List<String> getImages() {
             return this.images;
         }
@@ -284,39 +286,40 @@ public class ImageService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class DeleteImagesOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -340,7 +343,7 @@ public class ImageService {
         context.put("APIName", "DescribeImageUsers");
         context.put("ServiceName", "DescribeImageUsers");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeImageUsers");
+        context.put("RequestURI", "/iaas/DescribeImageUsers");
 
         input.setAction("DescribeImageUsers");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -374,7 +377,7 @@ public class ImageService {
         context.put("APIName", "DescribeImageUsers");
         context.put("ServiceName", "DescribeImageUsers");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeImageUsers");
+        context.put("RequestURI", "/iaas/DescribeImageUsers");
 
         input.setAction("DescribeImageUsers");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -394,36 +397,36 @@ public class ImageService {
         // Required
         private String imageID;
 
-        @ParamAnnotation(paramType = "query", paramName = "image_id")
+        @JsonProperty(value = "image_id")
         public void setImageID(String imageID) {
             this.imageID = imageID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "image_id")
+        @JsonProperty(value = "image_id")
         public String getImageID() {
             return this.imageID;
         }
 
         private Integer limit;
 
-        @ParamAnnotation(paramType = "query", paramName = "limit")
+        @JsonProperty(value = "limit")
         public void setLimit(Integer limit) {
             this.limit = limit;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "limit")
+        @JsonProperty(value = "limit")
         public Integer getLimit() {
             return this.limit;
         }
 
         private Integer offset;
 
-        @ParamAnnotation(paramType = "query", paramName = "offset")
+        @JsonProperty(value = "offset")
         public void setOffset(Integer offset) {
             this.offset = offset;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "offset")
+        @JsonProperty(value = "offset")
         public Integer getOffset() {
             return this.offset;
         }
@@ -436,51 +439,52 @@ public class ImageService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class DescribeImageUsersOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private List<ImageUserModel> imageUserSet;
 
-        @ParamAnnotation(paramType = "query", paramName = "image_user_set")
+        @JsonProperty(value = "image_user_set")
         public void setImageUserSet(List<ImageUserModel> imageUserSet) {
             this.imageUserSet = imageUserSet;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "image_user_set")
+        @JsonProperty(value = "image_user_set")
         public List<ImageUserModel> getImageUserSet() {
             return this.imageUserSet;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
 
         private Integer totalCount;
 
-        @ParamAnnotation(paramType = "query", paramName = "total_count")
+        @JsonProperty(value = "total_count")
         public void setTotalCount(Integer totalCount) {
             this.totalCount = totalCount;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "total_count")
+        @JsonProperty(value = "total_count")
         public Integer getTotalCount() {
             return this.totalCount;
         }
@@ -504,7 +508,7 @@ public class ImageService {
         context.put("APIName", "DescribeImages");
         context.put("ServiceName", "DescribeImages");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeImages");
+        context.put("RequestURI", "/iaas/DescribeImages");
 
         input.setAction("DescribeImages");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -538,7 +542,7 @@ public class ImageService {
         context.put("APIName", "DescribeImages");
         context.put("ServiceName", "DescribeImages");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeImages");
+        context.put("RequestURI", "/iaas/DescribeImages");
 
         input.setAction("DescribeImages");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -557,48 +561,48 @@ public class ImageService {
     public static class DescribeImagesInput extends IaasParamBody {
         private List<String> images;
 
-        @ParamAnnotation(paramType = "query", paramName = "images")
+        @JsonProperty(value = "images")
         public void setImages(List<String> images) {
             this.images = images;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "images")
+        @JsonProperty(value = "images")
         public List<String> getImages() {
             return this.images;
         }
 
         private Integer limit;
 
-        @ParamAnnotation(paramType = "query", paramName = "limit")
+        @JsonProperty(value = "limit")
         public void setLimit(Integer limit) {
             this.limit = limit;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "limit")
+        @JsonProperty(value = "limit")
         public Integer getLimit() {
             return this.limit;
         }
 
         private Integer offset;
 
-        @ParamAnnotation(paramType = "query", paramName = "offset")
+        @JsonProperty(value = "offset")
         public void setOffset(Integer offset) {
             this.offset = offset;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "offset")
+        @JsonProperty(value = "offset")
         public Integer getOffset() {
             return this.offset;
         }
 
         private String oSFamily;
 
-        @ParamAnnotation(paramType = "query", paramName = "os_family")
+        @JsonProperty(value = "os_family")
         public void setOSFamily(String oSFamily) {
             this.oSFamily = oSFamily;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "os_family")
+        @JsonProperty(value = "os_family")
         public String getOSFamily() {
             return this.oSFamily;
         }
@@ -606,12 +610,12 @@ public class ImageService {
     	// ProcessorType's available values: 64bit, 32bit
         private String processorType;
 
-        @ParamAnnotation(paramType = "query", paramName = "processor_type")
+        @JsonProperty(value = "processor_type")
         public void setProcessorType(String processorType) {
             this.processorType = processorType;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "processor_type")
+        @JsonProperty(value = "processor_type")
         public String getProcessorType() {
             return this.processorType;
         }
@@ -619,36 +623,36 @@ public class ImageService {
     	// Provider's available values: system, self
         private String provider;
 
-        @ParamAnnotation(paramType = "query", paramName = "provider")
+        @JsonProperty(value = "provider")
         public void setProvider(String provider) {
             this.provider = provider;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "provider")
+        @JsonProperty(value = "provider")
         public String getProvider() {
             return this.provider;
         }
 
         private String searchWord;
 
-        @ParamAnnotation(paramType = "query", paramName = "search_word")
+        @JsonProperty(value = "search_word")
         public void setSearchWord(String searchWord) {
             this.searchWord = searchWord;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "search_word")
+        @JsonProperty(value = "search_word")
         public String getSearchWord() {
             return this.searchWord;
         }
 
         private List<String> status;
 
-        @ParamAnnotation(paramType = "query", paramName = "status")
+        @JsonProperty(value = "status")
         public void setStatus(List<String> status) {
             this.status = status;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "status")
+        @JsonProperty(value = "status")
         public List<String> getStatus() {
             return this.status;
         }
@@ -656,12 +660,12 @@ public class ImageService {
     	// Verbose's available values: 0
         private Integer verbose;
 
-        @ParamAnnotation(paramType = "query", paramName = "verbose")
+        @JsonProperty(value = "verbose")
         public void setVerbose(Integer verbose) {
             this.verbose = verbose;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "verbose")
+        @JsonProperty(value = "verbose")
         public Integer getVerbose() {
             return this.verbose;
         }
@@ -669,12 +673,12 @@ public class ImageService {
     	// Visibility's available values: public, private
         private String visibility;
 
-        @ParamAnnotation(paramType = "query", paramName = "visibility")
+        @JsonProperty(value = "visibility")
         public void setVisibility(String visibility) {
             this.visibility = visibility;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "visibility")
+        @JsonProperty(value = "visibility")
         public String getVisibility() {
             return this.visibility;
         }
@@ -753,51 +757,52 @@ public class ImageService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class DescribeImagesOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private List<ImageModel> imageSet;
 
-        @ParamAnnotation(paramType = "query", paramName = "image_set")
+        @JsonProperty(value = "image_set")
         public void setImageSet(List<ImageModel> imageSet) {
             this.imageSet = imageSet;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "image_set")
+        @JsonProperty(value = "image_set")
         public List<ImageModel> getImageSet() {
             return this.imageSet;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
 
         private Integer totalCount;
 
-        @ParamAnnotation(paramType = "query", paramName = "total_count")
+        @JsonProperty(value = "total_count")
         public void setTotalCount(Integer totalCount) {
             this.totalCount = totalCount;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "total_count")
+        @JsonProperty(value = "total_count")
         public Integer getTotalCount() {
             return this.totalCount;
         }
@@ -821,7 +826,7 @@ public class ImageService {
         context.put("APIName", "GrantImageToUsers");
         context.put("ServiceName", "GrantImageToUsers");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/GrantImageToUsers");
+        context.put("RequestURI", "/iaas/GrantImageToUsers");
 
         input.setAction("GrantImageToUsers");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -855,7 +860,7 @@ public class ImageService {
         context.put("APIName", "GrantImageToUsers");
         context.put("ServiceName", "GrantImageToUsers");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/GrantImageToUsers");
+        context.put("RequestURI", "/iaas/GrantImageToUsers");
 
         input.setAction("GrantImageToUsers");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -875,12 +880,12 @@ public class ImageService {
         // Required
         private String image;
 
-        @ParamAnnotation(paramType = "query", paramName = "image")
+        @JsonProperty(value = "image")
         public void setImage(String image) {
             this.image = image;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "image")
+        @JsonProperty(value = "image")
         public String getImage() {
             return this.image;
         }
@@ -888,12 +893,12 @@ public class ImageService {
         // Required
         private List<String> users;
 
-        @ParamAnnotation(paramType = "query", paramName = "users")
+        @JsonProperty(value = "users")
         public void setUsers(List<String> users) {
             this.users = users;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "users")
+        @JsonProperty(value = "users")
         public List<String> getUsers() {
             return this.users;
         }
@@ -906,27 +911,28 @@ public class ImageService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class GrantImageToUsersOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -950,7 +956,7 @@ public class ImageService {
         context.put("APIName", "ModifyImageAttributes");
         context.put("ServiceName", "ModifyImageAttributes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ModifyImageAttributes");
+        context.put("RequestURI", "/iaas/ModifyImageAttributes");
 
         input.setAction("ModifyImageAttributes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -984,7 +990,7 @@ public class ImageService {
         context.put("APIName", "ModifyImageAttributes");
         context.put("ServiceName", "ModifyImageAttributes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ModifyImageAttributes");
+        context.put("RequestURI", "/iaas/ModifyImageAttributes");
 
         input.setAction("ModifyImageAttributes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1003,12 +1009,12 @@ public class ImageService {
     public static class ModifyImageAttributesInput extends IaasParamBody {
         private String description;
 
-        @ParamAnnotation(paramType = "query", paramName = "description")
+        @JsonProperty(value = "description")
         public void setDescription(String description) {
             this.description = description;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "description")
+        @JsonProperty(value = "description")
         public String getDescription() {
             return this.description;
         }
@@ -1016,24 +1022,24 @@ public class ImageService {
         // Required
         private String image;
 
-        @ParamAnnotation(paramType = "query", paramName = "image")
+        @JsonProperty(value = "image")
         public void setImage(String image) {
             this.image = image;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "image")
+        @JsonProperty(value = "image")
         public String getImage() {
             return this.image;
         }
 
         private String imageName;
 
-        @ParamAnnotation(paramType = "query", paramName = "image_name")
+        @JsonProperty(value = "image_name")
         public void setImageName(String imageName) {
             this.imageName = imageName;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "image_name")
+        @JsonProperty(value = "image_name")
         public String getImageName() {
             return this.imageName;
         }
@@ -1046,39 +1052,40 @@ public class ImageService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class ModifyImageAttributesOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String imageID;
 
-        @ParamAnnotation(paramType = "query", paramName = "image_id")
+        @JsonProperty(value = "image_id")
         public void setImageID(String imageID) {
             this.imageID = imageID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "image_id")
+        @JsonProperty(value = "image_id")
         public String getImageID() {
             return this.imageID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -1102,7 +1109,7 @@ public class ImageService {
         context.put("APIName", "RevokeImageFromUsers");
         context.put("ServiceName", "RevokeImageFromUsers");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/RevokeImageFromUsers");
+        context.put("RequestURI", "/iaas/RevokeImageFromUsers");
 
         input.setAction("RevokeImageFromUsers");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1136,7 +1143,7 @@ public class ImageService {
         context.put("APIName", "RevokeImageFromUsers");
         context.put("ServiceName", "RevokeImageFromUsers");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/RevokeImageFromUsers");
+        context.put("RequestURI", "/iaas/RevokeImageFromUsers");
 
         input.setAction("RevokeImageFromUsers");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1156,12 +1163,12 @@ public class ImageService {
         // Required
         private String image;
 
-        @ParamAnnotation(paramType = "query", paramName = "image")
+        @JsonProperty(value = "image")
         public void setImage(String image) {
             this.image = image;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "image")
+        @JsonProperty(value = "image")
         public String getImage() {
             return this.image;
         }
@@ -1169,12 +1176,12 @@ public class ImageService {
         // Required
         private List<String> users;
 
-        @ParamAnnotation(paramType = "query", paramName = "users")
+        @JsonProperty(value = "users")
         public void setUsers(List<String> users) {
             this.users = users;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "users")
+        @JsonProperty(value = "users")
         public List<String> getUsers() {
             return this.users;
         }
@@ -1187,27 +1194,28 @@ public class ImageService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class RevokeImageFromUsersOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }

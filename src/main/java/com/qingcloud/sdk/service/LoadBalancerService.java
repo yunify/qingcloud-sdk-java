@@ -16,6 +16,7 @@
 
 package com.qingcloud.sdk.service;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.qingcloud.sdk.config.EnvContext;
 import com.qingcloud.sdk.constants.QCConstant;
 import com.qingcloud.sdk.model.OutputModel;
@@ -24,8 +25,8 @@ import com.qingcloud.sdk.request.ResourceRequestFactory;
 import com.qingcloud.sdk.exception.QCException;
 import com.qingcloud.sdk.model.IaasParamBody;
 import com.qingcloud.sdk.service.Types.*;
-import com.qingcloud.sdk.annotation.ParamAnnotation;
 import com.qingcloud.sdk.utils.QCStringUtil;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.HashMap;
 import java.util.List;
@@ -63,7 +64,7 @@ public class LoadBalancerService {
         context.put("APIName", "AddLoadBalancerBackends");
         context.put("ServiceName", "AddLoadBalancerBackends");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/AddLoadBalancerBackends");
+        context.put("RequestURI", "/iaas/AddLoadBalancerBackends");
 
         input.setAction("AddLoadBalancerBackends");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -97,7 +98,7 @@ public class LoadBalancerService {
         context.put("APIName", "AddLoadBalancerBackends");
         context.put("ServiceName", "AddLoadBalancerBackends");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/AddLoadBalancerBackends");
+        context.put("RequestURI", "/iaas/AddLoadBalancerBackends");
 
         input.setAction("AddLoadBalancerBackends");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -117,12 +118,12 @@ public class LoadBalancerService {
         // Required
         private List<LoadBalancerBackendModel> backends;
 
-        @ParamAnnotation(paramType = "query", paramName = "backends")
+        @JsonProperty(value = "backends")
         public void setBackends(List<LoadBalancerBackendModel> backends) {
             this.backends = backends;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "backends")
+        @JsonProperty(value = "backends")
         public List<LoadBalancerBackendModel> getBackends() {
             return this.backends;
         }
@@ -130,12 +131,12 @@ public class LoadBalancerService {
         // Required
         private String loadBalancerListener;
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_listener")
+        @JsonProperty(value = "loadbalancer_listener")
         public void setLoadBalancerListener(String loadBalancerListener) {
             this.loadBalancerListener = loadBalancerListener;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_listener")
+        @JsonProperty(value = "loadbalancer_listener")
         public String getLoadBalancerListener() {
             return this.loadBalancerListener;
         }
@@ -158,39 +159,40 @@ public class LoadBalancerService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class AddLoadBalancerBackendsOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private List<String> loadBalancerBackends;
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_backends")
+        @JsonProperty(value = "loadbalancer_backends")
         public void setLoadBalancerBackends(List<String> loadBalancerBackends) {
             this.loadBalancerBackends = loadBalancerBackends;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_backends")
+        @JsonProperty(value = "loadbalancer_backends")
         public List<String> getLoadBalancerBackends() {
             return this.loadBalancerBackends;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -214,7 +216,7 @@ public class LoadBalancerService {
         context.put("APIName", "AddLoadBalancerListeners");
         context.put("ServiceName", "AddLoadBalancerListeners");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/AddLoadBalancerListeners");
+        context.put("RequestURI", "/iaas/AddLoadBalancerListeners");
 
         input.setAction("AddLoadBalancerListeners");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -248,7 +250,7 @@ public class LoadBalancerService {
         context.put("APIName", "AddLoadBalancerListeners");
         context.put("ServiceName", "AddLoadBalancerListeners");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/AddLoadBalancerListeners");
+        context.put("RequestURI", "/iaas/AddLoadBalancerListeners");
 
         input.setAction("AddLoadBalancerListeners");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -267,24 +269,24 @@ public class LoadBalancerService {
     public static class AddLoadBalancerListenersInput extends IaasParamBody {
         private List<LoadBalancerListenerModel> listeners;
 
-        @ParamAnnotation(paramType = "query", paramName = "listeners")
+        @JsonProperty(value = "listeners")
         public void setListeners(List<LoadBalancerListenerModel> listeners) {
             this.listeners = listeners;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "listeners")
+        @JsonProperty(value = "listeners")
         public List<LoadBalancerListenerModel> getListeners() {
             return this.listeners;
         }
 
         private String loadBalancer;
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer")
+        @JsonProperty(value = "loadbalancer")
         public void setLoadBalancer(String loadBalancer) {
             this.loadBalancer = loadBalancer;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer")
+        @JsonProperty(value = "loadbalancer")
         public String getLoadBalancer() {
             return this.loadBalancer;
         }
@@ -304,39 +306,40 @@ public class LoadBalancerService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class AddLoadBalancerListenersOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private List<String> loadBalancerListeners;
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_listeners")
+        @JsonProperty(value = "loadbalancer_listeners")
         public void setLoadBalancerListeners(List<String> loadBalancerListeners) {
             this.loadBalancerListeners = loadBalancerListeners;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_listeners")
+        @JsonProperty(value = "loadbalancer_listeners")
         public List<String> getLoadBalancerListeners() {
             return this.loadBalancerListeners;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -360,7 +363,7 @@ public class LoadBalancerService {
         context.put("APIName", "AddLoadBalancerPolicyRules");
         context.put("ServiceName", "AddLoadBalancerPolicyRules");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/AddLoadBalancerPolicyRules");
+        context.put("RequestURI", "/iaas/AddLoadBalancerPolicyRules");
 
         input.setAction("AddLoadBalancerPolicyRules");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -394,7 +397,7 @@ public class LoadBalancerService {
         context.put("APIName", "AddLoadBalancerPolicyRules");
         context.put("ServiceName", "AddLoadBalancerPolicyRules");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/AddLoadBalancerPolicyRules");
+        context.put("RequestURI", "/iaas/AddLoadBalancerPolicyRules");
 
         input.setAction("AddLoadBalancerPolicyRules");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -413,24 +416,24 @@ public class LoadBalancerService {
     public static class AddLoadBalancerPolicyRulesInput extends IaasParamBody {
         private String loadBalancerPolicy;
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_policy")
+        @JsonProperty(value = "loadbalancer_policy")
         public void setLoadBalancerPolicy(String loadBalancerPolicy) {
             this.loadBalancerPolicy = loadBalancerPolicy;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_policy")
+        @JsonProperty(value = "loadbalancer_policy")
         public String getLoadBalancerPolicy() {
             return this.loadBalancerPolicy;
         }
 
         private List<LoadBalancerPolicyRuleModel> rules;
 
-        @ParamAnnotation(paramType = "query", paramName = "rules")
+        @JsonProperty(value = "rules")
         public void setRules(List<LoadBalancerPolicyRuleModel> rules) {
             this.rules = rules;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "rules")
+        @JsonProperty(value = "rules")
         public List<LoadBalancerPolicyRuleModel> getRules() {
             return this.rules;
         }
@@ -450,39 +453,40 @@ public class LoadBalancerService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class AddLoadBalancerPolicyRulesOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private List<String> loadBalancerPolicyRules;
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_policy_rules")
+        @JsonProperty(value = "loadbalancer_policy_rules")
         public void setLoadBalancerPolicyRules(List<String> loadBalancerPolicyRules) {
             this.loadBalancerPolicyRules = loadBalancerPolicyRules;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_policy_rules")
+        @JsonProperty(value = "loadbalancer_policy_rules")
         public List<String> getLoadBalancerPolicyRules() {
             return this.loadBalancerPolicyRules;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -506,7 +510,7 @@ public class LoadBalancerService {
         context.put("APIName", "ApplyLoadBalancerPolicy");
         context.put("ServiceName", "ApplyLoadBalancerPolicy");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ApplyLoadBalancerPolicy");
+        context.put("RequestURI", "/iaas/ApplyLoadBalancerPolicy");
 
         input.setAction("ApplyLoadBalancerPolicy");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -540,7 +544,7 @@ public class LoadBalancerService {
         context.put("APIName", "ApplyLoadBalancerPolicy");
         context.put("ServiceName", "ApplyLoadBalancerPolicy");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ApplyLoadBalancerPolicy");
+        context.put("RequestURI", "/iaas/ApplyLoadBalancerPolicy");
 
         input.setAction("ApplyLoadBalancerPolicy");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -560,12 +564,12 @@ public class LoadBalancerService {
         // Required
         private String loadBalancerPolicy;
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_policy")
+        @JsonProperty(value = "loadbalancer_policy")
         public void setLoadBalancerPolicy(String loadBalancerPolicy) {
             this.loadBalancerPolicy = loadBalancerPolicy;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_policy")
+        @JsonProperty(value = "loadbalancer_policy")
         public String getLoadBalancerPolicy() {
             return this.loadBalancerPolicy;
         }
@@ -578,39 +582,40 @@ public class LoadBalancerService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class ApplyLoadBalancerPolicyOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -634,7 +639,7 @@ public class LoadBalancerService {
         context.put("APIName", "AssociateEipsToLoadBalancer");
         context.put("ServiceName", "AssociateEipsToLoadBalancer");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/AssociateEipsToLoadBalancer");
+        context.put("RequestURI", "/iaas/AssociateEipsToLoadBalancer");
 
         input.setAction("AssociateEipsToLoadBalancer");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -668,7 +673,7 @@ public class LoadBalancerService {
         context.put("APIName", "AssociateEIPsToLoadBalancer");
         context.put("ServiceName", "AssociateEipsToLoadBalancer");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/AssociateEipsToLoadBalancer");
+        context.put("RequestURI", "/iaas/AssociateEipsToLoadBalancer");
 
         input.setAction("AssociateEIPsToLoadBalancer");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -688,12 +693,12 @@ public class LoadBalancerService {
         // Required
         private List<String> eIPs;
 
-        @ParamAnnotation(paramType = "query", paramName = "eips")
+        @JsonProperty(value = "eips")
         public void setEIPs(List<String> eIPs) {
             this.eIPs = eIPs;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "eips")
+        @JsonProperty(value = "eips")
         public List<String> getEIPs() {
             return this.eIPs;
         }
@@ -701,12 +706,12 @@ public class LoadBalancerService {
         // Required
         private String loadBalancer;
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer")
+        @JsonProperty(value = "loadbalancer")
         public void setLoadBalancer(String loadBalancer) {
             this.loadBalancer = loadBalancer;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer")
+        @JsonProperty(value = "loadbalancer")
         public String getLoadBalancer() {
             return this.loadBalancer;
         }
@@ -719,39 +724,40 @@ public class LoadBalancerService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class AssociateEIPsToLoadBalancerOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -775,7 +781,7 @@ public class LoadBalancerService {
         context.put("APIName", "CreateLoadBalancer");
         context.put("ServiceName", "CreateLoadBalancer");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/CreateLoadBalancer");
+        context.put("RequestURI", "/iaas/CreateLoadBalancer");
 
         input.setAction("CreateLoadBalancer");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -809,7 +815,7 @@ public class LoadBalancerService {
         context.put("APIName", "CreateLoadBalancer");
         context.put("ServiceName", "CreateLoadBalancer");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/CreateLoadBalancer");
+        context.put("RequestURI", "/iaas/CreateLoadBalancer");
 
         input.setAction("CreateLoadBalancer");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -828,36 +834,36 @@ public class LoadBalancerService {
     public static class CreateLoadBalancerInput extends IaasParamBody {
         private List<String> eIPs;
 
-        @ParamAnnotation(paramType = "query", paramName = "eips")
+        @JsonProperty(value = "eips")
         public void setEIPs(List<String> eIPs) {
             this.eIPs = eIPs;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "eips")
+        @JsonProperty(value = "eips")
         public List<String> getEIPs() {
             return this.eIPs;
         }
 
-        private Integer httpHeaderSize;
+        private Integer hTTPHeaderSize;
 
-        @ParamAnnotation(paramType = "query", paramName = "http_header_size")
-        public void setHttpHeaderSize(Integer httpHeaderSize) {
-            this.httpHeaderSize = httpHeaderSize;
+        @JsonProperty(value = "http_header_size")
+        public void setHTTPHeaderSize(Integer hTTPHeaderSize) {
+            this.hTTPHeaderSize = hTTPHeaderSize;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "http_header_size")
-        public Integer getHttpHeaderSize() {
-            return this.httpHeaderSize;
+        @JsonProperty(value = "http_header_size")
+        public Integer getHTTPHeaderSize() {
+            return this.hTTPHeaderSize;
         }
 
         private String loadBalancerName;
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_name")
+        @JsonProperty(value = "loadbalancer_name")
         public void setLoadBalancerName(String loadBalancerName) {
             this.loadBalancerName = loadBalancerName;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_name")
+        @JsonProperty(value = "loadbalancer_name")
         public String getLoadBalancerName() {
             return this.loadBalancerName;
         }
@@ -865,60 +871,60 @@ public class LoadBalancerService {
     	// LoadBalancerType's available values: 0, 1, 2, 3, 4, 5
         private Integer loadBalancerType;
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_type")
+        @JsonProperty(value = "loadbalancer_type")
         public void setLoadBalancerType(Integer loadBalancerType) {
             this.loadBalancerType = loadBalancerType;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_type")
+        @JsonProperty(value = "loadbalancer_type")
         public Integer getLoadBalancerType() {
             return this.loadBalancerType;
         }
 
         private Integer nodeCount;
 
-        @ParamAnnotation(paramType = "query", paramName = "node_count")
+        @JsonProperty(value = "node_count")
         public void setNodeCount(Integer nodeCount) {
             this.nodeCount = nodeCount;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "node_count")
+        @JsonProperty(value = "node_count")
         public Integer getNodeCount() {
             return this.nodeCount;
         }
 
         private String privateIP;
 
-        @ParamAnnotation(paramType = "query", paramName = "private_ip")
+        @JsonProperty(value = "private_ip")
         public void setPrivateIP(String privateIP) {
             this.privateIP = privateIP;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "private_ip")
+        @JsonProperty(value = "private_ip")
         public String getPrivateIP() {
             return this.privateIP;
         }
 
         private String securityGroup;
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group")
+        @JsonProperty(value = "security_group")
         public void setSecurityGroup(String securityGroup) {
             this.securityGroup = securityGroup;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group")
+        @JsonProperty(value = "security_group")
         public String getSecurityGroup() {
             return this.securityGroup;
         }
 
         private String vxNet;
 
-        @ParamAnnotation(paramType = "query", paramName = "vxnet")
+        @JsonProperty(value = "vxnet")
         public void setVxNet(String vxNet) {
             this.vxNet = vxNet;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "vxnet")
+        @JsonProperty(value = "vxnet")
         public String getVxNet() {
             return this.vxNet;
         }
@@ -943,51 +949,52 @@ public class LoadBalancerService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class CreateLoadBalancerOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private String loadBalancerID;
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_id")
+        @JsonProperty(value = "loadbalancer_id")
         public void setLoadBalancerID(String loadBalancerID) {
             this.loadBalancerID = loadBalancerID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_id")
+        @JsonProperty(value = "loadbalancer_id")
         public String getLoadBalancerID() {
             return this.loadBalancerID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -1011,7 +1018,7 @@ public class LoadBalancerService {
         context.put("APIName", "CreateLoadBalancerPolicy");
         context.put("ServiceName", "CreateLoadBalancerPolicy");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/CreateLoadBalancerPolicy");
+        context.put("RequestURI", "/iaas/CreateLoadBalancerPolicy");
 
         input.setAction("CreateLoadBalancerPolicy");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1045,7 +1052,7 @@ public class LoadBalancerService {
         context.put("APIName", "CreateLoadBalancerPolicy");
         context.put("ServiceName", "CreateLoadBalancerPolicy");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/CreateLoadBalancerPolicy");
+        context.put("RequestURI", "/iaas/CreateLoadBalancerPolicy");
 
         input.setAction("CreateLoadBalancerPolicy");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1065,12 +1072,12 @@ public class LoadBalancerService {
         // Required
         private String loadBalancerPolicyName;
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_policy_name")
+        @JsonProperty(value = "loadbalancer_policy_name")
         public void setLoadBalancerPolicyName(String loadBalancerPolicyName) {
             this.loadBalancerPolicyName = loadBalancerPolicyName;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_policy_name")
+        @JsonProperty(value = "loadbalancer_policy_name")
         public String getLoadBalancerPolicyName() {
             return this.loadBalancerPolicyName;
         }
@@ -1078,12 +1085,12 @@ public class LoadBalancerService {
     	// Operator's available values: or, and
         private String operator;
 
-        @ParamAnnotation(paramType = "query", paramName = "operator")
+        @JsonProperty(value = "operator")
         public void setOperator(String operator) {
             this.operator = operator;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "operator")
+        @JsonProperty(value = "operator")
         public String getOperator() {
             return this.operator;
         }
@@ -1114,39 +1121,40 @@ public class LoadBalancerService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class CreateLoadBalancerPolicyOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String loadBalancerPolicyID;
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_policy_id")
+        @JsonProperty(value = "loadbalancer_policy_id")
         public void setLoadBalancerPolicyID(String loadBalancerPolicyID) {
             this.loadBalancerPolicyID = loadBalancerPolicyID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_policy_id")
+        @JsonProperty(value = "loadbalancer_policy_id")
         public String getLoadBalancerPolicyID() {
             return this.loadBalancerPolicyID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -1170,7 +1178,7 @@ public class LoadBalancerService {
         context.put("APIName", "CreateServerCertificate");
         context.put("ServiceName", "CreateServerCertificate");
         context.put("RequestMethod", "POST");
-        context.put("RequestURI", "/CreateServerCertificate");
+        context.put("RequestURI", "/iaas/CreateServerCertificate");
 
         input.setAction("CreateServerCertificate");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1204,7 +1212,7 @@ public class LoadBalancerService {
         context.put("APIName", "CreateServerCertificate");
         context.put("ServiceName", "CreateServerCertificate");
         context.put("RequestMethod", "POST");
-        context.put("RequestURI", "/CreateServerCertificate");
+        context.put("RequestURI", "/iaas/CreateServerCertificate");
 
         input.setAction("CreateServerCertificate");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1224,12 +1232,12 @@ public class LoadBalancerService {
         // Required
         private String certificateContent;
 
-        @ParamAnnotation(paramType = "query", paramName = "certificate_content")
+        @JsonProperty(value = "certificate_content")
         public void setCertificateContent(String certificateContent) {
             this.certificateContent = certificateContent;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "certificate_content")
+        @JsonProperty(value = "certificate_content")
         public String getCertificateContent() {
             return this.certificateContent;
         }
@@ -1237,24 +1245,24 @@ public class LoadBalancerService {
         // Required
         private String privateKey;
 
-        @ParamAnnotation(paramType = "query", paramName = "private_key")
+        @JsonProperty(value = "private_key")
         public void setPrivateKey(String privateKey) {
             this.privateKey = privateKey;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "private_key")
+        @JsonProperty(value = "private_key")
         public String getPrivateKey() {
             return this.privateKey;
         }
 
         private String serverCertificateName;
 
-        @ParamAnnotation(paramType = "query", paramName = "server_certificate_name")
+        @JsonProperty(value = "server_certificate_name")
         public void setServerCertificateName(String serverCertificateName) {
             this.serverCertificateName = serverCertificateName;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "server_certificate_name")
+        @JsonProperty(value = "server_certificate_name")
         public String getServerCertificateName() {
             return this.serverCertificateName;
         }
@@ -1270,39 +1278,40 @@ public class LoadBalancerService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class CreateServerCertificateOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
 
         private String serverCertificateID;
 
-        @ParamAnnotation(paramType = "query", paramName = "server_certificate_id")
+        @JsonProperty(value = "server_certificate_id")
         public void setServerCertificateID(String serverCertificateID) {
             this.serverCertificateID = serverCertificateID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "server_certificate_id")
+        @JsonProperty(value = "server_certificate_id")
         public String getServerCertificateID() {
             return this.serverCertificateID;
         }
@@ -1326,7 +1335,7 @@ public class LoadBalancerService {
         context.put("APIName", "DeleteLoadBalancerBackends");
         context.put("ServiceName", "DeleteLoadBalancerBackends");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DeleteLoadBalancerBackends");
+        context.put("RequestURI", "/iaas/DeleteLoadBalancerBackends");
 
         input.setAction("DeleteLoadBalancerBackends");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1360,7 +1369,7 @@ public class LoadBalancerService {
         context.put("APIName", "DeleteLoadBalancerBackends");
         context.put("ServiceName", "DeleteLoadBalancerBackends");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DeleteLoadBalancerBackends");
+        context.put("RequestURI", "/iaas/DeleteLoadBalancerBackends");
 
         input.setAction("DeleteLoadBalancerBackends");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1380,12 +1389,12 @@ public class LoadBalancerService {
         // Required
         private List<String> loadBalancerBackends;
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_backends")
+        @JsonProperty(value = "loadbalancer_backends")
         public void setLoadBalancerBackends(List<String> loadBalancerBackends) {
             this.loadBalancerBackends = loadBalancerBackends;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_backends")
+        @JsonProperty(value = "loadbalancer_backends")
         public List<String> getLoadBalancerBackends() {
             return this.loadBalancerBackends;
         }
@@ -1395,39 +1404,40 @@ public class LoadBalancerService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class DeleteLoadBalancerBackendsOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private List<String> loadBalancerBackends;
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_backends")
+        @JsonProperty(value = "loadbalancer_backends")
         public void setLoadBalancerBackends(List<String> loadBalancerBackends) {
             this.loadBalancerBackends = loadBalancerBackends;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_backends")
+        @JsonProperty(value = "loadbalancer_backends")
         public List<String> getLoadBalancerBackends() {
             return this.loadBalancerBackends;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -1451,7 +1461,7 @@ public class LoadBalancerService {
         context.put("APIName", "DeleteLoadBalancerListeners");
         context.put("ServiceName", "DeleteLoadBalancerListeners");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DeleteLoadBalancerListeners");
+        context.put("RequestURI", "/iaas/DeleteLoadBalancerListeners");
 
         input.setAction("DeleteLoadBalancerListeners");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1485,7 +1495,7 @@ public class LoadBalancerService {
         context.put("APIName", "DeleteLoadBalancerListeners");
         context.put("ServiceName", "DeleteLoadBalancerListeners");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DeleteLoadBalancerListeners");
+        context.put("RequestURI", "/iaas/DeleteLoadBalancerListeners");
 
         input.setAction("DeleteLoadBalancerListeners");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1505,12 +1515,12 @@ public class LoadBalancerService {
         // Required
         private List<String> loadBalancerListeners;
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_listeners")
+        @JsonProperty(value = "loadbalancer_listeners")
         public void setLoadBalancerListeners(List<String> loadBalancerListeners) {
             this.loadBalancerListeners = loadBalancerListeners;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_listeners")
+        @JsonProperty(value = "loadbalancer_listeners")
         public List<String> getLoadBalancerListeners() {
             return this.loadBalancerListeners;
         }
@@ -1520,39 +1530,40 @@ public class LoadBalancerService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class DeleteLoadBalancerListenersOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private List<String> loadBalancerListeners;
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_listeners")
+        @JsonProperty(value = "loadbalancer_listeners")
         public void setLoadBalancerListeners(List<String> loadBalancerListeners) {
             this.loadBalancerListeners = loadBalancerListeners;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_listeners")
+        @JsonProperty(value = "loadbalancer_listeners")
         public List<String> getLoadBalancerListeners() {
             return this.loadBalancerListeners;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -1576,7 +1587,7 @@ public class LoadBalancerService {
         context.put("APIName", "DeleteLoadBalancerPolicies");
         context.put("ServiceName", "DeleteLoadBalancerPolicies");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DeleteLoadBalancerPolicies");
+        context.put("RequestURI", "/iaas/DeleteLoadBalancerPolicies");
 
         input.setAction("DeleteLoadBalancerPolicies");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1610,7 +1621,7 @@ public class LoadBalancerService {
         context.put("APIName", "DeleteLoadBalancerPolicies");
         context.put("ServiceName", "DeleteLoadBalancerPolicies");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DeleteLoadBalancerPolicies");
+        context.put("RequestURI", "/iaas/DeleteLoadBalancerPolicies");
 
         input.setAction("DeleteLoadBalancerPolicies");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1630,12 +1641,12 @@ public class LoadBalancerService {
         // Required
         private List<String> loadBalancerPolicies;
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_policies")
+        @JsonProperty(value = "loadbalancer_policies")
         public void setLoadBalancerPolicies(List<String> loadBalancerPolicies) {
             this.loadBalancerPolicies = loadBalancerPolicies;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_policies")
+        @JsonProperty(value = "loadbalancer_policies")
         public List<String> getLoadBalancerPolicies() {
             return this.loadBalancerPolicies;
         }
@@ -1645,39 +1656,40 @@ public class LoadBalancerService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class DeleteLoadBalancerPoliciesOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private List<String> loadBalancerPolicies;
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_policies")
+        @JsonProperty(value = "loadbalancer_policies")
         public void setLoadBalancerPolicies(List<String> loadBalancerPolicies) {
             this.loadBalancerPolicies = loadBalancerPolicies;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_policies")
+        @JsonProperty(value = "loadbalancer_policies")
         public List<String> getLoadBalancerPolicies() {
             return this.loadBalancerPolicies;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -1701,7 +1713,7 @@ public class LoadBalancerService {
         context.put("APIName", "DeleteLoadBalancerPolicyRules");
         context.put("ServiceName", "DeleteLoadBalancerPolicyRules");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DeleteLoadBalancerPolicyRules");
+        context.put("RequestURI", "/iaas/DeleteLoadBalancerPolicyRules");
 
         input.setAction("DeleteLoadBalancerPolicyRules");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1735,7 +1747,7 @@ public class LoadBalancerService {
         context.put("APIName", "DeleteLoadBalancerPolicyRules");
         context.put("ServiceName", "DeleteLoadBalancerPolicyRules");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DeleteLoadBalancerPolicyRules");
+        context.put("RequestURI", "/iaas/DeleteLoadBalancerPolicyRules");
 
         input.setAction("DeleteLoadBalancerPolicyRules");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1755,12 +1767,12 @@ public class LoadBalancerService {
         // Required
         private List<String> loadBalancerPolicyRules;
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_policy_rules")
+        @JsonProperty(value = "loadbalancer_policy_rules")
         public void setLoadBalancerPolicyRules(List<String> loadBalancerPolicyRules) {
             this.loadBalancerPolicyRules = loadBalancerPolicyRules;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_policy_rules")
+        @JsonProperty(value = "loadbalancer_policy_rules")
         public List<String> getLoadBalancerPolicyRules() {
             return this.loadBalancerPolicyRules;
         }
@@ -1770,39 +1782,40 @@ public class LoadBalancerService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class DeleteLoadBalancerPolicyRulesOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private List<String> loadBalancerPolicyRules;
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_policy_rules")
+        @JsonProperty(value = "loadbalancer_policy_rules")
         public void setLoadBalancerPolicyRules(List<String> loadBalancerPolicyRules) {
             this.loadBalancerPolicyRules = loadBalancerPolicyRules;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_policy_rules")
+        @JsonProperty(value = "loadbalancer_policy_rules")
         public List<String> getLoadBalancerPolicyRules() {
             return this.loadBalancerPolicyRules;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -1826,7 +1839,7 @@ public class LoadBalancerService {
         context.put("APIName", "DeleteLoadBalancers");
         context.put("ServiceName", "DeleteLoadBalancers");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DeleteLoadBalancers");
+        context.put("RequestURI", "/iaas/DeleteLoadBalancers");
 
         input.setAction("DeleteLoadBalancers");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1860,7 +1873,7 @@ public class LoadBalancerService {
         context.put("APIName", "DeleteLoadBalancers");
         context.put("ServiceName", "DeleteLoadBalancers");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DeleteLoadBalancers");
+        context.put("RequestURI", "/iaas/DeleteLoadBalancers");
 
         input.setAction("DeleteLoadBalancers");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1880,12 +1893,12 @@ public class LoadBalancerService {
         // Required
         private List<String> loadBalancers;
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancers")
+        @JsonProperty(value = "loadbalancers")
         public void setLoadBalancers(List<String> loadBalancers) {
             this.loadBalancers = loadBalancers;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancers")
+        @JsonProperty(value = "loadbalancers")
         public List<String> getLoadBalancers() {
             return this.loadBalancers;
         }
@@ -1895,51 +1908,52 @@ public class LoadBalancerService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class DeleteLoadBalancersOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private List<String> loadBalancers;
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancers")
+        @JsonProperty(value = "loadbalancers")
         public void setLoadBalancers(List<String> loadBalancers) {
             this.loadBalancers = loadBalancers;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancers")
+        @JsonProperty(value = "loadbalancers")
         public List<String> getLoadBalancers() {
             return this.loadBalancers;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -1963,7 +1977,7 @@ public class LoadBalancerService {
         context.put("APIName", "DeleteServerCertificates");
         context.put("ServiceName", "DeleteServerCertificates");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DeleteServerCertificates");
+        context.put("RequestURI", "/iaas/DeleteServerCertificates");
 
         input.setAction("DeleteServerCertificates");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1997,7 +2011,7 @@ public class LoadBalancerService {
         context.put("APIName", "DeleteServerCertificates");
         context.put("ServiceName", "DeleteServerCertificates");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DeleteServerCertificates");
+        context.put("RequestURI", "/iaas/DeleteServerCertificates");
 
         input.setAction("DeleteServerCertificates");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2017,12 +2031,12 @@ public class LoadBalancerService {
         // Required
         private List<String> serverCertificates;
 
-        @ParamAnnotation(paramType = "query", paramName = "server_certificates")
+        @JsonProperty(value = "server_certificates")
         public void setServerCertificates(List<String> serverCertificates) {
             this.serverCertificates = serverCertificates;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "server_certificates")
+        @JsonProperty(value = "server_certificates")
         public List<String> getServerCertificates() {
             return this.serverCertificates;
         }
@@ -2032,39 +2046,40 @@ public class LoadBalancerService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class DeleteServerCertificatesOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
 
         private List<String> serverCertificates;
 
-        @ParamAnnotation(paramType = "query", paramName = "server_certificates")
+        @JsonProperty(value = "server_certificates")
         public void setServerCertificates(List<String> serverCertificates) {
             this.serverCertificates = serverCertificates;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "server_certificates")
+        @JsonProperty(value = "server_certificates")
         public List<String> getServerCertificates() {
             return this.serverCertificates;
         }
@@ -2088,7 +2103,7 @@ public class LoadBalancerService {
         context.put("APIName", "DescribeLoadBalancerBackends");
         context.put("ServiceName", "DescribeLoadBalancerBackends");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeLoadBalancerBackends");
+        context.put("RequestURI", "/iaas/DescribeLoadBalancerBackends");
 
         input.setAction("DescribeLoadBalancerBackends");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2122,7 +2137,7 @@ public class LoadBalancerService {
         context.put("APIName", "DescribeLoadBalancerBackends");
         context.put("ServiceName", "DescribeLoadBalancerBackends");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeLoadBalancerBackends");
+        context.put("RequestURI", "/iaas/DescribeLoadBalancerBackends");
 
         input.setAction("DescribeLoadBalancerBackends");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2141,72 +2156,72 @@ public class LoadBalancerService {
     public static class DescribeLoadBalancerBackendsInput extends IaasParamBody {
         private Integer limit;
 
-        @ParamAnnotation(paramType = "query", paramName = "limit")
+        @JsonProperty(value = "limit")
         public void setLimit(Integer limit) {
             this.limit = limit;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "limit")
+        @JsonProperty(value = "limit")
         public Integer getLimit() {
             return this.limit;
         }
 
         private String loadBalancer;
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer")
+        @JsonProperty(value = "loadbalancer")
         public void setLoadBalancer(String loadBalancer) {
             this.loadBalancer = loadBalancer;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer")
+        @JsonProperty(value = "loadbalancer")
         public String getLoadBalancer() {
             return this.loadBalancer;
         }
 
         private List<String> loadBalancerBackends;
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_backends")
+        @JsonProperty(value = "loadbalancer_backends")
         public void setLoadBalancerBackends(List<String> loadBalancerBackends) {
             this.loadBalancerBackends = loadBalancerBackends;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_backends")
+        @JsonProperty(value = "loadbalancer_backends")
         public List<String> getLoadBalancerBackends() {
             return this.loadBalancerBackends;
         }
 
         private String loadBalancerListener;
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_listener")
+        @JsonProperty(value = "loadbalancer_listener")
         public void setLoadBalancerListener(String loadBalancerListener) {
             this.loadBalancerListener = loadBalancerListener;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_listener")
+        @JsonProperty(value = "loadbalancer_listener")
         public String getLoadBalancerListener() {
             return this.loadBalancerListener;
         }
 
         private Integer offset;
 
-        @ParamAnnotation(paramType = "query", paramName = "offset")
+        @JsonProperty(value = "offset")
         public void setOffset(Integer offset) {
             this.offset = offset;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "offset")
+        @JsonProperty(value = "offset")
         public Integer getOffset() {
             return this.offset;
         }
 
         private Integer verbose;
 
-        @ParamAnnotation(paramType = "query", paramName = "verbose")
+        @JsonProperty(value = "verbose")
         public void setVerbose(Integer verbose) {
             this.verbose = verbose;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "verbose")
+        @JsonProperty(value = "verbose")
         public Integer getVerbose() {
             return this.verbose;
         }
@@ -2216,39 +2231,40 @@ public class LoadBalancerService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class DescribeLoadBalancerBackendsOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private List<LoadBalancerBackendModel> loadBalancerBackendSet;
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_backend_set")
+        @JsonProperty(value = "loadbalancer_backend_set")
         public void setLoadBalancerBackendSet(List<LoadBalancerBackendModel> loadBalancerBackendSet) {
             this.loadBalancerBackendSet = loadBalancerBackendSet;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_backend_set")
+        @JsonProperty(value = "loadbalancer_backend_set")
         public List<LoadBalancerBackendModel> getLoadBalancerBackendSet() {
             return this.loadBalancerBackendSet;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -2272,7 +2288,7 @@ public class LoadBalancerService {
         context.put("APIName", "DescribeLoadBalancerListeners");
         context.put("ServiceName", "DescribeLoadBalancerListeners");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeLoadBalancerListeners");
+        context.put("RequestURI", "/iaas/DescribeLoadBalancerListeners");
 
         input.setAction("DescribeLoadBalancerListeners");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2306,7 +2322,7 @@ public class LoadBalancerService {
         context.put("APIName", "DescribeLoadBalancerListeners");
         context.put("ServiceName", "DescribeLoadBalancerListeners");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeLoadBalancerListeners");
+        context.put("RequestURI", "/iaas/DescribeLoadBalancerListeners");
 
         input.setAction("DescribeLoadBalancerListeners");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2325,60 +2341,60 @@ public class LoadBalancerService {
     public static class DescribeLoadBalancerListenersInput extends IaasParamBody {
         private Integer limit;
 
-        @ParamAnnotation(paramType = "query", paramName = "limit")
+        @JsonProperty(value = "limit")
         public void setLimit(Integer limit) {
             this.limit = limit;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "limit")
+        @JsonProperty(value = "limit")
         public Integer getLimit() {
             return this.limit;
         }
 
         private String loadBalancer;
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer")
+        @JsonProperty(value = "loadbalancer")
         public void setLoadBalancer(String loadBalancer) {
             this.loadBalancer = loadBalancer;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer")
+        @JsonProperty(value = "loadbalancer")
         public String getLoadBalancer() {
             return this.loadBalancer;
         }
 
         private List<String> loadBalancerListeners;
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_listeners")
+        @JsonProperty(value = "loadbalancer_listeners")
         public void setLoadBalancerListeners(List<String> loadBalancerListeners) {
             this.loadBalancerListeners = loadBalancerListeners;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_listeners")
+        @JsonProperty(value = "loadbalancer_listeners")
         public List<String> getLoadBalancerListeners() {
             return this.loadBalancerListeners;
         }
 
         private Integer offset;
 
-        @ParamAnnotation(paramType = "query", paramName = "offset")
+        @JsonProperty(value = "offset")
         public void setOffset(Integer offset) {
             this.offset = offset;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "offset")
+        @JsonProperty(value = "offset")
         public Integer getOffset() {
             return this.offset;
         }
 
         private Integer verbose;
 
-        @ParamAnnotation(paramType = "query", paramName = "verbose")
+        @JsonProperty(value = "verbose")
         public void setVerbose(Integer verbose) {
             this.verbose = verbose;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "verbose")
+        @JsonProperty(value = "verbose")
         public Integer getVerbose() {
             return this.verbose;
         }
@@ -2388,51 +2404,52 @@ public class LoadBalancerService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class DescribeLoadBalancerListenersOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private List<LoadBalancerListenerModel> loadBalancerListenerSet;
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_listener_set")
+        @JsonProperty(value = "loadbalancer_listener_set")
         public void setLoadBalancerListenerSet(List<LoadBalancerListenerModel> loadBalancerListenerSet) {
             this.loadBalancerListenerSet = loadBalancerListenerSet;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_listener_set")
+        @JsonProperty(value = "loadbalancer_listener_set")
         public List<LoadBalancerListenerModel> getLoadBalancerListenerSet() {
             return this.loadBalancerListenerSet;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
 
         private Integer totalCount;
 
-        @ParamAnnotation(paramType = "query", paramName = "total_count")
+        @JsonProperty(value = "total_count")
         public void setTotalCount(Integer totalCount) {
             this.totalCount = totalCount;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "total_count")
+        @JsonProperty(value = "total_count")
         public Integer getTotalCount() {
             return this.totalCount;
         }
@@ -2456,7 +2473,7 @@ public class LoadBalancerService {
         context.put("APIName", "DescribeLoadBalancerPolicies");
         context.put("ServiceName", "DescribeLoadBalancerPolicies");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeLoadBalancerPolicies");
+        context.put("RequestURI", "/iaas/DescribeLoadBalancerPolicies");
 
         input.setAction("DescribeLoadBalancerPolicies");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2490,7 +2507,7 @@ public class LoadBalancerService {
         context.put("APIName", "DescribeLoadBalancerPolicies");
         context.put("ServiceName", "DescribeLoadBalancerPolicies");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeLoadBalancerPolicies");
+        context.put("RequestURI", "/iaas/DescribeLoadBalancerPolicies");
 
         input.setAction("DescribeLoadBalancerPolicies");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2509,48 +2526,48 @@ public class LoadBalancerService {
     public static class DescribeLoadBalancerPoliciesInput extends IaasParamBody {
         private Integer limit;
 
-        @ParamAnnotation(paramType = "query", paramName = "limit")
+        @JsonProperty(value = "limit")
         public void setLimit(Integer limit) {
             this.limit = limit;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "limit")
+        @JsonProperty(value = "limit")
         public Integer getLimit() {
             return this.limit;
         }
 
         private List<String> loadBalancerPolicies;
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_policies")
+        @JsonProperty(value = "loadbalancer_policies")
         public void setLoadBalancerPolicies(List<String> loadBalancerPolicies) {
             this.loadBalancerPolicies = loadBalancerPolicies;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_policies")
+        @JsonProperty(value = "loadbalancer_policies")
         public List<String> getLoadBalancerPolicies() {
             return this.loadBalancerPolicies;
         }
 
         private Integer offset;
 
-        @ParamAnnotation(paramType = "query", paramName = "offset")
+        @JsonProperty(value = "offset")
         public void setOffset(Integer offset) {
             this.offset = offset;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "offset")
+        @JsonProperty(value = "offset")
         public Integer getOffset() {
             return this.offset;
         }
 
         private Integer verbose;
 
-        @ParamAnnotation(paramType = "query", paramName = "verbose")
+        @JsonProperty(value = "verbose")
         public void setVerbose(Integer verbose) {
             this.verbose = verbose;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "verbose")
+        @JsonProperty(value = "verbose")
         public Integer getVerbose() {
             return this.verbose;
         }
@@ -2560,51 +2577,52 @@ public class LoadBalancerService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class DescribeLoadBalancerPoliciesOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private List<LoadBalancerPolicyModel> loadBalancerPolicySet;
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_policy_set")
+        @JsonProperty(value = "loadbalancer_policy_set")
         public void setLoadBalancerPolicySet(List<LoadBalancerPolicyModel> loadBalancerPolicySet) {
             this.loadBalancerPolicySet = loadBalancerPolicySet;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_policy_set")
+        @JsonProperty(value = "loadbalancer_policy_set")
         public List<LoadBalancerPolicyModel> getLoadBalancerPolicySet() {
             return this.loadBalancerPolicySet;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
 
         private Integer totalCount;
 
-        @ParamAnnotation(paramType = "query", paramName = "total_count")
+        @JsonProperty(value = "total_count")
         public void setTotalCount(Integer totalCount) {
             this.totalCount = totalCount;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "total_count")
+        @JsonProperty(value = "total_count")
         public Integer getTotalCount() {
             return this.totalCount;
         }
@@ -2628,7 +2646,7 @@ public class LoadBalancerService {
         context.put("APIName", "DescribeLoadBalancerPolicyRules");
         context.put("ServiceName", "DescribeLoadBalancerPolicyRules");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeLoadBalancerPolicyRules");
+        context.put("RequestURI", "/iaas/DescribeLoadBalancerPolicyRules");
 
         input.setAction("DescribeLoadBalancerPolicyRules");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2662,7 +2680,7 @@ public class LoadBalancerService {
         context.put("APIName", "DescribeLoadBalancerPolicyRules");
         context.put("ServiceName", "DescribeLoadBalancerPolicyRules");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeLoadBalancerPolicyRules");
+        context.put("RequestURI", "/iaas/DescribeLoadBalancerPolicyRules");
 
         input.setAction("DescribeLoadBalancerPolicyRules");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2681,48 +2699,48 @@ public class LoadBalancerService {
     public static class DescribeLoadBalancerPolicyRulesInput extends IaasParamBody {
         private Integer limit;
 
-        @ParamAnnotation(paramType = "query", paramName = "limit")
+        @JsonProperty(value = "limit")
         public void setLimit(Integer limit) {
             this.limit = limit;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "limit")
+        @JsonProperty(value = "limit")
         public Integer getLimit() {
             return this.limit;
         }
 
         private String loadBalancerPolicy;
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_policy")
+        @JsonProperty(value = "loadbalancer_policy")
         public void setLoadBalancerPolicy(String loadBalancerPolicy) {
             this.loadBalancerPolicy = loadBalancerPolicy;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_policy")
+        @JsonProperty(value = "loadbalancer_policy")
         public String getLoadBalancerPolicy() {
             return this.loadBalancerPolicy;
         }
 
         private List<String> loadBalancerPolicyRules;
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_policy_rules")
+        @JsonProperty(value = "loadbalancer_policy_rules")
         public void setLoadBalancerPolicyRules(List<String> loadBalancerPolicyRules) {
             this.loadBalancerPolicyRules = loadBalancerPolicyRules;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_policy_rules")
+        @JsonProperty(value = "loadbalancer_policy_rules")
         public List<String> getLoadBalancerPolicyRules() {
             return this.loadBalancerPolicyRules;
         }
 
         private Integer offset;
 
-        @ParamAnnotation(paramType = "query", paramName = "offset")
+        @JsonProperty(value = "offset")
         public void setOffset(Integer offset) {
             this.offset = offset;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "offset")
+        @JsonProperty(value = "offset")
         public Integer getOffset() {
             return this.offset;
         }
@@ -2732,51 +2750,52 @@ public class LoadBalancerService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class DescribeLoadBalancerPolicyRulesOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private List<LoadBalancerPolicyRuleModel> loadBalancerPolicyRuleSet;
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_policy_rule_set")
+        @JsonProperty(value = "loadbalancer_policy_rule_set")
         public void setLoadBalancerPolicyRuleSet(List<LoadBalancerPolicyRuleModel> loadBalancerPolicyRuleSet) {
             this.loadBalancerPolicyRuleSet = loadBalancerPolicyRuleSet;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_policy_rule_set")
+        @JsonProperty(value = "loadbalancer_policy_rule_set")
         public List<LoadBalancerPolicyRuleModel> getLoadBalancerPolicyRuleSet() {
             return this.loadBalancerPolicyRuleSet;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
 
         private Integer totalCount;
 
-        @ParamAnnotation(paramType = "query", paramName = "total_count")
+        @JsonProperty(value = "total_count")
         public void setTotalCount(Integer totalCount) {
             this.totalCount = totalCount;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "total_count")
+        @JsonProperty(value = "total_count")
         public Integer getTotalCount() {
             return this.totalCount;
         }
@@ -2800,7 +2819,7 @@ public class LoadBalancerService {
         context.put("APIName", "DescribeLoadBalancers");
         context.put("ServiceName", "DescribeLoadBalancers");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeLoadBalancers");
+        context.put("RequestURI", "/iaas/DescribeLoadBalancers");
 
         input.setAction("DescribeLoadBalancers");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2834,7 +2853,7 @@ public class LoadBalancerService {
         context.put("APIName", "DescribeLoadBalancers");
         context.put("ServiceName", "DescribeLoadBalancers");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeLoadBalancers");
+        context.put("RequestURI", "/iaas/DescribeLoadBalancers");
 
         input.setAction("DescribeLoadBalancers");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2853,84 +2872,84 @@ public class LoadBalancerService {
     public static class DescribeLoadBalancersInput extends IaasParamBody {
         private Integer limit;
 
-        @ParamAnnotation(paramType = "query", paramName = "limit")
+        @JsonProperty(value = "limit")
         public void setLimit(Integer limit) {
             this.limit = limit;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "limit")
+        @JsonProperty(value = "limit")
         public Integer getLimit() {
             return this.limit;
         }
 
         private List<String> loadBalancers;
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancers")
+        @JsonProperty(value = "loadbalancers")
         public void setLoadBalancers(List<String> loadBalancers) {
             this.loadBalancers = loadBalancers;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancers")
+        @JsonProperty(value = "loadbalancers")
         public List<String> getLoadBalancers() {
             return this.loadBalancers;
         }
 
         private Integer offset;
 
-        @ParamAnnotation(paramType = "query", paramName = "offset")
+        @JsonProperty(value = "offset")
         public void setOffset(Integer offset) {
             this.offset = offset;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "offset")
+        @JsonProperty(value = "offset")
         public Integer getOffset() {
             return this.offset;
         }
 
         private String searchWord;
 
-        @ParamAnnotation(paramType = "query", paramName = "search_word")
+        @JsonProperty(value = "search_word")
         public void setSearchWord(String searchWord) {
             this.searchWord = searchWord;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "search_word")
+        @JsonProperty(value = "search_word")
         public String getSearchWord() {
             return this.searchWord;
         }
 
         private List<String> status;
 
-        @ParamAnnotation(paramType = "query", paramName = "status")
+        @JsonProperty(value = "status")
         public void setStatus(List<String> status) {
             this.status = status;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "status")
+        @JsonProperty(value = "status")
         public List<String> getStatus() {
             return this.status;
         }
 
         private List<String> tags;
 
-        @ParamAnnotation(paramType = "query", paramName = "tags")
+        @JsonProperty(value = "tags")
         public void setTags(List<String> tags) {
             this.tags = tags;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "tags")
+        @JsonProperty(value = "tags")
         public List<String> getTags() {
             return this.tags;
         }
 
         private Integer verbose;
 
-        @ParamAnnotation(paramType = "query", paramName = "verbose")
+        @JsonProperty(value = "verbose")
         public void setVerbose(Integer verbose) {
             this.verbose = verbose;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "verbose")
+        @JsonProperty(value = "verbose")
         public Integer getVerbose() {
             return this.verbose;
         }
@@ -2940,39 +2959,40 @@ public class LoadBalancerService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class DescribeLoadBalancersOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private List<LoadBalancerModel> loadBalancerSet;
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_set")
+        @JsonProperty(value = "loadbalancer_set")
         public void setLoadBalancerSet(List<LoadBalancerModel> loadBalancerSet) {
             this.loadBalancerSet = loadBalancerSet;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_set")
+        @JsonProperty(value = "loadbalancer_set")
         public List<LoadBalancerModel> getLoadBalancerSet() {
             return this.loadBalancerSet;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -2996,7 +3016,7 @@ public class LoadBalancerService {
         context.put("APIName", "DescribeServerCertificates");
         context.put("ServiceName", "DescribeServerCertificates");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeServerCertificates");
+        context.put("RequestURI", "/iaas/DescribeServerCertificates");
 
         input.setAction("DescribeServerCertificates");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -3030,7 +3050,7 @@ public class LoadBalancerService {
         context.put("APIName", "DescribeServerCertificates");
         context.put("ServiceName", "DescribeServerCertificates");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeServerCertificates");
+        context.put("RequestURI", "/iaas/DescribeServerCertificates");
 
         input.setAction("DescribeServerCertificates");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -3049,60 +3069,60 @@ public class LoadBalancerService {
     public static class DescribeServerCertificatesInput extends IaasParamBody {
         private Integer limit;
 
-        @ParamAnnotation(paramType = "query", paramName = "limit")
+        @JsonProperty(value = "limit")
         public void setLimit(Integer limit) {
             this.limit = limit;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "limit")
+        @JsonProperty(value = "limit")
         public Integer getLimit() {
             return this.limit;
         }
 
         private Integer offset;
 
-        @ParamAnnotation(paramType = "query", paramName = "offset")
+        @JsonProperty(value = "offset")
         public void setOffset(Integer offset) {
             this.offset = offset;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "offset")
+        @JsonProperty(value = "offset")
         public Integer getOffset() {
             return this.offset;
         }
 
         private String searchWord;
 
-        @ParamAnnotation(paramType = "query", paramName = "search_word")
+        @JsonProperty(value = "search_word")
         public void setSearchWord(String searchWord) {
             this.searchWord = searchWord;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "search_word")
+        @JsonProperty(value = "search_word")
         public String getSearchWord() {
             return this.searchWord;
         }
 
         private List<String> serverCertificates;
 
-        @ParamAnnotation(paramType = "query", paramName = "server_certificates")
+        @JsonProperty(value = "server_certificates")
         public void setServerCertificates(List<String> serverCertificates) {
             this.serverCertificates = serverCertificates;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "server_certificates")
+        @JsonProperty(value = "server_certificates")
         public List<String> getServerCertificates() {
             return this.serverCertificates;
         }
 
         private Integer verbose;
 
-        @ParamAnnotation(paramType = "query", paramName = "verbose")
+        @JsonProperty(value = "verbose")
         public void setVerbose(Integer verbose) {
             this.verbose = verbose;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "verbose")
+        @JsonProperty(value = "verbose")
         public Integer getVerbose() {
             return this.verbose;
         }
@@ -3112,51 +3132,52 @@ public class LoadBalancerService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class DescribeServerCertificatesOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
 
         private List<ServerCertificateModel> serverCertificateSet;
 
-        @ParamAnnotation(paramType = "query", paramName = "server_certificate_set")
+        @JsonProperty(value = "server_certificate_set")
         public void setServerCertificateSet(List<ServerCertificateModel> serverCertificateSet) {
             this.serverCertificateSet = serverCertificateSet;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "server_certificate_set")
+        @JsonProperty(value = "server_certificate_set")
         public List<ServerCertificateModel> getServerCertificateSet() {
             return this.serverCertificateSet;
         }
 
         private Integer totalCount;
 
-        @ParamAnnotation(paramType = "query", paramName = "total_count")
+        @JsonProperty(value = "total_count")
         public void setTotalCount(Integer totalCount) {
             this.totalCount = totalCount;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "total_count")
+        @JsonProperty(value = "total_count")
         public Integer getTotalCount() {
             return this.totalCount;
         }
@@ -3180,7 +3201,7 @@ public class LoadBalancerService {
         context.put("APIName", "DissociateEipsFromLoadBalancer");
         context.put("ServiceName", "DissociateEipsFromLoadBalancer");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DissociateEipsFromLoadBalancer");
+        context.put("RequestURI", "/iaas/DissociateEipsFromLoadBalancer");
 
         input.setAction("DissociateEipsFromLoadBalancer");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -3214,7 +3235,7 @@ public class LoadBalancerService {
         context.put("APIName", "DissociateEIPsFromLoadBalancer");
         context.put("ServiceName", "DissociateEipsFromLoadBalancer");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DissociateEipsFromLoadBalancer");
+        context.put("RequestURI", "/iaas/DissociateEipsFromLoadBalancer");
 
         input.setAction("DissociateEIPsFromLoadBalancer");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -3234,12 +3255,12 @@ public class LoadBalancerService {
         // Required
         private List<String> eIPs;
 
-        @ParamAnnotation(paramType = "query", paramName = "eips")
+        @JsonProperty(value = "eips")
         public void setEIPs(List<String> eIPs) {
             this.eIPs = eIPs;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "eips")
+        @JsonProperty(value = "eips")
         public List<String> getEIPs() {
             return this.eIPs;
         }
@@ -3247,12 +3268,12 @@ public class LoadBalancerService {
         // Required
         private String loadBalancer;
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer")
+        @JsonProperty(value = "loadbalancer")
         public void setLoadBalancer(String loadBalancer) {
             this.loadBalancer = loadBalancer;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer")
+        @JsonProperty(value = "loadbalancer")
         public String getLoadBalancer() {
             return this.loadBalancer;
         }
@@ -3265,39 +3286,40 @@ public class LoadBalancerService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class DissociateEIPsFromLoadBalancerOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -3321,7 +3343,7 @@ public class LoadBalancerService {
         context.put("APIName", "GetLoadBalancerMonitor");
         context.put("ServiceName", "GetLoadBalancerMonitor");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/GetLoadBalancerMonitor");
+        context.put("RequestURI", "/iaas/GetLoadBalancerMonitor");
 
         input.setAction("GetLoadBalancerMonitor");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -3355,7 +3377,7 @@ public class LoadBalancerService {
         context.put("APIName", "GetLoadBalancerMonitor");
         context.put("ServiceName", "GetLoadBalancerMonitor");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/GetLoadBalancerMonitor");
+        context.put("RequestURI", "/iaas/GetLoadBalancerMonitor");
 
         input.setAction("GetLoadBalancerMonitor");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -3375,12 +3397,12 @@ public class LoadBalancerService {
         // Required
         private String endTime;
 
-        @ParamAnnotation(paramType = "query", paramName = "end_time")
+        @JsonProperty(value = "end_time")
         public void setEndTime(String endTime) {
             this.endTime = endTime;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "end_time")
+        @JsonProperty(value = "end_time")
         public String getEndTime() {
             return this.endTime;
         }
@@ -3388,12 +3410,12 @@ public class LoadBalancerService {
         // Required
         private List<String> meters;
 
-        @ParamAnnotation(paramType = "query", paramName = "meters")
+        @JsonProperty(value = "meters")
         public void setMeters(List<String> meters) {
             this.meters = meters;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "meters")
+        @JsonProperty(value = "meters")
         public List<String> getMeters() {
             return this.meters;
         }
@@ -3401,24 +3423,24 @@ public class LoadBalancerService {
         // Required
         private String resource;
 
-        @ParamAnnotation(paramType = "query", paramName = "resource")
+        @JsonProperty(value = "resource")
         public void setResource(String resource) {
             this.resource = resource;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "resource")
+        @JsonProperty(value = "resource")
         public String getResource() {
             return this.resource;
         }
 
         private String resourceType;
 
-        @ParamAnnotation(paramType = "query", paramName = "resource_type")
+        @JsonProperty(value = "resource_type")
         public void setResourceType(String resourceType) {
             this.resourceType = resourceType;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "resource_type")
+        @JsonProperty(value = "resource_type")
         public String getResourceType() {
             return this.resourceType;
         }
@@ -3426,12 +3448,12 @@ public class LoadBalancerService {
         // Required
         private String startTime;
 
-        @ParamAnnotation(paramType = "query", paramName = "start_time")
+        @JsonProperty(value = "start_time")
         public void setStartTime(String startTime) {
             this.startTime = startTime;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "start_time")
+        @JsonProperty(value = "start_time")
         public String getStartTime() {
             return this.startTime;
         }
@@ -3440,12 +3462,12 @@ public class LoadBalancerService {
         // Required
         private String step;
 
-        @ParamAnnotation(paramType = "query", paramName = "step")
+        @JsonProperty(value = "step")
         public void setStep(String step) {
             this.step = step;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "step")
+        @JsonProperty(value = "step")
         public String getStep() {
             return this.step;
         }
@@ -3479,51 +3501,52 @@ public class LoadBalancerService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class GetLoadBalancerMonitorOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private List<MeterModel> meterSet;
 
-        @ParamAnnotation(paramType = "query", paramName = "meter_set")
+        @JsonProperty(value = "meter_set")
         public void setMeterSet(List<MeterModel> meterSet) {
             this.meterSet = meterSet;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "meter_set")
+        @JsonProperty(value = "meter_set")
         public List<MeterModel> getMeterSet() {
             return this.meterSet;
         }
 
         private String resourceID;
 
-        @ParamAnnotation(paramType = "query", paramName = "resource_id")
+        @JsonProperty(value = "resource_id")
         public void setResourceID(String resourceID) {
             this.resourceID = resourceID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "resource_id")
+        @JsonProperty(value = "resource_id")
         public String getResourceID() {
             return this.resourceID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -3547,7 +3570,7 @@ public class LoadBalancerService {
         context.put("APIName", "ModifyLoadBalancerAttributes");
         context.put("ServiceName", "ModifyLoadBalancerAttributes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ModifyLoadBalancerAttributes");
+        context.put("RequestURI", "/iaas/ModifyLoadBalancerAttributes");
 
         input.setAction("ModifyLoadBalancerAttributes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -3581,7 +3604,7 @@ public class LoadBalancerService {
         context.put("APIName", "ModifyLoadBalancerAttributes");
         context.put("ServiceName", "ModifyLoadBalancerAttributes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ModifyLoadBalancerAttributes");
+        context.put("RequestURI", "/iaas/ModifyLoadBalancerAttributes");
 
         input.setAction("ModifyLoadBalancerAttributes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -3600,85 +3623,85 @@ public class LoadBalancerService {
     public static class ModifyLoadBalancerAttributesInput extends IaasParamBody {
         private String description;
 
-        @ParamAnnotation(paramType = "query", paramName = "description")
+        @JsonProperty(value = "description")
         public void setDescription(String description) {
             this.description = description;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "description")
+        @JsonProperty(value = "description")
         public String getDescription() {
             return this.description;
         }
 
-        private Integer httpHeaderSize;
+        private Integer hTTPHeaderSize;
 
-        @ParamAnnotation(paramType = "query", paramName = "http_header_size")
-        public void setHttpHeaderSize(Integer httpHeaderSize) {
-            this.httpHeaderSize = httpHeaderSize;
+        @JsonProperty(value = "http_header_size")
+        public void setHTTPHeaderSize(Integer hTTPHeaderSize) {
+            this.hTTPHeaderSize = hTTPHeaderSize;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "http_header_size")
-        public Integer getHttpHeaderSize() {
-            return this.httpHeaderSize;
+        @JsonProperty(value = "http_header_size")
+        public Integer getHTTPHeaderSize() {
+            return this.hTTPHeaderSize;
         }
 
         // Required
         private String loadBalancer;
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer")
+        @JsonProperty(value = "loadbalancer")
         public void setLoadBalancer(String loadBalancer) {
             this.loadBalancer = loadBalancer;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer")
+        @JsonProperty(value = "loadbalancer")
         public String getLoadBalancer() {
             return this.loadBalancer;
         }
 
         private String loadBalancerName;
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_name")
+        @JsonProperty(value = "loadbalancer_name")
         public void setLoadBalancerName(String loadBalancerName) {
             this.loadBalancerName = loadBalancerName;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_name")
+        @JsonProperty(value = "loadbalancer_name")
         public String getLoadBalancerName() {
             return this.loadBalancerName;
         }
 
         private Integer nodeCount;
 
-        @ParamAnnotation(paramType = "query", paramName = "node_count")
+        @JsonProperty(value = "node_count")
         public void setNodeCount(Integer nodeCount) {
             this.nodeCount = nodeCount;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "node_count")
+        @JsonProperty(value = "node_count")
         public Integer getNodeCount() {
             return this.nodeCount;
         }
 
         private String privateIP;
 
-        @ParamAnnotation(paramType = "query", paramName = "private_ip")
+        @JsonProperty(value = "private_ip")
         public void setPrivateIP(String privateIP) {
             this.privateIP = privateIP;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "private_ip")
+        @JsonProperty(value = "private_ip")
         public String getPrivateIP() {
             return this.privateIP;
         }
 
         private String securityGroup;
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group")
+        @JsonProperty(value = "security_group")
         public void setSecurityGroup(String securityGroup) {
             this.securityGroup = securityGroup;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "security_group")
+        @JsonProperty(value = "security_group")
         public String getSecurityGroup() {
             return this.securityGroup;
         }
@@ -3691,27 +3714,28 @@ public class LoadBalancerService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class ModifyLoadBalancerAttributesOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -3735,7 +3759,7 @@ public class LoadBalancerService {
         context.put("APIName", "ModifyLoadBalancerBackendAttributes");
         context.put("ServiceName", "ModifyLoadBalancerBackendAttributes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ModifyLoadBalancerBackendAttributes");
+        context.put("RequestURI", "/iaas/ModifyLoadBalancerBackendAttributes");
 
         input.setAction("ModifyLoadBalancerBackendAttributes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -3769,7 +3793,7 @@ public class LoadBalancerService {
         context.put("APIName", "ModifyLoadBalancerBackendAttributes");
         context.put("ServiceName", "ModifyLoadBalancerBackendAttributes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ModifyLoadBalancerBackendAttributes");
+        context.put("RequestURI", "/iaas/ModifyLoadBalancerBackendAttributes");
 
         input.setAction("ModifyLoadBalancerBackendAttributes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -3789,72 +3813,72 @@ public class LoadBalancerService {
     	// Disabled's available values: 0, 1
         private Integer disabled;
 
-        @ParamAnnotation(paramType = "query", paramName = "disabled")
+        @JsonProperty(value = "disabled")
         public void setDisabled(Integer disabled) {
             this.disabled = disabled;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "disabled")
+        @JsonProperty(value = "disabled")
         public Integer getDisabled() {
             return this.disabled;
         }
 
         private String loadBalancerBackend;
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_backend")
+        @JsonProperty(value = "loadbalancer_backend")
         public void setLoadBalancerBackend(String loadBalancerBackend) {
             this.loadBalancerBackend = loadBalancerBackend;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_backend")
+        @JsonProperty(value = "loadbalancer_backend")
         public String getLoadBalancerBackend() {
             return this.loadBalancerBackend;
         }
 
         private String loadBalancerBackendName;
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_backend_name")
+        @JsonProperty(value = "loadbalancer_backend_name")
         public void setLoadBalancerBackendName(String loadBalancerBackendName) {
             this.loadBalancerBackendName = loadBalancerBackendName;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_backend_name")
+        @JsonProperty(value = "loadbalancer_backend_name")
         public String getLoadBalancerBackendName() {
             return this.loadBalancerBackendName;
         }
 
         private String loadBalancerPolicyID;
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_policy_id")
+        @JsonProperty(value = "loadbalancer_policy_id")
         public void setLoadBalancerPolicyID(String loadBalancerPolicyID) {
             this.loadBalancerPolicyID = loadBalancerPolicyID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_policy_id")
+        @JsonProperty(value = "loadbalancer_policy_id")
         public String getLoadBalancerPolicyID() {
             return this.loadBalancerPolicyID;
         }
 
         private Integer port;
 
-        @ParamAnnotation(paramType = "query", paramName = "port")
+        @JsonProperty(value = "port")
         public void setPort(Integer port) {
             this.port = port;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "port")
+        @JsonProperty(value = "port")
         public Integer getPort() {
             return this.port;
         }
 
         private Integer weight;
 
-        @ParamAnnotation(paramType = "query", paramName = "weight")
+        @JsonProperty(value = "weight")
         public void setWeight(Integer weight) {
             this.weight = weight;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "weight")
+        @JsonProperty(value = "weight")
         public Integer getWeight() {
             return this.weight;
         }
@@ -3879,27 +3903,28 @@ public class LoadBalancerService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class ModifyLoadBalancerBackendAttributesOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -3923,7 +3948,7 @@ public class LoadBalancerService {
         context.put("APIName", "ModifyLoadBalancerListenerAttributes");
         context.put("ServiceName", "ModifyLoadBalancerListenerAttributes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ModifyLoadBalancerListenerAttributes");
+        context.put("RequestURI", "/iaas/ModifyLoadBalancerListenerAttributes");
 
         input.setAction("ModifyLoadBalancerListenerAttributes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -3957,7 +3982,7 @@ public class LoadBalancerService {
         context.put("APIName", "ModifyLoadBalancerListenerAttributes");
         context.put("ServiceName", "ModifyLoadBalancerListenerAttributes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ModifyLoadBalancerListenerAttributes");
+        context.put("RequestURI", "/iaas/ModifyLoadBalancerListenerAttributes");
 
         input.setAction("ModifyLoadBalancerListenerAttributes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -3976,60 +4001,60 @@ public class LoadBalancerService {
     public static class ModifyLoadBalancerListenerAttributesInput extends IaasParamBody {
         private String balanceMode;
 
-        @ParamAnnotation(paramType = "query", paramName = "balance_mode")
+        @JsonProperty(value = "balance_mode")
         public void setBalanceMode(String balanceMode) {
             this.balanceMode = balanceMode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "balance_mode")
+        @JsonProperty(value = "balance_mode")
         public String getBalanceMode() {
             return this.balanceMode;
         }
 
         private Integer forwardfor;
 
-        @ParamAnnotation(paramType = "query", paramName = "forwardfor")
+        @JsonProperty(value = "forwardfor")
         public void setForwardfor(Integer forwardfor) {
             this.forwardfor = forwardfor;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "forwardfor")
+        @JsonProperty(value = "forwardfor")
         public Integer getForwardfor() {
             return this.forwardfor;
         }
 
         private String healthyCheckMethod;
 
-        @ParamAnnotation(paramType = "query", paramName = "healthy_check_method")
+        @JsonProperty(value = "healthy_check_method")
         public void setHealthyCheckMethod(String healthyCheckMethod) {
             this.healthyCheckMethod = healthyCheckMethod;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "healthy_check_method")
+        @JsonProperty(value = "healthy_check_method")
         public String getHealthyCheckMethod() {
             return this.healthyCheckMethod;
         }
 
         private String healthyCheckOption;
 
-        @ParamAnnotation(paramType = "query", paramName = "healthy_check_option")
+        @JsonProperty(value = "healthy_check_option")
         public void setHealthyCheckOption(String healthyCheckOption) {
             this.healthyCheckOption = healthyCheckOption;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "healthy_check_option")
+        @JsonProperty(value = "healthy_check_option")
         public String getHealthyCheckOption() {
             return this.healthyCheckOption;
         }
 
         private Integer listenerOption;
 
-        @ParamAnnotation(paramType = "query", paramName = "listener_option")
+        @JsonProperty(value = "listener_option")
         public void setListenerOption(Integer listenerOption) {
             this.listenerOption = listenerOption;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "listener_option")
+        @JsonProperty(value = "listener_option")
         public Integer getListenerOption() {
             return this.listenerOption;
         }
@@ -4037,60 +4062,60 @@ public class LoadBalancerService {
         // Required
         private String loadBalancerListener;
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_listener")
+        @JsonProperty(value = "loadbalancer_listener")
         public void setLoadBalancerListener(String loadBalancerListener) {
             this.loadBalancerListener = loadBalancerListener;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_listener")
+        @JsonProperty(value = "loadbalancer_listener")
         public String getLoadBalancerListener() {
             return this.loadBalancerListener;
         }
 
         private String loadBalancerListenerName;
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_listener_name")
+        @JsonProperty(value = "loadbalancer_listener_name")
         public void setLoadBalancerListenerName(String loadBalancerListenerName) {
             this.loadBalancerListenerName = loadBalancerListenerName;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_listener_name")
+        @JsonProperty(value = "loadbalancer_listener_name")
         public String getLoadBalancerListenerName() {
             return this.loadBalancerListenerName;
         }
 
         private String serverCertificateID;
 
-        @ParamAnnotation(paramType = "query", paramName = "server_certificate_id")
+        @JsonProperty(value = "server_certificate_id")
         public void setServerCertificateID(String serverCertificateID) {
             this.serverCertificateID = serverCertificateID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "server_certificate_id")
+        @JsonProperty(value = "server_certificate_id")
         public String getServerCertificateID() {
             return this.serverCertificateID;
         }
 
         private String sessionSticky;
 
-        @ParamAnnotation(paramType = "query", paramName = "session_sticky")
+        @JsonProperty(value = "session_sticky")
         public void setSessionSticky(String sessionSticky) {
             this.sessionSticky = sessionSticky;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "session_sticky")
+        @JsonProperty(value = "session_sticky")
         public String getSessionSticky() {
             return this.sessionSticky;
         }
 
         private Integer timeout;
 
-        @ParamAnnotation(paramType = "query", paramName = "timeout")
+        @JsonProperty(value = "timeout")
         public void setTimeout(Integer timeout) {
             this.timeout = timeout;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "timeout")
+        @JsonProperty(value = "timeout")
         public Integer getTimeout() {
             return this.timeout;
         }
@@ -4103,27 +4128,28 @@ public class LoadBalancerService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class ModifyLoadBalancerListenerAttributesOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -4147,7 +4173,7 @@ public class LoadBalancerService {
         context.put("APIName", "ModifyLoadBalancerPolicyAttributes");
         context.put("ServiceName", "ModifyLoadBalancerPolicyAttributes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ModifyLoadBalancerPolicyAttributes");
+        context.put("RequestURI", "/iaas/ModifyLoadBalancerPolicyAttributes");
 
         input.setAction("ModifyLoadBalancerPolicyAttributes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -4181,7 +4207,7 @@ public class LoadBalancerService {
         context.put("APIName", "ModifyLoadBalancerPolicyAttributes");
         context.put("ServiceName", "ModifyLoadBalancerPolicyAttributes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ModifyLoadBalancerPolicyAttributes");
+        context.put("RequestURI", "/iaas/ModifyLoadBalancerPolicyAttributes");
 
         input.setAction("ModifyLoadBalancerPolicyAttributes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -4201,36 +4227,36 @@ public class LoadBalancerService {
         // Required
         private String loadBalancerPolicy;
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_policy")
+        @JsonProperty(value = "loadbalancer_policy")
         public void setLoadBalancerPolicy(String loadBalancerPolicy) {
             this.loadBalancerPolicy = loadBalancerPolicy;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_policy")
+        @JsonProperty(value = "loadbalancer_policy")
         public String getLoadBalancerPolicy() {
             return this.loadBalancerPolicy;
         }
 
         private String loadBalancerPolicyName;
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_policy_name")
+        @JsonProperty(value = "loadbalancer_policy_name")
         public void setLoadBalancerPolicyName(String loadBalancerPolicyName) {
             this.loadBalancerPolicyName = loadBalancerPolicyName;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_policy_name")
+        @JsonProperty(value = "loadbalancer_policy_name")
         public String getLoadBalancerPolicyName() {
             return this.loadBalancerPolicyName;
         }
 
         private String operator;
 
-        @ParamAnnotation(paramType = "query", paramName = "operator")
+        @JsonProperty(value = "operator")
         public void setOperator(String operator) {
             this.operator = operator;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "operator")
+        @JsonProperty(value = "operator")
         public String getOperator() {
             return this.operator;
         }
@@ -4243,39 +4269,40 @@ public class LoadBalancerService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class ModifyLoadBalancerPolicyAttributesOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String loadBalancerPolicyID;
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_policy_id")
+        @JsonProperty(value = "loadbalancer_policy_id")
         public void setLoadBalancerPolicyID(String loadBalancerPolicyID) {
             this.loadBalancerPolicyID = loadBalancerPolicyID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_policy_id")
+        @JsonProperty(value = "loadbalancer_policy_id")
         public String getLoadBalancerPolicyID() {
             return this.loadBalancerPolicyID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -4299,7 +4326,7 @@ public class LoadBalancerService {
         context.put("APIName", "ModifyLoadBalancerPolicyRuleAttributes");
         context.put("ServiceName", "ModifyLoadBalancerPolicyRuleAttributes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ModifyLoadBalancerPolicyRuleAttributes");
+        context.put("RequestURI", "/iaas/ModifyLoadBalancerPolicyRuleAttributes");
 
         input.setAction("ModifyLoadBalancerPolicyRuleAttributes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -4333,7 +4360,7 @@ public class LoadBalancerService {
         context.put("APIName", "ModifyLoadBalancerPolicyRuleAttributes");
         context.put("ServiceName", "ModifyLoadBalancerPolicyRuleAttributes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ModifyLoadBalancerPolicyRuleAttributes");
+        context.put("RequestURI", "/iaas/ModifyLoadBalancerPolicyRuleAttributes");
 
         input.setAction("ModifyLoadBalancerPolicyRuleAttributes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -4353,36 +4380,36 @@ public class LoadBalancerService {
         // Required
         private String loadBalancerPolicyRule;
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_policy_rule")
+        @JsonProperty(value = "loadbalancer_policy_rule")
         public void setLoadBalancerPolicyRule(String loadBalancerPolicyRule) {
             this.loadBalancerPolicyRule = loadBalancerPolicyRule;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_policy_rule")
+        @JsonProperty(value = "loadbalancer_policy_rule")
         public String getLoadBalancerPolicyRule() {
             return this.loadBalancerPolicyRule;
         }
 
         private String loadBalancerPolicyRuleName;
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_policy_rule_name")
+        @JsonProperty(value = "loadbalancer_policy_rule_name")
         public void setLoadBalancerPolicyRuleName(String loadBalancerPolicyRuleName) {
             this.loadBalancerPolicyRuleName = loadBalancerPolicyRuleName;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_policy_rule_name")
+        @JsonProperty(value = "loadbalancer_policy_rule_name")
         public String getLoadBalancerPolicyRuleName() {
             return this.loadBalancerPolicyRuleName;
         }
 
         private String val;
 
-        @ParamAnnotation(paramType = "query", paramName = "val")
+        @JsonProperty(value = "val")
         public void setVal(String val) {
             this.val = val;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "val")
+        @JsonProperty(value = "val")
         public String getVal() {
             return this.val;
         }
@@ -4395,39 +4422,40 @@ public class LoadBalancerService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class ModifyLoadBalancerPolicyRuleAttributesOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String loadBalancerPolicyRuleID;
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_policy_rule_id")
+        @JsonProperty(value = "loadbalancer_policy_rule_id")
         public void setLoadBalancerPolicyRuleID(String loadBalancerPolicyRuleID) {
             this.loadBalancerPolicyRuleID = loadBalancerPolicyRuleID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_policy_rule_id")
+        @JsonProperty(value = "loadbalancer_policy_rule_id")
         public String getLoadBalancerPolicyRuleID() {
             return this.loadBalancerPolicyRuleID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -4451,7 +4479,7 @@ public class LoadBalancerService {
         context.put("APIName", "ModifyServerCertificateAttributes");
         context.put("ServiceName", "ModifyServerCertificateAttributes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ModifyServerCertificateAttributes");
+        context.put("RequestURI", "/iaas/ModifyServerCertificateAttributes");
 
         input.setAction("ModifyServerCertificateAttributes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -4485,7 +4513,7 @@ public class LoadBalancerService {
         context.put("APIName", "ModifyServerCertificateAttributes");
         context.put("ServiceName", "ModifyServerCertificateAttributes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ModifyServerCertificateAttributes");
+        context.put("RequestURI", "/iaas/ModifyServerCertificateAttributes");
 
         input.setAction("ModifyServerCertificateAttributes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -4504,12 +4532,12 @@ public class LoadBalancerService {
     public static class ModifyServerCertificateAttributesInput extends IaasParamBody {
         private String description;
 
-        @ParamAnnotation(paramType = "query", paramName = "description")
+        @JsonProperty(value = "description")
         public void setDescription(String description) {
             this.description = description;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "description")
+        @JsonProperty(value = "description")
         public String getDescription() {
             return this.description;
         }
@@ -4517,24 +4545,24 @@ public class LoadBalancerService {
         // Required
         private String serverCertificate;
 
-        @ParamAnnotation(paramType = "query", paramName = "server_certificate")
+        @JsonProperty(value = "server_certificate")
         public void setServerCertificate(String serverCertificate) {
             this.serverCertificate = serverCertificate;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "server_certificate")
+        @JsonProperty(value = "server_certificate")
         public String getServerCertificate() {
             return this.serverCertificate;
         }
 
         private String serverCertificateName;
 
-        @ParamAnnotation(paramType = "query", paramName = "server_certificate_name")
+        @JsonProperty(value = "server_certificate_name")
         public void setServerCertificateName(String serverCertificateName) {
             this.serverCertificateName = serverCertificateName;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "server_certificate_name")
+        @JsonProperty(value = "server_certificate_name")
         public String getServerCertificateName() {
             return this.serverCertificateName;
         }
@@ -4547,27 +4575,28 @@ public class LoadBalancerService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class ModifyServerCertificateAttributesOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -4591,7 +4620,7 @@ public class LoadBalancerService {
         context.put("APIName", "ResizeLoadBalancers");
         context.put("ServiceName", "ResizeLoadBalancers");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ResizeLoadBalancers");
+        context.put("RequestURI", "/iaas/ResizeLoadBalancers");
 
         input.setAction("ResizeLoadBalancers");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -4625,7 +4654,7 @@ public class LoadBalancerService {
         context.put("APIName", "ResizeLoadBalancers");
         context.put("ServiceName", "ResizeLoadBalancers");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ResizeLoadBalancers");
+        context.put("RequestURI", "/iaas/ResizeLoadBalancers");
 
         input.setAction("ResizeLoadBalancers");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -4645,24 +4674,24 @@ public class LoadBalancerService {
     	// LoadBalancerType's available values: 0, 1, 2, 3, 4, 5
         private Integer loadBalancerType;
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_type")
+        @JsonProperty(value = "loadbalancer_type")
         public void setLoadBalancerType(Integer loadBalancerType) {
             this.loadBalancerType = loadBalancerType;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancer_type")
+        @JsonProperty(value = "loadbalancer_type")
         public Integer getLoadBalancerType() {
             return this.loadBalancerType;
         }
 
         private List<String> loadBalancers;
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancers")
+        @JsonProperty(value = "loadbalancers")
         public void setLoadBalancers(List<String> loadBalancers) {
             this.loadBalancers = loadBalancers;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancers")
+        @JsonProperty(value = "loadbalancers")
         public List<String> getLoadBalancers() {
             return this.loadBalancers;
         }
@@ -4687,39 +4716,40 @@ public class LoadBalancerService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class ResizeLoadBalancersOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -4743,7 +4773,7 @@ public class LoadBalancerService {
         context.put("APIName", "StartLoadBalancers");
         context.put("ServiceName", "StartLoadBalancers");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/StartLoadBalancers");
+        context.put("RequestURI", "/iaas/StartLoadBalancers");
 
         input.setAction("StartLoadBalancers");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -4777,7 +4807,7 @@ public class LoadBalancerService {
         context.put("APIName", "StartLoadBalancers");
         context.put("ServiceName", "StartLoadBalancers");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/StartLoadBalancers");
+        context.put("RequestURI", "/iaas/StartLoadBalancers");
 
         input.setAction("StartLoadBalancers");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -4797,12 +4827,12 @@ public class LoadBalancerService {
         // Required
         private List<String> loadBalancers;
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancers")
+        @JsonProperty(value = "loadbalancers")
         public void setLoadBalancers(List<String> loadBalancers) {
             this.loadBalancers = loadBalancers;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancers")
+        @JsonProperty(value = "loadbalancers")
         public List<String> getLoadBalancers() {
             return this.loadBalancers;
         }
@@ -4812,39 +4842,40 @@ public class LoadBalancerService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class StartLoadBalancersOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -4868,7 +4899,7 @@ public class LoadBalancerService {
         context.put("APIName", "StopLoadBalancers");
         context.put("ServiceName", "StopLoadBalancers");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/StopLoadBalancers");
+        context.put("RequestURI", "/iaas/StopLoadBalancers");
 
         input.setAction("StopLoadBalancers");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -4902,7 +4933,7 @@ public class LoadBalancerService {
         context.put("APIName", "StopLoadBalancers");
         context.put("ServiceName", "StopLoadBalancers");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/StopLoadBalancers");
+        context.put("RequestURI", "/iaas/StopLoadBalancers");
 
         input.setAction("StopLoadBalancers");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -4922,12 +4953,12 @@ public class LoadBalancerService {
         // Required
         private List<String> loadBalancers;
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancers")
+        @JsonProperty(value = "loadbalancers")
         public void setLoadBalancers(List<String> loadBalancers) {
             this.loadBalancers = loadBalancers;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancers")
+        @JsonProperty(value = "loadbalancers")
         public List<String> getLoadBalancers() {
             return this.loadBalancers;
         }
@@ -4937,39 +4968,40 @@ public class LoadBalancerService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class StopLoadBalancersOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -4993,7 +5025,7 @@ public class LoadBalancerService {
         context.put("APIName", "UpdateLoadBalancers");
         context.put("ServiceName", "UpdateLoadBalancers");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/UpdateLoadBalancers");
+        context.put("RequestURI", "/iaas/UpdateLoadBalancers");
 
         input.setAction("UpdateLoadBalancers");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -5027,7 +5059,7 @@ public class LoadBalancerService {
         context.put("APIName", "UpdateLoadBalancers");
         context.put("ServiceName", "UpdateLoadBalancers");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/UpdateLoadBalancers");
+        context.put("RequestURI", "/iaas/UpdateLoadBalancers");
 
         input.setAction("UpdateLoadBalancers");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -5047,12 +5079,12 @@ public class LoadBalancerService {
         // Required
         private List<String> loadBalancers;
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancers")
+        @JsonProperty(value = "loadbalancers")
         public void setLoadBalancers(List<String> loadBalancers) {
             this.loadBalancers = loadBalancers;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "loadbalancers")
+        @JsonProperty(value = "loadbalancers")
         public List<String> getLoadBalancers() {
             return this.loadBalancers;
         }
@@ -5062,39 +5094,40 @@ public class LoadBalancerService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class UpdateLoadBalancersOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }

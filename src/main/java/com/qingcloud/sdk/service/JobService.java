@@ -16,6 +16,7 @@
 
 package com.qingcloud.sdk.service;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.qingcloud.sdk.config.EnvContext;
 import com.qingcloud.sdk.constants.QCConstant;
 import com.qingcloud.sdk.model.OutputModel;
@@ -24,8 +25,8 @@ import com.qingcloud.sdk.request.ResourceRequestFactory;
 import com.qingcloud.sdk.exception.QCException;
 import com.qingcloud.sdk.model.IaasParamBody;
 import com.qingcloud.sdk.service.Types.*;
-import com.qingcloud.sdk.annotation.ParamAnnotation;
 import com.qingcloud.sdk.utils.QCStringUtil;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.HashMap;
 import java.util.List;
@@ -63,7 +64,7 @@ public class JobService {
         context.put("APIName", "DescribeJobs");
         context.put("ServiceName", "DescribeJobs");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeJobs");
+        context.put("RequestURI", "/iaas/DescribeJobs");
 
         input.setAction("DescribeJobs");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -97,7 +98,7 @@ public class JobService {
         context.put("APIName", "DescribeJobs");
         context.put("ServiceName", "DescribeJobs");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeJobs");
+        context.put("RequestURI", "/iaas/DescribeJobs");
 
         input.setAction("DescribeJobs");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -116,48 +117,48 @@ public class JobService {
     public static class DescribeJobsInput extends IaasParamBody {
         private List<String> jobs;
 
-        @ParamAnnotation(paramType = "query", paramName = "jobs")
+        @JsonProperty(value = "jobs")
         public void setJobs(List<String> jobs) {
             this.jobs = jobs;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "jobs")
+        @JsonProperty(value = "jobs")
         public List<String> getJobs() {
             return this.jobs;
         }
 
         private Integer limit;
 
-        @ParamAnnotation(paramType = "query", paramName = "limit")
+        @JsonProperty(value = "limit")
         public void setLimit(Integer limit) {
             this.limit = limit;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "limit")
+        @JsonProperty(value = "limit")
         public Integer getLimit() {
             return this.limit;
         }
 
         private Integer offset;
 
-        @ParamAnnotation(paramType = "query", paramName = "offset")
+        @JsonProperty(value = "offset")
         public void setOffset(Integer offset) {
             this.offset = offset;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "offset")
+        @JsonProperty(value = "offset")
         public Integer getOffset() {
             return this.offset;
         }
 
         private List<String> status;
 
-        @ParamAnnotation(paramType = "query", paramName = "status")
+        @JsonProperty(value = "status")
         public void setStatus(List<String> status) {
             this.status = status;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "status")
+        @JsonProperty(value = "status")
         public List<String> getStatus() {
             return this.status;
         }
@@ -165,12 +166,12 @@ public class JobService {
     	// Verbose's available values: 0
         private Integer verbose;
 
-        @ParamAnnotation(paramType = "query", paramName = "verbose")
+        @JsonProperty(value = "verbose")
         public void setVerbose(Integer verbose) {
             this.verbose = verbose;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "verbose")
+        @JsonProperty(value = "verbose")
         public Integer getVerbose() {
             return this.verbose;
         }
@@ -195,51 +196,52 @@ public class JobService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class DescribeJobsOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private List<JobModel> jobSet;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_set")
+        @JsonProperty(value = "job_set")
         public void setJobSet(List<JobModel> jobSet) {
             this.jobSet = jobSet;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_set")
+        @JsonProperty(value = "job_set")
         public List<JobModel> getJobSet() {
             return this.jobSet;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
 
         private Integer totalCount;
 
-        @ParamAnnotation(paramType = "query", paramName = "total_count")
+        @JsonProperty(value = "total_count")
         public void setTotalCount(Integer totalCount) {
             this.totalCount = totalCount;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "total_count")
+        @JsonProperty(value = "total_count")
         public Integer getTotalCount() {
             return this.totalCount;
         }

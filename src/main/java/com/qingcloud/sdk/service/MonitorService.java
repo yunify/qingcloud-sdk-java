@@ -16,6 +16,7 @@
 
 package com.qingcloud.sdk.service;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.qingcloud.sdk.config.EnvContext;
 import com.qingcloud.sdk.constants.QCConstant;
 import com.qingcloud.sdk.model.OutputModel;
@@ -24,8 +25,8 @@ import com.qingcloud.sdk.request.ResourceRequestFactory;
 import com.qingcloud.sdk.exception.QCException;
 import com.qingcloud.sdk.model.IaasParamBody;
 import com.qingcloud.sdk.service.Types.*;
-import com.qingcloud.sdk.annotation.ParamAnnotation;
 import com.qingcloud.sdk.utils.QCStringUtil;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.HashMap;
 import java.util.List;
@@ -63,7 +64,7 @@ public class MonitorService {
         context.put("APIName", "GetMonitor");
         context.put("ServiceName", "GetMonitor");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/GetMonitor");
+        context.put("RequestURI", "/iaas/GetMonitor");
 
         input.setAction("GetMonitor");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -97,7 +98,7 @@ public class MonitorService {
         context.put("APIName", "GetMonitor");
         context.put("ServiceName", "GetMonitor");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/GetMonitor");
+        context.put("RequestURI", "/iaas/GetMonitor");
 
         input.setAction("GetMonitor");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -116,48 +117,48 @@ public class MonitorService {
     public static class GetMonitorInput extends IaasParamBody {
         private String endTime;
 
-        @ParamAnnotation(paramType = "query", paramName = "end_time")
+        @JsonProperty(value = "end_time")
         public void setEndTime(String endTime) {
             this.endTime = endTime;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "end_time")
+        @JsonProperty(value = "end_time")
         public String getEndTime() {
             return this.endTime;
         }
 
         private List<String> meters;
 
-        @ParamAnnotation(paramType = "query", paramName = "meters")
+        @JsonProperty(value = "meters")
         public void setMeters(List<String> meters) {
             this.meters = meters;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "meters")
+        @JsonProperty(value = "meters")
         public List<String> getMeters() {
             return this.meters;
         }
 
         private String resource;
 
-        @ParamAnnotation(paramType = "query", paramName = "resource")
+        @JsonProperty(value = "resource")
         public void setResource(String resource) {
             this.resource = resource;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "resource")
+        @JsonProperty(value = "resource")
         public String getResource() {
             return this.resource;
         }
 
         private String startTime;
 
-        @ParamAnnotation(paramType = "query", paramName = "start_time")
+        @JsonProperty(value = "start_time")
         public void setStartTime(String startTime) {
             this.startTime = startTime;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "start_time")
+        @JsonProperty(value = "start_time")
         public String getStartTime() {
             return this.startTime;
         }
@@ -165,12 +166,12 @@ public class MonitorService {
     	// Step's available values: 5m, 15m, 2h, 1d
         private String step;
 
-        @ParamAnnotation(paramType = "query", paramName = "step")
+        @JsonProperty(value = "step")
         public void setStep(String step) {
             this.step = step;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "step")
+        @JsonProperty(value = "step")
         public String getStep() {
             return this.step;
         }
@@ -198,51 +199,52 @@ public class MonitorService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class GetMonitorOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private List<MeterModel> meterSet;
 
-        @ParamAnnotation(paramType = "query", paramName = "meter_set")
+        @JsonProperty(value = "meter_set")
         public void setMeterSet(List<MeterModel> meterSet) {
             this.meterSet = meterSet;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "meter_set")
+        @JsonProperty(value = "meter_set")
         public List<MeterModel> getMeterSet() {
             return this.meterSet;
         }
 
         private String resourceID;
 
-        @ParamAnnotation(paramType = "query", paramName = "resource_id")
+        @JsonProperty(value = "resource_id")
         public void setResourceID(String resourceID) {
             this.resourceID = resourceID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "resource_id")
+        @JsonProperty(value = "resource_id")
         public String getResourceID() {
             return this.resourceID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }

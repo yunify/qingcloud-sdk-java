@@ -16,6 +16,7 @@
 
 package com.qingcloud.sdk.service;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.qingcloud.sdk.config.EnvContext;
 import com.qingcloud.sdk.constants.QCConstant;
 import com.qingcloud.sdk.model.OutputModel;
@@ -24,8 +25,8 @@ import com.qingcloud.sdk.request.ResourceRequestFactory;
 import com.qingcloud.sdk.exception.QCException;
 import com.qingcloud.sdk.model.IaasParamBody;
 import com.qingcloud.sdk.service.Types.*;
-import com.qingcloud.sdk.annotation.ParamAnnotation;
 import com.qingcloud.sdk.utils.QCStringUtil;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.HashMap;
 import java.util.List;
@@ -63,7 +64,7 @@ public class ClusterService {
         context.put("APIName", "AddClusterNodes");
         context.put("ServiceName", "AddClusterNodes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/AddClusterNodes");
+        context.put("RequestURI", "/iaas/AddClusterNodes");
 
         input.setAction("AddClusterNodes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -97,7 +98,7 @@ public class ClusterService {
         context.put("APIName", "AddClusterNodes");
         context.put("ServiceName", "AddClusterNodes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/AddClusterNodes");
+        context.put("RequestURI", "/iaas/AddClusterNodes");
 
         input.setAction("AddClusterNodes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -117,12 +118,12 @@ public class ClusterService {
         // Required
         private String cluster;
 
-        @ParamAnnotation(paramType = "query", paramName = "cluster")
+        @JsonProperty(value = "cluster")
         public void setCluster(String cluster) {
             this.cluster = cluster;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cluster")
+        @JsonProperty(value = "cluster")
         public String getCluster() {
             return this.cluster;
         }
@@ -130,60 +131,60 @@ public class ClusterService {
         // Required
         private Integer nodeCount;
 
-        @ParamAnnotation(paramType = "query", paramName = "node_count")
+        @JsonProperty(value = "node_count")
         public void setNodeCount(Integer nodeCount) {
             this.nodeCount = nodeCount;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "node_count")
+        @JsonProperty(value = "node_count")
         public Integer getNodeCount() {
             return this.nodeCount;
         }
 
         private String nodeName;
 
-        @ParamAnnotation(paramType = "query", paramName = "node_name")
+        @JsonProperty(value = "node_name")
         public void setNodeName(String nodeName) {
             this.nodeName = nodeName;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "node_name")
+        @JsonProperty(value = "node_name")
         public String getNodeName() {
             return this.nodeName;
         }
 
         private String nodeRole;
 
-        @ParamAnnotation(paramType = "query", paramName = "node_role")
+        @JsonProperty(value = "node_role")
         public void setNodeRole(String nodeRole) {
             this.nodeRole = nodeRole;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "node_role")
+        @JsonProperty(value = "node_role")
         public String getNodeRole() {
             return this.nodeRole;
         }
 
         private List<String> privateIPs;
 
-        @ParamAnnotation(paramType = "query", paramName = "private_ips")
+        @JsonProperty(value = "private_ips")
         public void setPrivateIPs(List<String> privateIPs) {
             this.privateIPs = privateIPs;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "private_ips")
+        @JsonProperty(value = "private_ips")
         public List<String> getPrivateIPs() {
             return this.privateIPs;
         }
 
         private String resourceConf;
 
-        @ParamAnnotation(paramType = "query", paramName = "resource_conf")
+        @JsonProperty(value = "resource_conf")
         public void setResourceConf(String resourceConf) {
             this.resourceConf = resourceConf;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "resource_conf")
+        @JsonProperty(value = "resource_conf")
         public String getResourceConf() {
             return this.resourceConf;
         }
@@ -199,63 +200,64 @@ public class ClusterService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class AddClusterNodesOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String clusterID;
 
-        @ParamAnnotation(paramType = "query", paramName = "cluster_id")
+        @JsonProperty(value = "cluster_id")
         public void setClusterID(String clusterID) {
             this.clusterID = clusterID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cluster_id")
+        @JsonProperty(value = "cluster_id")
         public String getClusterID() {
             return this.clusterID;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private List<String> newNodeIDs;
 
-        @ParamAnnotation(paramType = "query", paramName = "new_node_ids")
+        @JsonProperty(value = "new_node_ids")
         public void setNewNodeIDs(List<String> newNodeIDs) {
             this.newNodeIDs = newNodeIDs;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "new_node_ids")
+        @JsonProperty(value = "new_node_ids")
         public List<String> getNewNodeIDs() {
             return this.newNodeIDs;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -279,7 +281,7 @@ public class ClusterService {
         context.put("APIName", "AssociateEipToClusterNode");
         context.put("ServiceName", "AssociateEipToClusterNode");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/AssociateEipToClusterNode");
+        context.put("RequestURI", "/iaas/AssociateEipToClusterNode");
 
         input.setAction("AssociateEipToClusterNode");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -313,7 +315,7 @@ public class ClusterService {
         context.put("APIName", "AssociateEIPToClusterNode");
         context.put("ServiceName", "AssociateEipToClusterNode");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/AssociateEipToClusterNode");
+        context.put("RequestURI", "/iaas/AssociateEipToClusterNode");
 
         input.setAction("AssociateEIPToClusterNode");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -333,12 +335,12 @@ public class ClusterService {
         // Required
         private String clusterNode;
 
-        @ParamAnnotation(paramType = "query", paramName = "cluster_node")
+        @JsonProperty(value = "cluster_node")
         public void setClusterNode(String clusterNode) {
             this.clusterNode = clusterNode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cluster_node")
+        @JsonProperty(value = "cluster_node")
         public String getClusterNode() {
             return this.clusterNode;
         }
@@ -346,24 +348,24 @@ public class ClusterService {
         // Required
         private String eIP;
 
-        @ParamAnnotation(paramType = "query", paramName = "eip")
+        @JsonProperty(value = "eip")
         public void setEIP(String eIP) {
             this.eIP = eIP;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "eip")
+        @JsonProperty(value = "eip")
         public String getEIP() {
             return this.eIP;
         }
 
         private String nIC;
 
-        @ParamAnnotation(paramType = "query", paramName = "nic")
+        @JsonProperty(value = "nic")
         public void setNIC(String nIC) {
             this.nIC = nIC;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "nic")
+        @JsonProperty(value = "nic")
         public String getNIC() {
             return this.nIC;
         }
@@ -379,39 +381,40 @@ public class ClusterService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class AssociateEIPToClusterNodeOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -435,7 +438,7 @@ public class ClusterService {
         context.put("APIName", "CeaseClusters");
         context.put("ServiceName", "CeaseClusters");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/CeaseClusters");
+        context.put("RequestURI", "/iaas/CeaseClusters");
 
         input.setAction("CeaseClusters");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -469,7 +472,7 @@ public class ClusterService {
         context.put("APIName", "CeaseClusters");
         context.put("ServiceName", "CeaseClusters");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/CeaseClusters");
+        context.put("RequestURI", "/iaas/CeaseClusters");
 
         input.setAction("CeaseClusters");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -489,12 +492,12 @@ public class ClusterService {
         // Required
         private List<String> clusters;
 
-        @ParamAnnotation(paramType = "query", paramName = "clusters")
+        @JsonProperty(value = "clusters")
         public void setClusters(List<String> clusters) {
             this.clusters = clusters;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "clusters")
+        @JsonProperty(value = "clusters")
         public List<String> getClusters() {
             return this.clusters;
         }
@@ -504,39 +507,40 @@ public class ClusterService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class CeaseClustersOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private Map jobIDs;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_ids")
+        @JsonProperty(value = "job_ids")
         public void setJobIDs(Map jobIDs) {
             this.jobIDs = jobIDs;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_ids")
+        @JsonProperty(value = "job_ids")
         public Map getJobIDs() {
             return this.jobIDs;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -560,7 +564,7 @@ public class ClusterService {
         context.put("APIName", "ChangeClusterVxnet");
         context.put("ServiceName", "ChangeClusterVxnet");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ChangeClusterVxnet");
+        context.put("RequestURI", "/iaas/ChangeClusterVxnet");
 
         input.setAction("ChangeClusterVxnet");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -594,7 +598,7 @@ public class ClusterService {
         context.put("APIName", "ChangeClusterVxNet");
         context.put("ServiceName", "ChangeClusterVxnet");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ChangeClusterVxnet");
+        context.put("RequestURI", "/iaas/ChangeClusterVxnet");
 
         input.setAction("ChangeClusterVxNet");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -614,36 +618,36 @@ public class ClusterService {
         // Required
         private String cluster;
 
-        @ParamAnnotation(paramType = "query", paramName = "cluster")
+        @JsonProperty(value = "cluster")
         public void setCluster(String cluster) {
             this.cluster = cluster;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cluster")
+        @JsonProperty(value = "cluster")
         public String getCluster() {
             return this.cluster;
         }
 
         private Model privateIPs;
 
-        @ParamAnnotation(paramType = "query", paramName = "private_ips")
+        @JsonProperty(value = "private_ips")
         public void setPrivateIPs(Model privateIPs) {
             this.privateIPs = privateIPs;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "private_ips")
+        @JsonProperty(value = "private_ips")
         public Model getPrivateIPs() {
             return this.privateIPs;
         }
 
         private List<String> roles;
 
-        @ParamAnnotation(paramType = "query", paramName = "roles")
+        @JsonProperty(value = "roles")
         public void setRoles(List<String> roles) {
             this.roles = roles;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "roles")
+        @JsonProperty(value = "roles")
         public List<String> getRoles() {
             return this.roles;
         }
@@ -651,12 +655,12 @@ public class ClusterService {
         // Required
         private String vxNet;
 
-        @ParamAnnotation(paramType = "query", paramName = "vxnet")
+        @JsonProperty(value = "vxnet")
         public void setVxNet(String vxNet) {
             this.vxNet = vxNet;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "vxnet")
+        @JsonProperty(value = "vxnet")
         public String getVxNet() {
             return this.vxNet;
         }
@@ -672,63 +676,64 @@ public class ClusterService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class ChangeClusterVxNetOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String clusterID;
 
-        @ParamAnnotation(paramType = "query", paramName = "cluster_id")
+        @JsonProperty(value = "cluster_id")
         public void setClusterID(String clusterID) {
             this.clusterID = clusterID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cluster_id")
+        @JsonProperty(value = "cluster_id")
         public String getClusterID() {
             return this.clusterID;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
 
         private String vxNetID;
 
-        @ParamAnnotation(paramType = "query", paramName = "vxnet_id")
+        @JsonProperty(value = "vxnet_id")
         public void setVxNetID(String vxNetID) {
             this.vxNetID = vxNetID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "vxnet_id")
+        @JsonProperty(value = "vxnet_id")
         public String getVxNetID() {
             return this.vxNetID;
         }
@@ -752,7 +757,7 @@ public class ClusterService {
         context.put("APIName", "CreateCluster");
         context.put("ServiceName", "CreateCluster");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/CreateCluster");
+        context.put("RequestURI", "/iaas/CreateCluster");
 
         input.setAction("CreateCluster");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -786,7 +791,7 @@ public class ClusterService {
         context.put("APIName", "CreateCluster");
         context.put("ServiceName", "CreateCluster");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/CreateCluster");
+        context.put("RequestURI", "/iaas/CreateCluster");
 
         input.setAction("CreateCluster");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -806,12 +811,12 @@ public class ClusterService {
         // Required
         private String conf;
 
-        @ParamAnnotation(paramType = "query", paramName = "conf")
+        @JsonProperty(value = "conf")
         public void setConf(String conf) {
             this.conf = conf;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "conf")
+        @JsonProperty(value = "conf")
         public String getConf() {
             return this.conf;
         }
@@ -824,111 +829,112 @@ public class ClusterService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class CreateClusterOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String appID;
 
-        @ParamAnnotation(paramType = "query", paramName = "app_id")
+        @JsonProperty(value = "app_id")
         public void setAppID(String appID) {
             this.appID = appID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "app_id")
+        @JsonProperty(value = "app_id")
         public String getAppID() {
             return this.appID;
         }
 
         private String appVersion;
 
-        @ParamAnnotation(paramType = "query", paramName = "app_version")
+        @JsonProperty(value = "app_version")
         public void setAppVersion(String appVersion) {
             this.appVersion = appVersion;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "app_version")
+        @JsonProperty(value = "app_version")
         public String getAppVersion() {
             return this.appVersion;
         }
 
         private String clusterID;
 
-        @ParamAnnotation(paramType = "query", paramName = "cluster_id")
+        @JsonProperty(value = "cluster_id")
         public void setClusterID(String clusterID) {
             this.clusterID = clusterID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cluster_id")
+        @JsonProperty(value = "cluster_id")
         public String getClusterID() {
             return this.clusterID;
         }
 
         private String clusterName;
 
-        @ParamAnnotation(paramType = "query", paramName = "cluster_name")
+        @JsonProperty(value = "cluster_name")
         public void setClusterName(String clusterName) {
             this.clusterName = clusterName;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cluster_name")
+        @JsonProperty(value = "cluster_name")
         public String getClusterName() {
             return this.clusterName;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private List<String> nodeIDs;
 
-        @ParamAnnotation(paramType = "query", paramName = "node_ids")
+        @JsonProperty(value = "node_ids")
         public void setNodeIDs(List<String> nodeIDs) {
             this.nodeIDs = nodeIDs;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "node_ids")
+        @JsonProperty(value = "node_ids")
         public List<String> getNodeIDs() {
             return this.nodeIDs;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
 
         private String vxNetID;
 
-        @ParamAnnotation(paramType = "query", paramName = "vxnet_id")
+        @JsonProperty(value = "vxnet_id")
         public void setVxNetID(String vxNetID) {
             this.vxNetID = vxNetID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "vxnet_id")
+        @JsonProperty(value = "vxnet_id")
         public String getVxNetID() {
             return this.vxNetID;
         }
@@ -952,7 +958,7 @@ public class ClusterService {
         context.put("APIName", "CreateClusterFromSnapshot");
         context.put("ServiceName", "CreateClusterFromSnapshot");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/CreateClusterFromSnapshot");
+        context.put("RequestURI", "/iaas/CreateClusterFromSnapshot");
 
         input.setAction("CreateClusterFromSnapshot");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -986,7 +992,7 @@ public class ClusterService {
         context.put("APIName", "CreateClusterFromSnapshot");
         context.put("ServiceName", "CreateClusterFromSnapshot");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/CreateClusterFromSnapshot");
+        context.put("RequestURI", "/iaas/CreateClusterFromSnapshot");
 
         input.setAction("CreateClusterFromSnapshot");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1006,12 +1012,12 @@ public class ClusterService {
         // Required
         private String conf;
 
-        @ParamAnnotation(paramType = "query", paramName = "conf")
+        @JsonProperty(value = "conf")
         public void setConf(String conf) {
             this.conf = conf;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "conf")
+        @JsonProperty(value = "conf")
         public String getConf() {
             return this.conf;
         }
@@ -1019,12 +1025,12 @@ public class ClusterService {
         // Required
         private String snapshotID;
 
-        @ParamAnnotation(paramType = "query", paramName = "snapshot_id")
+        @JsonProperty(value = "snapshot_id")
         public void setSnapshotID(String snapshotID) {
             this.snapshotID = snapshotID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "snapshot_id")
+        @JsonProperty(value = "snapshot_id")
         public String getSnapshotID() {
             return this.snapshotID;
         }
@@ -1040,111 +1046,112 @@ public class ClusterService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class CreateClusterFromSnapshotOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String appID;
 
-        @ParamAnnotation(paramType = "query", paramName = "app_id")
+        @JsonProperty(value = "app_id")
         public void setAppID(String appID) {
             this.appID = appID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "app_id")
+        @JsonProperty(value = "app_id")
         public String getAppID() {
             return this.appID;
         }
 
         private String appVersion;
 
-        @ParamAnnotation(paramType = "query", paramName = "app_version")
+        @JsonProperty(value = "app_version")
         public void setAppVersion(String appVersion) {
             this.appVersion = appVersion;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "app_version")
+        @JsonProperty(value = "app_version")
         public String getAppVersion() {
             return this.appVersion;
         }
 
         private String clusterID;
 
-        @ParamAnnotation(paramType = "query", paramName = "cluster_id")
+        @JsonProperty(value = "cluster_id")
         public void setClusterID(String clusterID) {
             this.clusterID = clusterID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cluster_id")
+        @JsonProperty(value = "cluster_id")
         public String getClusterID() {
             return this.clusterID;
         }
 
         private String clusterName;
 
-        @ParamAnnotation(paramType = "query", paramName = "cluster_name")
+        @JsonProperty(value = "cluster_name")
         public void setClusterName(String clusterName) {
             this.clusterName = clusterName;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cluster_name")
+        @JsonProperty(value = "cluster_name")
         public String getClusterName() {
             return this.clusterName;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private List<String> nodeIDs;
 
-        @ParamAnnotation(paramType = "query", paramName = "node_ids")
+        @JsonProperty(value = "node_ids")
         public void setNodeIDs(List<String> nodeIDs) {
             this.nodeIDs = nodeIDs;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "node_ids")
+        @JsonProperty(value = "node_ids")
         public List<String> getNodeIDs() {
             return this.nodeIDs;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
 
         private String vxNetID;
 
-        @ParamAnnotation(paramType = "query", paramName = "vxnet_id")
+        @JsonProperty(value = "vxnet_id")
         public void setVxNetID(String vxNetID) {
             this.vxNetID = vxNetID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "vxnet_id")
+        @JsonProperty(value = "vxnet_id")
         public String getVxNetID() {
             return this.vxNetID;
         }
@@ -1168,7 +1175,7 @@ public class ClusterService {
         context.put("APIName", "DeleteClusterNodes");
         context.put("ServiceName", "DeleteClusterNodes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DeleteClusterNodes");
+        context.put("RequestURI", "/iaas/DeleteClusterNodes");
 
         input.setAction("DeleteClusterNodes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1202,7 +1209,7 @@ public class ClusterService {
         context.put("APIName", "DeleteClusterNodes");
         context.put("ServiceName", "DeleteClusterNodes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DeleteClusterNodes");
+        context.put("RequestURI", "/iaas/DeleteClusterNodes");
 
         input.setAction("DeleteClusterNodes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1222,24 +1229,24 @@ public class ClusterService {
         // Required
         private String cluster;
 
-        @ParamAnnotation(paramType = "query", paramName = "cluster")
+        @JsonProperty(value = "cluster")
         public void setCluster(String cluster) {
             this.cluster = cluster;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cluster")
+        @JsonProperty(value = "cluster")
         public String getCluster() {
             return this.cluster;
         }
 
         private Integer force;
 
-        @ParamAnnotation(paramType = "query", paramName = "force")
+        @JsonProperty(value = "force")
         public void setForce(Integer force) {
             this.force = force;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "force")
+        @JsonProperty(value = "force")
         public Integer getForce() {
             return this.force;
         }
@@ -1247,12 +1254,12 @@ public class ClusterService {
         // Required
         private List<String> nodes;
 
-        @ParamAnnotation(paramType = "query", paramName = "nodes")
+        @JsonProperty(value = "nodes")
         public void setNodes(List<String> nodes) {
             this.nodes = nodes;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "nodes")
+        @JsonProperty(value = "nodes")
         public List<String> getNodes() {
             return this.nodes;
         }
@@ -1265,63 +1272,64 @@ public class ClusterService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class DeleteClusterNodesOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String clusterID;
 
-        @ParamAnnotation(paramType = "query", paramName = "cluster_id")
+        @JsonProperty(value = "cluster_id")
         public void setClusterID(String clusterID) {
             this.clusterID = clusterID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cluster_id")
+        @JsonProperty(value = "cluster_id")
         public String getClusterID() {
             return this.clusterID;
         }
 
         private List<String> deletedNodeIDs;
 
-        @ParamAnnotation(paramType = "query", paramName = "deleted_node_ids")
+        @JsonProperty(value = "deleted_node_ids")
         public void setDeletedNodeIDs(List<String> deletedNodeIDs) {
             this.deletedNodeIDs = deletedNodeIDs;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "deleted_node_ids")
+        @JsonProperty(value = "deleted_node_ids")
         public List<String> getDeletedNodeIDs() {
             return this.deletedNodeIDs;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -1345,7 +1353,7 @@ public class ClusterService {
         context.put("APIName", "DeleteClusters");
         context.put("ServiceName", "DeleteClusters");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DeleteClusters");
+        context.put("RequestURI", "/iaas/DeleteClusters");
 
         input.setAction("DeleteClusters");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1379,7 +1387,7 @@ public class ClusterService {
         context.put("APIName", "DeleteClusters");
         context.put("ServiceName", "DeleteClusters");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DeleteClusters");
+        context.put("RequestURI", "/iaas/DeleteClusters");
 
         input.setAction("DeleteClusters");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1399,24 +1407,24 @@ public class ClusterService {
         // Required
         private List<String> clusters;
 
-        @ParamAnnotation(paramType = "query", paramName = "clusters")
+        @JsonProperty(value = "clusters")
         public void setClusters(List<String> clusters) {
             this.clusters = clusters;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "clusters")
+        @JsonProperty(value = "clusters")
         public List<String> getClusters() {
             return this.clusters;
         }
 
         private Integer force;
 
-        @ParamAnnotation(paramType = "query", paramName = "force")
+        @JsonProperty(value = "force")
         public void setForce(Integer force) {
             this.force = force;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "force")
+        @JsonProperty(value = "force")
         public Integer getForce() {
             return this.force;
         }
@@ -1426,39 +1434,40 @@ public class ClusterService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class DeleteClustersOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private Map jobIDs;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_ids")
+        @JsonProperty(value = "job_ids")
         public void setJobIDs(Map jobIDs) {
             this.jobIDs = jobIDs;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_ids")
+        @JsonProperty(value = "job_ids")
         public Map getJobIDs() {
             return this.jobIDs;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -1482,7 +1491,7 @@ public class ClusterService {
         context.put("APIName", "DescribeClusterDisplayTabs");
         context.put("ServiceName", "DescribeClusterDisplayTabs");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeClusterDisplayTabs");
+        context.put("RequestURI", "/iaas/DescribeClusterDisplayTabs");
 
         input.setAction("DescribeClusterDisplayTabs");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1516,7 +1525,7 @@ public class ClusterService {
         context.put("APIName", "DescribeClusterDisplayTabs");
         context.put("ServiceName", "DescribeClusterDisplayTabs");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeClusterDisplayTabs");
+        context.put("RequestURI", "/iaas/DescribeClusterDisplayTabs");
 
         input.setAction("DescribeClusterDisplayTabs");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1536,12 +1545,12 @@ public class ClusterService {
         // Required
         private String cluster;
 
-        @ParamAnnotation(paramType = "query", paramName = "cluster")
+        @JsonProperty(value = "cluster")
         public void setCluster(String cluster) {
             this.cluster = cluster;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cluster")
+        @JsonProperty(value = "cluster")
         public String getCluster() {
             return this.cluster;
         }
@@ -1549,24 +1558,24 @@ public class ClusterService {
         // Required
         private String displayTabs;
 
-        @ParamAnnotation(paramType = "query", paramName = "display_tabs")
+        @JsonProperty(value = "display_tabs")
         public void setDisplayTabs(String displayTabs) {
             this.displayTabs = displayTabs;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "display_tabs")
+        @JsonProperty(value = "display_tabs")
         public String getDisplayTabs() {
             return this.displayTabs;
         }
 
         private String role;
 
-        @ParamAnnotation(paramType = "query", paramName = "role")
+        @JsonProperty(value = "role")
         public void setRole(String role) {
             this.role = role;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "role")
+        @JsonProperty(value = "role")
         public String getRole() {
             return this.role;
         }
@@ -1582,39 +1591,40 @@ public class ClusterService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class DescribeClusterDisplayTabsOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private Map displayTabs;
 
-        @ParamAnnotation(paramType = "query", paramName = "display_tabs")
+        @JsonProperty(value = "display_tabs")
         public void setDisplayTabs(Map displayTabs) {
             this.displayTabs = displayTabs;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "display_tabs")
+        @JsonProperty(value = "display_tabs")
         public Map getDisplayTabs() {
             return this.displayTabs;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -1638,7 +1648,7 @@ public class ClusterService {
         context.put("APIName", "DescribeClusterNodes");
         context.put("ServiceName", "DescribeClusterNodes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeClusterNodes");
+        context.put("RequestURI", "/iaas/DescribeClusterNodes");
 
         input.setAction("DescribeClusterNodes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1672,7 +1682,7 @@ public class ClusterService {
         context.put("APIName", "DescribeClusterNodes");
         context.put("ServiceName", "DescribeClusterNodes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeClusterNodes");
+        context.put("RequestURI", "/iaas/DescribeClusterNodes");
 
         input.setAction("DescribeClusterNodes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1691,144 +1701,144 @@ public class ClusterService {
     public static class DescribeClusterNodesInput extends IaasParamBody {
         private String cluster;
 
-        @ParamAnnotation(paramType = "query", paramName = "cluster")
+        @JsonProperty(value = "cluster")
         public void setCluster(String cluster) {
             this.cluster = cluster;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cluster")
+        @JsonProperty(value = "cluster")
         public String getCluster() {
             return this.cluster;
         }
 
         private String console;
 
-        @ParamAnnotation(paramType = "query", paramName = "console")
+        @JsonProperty(value = "console")
         public void setConsole(String console) {
             this.console = console;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "console")
+        @JsonProperty(value = "console")
         public String getConsole() {
             return this.console;
         }
 
         private Integer limit;
 
-        @ParamAnnotation(paramType = "query", paramName = "limit")
+        @JsonProperty(value = "limit")
         public void setLimit(Integer limit) {
             this.limit = limit;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "limit")
+        @JsonProperty(value = "limit")
         public Integer getLimit() {
             return this.limit;
         }
 
         private List<String> nodes;
 
-        @ParamAnnotation(paramType = "query", paramName = "nodes")
+        @JsonProperty(value = "nodes")
         public void setNodes(List<String> nodes) {
             this.nodes = nodes;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "nodes")
+        @JsonProperty(value = "nodes")
         public List<String> getNodes() {
             return this.nodes;
         }
 
         private Integer offset;
 
-        @ParamAnnotation(paramType = "query", paramName = "offset")
+        @JsonProperty(value = "offset")
         public void setOffset(Integer offset) {
             this.offset = offset;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "offset")
+        @JsonProperty(value = "offset")
         public Integer getOffset() {
             return this.offset;
         }
 
         private String owner;
 
-        @ParamAnnotation(paramType = "query", paramName = "owner")
+        @JsonProperty(value = "owner")
         public void setOwner(String owner) {
             this.owner = owner;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "owner")
+        @JsonProperty(value = "owner")
         public String getOwner() {
             return this.owner;
         }
 
         private Integer reverse;
 
-        @ParamAnnotation(paramType = "query", paramName = "reverse")
+        @JsonProperty(value = "reverse")
         public void setReverse(Integer reverse) {
             this.reverse = reverse;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "reverse")
+        @JsonProperty(value = "reverse")
         public Integer getReverse() {
             return this.reverse;
         }
 
         private String role;
 
-        @ParamAnnotation(paramType = "query", paramName = "role")
+        @JsonProperty(value = "role")
         public void setRole(String role) {
             this.role = role;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "role")
+        @JsonProperty(value = "role")
         public String getRole() {
             return this.role;
         }
 
         private String searchWord;
 
-        @ParamAnnotation(paramType = "query", paramName = "search_word")
+        @JsonProperty(value = "search_word")
         public void setSearchWord(String searchWord) {
             this.searchWord = searchWord;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "search_word")
+        @JsonProperty(value = "search_word")
         public String getSearchWord() {
             return this.searchWord;
         }
 
         private String sortKey;
 
-        @ParamAnnotation(paramType = "query", paramName = "sort_key")
+        @JsonProperty(value = "sort_key")
         public void setSortKey(String sortKey) {
             this.sortKey = sortKey;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "sort_key")
+        @JsonProperty(value = "sort_key")
         public String getSortKey() {
             return this.sortKey;
         }
 
         private String status;
 
-        @ParamAnnotation(paramType = "query", paramName = "status")
+        @JsonProperty(value = "status")
         public void setStatus(String status) {
             this.status = status;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "status")
+        @JsonProperty(value = "status")
         public String getStatus() {
             return this.status;
         }
 
         private Integer verbose;
 
-        @ParamAnnotation(paramType = "query", paramName = "verbose")
+        @JsonProperty(value = "verbose")
         public void setVerbose(Integer verbose) {
             this.verbose = verbose;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "verbose")
+        @JsonProperty(value = "verbose")
         public Integer getVerbose() {
             return this.verbose;
         }
@@ -1838,51 +1848,52 @@ public class ClusterService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class DescribeClusterNodesOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private List<ClusterNodeModel> nodeSet;
 
-        @ParamAnnotation(paramType = "query", paramName = "node_set")
+        @JsonProperty(value = "node_set")
         public void setNodeSet(List<ClusterNodeModel> nodeSet) {
             this.nodeSet = nodeSet;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "node_set")
+        @JsonProperty(value = "node_set")
         public List<ClusterNodeModel> getNodeSet() {
             return this.nodeSet;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
 
         private Integer totalCount;
 
-        @ParamAnnotation(paramType = "query", paramName = "total_count")
+        @JsonProperty(value = "total_count")
         public void setTotalCount(Integer totalCount) {
             this.totalCount = totalCount;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "total_count")
+        @JsonProperty(value = "total_count")
         public Integer getTotalCount() {
             return this.totalCount;
         }
@@ -1906,7 +1917,7 @@ public class ClusterService {
         context.put("APIName", "DescribeClusterUsers");
         context.put("ServiceName", "DescribeClusterUsers");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeClusterUsers");
+        context.put("RequestURI", "/iaas/GetClusterMonitor");
 
         input.setAction("DescribeClusterUsers");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1940,7 +1951,7 @@ public class ClusterService {
         context.put("APIName", "DescribeClusterUsers");
         context.put("ServiceName", "DescribeClusterUsers");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeClusterUsers");
+        context.put("RequestURI", "/iaas/GetClusterMonitor");
 
         input.setAction("DescribeClusterUsers");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1959,12 +1970,12 @@ public class ClusterService {
     public static class DescribeClusterUsersInput extends IaasParamBody {
         private List<String> appVersions;
 
-        @ParamAnnotation(paramType = "query", paramName = "app_versions")
+        @JsonProperty(value = "app_versions")
         public void setAppVersions(List<String> appVersions) {
             this.appVersions = appVersions;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "app_versions")
+        @JsonProperty(value = "app_versions")
         public List<String> getAppVersions() {
             return this.appVersions;
         }
@@ -1972,60 +1983,60 @@ public class ClusterService {
         // Required
         private List<String> apps;
 
-        @ParamAnnotation(paramType = "query", paramName = "apps")
+        @JsonProperty(value = "apps")
         public void setApps(List<String> apps) {
             this.apps = apps;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "apps")
+        @JsonProperty(value = "apps")
         public List<String> getApps() {
             return this.apps;
         }
 
         private List<String> clusterStatus;
 
-        @ParamAnnotation(paramType = "query", paramName = "cluster_status")
+        @JsonProperty(value = "cluster_status")
         public void setClusterStatus(List<String> clusterStatus) {
             this.clusterStatus = clusterStatus;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cluster_status")
+        @JsonProperty(value = "cluster_status")
         public List<String> getClusterStatus() {
             return this.clusterStatus;
         }
 
         private Integer limit;
 
-        @ParamAnnotation(paramType = "query", paramName = "limit")
+        @JsonProperty(value = "limit")
         public void setLimit(Integer limit) {
             this.limit = limit;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "limit")
+        @JsonProperty(value = "limit")
         public Integer getLimit() {
             return this.limit;
         }
 
         private Integer offset;
 
-        @ParamAnnotation(paramType = "query", paramName = "offset")
+        @JsonProperty(value = "offset")
         public void setOffset(Integer offset) {
             this.offset = offset;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "offset")
+        @JsonProperty(value = "offset")
         public Integer getOffset() {
             return this.offset;
         }
 
         private List<String> users;
 
-        @ParamAnnotation(paramType = "query", paramName = "users")
+        @JsonProperty(value = "users")
         public void setUsers(List<String> users) {
             this.users = users;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "users")
+        @JsonProperty(value = "users")
         public List<String> getUsers() {
             return this.users;
         }
@@ -2033,12 +2044,12 @@ public class ClusterService {
         // Required
         private List<String> zones;
 
-        @ParamAnnotation(paramType = "query", paramName = "zones")
+        @JsonProperty(value = "zones")
         public void setZones(List<String> zones) {
             this.zones = zones;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "zones")
+        @JsonProperty(value = "zones")
         public List<String> getZones() {
             return this.zones;
         }
@@ -2048,51 +2059,52 @@ public class ClusterService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class DescribeClusterUsersOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private List<String> apps;
 
-        @ParamAnnotation(paramType = "query", paramName = "apps")
+        @JsonProperty(value = "apps")
         public void setApps(List<String> apps) {
             this.apps = apps;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "apps")
+        @JsonProperty(value = "apps")
         public List<String> getApps() {
             return this.apps;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
 
         private Map users;
 
-        @ParamAnnotation(paramType = "query", paramName = "users")
+        @JsonProperty(value = "users")
         public void setUsers(Map users) {
             this.users = users;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "users")
+        @JsonProperty(value = "users")
         public Map getUsers() {
             return this.users;
         }
@@ -2116,7 +2128,7 @@ public class ClusterService {
         context.put("APIName", "DescribeClusters");
         context.put("ServiceName", "DescribeClusters");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeClusters");
+        context.put("RequestURI", "/iaas/DescribeClusters");
 
         input.setAction("DescribeClusters");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2150,7 +2162,7 @@ public class ClusterService {
         context.put("APIName", "DescribeClusters");
         context.put("ServiceName", "DescribeClusters");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeClusters");
+        context.put("RequestURI", "/iaas/DescribeClusters");
 
         input.setAction("DescribeClusters");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2169,156 +2181,156 @@ public class ClusterService {
     public static class DescribeClustersInput extends IaasParamBody {
         private List<String> appVersions;
 
-        @ParamAnnotation(paramType = "query", paramName = "app_versions")
+        @JsonProperty(value = "app_versions")
         public void setAppVersions(List<String> appVersions) {
             this.appVersions = appVersions;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "app_versions")
+        @JsonProperty(value = "app_versions")
         public List<String> getAppVersions() {
             return this.appVersions;
         }
 
         private List<String> apps;
 
-        @ParamAnnotation(paramType = "query", paramName = "apps")
+        @JsonProperty(value = "apps")
         public void setApps(List<String> apps) {
             this.apps = apps;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "apps")
+        @JsonProperty(value = "apps")
         public List<String> getApps() {
             return this.apps;
         }
 
         private String cfgmgmtID;
 
-        @ParamAnnotation(paramType = "query", paramName = "cfgmgmt_id")
+        @JsonProperty(value = "cfgmgmt_id")
         public void setCfgmgmtID(String cfgmgmtID) {
             this.cfgmgmtID = cfgmgmtID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cfgmgmt_id")
+        @JsonProperty(value = "cfgmgmt_id")
         public String getCfgmgmtID() {
             return this.cfgmgmtID;
         }
 
         private List<String> clusters;
 
-        @ParamAnnotation(paramType = "query", paramName = "clusters")
+        @JsonProperty(value = "clusters")
         public void setClusters(List<String> clusters) {
             this.clusters = clusters;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "clusters")
+        @JsonProperty(value = "clusters")
         public List<String> getClusters() {
             return this.clusters;
         }
 
         private String console;
 
-        @ParamAnnotation(paramType = "query", paramName = "console")
+        @JsonProperty(value = "console")
         public void setConsole(String console) {
             this.console = console;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "console")
+        @JsonProperty(value = "console")
         public String getConsole() {
             return this.console;
         }
 
         private String externalClusterID;
 
-        @ParamAnnotation(paramType = "query", paramName = "external_cluster_id")
+        @JsonProperty(value = "external_cluster_id")
         public void setExternalClusterID(String externalClusterID) {
             this.externalClusterID = externalClusterID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "external_cluster_id")
+        @JsonProperty(value = "external_cluster_id")
         public String getExternalClusterID() {
             return this.externalClusterID;
         }
 
         private Integer limit;
 
-        @ParamAnnotation(paramType = "query", paramName = "limit")
+        @JsonProperty(value = "limit")
         public void setLimit(Integer limit) {
             this.limit = limit;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "limit")
+        @JsonProperty(value = "limit")
         public Integer getLimit() {
             return this.limit;
         }
 
         private String link;
 
-        @ParamAnnotation(paramType = "query", paramName = "link")
+        @JsonProperty(value = "link")
         public void setLink(String link) {
             this.link = link;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "link")
+        @JsonProperty(value = "link")
         public String getLink() {
             return this.link;
         }
 
         private String name;
 
-        @ParamAnnotation(paramType = "query", paramName = "name")
+        @JsonProperty(value = "name")
         public void setName(String name) {
             this.name = name;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "name")
+        @JsonProperty(value = "name")
         public String getName() {
             return this.name;
         }
 
         private Integer offset;
 
-        @ParamAnnotation(paramType = "query", paramName = "offset")
+        @JsonProperty(value = "offset")
         public void setOffset(Integer offset) {
             this.offset = offset;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "offset")
+        @JsonProperty(value = "offset")
         public Integer getOffset() {
             return this.offset;
         }
 
         private String owner;
 
-        @ParamAnnotation(paramType = "query", paramName = "owner")
+        @JsonProperty(value = "owner")
         public void setOwner(String owner) {
             this.owner = owner;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "owner")
+        @JsonProperty(value = "owner")
         public String getOwner() {
             return this.owner;
         }
 
         private Integer reverse;
 
-        @ParamAnnotation(paramType = "query", paramName = "reverse")
+        @JsonProperty(value = "reverse")
         public void setReverse(Integer reverse) {
             this.reverse = reverse;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "reverse")
+        @JsonProperty(value = "reverse")
         public Integer getReverse() {
             return this.reverse;
         }
 
         private String role;
 
-        @ParamAnnotation(paramType = "query", paramName = "role")
+        @JsonProperty(value = "role")
         public void setRole(String role) {
             this.role = role;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "role")
+        @JsonProperty(value = "role")
         public String getRole() {
             return this.role;
         }
@@ -2326,96 +2338,96 @@ public class ClusterService {
     	// Scope's available values: all, cfgmgmt
         private String scope;
 
-        @ParamAnnotation(paramType = "query", paramName = "scope")
+        @JsonProperty(value = "scope")
         public void setScope(String scope) {
             this.scope = scope;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "scope")
+        @JsonProperty(value = "scope")
         public String getScope() {
             return this.scope;
         }
 
         private String searchWord;
 
-        @ParamAnnotation(paramType = "query", paramName = "search_word")
+        @JsonProperty(value = "search_word")
         public void setSearchWord(String searchWord) {
             this.searchWord = searchWord;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "search_word")
+        @JsonProperty(value = "search_word")
         public String getSearchWord() {
             return this.searchWord;
         }
 
         private String sortKey;
 
-        @ParamAnnotation(paramType = "query", paramName = "sort_key")
+        @JsonProperty(value = "sort_key")
         public void setSortKey(String sortKey) {
             this.sortKey = sortKey;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "sort_key")
+        @JsonProperty(value = "sort_key")
         public String getSortKey() {
             return this.sortKey;
         }
 
         private String status;
 
-        @ParamAnnotation(paramType = "query", paramName = "status")
+        @JsonProperty(value = "status")
         public void setStatus(String status) {
             this.status = status;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "status")
+        @JsonProperty(value = "status")
         public String getStatus() {
             return this.status;
         }
 
         private String transitionStatus;
 
-        @ParamAnnotation(paramType = "query", paramName = "transition_status")
+        @JsonProperty(value = "transition_status")
         public void setTransitionStatus(String transitionStatus) {
             this.transitionStatus = transitionStatus;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "transition_status")
+        @JsonProperty(value = "transition_status")
         public String getTransitionStatus() {
             return this.transitionStatus;
         }
 
         private List<String> users;
 
-        @ParamAnnotation(paramType = "query", paramName = "users")
+        @JsonProperty(value = "users")
         public void setUsers(List<String> users) {
             this.users = users;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "users")
+        @JsonProperty(value = "users")
         public List<String> getUsers() {
             return this.users;
         }
 
         private Integer verbose;
 
-        @ParamAnnotation(paramType = "query", paramName = "verbose")
+        @JsonProperty(value = "verbose")
         public void setVerbose(Integer verbose) {
             this.verbose = verbose;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "verbose")
+        @JsonProperty(value = "verbose")
         public Integer getVerbose() {
             return this.verbose;
         }
 
         private String vxNet;
 
-        @ParamAnnotation(paramType = "query", paramName = "vxnet")
+        @JsonProperty(value = "vxnet")
         public void setVxNet(String vxNet) {
             this.vxNet = vxNet;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "vxnet")
+        @JsonProperty(value = "vxnet")
         public String getVxNet() {
             return this.vxNet;
         }
@@ -2443,51 +2455,52 @@ public class ClusterService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class DescribeClustersOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private List<ClusterModel> clusterSet;
 
-        @ParamAnnotation(paramType = "query", paramName = "cluster_set")
+        @JsonProperty(value = "cluster_set")
         public void setClusterSet(List<ClusterModel> clusterSet) {
             this.clusterSet = clusterSet;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cluster_set")
+        @JsonProperty(value = "cluster_set")
         public List<ClusterModel> getClusterSet() {
             return this.clusterSet;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
 
         private Integer totalCount;
 
-        @ParamAnnotation(paramType = "query", paramName = "total_count")
+        @JsonProperty(value = "total_count")
         public void setTotalCount(Integer totalCount) {
             this.totalCount = totalCount;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "total_count")
+        @JsonProperty(value = "total_count")
         public Integer getTotalCount() {
             return this.totalCount;
         }
@@ -2511,7 +2524,7 @@ public class ClusterService {
         context.put("APIName", "DissociateEipFromClusterNode");
         context.put("ServiceName", "DissociateEipFromClusterNode");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DissociateEipFromClusterNode");
+        context.put("RequestURI", "/iaas/DissociateEipFromClusterNode");
 
         input.setAction("DissociateEipFromClusterNode");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2545,7 +2558,7 @@ public class ClusterService {
         context.put("APIName", "DissociateEIPFromClusterNode");
         context.put("ServiceName", "DissociateEipFromClusterNode");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DissociateEipFromClusterNode");
+        context.put("RequestURI", "/iaas/DissociateEipFromClusterNode");
 
         input.setAction("DissociateEIPFromClusterNode");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2565,12 +2578,12 @@ public class ClusterService {
         // Required
         private List<String> eIPs;
 
-        @ParamAnnotation(paramType = "query", paramName = "eips")
+        @JsonProperty(value = "eips")
         public void setEIPs(List<String> eIPs) {
             this.eIPs = eIPs;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "eips")
+        @JsonProperty(value = "eips")
         public List<String> getEIPs() {
             return this.eIPs;
         }
@@ -2580,39 +2593,40 @@ public class ClusterService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class DissociateEIPFromClusterNodeOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -2636,7 +2650,7 @@ public class ClusterService {
         context.put("APIName", "ModifyClusterAttributes");
         context.put("ServiceName", "ModifyClusterAttributes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ModifyClusterAttributes");
+        context.put("RequestURI", "/iaas/ModifyClusterAttributes");
 
         input.setAction("ModifyClusterAttributes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2670,7 +2684,7 @@ public class ClusterService {
         context.put("APIName", "ModifyClusterAttributes");
         context.put("ServiceName", "ModifyClusterAttributes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ModifyClusterAttributes");
+        context.put("RequestURI", "/iaas/ModifyClusterAttributes");
 
         input.setAction("ModifyClusterAttributes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2689,12 +2703,12 @@ public class ClusterService {
     public static class ModifyClusterAttributesInput extends IaasParamBody {
         private Integer autoBackupTime;
 
-        @ParamAnnotation(paramType = "query", paramName = "auto_backup_time")
+        @JsonProperty(value = "auto_backup_time")
         public void setAutoBackupTime(Integer autoBackupTime) {
             this.autoBackupTime = autoBackupTime;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "auto_backup_time")
+        @JsonProperty(value = "auto_backup_time")
         public Integer getAutoBackupTime() {
             return this.autoBackupTime;
         }
@@ -2702,36 +2716,36 @@ public class ClusterService {
         // Required
         private String cluster;
 
-        @ParamAnnotation(paramType = "query", paramName = "cluster")
+        @JsonProperty(value = "cluster")
         public void setCluster(String cluster) {
             this.cluster = cluster;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cluster")
+        @JsonProperty(value = "cluster")
         public String getCluster() {
             return this.cluster;
         }
 
         private String description;
 
-        @ParamAnnotation(paramType = "query", paramName = "description")
+        @JsonProperty(value = "description")
         public void setDescription(String description) {
             this.description = description;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "description")
+        @JsonProperty(value = "description")
         public String getDescription() {
             return this.description;
         }
 
         private String name;
 
-        @ParamAnnotation(paramType = "query", paramName = "name")
+        @JsonProperty(value = "name")
         public void setName(String name) {
             this.name = name;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "name")
+        @JsonProperty(value = "name")
         public String getName() {
             return this.name;
         }
@@ -2744,27 +2758,28 @@ public class ClusterService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class ModifyClusterAttributesOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -2788,7 +2803,7 @@ public class ClusterService {
         context.put("APIName", "ModifyClusterNodeAttributes");
         context.put("ServiceName", "ModifyClusterNodeAttributes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ModifyClusterNodeAttributes");
+        context.put("RequestURI", "/iaas/ModifyClusterNodeAttributes");
 
         input.setAction("ModifyClusterNodeAttributes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2822,7 +2837,7 @@ public class ClusterService {
         context.put("APIName", "ModifyClusterNodeAttributes");
         context.put("ServiceName", "ModifyClusterNodeAttributes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ModifyClusterNodeAttributes");
+        context.put("RequestURI", "/iaas/ModifyClusterNodeAttributes");
 
         input.setAction("ModifyClusterNodeAttributes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2842,24 +2857,24 @@ public class ClusterService {
         // Required
         private String clusterNode;
 
-        @ParamAnnotation(paramType = "query", paramName = "cluster_node")
+        @JsonProperty(value = "cluster_node")
         public void setClusterNode(String clusterNode) {
             this.clusterNode = clusterNode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cluster_node")
+        @JsonProperty(value = "cluster_node")
         public String getClusterNode() {
             return this.clusterNode;
         }
 
         private String name;
 
-        @ParamAnnotation(paramType = "query", paramName = "name")
+        @JsonProperty(value = "name")
         public void setName(String name) {
             this.name = name;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "name")
+        @JsonProperty(value = "name")
         public String getName() {
             return this.name;
         }
@@ -2872,27 +2887,28 @@ public class ClusterService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class ModifyClusterNodeAttributesOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -2916,7 +2932,7 @@ public class ClusterService {
         context.put("APIName", "RecoverClusters");
         context.put("ServiceName", "Lease");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/RecoverClusters");
+        context.put("RequestURI", "/iaas/RecoverClusters");
 
         input.setAction("RecoverClusters");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2950,7 +2966,7 @@ public class ClusterService {
         context.put("APIName", "RecoverClusters");
         context.put("ServiceName", "Lease");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/RecoverClusters");
+        context.put("RequestURI", "/iaas/RecoverClusters");
 
         input.setAction("RecoverClusters");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -2969,12 +2985,12 @@ public class ClusterService {
     public static class RecoverClustersInput extends IaasParamBody {
         private List<String> resources;
 
-        @ParamAnnotation(paramType = "query", paramName = "resources")
+        @JsonProperty(value = "resources")
         public void setResources(List<String> resources) {
             this.resources = resources;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "resources")
+        @JsonProperty(value = "resources")
         public List<String> getResources() {
             return this.resources;
         }
@@ -2984,27 +3000,28 @@ public class ClusterService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class RecoverClustersOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -3028,7 +3045,7 @@ public class ClusterService {
         context.put("APIName", "ResizeCluster");
         context.put("ServiceName", "ResizeCluster");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ResizeCluster");
+        context.put("RequestURI", "/iaas/ResizeCluster");
 
         input.setAction("ResizeCluster");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -3062,7 +3079,7 @@ public class ClusterService {
         context.put("APIName", "ResizeCluster");
         context.put("ServiceName", "ResizeCluster");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ResizeCluster");
+        context.put("RequestURI", "/iaas/ResizeCluster");
 
         input.setAction("ResizeCluster");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -3082,72 +3099,72 @@ public class ClusterService {
         // Required
         private String cluster;
 
-        @ParamAnnotation(paramType = "query", paramName = "cluster")
+        @JsonProperty(value = "cluster")
         public void setCluster(String cluster) {
             this.cluster = cluster;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cluster")
+        @JsonProperty(value = "cluster")
         public String getCluster() {
             return this.cluster;
         }
 
         private Integer cPU;
 
-        @ParamAnnotation(paramType = "query", paramName = "cpu")
+        @JsonProperty(value = "cpu")
         public void setCPU(Integer cPU) {
             this.cPU = cPU;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cpu")
+        @JsonProperty(value = "cpu")
         public Integer getCPU() {
             return this.cPU;
         }
 
         private Integer gpu;
 
-        @ParamAnnotation(paramType = "query", paramName = "gpu")
+        @JsonProperty(value = "gpu")
         public void setGpu(Integer gpu) {
             this.gpu = gpu;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "gpu")
+        @JsonProperty(value = "gpu")
         public Integer getGpu() {
             return this.gpu;
         }
 
         private Integer memory;
 
-        @ParamAnnotation(paramType = "query", paramName = "memory")
+        @JsonProperty(value = "memory")
         public void setMemory(Integer memory) {
             this.memory = memory;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "memory")
+        @JsonProperty(value = "memory")
         public Integer getMemory() {
             return this.memory;
         }
 
         private String nodeRole;
 
-        @ParamAnnotation(paramType = "query", paramName = "node_role")
+        @JsonProperty(value = "node_role")
         public void setNodeRole(String nodeRole) {
             this.nodeRole = nodeRole;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "node_role")
+        @JsonProperty(value = "node_role")
         public String getNodeRole() {
             return this.nodeRole;
         }
 
         private Integer storageSize;
 
-        @ParamAnnotation(paramType = "query", paramName = "storage_size")
+        @JsonProperty(value = "storage_size")
         public void setStorageSize(Integer storageSize) {
             this.storageSize = storageSize;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "storage_size")
+        @JsonProperty(value = "storage_size")
         public Integer getStorageSize() {
             return this.storageSize;
         }
@@ -3160,111 +3177,112 @@ public class ClusterService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class ResizeClusterOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String clusterID;
 
-        @ParamAnnotation(paramType = "query", paramName = "cluster_id")
+        @JsonProperty(value = "cluster_id")
         public void setClusterID(String clusterID) {
             this.clusterID = clusterID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cluster_id")
+        @JsonProperty(value = "cluster_id")
         public String getClusterID() {
             return this.clusterID;
         }
 
         private Integer cPU;
 
-        @ParamAnnotation(paramType = "query", paramName = "cpu")
+        @JsonProperty(value = "cpu")
         public void setCPU(Integer cPU) {
             this.cPU = cPU;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cpu")
+        @JsonProperty(value = "cpu")
         public Integer getCPU() {
             return this.cPU;
         }
 
         private Integer gpu;
 
-        @ParamAnnotation(paramType = "query", paramName = "gpu")
+        @JsonProperty(value = "gpu")
         public void setGpu(Integer gpu) {
             this.gpu = gpu;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "gpu")
+        @JsonProperty(value = "gpu")
         public Integer getGpu() {
             return this.gpu;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private Integer memory;
 
-        @ParamAnnotation(paramType = "query", paramName = "memory")
+        @JsonProperty(value = "memory")
         public void setMemory(Integer memory) {
             this.memory = memory;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "memory")
+        @JsonProperty(value = "memory")
         public Integer getMemory() {
             return this.memory;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
 
         private String role;
 
-        @ParamAnnotation(paramType = "query", paramName = "role")
+        @JsonProperty(value = "role")
         public void setRole(String role) {
             this.role = role;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "role")
+        @JsonProperty(value = "role")
         public String getRole() {
             return this.role;
         }
 
         private Integer storageSize;
 
-        @ParamAnnotation(paramType = "query", paramName = "storage_size")
+        @JsonProperty(value = "storage_size")
         public void setStorageSize(Integer storageSize) {
             this.storageSize = storageSize;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "storage_size")
+        @JsonProperty(value = "storage_size")
         public Integer getStorageSize() {
             return this.storageSize;
         }
@@ -3288,7 +3306,7 @@ public class ClusterService {
         context.put("APIName", "RestartClusterService");
         context.put("ServiceName", "RestartClusterService");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/RestartClusterService");
+        context.put("RequestURI", "/iaas/RestartClusterService");
 
         input.setAction("RestartClusterService");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -3322,7 +3340,7 @@ public class ClusterService {
         context.put("APIName", "RestartClusterService");
         context.put("ServiceName", "RestartClusterService");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/RestartClusterService");
+        context.put("RequestURI", "/iaas/RestartClusterService");
 
         input.setAction("RestartClusterService");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -3341,24 +3359,24 @@ public class ClusterService {
     public static class RestartClusterServiceInput extends IaasParamBody {
         private String cluster;
 
-        @ParamAnnotation(paramType = "query", paramName = "cluster")
+        @JsonProperty(value = "cluster")
         public void setCluster(String cluster) {
             this.cluster = cluster;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cluster")
+        @JsonProperty(value = "cluster")
         public String getCluster() {
             return this.cluster;
         }
 
         private String role;
 
-        @ParamAnnotation(paramType = "query", paramName = "role")
+        @JsonProperty(value = "role")
         public void setRole(String role) {
             this.role = role;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "role")
+        @JsonProperty(value = "role")
         public String getRole() {
             return this.role;
         }
@@ -3368,63 +3386,64 @@ public class ClusterService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class RestartClusterServiceOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String clusterID;
 
-        @ParamAnnotation(paramType = "query", paramName = "cluster_id")
+        @JsonProperty(value = "cluster_id")
         public void setClusterID(String clusterID) {
             this.clusterID = clusterID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cluster_id")
+        @JsonProperty(value = "cluster_id")
         public String getClusterID() {
             return this.clusterID;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
 
         private String role;
 
-        @ParamAnnotation(paramType = "query", paramName = "role")
+        @JsonProperty(value = "role")
         public void setRole(String role) {
             this.role = role;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "role")
+        @JsonProperty(value = "role")
         public String getRole() {
             return this.role;
         }
@@ -3448,7 +3467,7 @@ public class ClusterService {
         context.put("APIName", "RestoreClusterFromSnapshot");
         context.put("ServiceName", "RestoreClusterFromSnapshot");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/RestoreClusterFromSnapshot");
+        context.put("RequestURI", "/iaas/RestoreClusterFromSnapshot");
 
         input.setAction("RestoreClusterFromSnapshot");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -3482,7 +3501,7 @@ public class ClusterService {
         context.put("APIName", "RestoreClusterFromSnapshot");
         context.put("ServiceName", "RestoreClusterFromSnapshot");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/RestoreClusterFromSnapshot");
+        context.put("RequestURI", "/iaas/RestoreClusterFromSnapshot");
 
         input.setAction("RestoreClusterFromSnapshot");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -3502,24 +3521,24 @@ public class ClusterService {
         // Required
         private String cluster;
 
-        @ParamAnnotation(paramType = "query", paramName = "cluster")
+        @JsonProperty(value = "cluster")
         public void setCluster(String cluster) {
             this.cluster = cluster;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cluster")
+        @JsonProperty(value = "cluster")
         public String getCluster() {
             return this.cluster;
         }
 
         private String serviceParams;
 
-        @ParamAnnotation(paramType = "query", paramName = "service_params")
+        @JsonProperty(value = "service_params")
         public void setServiceParams(String serviceParams) {
             this.serviceParams = serviceParams;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "service_params")
+        @JsonProperty(value = "service_params")
         public String getServiceParams() {
             return this.serviceParams;
         }
@@ -3527,12 +3546,12 @@ public class ClusterService {
         // Required
         private String snapshot;
 
-        @ParamAnnotation(paramType = "query", paramName = "snapshot")
+        @JsonProperty(value = "snapshot")
         public void setSnapshot(String snapshot) {
             this.snapshot = snapshot;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "snapshot")
+        @JsonProperty(value = "snapshot")
         public String getSnapshot() {
             return this.snapshot;
         }
@@ -3548,75 +3567,76 @@ public class ClusterService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class RestoreClusterFromSnapshotOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String clusterID;
 
-        @ParamAnnotation(paramType = "query", paramName = "cluster_id")
+        @JsonProperty(value = "cluster_id")
         public void setClusterID(String clusterID) {
             this.clusterID = clusterID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cluster_id")
+        @JsonProperty(value = "cluster_id")
         public String getClusterID() {
             return this.clusterID;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
 
         private String serviceParams;
 
-        @ParamAnnotation(paramType = "query", paramName = "service_params")
+        @JsonProperty(value = "service_params")
         public void setServiceParams(String serviceParams) {
             this.serviceParams = serviceParams;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "service_params")
+        @JsonProperty(value = "service_params")
         public String getServiceParams() {
             return this.serviceParams;
         }
 
         private String snapshotID;
 
-        @ParamAnnotation(paramType = "query", paramName = "snapshot_id")
+        @JsonProperty(value = "snapshot_id")
         public void setSnapshotID(String snapshotID) {
             this.snapshotID = snapshotID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "snapshot_id")
+        @JsonProperty(value = "snapshot_id")
         public String getSnapshotID() {
             return this.snapshotID;
         }
@@ -3640,7 +3660,7 @@ public class ClusterService {
         context.put("APIName", "RunClusterCustomService");
         context.put("ServiceName", "RunClusterCustomService");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/RunClusterCustomService");
+        context.put("RequestURI", "/iaas/RunClusterCustomService");
 
         input.setAction("RunClusterCustomService");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -3674,7 +3694,7 @@ public class ClusterService {
         context.put("APIName", "RunClusterCustomService");
         context.put("ServiceName", "RunClusterCustomService");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/RunClusterCustomService");
+        context.put("RequestURI", "/iaas/RunClusterCustomService");
 
         input.setAction("RunClusterCustomService");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -3694,24 +3714,24 @@ public class ClusterService {
         // Required
         private String cluster;
 
-        @ParamAnnotation(paramType = "query", paramName = "cluster")
+        @JsonProperty(value = "cluster")
         public void setCluster(String cluster) {
             this.cluster = cluster;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cluster")
+        @JsonProperty(value = "cluster")
         public String getCluster() {
             return this.cluster;
         }
 
         private String role;
 
-        @ParamAnnotation(paramType = "query", paramName = "role")
+        @JsonProperty(value = "role")
         public void setRole(String role) {
             this.role = role;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "role")
+        @JsonProperty(value = "role")
         public String getRole() {
             return this.role;
         }
@@ -3719,24 +3739,24 @@ public class ClusterService {
         // Required
         private String service;
 
-        @ParamAnnotation(paramType = "query", paramName = "service")
+        @JsonProperty(value = "service")
         public void setService(String service) {
             this.service = service;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "service")
+        @JsonProperty(value = "service")
         public String getService() {
             return this.service;
         }
 
         private String serviceParams;
 
-        @ParamAnnotation(paramType = "query", paramName = "service_params")
+        @JsonProperty(value = "service_params")
         public void setServiceParams(String serviceParams) {
             this.serviceParams = serviceParams;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "service_params")
+        @JsonProperty(value = "service_params")
         public String getServiceParams() {
             return this.serviceParams;
         }
@@ -3752,75 +3772,76 @@ public class ClusterService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class RunClusterCustomServiceOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String clusterID;
 
-        @ParamAnnotation(paramType = "query", paramName = "cluster_id")
+        @JsonProperty(value = "cluster_id")
         public void setClusterID(String clusterID) {
             this.clusterID = clusterID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cluster_id")
+        @JsonProperty(value = "cluster_id")
         public String getClusterID() {
             return this.clusterID;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
 
         private String role;
 
-        @ParamAnnotation(paramType = "query", paramName = "role")
+        @JsonProperty(value = "role")
         public void setRole(String role) {
             this.role = role;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "role")
+        @JsonProperty(value = "role")
         public String getRole() {
             return this.role;
         }
 
         private String service;
 
-        @ParamAnnotation(paramType = "query", paramName = "service")
+        @JsonProperty(value = "service")
         public void setService(String service) {
             this.service = service;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "service")
+        @JsonProperty(value = "service")
         public String getService() {
             return this.service;
         }
@@ -3844,7 +3865,7 @@ public class ClusterService {
         context.put("APIName", "StartClusters");
         context.put("ServiceName", "StartClusters");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/StartClusters");
+        context.put("RequestURI", "/iaas/StartClusters");
 
         input.setAction("StartClusters");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -3878,7 +3899,7 @@ public class ClusterService {
         context.put("APIName", "StartClusters");
         context.put("ServiceName", "StartClusters");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/StartClusters");
+        context.put("RequestURI", "/iaas/StartClusters");
 
         input.setAction("StartClusters");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -3898,12 +3919,12 @@ public class ClusterService {
         // Required
         private List<String> clusters;
 
-        @ParamAnnotation(paramType = "query", paramName = "clusters")
+        @JsonProperty(value = "clusters")
         public void setClusters(List<String> clusters) {
             this.clusters = clusters;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "clusters")
+        @JsonProperty(value = "clusters")
         public List<String> getClusters() {
             return this.clusters;
         }
@@ -3913,39 +3934,40 @@ public class ClusterService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class StartClustersOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private Map jobIDs;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_ids")
+        @JsonProperty(value = "job_ids")
         public void setJobIDs(Map jobIDs) {
             this.jobIDs = jobIDs;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_ids")
+        @JsonProperty(value = "job_ids")
         public Map getJobIDs() {
             return this.jobIDs;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -3969,7 +3991,7 @@ public class ClusterService {
         context.put("APIName", "StopClusters");
         context.put("ServiceName", "StopClusters");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/StopClusters");
+        context.put("RequestURI", "/iaas/StopClusters");
 
         input.setAction("StopClusters");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -4003,7 +4025,7 @@ public class ClusterService {
         context.put("APIName", "StopClusters");
         context.put("ServiceName", "StopClusters");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/StopClusters");
+        context.put("RequestURI", "/iaas/StopClusters");
 
         input.setAction("StopClusters");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -4023,24 +4045,24 @@ public class ClusterService {
         // Required
         private List<String> clusters;
 
-        @ParamAnnotation(paramType = "query", paramName = "clusters")
+        @JsonProperty(value = "clusters")
         public void setClusters(List<String> clusters) {
             this.clusters = clusters;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "clusters")
+        @JsonProperty(value = "clusters")
         public List<String> getClusters() {
             return this.clusters;
         }
 
         private Integer force;
 
-        @ParamAnnotation(paramType = "query", paramName = "force")
+        @JsonProperty(value = "force")
         public void setForce(Integer force) {
             this.force = force;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "force")
+        @JsonProperty(value = "force")
         public Integer getForce() {
             return this.force;
         }
@@ -4050,39 +4072,40 @@ public class ClusterService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class StopClustersOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private Map jobIDs;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_ids")
+        @JsonProperty(value = "job_ids")
         public void setJobIDs(Map jobIDs) {
             this.jobIDs = jobIDs;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_ids")
+        @JsonProperty(value = "job_ids")
         public Map getJobIDs() {
             return this.jobIDs;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -4106,7 +4129,7 @@ public class ClusterService {
         context.put("APIName", "UpdateClusterEnvironment");
         context.put("ServiceName", "UpdateClusterEnvironment");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/UpdateClusterEnvironment");
+        context.put("RequestURI", "/iaas/UpdateClusterEnvironment");
 
         input.setAction("UpdateClusterEnvironment");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -4140,7 +4163,7 @@ public class ClusterService {
         context.put("APIName", "UpdateClusterEnvironment");
         context.put("ServiceName", "UpdateClusterEnvironment");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/UpdateClusterEnvironment");
+        context.put("RequestURI", "/iaas/UpdateClusterEnvironment");
 
         input.setAction("UpdateClusterEnvironment");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -4159,36 +4182,36 @@ public class ClusterService {
     public static class UpdateClusterEnvironmentInput extends IaasParamBody {
         private String cluster;
 
-        @ParamAnnotation(paramType = "query", paramName = "cluster")
+        @JsonProperty(value = "cluster")
         public void setCluster(String cluster) {
             this.cluster = cluster;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cluster")
+        @JsonProperty(value = "cluster")
         public String getCluster() {
             return this.cluster;
         }
 
         private Model env;
 
-        @ParamAnnotation(paramType = "query", paramName = "env")
+        @JsonProperty(value = "env")
         public void setEnv(Model env) {
             this.env = env;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "env")
+        @JsonProperty(value = "env")
         public Model getEnv() {
             return this.env;
         }
 
         private List<String> roles;
 
-        @ParamAnnotation(paramType = "query", paramName = "roles")
+        @JsonProperty(value = "roles")
         public void setRoles(List<String> roles) {
             this.roles = roles;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "roles")
+        @JsonProperty(value = "roles")
         public List<String> getRoles() {
             return this.roles;
         }
@@ -4198,27 +4221,28 @@ public class ClusterService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class UpdateClusterEnvironmentOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -4242,7 +4266,7 @@ public class ClusterService {
         context.put("APIName", "UpgradeClusters");
         context.put("ServiceName", "UpgradeClusters");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/UpgradeClusters");
+        context.put("RequestURI", "/iaas/UpgradeClusters");
 
         input.setAction("UpgradeClusters");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -4276,7 +4300,7 @@ public class ClusterService {
         context.put("APIName", "UpgradeClusters");
         context.put("ServiceName", "UpgradeClusters");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/UpgradeClusters");
+        context.put("RequestURI", "/iaas/UpgradeClusters");
 
         input.setAction("UpgradeClusters");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -4295,36 +4319,36 @@ public class ClusterService {
     public static class UpgradeClustersInput extends IaasParamBody {
         private String appVersion;
 
-        @ParamAnnotation(paramType = "query", paramName = "app_version")
+        @JsonProperty(value = "app_version")
         public void setAppVersion(String appVersion) {
             this.appVersion = appVersion;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "app_version")
+        @JsonProperty(value = "app_version")
         public String getAppVersion() {
             return this.appVersion;
         }
 
         private List<String> clusters;
 
-        @ParamAnnotation(paramType = "query", paramName = "clusters")
+        @JsonProperty(value = "clusters")
         public void setClusters(List<String> clusters) {
             this.clusters = clusters;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "clusters")
+        @JsonProperty(value = "clusters")
         public List<String> getClusters() {
             return this.clusters;
         }
 
         private String serviceParams;
 
-        @ParamAnnotation(paramType = "query", paramName = "service_params")
+        @JsonProperty(value = "service_params")
         public void setServiceParams(String serviceParams) {
             this.serviceParams = serviceParams;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "service_params")
+        @JsonProperty(value = "service_params")
         public String getServiceParams() {
             return this.serviceParams;
         }
@@ -4334,39 +4358,40 @@ public class ClusterService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class UpgradeClustersOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private List<String> clusterID;
 
-        @ParamAnnotation(paramType = "query", paramName = "cluster_id")
+        @JsonProperty(value = "cluster_id")
         public void setClusterID(List<String> clusterID) {
             this.clusterID = clusterID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "cluster_id")
+        @JsonProperty(value = "cluster_id")
         public List<String> getClusterID() {
             return this.clusterID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }

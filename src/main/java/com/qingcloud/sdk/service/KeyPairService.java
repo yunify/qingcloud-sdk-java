@@ -16,6 +16,7 @@
 
 package com.qingcloud.sdk.service;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.qingcloud.sdk.config.EnvContext;
 import com.qingcloud.sdk.constants.QCConstant;
 import com.qingcloud.sdk.model.OutputModel;
@@ -24,8 +25,8 @@ import com.qingcloud.sdk.request.ResourceRequestFactory;
 import com.qingcloud.sdk.exception.QCException;
 import com.qingcloud.sdk.model.IaasParamBody;
 import com.qingcloud.sdk.service.Types.*;
-import com.qingcloud.sdk.annotation.ParamAnnotation;
 import com.qingcloud.sdk.utils.QCStringUtil;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.HashMap;
 import java.util.List;
@@ -63,7 +64,7 @@ public class KeyPairService {
         context.put("APIName", "AttachKeyPairs");
         context.put("ServiceName", "AttachKeyPairs");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/AttachKeyPairs");
+        context.put("RequestURI", "/iaas/AttachKeyPairs");
 
         input.setAction("AttachKeyPairs");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -97,7 +98,7 @@ public class KeyPairService {
         context.put("APIName", "AttachKeyPairs");
         context.put("ServiceName", "AttachKeyPairs");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/AttachKeyPairs");
+        context.put("RequestURI", "/iaas/AttachKeyPairs");
 
         input.setAction("AttachKeyPairs");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -117,12 +118,12 @@ public class KeyPairService {
         // Required
         private List<String> instances;
 
-        @ParamAnnotation(paramType = "query", paramName = "instances")
+        @JsonProperty(value = "instances")
         public void setInstances(List<String> instances) {
             this.instances = instances;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "instances")
+        @JsonProperty(value = "instances")
         public List<String> getInstances() {
             return this.instances;
         }
@@ -130,12 +131,12 @@ public class KeyPairService {
         // Required
         private List<String> keyPairs;
 
-        @ParamAnnotation(paramType = "query", paramName = "keypairs")
+        @JsonProperty(value = "keypairs")
         public void setKeyPairs(List<String> keyPairs) {
             this.keyPairs = keyPairs;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "keypairs")
+        @JsonProperty(value = "keypairs")
         public List<String> getKeyPairs() {
             return this.keyPairs;
         }
@@ -145,39 +146,40 @@ public class KeyPairService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class AttachKeyPairsOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -201,7 +203,7 @@ public class KeyPairService {
         context.put("APIName", "CreateKeyPair");
         context.put("ServiceName", "CreateKeyPair");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/CreateKeyPair");
+        context.put("RequestURI", "/iaas/CreateKeyPair");
 
         input.setAction("CreateKeyPair");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -235,7 +237,7 @@ public class KeyPairService {
         context.put("APIName", "CreateKeyPair");
         context.put("ServiceName", "CreateKeyPair");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/CreateKeyPair");
+        context.put("RequestURI", "/iaas/CreateKeyPair");
 
         input.setAction("CreateKeyPair");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -255,24 +257,24 @@ public class KeyPairService {
     	// EncryptMethod's available values: ssh-rsa, ssh-dss
         private String encryptMethod;
 
-        @ParamAnnotation(paramType = "query", paramName = "encrypt_method")
+        @JsonProperty(value = "encrypt_method")
         public void setEncryptMethod(String encryptMethod) {
             this.encryptMethod = encryptMethod;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "encrypt_method")
+        @JsonProperty(value = "encrypt_method")
         public String getEncryptMethod() {
             return this.encryptMethod;
         }
 
         private String keyPairName;
 
-        @ParamAnnotation(paramType = "query", paramName = "keypair_name")
+        @JsonProperty(value = "keypair_name")
         public void setKeyPairName(String keyPairName) {
             this.keyPairName = keyPairName;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "keypair_name")
+        @JsonProperty(value = "keypair_name")
         public String getKeyPairName() {
             return this.keyPairName;
         }
@@ -280,24 +282,24 @@ public class KeyPairService {
     	// Mode's available values: system, user
         private String mode;
 
-        @ParamAnnotation(paramType = "query", paramName = "mode")
+        @JsonProperty(value = "mode")
         public void setMode(String mode) {
             this.mode = mode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "mode")
+        @JsonProperty(value = "mode")
         public String getMode() {
             return this.mode;
         }
 
         private String publicKey;
 
-        @ParamAnnotation(paramType = "query", paramName = "public_key")
+        @JsonProperty(value = "public_key")
         public void setPublicKey(String publicKey) {
             this.publicKey = publicKey;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "public_key")
+        @JsonProperty(value = "public_key")
         public String getPublicKey() {
             return this.publicKey;
         }
@@ -343,51 +345,52 @@ public class KeyPairService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class CreateKeyPairOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String keyPairID;
 
-        @ParamAnnotation(paramType = "query", paramName = "keypair_id")
+        @JsonProperty(value = "keypair_id")
         public void setKeyPairID(String keyPairID) {
             this.keyPairID = keyPairID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "keypair_id")
+        @JsonProperty(value = "keypair_id")
         public String getKeyPairID() {
             return this.keyPairID;
         }
 
         private String privateKey;
 
-        @ParamAnnotation(paramType = "query", paramName = "private_key")
+        @JsonProperty(value = "private_key")
         public void setPrivateKey(String privateKey) {
             this.privateKey = privateKey;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "private_key")
+        @JsonProperty(value = "private_key")
         public String getPrivateKey() {
             return this.privateKey;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -411,7 +414,7 @@ public class KeyPairService {
         context.put("APIName", "DeleteKeyPairs");
         context.put("ServiceName", "DeleteKeyPairs");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DeleteKeyPairs");
+        context.put("RequestURI", "/iaas/DeleteKeyPairs");
 
         input.setAction("DeleteKeyPairs");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -445,7 +448,7 @@ public class KeyPairService {
         context.put("APIName", "DeleteKeyPairs");
         context.put("ServiceName", "DeleteKeyPairs");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DeleteKeyPairs");
+        context.put("RequestURI", "/iaas/DeleteKeyPairs");
 
         input.setAction("DeleteKeyPairs");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -465,12 +468,12 @@ public class KeyPairService {
         // Required
         private List<String> keyPairs;
 
-        @ParamAnnotation(paramType = "query", paramName = "keypairs")
+        @JsonProperty(value = "keypairs")
         public void setKeyPairs(List<String> keyPairs) {
             this.keyPairs = keyPairs;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "keypairs")
+        @JsonProperty(value = "keypairs")
         public List<String> getKeyPairs() {
             return this.keyPairs;
         }
@@ -480,39 +483,40 @@ public class KeyPairService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class DeleteKeyPairsOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private List<String> keyPairs;
 
-        @ParamAnnotation(paramType = "query", paramName = "keypairs")
+        @JsonProperty(value = "keypairs")
         public void setKeyPairs(List<String> keyPairs) {
             this.keyPairs = keyPairs;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "keypairs")
+        @JsonProperty(value = "keypairs")
         public List<String> getKeyPairs() {
             return this.keyPairs;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -536,7 +540,7 @@ public class KeyPairService {
         context.put("APIName", "DescribeKeyPairs");
         context.put("ServiceName", "DescribeKeyPairs");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeKeyPairs");
+        context.put("RequestURI", "/iaas/DescribeKeyPairs");
 
         input.setAction("DescribeKeyPairs");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -570,7 +574,7 @@ public class KeyPairService {
         context.put("APIName", "DescribeKeyPairs");
         context.put("ServiceName", "DescribeKeyPairs");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeKeyPairs");
+        context.put("RequestURI", "/iaas/DescribeKeyPairs");
 
         input.setAction("DescribeKeyPairs");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -590,96 +594,96 @@ public class KeyPairService {
     	// EncryptMethod's available values: ssh-rsa, ssh-dss
         private String encryptMethod;
 
-        @ParamAnnotation(paramType = "query", paramName = "encrypt_method")
+        @JsonProperty(value = "encrypt_method")
         public void setEncryptMethod(String encryptMethod) {
             this.encryptMethod = encryptMethod;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "encrypt_method")
+        @JsonProperty(value = "encrypt_method")
         public String getEncryptMethod() {
             return this.encryptMethod;
         }
 
         private String instanceID;
 
-        @ParamAnnotation(paramType = "query", paramName = "instance_id")
+        @JsonProperty(value = "instance_id")
         public void setInstanceID(String instanceID) {
             this.instanceID = instanceID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "instance_id")
+        @JsonProperty(value = "instance_id")
         public String getInstanceID() {
             return this.instanceID;
         }
 
         private List<String> keyPairs;
 
-        @ParamAnnotation(paramType = "query", paramName = "keypairs")
+        @JsonProperty(value = "keypairs")
         public void setKeyPairs(List<String> keyPairs) {
             this.keyPairs = keyPairs;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "keypairs")
+        @JsonProperty(value = "keypairs")
         public List<String> getKeyPairs() {
             return this.keyPairs;
         }
 
         private Integer limit;
 
-        @ParamAnnotation(paramType = "query", paramName = "limit")
+        @JsonProperty(value = "limit")
         public void setLimit(Integer limit) {
             this.limit = limit;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "limit")
+        @JsonProperty(value = "limit")
         public Integer getLimit() {
             return this.limit;
         }
 
         private Integer offset;
 
-        @ParamAnnotation(paramType = "query", paramName = "offset")
+        @JsonProperty(value = "offset")
         public void setOffset(Integer offset) {
             this.offset = offset;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "offset")
+        @JsonProperty(value = "offset")
         public Integer getOffset() {
             return this.offset;
         }
 
         private String searchWord;
 
-        @ParamAnnotation(paramType = "query", paramName = "search_word")
+        @JsonProperty(value = "search_word")
         public void setSearchWord(String searchWord) {
             this.searchWord = searchWord;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "search_word")
+        @JsonProperty(value = "search_word")
         public String getSearchWord() {
             return this.searchWord;
         }
 
         private List<String> tags;
 
-        @ParamAnnotation(paramType = "query", paramName = "tags")
+        @JsonProperty(value = "tags")
         public void setTags(List<String> tags) {
             this.tags = tags;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "tags")
+        @JsonProperty(value = "tags")
         public List<String> getTags() {
             return this.tags;
         }
 
         private Integer verbose;
 
-        @ParamAnnotation(paramType = "query", paramName = "verbose")
+        @JsonProperty(value = "verbose")
         public void setVerbose(Integer verbose) {
             this.verbose = verbose;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "verbose")
+        @JsonProperty(value = "verbose")
         public Integer getVerbose() {
             return this.verbose;
         }
@@ -707,51 +711,52 @@ public class KeyPairService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class DescribeKeyPairsOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private List<KeyPairModel> keyPairSet;
 
-        @ParamAnnotation(paramType = "query", paramName = "keypair_set")
+        @JsonProperty(value = "keypair_set")
         public void setKeyPairSet(List<KeyPairModel> keyPairSet) {
             this.keyPairSet = keyPairSet;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "keypair_set")
+        @JsonProperty(value = "keypair_set")
         public List<KeyPairModel> getKeyPairSet() {
             return this.keyPairSet;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
 
         private Integer totalCount;
 
-        @ParamAnnotation(paramType = "query", paramName = "total_count")
+        @JsonProperty(value = "total_count")
         public void setTotalCount(Integer totalCount) {
             this.totalCount = totalCount;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "total_count")
+        @JsonProperty(value = "total_count")
         public Integer getTotalCount() {
             return this.totalCount;
         }
@@ -775,7 +780,7 @@ public class KeyPairService {
         context.put("APIName", "DetachKeyPairs");
         context.put("ServiceName", "DetachKeyPairs");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DetachKeyPairs");
+        context.put("RequestURI", "/iaas/DetachKeyPairs");
 
         input.setAction("DetachKeyPairs");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -809,7 +814,7 @@ public class KeyPairService {
         context.put("APIName", "DetachKeyPairs");
         context.put("ServiceName", "DetachKeyPairs");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DetachKeyPairs");
+        context.put("RequestURI", "/iaas/DetachKeyPairs");
 
         input.setAction("DetachKeyPairs");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -829,12 +834,12 @@ public class KeyPairService {
         // Required
         private List<String> instances;
 
-        @ParamAnnotation(paramType = "query", paramName = "instances")
+        @JsonProperty(value = "instances")
         public void setInstances(List<String> instances) {
             this.instances = instances;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "instances")
+        @JsonProperty(value = "instances")
         public List<String> getInstances() {
             return this.instances;
         }
@@ -842,12 +847,12 @@ public class KeyPairService {
         // Required
         private List<String> keyPairs;
 
-        @ParamAnnotation(paramType = "query", paramName = "keypairs")
+        @JsonProperty(value = "keypairs")
         public void setKeyPairs(List<String> keyPairs) {
             this.keyPairs = keyPairs;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "keypairs")
+        @JsonProperty(value = "keypairs")
         public List<String> getKeyPairs() {
             return this.keyPairs;
         }
@@ -857,39 +862,40 @@ public class KeyPairService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class DetachKeyPairsOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -913,7 +919,7 @@ public class KeyPairService {
         context.put("APIName", "ModifyKeyPairAttributes");
         context.put("ServiceName", "ModifyKeyPairAttributes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ModifyKeyPairAttributes");
+        context.put("RequestURI", "/iaas/ModifyKeyPairAttributes");
 
         input.setAction("ModifyKeyPairAttributes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -947,7 +953,7 @@ public class KeyPairService {
         context.put("APIName", "ModifyKeyPairAttributes");
         context.put("ServiceName", "ModifyKeyPairAttributes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ModifyKeyPairAttributes");
+        context.put("RequestURI", "/iaas/ModifyKeyPairAttributes");
 
         input.setAction("ModifyKeyPairAttributes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -966,12 +972,12 @@ public class KeyPairService {
     public static class ModifyKeyPairAttributesInput extends IaasParamBody {
         private String description;
 
-        @ParamAnnotation(paramType = "query", paramName = "description")
+        @JsonProperty(value = "description")
         public void setDescription(String description) {
             this.description = description;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "description")
+        @JsonProperty(value = "description")
         public String getDescription() {
             return this.description;
         }
@@ -979,24 +985,24 @@ public class KeyPairService {
         // Required
         private String keyPair;
 
-        @ParamAnnotation(paramType = "query", paramName = "keypair")
+        @JsonProperty(value = "keypair")
         public void setKeyPair(String keyPair) {
             this.keyPair = keyPair;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "keypair")
+        @JsonProperty(value = "keypair")
         public String getKeyPair() {
             return this.keyPair;
         }
 
         private String keyPairName;
 
-        @ParamAnnotation(paramType = "query", paramName = "keypair_name")
+        @JsonProperty(value = "keypair_name")
         public void setKeyPairName(String keyPairName) {
             this.keyPairName = keyPairName;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "keypair_name")
+        @JsonProperty(value = "keypair_name")
         public String getKeyPairName() {
             return this.keyPairName;
         }
@@ -1009,27 +1015,28 @@ public class KeyPairService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class ModifyKeyPairAttributesOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }

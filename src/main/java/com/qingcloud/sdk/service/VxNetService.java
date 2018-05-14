@@ -16,6 +16,7 @@
 
 package com.qingcloud.sdk.service;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.qingcloud.sdk.config.EnvContext;
 import com.qingcloud.sdk.constants.QCConstant;
 import com.qingcloud.sdk.model.OutputModel;
@@ -24,8 +25,8 @@ import com.qingcloud.sdk.request.ResourceRequestFactory;
 import com.qingcloud.sdk.exception.QCException;
 import com.qingcloud.sdk.model.IaasParamBody;
 import com.qingcloud.sdk.service.Types.*;
-import com.qingcloud.sdk.annotation.ParamAnnotation;
 import com.qingcloud.sdk.utils.QCStringUtil;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.HashMap;
 import java.util.List;
@@ -63,7 +64,7 @@ public class VxNetService {
         context.put("APIName", "CreateVxnets");
         context.put("ServiceName", "CreateVxnets");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/CreateVxnets");
+        context.put("RequestURI", "/iaas/CreateVxnets");
 
         input.setAction("CreateVxnets");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -97,7 +98,7 @@ public class VxNetService {
         context.put("APIName", "CreateVxNets");
         context.put("ServiceName", "CreateVxnets");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/CreateVxnets");
+        context.put("RequestURI", "/iaas/CreateVxnets");
 
         input.setAction("CreateVxNets");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -116,24 +117,24 @@ public class VxNetService {
     public static class CreateVxNetsInput extends IaasParamBody {
         private Integer count;
 
-        @ParamAnnotation(paramType = "query", paramName = "count")
+        @JsonProperty(value = "count")
         public void setCount(Integer count) {
             this.count = count;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "count")
+        @JsonProperty(value = "count")
         public Integer getCount() {
             return this.count;
         }
 
         private String vxNetName;
 
-        @ParamAnnotation(paramType = "query", paramName = "vxnet_name")
+        @JsonProperty(value = "vxnet_name")
         public void setVxNetName(String vxNetName) {
             this.vxNetName = vxNetName;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "vxnet_name")
+        @JsonProperty(value = "vxnet_name")
         public String getVxNetName() {
             return this.vxNetName;
         }
@@ -142,12 +143,12 @@ public class VxNetService {
         // Required
         private Integer vxNetType;
 
-        @ParamAnnotation(paramType = "query", paramName = "vxnet_type")
+        @JsonProperty(value = "vxnet_type")
         public void setVxNetType(Integer vxNetType) {
             this.vxNetType = vxNetType;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "vxnet_type")
+        @JsonProperty(value = "vxnet_type")
         public Integer getVxNetType() {
             return this.vxNetType;
         }
@@ -175,39 +176,40 @@ public class VxNetService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class CreateVxNetsOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
 
         private List<String> vxNets;
 
-        @ParamAnnotation(paramType = "query", paramName = "vxnets")
+        @JsonProperty(value = "vxnets")
         public void setVxNets(List<String> vxNets) {
             this.vxNets = vxNets;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "vxnets")
+        @JsonProperty(value = "vxnets")
         public List<String> getVxNets() {
             return this.vxNets;
         }
@@ -231,7 +233,7 @@ public class VxNetService {
         context.put("APIName", "DeleteVxnets");
         context.put("ServiceName", "DeleteVxnets");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DeleteVxnets");
+        context.put("RequestURI", "/iaas/DeleteVxnets");
 
         input.setAction("DeleteVxnets");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -265,7 +267,7 @@ public class VxNetService {
         context.put("APIName", "DeleteVxNets");
         context.put("ServiceName", "DeleteVxnets");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DeleteVxnets");
+        context.put("RequestURI", "/iaas/DeleteVxnets");
 
         input.setAction("DeleteVxNets");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -285,12 +287,12 @@ public class VxNetService {
         // Required
         private List<String> vxNets;
 
-        @ParamAnnotation(paramType = "query", paramName = "vxnets")
+        @JsonProperty(value = "vxnets")
         public void setVxNets(List<String> vxNets) {
             this.vxNets = vxNets;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "vxnets")
+        @JsonProperty(value = "vxnets")
         public List<String> getVxNets() {
             return this.vxNets;
         }
@@ -300,39 +302,40 @@ public class VxNetService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class DeleteVxNetsOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
 
         private List<String> vxNets;
 
-        @ParamAnnotation(paramType = "query", paramName = "vxnets")
+        @JsonProperty(value = "vxnets")
         public void setVxNets(List<String> vxNets) {
             this.vxNets = vxNets;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "vxnets")
+        @JsonProperty(value = "vxnets")
         public List<String> getVxNets() {
             return this.vxNets;
         }
@@ -356,7 +359,7 @@ public class VxNetService {
         context.put("APIName", "DescribeVxnetInstances");
         context.put("ServiceName", "DescribeVxnetInstances");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeVxnetInstances");
+        context.put("RequestURI", "/iaas/DescribeVxnetInstances");
 
         input.setAction("DescribeVxnetInstances");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -390,7 +393,7 @@ public class VxNetService {
         context.put("APIName", "DescribeVxNetInstances");
         context.put("ServiceName", "DescribeVxnetInstances");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeVxnetInstances");
+        context.put("RequestURI", "/iaas/DescribeVxnetInstances");
 
         input.setAction("DescribeVxNetInstances");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -409,72 +412,72 @@ public class VxNetService {
     public static class DescribeVxNetInstancesInput extends IaasParamBody {
         private String image;
 
-        @ParamAnnotation(paramType = "query", paramName = "image")
+        @JsonProperty(value = "image")
         public void setImage(String image) {
             this.image = image;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "image")
+        @JsonProperty(value = "image")
         public String getImage() {
             return this.image;
         }
 
         private String instanceType;
 
-        @ParamAnnotation(paramType = "query", paramName = "instance_type")
+        @JsonProperty(value = "instance_type")
         public void setInstanceType(String instanceType) {
             this.instanceType = instanceType;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "instance_type")
+        @JsonProperty(value = "instance_type")
         public String getInstanceType() {
             return this.instanceType;
         }
 
         private List<String> instances;
 
-        @ParamAnnotation(paramType = "query", paramName = "instances")
+        @JsonProperty(value = "instances")
         public void setInstances(List<String> instances) {
             this.instances = instances;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "instances")
+        @JsonProperty(value = "instances")
         public List<String> getInstances() {
             return this.instances;
         }
 
         private Integer limit;
 
-        @ParamAnnotation(paramType = "query", paramName = "limit")
+        @JsonProperty(value = "limit")
         public void setLimit(Integer limit) {
             this.limit = limit;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "limit")
+        @JsonProperty(value = "limit")
         public Integer getLimit() {
             return this.limit;
         }
 
         private Integer offset;
 
-        @ParamAnnotation(paramType = "query", paramName = "offset")
+        @JsonProperty(value = "offset")
         public void setOffset(Integer offset) {
             this.offset = offset;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "offset")
+        @JsonProperty(value = "offset")
         public Integer getOffset() {
             return this.offset;
         }
 
         private String status;
 
-        @ParamAnnotation(paramType = "query", paramName = "status")
+        @JsonProperty(value = "status")
         public void setStatus(String status) {
             this.status = status;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "status")
+        @JsonProperty(value = "status")
         public String getStatus() {
             return this.status;
         }
@@ -482,12 +485,12 @@ public class VxNetService {
         // Required
         private String vxNet;
 
-        @ParamAnnotation(paramType = "query", paramName = "vxnet")
+        @JsonProperty(value = "vxnet")
         public void setVxNet(String vxNet) {
             this.vxNet = vxNet;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "vxnet")
+        @JsonProperty(value = "vxnet")
         public String getVxNet() {
             return this.vxNet;
         }
@@ -500,51 +503,52 @@ public class VxNetService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class DescribeVxNetInstancesOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private List<InstanceModel> instanceSet;
 
-        @ParamAnnotation(paramType = "query", paramName = "instance_set")
+        @JsonProperty(value = "instance_set")
         public void setInstanceSet(List<InstanceModel> instanceSet) {
             this.instanceSet = instanceSet;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "instance_set")
+        @JsonProperty(value = "instance_set")
         public List<InstanceModel> getInstanceSet() {
             return this.instanceSet;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
 
         private Integer totalCount;
 
-        @ParamAnnotation(paramType = "query", paramName = "total_count")
+        @JsonProperty(value = "total_count")
         public void setTotalCount(Integer totalCount) {
             this.totalCount = totalCount;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "total_count")
+        @JsonProperty(value = "total_count")
         public Integer getTotalCount() {
             return this.totalCount;
         }
@@ -568,7 +572,7 @@ public class VxNetService {
         context.put("APIName", "DescribeVxnets");
         context.put("ServiceName", "DescribeVxnets");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeVxnets");
+        context.put("RequestURI", "/iaas/DescribeVxnets");
 
         input.setAction("DescribeVxnets");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -602,7 +606,7 @@ public class VxNetService {
         context.put("APIName", "DescribeVxNets");
         context.put("ServiceName", "DescribeVxnets");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeVxnets");
+        context.put("RequestURI", "/iaas/DescribeVxnets");
 
         input.setAction("DescribeVxNets");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -621,48 +625,48 @@ public class VxNetService {
     public static class DescribeVxNetsInput extends IaasParamBody {
         private Integer limit;
 
-        @ParamAnnotation(paramType = "query", paramName = "limit")
+        @JsonProperty(value = "limit")
         public void setLimit(Integer limit) {
             this.limit = limit;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "limit")
+        @JsonProperty(value = "limit")
         public Integer getLimit() {
             return this.limit;
         }
 
         private Integer offset;
 
-        @ParamAnnotation(paramType = "query", paramName = "offset")
+        @JsonProperty(value = "offset")
         public void setOffset(Integer offset) {
             this.offset = offset;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "offset")
+        @JsonProperty(value = "offset")
         public Integer getOffset() {
             return this.offset;
         }
 
         private String searchWord;
 
-        @ParamAnnotation(paramType = "query", paramName = "search_word")
+        @JsonProperty(value = "search_word")
         public void setSearchWord(String searchWord) {
             this.searchWord = searchWord;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "search_word")
+        @JsonProperty(value = "search_word")
         public String getSearchWord() {
             return this.searchWord;
         }
 
         private List<String> tags;
 
-        @ParamAnnotation(paramType = "query", paramName = "tags")
+        @JsonProperty(value = "tags")
         public void setTags(List<String> tags) {
             this.tags = tags;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "tags")
+        @JsonProperty(value = "tags")
         public List<String> getTags() {
             return this.tags;
         }
@@ -670,12 +674,12 @@ public class VxNetService {
     	// Verbose's available values: 0, 1
         private Integer verbose;
 
-        @ParamAnnotation(paramType = "query", paramName = "verbose")
+        @JsonProperty(value = "verbose")
         public void setVerbose(Integer verbose) {
             this.verbose = verbose;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "verbose")
+        @JsonProperty(value = "verbose")
         public Integer getVerbose() {
             return this.verbose;
         }
@@ -683,24 +687,24 @@ public class VxNetService {
     	// VxNetType's available values: 0, 1
         private Integer vxNetType;
 
-        @ParamAnnotation(paramType = "query", paramName = "vxnet_type")
+        @JsonProperty(value = "vxnet_type")
         public void setVxNetType(Integer vxNetType) {
             this.vxNetType = vxNetType;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "vxnet_type")
+        @JsonProperty(value = "vxnet_type")
         public Integer getVxNetType() {
             return this.vxNetType;
         }
 
         private List<String> vxNets;
 
-        @ParamAnnotation(paramType = "query", paramName = "vxnets")
+        @JsonProperty(value = "vxnets")
         public void setVxNets(List<String> vxNets) {
             this.vxNets = vxNets;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "vxnets")
+        @JsonProperty(value = "vxnets")
         public List<String> getVxNets() {
             return this.vxNets;
         }
@@ -740,51 +744,52 @@ public class VxNetService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class DescribeVxNetsOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
 
         private Integer totalCount;
 
-        @ParamAnnotation(paramType = "query", paramName = "total_count")
+        @JsonProperty(value = "total_count")
         public void setTotalCount(Integer totalCount) {
             this.totalCount = totalCount;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "total_count")
+        @JsonProperty(value = "total_count")
         public Integer getTotalCount() {
             return this.totalCount;
         }
 
         private List<VxNetModel> vxNetSet;
 
-        @ParamAnnotation(paramType = "query", paramName = "vxnet_set")
+        @JsonProperty(value = "vxnet_set")
         public void setVxNetSet(List<VxNetModel> vxNetSet) {
             this.vxNetSet = vxNetSet;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "vxnet_set")
+        @JsonProperty(value = "vxnet_set")
         public List<VxNetModel> getVxNetSet() {
             return this.vxNetSet;
         }
@@ -808,7 +813,7 @@ public class VxNetService {
         context.put("APIName", "JoinVxnet");
         context.put("ServiceName", "JoinVxnet");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/JoinVxnet");
+        context.put("RequestURI", "/iaas/JoinVxnet");
 
         input.setAction("JoinVxnet");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -842,7 +847,7 @@ public class VxNetService {
         context.put("APIName", "JoinVxNet");
         context.put("ServiceName", "JoinVxnet");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/JoinVxnet");
+        context.put("RequestURI", "/iaas/JoinVxnet");
 
         input.setAction("JoinVxNet");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -862,12 +867,12 @@ public class VxNetService {
         // Required
         private List<String> instances;
 
-        @ParamAnnotation(paramType = "query", paramName = "instances")
+        @JsonProperty(value = "instances")
         public void setInstances(List<String> instances) {
             this.instances = instances;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "instances")
+        @JsonProperty(value = "instances")
         public List<String> getInstances() {
             return this.instances;
         }
@@ -875,12 +880,12 @@ public class VxNetService {
         // Required
         private String vxNet;
 
-        @ParamAnnotation(paramType = "query", paramName = "vxnet")
+        @JsonProperty(value = "vxnet")
         public void setVxNet(String vxNet) {
             this.vxNet = vxNet;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "vxnet")
+        @JsonProperty(value = "vxnet")
         public String getVxNet() {
             return this.vxNet;
         }
@@ -893,39 +898,40 @@ public class VxNetService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class JoinVxNetOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -949,7 +955,7 @@ public class VxNetService {
         context.put("APIName", "LeaveVxnet");
         context.put("ServiceName", "LeaveVxnet");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/LeaveVxnet");
+        context.put("RequestURI", "/iaas/LeaveVxnet");
 
         input.setAction("LeaveVxnet");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -983,7 +989,7 @@ public class VxNetService {
         context.put("APIName", "LeaveVxNet");
         context.put("ServiceName", "LeaveVxnet");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/LeaveVxnet");
+        context.put("RequestURI", "/iaas/LeaveVxnet");
 
         input.setAction("LeaveVxNet");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1003,12 +1009,12 @@ public class VxNetService {
         // Required
         private List<String> instances;
 
-        @ParamAnnotation(paramType = "query", paramName = "instances")
+        @JsonProperty(value = "instances")
         public void setInstances(List<String> instances) {
             this.instances = instances;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "instances")
+        @JsonProperty(value = "instances")
         public List<String> getInstances() {
             return this.instances;
         }
@@ -1016,12 +1022,12 @@ public class VxNetService {
         // Required
         private String vxNet;
 
-        @ParamAnnotation(paramType = "query", paramName = "vxnet")
+        @JsonProperty(value = "vxnet")
         public void setVxNet(String vxNet) {
             this.vxNet = vxNet;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "vxnet")
+        @JsonProperty(value = "vxnet")
         public String getVxNet() {
             return this.vxNet;
         }
@@ -1034,39 +1040,40 @@ public class VxNetService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class LeaveVxNetOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private String jobID;
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public void setJobID(String jobID) {
             this.jobID = jobID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "job_id")
+        @JsonProperty(value = "job_id")
         public String getJobID() {
             return this.jobID;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -1090,7 +1097,7 @@ public class VxNetService {
         context.put("APIName", "ModifyVxnetAttributes");
         context.put("ServiceName", "ModifyVxnetAttributes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ModifyVxnetAttributes");
+        context.put("RequestURI", "/iaas/ModifyVxnetAttributes");
 
         input.setAction("ModifyVxnetAttributes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1124,7 +1131,7 @@ public class VxNetService {
         context.put("APIName", "ModifyVxNetAttributes");
         context.put("ServiceName", "ModifyVxnetAttributes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ModifyVxnetAttributes");
+        context.put("RequestURI", "/iaas/ModifyVxnetAttributes");
 
         input.setAction("ModifyVxNetAttributes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1143,12 +1150,12 @@ public class VxNetService {
     public static class ModifyVxNetAttributesInput extends IaasParamBody {
         private String description;
 
-        @ParamAnnotation(paramType = "query", paramName = "description")
+        @JsonProperty(value = "description")
         public void setDescription(String description) {
             this.description = description;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "description")
+        @JsonProperty(value = "description")
         public String getDescription() {
             return this.description;
         }
@@ -1156,24 +1163,24 @@ public class VxNetService {
         // Required
         private String vxNet;
 
-        @ParamAnnotation(paramType = "query", paramName = "vxnet")
+        @JsonProperty(value = "vxnet")
         public void setVxNet(String vxNet) {
             this.vxNet = vxNet;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "vxnet")
+        @JsonProperty(value = "vxnet")
         public String getVxNet() {
             return this.vxNet;
         }
 
         private String vxNetName;
 
-        @ParamAnnotation(paramType = "query", paramName = "vxnet_name")
+        @JsonProperty(value = "vxnet_name")
         public void setVxNetName(String vxNetName) {
             this.vxNetName = vxNetName;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "vxnet_name")
+        @JsonProperty(value = "vxnet_name")
         public String getVxNetName() {
             return this.vxNetName;
         }
@@ -1186,27 +1193,28 @@ public class VxNetService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class ModifyVxNetAttributesOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }

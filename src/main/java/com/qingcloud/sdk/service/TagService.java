@@ -16,6 +16,7 @@
 
 package com.qingcloud.sdk.service;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.qingcloud.sdk.config.EnvContext;
 import com.qingcloud.sdk.constants.QCConstant;
 import com.qingcloud.sdk.model.OutputModel;
@@ -24,8 +25,8 @@ import com.qingcloud.sdk.request.ResourceRequestFactory;
 import com.qingcloud.sdk.exception.QCException;
 import com.qingcloud.sdk.model.IaasParamBody;
 import com.qingcloud.sdk.service.Types.*;
-import com.qingcloud.sdk.annotation.ParamAnnotation;
 import com.qingcloud.sdk.utils.QCStringUtil;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.HashMap;
 import java.util.List;
@@ -63,7 +64,7 @@ public class TagService {
         context.put("APIName", "AttachTags");
         context.put("ServiceName", "AttachTags");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/AttachTags");
+        context.put("RequestURI", "/iaas/AttachTags");
 
         input.setAction("AttachTags");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -97,7 +98,7 @@ public class TagService {
         context.put("APIName", "AttachTags");
         context.put("ServiceName", "AttachTags");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/AttachTags");
+        context.put("RequestURI", "/iaas/AttachTags");
 
         input.setAction("AttachTags");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -117,12 +118,12 @@ public class TagService {
         // Required
         private List<ResourceTagPairModel> resourceTagPairs;
 
-        @ParamAnnotation(paramType = "query", paramName = "resource_tag_pairs")
+        @JsonProperty(value = "resource_tag_pairs")
         public void setResourceTagPairs(List<ResourceTagPairModel> resourceTagPairs) {
             this.resourceTagPairs = resourceTagPairs;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "resource_tag_pairs")
+        @JsonProperty(value = "resource_tag_pairs")
         public List<ResourceTagPairModel> getResourceTagPairs() {
             return this.resourceTagPairs;
         }
@@ -142,27 +143,28 @@ public class TagService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class AttachTagsOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -186,7 +188,7 @@ public class TagService {
         context.put("APIName", "CreateTag");
         context.put("ServiceName", "CreateTag");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/CreateTag");
+        context.put("RequestURI", "/iaas/CreateTag");
 
         input.setAction("CreateTag");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -220,7 +222,7 @@ public class TagService {
         context.put("APIName", "CreateTag");
         context.put("ServiceName", "CreateTag");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/CreateTag");
+        context.put("RequestURI", "/iaas/CreateTag");
 
         input.setAction("CreateTag");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -239,24 +241,24 @@ public class TagService {
     public static class CreateTagInput extends IaasParamBody {
         private String color;
 
-        @ParamAnnotation(paramType = "query", paramName = "color")
+        @JsonProperty(value = "color")
         public void setColor(String color) {
             this.color = color;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "color")
+        @JsonProperty(value = "color")
         public String getColor() {
             return this.color;
         }
 
         private String tagName;
 
-        @ParamAnnotation(paramType = "query", paramName = "tag_name")
+        @JsonProperty(value = "tag_name")
         public void setTagName(String tagName) {
             this.tagName = tagName;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "tag_name")
+        @JsonProperty(value = "tag_name")
         public String getTagName() {
             return this.tagName;
         }
@@ -266,39 +268,40 @@ public class TagService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class CreateTagOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
 
         private String tagID;
 
-        @ParamAnnotation(paramType = "query", paramName = "tag_id")
+        @JsonProperty(value = "tag_id")
         public void setTagID(String tagID) {
             this.tagID = tagID;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "tag_id")
+        @JsonProperty(value = "tag_id")
         public String getTagID() {
             return this.tagID;
         }
@@ -322,7 +325,7 @@ public class TagService {
         context.put("APIName", "DeleteTags");
         context.put("ServiceName", "DeleteTags");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DeleteTags");
+        context.put("RequestURI", "/iaas/DeleteTags");
 
         input.setAction("DeleteTags");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -356,7 +359,7 @@ public class TagService {
         context.put("APIName", "DeleteTags");
         context.put("ServiceName", "DeleteTags");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DeleteTags");
+        context.put("RequestURI", "/iaas/DeleteTags");
 
         input.setAction("DeleteTags");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -376,12 +379,12 @@ public class TagService {
         // Required
         private List<String> tags;
 
-        @ParamAnnotation(paramType = "query", paramName = "tags")
+        @JsonProperty(value = "tags")
         public void setTags(List<String> tags) {
             this.tags = tags;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "tags")
+        @JsonProperty(value = "tags")
         public List<String> getTags() {
             return this.tags;
         }
@@ -391,39 +394,40 @@ public class TagService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class DeleteTagsOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
 
         private List<String> tags;
 
-        @ParamAnnotation(paramType = "query", paramName = "tags")
+        @JsonProperty(value = "tags")
         public void setTags(List<String> tags) {
             this.tags = tags;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "tags")
+        @JsonProperty(value = "tags")
         public List<String> getTags() {
             return this.tags;
         }
@@ -447,7 +451,7 @@ public class TagService {
         context.put("APIName", "DescribeTags");
         context.put("ServiceName", "DescribeTags");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeTags");
+        context.put("RequestURI", "/iaas/DescribeTags");
 
         input.setAction("DescribeTags");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -481,7 +485,7 @@ public class TagService {
         context.put("APIName", "DescribeTags");
         context.put("ServiceName", "DescribeTags");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DescribeTags");
+        context.put("RequestURI", "/iaas/DescribeTags");
 
         input.setAction("DescribeTags");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -500,48 +504,48 @@ public class TagService {
     public static class DescribeTagsInput extends IaasParamBody {
         private Integer limit;
 
-        @ParamAnnotation(paramType = "query", paramName = "limit")
+        @JsonProperty(value = "limit")
         public void setLimit(Integer limit) {
             this.limit = limit;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "limit")
+        @JsonProperty(value = "limit")
         public Integer getLimit() {
             return this.limit;
         }
 
         private Integer offset;
 
-        @ParamAnnotation(paramType = "query", paramName = "offset")
+        @JsonProperty(value = "offset")
         public void setOffset(Integer offset) {
             this.offset = offset;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "offset")
+        @JsonProperty(value = "offset")
         public Integer getOffset() {
             return this.offset;
         }
 
         private String searchWord;
 
-        @ParamAnnotation(paramType = "query", paramName = "search_word")
+        @JsonProperty(value = "search_word")
         public void setSearchWord(String searchWord) {
             this.searchWord = searchWord;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "search_word")
+        @JsonProperty(value = "search_word")
         public String getSearchWord() {
             return this.searchWord;
         }
 
         private List<String> tags;
 
-        @ParamAnnotation(paramType = "query", paramName = "tags")
+        @JsonProperty(value = "tags")
         public void setTags(List<String> tags) {
             this.tags = tags;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "tags")
+        @JsonProperty(value = "tags")
         public List<String> getTags() {
             return this.tags;
         }
@@ -549,12 +553,12 @@ public class TagService {
     	// Verbose's available values: 0, 1
         private Integer verbose;
 
-        @ParamAnnotation(paramType = "query", paramName = "verbose")
+        @JsonProperty(value = "verbose")
         public void setVerbose(Integer verbose) {
             this.verbose = verbose;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "verbose")
+        @JsonProperty(value = "verbose")
         public Integer getVerbose() {
             return this.verbose;
         }
@@ -579,51 +583,52 @@ public class TagService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class DescribeTagsOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
 
         private List<TagModel> tagSet;
 
-        @ParamAnnotation(paramType = "query", paramName = "tag_set")
+        @JsonProperty(value = "tag_set")
         public void setTagSet(List<TagModel> tagSet) {
             this.tagSet = tagSet;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "tag_set")
+        @JsonProperty(value = "tag_set")
         public List<TagModel> getTagSet() {
             return this.tagSet;
         }
 
         private Integer totalCount;
 
-        @ParamAnnotation(paramType = "query", paramName = "total_count")
+        @JsonProperty(value = "total_count")
         public void setTotalCount(Integer totalCount) {
             this.totalCount = totalCount;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "total_count")
+        @JsonProperty(value = "total_count")
         public Integer getTotalCount() {
             return this.totalCount;
         }
@@ -647,7 +652,7 @@ public class TagService {
         context.put("APIName", "DetachTags");
         context.put("ServiceName", "DetachTags");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DetachTags");
+        context.put("RequestURI", "/iaas/DetachTags");
 
         input.setAction("DetachTags");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -681,7 +686,7 @@ public class TagService {
         context.put("APIName", "DetachTags");
         context.put("ServiceName", "DetachTags");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/DetachTags");
+        context.put("RequestURI", "/iaas/DetachTags");
 
         input.setAction("DetachTags");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -701,12 +706,12 @@ public class TagService {
         // Required
         private List<ResourceTagPairModel> resourceTagPairs;
 
-        @ParamAnnotation(paramType = "query", paramName = "resource_tag_pairs")
+        @JsonProperty(value = "resource_tag_pairs")
         public void setResourceTagPairs(List<ResourceTagPairModel> resourceTagPairs) {
             this.resourceTagPairs = resourceTagPairs;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "resource_tag_pairs")
+        @JsonProperty(value = "resource_tag_pairs")
         public List<ResourceTagPairModel> getResourceTagPairs() {
             return this.resourceTagPairs;
         }
@@ -726,27 +731,28 @@ public class TagService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class DetachTagsOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
@@ -770,7 +776,7 @@ public class TagService {
         context.put("APIName", "ModifyTagAttributes");
         context.put("ServiceName", "ModifyTagAttributes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ModifyTagAttributes");
+        context.put("RequestURI", "/iaas/ModifyTagAttributes");
 
         input.setAction("ModifyTagAttributes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -804,7 +810,7 @@ public class TagService {
         context.put("APIName", "ModifyTagAttributes");
         context.put("ServiceName", "ModifyTagAttributes");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/ModifyTagAttributes");
+        context.put("RequestURI", "/iaas/ModifyTagAttributes");
 
         input.setAction("ModifyTagAttributes");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -823,24 +829,24 @@ public class TagService {
     public static class ModifyTagAttributesInput extends IaasParamBody {
         private String color;
 
-        @ParamAnnotation(paramType = "query", paramName = "color")
+        @JsonProperty(value = "color")
         public void setColor(String color) {
             this.color = color;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "color")
+        @JsonProperty(value = "color")
         public String getColor() {
             return this.color;
         }
 
         private String description;
 
-        @ParamAnnotation(paramType = "query", paramName = "description")
+        @JsonProperty(value = "description")
         public void setDescription(String description) {
             this.description = description;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "description")
+        @JsonProperty(value = "description")
         public String getDescription() {
             return this.description;
         }
@@ -848,24 +854,24 @@ public class TagService {
         // Required
         private String tag;
 
-        @ParamAnnotation(paramType = "query", paramName = "tag")
+        @JsonProperty(value = "tag")
         public void setTag(String tag) {
             this.tag = tag;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "tag")
+        @JsonProperty(value = "tag")
         public String getTag() {
             return this.tag;
         }
 
         private String tagName;
 
-        @ParamAnnotation(paramType = "query", paramName = "tag_name")
+        @JsonProperty(value = "tag_name")
         public void setTagName(String tagName) {
             this.tagName = tagName;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "tag_name")
+        @JsonProperty(value = "tag_name")
         public String getTagName() {
             return this.tagName;
         }
@@ -878,27 +884,28 @@ public class TagService {
         }
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class ModifyTagAttributesOutput extends OutputModel {
         private String action;
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public void setAction(String action) {
             this.action = action;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "action")
+        @JsonProperty(value = "action")
         public String getAction() {
             return this.action;
         }
 
         private Integer retCode;
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public void setRetCode(Integer retCode) {
             this.retCode = retCode;
         }
 
-        @ParamAnnotation(paramType = "query", paramName = "ret_code")
+        @JsonProperty(value = "ret_code")
         public Integer getRetCode() {
             return this.retCode;
         }
