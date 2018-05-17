@@ -13,8 +13,8 @@ Before your start, please login to [QingCloud Console](https://console.qingcloud
 ___API AccessKey Example:___
 
 ``` yaml
-qy_access_key_id: RCEADPWMAGPAWMAGPAJBJRKQEBJBJRK
-qy_secret_access_key: MVZ0iOfnfivjxL7W5o7oOumMQkk89OcoIavvUiuF
+qy_access_key_id: QYACCESSKEYIDEXAMPLE
+qy_secret_access_key: SECRETACCESSKEY
 ```
 
 ### Installation
