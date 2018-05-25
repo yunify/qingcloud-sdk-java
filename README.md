@@ -19,36 +19,17 @@ qy_secret_access_key: SECRETACCESSKEY
 
 ### Installation
 
-Pull and package this repository to get `qingcloud-sdk-java.jar`, put the jar into your project directory and add below dependency into your pom file.
+Add below dependency in your pom file
 
 ```xml
-<dependencies>
-    <dependency>
-        <groupId>com.qingcloud</groupId>
-        <artifactId>java-sdk</artifactId>
-        <version>1.0</version>
-    </dependency>
-    <dependency>
-        <groupId>com.fasterxml.jackson.core</groupId>
-        <artifactId>jackson-databind</artifactId>
-        <version>2.9.5</version>
-    </dependency>
-
-    <dependency>
-        <groupId>com.squareup.okhttp3</groupId>
-        <artifactId>okhttp</artifactId>
-        <version>3.7.0</version>
-    </dependency>
-
-    <dependency>
-        <groupId>com.squareup.okhttp3</groupId>
-        <artifactId>logging-interceptor</artifactId>
-        <version>3.7.0</version>
-    </dependency>
-<dependencies>
+<dependency>
+    <groupId>com.qingcloud</groupId>
+    <artifactId>qingcloud-sdk-java</artifactId>
+    <version>1.0.0</version>
+</dependency>
 ```
 
-> We're working on publishing the SDK to central maven repository, and we'll update installation readme once done.
+For more information, please refer to [maven page](https://search.maven.org/#artifactdetails%7Ccom.qingcloud%7Cqingcloud-sdk-java%7C1.0.0%7Cjar)
 
 ### Usage
 
