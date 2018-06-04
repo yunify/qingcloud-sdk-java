@@ -57,7 +57,6 @@ public class InstanceTest {
         try {
             InstanceService.DescribeInstancesOutput output = service.describeInstances(input);
             for (Types.InstanceModel model : output.getInstanceSet()) {
-                Utils.printModel(model);
                 System.out.println("==================");
                 System.out.println(model.getInstanceID());
                 System.out.println(model.getInstanceName());
