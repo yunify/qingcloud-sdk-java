@@ -151,6 +151,18 @@ public class JobService {
             return this.offset;
         }
 
+        private String owner;
+
+        @JsonProperty(value = "owner")
+        public void setOwner(String owner) {
+            this.owner = owner;
+        }
+
+        @JsonProperty(value = "owner")
+        public String getOwner() {
+            return this.owner;
+        }
+
         private List<String> status;
 
         @JsonProperty(value = "status")

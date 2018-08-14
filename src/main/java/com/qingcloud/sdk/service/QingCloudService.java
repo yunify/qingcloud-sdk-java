@@ -243,6 +243,10 @@ public class QingCloudService {
         return new LoadBalancerService(this.envContext, zone);
     }
 
+    public MiscService getMiscService(String zone) {
+        return new MiscService(this.envContext, zone);
+    }
+
     public MongoService getMongoService(String zone) {
         return new MongoService(this.envContext, zone);
     }
@@ -325,6 +329,10 @@ public class QingCloudService {
 
     public LoadBalancerService getLoadBalancerService() {
         return new LoadBalancerService(this.envContext);
+    }
+
+    public MiscService getMiscService() {
+        return new MiscService(this.envContext);
     }
 
     public MongoService getMongoService() {

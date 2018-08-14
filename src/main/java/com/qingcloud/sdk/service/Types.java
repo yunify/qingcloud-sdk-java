@@ -5026,15 +5026,15 @@ public class Types {
             return this.loadBalancerListenerName;
         }
 
-        private String serverCertificateID;
+        private List<String> serverCertificateID;
 
         @JsonProperty(value = "server_certificate_id")
-        public void setServerCertificateID(String serverCertificateID) {
+        public void setServerCertificateID(List<String> serverCertificateID) {
             this.serverCertificateID = serverCertificateID;
         }
 
         @JsonProperty(value = "server_certificate_id")
-        public String getServerCertificateID() {
+        public List<String> getServerCertificateID() {
             return this.serverCertificateID;
         }
 
@@ -6190,6 +6190,38 @@ public class Types {
         @JsonProperty(value = "vxnet_type")
         public Integer getVxNetType() {
             return this.vxNetType;
+        }
+
+
+        public String validateParam() throws QCException {
+            return null;
+        }
+    }
+
+    @JsonIgnoreProperties(ignoreUnknown = true)
+    public static class QuotaLeftModel implements ParamValidate {
+        private Integer left;
+
+        @JsonProperty(value = "left")
+        public void setLeft(Integer left) {
+            this.left = left;
+        }
+
+        @JsonProperty(value = "left")
+        public Integer getLeft() {
+            return this.left;
+        }
+
+        private String resourceType;
+
+        @JsonProperty(value = "resource_type")
+        public void setResourceType(String resourceType) {
+            this.resourceType = resourceType;
+        }
+
+        @JsonProperty(value = "resource_type")
+        public String getResourceType() {
+            return this.resourceType;
         }
 
 

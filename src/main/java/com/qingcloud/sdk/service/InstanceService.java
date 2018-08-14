@@ -463,6 +463,18 @@ public class InstanceService {
             return this.offset;
         }
 
+        private String owner;
+
+        @JsonProperty(value = "owner")
+        public void setOwner(String owner) {
+            this.owner = owner;
+        }
+
+        @JsonProperty(value = "owner")
+        public String getOwner() {
+            return this.owner;
+        }
+
         private String searchWord;
 
         @JsonProperty(value = "search_word")
@@ -1391,6 +1403,31 @@ public class InstanceService {
             return this.cPUMax;
         }
 
+    	// CPUModel's available values: Westmere, SandyBridge, IvyBridge, Haswell, Broadwell
+        private String cPUModel;
+
+        @JsonProperty(value = "cpu_model")
+        public void setCPUModel(String cPUModel) {
+            this.cPUModel = cPUModel;
+        }
+
+        @JsonProperty(value = "cpu_model")
+        public String getCPUModel() {
+            return this.cPUModel;
+        }
+
+        private Integer gpu;
+
+        @JsonProperty(value = "gpu")
+        public void setGpu(Integer gpu) {
+            this.gpu = gpu;
+        }
+
+        @JsonProperty(value = "gpu")
+        public Integer getGpu() {
+            return this.gpu;
+        }
+
         private String hostname;
 
         @JsonProperty(value = "hostname")
@@ -1670,6 +1707,24 @@ public class InstanceService {
 
             if (!cPUMaxIsValid) {
                 throw new QCException("CPUMax value " + this.getCPUMax() + "is invalid");
+            }
+            String[] cPUModelValidValues = {
+                "Westmere", "SandyBridge", "IvyBridge", "Haswell", "Broadwell"
+            };
+
+            boolean cPUModelIsValid = false;
+            for (String v : cPUModelValidValues) {
+                if (v.equals(this.getCPUModel())) {
+                    cPUModelIsValid = true;
+                }
+                Boolean cPUModelIsRequired = Boolean.FALSE;
+                if (cPUModelIsRequired.equals(Boolean.FALSE) && this.getCPUModel() == null) {
+                    cPUModelIsValid = true;
+                }
+            }
+
+            if (!cPUModelIsValid) {
+                throw new QCException("CPUModel value " + this.getCPUModel() + "is invalid");
             }
             if (QCStringUtil.isEmpty(this.getImageID())) {
                 throw new QCException("ImageID is required");

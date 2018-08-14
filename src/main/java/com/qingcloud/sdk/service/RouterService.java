@@ -1045,6 +1045,18 @@ public class RouterService {
             return this.offset;
         }
 
+        private String owner;
+
+        @JsonProperty(value = "owner")
+        public void setOwner(String owner) {
+            this.owner = owner;
+        }
+
+        @JsonProperty(value = "owner")
+        public String getOwner() {
+            return this.owner;
+        }
+
         private String routerStatic;
 
         @JsonProperty(value = "router_static")
@@ -1216,6 +1228,18 @@ public class RouterService {
         @JsonProperty(value = "offset")
         public Integer getOffset() {
             return this.offset;
+        }
+
+        private String owner;
+
+        @JsonProperty(value = "owner")
+        public void setOwner(String owner) {
+            this.owner = owner;
+        }
+
+        @JsonProperty(value = "owner")
+        public String getOwner() {
+            return this.owner;
         }
 
         // Required
@@ -1666,6 +1690,18 @@ public class RouterService {
         @JsonProperty(value = "offset")
         public Integer getOffset() {
             return this.offset;
+        }
+
+        private String owner;
+
+        @JsonProperty(value = "owner")
+        public void setOwner(String owner) {
+            this.owner = owner;
+        }
+
+        @JsonProperty(value = "owner")
+        public String getOwner() {
+            return this.owner;
         }
 
         private List<String> routers;

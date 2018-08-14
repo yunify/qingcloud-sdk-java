@@ -2214,6 +2214,18 @@ public class LoadBalancerService {
             return this.offset;
         }
 
+        private String owner;
+
+        @JsonProperty(value = "owner")
+        public void setOwner(String owner) {
+            this.owner = owner;
+        }
+
+        @JsonProperty(value = "owner")
+        public String getOwner() {
+            return this.owner;
+        }
+
         private Integer verbose;
 
         @JsonProperty(value = "verbose")
@@ -2387,6 +2399,18 @@ public class LoadBalancerService {
             return this.offset;
         }
 
+        private String owner;
+
+        @JsonProperty(value = "owner")
+        public void setOwner(String owner) {
+            this.owner = owner;
+        }
+
+        @JsonProperty(value = "owner")
+        public String getOwner() {
+            return this.owner;
+        }
+
         private Integer verbose;
 
         @JsonProperty(value = "verbose")
@@ -2558,6 +2582,18 @@ public class LoadBalancerService {
         @JsonProperty(value = "offset")
         public Integer getOffset() {
             return this.offset;
+        }
+
+        private String owner;
+
+        @JsonProperty(value = "owner")
+        public void setOwner(String owner) {
+            this.owner = owner;
+        }
+
+        @JsonProperty(value = "owner")
+        public String getOwner() {
+            return this.owner;
         }
 
         private Integer verbose;
@@ -2745,6 +2781,18 @@ public class LoadBalancerService {
             return this.offset;
         }
 
+        private String owner;
+
+        @JsonProperty(value = "owner")
+        public void setOwner(String owner) {
+            this.owner = owner;
+        }
+
+        @JsonProperty(value = "owner")
+        public String getOwner() {
+            return this.owner;
+        }
+
         public String validateParam() throws QCException {
             return null;
         }
@@ -2904,6 +2952,18 @@ public class LoadBalancerService {
         @JsonProperty(value = "offset")
         public Integer getOffset() {
             return this.offset;
+        }
+
+        private String owner;
+
+        @JsonProperty(value = "owner")
+        public void setOwner(String owner) {
+            this.owner = owner;
+        }
+
+        @JsonProperty(value = "owner")
+        public String getOwner() {
+            return this.owner;
         }
 
         private String searchWord;
@@ -3089,6 +3149,18 @@ public class LoadBalancerService {
         @JsonProperty(value = "offset")
         public Integer getOffset() {
             return this.offset;
+        }
+
+        private String owner;
+
+        @JsonProperty(value = "owner")
+        public void setOwner(String owner) {
+            this.owner = owner;
+        }
+
+        @JsonProperty(value = "owner")
+        public String getOwner() {
+            return this.owner;
         }
 
         private String searchWord;
@@ -4084,15 +4156,15 @@ public class LoadBalancerService {
             return this.loadBalancerListenerName;
         }
 
-        private String serverCertificateID;
+        private List<String> serverCertificateID;
 
         @JsonProperty(value = "server_certificate_id")
-        public void setServerCertificateID(String serverCertificateID) {
+        public void setServerCertificateID(List<String> serverCertificateID) {
             this.serverCertificateID = serverCertificateID;
         }
 
         @JsonProperty(value = "server_certificate_id")
-        public String getServerCertificateID() {
+        public List<String> getServerCertificateID() {
             return this.serverCertificateID;
         }
 

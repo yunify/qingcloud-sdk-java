@@ -652,6 +652,18 @@ public class KeyPairService {
             return this.offset;
         }
 
+        private String owner;
+
+        @JsonProperty(value = "owner")
+        public void setOwner(String owner) {
+            this.owner = owner;
+        }
+
+        @JsonProperty(value = "owner")
+        public String getOwner() {
+            return this.owner;
+        }
+
         private String searchWord;
 
         @JsonProperty(value = "search_word")

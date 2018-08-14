@@ -607,6 +607,18 @@ public class ImageService {
             return this.oSFamily;
         }
 
+        private String owner;
+
+        @JsonProperty(value = "owner")
+        public void setOwner(String owner) {
+            this.owner = owner;
+        }
+
+        @JsonProperty(value = "owner")
+        public String getOwner() {
+            return this.owner;
+        }
+
     	// ProcessorType's available values: 64bit, 32bit
         private String processorType;
 

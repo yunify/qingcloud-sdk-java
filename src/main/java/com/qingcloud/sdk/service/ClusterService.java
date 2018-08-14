@@ -1917,7 +1917,7 @@ public class ClusterService {
         context.put("APIName", "DescribeClusterUsers");
         context.put("ServiceName", "DescribeClusterUsers");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/iaas/GetClusterMonitor");
+        context.put("RequestURI", "/iaas/DescribeClusterUsers");
 
         input.setAction("DescribeClusterUsers");
         if (QCStringUtil.isEmpty(this.zone)) {
@@ -1951,7 +1951,7 @@ public class ClusterService {
         context.put("APIName", "DescribeClusterUsers");
         context.put("ServiceName", "DescribeClusterUsers");
         context.put("RequestMethod", "GET");
-        context.put("RequestURI", "/iaas/GetClusterMonitor");
+        context.put("RequestURI", "/iaas/DescribeClusterUsers");
 
         input.setAction("DescribeClusterUsers");
         if (QCStringUtil.isEmpty(this.zone)) {

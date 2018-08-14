@@ -1400,6 +1400,18 @@ public class SecurityGroupService {
             return this.offset;
         }
 
+        private String owner;
+
+        @JsonProperty(value = "owner")
+        public void setOwner(String owner) {
+            this.owner = owner;
+        }
+
+        @JsonProperty(value = "owner")
+        public String getOwner() {
+            return this.owner;
+        }
+
         private String securityGroupIPSetName;
 
         @JsonProperty(value = "security_group_ipset_name")
@@ -1623,6 +1635,18 @@ public class SecurityGroupService {
         @JsonProperty(value = "offset")
         public Integer getOffset() {
             return this.offset;
+        }
+
+        private String owner;
+
+        @JsonProperty(value = "owner")
+        public void setOwner(String owner) {
+            this.owner = owner;
+        }
+
+        @JsonProperty(value = "owner")
+        public String getOwner() {
+            return this.owner;
         }
 
         private String securityGroup;
@@ -2000,6 +2024,18 @@ public class SecurityGroupService {
         @JsonProperty(value = "offset")
         public Integer getOffset() {
             return this.offset;
+        }
+
+        private String owner;
+
+        @JsonProperty(value = "owner")
+        public void setOwner(String owner) {
+            this.owner = owner;
+        }
+
+        @JsonProperty(value = "owner")
+        public String getOwner() {
+            return this.owner;
         }
 
         private String searchWord;
