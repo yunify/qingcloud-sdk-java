@@ -61,13 +61,13 @@ public class QCException extends Exception {
 
     @Override
     public String getMessage() {
-        return getErrorMessage()
-                + "; Action : "
+        return  "Action : "
                 + getServiceName()
                 + "; Error Code: "
                 + getErrorCode()
                 + "; Error Message: "
                 + getErrorMessage()
-                + ")";
+                + ";\n Original Error Message:\n"
+                + super.getMessage();
     }
 }
