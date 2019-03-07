@@ -1046,6 +1046,30 @@ public class InstanceService {
             return this.cPU;
         }
 
+        private String cPUModel;
+
+        @JsonProperty(value = "cpu_model")
+        public void setCPUModel(String cPUModel) {
+            this.cPUModel = cPUModel;
+        }
+
+        @JsonProperty(value = "cpu_model")
+        public String getCPUModel() {
+            return this.cPUModel;
+        }
+
+        private Integer gpu;
+
+        @JsonProperty(value = "gpu")
+        public void setGpu(Integer gpu) {
+            this.gpu = gpu;
+        }
+
+        @JsonProperty(value = "gpu")
+        public Integer getGpu() {
+            return this.gpu;
+        }
+
         private String instanceType;
 
         @JsonProperty(value = "instance_type")
@@ -1082,6 +1106,18 @@ public class InstanceService {
         @JsonProperty(value = "memory")
         public Integer getMemory() {
             return this.memory;
+        }
+
+        private Integer oSDiskSize;
+
+        @JsonProperty(value = "os_disk_size")
+        public void setOSDiskSize(Integer oSDiskSize) {
+            this.oSDiskSize = oSDiskSize;
+        }
+
+        @JsonProperty(value = "os_disk_size")
+        public Integer getOSDiskSize() {
+            return this.oSDiskSize;
         }
 
         public String validateParam() throws QCException {
@@ -1453,7 +1489,7 @@ public class InstanceService {
             return this.imageID;
         }
 
-    	// InstanceClass's available values: 0, 1
+    	// InstanceClass's available values: 0, 1, 2, 3, 4, 5, 6, 100, 101, 200, 201, 300, 301
         private Integer instanceClass;
 
         @JsonProperty(value = "instance_class")
@@ -1578,6 +1614,18 @@ public class InstanceService {
         @JsonProperty(value = "need_userdata")
         public Integer getNeedUserdata() {
             return this.needUserdata;
+        }
+
+        private Integer oSDiskSize;
+
+        @JsonProperty(value = "os_disk_size")
+        public void setOSDiskSize(Integer oSDiskSize) {
+            this.oSDiskSize = oSDiskSize;
+        }
+
+        @JsonProperty(value = "os_disk_size")
+        public Integer getOSDiskSize() {
+            return this.oSDiskSize;
         }
 
         private String securityGroup;
@@ -1729,7 +1777,7 @@ public class InstanceService {
             if (QCStringUtil.isEmpty(this.getImageID())) {
                 throw new QCException("ImageID is required");
             }
-            String[]instanceClassValidValues = {"0", "1"};
+            String[]instanceClassValidValues = {"0", "1", "2", "3", "4", "5", "6", "100", "101", "200", "201", "300", "301"};
             boolean instanceClassIsValid = false;
             for (String v : instanceClassValidValues) {
                 if (v.equals(this.getInstanceClass()+"")) {
