@@ -31,6 +31,546 @@ public class Types {
 
 
     @JsonIgnoreProperties(ignoreUnknown = true)
+    public static class AppModel implements ParamValidate {
+        private String abstraction;
+
+        @JsonProperty(value = "abstraction")
+        public void setAbstraction(String abstraction) {
+            this.abstraction = abstraction;
+        }
+
+        @JsonProperty(value = "abstraction")
+        public String getAbstraction() {
+            return this.abstraction;
+        }
+
+        private String appContractStatus;
+
+        @JsonProperty(value = "app_contract_status")
+        public void setAppContractStatus(String appContractStatus) {
+            this.appContractStatus = appContractStatus;
+        }
+
+        @JsonProperty(value = "app_contract_status")
+        public String getAppContractStatus() {
+            return this.appContractStatus;
+        }
+
+        private String appID;
+
+        @JsonProperty(value = "app_id")
+        public void setAppID(String appID) {
+            this.appID = appID;
+        }
+
+        @JsonProperty(value = "app_id")
+        public String getAppID() {
+            return this.appID;
+        }
+
+        private String appInstanceID;
+
+        @JsonProperty(value = "app_instance_id")
+        public void setAppInstanceID(String appInstanceID) {
+            this.appInstanceID = appInstanceID;
+        }
+
+        @JsonProperty(value = "app_instance_id")
+        public String getAppInstanceID() {
+            return this.appInstanceID;
+        }
+
+        private String appName;
+
+        @JsonProperty(value = "app_name")
+        public void setAppName(String appName) {
+            this.appName = appName;
+        }
+
+        @JsonProperty(value = "app_name")
+        public String getAppName() {
+            return this.appName;
+        }
+
+        private String appType;
+
+        @JsonProperty(value = "app_type")
+        public void setAppType(String appType) {
+            this.appType = appType;
+        }
+
+        @JsonProperty(value = "app_type")
+        public String getAppType() {
+            return this.appType;
+        }
+
+        private Integer authLevel;
+
+        @JsonProperty(value = "auth_level")
+        public void setAuthLevel(Integer authLevel) {
+            this.authLevel = authLevel;
+        }
+
+        @JsonProperty(value = "auth_level")
+        public Integer getAuthLevel() {
+            return this.authLevel;
+        }
+
+        private String category;
+
+        @JsonProperty(value = "category")
+        public void setCategory(String category) {
+            this.category = category;
+        }
+
+        @JsonProperty(value = "category")
+        public String getCategory() {
+            return this.category;
+        }
+
+        private String companyURL;
+
+        @JsonProperty(value = "company_url")
+        public void setCompanyURL(String companyURL) {
+            this.companyURL = companyURL;
+        }
+
+        @JsonProperty(value = "company_url")
+        public String getCompanyURL() {
+            return this.companyURL;
+        }
+
+        private String contact;
+
+        @JsonProperty(value = "contact")
+        public void setContact(String contact) {
+            this.contact = contact;
+        }
+
+        @JsonProperty(value = "contact")
+        public String getContact() {
+            return this.contact;
+        }
+
+        private String coverImg;
+
+        @JsonProperty(value = "cover_img")
+        public void setCoverImg(String coverImg) {
+            this.coverImg = coverImg;
+        }
+
+        @JsonProperty(value = "cover_img")
+        public String getCoverImg() {
+            return this.coverImg;
+        }
+
+        private String description;
+
+        @JsonProperty(value = "description")
+        public void setDescription(String description) {
+            this.description = description;
+        }
+
+        @JsonProperty(value = "description")
+        public String getDescription() {
+            return this.description;
+        }
+
+        private String icon;
+
+        @JsonProperty(value = "icon")
+        public void setIcon(String icon) {
+            this.icon = icon;
+        }
+
+        @JsonProperty(value = "icon")
+        public String getIcon() {
+            return this.icon;
+        }
+
+        private List<String> screenshots;
+
+        @JsonProperty(value = "screenshots")
+        public void setScreenshots(List<String> screenshots) {
+            this.screenshots = screenshots;
+        }
+
+        @JsonProperty(value = "screenshots")
+        public List<String> getScreenshots() {
+            return this.screenshots;
+        }
+
+        private String status;
+
+        @JsonProperty(value = "status")
+        public void setStatus(String status) {
+            this.status = status;
+        }
+
+        @JsonProperty(value = "status")
+        public String getStatus() {
+            return this.status;
+        }
+
+        private List<String> tags;
+
+        @JsonProperty(value = "tags")
+        public void setTags(List<String> tags) {
+            this.tags = tags;
+        }
+
+        @JsonProperty(value = "tags")
+        public List<String> getTags() {
+            return this.tags;
+        }
+
+        private String termsOfService;
+
+        @JsonProperty(value = "terms_of_service")
+        public void setTermsOfService(String termsOfService) {
+            this.termsOfService = termsOfService;
+        }
+
+        @JsonProperty(value = "terms_of_service")
+        public String getTermsOfService() {
+            return this.termsOfService;
+        }
+
+        private String termsOfServiceLink;
+
+        @JsonProperty(value = "terms_of_service_link")
+        public void setTermsOfServiceLink(String termsOfServiceLink) {
+            this.termsOfServiceLink = termsOfServiceLink;
+        }
+
+        @JsonProperty(value = "terms_of_service_link")
+        public String getTermsOfServiceLink() {
+            return this.termsOfServiceLink;
+        }
+
+        private String uRL;
+
+        @JsonProperty(value = "url")
+        public void setURL(String uRL) {
+            this.uRL = uRL;
+        }
+
+        @JsonProperty(value = "url")
+        public String getURL() {
+            return this.uRL;
+        }
+
+        private String usageInstructions;
+
+        @JsonProperty(value = "usage_instructions")
+        public void setUsageInstructions(String usageInstructions) {
+            this.usageInstructions = usageInstructions;
+        }
+
+        @JsonProperty(value = "usage_instructions")
+        public String getUsageInstructions() {
+            return this.usageInstructions;
+        }
+
+        private String usageInstructionsLink;
+
+        @JsonProperty(value = "usage_instructions_link")
+        public void setUsageInstructionsLink(String usageInstructionsLink) {
+            this.usageInstructionsLink = usageInstructionsLink;
+        }
+
+        @JsonProperty(value = "usage_instructions_link")
+        public String getUsageInstructionsLink() {
+            return this.usageInstructionsLink;
+        }
+
+        private String visibility;
+
+        @JsonProperty(value = "visibility")
+        public void setVisibility(String visibility) {
+            this.visibility = visibility;
+        }
+
+        @JsonProperty(value = "visibility")
+        public String getVisibility() {
+            return this.visibility;
+        }
+
+        private List<String> zones;
+
+        @JsonProperty(value = "zones")
+        public void setZones(List<String> zones) {
+            this.zones = zones;
+        }
+
+        @JsonProperty(value = "zones")
+        public List<String> getZones() {
+            return this.zones;
+        }
+
+
+        public String validateParam() throws QCException {
+            return null;
+        }
+    }
+
+    @JsonIgnoreProperties(ignoreUnknown = true)
+    public static class AppVersionModel implements ParamValidate {
+        private String appID;
+
+        @JsonProperty(value = "app_id")
+        public void setAppID(String appID) {
+            this.appID = appID;
+        }
+
+        @JsonProperty(value = "app_id")
+        public String getAppID() {
+            return this.appID;
+        }
+
+        private String createTime;
+
+        @JsonProperty(value = "create_time")
+        public void setCreateTime(String createTime) {
+            this.createTime = createTime;
+        }
+
+        @JsonProperty(value = "create_time")
+        public String getCreateTime() {
+            return this.createTime;
+        }
+
+        private String description;
+
+        @JsonProperty(value = "description")
+        public void setDescription(String description) {
+            this.description = description;
+        }
+
+        @JsonProperty(value = "description")
+        public String getDescription() {
+            return this.description;
+        }
+
+        private String name;
+
+        @JsonProperty(value = "name")
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        @JsonProperty(value = "name")
+        public String getName() {
+            return this.name;
+        }
+
+        private String resourceKit;
+
+        @JsonProperty(value = "resource_kit")
+        public void setResourceKit(String resourceKit) {
+            this.resourceKit = resourceKit;
+        }
+
+        @JsonProperty(value = "resource_kit")
+        public String getResourceKit() {
+            return this.resourceKit;
+        }
+
+        private String status;
+
+        @JsonProperty(value = "status")
+        public void setStatus(String status) {
+            this.status = status;
+        }
+
+        @JsonProperty(value = "status")
+        public String getStatus() {
+            return this.status;
+        }
+
+        private String statusTime;
+
+        @JsonProperty(value = "status_time")
+        public void setStatusTime(String statusTime) {
+            this.statusTime = statusTime;
+        }
+
+        @JsonProperty(value = "status_time")
+        public String getStatusTime() {
+            return this.statusTime;
+        }
+
+        private String versionID;
+
+        @JsonProperty(value = "version_id")
+        public void setVersionID(String versionID) {
+            this.versionID = versionID;
+        }
+
+        @JsonProperty(value = "version_id")
+        public String getVersionID() {
+            return this.versionID;
+        }
+
+
+        public String validateParam() throws QCException {
+            return null;
+        }
+    }
+
+    @JsonIgnoreProperties(ignoreUnknown = true)
+    public static class AppVersionAttachmentModel implements ParamValidate {
+        private String attachmentID;
+
+        @JsonProperty(value = "attachment_id")
+        public void setAttachmentID(String attachmentID) {
+            this.attachmentID = attachmentID;
+        }
+
+        @JsonProperty(value = "attachment_id")
+        public String getAttachmentID() {
+            return this.attachmentID;
+        }
+
+        private String attachmentType;
+
+        @JsonProperty(value = "attachment_type")
+        public void setAttachmentType(String attachmentType) {
+            this.attachmentType = attachmentType;
+        }
+
+        @JsonProperty(value = "attachment_type")
+        public String getAttachmentType() {
+            return this.attachmentType;
+        }
+
+        private String category;
+
+        @JsonProperty(value = "category")
+        public void setCategory(String category) {
+            this.category = category;
+        }
+
+        @JsonProperty(value = "category")
+        public String getCategory() {
+            return this.category;
+        }
+
+        private String createTime;
+
+        @JsonProperty(value = "create_time")
+        public void setCreateTime(String createTime) {
+            this.createTime = createTime;
+        }
+
+        @JsonProperty(value = "create_time")
+        public String getCreateTime() {
+            return this.createTime;
+        }
+
+        private String filename;
+
+        @JsonProperty(value = "filename")
+        public void setFilename(String filename) {
+            this.filename = filename;
+        }
+
+        @JsonProperty(value = "filename")
+        public String getFilename() {
+            return this.filename;
+        }
+
+        private Integer filesize;
+
+        @JsonProperty(value = "filesize")
+        public void setFilesize(Integer filesize) {
+            this.filesize = filesize;
+        }
+
+        @JsonProperty(value = "filesize")
+        public Integer getFilesize() {
+            return this.filesize;
+        }
+
+        private String name;
+
+        @JsonProperty(value = "name")
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        @JsonProperty(value = "name")
+        public String getName() {
+            return this.name;
+        }
+
+        private String owner;
+
+        @JsonProperty(value = "owner")
+        public void setOwner(String owner) {
+            this.owner = owner;
+        }
+
+        @JsonProperty(value = "owner")
+        public String getOwner() {
+            return this.owner;
+        }
+
+        private String resourceID;
+
+        @JsonProperty(value = "resource_id")
+        public void setResourceID(String resourceID) {
+            this.resourceID = resourceID;
+        }
+
+        @JsonProperty(value = "resource_id")
+        public String getResourceID() {
+            return this.resourceID;
+        }
+
+        private String resourceType;
+
+        @JsonProperty(value = "resource_type")
+        public void setResourceType(String resourceType) {
+            this.resourceType = resourceType;
+        }
+
+        @JsonProperty(value = "resource_type")
+        public String getResourceType() {
+            return this.resourceType;
+        }
+
+        private String statusTime;
+
+        @JsonProperty(value = "status_time")
+        public void setStatusTime(String statusTime) {
+            this.statusTime = statusTime;
+        }
+
+        @JsonProperty(value = "status_time")
+        public String getStatusTime() {
+            return this.statusTime;
+        }
+
+        private String subCategory;
+
+        @JsonProperty(value = "sub_category")
+        public void setSubCategory(String subCategory) {
+            this.subCategory = subCategory;
+        }
+
+        @JsonProperty(value = "sub_category")
+        public String getSubCategory() {
+            return this.subCategory;
+        }
+
+
+        public String validateParam() throws QCException {
+            return null;
+        }
+    }
+
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class CacheModel implements ParamValidate {
         private Integer autoBackupTime;
 
@@ -4359,15 +4899,15 @@ public class Types {
             return this.pubKey;
         }
 
-        private String resourceIDs;
+        private List<String> resourceIDs;
 
         @JsonProperty(value = "resource_ids")
-        public void setResourceIDs(String resourceIDs) {
+        public void setResourceIDs(List<String> resourceIDs) {
             this.resourceIDs = resourceIDs;
         }
 
         @JsonProperty(value = "resource_ids")
-        public String getResourceIDs() {
+        public List<String> getResourceIDs() {
             return this.resourceIDs;
         }
 
@@ -10062,6 +10602,18 @@ public class Types {
         @JsonProperty(value = "place_group_id")
         public String getPlaceGroupID() {
             return this.placeGroupID;
+        }
+
+        private String repl;
+
+        @JsonProperty(value = "repl")
+        public void setRepl(String repl) {
+            this.repl = repl;
+        }
+
+        @JsonProperty(value = "repl")
+        public String getRepl() {
+            return this.repl;
         }
 
         private Integer size;

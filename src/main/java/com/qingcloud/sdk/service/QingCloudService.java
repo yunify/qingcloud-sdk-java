@@ -207,6 +207,10 @@ public class QingCloudService {
     }
 
 
+    public AppService getAppService(String zone) {
+        return new AppService(this.envContext, zone);
+    }
+
     public CacheService getCacheService(String zone) {
         return new CacheService(this.envContext, zone);
     }
@@ -293,6 +297,10 @@ public class QingCloudService {
 
     public VxNetService getVxNetService(String zone) {
         return new VxNetService(this.envContext, zone);
+    }
+
+    public AppService getAppService() {
+        return new AppService(this.envContext);
     }
 
     public CacheService getCacheService() {

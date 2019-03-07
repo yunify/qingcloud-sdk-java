@@ -269,6 +269,18 @@ public class VolumeService {
             return this.count;
         }
 
+        private String repl;
+
+        @JsonProperty(value = "repl")
+        public void setRepl(String repl) {
+            this.repl = repl;
+        }
+
+        @JsonProperty(value = "repl")
+        public String getRepl() {
+            return this.repl;
+        }
+
         // Required
         private Integer size;
 
@@ -294,7 +306,7 @@ public class VolumeService {
             return this.volumeName;
         }
 
-    	// VolumeType's available values: 0, 1, 2, 3
+    	// VolumeType's available values: 0, 1, 2, 3, 4, 5, 10, 100, 200
         private Integer volumeType;
 
         @JsonProperty(value = "volume_type")
@@ -311,7 +323,7 @@ public class VolumeService {
             if (this.getSize() < 0 ) {
                 throw new QCException("Size is required");
             }
-            String[]volumeTypeValidValues = {"0", "1", "2", "3"};
+            String[]volumeTypeValidValues = {"0", "1", "2", "3", "4", "5", "10", "100", "200"};
             boolean volumeTypeIsValid = false;
             for (String v : volumeTypeValidValues) {
                 if (v.equals(this.getVolumeType()+"")) {
@@ -661,7 +673,7 @@ public class VolumeService {
             return this.verbose;
         }
 
-    	// VolumeType's available values: 0, 1, 2, 3
+    	// VolumeType's available values: 0, 1, 2, 3, 4, 5, 10, 100, 200
         private Integer volumeType;
 
         @JsonProperty(value = "volume_type")
@@ -702,7 +714,7 @@ public class VolumeService {
             if (!verboseIsValid) {
                 throw new QCException("Verbose value " + this.getVerbose() + "is invalid");
             }
-            String[]volumeTypeValidValues = {"0", "1", "2", "3"};
+            String[]volumeTypeValidValues = {"0", "1", "2", "3", "4", "5", "10", "100", "200"};
             boolean volumeTypeIsValid = false;
             for (String v : volumeTypeValidValues) {
                 if (v.equals(this.getVolumeType()+"")) {
