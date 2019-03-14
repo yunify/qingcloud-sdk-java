@@ -16,13 +16,11 @@
 
 package com.qingcloud.sdk.request;
 
-import com.qingcloud.sdk.exception.QCException;
 import com.qingcloud.sdk.model.OutputModel;
 
 public interface ResponseCallBack<O extends OutputModel> {
     /**
-     * @param callbackModel
-     * @throws QCException
+     * @param callbackModel OutputModel
      */
     void onAPIResponse(O callbackModel);
 }
