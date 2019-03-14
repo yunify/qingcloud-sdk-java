@@ -48,10 +48,11 @@ public class VxNetService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return CreateVxNetsOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/vxnet/create_vxnets.html
+      * <a href=https://docs.qingcloud.com/api/vxnet/create_vxnets.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public CreateVxNetsOutput createVxNets(CreateVxNetsInput input) throws QCException {
@@ -81,11 +82,11 @@ public class VxNetService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/vxnet/create_vxnets.html
+       * <a href=https://docs.qingcloud.com/api/vxnet/create_vxnets.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void createVxNets(CreateVxNetsInput input, ResponseCallBack<CreateVxNetsOutput> callback) throws QCException {
@@ -217,10 +218,11 @@ public class VxNetService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DeleteVxNetsOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/vxnet/delete_vxnets.html
+      * <a href=https://docs.qingcloud.com/api/vxnet/delete_vxnets.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DeleteVxNetsOutput deleteVxNets(DeleteVxNetsInput input) throws QCException {
@@ -250,11 +252,11 @@ public class VxNetService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/vxnet/delete_vxnets.html
+       * <a href=https://docs.qingcloud.com/api/vxnet/delete_vxnets.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void deleteVxNets(DeleteVxNetsInput input, ResponseCallBack<DeleteVxNetsOutput> callback) throws QCException {
@@ -343,10 +345,11 @@ public class VxNetService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DescribeVxNetInstancesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/vxnet/describe_vxnet_instances.html
+      * <a href=https://docs.qingcloud.com/api/vxnet/describe_vxnet_instances.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DescribeVxNetInstancesOutput describeVxNetInstances(DescribeVxNetInstancesInput input) throws QCException {
@@ -376,11 +379,11 @@ public class VxNetService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/vxnet/describe_vxnet_instances.html
+       * <a href=https://docs.qingcloud.com/api/vxnet/describe_vxnet_instances.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void describeVxNetInstances(DescribeVxNetInstancesInput input, ResponseCallBack<DescribeVxNetInstancesOutput> callback) throws QCException {
@@ -556,10 +559,11 @@ public class VxNetService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DescribeVxNetsOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/vxnet/describe_vxnets.html
+      * <a href=https://docs.qingcloud.com/api/vxnet/describe_vxnets.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DescribeVxNetsOutput describeVxNets(DescribeVxNetsInput input) throws QCException {
@@ -589,11 +593,11 @@ public class VxNetService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/vxnet/describe_vxnets.html
+       * <a href=https://docs.qingcloud.com/api/vxnet/describe_vxnets.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void describeVxNets(DescribeVxNetsInput input, ResponseCallBack<DescribeVxNetsOutput> callback) throws QCException {
@@ -809,10 +813,11 @@ public class VxNetService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return JoinVxNetOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/vxnet/join_vxnet.html
+      * <a href=https://docs.qingcloud.com/api/vxnet/join_vxnet.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public JoinVxNetOutput joinVxNet(JoinVxNetInput input) throws QCException {
@@ -842,11 +847,11 @@ public class VxNetService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/vxnet/join_vxnet.html
+       * <a href=https://docs.qingcloud.com/api/vxnet/join_vxnet.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void joinVxNet(JoinVxNetInput input, ResponseCallBack<JoinVxNetOutput> callback) throws QCException {
@@ -951,10 +956,11 @@ public class VxNetService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return LeaveVxNetOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/vxnet/leave_vxnet.html
+      * <a href=https://docs.qingcloud.com/api/vxnet/leave_vxnet.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public LeaveVxNetOutput leaveVxNet(LeaveVxNetInput input) throws QCException {
@@ -984,11 +990,11 @@ public class VxNetService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/vxnet/leave_vxnet.html
+       * <a href=https://docs.qingcloud.com/api/vxnet/leave_vxnet.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void leaveVxNet(LeaveVxNetInput input, ResponseCallBack<LeaveVxNetOutput> callback) throws QCException {
@@ -1093,10 +1099,11 @@ public class VxNetService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return ModifyVxNetAttributesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/vxnet/modify_vxnet_attributes.html
+      * <a href=https://docs.qingcloud.com/api/vxnet/modify_vxnet_attributes.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public ModifyVxNetAttributesOutput modifyVxNetAttributes(ModifyVxNetAttributesInput input) throws QCException {
@@ -1126,11 +1133,11 @@ public class VxNetService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/vxnet/modify_vxnet_attributes.html
+       * <a href=https://docs.qingcloud.com/api/vxnet/modify_vxnet_attributes.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void modifyVxNetAttributes(ModifyVxNetAttributesInput input, ResponseCallBack<ModifyVxNetAttributesOutput> callback) throws QCException {

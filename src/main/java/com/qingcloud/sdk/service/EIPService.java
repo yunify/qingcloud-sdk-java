@@ -48,10 +48,11 @@ public class EIPService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return AllocateEIPsOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/eip/allocate_eips.html
+      * <a href=https://docs.qingcloud.com/api/eip/allocate_eips.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public AllocateEIPsOutput allocateEIPs(AllocateEIPsInput input) throws QCException {
@@ -81,11 +82,11 @@ public class EIPService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/eip/allocate_eips.html
+       * <a href=https://docs.qingcloud.com/api/eip/allocate_eips.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void allocateEIPs(AllocateEIPsInput input, ResponseCallBack<AllocateEIPsOutput> callback) throws QCException {
@@ -260,10 +261,11 @@ public class EIPService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return AssociateEIPOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/eip/associate_eip.html
+      * <a href=https://docs.qingcloud.com/api/eip/associate_eip.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public AssociateEIPOutput associateEIP(AssociateEIPInput input) throws QCException {
@@ -293,11 +295,11 @@ public class EIPService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/eip/associate_eip.html
+       * <a href=https://docs.qingcloud.com/api/eip/associate_eip.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void associateEIP(AssociateEIPInput input, ResponseCallBack<AssociateEIPOutput> callback) throws QCException {
@@ -405,10 +407,11 @@ public class EIPService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return ChangeEIPsBandwidthOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/eip/dissociate_eips.html
+      * <a href=https://docs.qingcloud.com/api/eip/dissociate_eips.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public ChangeEIPsBandwidthOutput changeEIPsBandwidth(ChangeEIPsBandwidthInput input) throws QCException {
@@ -438,11 +441,11 @@ public class EIPService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/eip/dissociate_eips.html
+       * <a href=https://docs.qingcloud.com/api/eip/dissociate_eips.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void changeEIPsBandwidth(ChangeEIPsBandwidthInput input, ResponseCallBack<ChangeEIPsBandwidthOutput> callback) throws QCException {
@@ -547,10 +550,11 @@ public class EIPService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return ChangeEIPsBillingModeOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/eip/change_eips_billing_mode.html
+      * <a href=https://docs.qingcloud.com/api/eip/change_eips_billing_mode.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public ChangeEIPsBillingModeOutput changeEIPsBillingMode(ChangeEIPsBillingModeInput input) throws QCException {
@@ -580,11 +584,11 @@ public class EIPService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/eip/change_eips_billing_mode.html
+       * <a href=https://docs.qingcloud.com/api/eip/change_eips_billing_mode.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void changeEIPsBillingMode(ChangeEIPsBillingModeInput input, ResponseCallBack<ChangeEIPsBillingModeOutput> callback) throws QCException {
@@ -720,10 +724,11 @@ public class EIPService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DescribeEIPsOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/eip/describe_eips.html
+      * <a href=https://docs.qingcloud.com/api/eip/describe_eips.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DescribeEIPsOutput describeEIPs(DescribeEIPsInput input) throws QCException {
@@ -753,11 +758,11 @@ public class EIPService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/eip/describe_eips.html
+       * <a href=https://docs.qingcloud.com/api/eip/describe_eips.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void describeEIPs(DescribeEIPsInput input, ResponseCallBack<DescribeEIPsOutput> callback) throws QCException {
@@ -953,10 +958,11 @@ public class EIPService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DissociateEIPsOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/eip/dissociate_eips.html
+      * <a href=https://docs.qingcloud.com/api/eip/dissociate_eips.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DissociateEIPsOutput dissociateEIPs(DissociateEIPsInput input) throws QCException {
@@ -986,11 +992,11 @@ public class EIPService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/eip/dissociate_eips.html
+       * <a href=https://docs.qingcloud.com/api/eip/dissociate_eips.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void dissociateEIPs(DissociateEIPsInput input, ResponseCallBack<DissociateEIPsOutput> callback) throws QCException {
@@ -1079,10 +1085,11 @@ public class EIPService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return ModifyEIPAttributesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/eip/modify_eip_attributes.html
+      * <a href=https://docs.qingcloud.com/api/eip/modify_eip_attributes.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public ModifyEIPAttributesOutput modifyEIPAttributes(ModifyEIPAttributesInput input) throws QCException {
@@ -1112,11 +1119,11 @@ public class EIPService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/eip/modify_eip_attributes.html
+       * <a href=https://docs.qingcloud.com/api/eip/modify_eip_attributes.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void modifyEIPAttributes(ModifyEIPAttributesInput input, ResponseCallBack<ModifyEIPAttributesOutput> callback) throws QCException {
@@ -1232,10 +1239,11 @@ public class EIPService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return ReleaseEIPsOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/eip/release_eips.html
+      * <a href=https://docs.qingcloud.com/api/eip/release_eips.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public ReleaseEIPsOutput releaseEIPs(ReleaseEIPsInput input) throws QCException {
@@ -1265,11 +1273,11 @@ public class EIPService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/eip/release_eips.html
+       * <a href=https://docs.qingcloud.com/api/eip/release_eips.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void releaseEIPs(ReleaseEIPsInput input, ResponseCallBack<ReleaseEIPsOutput> callback) throws QCException {

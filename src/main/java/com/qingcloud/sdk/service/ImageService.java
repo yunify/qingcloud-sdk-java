@@ -48,10 +48,11 @@ public class ImageService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return CaptureInstanceOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/image/capture_instance.html
+      * <a href=https://docs.qingcloud.com/api/image/capture_instance.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public CaptureInstanceOutput captureInstance(CaptureInstanceInput input) throws QCException {
@@ -81,11 +82,11 @@ public class ImageService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/image/capture_instance.html
+       * <a href=https://docs.qingcloud.com/api/image/capture_instance.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void captureInstance(CaptureInstanceInput input, ResponseCallBack<CaptureInstanceOutput> callback) throws QCException {
@@ -201,10 +202,11 @@ public class ImageService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DeleteImagesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/image/delete_images.html
+      * <a href=https://docs.qingcloud.com/api/image/delete_images.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DeleteImagesOutput deleteImages(DeleteImagesInput input) throws QCException {
@@ -234,11 +236,11 @@ public class ImageService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/image/delete_images.html
+       * <a href=https://docs.qingcloud.com/api/image/delete_images.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void deleteImages(DeleteImagesInput input, ResponseCallBack<DeleteImagesOutput> callback) throws QCException {
@@ -327,10 +329,11 @@ public class ImageService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DescribeImageUsersOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/image/describe-image-users.html
+      * <a href=https://docs.qingcloud.com/api/image/describe-image-users.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DescribeImageUsersOutput describeImageUsers(DescribeImageUsersInput input) throws QCException {
@@ -360,11 +363,11 @@ public class ImageService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/image/describe-image-users.html
+       * <a href=https://docs.qingcloud.com/api/image/describe-image-users.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void describeImageUsers(DescribeImageUsersInput input, ResponseCallBack<DescribeImageUsersOutput> callback) throws QCException {
@@ -492,10 +495,11 @@ public class ImageService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DescribeImagesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/image/describe_images.html
+      * <a href=https://docs.qingcloud.com/api/image/describe_images.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DescribeImagesOutput describeImages(DescribeImagesInput input) throws QCException {
@@ -525,11 +529,11 @@ public class ImageService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/image/describe_images.html
+       * <a href=https://docs.qingcloud.com/api/image/describe_images.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void describeImages(DescribeImagesInput input, ResponseCallBack<DescribeImagesOutput> callback) throws QCException {
@@ -822,10 +826,11 @@ public class ImageService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return GrantImageToUsersOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/image/grant-image-to-users.html
+      * <a href=https://docs.qingcloud.com/api/image/grant-image-to-users.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public GrantImageToUsersOutput grantImageToUsers(GrantImageToUsersInput input) throws QCException {
@@ -855,11 +860,11 @@ public class ImageService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/image/grant-image-to-users.html
+       * <a href=https://docs.qingcloud.com/api/image/grant-image-to-users.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void grantImageToUsers(GrantImageToUsersInput input, ResponseCallBack<GrantImageToUsersOutput> callback) throws QCException {
@@ -952,10 +957,11 @@ public class ImageService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return ModifyImageAttributesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/image/modify_image_attributes.html
+      * <a href=https://docs.qingcloud.com/api/image/modify_image_attributes.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public ModifyImageAttributesOutput modifyImageAttributes(ModifyImageAttributesInput input) throws QCException {
@@ -985,11 +991,11 @@ public class ImageService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/image/modify_image_attributes.html
+       * <a href=https://docs.qingcloud.com/api/image/modify_image_attributes.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void modifyImageAttributes(ModifyImageAttributesInput input, ResponseCallBack<ModifyImageAttributesOutput> callback) throws QCException {
@@ -1105,10 +1111,11 @@ public class ImageService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return RevokeImageFromUsersOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/image/revoke-image-from-users.html
+      * <a href=https://docs.qingcloud.com/api/image/revoke-image-from-users.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public RevokeImageFromUsersOutput revokeImageFromUsers(RevokeImageFromUsersInput input) throws QCException {
@@ -1138,11 +1145,11 @@ public class ImageService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/image/revoke-image-from-users.html
+       * <a href=https://docs.qingcloud.com/api/image/revoke-image-from-users.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void revokeImageFromUsers(RevokeImageFromUsersInput input, ResponseCallBack<RevokeImageFromUsersOutput> callback) throws QCException {

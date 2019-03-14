@@ -48,10 +48,11 @@ public class CacheService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return AddCacheNodesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/cache/add_cache_nodes.html
+      * <a href=https://docs.qingcloud.com/api/cache/add_cache_nodes.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public AddCacheNodesOutput addCacheNodes(AddCacheNodesInput input) throws QCException {
@@ -81,11 +82,11 @@ public class CacheService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/cache/add_cache_nodes.html
+       * <a href=https://docs.qingcloud.com/api/cache/add_cache_nodes.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void addCacheNodes(AddCacheNodesInput input, ResponseCallBack<AddCacheNodesOutput> callback) throws QCException {
@@ -227,10 +228,11 @@ public class CacheService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return ApplyCacheParameterGroupOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/cache/apply_cache_parameter_group.html
+      * <a href=https://docs.qingcloud.com/api/cache/apply_cache_parameter_group.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public ApplyCacheParameterGroupOutput applyCacheParameterGroup(ApplyCacheParameterGroupInput input) throws QCException {
@@ -260,11 +262,11 @@ public class CacheService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/cache/apply_cache_parameter_group.html
+       * <a href=https://docs.qingcloud.com/api/cache/apply_cache_parameter_group.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void applyCacheParameterGroup(ApplyCacheParameterGroupInput input, ResponseCallBack<ApplyCacheParameterGroupOutput> callback) throws QCException {
@@ -368,10 +370,11 @@ public class CacheService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return ChangeCacheVxNetOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/cache/change_cache_vxnet.html
+      * <a href=https://docs.qingcloud.com/api/cache/change_cache_vxnet.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public ChangeCacheVxNetOutput changeCacheVxNet(ChangeCacheVxNetInput input) throws QCException {
@@ -401,11 +404,11 @@ public class CacheService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/cache/change_cache_vxnet.html
+       * <a href=https://docs.qingcloud.com/api/cache/change_cache_vxnet.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void changeCacheVxNet(ChangeCacheVxNetInput input, ResponseCallBack<ChangeCacheVxNetOutput> callback) throws QCException {
@@ -559,10 +562,11 @@ public class CacheService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return CreateCacheOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/cache/create_cache.html
+      * <a href=https://docs.qingcloud.com/api/cache/create_cache.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public CreateCacheOutput createCache(CreateCacheInput input) throws QCException {
@@ -592,11 +596,11 @@ public class CacheService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/cache/create_cache.html
+       * <a href=https://docs.qingcloud.com/api/cache/create_cache.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void createCache(CreateCacheInput input, ResponseCallBack<CreateCacheOutput> callback) throws QCException {
@@ -878,10 +882,11 @@ public class CacheService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return CreateCacheFromSnapshotOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/cache/create_cache_from_snapshot.html
+      * <a href=https://docs.qingcloud.com/api/cache/create_cache_from_snapshot.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public CreateCacheFromSnapshotOutput createCacheFromSnapshot(CreateCacheFromSnapshotInput input) throws QCException {
@@ -911,11 +916,11 @@ public class CacheService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/cache/create_cache_from_snapshot.html
+       * <a href=https://docs.qingcloud.com/api/cache/create_cache_from_snapshot.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void createCacheFromSnapshot(CreateCacheFromSnapshotInput input, ResponseCallBack<CreateCacheFromSnapshotOutput> callback) throws QCException {
@@ -1181,10 +1186,11 @@ public class CacheService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return CreateCacheParameterGroupOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/cache/create_cache_parameter_group.html
+      * <a href=https://docs.qingcloud.com/api/cache/create_cache_parameter_group.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public CreateCacheParameterGroupOutput createCacheParameterGroup(CreateCacheParameterGroupInput input) throws QCException {
@@ -1214,11 +1220,11 @@ public class CacheService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/cache/create_cache_parameter_group.html
+       * <a href=https://docs.qingcloud.com/api/cache/create_cache_parameter_group.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void createCacheParameterGroup(CreateCacheParameterGroupInput input, ResponseCallBack<CreateCacheParameterGroupOutput> callback) throws QCException {
@@ -1341,10 +1347,11 @@ public class CacheService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DeleteCacheNodesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/cache/delete_cache_nodes.html
+      * <a href=https://docs.qingcloud.com/api/cache/delete_cache_nodes.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DeleteCacheNodesOutput deleteCacheNodes(DeleteCacheNodesInput input) throws QCException {
@@ -1374,11 +1381,11 @@ public class CacheService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/cache/delete_cache_nodes.html
+       * <a href=https://docs.qingcloud.com/api/cache/delete_cache_nodes.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void deleteCacheNodes(DeleteCacheNodesInput input, ResponseCallBack<DeleteCacheNodesOutput> callback) throws QCException {
@@ -1495,10 +1502,11 @@ public class CacheService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DeleteCacheParameterGroupsOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/cache/delete_cache_parameter_groups.html
+      * <a href=https://docs.qingcloud.com/api/cache/delete_cache_parameter_groups.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DeleteCacheParameterGroupsOutput deleteCacheParameterGroups(DeleteCacheParameterGroupsInput input) throws QCException {
@@ -1528,11 +1536,11 @@ public class CacheService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/cache/delete_cache_parameter_groups.html
+       * <a href=https://docs.qingcloud.com/api/cache/delete_cache_parameter_groups.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void deleteCacheParameterGroups(DeleteCacheParameterGroupsInput input, ResponseCallBack<DeleteCacheParameterGroupsOutput> callback) throws QCException {
@@ -1621,10 +1629,11 @@ public class CacheService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DeleteCachesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/cache/delete_caches.html
+      * <a href=https://docs.qingcloud.com/api/cache/delete_caches.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DeleteCachesOutput deleteCaches(DeleteCachesInput input) throws QCException {
@@ -1654,11 +1663,11 @@ public class CacheService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/cache/delete_caches.html
+       * <a href=https://docs.qingcloud.com/api/cache/delete_caches.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void deleteCaches(DeleteCachesInput input, ResponseCallBack<DeleteCachesOutput> callback) throws QCException {
@@ -1759,10 +1768,11 @@ public class CacheService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DescribeCacheNodesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/cache/describe_cache_nodes.html
+      * <a href=https://docs.qingcloud.com/api/cache/describe_cache_nodes.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DescribeCacheNodesOutput describeCacheNodes(DescribeCacheNodesInput input) throws QCException {
@@ -1792,11 +1802,11 @@ public class CacheService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/cache/describe_cache_nodes.html
+       * <a href=https://docs.qingcloud.com/api/cache/describe_cache_nodes.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void describeCacheNodes(DescribeCacheNodesInput input, ResponseCallBack<DescribeCacheNodesOutput> callback) throws QCException {
@@ -1968,10 +1978,11 @@ public class CacheService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DescribeCacheParameterGroupsOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/cache/describe_cache_parameter_groups.html
+      * <a href=https://docs.qingcloud.com/api/cache/describe_cache_parameter_groups.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DescribeCacheParameterGroupsOutput describeCacheParameterGroups(DescribeCacheParameterGroupsInput input) throws QCException {
@@ -2001,11 +2012,11 @@ public class CacheService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/cache/describe_cache_parameter_groups.html
+       * <a href=https://docs.qingcloud.com/api/cache/describe_cache_parameter_groups.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void describeCacheParameterGroups(DescribeCacheParameterGroupsInput input, ResponseCallBack<DescribeCacheParameterGroupsOutput> callback) throws QCException {
@@ -2165,10 +2176,11 @@ public class CacheService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DescribeCacheParametersOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/cache/describe_cache_parameters.html
+      * <a href=https://docs.qingcloud.com/api/cache/describe_cache_parameters.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DescribeCacheParametersOutput describeCacheParameters(DescribeCacheParametersInput input) throws QCException {
@@ -2198,11 +2210,11 @@ public class CacheService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/cache/describe_cache_parameters.html
+       * <a href=https://docs.qingcloud.com/api/cache/describe_cache_parameters.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void describeCacheParameters(DescribeCacheParametersInput input, ResponseCallBack<DescribeCacheParametersOutput> callback) throws QCException {
@@ -2318,10 +2330,11 @@ public class CacheService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DescribeCachesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/cache/describe_caches.html
+      * <a href=https://docs.qingcloud.com/api/cache/describe_caches.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DescribeCachesOutput describeCaches(DescribeCachesInput input) throws QCException {
@@ -2351,11 +2364,11 @@ public class CacheService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/cache/describe_caches.html
+       * <a href=https://docs.qingcloud.com/api/cache/describe_caches.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void describeCaches(DescribeCachesInput input, ResponseCallBack<DescribeCachesOutput> callback) throws QCException {
@@ -2539,10 +2552,11 @@ public class CacheService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return GetCacheMonitorOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/monitor/get_cache_monitor.html
+      * <a href=https://docs.qingcloud.com/api/monitor/get_cache_monitor.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public GetCacheMonitorOutput getCacheMonitor(GetCacheMonitorInput input) throws QCException {
@@ -2572,11 +2586,11 @@ public class CacheService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/monitor/get_cache_monitor.html
+       * <a href=https://docs.qingcloud.com/api/monitor/get_cache_monitor.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void getCacheMonitor(GetCacheMonitorInput input, ResponseCallBack<GetCacheMonitorOutput> callback) throws QCException {
@@ -2754,10 +2768,11 @@ public class CacheService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return ModifyCacheAttributesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/cache/modify_cache_attributes.html
+      * <a href=https://docs.qingcloud.com/api/cache/modify_cache_attributes.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public ModifyCacheAttributesOutput modifyCacheAttributes(ModifyCacheAttributesInput input) throws QCException {
@@ -2787,11 +2802,11 @@ public class CacheService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/cache/modify_cache_attributes.html
+       * <a href=https://docs.qingcloud.com/api/cache/modify_cache_attributes.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void modifyCacheAttributes(ModifyCacheAttributesInput input, ResponseCallBack<ModifyCacheAttributesOutput> callback) throws QCException {
@@ -2907,10 +2922,11 @@ public class CacheService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return ModifyCacheNodeAttributesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/cache/modify_cache_node_attributes.html
+      * <a href=https://docs.qingcloud.com/api/cache/modify_cache_node_attributes.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public ModifyCacheNodeAttributesOutput modifyCacheNodeAttributes(ModifyCacheNodeAttributesInput input) throws QCException {
@@ -2940,11 +2956,11 @@ public class CacheService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/cache/modify_cache_node_attributes.html
+       * <a href=https://docs.qingcloud.com/api/cache/modify_cache_node_attributes.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void modifyCacheNodeAttributes(ModifyCacheNodeAttributesInput input, ResponseCallBack<ModifyCacheNodeAttributesOutput> callback) throws QCException {
@@ -3036,10 +3052,11 @@ public class CacheService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return ModifyCacheParameterGroupAttributesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/cache/modify_cache_parameter_group_attributes.html
+      * <a href=https://docs.qingcloud.com/api/cache/modify_cache_parameter_group_attributes.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public ModifyCacheParameterGroupAttributesOutput modifyCacheParameterGroupAttributes(ModifyCacheParameterGroupAttributesInput input) throws QCException {
@@ -3069,11 +3086,11 @@ public class CacheService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/cache/modify_cache_parameter_group_attributes.html
+       * <a href=https://docs.qingcloud.com/api/cache/modify_cache_parameter_group_attributes.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void modifyCacheParameterGroupAttributes(ModifyCacheParameterGroupAttributesInput input, ResponseCallBack<ModifyCacheParameterGroupAttributesOutput> callback) throws QCException {
@@ -3189,10 +3206,11 @@ public class CacheService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return ResetCacheParametersOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/cache/reset_cache_parameters.html
+      * <a href=https://docs.qingcloud.com/api/cache/reset_cache_parameters.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public ResetCacheParametersOutput resetCacheParameters(ResetCacheParametersInput input) throws QCException {
@@ -3222,11 +3240,11 @@ public class CacheService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/cache/reset_cache_parameters.html
+       * <a href=https://docs.qingcloud.com/api/cache/reset_cache_parameters.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void resetCacheParameters(ResetCacheParametersInput input, ResponseCallBack<ResetCacheParametersOutput> callback) throws QCException {
@@ -3318,10 +3336,11 @@ public class CacheService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return ResizeCachesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/cache/resize_cache.html
+      * <a href=https://docs.qingcloud.com/api/cache/resize_cache.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public ResizeCachesOutput resizeCaches(ResizeCachesInput input) throws QCException {
@@ -3351,11 +3370,11 @@ public class CacheService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/cache/resize_cache.html
+       * <a href=https://docs.qingcloud.com/api/cache/resize_cache.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void resizeCaches(ResizeCachesInput input, ResponseCallBack<ResizeCachesOutput> callback) throws QCException {
@@ -3460,10 +3479,11 @@ public class CacheService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return RestartCacheNodesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/cache/restart_cache_nodes.html
+      * <a href=https://docs.qingcloud.com/api/cache/restart_cache_nodes.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public RestartCacheNodesOutput restartCacheNodes(RestartCacheNodesInput input) throws QCException {
@@ -3493,11 +3513,11 @@ public class CacheService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/cache/restart_cache_nodes.html
+       * <a href=https://docs.qingcloud.com/api/cache/restart_cache_nodes.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void restartCacheNodes(RestartCacheNodesInput input, ResponseCallBack<RestartCacheNodesOutput> callback) throws QCException {
@@ -3602,10 +3622,11 @@ public class CacheService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return RestartCachesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/cache/restart_caches.html
+      * <a href=https://docs.qingcloud.com/api/cache/restart_caches.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public RestartCachesOutput restartCaches(RestartCachesInput input) throws QCException {
@@ -3635,11 +3656,11 @@ public class CacheService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/cache/restart_caches.html
+       * <a href=https://docs.qingcloud.com/api/cache/restart_caches.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void restartCaches(RestartCachesInput input, ResponseCallBack<RestartCachesOutput> callback) throws QCException {
@@ -3728,10 +3749,11 @@ public class CacheService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return StartCachesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/cache/start_caches.html
+      * <a href=https://docs.qingcloud.com/api/cache/start_caches.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public StartCachesOutput startCaches(StartCachesInput input) throws QCException {
@@ -3761,11 +3783,11 @@ public class CacheService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/cache/start_caches.html
+       * <a href=https://docs.qingcloud.com/api/cache/start_caches.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void startCaches(StartCachesInput input, ResponseCallBack<StartCachesOutput> callback) throws QCException {
@@ -3866,10 +3888,11 @@ public class CacheService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return StopCachesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/cache/stop_caches.html
+      * <a href=https://docs.qingcloud.com/api/cache/stop_caches.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public StopCachesOutput stopCaches(StopCachesInput input) throws QCException {
@@ -3899,11 +3922,11 @@ public class CacheService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/cache/stop_caches.html
+       * <a href=https://docs.qingcloud.com/api/cache/stop_caches.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void stopCaches(StopCachesInput input, ResponseCallBack<StopCachesOutput> callback) throws QCException {
@@ -4004,10 +4027,11 @@ public class CacheService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return UpdateCacheOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/cache/update_cache.html
+      * <a href=https://docs.qingcloud.com/api/cache/update_cache.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public UpdateCacheOutput updateCache(UpdateCacheInput input) throws QCException {
@@ -4037,11 +4061,11 @@ public class CacheService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/cache/update_cache.html
+       * <a href=https://docs.qingcloud.com/api/cache/update_cache.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void updateCache(UpdateCacheInput input, ResponseCallBack<UpdateCacheOutput> callback) throws QCException {
@@ -4155,10 +4179,11 @@ public class CacheService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return UpdateCacheParametersOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/cache/update_cache_parameters.html
+      * <a href=https://docs.qingcloud.com/api/cache/update_cache_parameters.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public UpdateCacheParametersOutput updateCacheParameters(UpdateCacheParametersInput input) throws QCException {
@@ -4188,11 +4213,11 @@ public class CacheService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/cache/update_cache_parameters.html
+       * <a href=https://docs.qingcloud.com/api/cache/update_cache_parameters.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void updateCacheParameters(UpdateCacheParametersInput input, ResponseCallBack<UpdateCacheParametersOutput> callback) throws QCException {

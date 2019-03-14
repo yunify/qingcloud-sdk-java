@@ -48,10 +48,11 @@ public class MiscService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return GetQuotaLeftOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/product/api/action/misc/get_quota_left.html
+      * <a href=https://docs.qingcloud.com/product/api/action/misc/get_quota_left.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public GetQuotaLeftOutput getQuotaLeft(GetQuotaLeftInput input) throws QCException {
@@ -81,11 +82,11 @@ public class MiscService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/product/api/action/misc/get_quota_left.html
+       * <a href=https://docs.qingcloud.com/product/api/action/misc/get_quota_left.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void getQuotaLeft(GetQuotaLeftInput input, ResponseCallBack<GetQuotaLeftOutput> callback) throws QCException {

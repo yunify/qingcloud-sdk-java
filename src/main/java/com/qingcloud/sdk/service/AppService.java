@@ -48,10 +48,11 @@ public class AppService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DeployAppVersionOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/bot/DeployAppVersion.html
+      * <a href=https://docs.qingcloud.com/api/bot/DeployAppVersion.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DeployAppVersionOutput deployAppVersion(DeployAppVersionInput input) throws QCException {
@@ -81,11 +82,11 @@ public class AppService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/bot/DeployAppVersion.html
+       * <a href=https://docs.qingcloud.com/api/bot/DeployAppVersion.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void deployAppVersion(DeployAppVersionInput input, ResponseCallBack<DeployAppVersionOutput> callback) throws QCException {
@@ -329,10 +330,11 @@ public class AppService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DescribeAppVersionAttachmentsOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/bot/describe_app_version_attachments.html
+      * <a href=https://docs.qingcloud.com/api/bot/describe_app_version_attachments.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DescribeAppVersionAttachmentsOutput describeAppVersionAttachments(DescribeAppVersionAttachmentsInput input) throws QCException {
@@ -362,11 +364,11 @@ public class AppService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/bot/describe_app_version_attachments.html
+       * <a href=https://docs.qingcloud.com/api/bot/describe_app_version_attachments.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void describeAppVersionAttachments(DescribeAppVersionAttachmentsInput input, ResponseCallBack<DescribeAppVersionAttachmentsOutput> callback) throws QCException {
@@ -491,10 +493,11 @@ public class AppService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DescribeAppVersionsOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/bot/describe_app_versions.html
+      * <a href=https://docs.qingcloud.com/api/bot/describe_app_versions.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DescribeAppVersionsOutput describeAppVersions(DescribeAppVersionsInput input) throws QCException {
@@ -524,11 +527,11 @@ public class AppService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/bot/describe_app_versions.html
+       * <a href=https://docs.qingcloud.com/api/bot/describe_app_versions.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void describeAppVersions(DescribeAppVersionsInput input, ResponseCallBack<DescribeAppVersionsOutput> callback) throws QCException {
@@ -752,10 +755,11 @@ public class AppService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DescribeAppsOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/bot/describe_apps.html
+      * <a href=https://docs.qingcloud.com/api/bot/describe_apps.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DescribeAppsOutput describeApps(DescribeAppsInput input) throws QCException {
@@ -785,11 +789,11 @@ public class AppService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/bot/describe_apps.html
+       * <a href=https://docs.qingcloud.com/api/bot/describe_apps.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void describeApps(DescribeAppsInput input, ResponseCallBack<DescribeAppsOutput> callback) throws QCException {
@@ -1025,10 +1029,11 @@ public class AppService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return GetGlobalUniqueIdOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/bot/describe_app_version_attachments.html
+      * <a href=https://docs.qingcloud.com/api/bot/describe_app_version_attachments.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public GetGlobalUniqueIdOutput getGlobalUniqueId(GetGlobalUniqueIdInput input) throws QCException {
@@ -1058,11 +1063,11 @@ public class AppService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/bot/describe_app_version_attachments.html
+       * <a href=https://docs.qingcloud.com/api/bot/describe_app_version_attachments.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void getGlobalUniqueId(GetGlobalUniqueIdInput input, ResponseCallBack<GetGlobalUniqueIdOutput> callback) throws QCException {

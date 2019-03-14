@@ -48,10 +48,11 @@ public class DNSAliasService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return AssociateDNSAliasOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/dns_alias/associate_dns_alias.html
+      * <a href=https://docs.qingcloud.com/api/dns_alias/associate_dns_alias.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public AssociateDNSAliasOutput associateDNSAlias(AssociateDNSAliasInput input) throws QCException {
@@ -81,11 +82,11 @@ public class DNSAliasService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/dns_alias/associate_dns_alias.html
+       * <a href=https://docs.qingcloud.com/api/dns_alias/associate_dns_alias.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void associateDNSAlias(AssociateDNSAliasInput input, ResponseCallBack<AssociateDNSAliasOutput> callback) throws QCException {
@@ -217,10 +218,11 @@ public class DNSAliasService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DescribeDNSAliasesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/dns_alias/describe_dns_aliases.html
+      * <a href=https://docs.qingcloud.com/api/dns_alias/describe_dns_aliases.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DescribeDNSAliasesOutput describeDNSAliases(DescribeDNSAliasesInput input) throws QCException {
@@ -250,11 +252,11 @@ public class DNSAliasService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/dns_alias/describe_dns_aliases.html
+       * <a href=https://docs.qingcloud.com/api/dns_alias/describe_dns_aliases.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void describeDNSAliases(DescribeDNSAliasesInput input, ResponseCallBack<DescribeDNSAliasesOutput> callback) throws QCException {
@@ -402,10 +404,11 @@ public class DNSAliasService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DissociateDNSAliasesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/dns_alias/dissociate_dns_aliases.html
+      * <a href=https://docs.qingcloud.com/api/dns_alias/dissociate_dns_aliases.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DissociateDNSAliasesOutput dissociateDNSAliases(DissociateDNSAliasesInput input) throws QCException {
@@ -435,11 +438,11 @@ public class DNSAliasService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/dns_alias/dissociate_dns_aliases.html
+       * <a href=https://docs.qingcloud.com/api/dns_alias/dissociate_dns_aliases.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void dissociateDNSAliases(DissociateDNSAliasesInput input, ResponseCallBack<DissociateDNSAliasesOutput> callback) throws QCException {
@@ -528,9 +531,10 @@ public class DNSAliasService {
     }
         
     /**
-      * @throws QCException
+      * @return GetDNSLabelOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/dns_alias/get_dns_label.html
+      * <a href=https://docs.qingcloud.com/api/dns_alias/get_dns_label.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public GetDNSLabelOutput getDNSLabel() throws QCException {IaasParamBody input = new IaasParamBody();
@@ -557,11 +561,10 @@ public class DNSAliasService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/dns_alias/get_dns_label.html
+       * <a href=https://docs.qingcloud.com/api/dns_alias/get_dns_label.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void getDNSLabel( ResponseCallBack<GetDNSLabelOutput> callback) throws QCException {

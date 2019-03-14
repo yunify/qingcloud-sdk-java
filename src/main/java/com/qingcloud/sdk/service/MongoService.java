@@ -48,10 +48,11 @@ public class MongoService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return AddMongoInstancesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/mongo/add_mongo_instances.html
+      * <a href=https://docs.qingcloud.com/api/mongo/add_mongo_instances.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public AddMongoInstancesOutput addMongoInstances(AddMongoInstancesInput input) throws QCException {
@@ -81,11 +82,11 @@ public class MongoService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/mongo/add_mongo_instances.html
+       * <a href=https://docs.qingcloud.com/api/mongo/add_mongo_instances.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void addMongoInstances(AddMongoInstancesInput input, ResponseCallBack<AddMongoInstancesOutput> callback) throws QCException {
@@ -231,10 +232,11 @@ public class MongoService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return ChangeMongoVxNetOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/mongo/change_mongo_vxnet.html
+      * <a href=https://docs.qingcloud.com/api/mongo/change_mongo_vxnet.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public ChangeMongoVxNetOutput changeMongoVxNet(ChangeMongoVxNetInput input) throws QCException {
@@ -264,11 +266,11 @@ public class MongoService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/mongo/change_mongo_vxnet.html
+       * <a href=https://docs.qingcloud.com/api/mongo/change_mongo_vxnet.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void changeMongoVxNet(ChangeMongoVxNetInput input, ResponseCallBack<ChangeMongoVxNetOutput> callback) throws QCException {
@@ -410,10 +412,11 @@ public class MongoService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return CreateMongoOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/mongo/create_mongo.html
+      * <a href=https://docs.qingcloud.com/api/mongo/create_mongo.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public CreateMongoOutput createMongo(CreateMongoInput input) throws QCException {
@@ -443,11 +446,11 @@ public class MongoService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/mongo/create_mongo.html
+       * <a href=https://docs.qingcloud.com/api/mongo/create_mongo.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void createMongo(CreateMongoInput input, ResponseCallBack<CreateMongoOutput> callback) throws QCException {
@@ -689,10 +692,11 @@ public class MongoService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return CreateMongoFromSnapshotOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/mongo/create_mongo_from_snapshot.html
+      * <a href=https://docs.qingcloud.com/api/mongo/create_mongo_from_snapshot.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public CreateMongoFromSnapshotOutput createMongoFromSnapshot(CreateMongoFromSnapshotInput input) throws QCException {
@@ -722,11 +726,11 @@ public class MongoService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/mongo/create_mongo_from_snapshot.html
+       * <a href=https://docs.qingcloud.com/api/mongo/create_mongo_from_snapshot.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void createMongoFromSnapshot(CreateMongoFromSnapshotInput input, ResponseCallBack<CreateMongoFromSnapshotOutput> callback) throws QCException {
@@ -910,10 +914,11 @@ public class MongoService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DeleteMongosOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/mongo/delete_mongos.html
+      * <a href=https://docs.qingcloud.com/api/mongo/delete_mongos.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DeleteMongosOutput deleteMongos(DeleteMongosInput input) throws QCException {
@@ -943,11 +948,11 @@ public class MongoService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/mongo/delete_mongos.html
+       * <a href=https://docs.qingcloud.com/api/mongo/delete_mongos.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void deleteMongos(DeleteMongosInput input, ResponseCallBack<DeleteMongosOutput> callback) throws QCException {
@@ -1048,10 +1053,11 @@ public class MongoService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DescribeMongoNodesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/mongo/describe_mongo_nodes.html
+      * <a href=https://docs.qingcloud.com/api/mongo/describe_mongo_nodes.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DescribeMongoNodesOutput describeMongoNodes(DescribeMongoNodesInput input) throws QCException {
@@ -1081,11 +1087,11 @@ public class MongoService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/mongo/describe_mongo_nodes.html
+       * <a href=https://docs.qingcloud.com/api/mongo/describe_mongo_nodes.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void describeMongoNodes(DescribeMongoNodesInput input, ResponseCallBack<DescribeMongoNodesOutput> callback) throws QCException {
@@ -1225,10 +1231,11 @@ public class MongoService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DescribeMongoParametersOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/mongo/describe_mongo_parameters.html
+      * <a href=https://docs.qingcloud.com/api/mongo/describe_mongo_parameters.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DescribeMongoParametersOutput describeMongoParameters(DescribeMongoParametersInput input) throws QCException {
@@ -1258,11 +1265,11 @@ public class MongoService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/mongo/describe_mongo_parameters.html
+       * <a href=https://docs.qingcloud.com/api/mongo/describe_mongo_parameters.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void describeMongoParameters(DescribeMongoParametersInput input, ResponseCallBack<DescribeMongoParametersOutput> callback) throws QCException {
@@ -1390,10 +1397,11 @@ public class MongoService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DescribeMongosOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/mongo/describe_mongos.html
+      * <a href=https://docs.qingcloud.com/api/mongo/describe_mongos.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DescribeMongosOutput describeMongos(DescribeMongosInput input) throws QCException {
@@ -1423,11 +1431,11 @@ public class MongoService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/mongo/describe_mongos.html
+       * <a href=https://docs.qingcloud.com/api/mongo/describe_mongos.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void describeMongos(DescribeMongosInput input, ResponseCallBack<DescribeMongosOutput> callback) throws QCException {
@@ -1599,10 +1607,11 @@ public class MongoService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return GetMongoMonitorOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/monitor/get_mongo_monitor.html
+      * <a href=https://docs.qingcloud.com/api/monitor/get_mongo_monitor.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public GetMongoMonitorOutput getMongoMonitor(GetMongoMonitorInput input) throws QCException {
@@ -1632,11 +1641,11 @@ public class MongoService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/monitor/get_mongo_monitor.html
+       * <a href=https://docs.qingcloud.com/api/monitor/get_mongo_monitor.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void getMongoMonitor(GetMongoMonitorInput input, ResponseCallBack<GetMongoMonitorOutput> callback) throws QCException {
@@ -1814,10 +1823,11 @@ public class MongoService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return ModifyMongoAttributesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/mongo/modify_mongo_attributes.html
+      * <a href=https://docs.qingcloud.com/api/mongo/modify_mongo_attributes.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public ModifyMongoAttributesOutput modifyMongoAttributes(ModifyMongoAttributesInput input) throws QCException {
@@ -1847,11 +1857,11 @@ public class MongoService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/mongo/modify_mongo_attributes.html
+       * <a href=https://docs.qingcloud.com/api/mongo/modify_mongo_attributes.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void modifyMongoAttributes(ModifyMongoAttributesInput input, ResponseCallBack<ModifyMongoAttributesOutput> callback) throws QCException {
@@ -1979,10 +1989,11 @@ public class MongoService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return ModifyMongoInstancesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/mongo/modify_mongo_instances.html
+      * <a href=https://docs.qingcloud.com/api/mongo/modify_mongo_instances.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public ModifyMongoInstancesOutput modifyMongoInstances(ModifyMongoInstancesInput input) throws QCException {
@@ -2012,11 +2023,11 @@ public class MongoService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/mongo/modify_mongo_instances.html
+       * <a href=https://docs.qingcloud.com/api/mongo/modify_mongo_instances.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void modifyMongoInstances(ModifyMongoInstancesInput input, ResponseCallBack<ModifyMongoInstancesOutput> callback) throws QCException {
@@ -2142,10 +2153,11 @@ public class MongoService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return RemoveMongoInstancesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/mongo/remove_mongo_instances.html
+      * <a href=https://docs.qingcloud.com/api/mongo/remove_mongo_instances.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public RemoveMongoInstancesOutput removeMongoInstances(RemoveMongoInstancesInput input) throws QCException {
@@ -2175,11 +2187,11 @@ public class MongoService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/mongo/remove_mongo_instances.html
+       * <a href=https://docs.qingcloud.com/api/mongo/remove_mongo_instances.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void removeMongoInstances(RemoveMongoInstancesInput input, ResponseCallBack<RemoveMongoInstancesOutput> callback) throws QCException {
@@ -2296,10 +2308,11 @@ public class MongoService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return ResizeMongosOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/mongo/resize_mongos.html
+      * <a href=https://docs.qingcloud.com/api/mongo/resize_mongos.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public ResizeMongosOutput resizeMongos(ResizeMongosInput input) throws QCException {
@@ -2329,11 +2342,11 @@ public class MongoService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/mongo/resize_mongos.html
+       * <a href=https://docs.qingcloud.com/api/mongo/resize_mongos.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void resizeMongos(ResizeMongosInput input, ResponseCallBack<ResizeMongosOutput> callback) throws QCException {
@@ -2458,10 +2471,11 @@ public class MongoService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return StartMongosOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/mongo/start_mongos.html
+      * <a href=https://docs.qingcloud.com/api/mongo/start_mongos.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public StartMongosOutput startMongos(StartMongosInput input) throws QCException {
@@ -2491,11 +2505,11 @@ public class MongoService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/mongo/start_mongos.html
+       * <a href=https://docs.qingcloud.com/api/mongo/start_mongos.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void startMongos(StartMongosInput input, ResponseCallBack<StartMongosOutput> callback) throws QCException {
@@ -2587,10 +2601,11 @@ public class MongoService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return StopMongosOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/mongo/stop_mongos.html
+      * <a href=https://docs.qingcloud.com/api/mongo/stop_mongos.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public StopMongosOutput stopMongos(StopMongosInput input) throws QCException {
@@ -2620,11 +2635,11 @@ public class MongoService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/mongo/stop_mongos.html
+       * <a href=https://docs.qingcloud.com/api/mongo/stop_mongos.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void stopMongos(StopMongosInput input, ResponseCallBack<StopMongosOutput> callback) throws QCException {

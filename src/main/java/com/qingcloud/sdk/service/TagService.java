@@ -48,10 +48,11 @@ public class TagService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return AttachTagsOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/tag/attach_tags.html
+      * <a href=https://docs.qingcloud.com/api/tag/attach_tags.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public AttachTagsOutput attachTags(AttachTagsInput input) throws QCException {
@@ -81,11 +82,11 @@ public class TagService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/tag/attach_tags.html
+       * <a href=https://docs.qingcloud.com/api/tag/attach_tags.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void attachTags(AttachTagsInput input, ResponseCallBack<AttachTagsOutput> callback) throws QCException {
@@ -172,10 +173,11 @@ public class TagService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return CreateTagOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/tag/create_tag.html
+      * <a href=https://docs.qingcloud.com/api/tag/create_tag.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public CreateTagOutput createTag(CreateTagInput input) throws QCException {
@@ -205,11 +207,11 @@ public class TagService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/tag/create_tag.html
+       * <a href=https://docs.qingcloud.com/api/tag/create_tag.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void createTag(CreateTagInput input, ResponseCallBack<CreateTagOutput> callback) throws QCException {
@@ -309,10 +311,11 @@ public class TagService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DeleteTagsOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/tag/delete_tags.html
+      * <a href=https://docs.qingcloud.com/api/tag/delete_tags.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DeleteTagsOutput deleteTags(DeleteTagsInput input) throws QCException {
@@ -342,11 +345,11 @@ public class TagService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/tag/delete_tags.html
+       * <a href=https://docs.qingcloud.com/api/tag/delete_tags.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void deleteTags(DeleteTagsInput input, ResponseCallBack<DeleteTagsOutput> callback) throws QCException {
@@ -435,10 +438,11 @@ public class TagService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DescribeTagsOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/tag/describe_tags.html
+      * <a href=https://docs.qingcloud.com/api/tag/describe_tags.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DescribeTagsOutput describeTags(DescribeTagsInput input) throws QCException {
@@ -468,11 +472,11 @@ public class TagService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/tag/describe_tags.html
+       * <a href=https://docs.qingcloud.com/api/tag/describe_tags.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void describeTags(DescribeTagsInput input, ResponseCallBack<DescribeTagsOutput> callback) throws QCException {
@@ -636,10 +640,11 @@ public class TagService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DetachTagsOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/tag/detach_tags.html
+      * <a href=https://docs.qingcloud.com/api/tag/detach_tags.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DetachTagsOutput detachTags(DetachTagsInput input) throws QCException {
@@ -669,11 +674,11 @@ public class TagService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/tag/detach_tags.html
+       * <a href=https://docs.qingcloud.com/api/tag/detach_tags.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void detachTags(DetachTagsInput input, ResponseCallBack<DetachTagsOutput> callback) throws QCException {
@@ -760,10 +765,11 @@ public class TagService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return ModifyTagAttributesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/tag/modify_tag_attributes.html
+      * <a href=https://docs.qingcloud.com/api/tag/modify_tag_attributes.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public ModifyTagAttributesOutput modifyTagAttributes(ModifyTagAttributesInput input) throws QCException {
@@ -793,11 +799,11 @@ public class TagService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/tag/modify_tag_attributes.html
+       * <a href=https://docs.qingcloud.com/api/tag/modify_tag_attributes.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void modifyTagAttributes(ModifyTagAttributesInput input, ResponseCallBack<ModifyTagAttributesOutput> callback) throws QCException {

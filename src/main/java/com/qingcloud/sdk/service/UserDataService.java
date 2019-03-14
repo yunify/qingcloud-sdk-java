@@ -48,10 +48,11 @@ public class UserDataService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return UploadUserDataAttachmentOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/userdata/upload_userdata_attachment.html
+      * <a href=https://docs.qingcloud.com/api/userdata/upload_userdata_attachment.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public UploadUserDataAttachmentOutput uploadUserDataAttachment(UploadUserDataAttachmentInput input) throws QCException {
@@ -81,11 +82,11 @@ public class UserDataService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/userdata/upload_userdata_attachment.html
+       * <a href=https://docs.qingcloud.com/api/userdata/upload_userdata_attachment.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void uploadUserDataAttachment(UploadUserDataAttachmentInput input, ResponseCallBack<UploadUserDataAttachmentOutput> callback) throws QCException {

@@ -48,10 +48,11 @@ public class KeyPairService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return AttachKeyPairsOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/keypair/attach_key_pairs.html
+      * <a href=https://docs.qingcloud.com/api/keypair/attach_key_pairs.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public AttachKeyPairsOutput attachKeyPairs(AttachKeyPairsInput input) throws QCException {
@@ -81,11 +82,11 @@ public class KeyPairService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/keypair/attach_key_pairs.html
+       * <a href=https://docs.qingcloud.com/api/keypair/attach_key_pairs.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void attachKeyPairs(AttachKeyPairsInput input, ResponseCallBack<AttachKeyPairsOutput> callback) throws QCException {
@@ -187,10 +188,11 @@ public class KeyPairService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return CreateKeyPairOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/keypair/create_key_pairs.html
+      * <a href=https://docs.qingcloud.com/api/keypair/create_key_pairs.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public CreateKeyPairOutput createKeyPair(CreateKeyPairInput input) throws QCException {
@@ -220,11 +222,11 @@ public class KeyPairService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/keypair/create_key_pairs.html
+       * <a href=https://docs.qingcloud.com/api/keypair/create_key_pairs.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void createKeyPair(CreateKeyPairInput input, ResponseCallBack<CreateKeyPairOutput> callback) throws QCException {
@@ -398,10 +400,11 @@ public class KeyPairService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DeleteKeyPairsOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/keypair/delete_key_pairs.html
+      * <a href=https://docs.qingcloud.com/api/keypair/delete_key_pairs.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DeleteKeyPairsOutput deleteKeyPairs(DeleteKeyPairsInput input) throws QCException {
@@ -431,11 +434,11 @@ public class KeyPairService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/keypair/delete_key_pairs.html
+       * <a href=https://docs.qingcloud.com/api/keypair/delete_key_pairs.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void deleteKeyPairs(DeleteKeyPairsInput input, ResponseCallBack<DeleteKeyPairsOutput> callback) throws QCException {
@@ -524,10 +527,11 @@ public class KeyPairService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DescribeKeyPairsOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/keypair/describe_key_pairs.html
+      * <a href=https://docs.qingcloud.com/api/keypair/describe_key_pairs.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DescribeKeyPairsOutput describeKeyPairs(DescribeKeyPairsInput input) throws QCException {
@@ -557,11 +561,11 @@ public class KeyPairService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/keypair/describe_key_pairs.html
+       * <a href=https://docs.qingcloud.com/api/keypair/describe_key_pairs.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void describeKeyPairs(DescribeKeyPairsInput input, ResponseCallBack<DescribeKeyPairsOutput> callback) throws QCException {
@@ -776,10 +780,11 @@ public class KeyPairService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DetachKeyPairsOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/keypair/detach_key_pairs.html
+      * <a href=https://docs.qingcloud.com/api/keypair/detach_key_pairs.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DetachKeyPairsOutput detachKeyPairs(DetachKeyPairsInput input) throws QCException {
@@ -809,11 +814,11 @@ public class KeyPairService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/keypair/detach_key_pairs.html
+       * <a href=https://docs.qingcloud.com/api/keypair/detach_key_pairs.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void detachKeyPairs(DetachKeyPairsInput input, ResponseCallBack<DetachKeyPairsOutput> callback) throws QCException {
@@ -915,10 +920,11 @@ public class KeyPairService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return ModifyKeyPairAttributesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/keypair/modify_key_pair_attributes.html
+      * <a href=https://docs.qingcloud.com/api/keypair/modify_key_pair_attributes.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public ModifyKeyPairAttributesOutput modifyKeyPairAttributes(ModifyKeyPairAttributesInput input) throws QCException {
@@ -948,11 +954,11 @@ public class KeyPairService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/keypair/modify_key_pair_attributes.html
+       * <a href=https://docs.qingcloud.com/api/keypair/modify_key_pair_attributes.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void modifyKeyPairAttributes(ModifyKeyPairAttributesInput input, ResponseCallBack<ModifyKeyPairAttributesOutput> callback) throws QCException {

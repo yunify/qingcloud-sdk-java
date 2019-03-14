@@ -48,10 +48,11 @@ public class VolumeService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return AttachVolumesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/volume/attach_volumes.html
+      * <a href=https://docs.qingcloud.com/api/volume/attach_volumes.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public AttachVolumesOutput attachVolumes(AttachVolumesInput input) throws QCException {
@@ -81,11 +82,11 @@ public class VolumeService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/volume/attach_volumes.html
+       * <a href=https://docs.qingcloud.com/api/volume/attach_volumes.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void attachVolumes(AttachVolumesInput input, ResponseCallBack<AttachVolumesOutput> callback) throws QCException {
@@ -190,10 +191,11 @@ public class VolumeService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return CreateVolumesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/volume/create_volumes.html
+      * <a href=https://docs.qingcloud.com/api/volume/create_volumes.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public CreateVolumesOutput createVolumes(CreateVolumesInput input) throws QCException {
@@ -223,11 +225,11 @@ public class VolumeService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/volume/create_volumes.html
+       * <a href=https://docs.qingcloud.com/api/volume/create_volumes.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void createVolumes(CreateVolumesInput input, ResponseCallBack<CreateVolumesOutput> callback) throws QCException {
@@ -395,10 +397,11 @@ public class VolumeService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DeleteVolumesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/volume/delete_volumes.html
+      * <a href=https://docs.qingcloud.com/api/volume/delete_volumes.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DeleteVolumesOutput deleteVolumes(DeleteVolumesInput input) throws QCException {
@@ -428,11 +431,11 @@ public class VolumeService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/volume/delete_volumes.html
+       * <a href=https://docs.qingcloud.com/api/volume/delete_volumes.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void deleteVolumes(DeleteVolumesInput input, ResponseCallBack<DeleteVolumesOutput> callback) throws QCException {
@@ -521,10 +524,11 @@ public class VolumeService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DescribeVolumesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/volume/describe_volumes.html
+      * <a href=https://docs.qingcloud.com/api/volume/describe_volumes.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DescribeVolumesOutput describeVolumes(DescribeVolumesInput input) throws QCException {
@@ -554,11 +558,11 @@ public class VolumeService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/volume/describe_volumes.html
+       * <a href=https://docs.qingcloud.com/api/volume/describe_volumes.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void describeVolumes(DescribeVolumesInput input, ResponseCallBack<DescribeVolumesOutput> callback) throws QCException {
@@ -786,10 +790,11 @@ public class VolumeService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DetachVolumesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/volume/detach_volumes.html
+      * <a href=https://docs.qingcloud.com/api/volume/detach_volumes.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DetachVolumesOutput detachVolumes(DetachVolumesInput input) throws QCException {
@@ -819,11 +824,11 @@ public class VolumeService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/volume/detach_volumes.html
+       * <a href=https://docs.qingcloud.com/api/volume/detach_volumes.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void detachVolumes(DetachVolumesInput input, ResponseCallBack<DetachVolumesOutput> callback) throws QCException {
@@ -928,10 +933,11 @@ public class VolumeService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return ModifyVolumeAttributesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/volume/modify_volume_attributes.html
+      * <a href=https://docs.qingcloud.com/api/volume/modify_volume_attributes.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public ModifyVolumeAttributesOutput modifyVolumeAttributes(ModifyVolumeAttributesInput input) throws QCException {
@@ -961,11 +967,11 @@ public class VolumeService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/volume/modify_volume_attributes.html
+       * <a href=https://docs.qingcloud.com/api/volume/modify_volume_attributes.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void modifyVolumeAttributes(ModifyVolumeAttributesInput input, ResponseCallBack<ModifyVolumeAttributesOutput> callback) throws QCException {
@@ -1069,10 +1075,11 @@ public class VolumeService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return ResizeVolumesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/volume/resize_volumes.html
+      * <a href=https://docs.qingcloud.com/api/volume/resize_volumes.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public ResizeVolumesOutput resizeVolumes(ResizeVolumesInput input) throws QCException {
@@ -1102,11 +1109,11 @@ public class VolumeService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/volume/resize_volumes.html
+       * <a href=https://docs.qingcloud.com/api/volume/resize_volumes.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void resizeVolumes(ResizeVolumesInput input, ResponseCallBack<ResizeVolumesOutput> callback) throws QCException {

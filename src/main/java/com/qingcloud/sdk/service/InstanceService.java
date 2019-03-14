@@ -48,10 +48,11 @@ public class InstanceService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return CeaseInstancesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/instance/cease_instances.html
+      * <a href=https://docs.qingcloud.com/api/instance/cease_instances.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public CeaseInstancesOutput ceaseInstances(CeaseInstancesInput input) throws QCException {
@@ -81,11 +82,11 @@ public class InstanceService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/instance/cease_instances.html
+       * <a href=https://docs.qingcloud.com/api/instance/cease_instances.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void ceaseInstances(CeaseInstancesInput input, ResponseCallBack<CeaseInstancesOutput> callback) throws QCException {
@@ -174,10 +175,11 @@ public class InstanceService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DescribeInstanceTypesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/instance/describe_instance_types.html
+      * <a href=https://docs.qingcloud.com/api/instance/describe_instance_types.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DescribeInstanceTypesOutput describeInstanceTypes(DescribeInstanceTypesInput input) throws QCException {
@@ -207,11 +209,11 @@ public class InstanceService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/instance/describe_instance_types.html
+       * <a href=https://docs.qingcloud.com/api/instance/describe_instance_types.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void describeInstanceTypes(DescribeInstanceTypesInput input, ResponseCallBack<DescribeInstanceTypesOutput> callback) throws QCException {
@@ -311,10 +313,11 @@ public class InstanceService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DescribeInstancesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/instance/describe_instances.html
+      * <a href=https://docs.qingcloud.com/api/instance/describe_instances.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DescribeInstancesOutput describeInstances(DescribeInstancesInput input) throws QCException {
@@ -344,11 +347,11 @@ public class InstanceService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/instance/describe_instances.html
+       * <a href=https://docs.qingcloud.com/api/instance/describe_instances.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void describeInstances(DescribeInstancesInput input, ResponseCallBack<DescribeInstancesOutput> callback) throws QCException {
@@ -612,10 +615,11 @@ public class InstanceService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return ModifyInstanceAttributesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/instance/modify_instance_attributes.html
+      * <a href=https://docs.qingcloud.com/api/instance/modify_instance_attributes.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public ModifyInstanceAttributesOutput modifyInstanceAttributes(ModifyInstanceAttributesInput input) throws QCException {
@@ -645,11 +649,11 @@ public class InstanceService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/instance/modify_instance_attributes.html
+       * <a href=https://docs.qingcloud.com/api/instance/modify_instance_attributes.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void modifyInstanceAttributes(ModifyInstanceAttributesInput input, ResponseCallBack<ModifyInstanceAttributesOutput> callback) throws QCException {
@@ -753,10 +757,11 @@ public class InstanceService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return ResetInstancesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/instance/reset_instances.html
+      * <a href=https://docs.qingcloud.com/api/instance/reset_instances.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public ResetInstancesOutput resetInstances(ResetInstancesInput input) throws QCException {
@@ -786,11 +791,11 @@ public class InstanceService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/instance/reset_instances.html
+       * <a href=https://docs.qingcloud.com/api/instance/reset_instances.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void resetInstances(ResetInstancesInput input, ResponseCallBack<ResetInstancesOutput> callback) throws QCException {
@@ -966,10 +971,11 @@ public class InstanceService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return ResizeInstancesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/instance/resize_instances.html
+      * <a href=https://docs.qingcloud.com/api/instance/resize_instances.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public ResizeInstancesOutput resizeInstances(ResizeInstancesInput input) throws QCException {
@@ -999,11 +1005,11 @@ public class InstanceService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/instance/resize_instances.html
+       * <a href=https://docs.qingcloud.com/api/instance/resize_instances.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void resizeInstances(ResizeInstancesInput input, ResponseCallBack<ResizeInstancesOutput> callback) throws QCException {
@@ -1196,10 +1202,11 @@ public class InstanceService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return RestartInstancesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/instance/restart_instances.html
+      * <a href=https://docs.qingcloud.com/api/instance/restart_instances.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public RestartInstancesOutput restartInstances(RestartInstancesInput input) throws QCException {
@@ -1229,11 +1236,11 @@ public class InstanceService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/instance/restart_instances.html
+       * <a href=https://docs.qingcloud.com/api/instance/restart_instances.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void restartInstances(RestartInstancesInput input, ResponseCallBack<RestartInstancesOutput> callback) throws QCException {
@@ -1322,10 +1329,11 @@ public class InstanceService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return RunInstancesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/instance/run_instances.html
+      * <a href=https://docs.qingcloud.com/api/instance/run_instances.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public RunInstancesOutput runInstances(RunInstancesInput input) throws QCException {
@@ -1355,11 +1363,11 @@ public class InstanceService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/instance/run_instances.html
+       * <a href=https://docs.qingcloud.com/api/instance/run_instances.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void runInstances(RunInstancesInput input, ResponseCallBack<RunInstancesOutput> callback) throws QCException {
@@ -1948,10 +1956,11 @@ public class InstanceService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return StartInstancesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/instance/start_instances.html
+      * <a href=https://docs.qingcloud.com/api/instance/start_instances.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public StartInstancesOutput startInstances(StartInstancesInput input) throws QCException {
@@ -1981,11 +1990,11 @@ public class InstanceService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/instance/start_instances.html
+       * <a href=https://docs.qingcloud.com/api/instance/start_instances.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void startInstances(StartInstancesInput input, ResponseCallBack<StartInstancesOutput> callback) throws QCException {
@@ -2074,10 +2083,11 @@ public class InstanceService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return StopInstancesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/instance/stop_instances.html
+      * <a href=https://docs.qingcloud.com/api/instance/stop_instances.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public StopInstancesOutput stopInstances(StopInstancesInput input) throws QCException {
@@ -2107,11 +2117,11 @@ public class InstanceService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/instance/stop_instances.html
+       * <a href=https://docs.qingcloud.com/api/instance/stop_instances.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void stopInstances(StopInstancesInput input, ResponseCallBack<StopInstancesOutput> callback) throws QCException {
@@ -2228,10 +2238,11 @@ public class InstanceService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return TerminateInstancesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/instance/terminate_instances.html
+      * <a href=https://docs.qingcloud.com/api/instance/terminate_instances.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public TerminateInstancesOutput terminateInstances(TerminateInstancesInput input) throws QCException {
@@ -2261,11 +2272,11 @@ public class InstanceService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/instance/terminate_instances.html
+       * <a href=https://docs.qingcloud.com/api/instance/terminate_instances.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void terminateInstances(TerminateInstancesInput input, ResponseCallBack<TerminateInstancesOutput> callback) throws QCException {

@@ -48,10 +48,11 @@ public class SnapshotService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return ApplySnapshotsOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/snapshot/apply_snapshots.html
+      * <a href=https://docs.qingcloud.com/api/snapshot/apply_snapshots.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public ApplySnapshotsOutput applySnapshots(ApplySnapshotsInput input) throws QCException {
@@ -81,11 +82,11 @@ public class SnapshotService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/snapshot/apply_snapshots.html
+       * <a href=https://docs.qingcloud.com/api/snapshot/apply_snapshots.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void applySnapshots(ApplySnapshotsInput input, ResponseCallBack<ApplySnapshotsOutput> callback) throws QCException {
@@ -174,10 +175,11 @@ public class SnapshotService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return CaptureInstanceFromSnapshotOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/snapshot/capture_instance_from_snapshot.html
+      * <a href=https://docs.qingcloud.com/api/snapshot/capture_instance_from_snapshot.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public CaptureInstanceFromSnapshotOutput captureInstanceFromSnapshot(CaptureInstanceFromSnapshotInput input) throws QCException {
@@ -207,11 +209,11 @@ public class SnapshotService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/snapshot/capture_instance_from_snapshot.html
+       * <a href=https://docs.qingcloud.com/api/snapshot/capture_instance_from_snapshot.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void captureInstanceFromSnapshot(CaptureInstanceFromSnapshotInput input, ResponseCallBack<CaptureInstanceFromSnapshotOutput> callback) throws QCException {
@@ -327,10 +329,11 @@ public class SnapshotService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return CreateSnapshotsOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/snapshot/create_snapshots.html
+      * <a href=https://docs.qingcloud.com/api/snapshot/create_snapshots.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public CreateSnapshotsOutput createSnapshots(CreateSnapshotsInput input) throws QCException {
@@ -360,11 +363,11 @@ public class SnapshotService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/snapshot/create_snapshots.html
+       * <a href=https://docs.qingcloud.com/api/snapshot/create_snapshots.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void createSnapshots(CreateSnapshotsInput input, ResponseCallBack<CreateSnapshotsOutput> callback) throws QCException {
@@ -517,10 +520,11 @@ public class SnapshotService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return CreateVolumeFromSnapshotOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/snapshot/create_volume_from_snapshot.html
+      * <a href=https://docs.qingcloud.com/api/snapshot/create_volume_from_snapshot.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public CreateVolumeFromSnapshotOutput createVolumeFromSnapshot(CreateVolumeFromSnapshotInput input) throws QCException {
@@ -550,11 +554,11 @@ public class SnapshotService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/snapshot/create_volume_from_snapshot.html
+       * <a href=https://docs.qingcloud.com/api/snapshot/create_volume_from_snapshot.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void createVolumeFromSnapshot(CreateVolumeFromSnapshotInput input, ResponseCallBack<CreateVolumeFromSnapshotOutput> callback) throws QCException {
@@ -670,10 +674,11 @@ public class SnapshotService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DeleteSnapshotsOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/snapshot/delete_snapshots.html
+      * <a href=https://docs.qingcloud.com/api/snapshot/delete_snapshots.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DeleteSnapshotsOutput deleteSnapshots(DeleteSnapshotsInput input) throws QCException {
@@ -703,11 +708,11 @@ public class SnapshotService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/snapshot/delete_snapshots.html
+       * <a href=https://docs.qingcloud.com/api/snapshot/delete_snapshots.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void deleteSnapshots(DeleteSnapshotsInput input, ResponseCallBack<DeleteSnapshotsOutput> callback) throws QCException {
@@ -796,10 +801,11 @@ public class SnapshotService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DescribeSnapshotsOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/snapshot/describe_snapshots.html
+      * <a href=https://docs.qingcloud.com/api/snapshot/describe_snapshots.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DescribeSnapshotsOutput describeSnapshots(DescribeSnapshotsInput input) throws QCException {
@@ -829,11 +835,11 @@ public class SnapshotService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/snapshot/describe_snapshots.html
+       * <a href=https://docs.qingcloud.com/api/snapshot/describe_snapshots.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void describeSnapshots(DescribeSnapshotsInput input, ResponseCallBack<DescribeSnapshotsOutput> callback) throws QCException {
@@ -1085,10 +1091,11 @@ public class SnapshotService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return ModifySnapshotAttributesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/snapshot/modify_snapshot_attributes.html
+      * <a href=https://docs.qingcloud.com/api/snapshot/modify_snapshot_attributes.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public ModifySnapshotAttributesOutput modifySnapshotAttributes(ModifySnapshotAttributesInput input) throws QCException {
@@ -1118,11 +1125,11 @@ public class SnapshotService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/snapshot/modify_snapshot_attributes.html
+       * <a href=https://docs.qingcloud.com/api/snapshot/modify_snapshot_attributes.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void modifySnapshotAttributes(ModifySnapshotAttributesInput input, ResponseCallBack<ModifySnapshotAttributesOutput> callback) throws QCException {

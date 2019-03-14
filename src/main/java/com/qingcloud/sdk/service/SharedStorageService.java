@@ -48,10 +48,11 @@ public class SharedStorageService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return AttachToS2SharedTargetOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/vsan/attach_to_s2_shared_target.html
+      * <a href=https://docs.qingcloud.com/api/vsan/attach_to_s2_shared_target.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public AttachToS2SharedTargetOutput attachToS2SharedTarget(AttachToS2SharedTargetInput input) throws QCException {
@@ -81,11 +82,11 @@ public class SharedStorageService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/vsan/attach_to_s2_shared_target.html
+       * <a href=https://docs.qingcloud.com/api/vsan/attach_to_s2_shared_target.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void attachToS2SharedTarget(AttachToS2SharedTargetInput input, ResponseCallBack<AttachToS2SharedTargetOutput> callback) throws QCException {
@@ -190,10 +191,11 @@ public class SharedStorageService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return ChangeS2ServerVxNetOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/vsan/change_s2_server_vxnet.html
+      * <a href=https://docs.qingcloud.com/api/vsan/change_s2_server_vxnet.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public ChangeS2ServerVxNetOutput changeS2ServerVxNet(ChangeS2ServerVxNetInput input) throws QCException {
@@ -223,11 +225,11 @@ public class SharedStorageService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/vsan/change_s2_server_vxnet.html
+       * <a href=https://docs.qingcloud.com/api/vsan/change_s2_server_vxnet.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void changeS2ServerVxNet(ChangeS2ServerVxNetInput input, ResponseCallBack<ChangeS2ServerVxNetOutput> callback) throws QCException {
@@ -347,10 +349,11 @@ public class SharedStorageService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return CreateS2ServerOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/vsan/create_s2_server.html
+      * <a href=https://docs.qingcloud.com/api/vsan/create_s2_server.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public CreateS2ServerOutput createS2Server(CreateS2ServerInput input) throws QCException {
@@ -380,11 +383,11 @@ public class SharedStorageService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/vsan/create_s2_server.html
+       * <a href=https://docs.qingcloud.com/api/vsan/create_s2_server.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void createS2Server(CreateS2ServerInput input, ResponseCallBack<CreateS2ServerOutput> callback) throws QCException {
@@ -560,10 +563,11 @@ public class SharedStorageService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return CreateS2SharedTargetOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/vsan/create_s2_shared_target.html
+      * <a href=https://docs.qingcloud.com/api/vsan/create_s2_shared_target.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public CreateS2SharedTargetOutput createS2SharedTarget(CreateS2SharedTargetInput input) throws QCException {
@@ -593,11 +597,11 @@ public class SharedStorageService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/vsan/create_s2_shared_target.html
+       * <a href=https://docs.qingcloud.com/api/vsan/create_s2_shared_target.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void createS2SharedTarget(CreateS2SharedTargetInput input, ResponseCallBack<CreateS2SharedTargetOutput> callback) throws QCException {
@@ -800,10 +804,11 @@ public class SharedStorageService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DeleteS2ServersOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/vsan/delete_s2_servers.html
+      * <a href=https://docs.qingcloud.com/api/vsan/delete_s2_servers.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DeleteS2ServersOutput deleteS2Servers(DeleteS2ServersInput input) throws QCException {
@@ -833,11 +838,11 @@ public class SharedStorageService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/vsan/delete_s2_servers.html
+       * <a href=https://docs.qingcloud.com/api/vsan/delete_s2_servers.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void deleteS2Servers(DeleteS2ServersInput input, ResponseCallBack<DeleteS2ServersOutput> callback) throws QCException {
@@ -938,10 +943,11 @@ public class SharedStorageService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DeleteS2SharedTargetsOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/vsan/delete_s2_shared_targets.html
+      * <a href=https://docs.qingcloud.com/api/vsan/delete_s2_shared_targets.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DeleteS2SharedTargetsOutput deleteS2SharedTargets(DeleteS2SharedTargetsInput input) throws QCException {
@@ -971,11 +977,11 @@ public class SharedStorageService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/vsan/delete_s2_shared_targets.html
+       * <a href=https://docs.qingcloud.com/api/vsan/delete_s2_shared_targets.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void deleteS2SharedTargets(DeleteS2SharedTargetsInput input, ResponseCallBack<DeleteS2SharedTargetsOutput> callback) throws QCException {
@@ -1064,10 +1070,11 @@ public class SharedStorageService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DescribeS2DefaultParametersOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/vsan/describle_s2_default_parameters.html
+      * <a href=https://docs.qingcloud.com/api/vsan/describle_s2_default_parameters.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DescribeS2DefaultParametersOutput describeS2DefaultParameters(DescribeS2DefaultParametersInput input) throws QCException {
@@ -1097,11 +1104,11 @@ public class SharedStorageService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/vsan/describle_s2_default_parameters.html
+       * <a href=https://docs.qingcloud.com/api/vsan/describle_s2_default_parameters.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void describeS2DefaultParameters(DescribeS2DefaultParametersInput input, ResponseCallBack<DescribeS2DefaultParametersOutput> callback) throws QCException {
@@ -1275,10 +1282,11 @@ public class SharedStorageService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DescribeS2ServersOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/vsan/describe_s2_servers.html
+      * <a href=https://docs.qingcloud.com/api/vsan/describe_s2_servers.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DescribeS2ServersOutput describeS2Servers(DescribeS2ServersInput input) throws QCException {
@@ -1308,11 +1316,11 @@ public class SharedStorageService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/vsan/describe_s2_servers.html
+       * <a href=https://docs.qingcloud.com/api/vsan/describe_s2_servers.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void describeS2Servers(DescribeS2ServersInput input, ResponseCallBack<DescribeS2ServersOutput> callback) throws QCException {
@@ -1484,10 +1492,11 @@ public class SharedStorageService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DescribeS2SharedTargetsOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/vsan/describe_s2_shared_targets.html
+      * <a href=https://docs.qingcloud.com/api/vsan/describe_s2_shared_targets.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DescribeS2SharedTargetsOutput describeS2SharedTargets(DescribeS2SharedTargetsInput input) throws QCException {
@@ -1517,11 +1526,11 @@ public class SharedStorageService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/vsan/describe_s2_shared_targets.html
+       * <a href=https://docs.qingcloud.com/api/vsan/describe_s2_shared_targets.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void describeS2SharedTargets(DescribeS2SharedTargetsInput input, ResponseCallBack<DescribeS2SharedTargetsOutput> callback) throws QCException {
@@ -1681,10 +1690,11 @@ public class SharedStorageService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DetachFromS2SharedTargetOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/vsan/detach_from_s2_shared_target.html
+      * <a href=https://docs.qingcloud.com/api/vsan/detach_from_s2_shared_target.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DetachFromS2SharedTargetOutput detachFromS2SharedTarget(DetachFromS2SharedTargetInput input) throws QCException {
@@ -1714,11 +1724,11 @@ public class SharedStorageService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/vsan/detach_from_s2_shared_target.html
+       * <a href=https://docs.qingcloud.com/api/vsan/detach_from_s2_shared_target.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void detachFromS2SharedTarget(DetachFromS2SharedTargetInput input, ResponseCallBack<DetachFromS2SharedTargetOutput> callback) throws QCException {
@@ -1823,10 +1833,11 @@ public class SharedStorageService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DisableS2SharedTargetsOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/vsan/disable_s2_shared_targets.html
+      * <a href=https://docs.qingcloud.com/api/vsan/disable_s2_shared_targets.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DisableS2SharedTargetsOutput disableS2SharedTargets(DisableS2SharedTargetsInput input) throws QCException {
@@ -1856,11 +1867,11 @@ public class SharedStorageService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/vsan/disable_s2_shared_targets.html
+       * <a href=https://docs.qingcloud.com/api/vsan/disable_s2_shared_targets.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void disableS2SharedTargets(DisableS2SharedTargetsInput input, ResponseCallBack<DisableS2SharedTargetsOutput> callback) throws QCException {
@@ -1949,10 +1960,11 @@ public class SharedStorageService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return EnableS2SharedTargetsOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/vsan/enable_s2_shared_targets.html
+      * <a href=https://docs.qingcloud.com/api/vsan/enable_s2_shared_targets.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public EnableS2SharedTargetsOutput enableS2SharedTargets(EnableS2SharedTargetsInput input) throws QCException {
@@ -1982,11 +1994,11 @@ public class SharedStorageService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/vsan/enable_s2_shared_targets.html
+       * <a href=https://docs.qingcloud.com/api/vsan/enable_s2_shared_targets.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void enableS2SharedTargets(EnableS2SharedTargetsInput input, ResponseCallBack<EnableS2SharedTargetsOutput> callback) throws QCException {
@@ -2075,10 +2087,11 @@ public class SharedStorageService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return ModifyS2ServerOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/vsan/modify_s2_server.html
+      * <a href=https://docs.qingcloud.com/api/vsan/modify_s2_server.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public ModifyS2ServerOutput modifyS2Server(ModifyS2ServerInput input) throws QCException {
@@ -2108,11 +2121,11 @@ public class SharedStorageService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/vsan/modify_s2_server.html
+       * <a href=https://docs.qingcloud.com/api/vsan/modify_s2_server.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void modifyS2Server(ModifyS2ServerInput input, ResponseCallBack<ModifyS2ServerOutput> callback) throws QCException {
@@ -2216,10 +2229,11 @@ public class SharedStorageService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return ModifyS2SharedTargetsOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/vsan/modify_s2_shared_target.html
+      * <a href=https://docs.qingcloud.com/api/vsan/modify_s2_shared_target.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public ModifyS2SharedTargetsOutput modifyS2SharedTargets(ModifyS2SharedTargetsInput input) throws QCException {
@@ -2249,11 +2263,11 @@ public class SharedStorageService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/vsan/modify_s2_shared_target.html
+       * <a href=https://docs.qingcloud.com/api/vsan/modify_s2_shared_target.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void modifyS2SharedTargets(ModifyS2SharedTargetsInput input, ResponseCallBack<ModifyS2SharedTargetsOutput> callback) throws QCException {
@@ -2371,10 +2385,11 @@ public class SharedStorageService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return PowerOffS2ServersOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/vsan/poweroff_s2_servers.html
+      * <a href=https://docs.qingcloud.com/api/vsan/poweroff_s2_servers.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public PowerOffS2ServersOutput powerOffS2Servers(PowerOffS2ServersInput input) throws QCException {
@@ -2404,11 +2419,11 @@ public class SharedStorageService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/vsan/poweroff_s2_servers.html
+       * <a href=https://docs.qingcloud.com/api/vsan/poweroff_s2_servers.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void powerOffS2Servers(PowerOffS2ServersInput input, ResponseCallBack<PowerOffS2ServersOutput> callback) throws QCException {
@@ -2500,10 +2515,11 @@ public class SharedStorageService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return PowerOnS2ServersOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/vsan/poweron_s2_servers.html
+      * <a href=https://docs.qingcloud.com/api/vsan/poweron_s2_servers.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public PowerOnS2ServersOutput powerOnS2Servers(PowerOnS2ServersInput input) throws QCException {
@@ -2533,11 +2549,11 @@ public class SharedStorageService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/vsan/poweron_s2_servers.html
+       * <a href=https://docs.qingcloud.com/api/vsan/poweron_s2_servers.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void powerOnS2Servers(PowerOnS2ServersInput input, ResponseCallBack<PowerOnS2ServersOutput> callback) throws QCException {
@@ -2626,10 +2642,11 @@ public class SharedStorageService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return ResizeS2ServersOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/vsan/resize_s2_servers.html
+      * <a href=https://docs.qingcloud.com/api/vsan/resize_s2_servers.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public ResizeS2ServersOutput resizeS2Servers(ResizeS2ServersInput input) throws QCException {
@@ -2659,11 +2676,11 @@ public class SharedStorageService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/vsan/resize_s2_servers.html
+       * <a href=https://docs.qingcloud.com/api/vsan/resize_s2_servers.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void resizeS2Servers(ResizeS2ServersInput input, ResponseCallBack<ResizeS2ServersOutput> callback) throws QCException {
@@ -2771,10 +2788,11 @@ public class SharedStorageService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return UpdateS2ServersOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/vsan/update_s2_servers.html
+      * <a href=https://docs.qingcloud.com/api/vsan/update_s2_servers.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public UpdateS2ServersOutput updateS2Servers(UpdateS2ServersInput input) throws QCException {
@@ -2804,11 +2822,11 @@ public class SharedStorageService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/vsan/update_s2_servers.html
+       * <a href=https://docs.qingcloud.com/api/vsan/update_s2_servers.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void updateS2Servers(UpdateS2ServersInput input, ResponseCallBack<UpdateS2ServersOutput> callback) throws QCException {
