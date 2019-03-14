@@ -48,10 +48,11 @@ public class RouterService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return AddRouterStaticEntriesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/router/add_router_static_entries.html
+      * <a href=https://docs.qingcloud.com/api/router/add_router_static_entries.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public AddRouterStaticEntriesOutput addRouterStaticEntries(AddRouterStaticEntriesInput input) throws QCException {
@@ -81,11 +82,11 @@ public class RouterService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/router/add_router_static_entries.html
+       * <a href=https://docs.qingcloud.com/api/router/add_router_static_entries.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void addRouterStaticEntries(AddRouterStaticEntriesInput input, ResponseCallBack<AddRouterStaticEntriesOutput> callback) throws QCException {
@@ -199,10 +200,11 @@ public class RouterService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return AddRouterStaticsOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/router/add_router_statics.html
+      * <a href=https://docs.qingcloud.com/api/router/add_router_statics.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public AddRouterStaticsOutput addRouterStatics(AddRouterStaticsInput input) throws QCException {
@@ -232,11 +234,11 @@ public class RouterService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/router/add_router_statics.html
+       * <a href=https://docs.qingcloud.com/api/router/add_router_statics.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void addRouterStatics(AddRouterStaticsInput input, ResponseCallBack<AddRouterStaticsOutput> callback) throws QCException {
@@ -363,10 +365,11 @@ public class RouterService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return CreateRoutersOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/router/create_routers.html
+      * <a href=https://docs.qingcloud.com/api/router/create_routers.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public CreateRoutersOutput createRouters(CreateRoutersInput input) throws QCException {
@@ -396,11 +399,11 @@ public class RouterService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/router/create_routers.html
+       * <a href=https://docs.qingcloud.com/api/router/create_routers.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void createRouters(CreateRoutersInput input, ResponseCallBack<CreateRoutersOutput> callback) throws QCException {
@@ -564,10 +567,11 @@ public class RouterService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DeleteRouterStaticEntriesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/router/delete_router_static_entries.html
+      * <a href=https://docs.qingcloud.com/api/router/delete_router_static_entries.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DeleteRouterStaticEntriesOutput deleteRouterStaticEntries(DeleteRouterStaticEntriesInput input) throws QCException {
@@ -597,11 +601,11 @@ public class RouterService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/router/delete_router_static_entries.html
+       * <a href=https://docs.qingcloud.com/api/router/delete_router_static_entries.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void deleteRouterStaticEntries(DeleteRouterStaticEntriesInput input, ResponseCallBack<DeleteRouterStaticEntriesOutput> callback) throws QCException {
@@ -690,10 +694,11 @@ public class RouterService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DeleteRouterStaticsOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/router/delete_router_statics.html
+      * <a href=https://docs.qingcloud.com/api/router/delete_router_statics.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DeleteRouterStaticsOutput deleteRouterStatics(DeleteRouterStaticsInput input) throws QCException {
@@ -723,11 +728,11 @@ public class RouterService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/router/delete_router_statics.html
+       * <a href=https://docs.qingcloud.com/api/router/delete_router_statics.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void deleteRouterStatics(DeleteRouterStaticsInput input, ResponseCallBack<DeleteRouterStaticsOutput> callback) throws QCException {
@@ -816,10 +821,11 @@ public class RouterService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DeleteRoutersOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/router/delete_routers.html
+      * <a href=https://docs.qingcloud.com/api/router/delete_routers.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DeleteRoutersOutput deleteRouters(DeleteRoutersInput input) throws QCException {
@@ -849,11 +855,11 @@ public class RouterService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/router/delete_routers.html
+       * <a href=https://docs.qingcloud.com/api/router/delete_routers.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void deleteRouters(DeleteRoutersInput input, ResponseCallBack<DeleteRoutersOutput> callback) throws QCException {
@@ -954,10 +960,11 @@ public class RouterService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DescribeRouterStaticEntriesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/router/describe_router_static_entries.html
+      * <a href=https://docs.qingcloud.com/api/router/describe_router_static_entries.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DescribeRouterStaticEntriesOutput describeRouterStaticEntries(DescribeRouterStaticEntriesInput input) throws QCException {
@@ -987,11 +994,11 @@ public class RouterService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/router/describe_router_static_entries.html
+       * <a href=https://docs.qingcloud.com/api/router/describe_router_static_entries.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void describeRouterStaticEntries(DescribeRouterStaticEntriesInput input, ResponseCallBack<DescribeRouterStaticEntriesOutput> callback) throws QCException {
@@ -1139,10 +1146,11 @@ public class RouterService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DescribeRouterStaticsOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/router/describe_router_statics.html
+      * <a href=https://docs.qingcloud.com/api/router/describe_router_statics.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DescribeRouterStaticsOutput describeRouterStatics(DescribeRouterStaticsInput input) throws QCException {
@@ -1172,11 +1180,11 @@ public class RouterService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/router/describe_router_statics.html
+       * <a href=https://docs.qingcloud.com/api/router/describe_router_statics.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void describeRouterStatics(DescribeRouterStaticsInput input, ResponseCallBack<DescribeRouterStaticsOutput> callback) throws QCException {
@@ -1396,10 +1404,11 @@ public class RouterService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DescribeRouterVxNetsOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/router/describe_router_vxnets.html
+      * <a href=https://docs.qingcloud.com/api/router/describe_router_vxnets.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DescribeRouterVxNetsOutput describeRouterVxNets(DescribeRouterVxNetsInput input) throws QCException {
@@ -1429,11 +1438,11 @@ public class RouterService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/router/describe_router_vxnets.html
+       * <a href=https://docs.qingcloud.com/api/router/describe_router_vxnets.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void describeRouterVxNets(DescribeRouterVxNetsInput input, ResponseCallBack<DescribeRouterVxNetsOutput> callback) throws QCException {
@@ -1601,10 +1610,11 @@ public class RouterService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DescribeRoutersOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/router/describe_routers.html
+      * <a href=https://docs.qingcloud.com/api/router/describe_routers.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DescribeRoutersOutput describeRouters(DescribeRoutersInput input) throws QCException {
@@ -1634,11 +1644,11 @@ public class RouterService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/router/describe_routers.html
+       * <a href=https://docs.qingcloud.com/api/router/describe_routers.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void describeRouters(DescribeRoutersInput input, ResponseCallBack<DescribeRoutersOutput> callback) throws QCException {
@@ -1850,10 +1860,11 @@ public class RouterService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return GetRouterMonitorOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/monitor/get_monitor.html
+      * <a href=https://docs.qingcloud.com/api/monitor/get_monitor.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public GetRouterMonitorOutput getRouterMonitor(GetRouterMonitorInput input) throws QCException {
@@ -1883,11 +1894,11 @@ public class RouterService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/monitor/get_monitor.html
+       * <a href=https://docs.qingcloud.com/api/monitor/get_monitor.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void getRouterMonitor(GetRouterMonitorInput input, ResponseCallBack<GetRouterMonitorOutput> callback) throws QCException {
@@ -2065,10 +2076,11 @@ public class RouterService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return GetVPNCertsOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/router/get_vpn_certs.html
+      * <a href=https://docs.qingcloud.com/api/router/get_vpn_certs.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public GetVPNCertsOutput getVPNCerts(GetVPNCertsInput input) throws QCException {
@@ -2098,11 +2110,11 @@ public class RouterService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/router/get_vpn_certs.html
+       * <a href=https://docs.qingcloud.com/api/router/get_vpn_certs.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void getVPNCerts(GetVPNCertsInput input, ResponseCallBack<GetVPNCertsOutput> callback) throws QCException {
@@ -2322,10 +2334,11 @@ public class RouterService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return JoinRouterOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/router/join_router.html
+      * <a href=https://docs.qingcloud.com/api/router/join_router.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public JoinRouterOutput joinRouter(JoinRouterInput input) throws QCException {
@@ -2355,11 +2368,11 @@ public class RouterService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/router/join_router.html
+       * <a href=https://docs.qingcloud.com/api/router/join_router.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void joinRouter(JoinRouterInput input, ResponseCallBack<JoinRouterOutput> callback) throws QCException {
@@ -2571,10 +2584,11 @@ public class RouterService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return LeaveRouterOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/router/leave_router.html
+      * <a href=https://docs.qingcloud.com/api/router/leave_router.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public LeaveRouterOutput leaveRouter(LeaveRouterInput input) throws QCException {
@@ -2604,11 +2618,11 @@ public class RouterService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/router/leave_router.html
+       * <a href=https://docs.qingcloud.com/api/router/leave_router.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void leaveRouter(LeaveRouterInput input, ResponseCallBack<LeaveRouterOutput> callback) throws QCException {
@@ -2737,10 +2751,11 @@ public class RouterService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return ModifyRouterAttributesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/router/modify_router_attributes.html
+      * <a href=https://docs.qingcloud.com/api/router/modify_router_attributes.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public ModifyRouterAttributesOutput modifyRouterAttributes(ModifyRouterAttributesInput input) throws QCException {
@@ -2770,11 +2785,11 @@ public class RouterService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/router/modify_router_attributes.html
+       * <a href=https://docs.qingcloud.com/api/router/modify_router_attributes.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void modifyRouterAttributes(ModifyRouterAttributesInput input, ResponseCallBack<ModifyRouterAttributesOutput> callback) throws QCException {
@@ -2966,10 +2981,11 @@ public class RouterService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return ModifyRouterStaticAttributesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/router/modify_router_static_attributes.html
+      * <a href=https://docs.qingcloud.com/api/router/modify_router_static_attributes.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public ModifyRouterStaticAttributesOutput modifyRouterStaticAttributes(ModifyRouterStaticAttributesInput input) throws QCException {
@@ -2999,11 +3015,11 @@ public class RouterService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/router/modify_router_static_attributes.html
+       * <a href=https://docs.qingcloud.com/api/router/modify_router_static_attributes.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void modifyRouterStaticAttributes(ModifyRouterStaticAttributesInput input, ResponseCallBack<ModifyRouterStaticAttributesOutput> callback) throws QCException {
@@ -3215,10 +3231,11 @@ public class RouterService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return ModifyRouterStaticEntryAttributesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/router/modify_router_static_entry_attributes.html
+      * <a href=https://docs.qingcloud.com/api/router/modify_router_static_entry_attributes.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public ModifyRouterStaticEntryAttributesOutput modifyRouterStaticEntryAttributes(ModifyRouterStaticEntryAttributesInput input) throws QCException {
@@ -3248,11 +3265,11 @@ public class RouterService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/router/modify_router_static_entry_attributes.html
+       * <a href=https://docs.qingcloud.com/api/router/modify_router_static_entry_attributes.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void modifyRouterStaticEntryAttributes(ModifyRouterStaticEntryAttributesInput input, ResponseCallBack<ModifyRouterStaticEntryAttributesOutput> callback) throws QCException {
@@ -3380,10 +3397,11 @@ public class RouterService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return PowerOffRoutersOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/router/poweroff_routers.html
+      * <a href=https://docs.qingcloud.com/api/router/poweroff_routers.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public PowerOffRoutersOutput powerOffRouters(PowerOffRoutersInput input) throws QCException {
@@ -3413,11 +3431,11 @@ public class RouterService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/router/poweroff_routers.html
+       * <a href=https://docs.qingcloud.com/api/router/poweroff_routers.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void powerOffRouters(PowerOffRoutersInput input, ResponseCallBack<PowerOffRoutersOutput> callback) throws QCException {
@@ -3506,10 +3524,11 @@ public class RouterService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return PowerOnRoutersOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/router/poweron_routers.html
+      * <a href=https://docs.qingcloud.com/api/router/poweron_routers.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public PowerOnRoutersOutput powerOnRouters(PowerOnRoutersInput input) throws QCException {
@@ -3539,11 +3558,11 @@ public class RouterService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/router/poweron_routers.html
+       * <a href=https://docs.qingcloud.com/api/router/poweron_routers.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void powerOnRouters(PowerOnRoutersInput input, ResponseCallBack<PowerOnRoutersOutput> callback) throws QCException {
@@ -3632,10 +3651,11 @@ public class RouterService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return UpdateRoutersOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/router/update_routers.html
+      * <a href=https://docs.qingcloud.com/api/router/update_routers.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public UpdateRoutersOutput updateRouters(UpdateRoutersInput input) throws QCException {
@@ -3665,11 +3685,11 @@ public class RouterService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/router/update_routers.html
+       * <a href=https://docs.qingcloud.com/api/router/update_routers.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void updateRouters(UpdateRoutersInput input, ResponseCallBack<UpdateRoutersOutput> callback) throws QCException {

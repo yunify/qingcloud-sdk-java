@@ -48,10 +48,11 @@ public class MonitorService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return GetMonitorOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/monitor/get_monitor.html
+      * <a href=https://docs.qingcloud.com/api/monitor/get_monitor.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public GetMonitorOutput getMonitor(GetMonitorInput input) throws QCException {
@@ -81,11 +82,11 @@ public class MonitorService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/monitor/get_monitor.html
+       * <a href=https://docs.qingcloud.com/api/monitor/get_monitor.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void getMonitor(GetMonitorInput input, ResponseCallBack<GetMonitorOutput> callback) throws QCException {

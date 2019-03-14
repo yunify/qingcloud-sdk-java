@@ -23,17 +23,26 @@ import com.qingcloud.sdk.exception.QCException;
 import com.qingcloud.sdk.model.OutputModel;
 import com.qingcloud.sdk.utils.QCParamInvokeUtil;
 import com.qingcloud.sdk.utils.QCStringUtil;
-import okhttp3.*;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.io.IOException;
+import java.net.SocketTimeoutException;
+import java.util.concurrent.TimeUnit;
 
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.SSLSocketFactory;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509TrustManager;
-import java.io.IOException;
-import java.net.SocketTimeoutException;
-import java.util.concurrent.TimeUnit;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.MediaType;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
 
 /** Created by karoo . */
 public class QCOkHttpRequestClient {
@@ -111,8 +120,10 @@ public class QCOkHttpRequestClient {
     }
 
     /**
+     *
      * @param requestUrl: protocol://host:port/uri/
      * @param uri: uri behind protocol://host:port/uri/?
+     * @return A get request
      */
     public okhttp3.Request buildGetRequest(String requestUrl, String uri) {
         String url;
@@ -132,6 +143,7 @@ public class QCOkHttpRequestClient {
     /**
      * @param requestUrl: protocol://host:port/uri/
      * @param body: content to put in post body of the same form as uri in buildGetRequest
+     * @return A post request
      */
     public okhttp3.Request buildPostRequest(String requestUrl, String body) {
         logger.debug("post body: {}", body);

@@ -48,10 +48,11 @@ public class RDBService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return ApplyRDBParameterGroupOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/rdb/apply_rdb_parameter_group.html
+      * <a href=https://docs.qingcloud.com/api/rdb/apply_rdb_parameter_group.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public ApplyRDBParameterGroupOutput applyRDBParameterGroup(ApplyRDBParameterGroupInput input) throws QCException {
@@ -81,11 +82,11 @@ public class RDBService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/rdb/apply_rdb_parameter_group.html
+       * <a href=https://docs.qingcloud.com/api/rdb/apply_rdb_parameter_group.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void applyRDBParameterGroup(ApplyRDBParameterGroupInput input, ResponseCallBack<ApplyRDBParameterGroupOutput> callback) throws QCException {
@@ -189,10 +190,11 @@ public class RDBService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return CeaseRDBInstanceOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/rdb/cease_rdb_instance.html
+      * <a href=https://docs.qingcloud.com/api/rdb/cease_rdb_instance.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public CeaseRDBInstanceOutput ceaseRDBInstance(CeaseRDBInstanceInput input) throws QCException {
@@ -222,11 +224,11 @@ public class RDBService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/rdb/cease_rdb_instance.html
+       * <a href=https://docs.qingcloud.com/api/rdb/cease_rdb_instance.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void ceaseRDBInstance(CeaseRDBInstanceInput input, ResponseCallBack<CeaseRDBInstanceOutput> callback) throws QCException {
@@ -334,10 +336,11 @@ public class RDBService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return CopyRDBInstanceFilesToFTPOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/rdb/copy_rdb_instance_files_to_ftp.html
+      * <a href=https://docs.qingcloud.com/api/rdb/copy_rdb_instance_files_to_ftp.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public CopyRDBInstanceFilesToFTPOutput copyRDBInstanceFilesToFTP(CopyRDBInstanceFilesToFTPInput input) throws QCException {
@@ -367,11 +370,11 @@ public class RDBService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/rdb/copy_rdb_instance_files_to_ftp.html
+       * <a href=https://docs.qingcloud.com/api/rdb/copy_rdb_instance_files_to_ftp.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void copyRDBInstanceFilesToFTP(CopyRDBInstanceFilesToFTPInput input, ResponseCallBack<CopyRDBInstanceFilesToFTPOutput> callback) throws QCException {
@@ -488,10 +491,11 @@ public class RDBService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return CreateRDBOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/rdb/create_rdb.html
+      * <a href=https://docs.qingcloud.com/api/rdb/create_rdb.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public CreateRDBOutput createRDB(CreateRDBInput input) throws QCException {
@@ -521,11 +525,11 @@ public class RDBService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/rdb/create_rdb.html
+       * <a href=https://docs.qingcloud.com/api/rdb/create_rdb.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void createRDB(CreateRDBInput input, ResponseCallBack<CreateRDBOutput> callback) throws QCException {
@@ -865,10 +869,11 @@ public class RDBService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return CreateRDBFromSnapshotOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/rdb/create_rdb_from_snapshot.html
+      * <a href=https://docs.qingcloud.com/api/rdb/create_rdb_from_snapshot.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public CreateRDBFromSnapshotOutput createRDBFromSnapshot(CreateRDBFromSnapshotInput input) throws QCException {
@@ -898,11 +903,11 @@ public class RDBService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/rdb/create_rdb_from_snapshot.html
+       * <a href=https://docs.qingcloud.com/api/rdb/create_rdb_from_snapshot.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void createRDBFromSnapshot(CreateRDBFromSnapshotInput input, ResponseCallBack<CreateRDBFromSnapshotOutput> callback) throws QCException {
@@ -1210,10 +1215,11 @@ public class RDBService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return CreateTempRDBInstanceFromSnapshotOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/rdb/create_temp_rdb_instance_from_snapshot.html
+      * <a href=https://docs.qingcloud.com/api/rdb/create_temp_rdb_instance_from_snapshot.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public CreateTempRDBInstanceFromSnapshotOutput createTempRDBInstanceFromSnapshot(CreateTempRDBInstanceFromSnapshotInput input) throws QCException {
@@ -1243,11 +1249,11 @@ public class RDBService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/rdb/create_temp_rdb_instance_from_snapshot.html
+       * <a href=https://docs.qingcloud.com/api/rdb/create_temp_rdb_instance_from_snapshot.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void createTempRDBInstanceFromSnapshot(CreateTempRDBInstanceFromSnapshotInput input, ResponseCallBack<CreateTempRDBInstanceFromSnapshotOutput> callback) throws QCException {
@@ -1367,10 +1373,11 @@ public class RDBService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DeleteRDBsOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/rdb/delete_rdbs.html
+      * <a href=https://docs.qingcloud.com/api/rdb/delete_rdbs.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DeleteRDBsOutput deleteRDBs(DeleteRDBsInput input) throws QCException {
@@ -1400,11 +1407,11 @@ public class RDBService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/rdb/delete_rdbs.html
+       * <a href=https://docs.qingcloud.com/api/rdb/delete_rdbs.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void deleteRDBs(DeleteRDBsInput input, ResponseCallBack<DeleteRDBsOutput> callback) throws QCException {
@@ -1505,10 +1512,11 @@ public class RDBService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DescribeRDBParametersOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/rdb/describe_rdb_parameters.html
+      * <a href=https://docs.qingcloud.com/api/rdb/describe_rdb_parameters.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DescribeRDBParametersOutput describeRDBParameters(DescribeRDBParametersInput input) throws QCException {
@@ -1538,11 +1546,11 @@ public class RDBService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/rdb/describe_rdb_parameters.html
+       * <a href=https://docs.qingcloud.com/api/rdb/describe_rdb_parameters.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void describeRDBParameters(DescribeRDBParametersInput input, ResponseCallBack<DescribeRDBParametersOutput> callback) throws QCException {
@@ -1682,10 +1690,11 @@ public class RDBService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DescribeRDBsOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/rdb/describe_rdbs.html
+      * <a href=https://docs.qingcloud.com/api/rdb/describe_rdbs.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DescribeRDBsOutput describeRDBs(DescribeRDBsInput input) throws QCException {
@@ -1715,11 +1724,11 @@ public class RDBService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/rdb/describe_rdbs.html
+       * <a href=https://docs.qingcloud.com/api/rdb/describe_rdbs.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void describeRDBs(DescribeRDBsInput input, ResponseCallBack<DescribeRDBsOutput> callback) throws QCException {
@@ -1915,10 +1924,11 @@ public class RDBService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return GetRDBInstanceFilesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/rdb/get_rdb_instance_files.html
+      * <a href=https://docs.qingcloud.com/api/rdb/get_rdb_instance_files.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public GetRDBInstanceFilesOutput getRDBInstanceFiles(GetRDBInstanceFilesInput input) throws QCException {
@@ -1948,11 +1958,11 @@ public class RDBService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/rdb/get_rdb_instance_files.html
+       * <a href=https://docs.qingcloud.com/api/rdb/get_rdb_instance_files.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void getRDBInstanceFiles(GetRDBInstanceFilesInput input, ResponseCallBack<GetRDBInstanceFilesOutput> callback) throws QCException {
@@ -2056,10 +2066,11 @@ public class RDBService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return GetRDBMonitorOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/monitor/get_rdb_monitor.html
+      * <a href=https://docs.qingcloud.com/api/monitor/get_rdb_monitor.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public GetRDBMonitorOutput getRDBMonitor(GetRDBMonitorInput input) throws QCException {
@@ -2089,11 +2100,11 @@ public class RDBService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/monitor/get_rdb_monitor.html
+       * <a href=https://docs.qingcloud.com/api/monitor/get_rdb_monitor.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void getRDBMonitor(GetRDBMonitorInput input, ResponseCallBack<GetRDBMonitorOutput> callback) throws QCException {
@@ -2315,10 +2326,11 @@ public class RDBService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return ModifyRDBParametersOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/rdb/modify_rdb_parameters.html
+      * <a href=https://docs.qingcloud.com/api/rdb/modify_rdb_parameters.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public ModifyRDBParametersOutput modifyRDBParameters(ModifyRDBParametersInput input) throws QCException {
@@ -2348,11 +2360,11 @@ public class RDBService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/rdb/modify_rdb_parameters.html
+       * <a href=https://docs.qingcloud.com/api/rdb/modify_rdb_parameters.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void modifyRDBParameters(ModifyRDBParametersInput input, ResponseCallBack<ModifyRDBParametersOutput> callback) throws QCException {
@@ -2466,10 +2478,11 @@ public class RDBService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return RDBsJoinVxNetOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/rdb/rdbs_join_vxnet.html
+      * <a href=https://docs.qingcloud.com/api/rdb/rdbs_join_vxnet.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public RDBsJoinVxNetOutput rDBsJoinVxNet(RDBsJoinVxNetInput input) throws QCException {
@@ -2499,11 +2512,11 @@ public class RDBService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/rdb/rdbs_join_vxnet.html
+       * <a href=https://docs.qingcloud.com/api/rdb/rdbs_join_vxnet.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void rDBsJoinVxNet(RDBsJoinVxNetInput input, ResponseCallBack<RDBsJoinVxNetOutput> callback) throws QCException {
@@ -2632,10 +2645,11 @@ public class RDBService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return RDBsLeaveVxNetOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/rdb/rdbs_leave_vxnet.html
+      * <a href=https://docs.qingcloud.com/api/rdb/rdbs_leave_vxnet.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public RDBsLeaveVxNetOutput rDBsLeaveVxNet(RDBsLeaveVxNetInput input) throws QCException {
@@ -2665,11 +2679,11 @@ public class RDBService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/rdb/rdbs_leave_vxnet.html
+       * <a href=https://docs.qingcloud.com/api/rdb/rdbs_leave_vxnet.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void rDBsLeaveVxNet(RDBsLeaveVxNetInput input, ResponseCallBack<RDBsLeaveVxNetOutput> callback) throws QCException {
@@ -2774,10 +2788,11 @@ public class RDBService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return ResizeRDBsOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/rdb/resize_rdbs.html
+      * <a href=https://docs.qingcloud.com/api/rdb/resize_rdbs.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public ResizeRDBsOutput resizeRDBs(ResizeRDBsInput input) throws QCException {
@@ -2807,11 +2822,11 @@ public class RDBService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/rdb/resize_rdbs.html
+       * <a href=https://docs.qingcloud.com/api/rdb/resize_rdbs.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void resizeRDBs(ResizeRDBsInput input, ResponseCallBack<ResizeRDBsOutput> callback) throws QCException {
@@ -2952,10 +2967,11 @@ public class RDBService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return StartRDBsOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/rdb/start_rdbs.html
+      * <a href=https://docs.qingcloud.com/api/rdb/start_rdbs.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public StartRDBsOutput startRDBs(StartRDBsInput input) throws QCException {
@@ -2985,11 +3001,11 @@ public class RDBService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/rdb/start_rdbs.html
+       * <a href=https://docs.qingcloud.com/api/rdb/start_rdbs.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void startRDBs(StartRDBsInput input, ResponseCallBack<StartRDBsOutput> callback) throws QCException {
@@ -3090,10 +3106,11 @@ public class RDBService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return StopRDBsOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/rdb/stop_rdbs.html
+      * <a href=https://docs.qingcloud.com/api/rdb/stop_rdbs.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public StopRDBsOutput stopRDBs(StopRDBsInput input) throws QCException {
@@ -3123,11 +3140,11 @@ public class RDBService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/rdb/stop_rdbs.html
+       * <a href=https://docs.qingcloud.com/api/rdb/stop_rdbs.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void stopRDBs(StopRDBsInput input, ResponseCallBack<StopRDBsOutput> callback) throws QCException {

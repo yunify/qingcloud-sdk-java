@@ -48,10 +48,11 @@ public class LoadBalancerService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return AddLoadBalancerBackendsOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/lb/add_loadbalancer_backends.html
+      * <a href=https://docs.qingcloud.com/api/lb/add_loadbalancer_backends.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public AddLoadBalancerBackendsOutput addLoadBalancerBackends(AddLoadBalancerBackendsInput input) throws QCException {
@@ -81,11 +82,11 @@ public class LoadBalancerService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/lb/add_loadbalancer_backends.html
+       * <a href=https://docs.qingcloud.com/api/lb/add_loadbalancer_backends.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void addLoadBalancerBackends(AddLoadBalancerBackendsInput input, ResponseCallBack<AddLoadBalancerBackendsOutput> callback) throws QCException {
@@ -200,10 +201,11 @@ public class LoadBalancerService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return AddLoadBalancerListenersOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/lb/add_loadbalancer_listeners.html
+      * <a href=https://docs.qingcloud.com/api/lb/add_loadbalancer_listeners.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public AddLoadBalancerListenersOutput addLoadBalancerListeners(AddLoadBalancerListenersInput input) throws QCException {
@@ -233,11 +235,11 @@ public class LoadBalancerService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/lb/add_loadbalancer_listeners.html
+       * <a href=https://docs.qingcloud.com/api/lb/add_loadbalancer_listeners.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void addLoadBalancerListeners(AddLoadBalancerListenersInput input, ResponseCallBack<AddLoadBalancerListenersOutput> callback) throws QCException {
@@ -347,10 +349,11 @@ public class LoadBalancerService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return AddLoadBalancerPolicyRulesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/lb/add_loadbalancer_policy_rules.html
+      * <a href=https://docs.qingcloud.com/api/lb/add_loadbalancer_policy_rules.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public AddLoadBalancerPolicyRulesOutput addLoadBalancerPolicyRules(AddLoadBalancerPolicyRulesInput input) throws QCException {
@@ -380,11 +383,11 @@ public class LoadBalancerService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/lb/add_loadbalancer_policy_rules.html
+       * <a href=https://docs.qingcloud.com/api/lb/add_loadbalancer_policy_rules.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void addLoadBalancerPolicyRules(AddLoadBalancerPolicyRulesInput input, ResponseCallBack<AddLoadBalancerPolicyRulesOutput> callback) throws QCException {
@@ -494,10 +497,11 @@ public class LoadBalancerService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return ApplyLoadBalancerPolicyOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/lb/apply_loadbalancer_policy.html
+      * <a href=https://docs.qingcloud.com/api/lb/apply_loadbalancer_policy.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public ApplyLoadBalancerPolicyOutput applyLoadBalancerPolicy(ApplyLoadBalancerPolicyInput input) throws QCException {
@@ -527,11 +531,11 @@ public class LoadBalancerService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/lb/apply_loadbalancer_policy.html
+       * <a href=https://docs.qingcloud.com/api/lb/apply_loadbalancer_policy.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void applyLoadBalancerPolicy(ApplyLoadBalancerPolicyInput input, ResponseCallBack<ApplyLoadBalancerPolicyOutput> callback) throws QCException {
@@ -623,10 +627,11 @@ public class LoadBalancerService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return AssociateEIPsToLoadBalancerOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/lb/associate_eips_to_loadbalancer.html
+      * <a href=https://docs.qingcloud.com/api/lb/associate_eips_to_loadbalancer.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public AssociateEIPsToLoadBalancerOutput associateEIPsToLoadBalancer(AssociateEIPsToLoadBalancerInput input) throws QCException {
@@ -656,11 +661,11 @@ public class LoadBalancerService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/lb/associate_eips_to_loadbalancer.html
+       * <a href=https://docs.qingcloud.com/api/lb/associate_eips_to_loadbalancer.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void associateEIPsToLoadBalancer(AssociateEIPsToLoadBalancerInput input, ResponseCallBack<AssociateEIPsToLoadBalancerOutput> callback) throws QCException {
@@ -765,10 +770,11 @@ public class LoadBalancerService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return CreateLoadBalancerOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/lb/create_loadbalancer.html
+      * <a href=https://docs.qingcloud.com/api/lb/create_loadbalancer.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public CreateLoadBalancerOutput createLoadBalancer(CreateLoadBalancerInput input) throws QCException {
@@ -798,11 +804,11 @@ public class LoadBalancerService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/lb/create_loadbalancer.html
+       * <a href=https://docs.qingcloud.com/api/lb/create_loadbalancer.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void createLoadBalancer(CreateLoadBalancerInput input, ResponseCallBack<CreateLoadBalancerOutput> callback) throws QCException {
@@ -1002,10 +1008,11 @@ public class LoadBalancerService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return CreateLoadBalancerPolicyOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/lb/create_loadbalancer_policy.html
+      * <a href=https://docs.qingcloud.com/api/lb/create_loadbalancer_policy.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public CreateLoadBalancerPolicyOutput createLoadBalancerPolicy(CreateLoadBalancerPolicyInput input) throws QCException {
@@ -1035,11 +1042,11 @@ public class LoadBalancerService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/lb/create_loadbalancer_policy.html
+       * <a href=https://docs.qingcloud.com/api/lb/create_loadbalancer_policy.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void createLoadBalancerPolicy(CreateLoadBalancerPolicyInput input, ResponseCallBack<CreateLoadBalancerPolicyOutput> callback) throws QCException {
@@ -1162,10 +1169,11 @@ public class LoadBalancerService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return CreateServerCertificateOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/lb/create_server_certificate.html
+      * <a href=https://docs.qingcloud.com/api/lb/create_server_certificate.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public CreateServerCertificateOutput createServerCertificate(CreateServerCertificateInput input) throws QCException {
@@ -1195,11 +1203,11 @@ public class LoadBalancerService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/lb/create_server_certificate.html
+       * <a href=https://docs.qingcloud.com/api/lb/create_server_certificate.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void createServerCertificate(CreateServerCertificateInput input, ResponseCallBack<CreateServerCertificateOutput> callback) throws QCException {
@@ -1319,10 +1327,11 @@ public class LoadBalancerService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DeleteLoadBalancerBackendsOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/lb/delete_loadbalancer_backends.html
+      * <a href=https://docs.qingcloud.com/api/lb/delete_loadbalancer_backends.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DeleteLoadBalancerBackendsOutput deleteLoadBalancerBackends(DeleteLoadBalancerBackendsInput input) throws QCException {
@@ -1352,11 +1361,11 @@ public class LoadBalancerService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/lb/delete_loadbalancer_backends.html
+       * <a href=https://docs.qingcloud.com/api/lb/delete_loadbalancer_backends.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void deleteLoadBalancerBackends(DeleteLoadBalancerBackendsInput input, ResponseCallBack<DeleteLoadBalancerBackendsOutput> callback) throws QCException {
@@ -1445,10 +1454,11 @@ public class LoadBalancerService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DeleteLoadBalancerListenersOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/lb/delete_loadbalancer_listeners.html
+      * <a href=https://docs.qingcloud.com/api/lb/delete_loadbalancer_listeners.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DeleteLoadBalancerListenersOutput deleteLoadBalancerListeners(DeleteLoadBalancerListenersInput input) throws QCException {
@@ -1478,11 +1488,11 @@ public class LoadBalancerService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/lb/delete_loadbalancer_listeners.html
+       * <a href=https://docs.qingcloud.com/api/lb/delete_loadbalancer_listeners.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void deleteLoadBalancerListeners(DeleteLoadBalancerListenersInput input, ResponseCallBack<DeleteLoadBalancerListenersOutput> callback) throws QCException {
@@ -1571,10 +1581,11 @@ public class LoadBalancerService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DeleteLoadBalancerPoliciesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/lb/delete_loadbalancer_policies.html
+      * <a href=https://docs.qingcloud.com/api/lb/delete_loadbalancer_policies.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DeleteLoadBalancerPoliciesOutput deleteLoadBalancerPolicies(DeleteLoadBalancerPoliciesInput input) throws QCException {
@@ -1604,11 +1615,11 @@ public class LoadBalancerService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/lb/delete_loadbalancer_policies.html
+       * <a href=https://docs.qingcloud.com/api/lb/delete_loadbalancer_policies.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void deleteLoadBalancerPolicies(DeleteLoadBalancerPoliciesInput input, ResponseCallBack<DeleteLoadBalancerPoliciesOutput> callback) throws QCException {
@@ -1697,10 +1708,11 @@ public class LoadBalancerService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DeleteLoadBalancerPolicyRulesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/lb/delete_loadbalancer_policy_rules.html
+      * <a href=https://docs.qingcloud.com/api/lb/delete_loadbalancer_policy_rules.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DeleteLoadBalancerPolicyRulesOutput deleteLoadBalancerPolicyRules(DeleteLoadBalancerPolicyRulesInput input) throws QCException {
@@ -1730,11 +1742,11 @@ public class LoadBalancerService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/lb/delete_loadbalancer_policy_rules.html
+       * <a href=https://docs.qingcloud.com/api/lb/delete_loadbalancer_policy_rules.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void deleteLoadBalancerPolicyRules(DeleteLoadBalancerPolicyRulesInput input, ResponseCallBack<DeleteLoadBalancerPolicyRulesOutput> callback) throws QCException {
@@ -1823,10 +1835,11 @@ public class LoadBalancerService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DeleteLoadBalancersOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/lb/delete_loadbalancers.html
+      * <a href=https://docs.qingcloud.com/api/lb/delete_loadbalancers.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DeleteLoadBalancersOutput deleteLoadBalancers(DeleteLoadBalancersInput input) throws QCException {
@@ -1856,11 +1869,11 @@ public class LoadBalancerService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/lb/delete_loadbalancers.html
+       * <a href=https://docs.qingcloud.com/api/lb/delete_loadbalancers.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void deleteLoadBalancers(DeleteLoadBalancersInput input, ResponseCallBack<DeleteLoadBalancersOutput> callback) throws QCException {
@@ -1961,10 +1974,11 @@ public class LoadBalancerService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DeleteServerCertificatesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/lb/delete_server_certificates.html
+      * <a href=https://docs.qingcloud.com/api/lb/delete_server_certificates.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DeleteServerCertificatesOutput deleteServerCertificates(DeleteServerCertificatesInput input) throws QCException {
@@ -1994,11 +2008,11 @@ public class LoadBalancerService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/lb/delete_server_certificates.html
+       * <a href=https://docs.qingcloud.com/api/lb/delete_server_certificates.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void deleteServerCertificates(DeleteServerCertificatesInput input, ResponseCallBack<DeleteServerCertificatesOutput> callback) throws QCException {
@@ -2087,10 +2101,11 @@ public class LoadBalancerService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DescribeLoadBalancerBackendsOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/lb/describe_loadbalancer_backends.html
+      * <a href=https://docs.qingcloud.com/api/lb/describe_loadbalancer_backends.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DescribeLoadBalancerBackendsOutput describeLoadBalancerBackends(DescribeLoadBalancerBackendsInput input) throws QCException {
@@ -2120,11 +2135,11 @@ public class LoadBalancerService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/lb/describe_loadbalancer_backends.html
+       * <a href=https://docs.qingcloud.com/api/lb/describe_loadbalancer_backends.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void describeLoadBalancerBackends(DescribeLoadBalancerBackendsInput input, ResponseCallBack<DescribeLoadBalancerBackendsOutput> callback) throws QCException {
@@ -2284,10 +2299,11 @@ public class LoadBalancerService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DescribeLoadBalancerListenersOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/lb/describe_loadbalancer_listeners.html
+      * <a href=https://docs.qingcloud.com/api/lb/describe_loadbalancer_listeners.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DescribeLoadBalancerListenersOutput describeLoadBalancerListeners(DescribeLoadBalancerListenersInput input) throws QCException {
@@ -2317,11 +2333,11 @@ public class LoadBalancerService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/lb/describe_loadbalancer_listeners.html
+       * <a href=https://docs.qingcloud.com/api/lb/describe_loadbalancer_listeners.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void describeLoadBalancerListeners(DescribeLoadBalancerListenersInput input, ResponseCallBack<DescribeLoadBalancerListenersOutput> callback) throws QCException {
@@ -2481,10 +2497,11 @@ public class LoadBalancerService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DescribeLoadBalancerPoliciesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/lb/describe_loadbalancer_policies.html
+      * <a href=https://docs.qingcloud.com/api/lb/describe_loadbalancer_policies.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DescribeLoadBalancerPoliciesOutput describeLoadBalancerPolicies(DescribeLoadBalancerPoliciesInput input) throws QCException {
@@ -2514,11 +2531,11 @@ public class LoadBalancerService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/lb/describe_loadbalancer_policies.html
+       * <a href=https://docs.qingcloud.com/api/lb/describe_loadbalancer_policies.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void describeLoadBalancerPolicies(DescribeLoadBalancerPoliciesInput input, ResponseCallBack<DescribeLoadBalancerPoliciesOutput> callback) throws QCException {
@@ -2666,10 +2683,11 @@ public class LoadBalancerService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DescribeLoadBalancerPolicyRulesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/lb/describe_loadbalancer_policy_rules.html
+      * <a href=https://docs.qingcloud.com/api/lb/describe_loadbalancer_policy_rules.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DescribeLoadBalancerPolicyRulesOutput describeLoadBalancerPolicyRules(DescribeLoadBalancerPolicyRulesInput input) throws QCException {
@@ -2699,11 +2717,11 @@ public class LoadBalancerService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/lb/describe_loadbalancer_policy_rules.html
+       * <a href=https://docs.qingcloud.com/api/lb/describe_loadbalancer_policy_rules.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void describeLoadBalancerPolicyRules(DescribeLoadBalancerPolicyRulesInput input, ResponseCallBack<DescribeLoadBalancerPolicyRulesOutput> callback) throws QCException {
@@ -2851,10 +2869,11 @@ public class LoadBalancerService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DescribeLoadBalancersOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/lb/describe_loadbalancers.html
+      * <a href=https://docs.qingcloud.com/api/lb/describe_loadbalancers.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DescribeLoadBalancersOutput describeLoadBalancers(DescribeLoadBalancersInput input) throws QCException {
@@ -2884,11 +2903,11 @@ public class LoadBalancerService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/lb/describe_loadbalancers.html
+       * <a href=https://docs.qingcloud.com/api/lb/describe_loadbalancers.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void describeLoadBalancers(DescribeLoadBalancersInput input, ResponseCallBack<DescribeLoadBalancersOutput> callback) throws QCException {
@@ -3060,10 +3079,11 @@ public class LoadBalancerService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DescribeServerCertificatesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/lb/describe_server_certificates.html
+      * <a href=https://docs.qingcloud.com/api/lb/describe_server_certificates.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DescribeServerCertificatesOutput describeServerCertificates(DescribeServerCertificatesInput input) throws QCException {
@@ -3093,11 +3113,11 @@ public class LoadBalancerService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/lb/describe_server_certificates.html
+       * <a href=https://docs.qingcloud.com/api/lb/describe_server_certificates.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void describeServerCertificates(DescribeServerCertificatesInput input, ResponseCallBack<DescribeServerCertificatesOutput> callback) throws QCException {
@@ -3257,10 +3277,11 @@ public class LoadBalancerService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DissociateEIPsFromLoadBalancerOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/lb/dissociate_eips_from_loadbalancer.html
+      * <a href=https://docs.qingcloud.com/api/lb/dissociate_eips_from_loadbalancer.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DissociateEIPsFromLoadBalancerOutput dissociateEIPsFromLoadBalancer(DissociateEIPsFromLoadBalancerInput input) throws QCException {
@@ -3290,11 +3311,11 @@ public class LoadBalancerService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/lb/dissociate_eips_from_loadbalancer.html
+       * <a href=https://docs.qingcloud.com/api/lb/dissociate_eips_from_loadbalancer.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void dissociateEIPsFromLoadBalancer(DissociateEIPsFromLoadBalancerInput input, ResponseCallBack<DissociateEIPsFromLoadBalancerOutput> callback) throws QCException {
@@ -3399,10 +3420,11 @@ public class LoadBalancerService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return GetLoadBalancerMonitorOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/monitor/get_loadbalancer_monitor.html
+      * <a href=https://docs.qingcloud.com/api/monitor/get_loadbalancer_monitor.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public GetLoadBalancerMonitorOutput getLoadBalancerMonitor(GetLoadBalancerMonitorInput input) throws QCException {
@@ -3432,11 +3454,11 @@ public class LoadBalancerService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/monitor/get_loadbalancer_monitor.html
+       * <a href=https://docs.qingcloud.com/api/monitor/get_loadbalancer_monitor.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void getLoadBalancerMonitor(GetLoadBalancerMonitorInput input, ResponseCallBack<GetLoadBalancerMonitorOutput> callback) throws QCException {
@@ -3626,10 +3648,11 @@ public class LoadBalancerService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return ModifyLoadBalancerAttributesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/lb/modify_loadbalancer_attributes.html
+      * <a href=https://docs.qingcloud.com/api/lb/modify_loadbalancer_attributes.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public ModifyLoadBalancerAttributesOutput modifyLoadBalancerAttributes(ModifyLoadBalancerAttributesInput input) throws QCException {
@@ -3659,11 +3682,11 @@ public class LoadBalancerService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/lb/modify_loadbalancer_attributes.html
+       * <a href=https://docs.qingcloud.com/api/lb/modify_loadbalancer_attributes.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void modifyLoadBalancerAttributes(ModifyLoadBalancerAttributesInput input, ResponseCallBack<ModifyLoadBalancerAttributesOutput> callback) throws QCException {
@@ -3815,10 +3838,11 @@ public class LoadBalancerService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return ModifyLoadBalancerBackendAttributesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/lb/modify_loadbalancer_backend_attributes.html
+      * <a href=https://docs.qingcloud.com/api/lb/modify_loadbalancer_backend_attributes.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public ModifyLoadBalancerBackendAttributesOutput modifyLoadBalancerBackendAttributes(ModifyLoadBalancerBackendAttributesInput input) throws QCException {
@@ -3848,11 +3872,11 @@ public class LoadBalancerService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/lb/modify_loadbalancer_backend_attributes.html
+       * <a href=https://docs.qingcloud.com/api/lb/modify_loadbalancer_backend_attributes.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void modifyLoadBalancerBackendAttributes(ModifyLoadBalancerBackendAttributesInput input, ResponseCallBack<ModifyLoadBalancerBackendAttributesOutput> callback) throws QCException {
@@ -4004,10 +4028,11 @@ public class LoadBalancerService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return ModifyLoadBalancerListenerAttributesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/lb/modify_loadbalancer_listener_attributes.html
+      * <a href=https://docs.qingcloud.com/api/lb/modify_loadbalancer_listener_attributes.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public ModifyLoadBalancerListenerAttributesOutput modifyLoadBalancerListenerAttributes(ModifyLoadBalancerListenerAttributesInput input) throws QCException {
@@ -4037,11 +4062,11 @@ public class LoadBalancerService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/lb/modify_loadbalancer_listener_attributes.html
+       * <a href=https://docs.qingcloud.com/api/lb/modify_loadbalancer_listener_attributes.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void modifyLoadBalancerListenerAttributes(ModifyLoadBalancerListenerAttributesInput input, ResponseCallBack<ModifyLoadBalancerListenerAttributesOutput> callback) throws QCException {
@@ -4229,10 +4254,11 @@ public class LoadBalancerService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return ModifyLoadBalancerPolicyAttributesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/lb/modify_loadbalancer_policy_attributes.html
+      * <a href=https://docs.qingcloud.com/api/lb/modify_loadbalancer_policy_attributes.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public ModifyLoadBalancerPolicyAttributesOutput modifyLoadBalancerPolicyAttributes(ModifyLoadBalancerPolicyAttributesInput input) throws QCException {
@@ -4262,11 +4288,11 @@ public class LoadBalancerService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/lb/modify_loadbalancer_policy_attributes.html
+       * <a href=https://docs.qingcloud.com/api/lb/modify_loadbalancer_policy_attributes.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void modifyLoadBalancerPolicyAttributes(ModifyLoadBalancerPolicyAttributesInput input, ResponseCallBack<ModifyLoadBalancerPolicyAttributesOutput> callback) throws QCException {
@@ -4382,10 +4408,11 @@ public class LoadBalancerService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return ModifyLoadBalancerPolicyRuleAttributesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/lb/modify_loadbalancer_policy_rule_attributes.html
+      * <a href=https://docs.qingcloud.com/api/lb/modify_loadbalancer_policy_rule_attributes.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public ModifyLoadBalancerPolicyRuleAttributesOutput modifyLoadBalancerPolicyRuleAttributes(ModifyLoadBalancerPolicyRuleAttributesInput input) throws QCException {
@@ -4415,11 +4442,11 @@ public class LoadBalancerService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/lb/modify_loadbalancer_policy_rule_attributes.html
+       * <a href=https://docs.qingcloud.com/api/lb/modify_loadbalancer_policy_rule_attributes.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void modifyLoadBalancerPolicyRuleAttributes(ModifyLoadBalancerPolicyRuleAttributesInput input, ResponseCallBack<ModifyLoadBalancerPolicyRuleAttributesOutput> callback) throws QCException {
@@ -4535,10 +4562,11 @@ public class LoadBalancerService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return ModifyServerCertificateAttributesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/lb/modify_server_certificate_attributes.html
+      * <a href=https://docs.qingcloud.com/api/lb/modify_server_certificate_attributes.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public ModifyServerCertificateAttributesOutput modifyServerCertificateAttributes(ModifyServerCertificateAttributesInput input) throws QCException {
@@ -4568,11 +4596,11 @@ public class LoadBalancerService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/lb/modify_server_certificate_attributes.html
+       * <a href=https://docs.qingcloud.com/api/lb/modify_server_certificate_attributes.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void modifyServerCertificateAttributes(ModifyServerCertificateAttributesInput input, ResponseCallBack<ModifyServerCertificateAttributesOutput> callback) throws QCException {
@@ -4676,10 +4704,11 @@ public class LoadBalancerService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return ResizeLoadBalancersOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/lb/resize_loadbalancers.html
+      * <a href=https://docs.qingcloud.com/api/lb/resize_loadbalancers.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public ResizeLoadBalancersOutput resizeLoadBalancers(ResizeLoadBalancersInput input) throws QCException {
@@ -4709,11 +4738,11 @@ public class LoadBalancerService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/lb/resize_loadbalancers.html
+       * <a href=https://docs.qingcloud.com/api/lb/resize_loadbalancers.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void resizeLoadBalancers(ResizeLoadBalancersInput input, ResponseCallBack<ResizeLoadBalancersOutput> callback) throws QCException {
@@ -4829,10 +4858,11 @@ public class LoadBalancerService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return StartLoadBalancersOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/lb/start_loadbalancers.html
+      * <a href=https://docs.qingcloud.com/api/lb/start_loadbalancers.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public StartLoadBalancersOutput startLoadBalancers(StartLoadBalancersInput input) throws QCException {
@@ -4862,11 +4892,11 @@ public class LoadBalancerService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/lb/start_loadbalancers.html
+       * <a href=https://docs.qingcloud.com/api/lb/start_loadbalancers.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void startLoadBalancers(StartLoadBalancersInput input, ResponseCallBack<StartLoadBalancersOutput> callback) throws QCException {
@@ -4955,10 +4985,11 @@ public class LoadBalancerService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return StopLoadBalancersOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/lb/stop_loadbalancers.html
+      * <a href=https://docs.qingcloud.com/api/lb/stop_loadbalancers.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public StopLoadBalancersOutput stopLoadBalancers(StopLoadBalancersInput input) throws QCException {
@@ -4988,11 +5019,11 @@ public class LoadBalancerService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/lb/stop_loadbalancers.html
+       * <a href=https://docs.qingcloud.com/api/lb/stop_loadbalancers.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void stopLoadBalancers(StopLoadBalancersInput input, ResponseCallBack<StopLoadBalancersOutput> callback) throws QCException {
@@ -5081,10 +5112,11 @@ public class LoadBalancerService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return UpdateLoadBalancersOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/lb/update_loadbalancers.html
+      * <a href=https://docs.qingcloud.com/api/lb/update_loadbalancers.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public UpdateLoadBalancersOutput updateLoadBalancers(UpdateLoadBalancersInput input) throws QCException {
@@ -5114,11 +5146,11 @@ public class LoadBalancerService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/lb/update_loadbalancers.html
+       * <a href=https://docs.qingcloud.com/api/lb/update_loadbalancers.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void updateLoadBalancers(UpdateLoadBalancersInput input, ResponseCallBack<UpdateLoadBalancersOutput> callback) throws QCException {

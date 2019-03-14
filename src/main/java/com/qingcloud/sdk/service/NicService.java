@@ -48,10 +48,11 @@ public class NicService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return AttachNicsOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/nic/attach_nics.html
+      * <a href=https://docs.qingcloud.com/api/nic/attach_nics.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public AttachNicsOutput attachNics(AttachNicsInput input) throws QCException {
@@ -81,11 +82,11 @@ public class NicService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/nic/attach_nics.html
+       * <a href=https://docs.qingcloud.com/api/nic/attach_nics.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void attachNics(AttachNicsInput input, ResponseCallBack<AttachNicsOutput> callback) throws QCException {
@@ -190,10 +191,11 @@ public class NicService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return CreateNicsOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/nic/create_nics.html
+      * <a href=https://docs.qingcloud.com/api/nic/create_nics.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public CreateNicsOutput createNics(CreateNicsInput input) throws QCException {
@@ -223,11 +225,11 @@ public class NicService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/nic/create_nics.html
+       * <a href=https://docs.qingcloud.com/api/nic/create_nics.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void createNics(CreateNicsInput input, ResponseCallBack<CreateNicsOutput> callback) throws QCException {
@@ -355,10 +357,11 @@ public class NicService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DeleteNicsOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/nic/delete_nics.html
+      * <a href=https://docs.qingcloud.com/api/nic/delete_nics.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DeleteNicsOutput deleteNics(DeleteNicsInput input) throws QCException {
@@ -388,11 +391,11 @@ public class NicService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/nic/delete_nics.html
+       * <a href=https://docs.qingcloud.com/api/nic/delete_nics.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void deleteNics(DeleteNicsInput input, ResponseCallBack<DeleteNicsOutput> callback) throws QCException {
@@ -469,10 +472,11 @@ public class NicService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DescribeNicsOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/nic/describe_nics.html
+      * <a href=https://docs.qingcloud.com/api/nic/describe_nics.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DescribeNicsOutput describeNics(DescribeNicsInput input) throws QCException {
@@ -502,11 +506,11 @@ public class NicService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/nic/describe_nics.html
+       * <a href=https://docs.qingcloud.com/api/nic/describe_nics.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void describeNics(DescribeNicsInput input, ResponseCallBack<DescribeNicsOutput> callback) throws QCException {
@@ -737,10 +741,11 @@ public class NicService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DetachNicsOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/nic/detach_nics.html
+      * <a href=https://docs.qingcloud.com/api/nic/detach_nics.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DetachNicsOutput detachNics(DetachNicsInput input) throws QCException {
@@ -770,11 +775,11 @@ public class NicService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/nic/detach_nics.html
+       * <a href=https://docs.qingcloud.com/api/nic/detach_nics.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void detachNics(DetachNicsInput input, ResponseCallBack<DetachNicsOutput> callback) throws QCException {
@@ -863,10 +868,11 @@ public class NicService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return ModifyNicAttributesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/nic/modify-nic-attributes.html
+      * <a href=https://docs.qingcloud.com/api/nic/modify-nic-attributes.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public ModifyNicAttributesOutput modifyNicAttributes(ModifyNicAttributesInput input) throws QCException {
@@ -896,11 +902,11 @@ public class NicService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/nic/modify-nic-attributes.html
+       * <a href=https://docs.qingcloud.com/api/nic/modify-nic-attributes.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void modifyNicAttributes(ModifyNicAttributesInput input, ResponseCallBack<ModifyNicAttributesOutput> callback) throws QCException {

@@ -48,10 +48,11 @@ public class ClusterService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return AddClusterNodesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/cluster/add_cluster_nodes.html
+      * <a href=https://docs.qingcloud.com/api/cluster/add_cluster_nodes.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public AddClusterNodesOutput addClusterNodes(AddClusterNodesInput input) throws QCException {
@@ -81,11 +82,11 @@ public class ClusterService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/cluster/add_cluster_nodes.html
+       * <a href=https://docs.qingcloud.com/api/cluster/add_cluster_nodes.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void addClusterNodes(AddClusterNodesInput input, ResponseCallBack<AddClusterNodesOutput> callback) throws QCException {
@@ -265,10 +266,11 @@ public class ClusterService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return AssociateEIPToClusterNodeOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/cluster/associate_eip_to_cluster_node.html
+      * <a href=https://docs.qingcloud.com/api/cluster/associate_eip_to_cluster_node.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public AssociateEIPToClusterNodeOutput associateEIPToClusterNode(AssociateEIPToClusterNodeInput input) throws QCException {
@@ -298,11 +300,11 @@ public class ClusterService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/cluster/associate_eip_to_cluster_node.html
+       * <a href=https://docs.qingcloud.com/api/cluster/associate_eip_to_cluster_node.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void associateEIPToClusterNode(AssociateEIPToClusterNodeInput input, ResponseCallBack<AssociateEIPToClusterNodeOutput> callback) throws QCException {
@@ -422,10 +424,11 @@ public class ClusterService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return CeaseClustersOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/cluster/cease_clusters.html
+      * <a href=https://docs.qingcloud.com/api/cluster/cease_clusters.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public CeaseClustersOutput ceaseClusters(CeaseClustersInput input) throws QCException {
@@ -455,11 +458,11 @@ public class ClusterService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/cluster/cease_clusters.html
+       * <a href=https://docs.qingcloud.com/api/cluster/cease_clusters.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void ceaseClusters(CeaseClustersInput input, ResponseCallBack<CeaseClustersOutput> callback) throws QCException {
@@ -548,10 +551,11 @@ public class ClusterService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return ChangeClusterVxNetOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/cluster/change_cluster_vxnet.html
+      * <a href=https://docs.qingcloud.com/api/cluster/change_cluster_vxnet.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public ChangeClusterVxNetOutput changeClusterVxNet(ChangeClusterVxNetInput input) throws QCException {
@@ -581,11 +585,11 @@ public class ClusterService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/cluster/change_cluster_vxnet.html
+       * <a href=https://docs.qingcloud.com/api/cluster/change_cluster_vxnet.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void changeClusterVxNet(ChangeClusterVxNetInput input, ResponseCallBack<ChangeClusterVxNetOutput> callback) throws QCException {
@@ -741,10 +745,11 @@ public class ClusterService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return CreateClusterOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/cluster/create_cluster.html
+      * <a href=https://docs.qingcloud.com/api/cluster/create_cluster.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public CreateClusterOutput createCluster(CreateClusterInput input) throws QCException {
@@ -774,11 +779,11 @@ public class ClusterService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/cluster/create_cluster.html
+       * <a href=https://docs.qingcloud.com/api/cluster/create_cluster.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void createCluster(CreateClusterInput input, ResponseCallBack<CreateClusterOutput> callback) throws QCException {
@@ -942,10 +947,11 @@ public class ClusterService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return CreateClusterFromSnapshotOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/cluster/create_cluster_from_snapshot.html
+      * <a href=https://docs.qingcloud.com/api/cluster/create_cluster_from_snapshot.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public CreateClusterFromSnapshotOutput createClusterFromSnapshot(CreateClusterFromSnapshotInput input) throws QCException {
@@ -975,11 +981,11 @@ public class ClusterService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/cluster/create_cluster_from_snapshot.html
+       * <a href=https://docs.qingcloud.com/api/cluster/create_cluster_from_snapshot.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void createClusterFromSnapshot(CreateClusterFromSnapshotInput input, ResponseCallBack<CreateClusterFromSnapshotOutput> callback) throws QCException {
@@ -1159,10 +1165,11 @@ public class ClusterService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DeleteClusterNodesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/cluster/delete_cluster_nodes.html
+      * <a href=https://docs.qingcloud.com/api/cluster/delete_cluster_nodes.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DeleteClusterNodesOutput deleteClusterNodes(DeleteClusterNodesInput input) throws QCException {
@@ -1192,11 +1199,11 @@ public class ClusterService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/cluster/delete_cluster_nodes.html
+       * <a href=https://docs.qingcloud.com/api/cluster/delete_cluster_nodes.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void deleteClusterNodes(DeleteClusterNodesInput input, ResponseCallBack<DeleteClusterNodesOutput> callback) throws QCException {
@@ -1337,10 +1344,11 @@ public class ClusterService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DeleteClustersOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/cluster/delete_clusters.html
+      * <a href=https://docs.qingcloud.com/api/cluster/delete_clusters.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DeleteClustersOutput deleteClusters(DeleteClustersInput input) throws QCException {
@@ -1370,11 +1378,11 @@ public class ClusterService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/cluster/delete_clusters.html
+       * <a href=https://docs.qingcloud.com/api/cluster/delete_clusters.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void deleteClusters(DeleteClustersInput input, ResponseCallBack<DeleteClustersOutput> callback) throws QCException {
@@ -1475,10 +1483,11 @@ public class ClusterService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DescribeClusterDisplayTabsOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/cluster/describe_cluster_display_tabs.html
+      * <a href=https://docs.qingcloud.com/api/cluster/describe_cluster_display_tabs.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DescribeClusterDisplayTabsOutput describeClusterDisplayTabs(DescribeClusterDisplayTabsInput input) throws QCException {
@@ -1508,11 +1517,11 @@ public class ClusterService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/cluster/describe_cluster_display_tabs.html
+       * <a href=https://docs.qingcloud.com/api/cluster/describe_cluster_display_tabs.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void describeClusterDisplayTabs(DescribeClusterDisplayTabsInput input, ResponseCallBack<DescribeClusterDisplayTabsOutput> callback) throws QCException {
@@ -1632,10 +1641,11 @@ public class ClusterService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DescribeClusterNodesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/cluster/describe_cluster_nodes.html
+      * <a href=https://docs.qingcloud.com/api/cluster/describe_cluster_nodes.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DescribeClusterNodesOutput describeClusterNodes(DescribeClusterNodesInput input) throws QCException {
@@ -1665,11 +1675,11 @@ public class ClusterService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/cluster/describe_cluster_nodes.html
+       * <a href=https://docs.qingcloud.com/api/cluster/describe_cluster_nodes.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void describeClusterNodes(DescribeClusterNodesInput input, ResponseCallBack<DescribeClusterNodesOutput> callback) throws QCException {
@@ -1901,10 +1911,11 @@ public class ClusterService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DescribeClusterUsersOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/cluster/describe_cluster_users.html
+      * <a href=https://docs.qingcloud.com/api/cluster/describe_cluster_users.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DescribeClusterUsersOutput describeClusterUsers(DescribeClusterUsersInput input) throws QCException {
@@ -1934,11 +1945,11 @@ public class ClusterService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/cluster/describe_cluster_users.html
+       * <a href=https://docs.qingcloud.com/api/cluster/describe_cluster_users.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void describeClusterUsers(DescribeClusterUsersInput input, ResponseCallBack<DescribeClusterUsersOutput> callback) throws QCException {
@@ -2112,10 +2123,11 @@ public class ClusterService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DescribeClustersOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/cluster/describe_clusters.html
+      * <a href=https://docs.qingcloud.com/api/cluster/describe_clusters.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DescribeClustersOutput describeClusters(DescribeClustersInput input) throws QCException {
@@ -2145,11 +2157,11 @@ public class ClusterService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/cluster/describe_clusters.html
+       * <a href=https://docs.qingcloud.com/api/cluster/describe_clusters.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void describeClusters(DescribeClustersInput input, ResponseCallBack<DescribeClustersOutput> callback) throws QCException {
@@ -2508,10 +2520,11 @@ public class ClusterService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DissociateEIPFromClusterNodeOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/cluster/dissociate_eip_from_cluster_node.html
+      * <a href=https://docs.qingcloud.com/api/cluster/dissociate_eip_from_cluster_node.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DissociateEIPFromClusterNodeOutput dissociateEIPFromClusterNode(DissociateEIPFromClusterNodeInput input) throws QCException {
@@ -2541,11 +2554,11 @@ public class ClusterService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/cluster/dissociate_eip_from_cluster_node.html
+       * <a href=https://docs.qingcloud.com/api/cluster/dissociate_eip_from_cluster_node.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void dissociateEIPFromClusterNode(DissociateEIPFromClusterNodeInput input, ResponseCallBack<DissociateEIPFromClusterNodeOutput> callback) throws QCException {
@@ -2634,10 +2647,11 @@ public class ClusterService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return ModifyClusterAttributesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/cluster/modify_cluster_attributes.html
+      * <a href=https://docs.qingcloud.com/api/cluster/modify_cluster_attributes.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public ModifyClusterAttributesOutput modifyClusterAttributes(ModifyClusterAttributesInput input) throws QCException {
@@ -2667,11 +2681,11 @@ public class ClusterService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/cluster/modify_cluster_attributes.html
+       * <a href=https://docs.qingcloud.com/api/cluster/modify_cluster_attributes.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void modifyClusterAttributes(ModifyClusterAttributesInput input, ResponseCallBack<ModifyClusterAttributesOutput> callback) throws QCException {
@@ -2787,10 +2801,11 @@ public class ClusterService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return ModifyClusterNodeAttributesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/cluster/modify_cluster_node_attributes.html
+      * <a href=https://docs.qingcloud.com/api/cluster/modify_cluster_node_attributes.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public ModifyClusterNodeAttributesOutput modifyClusterNodeAttributes(ModifyClusterNodeAttributesInput input) throws QCException {
@@ -2820,11 +2835,11 @@ public class ClusterService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/cluster/modify_cluster_node_attributes.html
+       * <a href=https://docs.qingcloud.com/api/cluster/modify_cluster_node_attributes.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void modifyClusterNodeAttributes(ModifyClusterNodeAttributesInput input, ResponseCallBack<ModifyClusterNodeAttributesOutput> callback) throws QCException {
@@ -2916,10 +2931,11 @@ public class ClusterService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return RecoverClustersOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/cluster/recover_clusters.html
+      * <a href=https://docs.qingcloud.com/api/cluster/recover_clusters.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public RecoverClustersOutput recoverClusters(RecoverClustersInput input) throws QCException {
@@ -2949,11 +2965,11 @@ public class ClusterService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/cluster/recover_clusters.html
+       * <a href=https://docs.qingcloud.com/api/cluster/recover_clusters.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void recoverClusters(RecoverClustersInput input, ResponseCallBack<RecoverClustersOutput> callback) throws QCException {
@@ -3029,10 +3045,11 @@ public class ClusterService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return ResizeClusterOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/cluster/resize_cluster.html
+      * <a href=https://docs.qingcloud.com/api/cluster/resize_cluster.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public ResizeClusterOutput resizeCluster(ResizeClusterInput input) throws QCException {
@@ -3062,11 +3079,11 @@ public class ClusterService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/cluster/resize_cluster.html
+       * <a href=https://docs.qingcloud.com/api/cluster/resize_cluster.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void resizeCluster(ResizeClusterInput input, ResponseCallBack<ResizeClusterOutput> callback) throws QCException {
@@ -3290,10 +3307,11 @@ public class ClusterService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return RestartClusterServiceOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/cluster/restart_cluster_service.html
+      * <a href=https://docs.qingcloud.com/api/cluster/restart_cluster_service.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public RestartClusterServiceOutput restartClusterService(RestartClusterServiceInput input) throws QCException {
@@ -3323,11 +3341,11 @@ public class ClusterService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/cluster/restart_cluster_service.html
+       * <a href=https://docs.qingcloud.com/api/cluster/restart_cluster_service.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void restartClusterService(RestartClusterServiceInput input, ResponseCallBack<RestartClusterServiceOutput> callback) throws QCException {
@@ -3451,10 +3469,11 @@ public class ClusterService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return RestoreClusterFromSnapshotOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/cluster/restore_cluster_from_snapshot.html
+      * <a href=https://docs.qingcloud.com/api/cluster/restore_cluster_from_snapshot.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public RestoreClusterFromSnapshotOutput restoreClusterFromSnapshot(RestoreClusterFromSnapshotInput input) throws QCException {
@@ -3484,11 +3503,11 @@ public class ClusterService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/cluster/restore_cluster_from_snapshot.html
+       * <a href=https://docs.qingcloud.com/api/cluster/restore_cluster_from_snapshot.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void restoreClusterFromSnapshot(RestoreClusterFromSnapshotInput input, ResponseCallBack<RestoreClusterFromSnapshotOutput> callback) throws QCException {
@@ -3644,10 +3663,11 @@ public class ClusterService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return RunClusterCustomServiceOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/cluster/run_cluster_custom_service.html
+      * <a href=https://docs.qingcloud.com/api/cluster/run_cluster_custom_service.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public RunClusterCustomServiceOutput runClusterCustomService(RunClusterCustomServiceInput input) throws QCException {
@@ -3677,11 +3697,11 @@ public class ClusterService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/cluster/run_cluster_custom_service.html
+       * <a href=https://docs.qingcloud.com/api/cluster/run_cluster_custom_service.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void runClusterCustomService(RunClusterCustomServiceInput input, ResponseCallBack<RunClusterCustomServiceOutput> callback) throws QCException {
@@ -3849,10 +3869,11 @@ public class ClusterService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return StartClustersOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/cluster/start_clusters.html
+      * <a href=https://docs.qingcloud.com/api/cluster/start_clusters.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public StartClustersOutput startClusters(StartClustersInput input) throws QCException {
@@ -3882,11 +3903,11 @@ public class ClusterService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/cluster/start_clusters.html
+       * <a href=https://docs.qingcloud.com/api/cluster/start_clusters.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void startClusters(StartClustersInput input, ResponseCallBack<StartClustersOutput> callback) throws QCException {
@@ -3975,10 +3996,11 @@ public class ClusterService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return StopClustersOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/cluster/stop_clusters.html
+      * <a href=https://docs.qingcloud.com/api/cluster/stop_clusters.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public StopClustersOutput stopClusters(StopClustersInput input) throws QCException {
@@ -4008,11 +4030,11 @@ public class ClusterService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/cluster/stop_clusters.html
+       * <a href=https://docs.qingcloud.com/api/cluster/stop_clusters.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void stopClusters(StopClustersInput input, ResponseCallBack<StopClustersOutput> callback) throws QCException {
@@ -4113,10 +4135,11 @@ public class ClusterService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return UpdateClusterEnvironmentOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/cluster/update_cluster_environment.html
+      * <a href=https://docs.qingcloud.com/api/cluster/update_cluster_environment.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public UpdateClusterEnvironmentOutput updateClusterEnvironment(UpdateClusterEnvironmentInput input) throws QCException {
@@ -4146,11 +4169,11 @@ public class ClusterService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/cluster/update_cluster_environment.html
+       * <a href=https://docs.qingcloud.com/api/cluster/update_cluster_environment.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void updateClusterEnvironment(UpdateClusterEnvironmentInput input, ResponseCallBack<UpdateClusterEnvironmentOutput> callback) throws QCException {
@@ -4250,10 +4273,11 @@ public class ClusterService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return UpgradeClustersOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/cluster/upgrade_clusters.html
+      * <a href=https://docs.qingcloud.com/api/cluster/upgrade_clusters.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public UpgradeClustersOutput upgradeClusters(UpgradeClustersInput input) throws QCException {
@@ -4283,11 +4307,11 @@ public class ClusterService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/cluster/upgrade_clusters.html
+       * <a href=https://docs.qingcloud.com/api/cluster/upgrade_clusters.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void upgradeClusters(UpgradeClustersInput input, ResponseCallBack<UpgradeClustersOutput> callback) throws QCException {

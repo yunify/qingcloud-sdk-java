@@ -266,11 +266,12 @@
     {{- $hasInput := or $hasParams $hasHeaders $hasElements $hasStringBody $hasBinaryBody}}
     /**
       {{- if $hasInput}}
-      * @param input
+      * @param input Request parameters and headers in the class
       {{- end}}
-      * @throws QCException
+      * @return {{$opID}}Output Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: {{$operation.DocumentationURL}}
+      * <a href={{$operation.DocumentationURL}}>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public {{$opID}}Output {{$opID | camelCase | lowerFirst}}({{- if $hasInput -}}{{- $opID -}}Input input{{- end -}}) throws QCException {
@@ -304,11 +305,13 @@
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       {{- if $hasInput}}
+       * @param input Request parameters and headers in the class
+       {{- end}}
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: {{$operation.DocumentationURL}}
+       * <a href={{$operation.DocumentationURL}}>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void {{$opID | camelCase | lowerFirst}}({{- if $hasInput -}}{{- $opID -}}Input input,{{- end}} ResponseCallBack<{{- camelCase $operation.ID -}}Output> callback) throws QCException {

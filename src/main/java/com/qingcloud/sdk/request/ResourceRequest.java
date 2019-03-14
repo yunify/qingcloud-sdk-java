@@ -26,18 +26,19 @@ import java.util.Map;
 public interface ResourceRequest {
 
     /**
-     * @param context
-     * @param paramBean
-     * @param callback
-     * @throws QCException
+     * @param context EnvContext
+     * @param paramBean request input
+     * @param callback response calls back
+     * @throws QCException IOException or network error
      */
     void sendApiRequestAsync(Map context, RequestInputModel paramBean, ResponseCallBack callback) throws QCException;
 
     /**
-     * @param context
-     * @param paramBean
-     * @param outputClass
-     * @throws QCException
+     * @param context EnvContext
+     * @param paramBean request input
+     * @param outputClass class for output model with the response written in
+     * @return output model
+     * @throws QCException IOException or network error
      */
     OutputModel sendApiRequest(Map context, RequestInputModel paramBean, Class<? extends OutputModel> outputClass) throws QCException;
 }

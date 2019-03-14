@@ -48,10 +48,11 @@ public class SecurityGroupService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return AddSecurityGroupRulesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/sg/add_security_group_rules.html
+      * <a href=https://docs.qingcloud.com/api/sg/add_security_group_rules.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public AddSecurityGroupRulesOutput addSecurityGroupRules(AddSecurityGroupRulesInput input) throws QCException {
@@ -81,11 +82,11 @@ public class SecurityGroupService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/sg/add_security_group_rules.html
+       * <a href=https://docs.qingcloud.com/api/sg/add_security_group_rules.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void addSecurityGroupRules(AddSecurityGroupRulesInput input, ResponseCallBack<AddSecurityGroupRulesOutput> callback) throws QCException {
@@ -200,10 +201,11 @@ public class SecurityGroupService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return ApplySecurityGroupOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/sg/apply_security_group.html
+      * <a href=https://docs.qingcloud.com/api/sg/apply_security_group.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public ApplySecurityGroupOutput applySecurityGroup(ApplySecurityGroupInput input) throws QCException {
@@ -233,11 +235,11 @@ public class SecurityGroupService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/sg/apply_security_group.html
+       * <a href=https://docs.qingcloud.com/api/sg/apply_security_group.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void applySecurityGroup(ApplySecurityGroupInput input, ResponseCallBack<ApplySecurityGroupOutput> callback) throws QCException {
@@ -341,10 +343,11 @@ public class SecurityGroupService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return CreateSecurityGroupOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/sg/create_security_group.html
+      * <a href=https://docs.qingcloud.com/api/sg/create_security_group.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public CreateSecurityGroupOutput createSecurityGroup(CreateSecurityGroupInput input) throws QCException {
@@ -374,11 +377,11 @@ public class SecurityGroupService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/sg/create_security_group.html
+       * <a href=https://docs.qingcloud.com/api/sg/create_security_group.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void createSecurityGroup(CreateSecurityGroupInput input, ResponseCallBack<CreateSecurityGroupOutput> callback) throws QCException {
@@ -466,10 +469,11 @@ public class SecurityGroupService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return CreateSecurityGroupIPSetOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/sg/create_security_group_ipset.html
+      * <a href=https://docs.qingcloud.com/api/sg/create_security_group_ipset.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public CreateSecurityGroupIPSetOutput createSecurityGroupIPSet(CreateSecurityGroupIPSetInput input) throws QCException {
@@ -499,11 +503,11 @@ public class SecurityGroupService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/sg/create_security_group_ipset.html
+       * <a href=https://docs.qingcloud.com/api/sg/create_security_group_ipset.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void createSecurityGroupIPSet(CreateSecurityGroupIPSetInput input, ResponseCallBack<CreateSecurityGroupIPSetOutput> callback) throws QCException {
@@ -639,10 +643,11 @@ public class SecurityGroupService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return CreateSecurityGroupSnapshotOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/sg/create_security_group_snapshot.html
+      * <a href=https://docs.qingcloud.com/api/sg/create_security_group_snapshot.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public CreateSecurityGroupSnapshotOutput createSecurityGroupSnapshot(CreateSecurityGroupSnapshotInput input) throws QCException {
@@ -672,11 +677,11 @@ public class SecurityGroupService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/sg/create_security_group_snapshot.html
+       * <a href=https://docs.qingcloud.com/api/sg/create_security_group_snapshot.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void createSecurityGroupSnapshot(CreateSecurityGroupSnapshotInput input, ResponseCallBack<CreateSecurityGroupSnapshotOutput> callback) throws QCException {
@@ -792,10 +797,11 @@ public class SecurityGroupService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DeleteSecurityGroupIPSetsOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/sg/delete_security_group_ipsets.html
+      * <a href=https://docs.qingcloud.com/api/sg/delete_security_group_ipsets.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DeleteSecurityGroupIPSetsOutput deleteSecurityGroupIPSets(DeleteSecurityGroupIPSetsInput input) throws QCException {
@@ -825,11 +831,11 @@ public class SecurityGroupService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/sg/delete_security_group_ipsets.html
+       * <a href=https://docs.qingcloud.com/api/sg/delete_security_group_ipsets.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void deleteSecurityGroupIPSets(DeleteSecurityGroupIPSetsInput input, ResponseCallBack<DeleteSecurityGroupIPSetsOutput> callback) throws QCException {
@@ -918,10 +924,11 @@ public class SecurityGroupService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DeleteSecurityGroupRulesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/sg/delete_security_group_rules.html
+      * <a href=https://docs.qingcloud.com/api/sg/delete_security_group_rules.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DeleteSecurityGroupRulesOutput deleteSecurityGroupRules(DeleteSecurityGroupRulesInput input) throws QCException {
@@ -951,11 +958,11 @@ public class SecurityGroupService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/sg/delete_security_group_rules.html
+       * <a href=https://docs.qingcloud.com/api/sg/delete_security_group_rules.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void deleteSecurityGroupRules(DeleteSecurityGroupRulesInput input, ResponseCallBack<DeleteSecurityGroupRulesOutput> callback) throws QCException {
@@ -1044,10 +1051,11 @@ public class SecurityGroupService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DeleteSecurityGroupSnapshotsOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/sg/delete_security_group_snapshots.html
+      * <a href=https://docs.qingcloud.com/api/sg/delete_security_group_snapshots.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DeleteSecurityGroupSnapshotsOutput deleteSecurityGroupSnapshots(DeleteSecurityGroupSnapshotsInput input) throws QCException {
@@ -1077,11 +1085,11 @@ public class SecurityGroupService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/sg/delete_security_group_snapshots.html
+       * <a href=https://docs.qingcloud.com/api/sg/delete_security_group_snapshots.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void deleteSecurityGroupSnapshots(DeleteSecurityGroupSnapshotsInput input, ResponseCallBack<DeleteSecurityGroupSnapshotsOutput> callback) throws QCException {
@@ -1170,10 +1178,11 @@ public class SecurityGroupService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DeleteSecurityGroupsOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/sg/delete_security_groups.html
+      * <a href=https://docs.qingcloud.com/api/sg/delete_security_groups.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DeleteSecurityGroupsOutput deleteSecurityGroups(DeleteSecurityGroupsInput input) throws QCException {
@@ -1203,11 +1212,11 @@ public class SecurityGroupService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/sg/delete_security_groups.html
+       * <a href=https://docs.qingcloud.com/api/sg/delete_security_groups.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void deleteSecurityGroups(DeleteSecurityGroupsInput input, ResponseCallBack<DeleteSecurityGroupsOutput> callback) throws QCException {
@@ -1296,10 +1305,11 @@ public class SecurityGroupService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DescribeSecurityGroupIPSetsOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/sg/describe_security_group_ipsets.html
+      * <a href=https://docs.qingcloud.com/api/sg/describe_security_group_ipsets.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DescribeSecurityGroupIPSetsOutput describeSecurityGroupIPSets(DescribeSecurityGroupIPSetsInput input) throws QCException {
@@ -1329,11 +1339,11 @@ public class SecurityGroupService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/sg/describe_security_group_ipsets.html
+       * <a href=https://docs.qingcloud.com/api/sg/describe_security_group_ipsets.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void describeSecurityGroupIPSets(DescribeSecurityGroupIPSetsInput input, ResponseCallBack<DescribeSecurityGroupIPSetsOutput> callback) throws QCException {
@@ -1533,10 +1543,11 @@ public class SecurityGroupService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DescribeSecurityGroupRulesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/sg/describe_security_group_rules.html
+      * <a href=https://docs.qingcloud.com/api/sg/describe_security_group_rules.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DescribeSecurityGroupRulesOutput describeSecurityGroupRules(DescribeSecurityGroupRulesInput input) throws QCException {
@@ -1566,11 +1577,11 @@ public class SecurityGroupService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/sg/describe_security_group_rules.html
+       * <a href=https://docs.qingcloud.com/api/sg/describe_security_group_rules.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void describeSecurityGroupRules(DescribeSecurityGroupRulesInput input, ResponseCallBack<DescribeSecurityGroupRulesOutput> callback) throws QCException {
@@ -1746,10 +1757,11 @@ public class SecurityGroupService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DescribeSecurityGroupSnapshotsOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/sg/describe_security_group_snapshots.html
+      * <a href=https://docs.qingcloud.com/api/sg/describe_security_group_snapshots.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DescribeSecurityGroupSnapshotsOutput describeSecurityGroupSnapshots(DescribeSecurityGroupSnapshotsInput input) throws QCException {
@@ -1779,11 +1791,11 @@ public class SecurityGroupService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/sg/describe_security_group_snapshots.html
+       * <a href=https://docs.qingcloud.com/api/sg/describe_security_group_snapshots.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void describeSecurityGroupSnapshots(DescribeSecurityGroupSnapshotsInput input, ResponseCallBack<DescribeSecurityGroupSnapshotsOutput> callback) throws QCException {
@@ -1935,10 +1947,11 @@ public class SecurityGroupService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DescribeSecurityGroupsOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/sg/describe_security_groups.html
+      * <a href=https://docs.qingcloud.com/api/sg/describe_security_groups.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DescribeSecurityGroupsOutput describeSecurityGroups(DescribeSecurityGroupsInput input) throws QCException {
@@ -1968,11 +1981,11 @@ public class SecurityGroupService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/sg/describe_security_groups.html
+       * <a href=https://docs.qingcloud.com/api/sg/describe_security_groups.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void describeSecurityGroups(DescribeSecurityGroupsInput input, ResponseCallBack<DescribeSecurityGroupsOutput> callback) throws QCException {
@@ -2144,10 +2157,11 @@ public class SecurityGroupService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return ModifySecurityGroupAttributesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/sg/modify_security_group_attributes.html
+      * <a href=https://docs.qingcloud.com/api/sg/modify_security_group_attributes.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public ModifySecurityGroupAttributesOutput modifySecurityGroupAttributes(ModifySecurityGroupAttributesInput input) throws QCException {
@@ -2177,11 +2191,11 @@ public class SecurityGroupService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/sg/modify_security_group_attributes.html
+       * <a href=https://docs.qingcloud.com/api/sg/modify_security_group_attributes.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void modifySecurityGroupAttributes(ModifySecurityGroupAttributesInput input, ResponseCallBack<ModifySecurityGroupAttributesOutput> callback) throws QCException {
@@ -2297,10 +2311,11 @@ public class SecurityGroupService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return ModifySecurityGroupIPSetAttributesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/sg/modify_security_group_ipset_attributes.html
+      * <a href=https://docs.qingcloud.com/api/sg/modify_security_group_ipset_attributes.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public ModifySecurityGroupIPSetAttributesOutput modifySecurityGroupIPSetAttributes(ModifySecurityGroupIPSetAttributesInput input) throws QCException {
@@ -2330,11 +2345,11 @@ public class SecurityGroupService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/sg/modify_security_group_ipset_attributes.html
+       * <a href=https://docs.qingcloud.com/api/sg/modify_security_group_ipset_attributes.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void modifySecurityGroupIPSetAttributes(ModifySecurityGroupIPSetAttributesInput input, ResponseCallBack<ModifySecurityGroupIPSetAttributesOutput> callback) throws QCException {
@@ -2462,10 +2477,11 @@ public class SecurityGroupService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return ModifySecurityGroupRuleAttributesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/sg/modify_security_group_rule_attributes.html
+      * <a href=https://docs.qingcloud.com/api/sg/modify_security_group_rule_attributes.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public ModifySecurityGroupRuleAttributesOutput modifySecurityGroupRuleAttributes(ModifySecurityGroupRuleAttributesInput input) throws QCException {
@@ -2495,11 +2511,11 @@ public class SecurityGroupService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/sg/modify_security_group_rule_attributes.html
+       * <a href=https://docs.qingcloud.com/api/sg/modify_security_group_rule_attributes.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void modifySecurityGroupRuleAttributes(ModifySecurityGroupRuleAttributesInput input, ResponseCallBack<ModifySecurityGroupRuleAttributesOutput> callback) throws QCException {
@@ -2734,10 +2750,11 @@ public class SecurityGroupService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return RollbackSecurityGroupOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/sg/rollback_security_group.html
+      * <a href=https://docs.qingcloud.com/api/sg/rollback_security_group.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public RollbackSecurityGroupOutput rollbackSecurityGroup(RollbackSecurityGroupInput input) throws QCException {
@@ -2767,11 +2784,11 @@ public class SecurityGroupService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/sg/rollback_security_group.html
+       * <a href=https://docs.qingcloud.com/api/sg/rollback_security_group.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void rollbackSecurityGroup(RollbackSecurityGroupInput input, ResponseCallBack<RollbackSecurityGroupOutput> callback) throws QCException {

@@ -48,10 +48,11 @@ public class JobService {
     }
         
     /**
-      * @param input
-      * @throws QCException
+      * @param input Request parameters and headers in the class
+      * @return DescribeJobsOutput Response body and headers in the class
+      * @throws QCException IOException or network error
       *
-      * Documentation URL: https://docs.qingcloud.com/api/job/describe_jobs.html
+      * <a href=https://docs.qingcloud.com/api/job/describe_jobs.html>Documentation URL</a>
       */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public DescribeJobsOutput describeJobs(DescribeJobsInput input) throws QCException {
@@ -81,11 +82,11 @@ public class JobService {
     }
 
      /**
-       * @param input
-       * @param callback
-       * @throws QCException
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
        *
-       * Documentation URL: https://docs.qingcloud.com/api/job/describe_jobs.html
+       * <a href=https://docs.qingcloud.com/api/job/describe_jobs.html>Documentation URL</a>
        */
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void describeJobs(DescribeJobsInput input, ResponseCallBack<DescribeJobsOutput> callback) throws QCException {
