@@ -95,7 +95,7 @@
     <groupId>com.qingcloud</groupId>
     <artifactId>qingcloud-sdk-java</artifactId>
     <packaging>jar</packaging>
-    <version>1.0.0</version>
+    <version>1.1.0</version>
 
     <properties>
         <commons-codec.version>1.10</commons-codec.version>
