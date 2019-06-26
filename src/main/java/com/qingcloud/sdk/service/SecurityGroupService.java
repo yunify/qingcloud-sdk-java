@@ -344,6 +344,133 @@ public class SecurityGroupService {
         
     /**
       * @param input Request parameters and headers in the class
+      * @return ApplySecurityGroupIPSetsOutput Response body and headers in the class
+      * @throws QCException IOException or network error
+      *
+      * <a href=https://docs.qingcloud.com/api/sg/apply_security_group_ipsets.html>Documentation URL</a>
+      */
+    @SuppressWarnings({"rawtypes", "unchecked"})
+    public ApplySecurityGroupIPSetsOutput applySecurityGroupIPSets(ApplySecurityGroupIPSetsInput input) throws QCException {
+        if (input == null) {
+            input = new ApplySecurityGroupIPSetsInput();
+        }
+        Map context = new HashMap();
+        context.put(QCConstant.ENV_CONTEXT_KEY, this.envContext);
+        context.put("OperationName", "ApplySecurityGroupIPSets");
+        context.put("APIName", "ApplySecurityGroupIPSets");
+        context.put("ServiceName", "ApplySecurityGroupIPSets");
+        context.put("RequestMethod", "GET");
+        context.put("RequestURI", "/iaas/ApplySecurityGroupIPSets");
+
+        input.setAction("ApplySecurityGroupIPSets");
+        if (QCStringUtil.isEmpty(this.zone)) {
+            input.setZone(this.envContext.getZone());
+        } else {
+            input.setZone(this.zone);
+        }
+
+        Object backModel = ResourceRequestFactory.getResourceRequest().sendApiRequest(context, input,ApplySecurityGroupIPSetsOutput.class);
+        if(backModel != null){
+            return (ApplySecurityGroupIPSetsOutput)backModel;
+        }
+        return null;
+    }
+
+     /**
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
+       *
+       * <a href=https://docs.qingcloud.com/api/sg/apply_security_group_ipsets.html>Documentation URL</a>
+       */
+    @SuppressWarnings({"rawtypes", "unchecked"})
+    public void applySecurityGroupIPSets(ApplySecurityGroupIPSetsInput input, ResponseCallBack<ApplySecurityGroupIPSetsOutput> callback) throws QCException {
+        if (input == null) {
+            input = new ApplySecurityGroupIPSetsInput();
+        }
+        Map context = new HashMap();
+        context.put(QCConstant.ENV_CONTEXT_KEY, this.envContext);
+        context.put("OperationName", "ApplySecurityGroupIPSets");
+        context.put("APIName", "ApplySecurityGroupIPSets");
+        context.put("ServiceName", "ApplySecurityGroupIPSets");
+        context.put("RequestMethod", "GET");
+        context.put("RequestURI", "/iaas/ApplySecurityGroupIPSets");
+
+        input.setAction("ApplySecurityGroupIPSets");
+        if (QCStringUtil.isEmpty(this.zone)) {
+            input.setZone(this.envContext.getZone());
+        } else {
+            input.setZone(this.zone);
+        }
+
+        if(callback == null) {
+            throw new QCException("callback can't be null");
+        }
+
+        ResourceRequestFactory.getResourceRequest().sendApiRequestAsync(context,input,callback);
+    }
+
+    public static class ApplySecurityGroupIPSetsInput extends IaasParamBody {
+        // Required
+        private List<String> securityGroupIPSets;
+
+        @JsonProperty(value = "security_group_ipsets")
+        public void setSecurityGroupIPSets(List<String> securityGroupIPSets) {
+            this.securityGroupIPSets = securityGroupIPSets;
+        }
+
+        @JsonProperty(value = "security_group_ipsets")
+        public List<String> getSecurityGroupIPSets() {
+            return this.securityGroupIPSets;
+        }
+
+        public String validateParam() throws QCException {
+            return null;
+        }
+    }
+
+    @JsonIgnoreProperties(ignoreUnknown = true)
+    public static class ApplySecurityGroupIPSetsOutput extends OutputModel {
+        private String action;
+
+        @JsonProperty(value = "action")
+        public void setAction(String action) {
+            this.action = action;
+        }
+
+        @JsonProperty(value = "action")
+        public String getAction() {
+            return this.action;
+        }
+
+        private String jobID;
+
+        @JsonProperty(value = "job_id")
+        public void setJobID(String jobID) {
+            this.jobID = jobID;
+        }
+
+        @JsonProperty(value = "job_id")
+        public String getJobID() {
+            return this.jobID;
+        }
+
+        private Integer retCode;
+
+        @JsonProperty(value = "ret_code")
+        public void setRetCode(Integer retCode) {
+            this.retCode = retCode;
+        }
+
+        @JsonProperty(value = "ret_code")
+        public Integer getRetCode() {
+            return this.retCode;
+        }
+
+    }
+        
+    /**
+      * @param input Request parameters and headers in the class
       * @return CreateSecurityGroupOutput Response body and headers in the class
       * @throws QCException IOException or network error
       *
