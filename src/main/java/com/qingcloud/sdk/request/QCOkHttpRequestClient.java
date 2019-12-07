@@ -92,7 +92,16 @@ public class QCOkHttpRequestClient {
                             .connectTimeout(QCConstant.HTTP_CLIENT_CONNECTION_TIMEOUT, TimeUnit.SECONDS)
                             .readTimeout(QCConstant.HTTP_CLIENT_READ_TIMEOUT, TimeUnit.SECONDS)
                             .writeTimeout(QCConstant.HTTP_CLIENT_WRITE_TIMEOUT, TimeUnit.SECONDS);
-            builder.sslSocketFactory(sslSocketFactory);
+            builder.sslSocketFactory(sslSocketFactory,
+                    new X509TrustManager() {
+                        public void checkClientTrusted(java.security.cert.X509Certificate[] chain, String authType) {}
+
+                        public void checkServerTrusted(java.security.cert.X509Certificate[] chain, String authType) {}
+
+                        public java.security.cert.X509Certificate[] getAcceptedIssuers() {
+                            return new java.security.cert.X509Certificate[] {};
+                        }
+                    });
             builder.hostnameVerifier((hostname, session) -> true);
 
             return builder.build();
