@@ -25,7 +25,7 @@ Add below dependency in your pom file
 <dependency>
     <groupId>com.qingcloud</groupId>
     <artifactId>qingcloud-sdk-java</artifactId>
-    <version>1.0.0</version>
+    <version>1.2.0</version>
 </dependency>
 ```
 
@@ -60,7 +60,7 @@ public class InstanceTest {
                 System.out.println("==================");
                 System.out.println(model.getInstanceID());
                 System.out.println(model.getInstanceName());
-                System.out.println(model.getImageID());
+                System.out.println(model.getImage().getImageID());
                 for (Types.NICVxNetModel vxNetModel : model.getVxNets()) {
                     System.out.println("==================");
                     System.out.println(vxNetModel.getVxNetID());
