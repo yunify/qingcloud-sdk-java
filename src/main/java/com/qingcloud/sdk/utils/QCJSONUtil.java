@@ -46,6 +46,9 @@ public class QCJSONUtil {
         parameters.put("access_key_id", envContext.getAccessKey());
         parameters.put("api_lang", envContext.getApiLang());
         parameters.put("time_stamp", formatIso8601Date(new Date()));
+        if (envContext.getUri().equals("iam")) {
+            parameters.put("token", envContext.getToken());
+        }
 
         String uri = null;
         StringBuilder sbUri = new StringBuilder();

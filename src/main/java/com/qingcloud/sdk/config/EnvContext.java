@@ -18,6 +18,7 @@ package com.qingcloud.sdk.config;
 
 import com.qingcloud.sdk.constants.QCConstant;
 import com.qingcloud.sdk.request.ParamValidate;
+import com.qingcloud.sdk.service.TokenService;
 import com.qingcloud.sdk.utils.QCStringUtil;
 
 import java.io.*;
@@ -44,7 +45,27 @@ public class EnvContext implements ParamValidate {
 
     private String zone;
 
+    private String token;
+
+    private String tokenExpiration;
+
     private boolean safeOkHttp = true;
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
+    public String getTokenExpiration() {
+        return tokenExpiration;
+    }
+
+    public void setTokenExpiration(String tokenExpiration) {
+        this.tokenExpiration = tokenExpiration;
+    }
 
     public boolean isSafeOkHttp() {
         return safeOkHttp;
@@ -210,6 +231,18 @@ public class EnvContext implements ParamValidate {
     }
 
     public String validateParam() {
+        if (QCStringUtil.isEmpty(getAccessKey()) && QCStringUtil.isEmpty(getAccessSecret()) && isTokenExpired()) {
+            TokenService service = new TokenService();
+            TokenService.GetTokenOutput output = service.getToken();
+            if (output != null) {
+                this.accessKey = output.getAccessKey();
+                this.accessSecret = output.getAccessSecret();
+                this.token = output.getToken();
+                this.tokenExpiration = output.getExpiration();
+                this.uri = "iam";
+            }
+        }
+
         if (QCStringUtil.isEmpty(getAccessKey())) {
             return QCStringUtil.getParameterRequired("AccessKey", "EnvContext");
         }
@@ -220,5 +253,16 @@ public class EnvContext implements ParamValidate {
             return QCStringUtil.getParameterRequired("host", "EnvContext");
         }
         return null;
+    }
+
+    private boolean isTokenExpired() {
+        if (this.token == null || this.token.isEmpty()) {
+            return true;
+        }
+
+        long expiration = Long.parseLong(this.tokenExpiration) * 1000;
+        long now = System.currentTimeMillis();
+
+        return now >= expiration;
     }
 }
