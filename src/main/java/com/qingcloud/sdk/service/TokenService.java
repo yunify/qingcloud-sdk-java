@@ -9,8 +9,8 @@ import okhttp3.Request;
 
 public class TokenService {
 
-    private static final String CREDENTIAL_PROXY_HOST = "36.110.217.229";
-    private static final String CREDENTIAL_PROXY_PORT = "79";
+    private static final String CREDENTIAL_PROXY_HOST = "169.254.169.254";
+    private static final String CREDENTIAL_PROXY_PORT = "80";
     private static final String CREDENTIAL_PROXY_PROTOCOL = "http";
     private static final String CREDENTIAL_PROXY_URI = "/latest/meta-data/security-credentials";
 
