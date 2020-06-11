@@ -51,6 +51,15 @@ EnvContext  evn = new EnvContext("", "");
 ```
 or **NOT** including access_key and access_secret fields in EnvContext file and create EnvContext from yaml file.
 
+Note that you can configure your own credential proxy url (where you retrieve token) in yaml file like this: 
+
+```yaml
+credential_proxy_protocol: http
+credential_proxy_host: 169.254.169.254
+credential_proxy_port: 80
+credential_proxy_uri: /latest/meta-data/security-credentials
+```
+
 Change API server
 
 ```

@@ -2,6 +2,7 @@ package com.qingcloud.sdk.service;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.qingcloud.sdk.config.EnvContext;
 import com.qingcloud.sdk.exception.QCException;
 import com.qingcloud.sdk.model.OutputModel;
 import com.qingcloud.sdk.request.QCOkHttpRequestClient;
@@ -14,7 +15,11 @@ public class TokenService {
     private static final String CREDENTIAL_PROXY_PROTOCOL = "http";
     private static final String CREDENTIAL_PROXY_URI = "/latest/meta-data/security-credentials";
 
-    public TokenService() {}
+    private EnvContext envContext;
+
+    public TokenService(EnvContext envContext) {
+        this.envContext = envContext;
+    }
 
     /**
      * @return GetTokenOutput Response body and headers in the class
@@ -127,7 +132,36 @@ public class TokenService {
     }
 
     private String getCredentialProxyUrl() {
-        return String.format("%s://%s:%s%s", CREDENTIAL_PROXY_PROTOCOL, CREDENTIAL_PROXY_HOST, CREDENTIAL_PROXY_PORT,
-                CREDENTIAL_PROXY_URI);
+        String credentialProxyProtocol;
+        String credentialProxyHost;
+        String credentialProxyPort;
+        String credentialProxyUri;
+
+        if (envContext.getCredentialProxyProtocol() != null && !envContext.getCredentialProxyProtocol().isEmpty()) {
+            credentialProxyProtocol = envContext.getCredentialProxyProtocol();
+        } else {
+            credentialProxyProtocol = CREDENTIAL_PROXY_PROTOCOL;
+        }
+
+        if (envContext.getCredentialProxyHost() != null && !envContext.getCredentialProxyHost().isEmpty()) {
+            credentialProxyHost = envContext.getCredentialProxyHost();
+        } else {
+            credentialProxyHost = CREDENTIAL_PROXY_HOST;
+        }
+
+        if (envContext.getCredentialProxyPort() != null && !envContext.getCredentialProxyPort().isEmpty()) {
+            credentialProxyPort = envContext.getCredentialProxyPort();
+        } else {
+            credentialProxyPort = CREDENTIAL_PROXY_PORT;
+        }
+
+        if (envContext.getCredentialProxyUri() != null && !envContext.getCredentialProxyUri().isEmpty()) {
+            credentialProxyUri = envContext.getCredentialProxyUri();
+        } else {
+            credentialProxyUri = CREDENTIAL_PROXY_URI;
+        }
+
+        return String.format("%s://%s:%s%s", credentialProxyProtocol, credentialProxyHost, credentialProxyPort,
+                credentialProxyUri);
     }
 }

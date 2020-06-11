@@ -49,7 +49,47 @@ public class EnvContext implements ParamValidate {
 
     private String tokenExpiration;
 
+    private String credentialProxyHost;
+
+    private String credentialProxyProtocol;
+
+    private String credentialProxyPort;
+
+    private String credentialProxyUri;
+
     private boolean safeOkHttp = true;
+
+    public String getCredentialProxyProtocol() {
+        return credentialProxyProtocol;
+    }
+
+    public void setCredentialProxyProtocol(String credentialProxyProtocol) {
+        this.credentialProxyProtocol = credentialProxyProtocol;
+    }
+
+    public String getCredentialProxyPort() {
+        return credentialProxyPort;
+    }
+
+    public void setCredentialProxyPort(String credentialProxyPort) {
+        this.credentialProxyPort = credentialProxyPort;
+    }
+
+    public String getCredentialProxyUri() {
+        return credentialProxyUri;
+    }
+
+    public void setCredentialProxyUri(String credentialProxyUri) {
+        this.credentialProxyUri = credentialProxyUri;
+    }
+
+    public String getCredentialProxyHost() {
+        return credentialProxyHost;
+    }
+
+    public void setCredentialProxyHost(String credentialProxyHost) {
+        this.credentialProxyHost = credentialProxyHost;
+    }
 
     public String getToken() {
         return token;
@@ -226,13 +266,18 @@ public class EnvContext implements ParamValidate {
             env.setUri(confParams.get("uri"));
             env.setPort(confParams.get("port"));
             env.setZone(confParams.get("zone"));
+            env.setCredentialProxyHost(confParams.get("credential_proxy_host"));
+            env.setCredentialProxyPort(confParams.get("credential_proxy_port"));
+            env.setCredentialProxyProtocol(confParams.get("credential_proxy_protocol"));
+            env.setCredentialProxyUri(confParams.get("credential_proxy_uri"));
         }
         return env;
     }
 
     public String validateParam() {
-        if (QCStringUtil.isEmpty(getAccessKey()) && QCStringUtil.isEmpty(getAccessSecret()) && isTokenExpired()) {
-            TokenService service = new TokenService();
+        if (QCStringUtil.isEmpty(getAccessKey()) && QCStringUtil.isEmpty(getAccessSecret())
+                || this.uri.equals("iam") && isTokenExpired()) {
+            TokenService service = new TokenService(this);
             TokenService.GetTokenOutput output = service.getToken();
             if (output != null) {
                 this.accessKey = output.getAccessKey();
