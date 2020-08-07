@@ -7,8 +7,12 @@ import com.qingcloud.sdk.exception.QCException;
 import com.qingcloud.sdk.model.OutputModel;
 import com.qingcloud.sdk.request.QCOkHttpRequestClient;
 import okhttp3.Request;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class TokenService {
+
+    private static final Logger logger = LoggerFactory.getLogger(TokenService.class);
 
     private static final String CREDENTIAL_PROXY_HOST = "169.254.169.254";
     private static final String CREDENTIAL_PROXY_PORT = "80";
@@ -30,12 +34,12 @@ public class TokenService {
     public TokenService.GetTokenOutput getToken() {
         Request request = QCOkHttpRequestClient.getInstance().buildGetRequest(getCredentialProxyUrl(), "");
 
-        OutputModel model = null;
+        OutputModel model;
         try {
             model = QCOkHttpRequestClient.getInstance().requestAction(request, true, GetTokenOutput.class);
         } catch (QCException e) {
-            System.out.print("Failed to get credentials");
-            e.printStackTrace();
+            logger.error("Failed to get credentials, error: {}", e.getMessage());
+            return null;
         }
 
         if(model != null){
