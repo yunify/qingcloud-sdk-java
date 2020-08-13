@@ -18,6 +18,7 @@ package com.qingcloud.sdk.config;
 
 import com.qingcloud.sdk.constants.QCConstant;
 import com.qingcloud.sdk.request.ParamValidate;
+import com.qingcloud.sdk.service.TokenService;
 import com.qingcloud.sdk.utils.QCStringUtil;
 
 import java.io.*;
@@ -44,7 +45,67 @@ public class EnvContext implements ParamValidate {
 
     private String zone;
 
+    private String token;
+
+    private String tokenExpiration;
+
+    private String credentialProxyHost;
+
+    private String credentialProxyProtocol;
+
+    private String credentialProxyPort;
+
+    private String credentialProxyUri;
+
     private boolean safeOkHttp = true;
+
+    public String getCredentialProxyProtocol() {
+        return credentialProxyProtocol;
+    }
+
+    public void setCredentialProxyProtocol(String credentialProxyProtocol) {
+        this.credentialProxyProtocol = credentialProxyProtocol;
+    }
+
+    public String getCredentialProxyPort() {
+        return credentialProxyPort;
+    }
+
+    public void setCredentialProxyPort(String credentialProxyPort) {
+        this.credentialProxyPort = credentialProxyPort;
+    }
+
+    public String getCredentialProxyUri() {
+        return credentialProxyUri;
+    }
+
+    public void setCredentialProxyUri(String credentialProxyUri) {
+        this.credentialProxyUri = credentialProxyUri;
+    }
+
+    public String getCredentialProxyHost() {
+        return credentialProxyHost;
+    }
+
+    public void setCredentialProxyHost(String credentialProxyHost) {
+        this.credentialProxyHost = credentialProxyHost;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
+    public String getTokenExpiration() {
+        return tokenExpiration;
+    }
+
+    public void setTokenExpiration(String tokenExpiration) {
+        this.tokenExpiration = tokenExpiration;
+    }
 
     public boolean isSafeOkHttp() {
         return safeOkHttp;
@@ -205,11 +266,28 @@ public class EnvContext implements ParamValidate {
             env.setUri(confParams.get("uri"));
             env.setPort(confParams.get("port"));
             env.setZone(confParams.get("zone"));
+            env.setCredentialProxyHost(confParams.get("credential_proxy_host"));
+            env.setCredentialProxyPort(confParams.get("credential_proxy_port"));
+            env.setCredentialProxyProtocol(confParams.get("credential_proxy_protocol"));
+            env.setCredentialProxyUri(confParams.get("credential_proxy_uri"));
         }
         return env;
     }
 
     public String validateParam() {
+        if (QCStringUtil.isEmpty(getAccessKey()) && QCStringUtil.isEmpty(getAccessSecret())
+                || this.uri.equals("iam") && isTokenExpired()) {
+            TokenService service = new TokenService(this);
+            TokenService.GetTokenOutput output = service.getToken();
+            if (output != null) {
+                this.accessKey = output.getAccessKey();
+                this.accessSecret = output.getAccessSecret();
+                this.token = output.getToken();
+                this.tokenExpiration = output.getExpiration();
+                this.uri = "iam";
+            }
+        }
+
         if (QCStringUtil.isEmpty(getAccessKey())) {
             return QCStringUtil.getParameterRequired("AccessKey", "EnvContext");
         }
@@ -220,5 +298,16 @@ public class EnvContext implements ParamValidate {
             return QCStringUtil.getParameterRequired("host", "EnvContext");
         }
         return null;
+    }
+
+    private boolean isTokenExpired() {
+        if (this.token == null || this.token.isEmpty()) {
+            return true;
+        }
+
+        long expiration = Long.parseLong(this.tokenExpiration) * 1000;
+        long now = System.currentTimeMillis();
+
+        return now >= expiration;
     }
 }
