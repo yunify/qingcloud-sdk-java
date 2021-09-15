@@ -25,7 +25,7 @@ Add below dependency in your pom file
 <dependency>
     <groupId>com.qingcloud</groupId>
     <artifactId>qingcloud-sdk-java</artifactId>
-    <version>1.2.0</version>
+    <version>1.2.1</version>
 </dependency>
 ```
 
