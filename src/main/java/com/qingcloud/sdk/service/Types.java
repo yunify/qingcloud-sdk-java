@@ -27,7 +27,8 @@ import java.util.Map;
 
 public class Types {
 
-    public class Model {}
+    @JsonIgnoreProperties(ignoreUnknown = true)
+    public static class Model {}
 
 
     @JsonIgnoreProperties(ignoreUnknown = true)
@@ -1831,15 +1832,15 @@ public class Types {
             return this.links;
         }
 
-        private Integer metadataRootAccess;
+        private Boolean metadataRootAccess;
 
         @JsonProperty(value = "metadata_root_access")
-        public void setMetadataRootAccess(Integer metadataRootAccess) {
+        public void setMetadataRootAccess(Boolean metadataRootAccess) {
             this.metadataRootAccess = metadataRootAccess;
         }
 
         @JsonProperty(value = "metadata_root_access")
-        public Integer getMetadataRootAccess() {
+        public Boolean getMetadataRootAccess() {
             return this.metadataRootAccess;
         }
 
@@ -1915,15 +1916,15 @@ public class Types {
             return this.restoreService;
         }
 
-        private Integer reuseHyper;
+        private Boolean reuseHyper;
 
         @JsonProperty(value = "reuse_hyper")
-        public void setReuseHyper(Integer reuseHyper) {
+        public void setReuseHyper(Boolean reuseHyper) {
             this.reuseHyper = reuseHyper;
         }
 
         @JsonProperty(value = "reuse_hyper")
-        public Integer getReuseHyper() {
+        public Boolean getReuseHyper() {
             return this.reuseHyper;
         }
 
