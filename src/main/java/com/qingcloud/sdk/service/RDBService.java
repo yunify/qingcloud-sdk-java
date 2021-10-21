@@ -1782,6 +1782,18 @@ public class RDBService {
             return this.offset;
         }
 
+        private String projectID;
+
+        @JsonProperty(value = "project_id")
+        public void setProjectID(String projectID) {
+            this.projectID = projectID;
+        }
+
+        @JsonProperty(value = "project_id")
+        public String getProjectID() {
+            return this.projectID;
+        }
+
         private String rDBEngine;
 
         @JsonProperty(value = "rdb_engine")

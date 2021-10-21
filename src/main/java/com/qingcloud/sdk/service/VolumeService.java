@@ -192,6 +192,224 @@ public class VolumeService {
         
     /**
       * @param input Request parameters and headers in the class
+      * @return CloneVolumesOutput Response body and headers in the class
+      * @throws QCException IOException or network error
+      *
+      * <a href=https://docs.qingcloud.com>Documentation URL</a>
+      */
+    @SuppressWarnings({"rawtypes", "unchecked"})
+    public CloneVolumesOutput cloneVolumes(CloneVolumesInput input) throws QCException {
+        if (input == null) {
+            input = new CloneVolumesInput();
+        }
+        Map context = new HashMap();
+        context.put(QCConstant.ENV_CONTEXT_KEY, this.envContext);
+        context.put("OperationName", "CloneVolumes");
+        context.put("APIName", "CloneVolumes");
+        context.put("ServiceName", "CloneVolumes");
+        context.put("RequestMethod", "GET");
+        context.put("RequestURI", "/iaas/CloneVolumes");
+
+        input.setAction("CloneVolumes");
+        if (QCStringUtil.isEmpty(this.zone)) {
+            input.setZone(this.envContext.getZone());
+        } else {
+            input.setZone(this.zone);
+        }
+
+        Object backModel = ResourceRequestFactory.getResourceRequest().sendApiRequest(context, input,CloneVolumesOutput.class);
+        if(backModel != null){
+            return (CloneVolumesOutput)backModel;
+        }
+        return null;
+    }
+
+     /**
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
+       *
+       * <a href=https://docs.qingcloud.com>Documentation URL</a>
+       */
+    @SuppressWarnings({"rawtypes", "unchecked"})
+    public void cloneVolumes(CloneVolumesInput input, ResponseCallBack<CloneVolumesOutput> callback) throws QCException {
+        if (input == null) {
+            input = new CloneVolumesInput();
+        }
+        Map context = new HashMap();
+        context.put(QCConstant.ENV_CONTEXT_KEY, this.envContext);
+        context.put("OperationName", "CloneVolumes");
+        context.put("APIName", "CloneVolumes");
+        context.put("ServiceName", "CloneVolumes");
+        context.put("RequestMethod", "GET");
+        context.put("RequestURI", "/iaas/CloneVolumes");
+
+        input.setAction("CloneVolumes");
+        if (QCStringUtil.isEmpty(this.zone)) {
+            input.setZone(this.envContext.getZone());
+        } else {
+            input.setZone(this.zone);
+        }
+
+        if(callback == null) {
+            throw new QCException("callback can't be null");
+        }
+
+        ResourceRequestFactory.getResourceRequest().sendApiRequestAsync(context,input,callback);
+    }
+
+    public static class CloneVolumesInput extends IaasParamBody {
+        private Integer count;
+
+        @JsonProperty(value = "count")
+        public void setCount(Integer count) {
+            this.count = count;
+        }
+
+        @JsonProperty(value = "count")
+        public Integer getCount() {
+            return this.count;
+        }
+
+        private String subZones;
+
+        @JsonProperty(value = "sub_zones")
+        public void setSubZones(String subZones) {
+            this.subZones = subZones;
+        }
+
+        @JsonProperty(value = "sub_zones")
+        public String getSubZones() {
+            return this.subZones;
+        }
+
+        // Required
+        private String volume;
+
+        @JsonProperty(value = "volume")
+        public void setVolume(String volume) {
+            this.volume = volume;
+        }
+
+        @JsonProperty(value = "volume")
+        public String getVolume() {
+            return this.volume;
+        }
+
+        private String volumeName;
+
+        @JsonProperty(value = "volume_name")
+        public void setVolumeName(String volumeName) {
+            this.volumeName = volumeName;
+        }
+
+        @JsonProperty(value = "volume_name")
+        public String getVolumeName() {
+            return this.volumeName;
+        }
+
+    	// VolumeType's available values: 0, 1, 2, 3, 4, 5, 6, 10, 100, 200
+        private Integer volumeType;
+
+        @JsonProperty(value = "volume_type")
+        public void setVolumeType(Integer volumeType) {
+            this.volumeType = volumeType;
+        }
+
+        @JsonProperty(value = "volume_type")
+        public Integer getVolumeType() {
+            return this.volumeType;
+        }
+
+        private String zone;
+
+        @JsonProperty(value = "zone")
+        public void setZone(String zone) {
+            this.zone = zone;
+        }
+
+        @JsonProperty(value = "zone")
+        public String getZone() {
+            return this.zone;
+        }
+
+        public String validateParam() throws QCException {
+            if (QCStringUtil.isEmpty(this.getVolume())) {
+                throw new QCException("Volume is required");
+            }
+            String[]volumeTypeValidValues = {"0", "1", "2", "3", "4", "5", "6", "10", "100", "200"};
+            boolean volumeTypeIsValid = false;
+            for (String v : volumeTypeValidValues) {
+                if (v.equals(this.getVolumeType()+"")) {
+                    volumeTypeIsValid = true;
+                }
+                Boolean volumeTypeIsRequired = Boolean.FALSE;
+                if (volumeTypeIsRequired.equals(Boolean.FALSE) && this.getVolumeType()==null) {
+                    volumeTypeIsValid = true;
+                }
+            }
+
+            if (!volumeTypeIsValid) {
+                throw new QCException("VolumeType value " + this.getVolumeType() + "is invalid");
+            }
+            return null;
+        }
+    }
+
+    @JsonIgnoreProperties(ignoreUnknown = true)
+    public static class CloneVolumesOutput extends OutputModel {
+        private String action;
+
+        @JsonProperty(value = "action")
+        public void setAction(String action) {
+            this.action = action;
+        }
+
+        @JsonProperty(value = "action")
+        public String getAction() {
+            return this.action;
+        }
+
+        private String jobID;
+
+        @JsonProperty(value = "job_id")
+        public void setJobID(String jobID) {
+            this.jobID = jobID;
+        }
+
+        @JsonProperty(value = "job_id")
+        public String getJobID() {
+            return this.jobID;
+        }
+
+        private Integer retCode;
+
+        @JsonProperty(value = "ret_code")
+        public void setRetCode(Integer retCode) {
+            this.retCode = retCode;
+        }
+
+        @JsonProperty(value = "ret_code")
+        public Integer getRetCode() {
+            return this.retCode;
+        }
+
+        private List<String> volumes;
+
+        @JsonProperty(value = "volumes")
+        public void setVolumes(List<String> volumes) {
+            this.volumes = volumes;
+        }
+
+        @JsonProperty(value = "volumes")
+        public List<String> getVolumes() {
+            return this.volumes;
+        }
+
+    }
+        
+    /**
+      * @param input Request parameters and headers in the class
       * @return CreateVolumesOutput Response body and headers in the class
       * @throws QCException IOException or network error
       *
@@ -308,7 +526,7 @@ public class VolumeService {
             return this.volumeName;
         }
 
-    	// VolumeType's available values: 0, 1, 2, 3, 4, 5, 10, 100, 200
+    	// VolumeType's available values: 0, 1, 2, 3, 4, 5, 6, 10, 100, 200
         private Integer volumeType;
 
         @JsonProperty(value = "volume_type")
@@ -321,11 +539,23 @@ public class VolumeService {
             return this.volumeType;
         }
 
+        private String zone;
+
+        @JsonProperty(value = "zone")
+        public void setZone(String zone) {
+            this.zone = zone;
+        }
+
+        @JsonProperty(value = "zone")
+        public String getZone() {
+            return this.zone;
+        }
+
         public String validateParam() throws QCException {
             if (this.getSize() < 0 ) {
                 throw new QCException("Size is required");
             }
-            String[]volumeTypeValidValues = {"0", "1", "2", "3", "4", "5", "10", "100", "200"};
+            String[]volumeTypeValidValues = {"0", "1", "2", "3", "4", "5", "6", "10", "100", "200"};
             boolean volumeTypeIsValid = false;
             for (String v : volumeTypeValidValues) {
                 if (v.equals(this.getVolumeType()+"")) {
@@ -628,6 +858,18 @@ public class VolumeService {
             return this.owner;
         }
 
+        private String projectID;
+
+        @JsonProperty(value = "project_id")
+        public void setProjectID(String projectID) {
+            this.projectID = projectID;
+        }
+
+        @JsonProperty(value = "project_id")
+        public String getProjectID() {
+            return this.projectID;
+        }
+
         private String searchWord;
 
         @JsonProperty(value = "search_word")
@@ -677,7 +919,7 @@ public class VolumeService {
             return this.verbose;
         }
 
-    	// VolumeType's available values: 0, 1, 2, 3, 4, 5, 10, 100, 200
+    	// VolumeType's available values: 0, 1, 2, 3, 4, 5, 6, 10, 100, 200
         private Integer volumeType;
 
         @JsonProperty(value = "volume_type")
@@ -702,6 +944,18 @@ public class VolumeService {
             return this.volumes;
         }
 
+        private String zone;
+
+        @JsonProperty(value = "zone")
+        public void setZone(String zone) {
+            this.zone = zone;
+        }
+
+        @JsonProperty(value = "zone")
+        public String getZone() {
+            return this.zone;
+        }
+
         public String validateParam() throws QCException {
             String[]verboseValidValues = {"0", "1"};
             boolean verboseIsValid = false;
@@ -718,7 +972,7 @@ public class VolumeService {
             if (!verboseIsValid) {
                 throw new QCException("Verbose value " + this.getVerbose() + "is invalid");
             }
-            String[]volumeTypeValidValues = {"0", "1", "2", "3", "4", "5", "10", "100", "200"};
+            String[]volumeTypeValidValues = {"0", "1", "2", "3", "4", "5", "6", "10", "100", "200"};
             boolean volumeTypeIsValid = false;
             for (String v : volumeTypeValidValues) {
                 if (v.equals(this.getVolumeType()+"")) {

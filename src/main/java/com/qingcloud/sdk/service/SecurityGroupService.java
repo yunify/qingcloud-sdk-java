@@ -1549,6 +1549,18 @@ public class SecurityGroupService {
             return this.owner;
         }
 
+        private String projectID;
+
+        @JsonProperty(value = "project_id")
+        public void setProjectID(String projectID) {
+            this.projectID = projectID;
+        }
+
+        @JsonProperty(value = "project_id")
+        public String getProjectID() {
+            return this.projectID;
+        }
+
         private String securityGroupIPSetName;
 
         @JsonProperty(value = "security_group_ipset_name")
@@ -1976,6 +1988,18 @@ public class SecurityGroupService {
             return this.offset;
         }
 
+        private String projectID;
+
+        @JsonProperty(value = "project_id")
+        public void setProjectID(String projectID) {
+            this.projectID = projectID;
+        }
+
+        @JsonProperty(value = "project_id")
+        public String getProjectID() {
+            return this.projectID;
+        }
+
         private Integer reverse;
 
         @JsonProperty(value = "reverse")
@@ -2176,6 +2200,18 @@ public class SecurityGroupService {
         @JsonProperty(value = "owner")
         public String getOwner() {
             return this.owner;
+        }
+
+        private String projectID;
+
+        @JsonProperty(value = "project_id")
+        public void setProjectID(String projectID) {
+            this.projectID = projectID;
+        }
+
+        @JsonProperty(value = "project_id")
+        public String getProjectID() {
+            return this.projectID;
         }
 
         private String searchWord;

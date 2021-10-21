@@ -208,6 +208,10 @@ public class QingCloudService {
     }
 
 
+    public AccesskeyService getAccesskeyService(String zone) {
+        return new AccesskeyService(this.envContext, zone);
+    }
+
     public AppService getAppService(String zone) {
         return new AppService(this.envContext, zone);
     }
@@ -264,6 +268,14 @@ public class QingCloudService {
         return new NicService(this.envContext, zone);
     }
 
+    public NotificationService getNotificationService(String zone) {
+        return new NotificationService(this.envContext, zone);
+    }
+
+    public ProjectService getProjectService(String zone) {
+        return new ProjectService(this.envContext, zone);
+    }
+
     public RDBService getRDBService(String zone) {
         return new RDBService(this.envContext, zone);
     }
@@ -298,6 +310,10 @@ public class QingCloudService {
 
     public VxNetService getVxNetService(String zone) {
         return new VxNetService(this.envContext, zone);
+    }
+
+    public AccesskeyService getAccesskeyService() {
+        return new AccesskeyService(this.envContext);
     }
 
     public AppService getAppService() {
@@ -354,6 +370,14 @@ public class QingCloudService {
 
     public NicService getNicService() {
         return new NicService(this.envContext);
+    }
+
+    public NotificationService getNotificationService() {
+        return new NotificationService(this.envContext);
+    }
+
+    public ProjectService getProjectService() {
+        return new ProjectService(this.envContext);
     }
 
     public RDBService getRDBService() {
