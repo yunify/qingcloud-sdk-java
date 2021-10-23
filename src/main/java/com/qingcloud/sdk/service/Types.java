@@ -2072,6 +2072,18 @@ public class Types {
             return this.vxNet;
         }
 
+        private String healthStatus;
+
+        @JsonProperty(value = "health_status")
+        public void setHealthStatus(String healthStatus) {
+            this.healthStatus = healthStatus;
+        }
+
+        @JsonProperty(value = "health_status")
+        public String getHealthStatus() {
+            return this.healthStatus;
+        }
+
 
         public String validateParam() throws QCException {
             if (this.getNodes() != null && this.getNodes().size() > 0 ) {
