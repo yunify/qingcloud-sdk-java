@@ -27,9 +27,160 @@ import java.util.Map;
 
 public class Types {
 
-    @JsonIgnoreProperties(ignoreUnknown = true)
-    public static class Model {}
+    public class Model {}
 
+
+    @JsonIgnoreProperties(ignoreUnknown = true)
+    public static class AccessKeyModel implements ParamValidate {
+        private String accessKeyID;
+
+        @JsonProperty(value = "access_key_id")
+        public void setAccessKeyID(String accessKeyID) {
+            this.accessKeyID = accessKeyID;
+        }
+
+        @JsonProperty(value = "access_key_id")
+        public String getAccessKeyID() {
+            return this.accessKeyID;
+        }
+
+        private String accessKeyName;
+
+        @JsonProperty(value = "access_key_name")
+        public void setAccessKeyName(String accessKeyName) {
+            this.accessKeyName = accessKeyName;
+        }
+
+        @JsonProperty(value = "access_key_name")
+        public String getAccessKeyName() {
+            return this.accessKeyName;
+        }
+
+        private String consoleID;
+
+        @JsonProperty(value = "console_id")
+        public void setConsoleID(String consoleID) {
+            this.consoleID = consoleID;
+        }
+
+        @JsonProperty(value = "console_id")
+        public String getConsoleID() {
+            return this.consoleID;
+        }
+
+        private String controller;
+
+        @JsonProperty(value = "controller")
+        public void setController(String controller) {
+            this.controller = controller;
+        }
+
+        @JsonProperty(value = "controller")
+        public String getController() {
+            return this.controller;
+        }
+
+        private String createTime;
+
+        @JsonProperty(value = "create_time")
+        public void setCreateTime(String createTime) {
+            this.createTime = createTime;
+        }
+
+        @JsonProperty(value = "create_time")
+        public String getCreateTime() {
+            return this.createTime;
+        }
+
+        private String description;
+
+        @JsonProperty(value = "description")
+        public void setDescription(String description) {
+            this.description = description;
+        }
+
+        @JsonProperty(value = "description")
+        public String getDescription() {
+            return this.description;
+        }
+
+        private String iPWhiteList;
+
+        @JsonProperty(value = "ip_white_list")
+        public void setIPWhiteList(String iPWhiteList) {
+            this.iPWhiteList = iPWhiteList;
+        }
+
+        @JsonProperty(value = "ip_white_list")
+        public String getIPWhiteList() {
+            return this.iPWhiteList;
+        }
+
+        private String owner;
+
+        @JsonProperty(value = "owner")
+        public void setOwner(String owner) {
+            this.owner = owner;
+        }
+
+        @JsonProperty(value = "owner")
+        public String getOwner() {
+            return this.owner;
+        }
+
+        private String rootUserID;
+
+        @JsonProperty(value = "root_user_id")
+        public void setRootUserID(String rootUserID) {
+            this.rootUserID = rootUserID;
+        }
+
+        @JsonProperty(value = "root_user_id")
+        public String getRootUserID() {
+            return this.rootUserID;
+        }
+
+        private String secretAccessKey;
+
+        @JsonProperty(value = "secret_access_key")
+        public void setSecretAccessKey(String secretAccessKey) {
+            this.secretAccessKey = secretAccessKey;
+        }
+
+        @JsonProperty(value = "secret_access_key")
+        public String getSecretAccessKey() {
+            return this.secretAccessKey;
+        }
+
+        private String status;
+
+        @JsonProperty(value = "status")
+        public void setStatus(String status) {
+            this.status = status;
+        }
+
+        @JsonProperty(value = "status")
+        public String getStatus() {
+            return this.status;
+        }
+
+        private String statusTime;
+
+        @JsonProperty(value = "status_time")
+        public void setStatusTime(String statusTime) {
+            this.statusTime = statusTime;
+        }
+
+        @JsonProperty(value = "status_time")
+        public String getStatusTime() {
+            return this.statusTime;
+        }
+
+
+        public String validateParam() throws QCException {
+            return null;
+        }
+    }
 
     @JsonIgnoreProperties(ignoreUnknown = true)
     public static class AppModel implements ParamValidate {
@@ -2024,15 +2175,15 @@ public class Types {
             return this.transitionStatus;
         }
 
-        private List<String> upgradePolicy;
+        private List<Object> upgradePolicy;
 
         @JsonProperty(value = "upgrade_policy")
-        public void setUpgradePolicy(List<String> upgradePolicy) {
+        public void setUpgradePolicy(List<Object> upgradePolicy) {
             this.upgradePolicy = upgradePolicy;
         }
 
         @JsonProperty(value = "upgrade_policy")
-        public List<String> getUpgradePolicy() {
+        public List<Object> getUpgradePolicy() {
             return this.upgradePolicy;
         }
 
@@ -2090,6 +2241,17 @@ public class Types {
                 for (int i = 0 ; i < this.getNodes().size(); i++ ) {
                     
                     return null;
+
+                    //if (!QCStringUtil.isEmpty(vValidate)) {
+                    //    return vValidate;
+                    // }
+                }
+            }
+            if (this.getUpgradePolicy() != null && this.getUpgradePolicy().size() > 0 ) {
+                for (int i = 0 ; i < this.getUpgradePolicy().size(); i++ ) {
+                    
+                    String vValidate = (String)this.getUpgradePolicy().get(i);
+                    
 
                     //if (!QCStringUtil.isEmpty(vValidate)) {
                     //    return vValidate;
@@ -4279,6 +4441,18 @@ public class Types {
             return this.memoryCurrent;
         }
 
+        private String repl;
+
+        @JsonProperty(value = "repl")
+        public void setRepl(String repl) {
+            this.repl = repl;
+        }
+
+        @JsonProperty(value = "repl")
+        public String getRepl() {
+            return this.repl;
+        }
+
         private SecurityGroupModel securityGroup;
 
         @JsonProperty(value = "security_group")
@@ -4399,6 +4573,18 @@ public class Types {
         @JsonProperty(value = "vxnets")
         public List<NICVxNetModel> getVxNets() {
             return this.vxNets;
+        }
+
+        private String zoneID;
+
+        @JsonProperty(value = "zone_id")
+        public void setZoneID(String zoneID) {
+            this.zoneID = zoneID;
+        }
+
+        @JsonProperty(value = "zone_id")
+        public String getZoneID() {
+            return this.zoneID;
         }
 
 
@@ -4702,6 +4888,18 @@ public class Types {
         @JsonProperty(value = "create_time")
         public String getCreateTime() {
             return this.createTime;
+        }
+
+        private String directive;
+
+        @JsonProperty(value = "directive")
+        public void setDirective(String directive) {
+            this.directive = directive;
+        }
+
+        @JsonProperty(value = "directive")
+        public String getDirective() {
+            return this.directive;
         }
 
         private String jobAction;
@@ -6752,6 +6950,644 @@ public class Types {
     }
 
     @JsonIgnoreProperties(ignoreUnknown = true)
+    public static class NotificationDataModel implements ParamValidate {
+        private String alarmPolicy;
+
+        @JsonProperty(value = "alarm_policy")
+        public void setAlarmPolicy(String alarmPolicy) {
+            this.alarmPolicy = alarmPolicy;
+        }
+
+        @JsonProperty(value = "alarm_policy")
+        public String getAlarmPolicy() {
+            return this.alarmPolicy;
+        }
+
+        private String prevStatus;
+
+        @JsonProperty(value = "prev_status")
+        public void setPrevStatus(String prevStatus) {
+            this.prevStatus = prevStatus;
+        }
+
+        @JsonProperty(value = "prev_status")
+        public String getPrevStatus() {
+            return this.prevStatus;
+        }
+
+        private String rules;
+
+        @JsonProperty(value = "rules")
+        public void setRules(String rules) {
+            this.rules = rules;
+        }
+
+        @JsonProperty(value = "rules")
+        public String getRules() {
+            return this.rules;
+        }
+
+        private String triggerStatus;
+
+        @JsonProperty(value = "trigger_status")
+        public void setTriggerStatus(String triggerStatus) {
+            this.triggerStatus = triggerStatus;
+        }
+
+        @JsonProperty(value = "trigger_status")
+        public String getTriggerStatus() {
+            return this.triggerStatus;
+        }
+
+        private String userID;
+
+        @JsonProperty(value = "user_id")
+        public void setUserID(String userID) {
+            this.userID = userID;
+        }
+
+        @JsonProperty(value = "user_id")
+        public String getUserID() {
+            return this.userID;
+        }
+
+
+        public String validateParam() throws QCException {
+            return null;
+        }
+    }
+
+    @JsonIgnoreProperties(ignoreUnknown = true)
+    public static class NotificationListModel implements ParamValidate {
+        private String consoleID;
+
+        @JsonProperty(value = "console_id")
+        public void setConsoleID(String consoleID) {
+            this.consoleID = consoleID;
+        }
+
+        @JsonProperty(value = "console_id")
+        public String getConsoleID() {
+            return this.consoleID;
+        }
+
+        private String createTime;
+
+        @JsonProperty(value = "create_time")
+        public void setCreateTime(String createTime) {
+            this.createTime = createTime;
+        }
+
+        @JsonProperty(value = "create_time")
+        public String getCreateTime() {
+            return this.createTime;
+        }
+
+        private String isMine;
+
+        @JsonProperty(value = "is_mine")
+        public void setIsMine(String isMine) {
+            this.isMine = isMine;
+        }
+
+        @JsonProperty(value = "is_mine")
+        public String getIsMine() {
+            return this.isMine;
+        }
+
+        private List<NotificationListItemModel> items;
+
+        @JsonProperty(value = "items")
+        public void setItems(List<NotificationListItemModel> items) {
+            this.items = items;
+        }
+
+        @JsonProperty(value = "items")
+        public List<NotificationListItemModel> getItems() {
+            return this.items;
+        }
+
+        private String notificationListID;
+
+        @JsonProperty(value = "notification_list_id")
+        public void setNotificationListID(String notificationListID) {
+            this.notificationListID = notificationListID;
+        }
+
+        @JsonProperty(value = "notification_list_id")
+        public String getNotificationListID() {
+            return this.notificationListID;
+        }
+
+        private String notificationListName;
+
+        @JsonProperty(value = "notification_list_name")
+        public void setNotificationListName(String notificationListName) {
+            this.notificationListName = notificationListName;
+        }
+
+        @JsonProperty(value = "notification_list_name")
+        public String getNotificationListName() {
+            return this.notificationListName;
+        }
+
+        private String owner;
+
+        @JsonProperty(value = "owner")
+        public void setOwner(String owner) {
+            this.owner = owner;
+        }
+
+        @JsonProperty(value = "owner")
+        public String getOwner() {
+            return this.owner;
+        }
+
+        private String rootUserID;
+
+        @JsonProperty(value = "root_user_id")
+        public void setRootUserID(String rootUserID) {
+            this.rootUserID = rootUserID;
+        }
+
+        @JsonProperty(value = "root_user_id")
+        public String getRootUserID() {
+            return this.rootUserID;
+        }
+
+        private String shared;
+
+        @JsonProperty(value = "shared")
+        public void setShared(String shared) {
+            this.shared = shared;
+        }
+
+        @JsonProperty(value = "shared")
+        public String getShared() {
+            return this.shared;
+        }
+
+        private String visibility;
+
+        @JsonProperty(value = "visibility")
+        public void setVisibility(String visibility) {
+            this.visibility = visibility;
+        }
+
+        @JsonProperty(value = "visibility")
+        public String getVisibility() {
+            return this.visibility;
+        }
+
+
+        public String validateParam() throws QCException {
+            if (this.getItems() != null && this.getItems().size() > 0 ) {
+                for (int i = 0 ; i < this.getItems().size(); i++ ) {
+                    
+                    return null;
+
+                    //if (!QCStringUtil.isEmpty(vValidate)) {
+                    //    return vValidate;
+                    // }
+                }
+            }
+            return null;
+        }
+    }
+
+    @JsonIgnoreProperties(ignoreUnknown = true)
+    public static class NotificationListItemModel implements ParamValidate {
+        private String consoleID;
+
+        @JsonProperty(value = "console_id")
+        public void setConsoleID(String consoleID) {
+            this.consoleID = consoleID;
+        }
+
+        @JsonProperty(value = "console_id")
+        public String getConsoleID() {
+            return this.consoleID;
+        }
+
+        private String content;
+
+        @JsonProperty(value = "content")
+        public void setContent(String content) {
+            this.content = content;
+        }
+
+        @JsonProperty(value = "content")
+        public String getContent() {
+            return this.content;
+        }
+
+        private String createTime;
+
+        @JsonProperty(value = "create_time")
+        public void setCreateTime(String createTime) {
+            this.createTime = createTime;
+        }
+
+        @JsonProperty(value = "create_time")
+        public String getCreateTime() {
+            return this.createTime;
+        }
+
+        private String notificationItemID;
+
+        @JsonProperty(value = "notification_item_id")
+        public void setNotificationItemID(String notificationItemID) {
+            this.notificationItemID = notificationItemID;
+        }
+
+        @JsonProperty(value = "notification_item_id")
+        public String getNotificationItemID() {
+            return this.notificationItemID;
+        }
+
+        private String notificationItemType;
+
+        @JsonProperty(value = "notification_item_type")
+        public void setNotificationItemType(String notificationItemType) {
+            this.notificationItemType = notificationItemType;
+        }
+
+        @JsonProperty(value = "notification_item_type")
+        public String getNotificationItemType() {
+            return this.notificationItemType;
+        }
+
+        private String owner;
+
+        @JsonProperty(value = "owner")
+        public void setOwner(String owner) {
+            this.owner = owner;
+        }
+
+        @JsonProperty(value = "owner")
+        public String getOwner() {
+            return this.owner;
+        }
+
+        private String remarks;
+
+        @JsonProperty(value = "remarks")
+        public void setRemarks(String remarks) {
+            this.remarks = remarks;
+        }
+
+        @JsonProperty(value = "remarks")
+        public String getRemarks() {
+            return this.remarks;
+        }
+
+        private String rootUserID;
+
+        @JsonProperty(value = "root_user_id")
+        public void setRootUserID(String rootUserID) {
+            this.rootUserID = rootUserID;
+        }
+
+        @JsonProperty(value = "root_user_id")
+        public String getRootUserID() {
+            return this.rootUserID;
+        }
+
+        private Integer validStatus;
+
+        @JsonProperty(value = "valid_status")
+        public void setValidStatus(Integer validStatus) {
+            this.validStatus = validStatus;
+        }
+
+        @JsonProperty(value = "valid_status")
+        public Integer getValidStatus() {
+            return this.validStatus;
+        }
+
+        private String verificationCode;
+
+        @JsonProperty(value = "verification_code")
+        public void setVerificationCode(String verificationCode) {
+            this.verificationCode = verificationCode;
+        }
+
+        @JsonProperty(value = "verification_code")
+        public String getVerificationCode() {
+            return this.verificationCode;
+        }
+
+        private Integer verified;
+
+        @JsonProperty(value = "verified")
+        public void setVerified(Integer verified) {
+            this.verified = verified;
+        }
+
+        @JsonProperty(value = "verified")
+        public Integer getVerified() {
+            return this.verified;
+        }
+
+        private String verifyTime;
+
+        @JsonProperty(value = "verify_time")
+        public void setVerifyTime(String verifyTime) {
+            this.verifyTime = verifyTime;
+        }
+
+        @JsonProperty(value = "verify_time")
+        public String getVerifyTime() {
+            return this.verifyTime;
+        }
+
+
+        public String validateParam() throws QCException {
+            return null;
+        }
+    }
+
+    @JsonIgnoreProperties(ignoreUnknown = true)
+    public static class ProjectModel implements ParamValidate {
+        private String consoleID;
+
+        @JsonProperty(value = "console_id")
+        public void setConsoleID(String consoleID) {
+            this.consoleID = consoleID;
+        }
+
+        @JsonProperty(value = "console_id")
+        public String getConsoleID() {
+            return this.consoleID;
+        }
+
+        private String createTime;
+
+        @JsonProperty(value = "create_time")
+        public void setCreateTime(String createTime) {
+            this.createTime = createTime;
+        }
+
+        @JsonProperty(value = "create_time")
+        public String getCreateTime() {
+            return this.createTime;
+        }
+
+        private String description;
+
+        @JsonProperty(value = "description")
+        public void setDescription(String description) {
+            this.description = description;
+        }
+
+        @JsonProperty(value = "description")
+        public String getDescription() {
+            return this.description;
+        }
+
+        private Integer enabled;
+
+        @JsonProperty(value = "enabled")
+        public void setEnabled(Integer enabled) {
+            this.enabled = enabled;
+        }
+
+        @JsonProperty(value = "enabled")
+        public Integer getEnabled() {
+            return this.enabled;
+        }
+
+        private String meta;
+
+        @JsonProperty(value = "meta")
+        public void setMeta(String meta) {
+            this.meta = meta;
+        }
+
+        @JsonProperty(value = "meta")
+        public String getMeta() {
+            return this.meta;
+        }
+
+        private String owner;
+
+        @JsonProperty(value = "owner")
+        public void setOwner(String owner) {
+            this.owner = owner;
+        }
+
+        @JsonProperty(value = "owner")
+        public String getOwner() {
+            return this.owner;
+        }
+
+        private String ownerName;
+
+        @JsonProperty(value = "owner_name")
+        public void setOwnerName(String ownerName) {
+            this.ownerName = ownerName;
+        }
+
+        @JsonProperty(value = "owner_name")
+        public String getOwnerName() {
+            return this.ownerName;
+        }
+
+        private String projectID;
+
+        @JsonProperty(value = "project_id")
+        public void setProjectID(String projectID) {
+            this.projectID = projectID;
+        }
+
+        @JsonProperty(value = "project_id")
+        public String getProjectID() {
+            return this.projectID;
+        }
+
+        private String projectName;
+
+        @JsonProperty(value = "project_name")
+        public void setProjectName(String projectName) {
+            this.projectName = projectName;
+        }
+
+        @JsonProperty(value = "project_name")
+        public String getProjectName() {
+            return this.projectName;
+        }
+
+        private String resourceGroupID;
+
+        @JsonProperty(value = "resource_group_id")
+        public void setResourceGroupID(String resourceGroupID) {
+            this.resourceGroupID = resourceGroupID;
+        }
+
+        @JsonProperty(value = "resource_group_id")
+        public String getResourceGroupID() {
+            return this.resourceGroupID;
+        }
+
+        private String rootUserID;
+
+        @JsonProperty(value = "root_user_id")
+        public void setRootUserID(String rootUserID) {
+            this.rootUserID = rootUserID;
+        }
+
+        @JsonProperty(value = "root_user_id")
+        public String getRootUserID() {
+            return this.rootUserID;
+        }
+
+        private String status;
+
+        @JsonProperty(value = "status")
+        public void setStatus(String status) {
+            this.status = status;
+        }
+
+        @JsonProperty(value = "status")
+        public String getStatus() {
+            return this.status;
+        }
+
+
+        public String validateParam() throws QCException {
+            return null;
+        }
+    }
+
+    @JsonIgnoreProperties(ignoreUnknown = true)
+    public static class ProjectResourceItemModel implements ParamValidate {
+        private String createTime;
+
+        @JsonProperty(value = "create_time")
+        public void setCreateTime(String createTime) {
+            this.createTime = createTime;
+        }
+
+        @JsonProperty(value = "create_time")
+        public String getCreateTime() {
+            return this.createTime;
+        }
+
+        private String meta;
+
+        @JsonProperty(value = "meta")
+        public void setMeta(String meta) {
+            this.meta = meta;
+        }
+
+        @JsonProperty(value = "meta")
+        public String getMeta() {
+            return this.meta;
+        }
+
+        private String owner;
+
+        @JsonProperty(value = "owner")
+        public void setOwner(String owner) {
+            this.owner = owner;
+        }
+
+        @JsonProperty(value = "owner")
+        public String getOwner() {
+            return this.owner;
+        }
+
+        private String projectID;
+
+        @JsonProperty(value = "project_id")
+        public void setProjectID(String projectID) {
+            this.projectID = projectID;
+        }
+
+        @JsonProperty(value = "project_id")
+        public String getProjectID() {
+            return this.projectID;
+        }
+
+        private String projectName;
+
+        @JsonProperty(value = "project_name")
+        public void setProjectName(String projectName) {
+            this.projectName = projectName;
+        }
+
+        @JsonProperty(value = "project_name")
+        public String getProjectName() {
+            return this.projectName;
+        }
+
+        private String resourceGroupID;
+
+        @JsonProperty(value = "resource_group_id")
+        public void setResourceGroupID(String resourceGroupID) {
+            this.resourceGroupID = resourceGroupID;
+        }
+
+        @JsonProperty(value = "resource_group_id")
+        public String getResourceGroupID() {
+            return this.resourceGroupID;
+        }
+
+        private String resourceID;
+
+        @JsonProperty(value = "resource_id")
+        public void setResourceID(String resourceID) {
+            this.resourceID = resourceID;
+        }
+
+        @JsonProperty(value = "resource_id")
+        public String getResourceID() {
+            return this.resourceID;
+        }
+
+        private String resourceType;
+
+        @JsonProperty(value = "resource_type")
+        public void setResourceType(String resourceType) {
+            this.resourceType = resourceType;
+        }
+
+        @JsonProperty(value = "resource_type")
+        public String getResourceType() {
+            return this.resourceType;
+        }
+
+        private String rootUserID;
+
+        @JsonProperty(value = "root_user_id")
+        public void setRootUserID(String rootUserID) {
+            this.rootUserID = rootUserID;
+        }
+
+        @JsonProperty(value = "root_user_id")
+        public String getRootUserID() {
+            return this.rootUserID;
+        }
+
+        private String zoneID;
+
+        @JsonProperty(value = "zone_id")
+        public void setZoneID(String zoneID) {
+            this.zoneID = zoneID;
+        }
+
+        @JsonProperty(value = "zone_id")
+        public String getZoneID() {
+            return this.zoneID;
+        }
+
+
+        public String validateParam() throws QCException {
+            return null;
+        }
+    }
+
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class QuotaLeftModel implements ParamValidate {
         private Integer left;
 
@@ -8053,6 +8889,902 @@ public class Types {
     }
 
     @JsonIgnoreProperties(ignoreUnknown = true)
+    public static class ResourceLimitsModel implements ParamValidate {
+        private String comments;
+
+        @JsonProperty(value = "__comments")
+        public void setComments(String comments) {
+            this.comments = comments;
+        }
+
+        @JsonProperty(value = "__comments")
+        public String getComments() {
+            return this.comments;
+        }
+
+        private Integer banMmVxNets;
+
+        @JsonProperty(value = "ban_mm_vxnets")
+        public void setBanMmVxNets(Integer banMmVxNets) {
+            this.banMmVxNets = banMmVxNets;
+        }
+
+        @JsonProperty(value = "ban_mm_vxnets")
+        public Integer getBanMmVxNets() {
+            return this.banMmVxNets;
+        }
+
+        private List<String> bmZones;
+
+        @JsonProperty(value = "bm_zones")
+        public void setBmZones(List<String> bmZones) {
+            this.bmZones = bmZones;
+        }
+
+        @JsonProperty(value = "bm_zones")
+        public List<String> getBmZones() {
+            return this.bmZones;
+        }
+
+        private String bucketCreateWhitelist;
+
+        @JsonProperty(value = "bucket_create_whitelist")
+        public void setBucketCreateWhitelist(String bucketCreateWhitelist) {
+            this.bucketCreateWhitelist = bucketCreateWhitelist;
+        }
+
+        @JsonProperty(value = "bucket_create_whitelist")
+        public String getBucketCreateWhitelist() {
+            return this.bucketCreateWhitelist;
+        }
+
+        private List<String> disabledActions;
+
+        @JsonProperty(value = "disabled_actions")
+        public void setDisabledActions(List<String> disabledActions) {
+            this.disabledActions = disabledActions;
+        }
+
+        @JsonProperty(value = "disabled_actions")
+        public List<String> getDisabledActions() {
+            return this.disabledActions;
+        }
+
+        private List<String> disabledFeatures;
+
+        @JsonProperty(value = "disabled_features")
+        public void setDisabledFeatures(List<String> disabledFeatures) {
+            this.disabledFeatures = disabledFeatures;
+        }
+
+        @JsonProperty(value = "disabled_features")
+        public List<String> getDisabledFeatures() {
+            return this.disabledFeatures;
+        }
+
+        private Integer enableNICBandwidth;
+
+        @JsonProperty(value = "enable_nic_bandwidth")
+        public void setEnableNICBandwidth(Integer enableNICBandwidth) {
+            this.enableNICBandwidth = enableNICBandwidth;
+        }
+
+        @JsonProperty(value = "enable_nic_bandwidth")
+        public Integer getEnableNICBandwidth() {
+            return this.enableNICBandwidth;
+        }
+
+        private List<String> gpuZones;
+
+        @JsonProperty(value = "gpu_zones")
+        public void setGpuZones(List<String> gpuZones) {
+            this.gpuZones = gpuZones;
+        }
+
+        @JsonProperty(value = "gpu_zones")
+        public List<String> getGpuZones() {
+            return this.gpuZones;
+        }
+
+        private Model hadoopTypes;
+
+        @JsonProperty(value = "hadoop_types")
+        public void setHadoopTypes(Model hadoopTypes) {
+            this.hadoopTypes = hadoopTypes;
+        }
+
+        @JsonProperty(value = "hadoop_types")
+        public Model getHadoopTypes() {
+            return this.hadoopTypes;
+        }
+
+        private Model hbaseTypes;
+
+        @JsonProperty(value = "hbase_types")
+        public void setHbaseTypes(Model hbaseTypes) {
+            this.hbaseTypes = hbaseTypes;
+        }
+
+        @JsonProperty(value = "hbase_types")
+        public Model getHbaseTypes() {
+            return this.hbaseTypes;
+        }
+
+        private Integer hcVolumeStep;
+
+        @JsonProperty(value = "hc_volume_step")
+        public void setHcVolumeStep(Integer hcVolumeStep) {
+            this.hcVolumeStep = hcVolumeStep;
+        }
+
+        @JsonProperty(value = "hc_volume_step")
+        public Integer getHcVolumeStep() {
+            return this.hcVolumeStep;
+        }
+
+        private Integer hcsVolumeStep;
+
+        @JsonProperty(value = "hcs_volume_step")
+        public void setHcsVolumeStep(Integer hcsVolumeStep) {
+            this.hcsVolumeStep = hcsVolumeStep;
+        }
+
+        @JsonProperty(value = "hcs_volume_step")
+        public Integer getHcsVolumeStep() {
+            return this.hcsVolumeStep;
+        }
+
+        private Integer hdfsDisksPerNode;
+
+        @JsonProperty(value = "hdfs_disks_per_node")
+        public void setHdfsDisksPerNode(Integer hdfsDisksPerNode) {
+            this.hdfsDisksPerNode = hdfsDisksPerNode;
+        }
+
+        @JsonProperty(value = "hdfs_disks_per_node")
+        public Integer getHdfsDisksPerNode() {
+            return this.hdfsDisksPerNode;
+        }
+
+        private Integer hpsVolumeStep;
+
+        @JsonProperty(value = "hps_volume_step")
+        public void setHpsVolumeStep(Integer hpsVolumeStep) {
+            this.hpsVolumeStep = hpsVolumeStep;
+        }
+
+        @JsonProperty(value = "hps_volume_step")
+        public Integer getHpsVolumeStep() {
+            return this.hpsVolumeStep;
+        }
+
+        private String ignoreMmVxNetUsers;
+
+        @JsonProperty(value = "ignore_mm_vxnet_users")
+        public void setIgnoreMmVxNetUsers(String ignoreMmVxNetUsers) {
+            this.ignoreMmVxNetUsers = ignoreMmVxNetUsers;
+        }
+
+        @JsonProperty(value = "ignore_mm_vxnet_users")
+        public String getIgnoreMmVxNetUsers() {
+            return this.ignoreMmVxNetUsers;
+        }
+
+        private Integer maxAbuseEIPCnt;
+
+        @JsonProperty(value = "max_abuse_eip_cnt")
+        public void setMaxAbuseEIPCnt(Integer maxAbuseEIPCnt) {
+            this.maxAbuseEIPCnt = maxAbuseEIPCnt;
+        }
+
+        @JsonProperty(value = "max_abuse_eip_cnt")
+        public Integer getMaxAbuseEIPCnt() {
+            return this.maxAbuseEIPCnt;
+        }
+
+        private Integer maxAlarmPolicyActions;
+
+        @JsonProperty(value = "max_alarm_policy_actions")
+        public void setMaxAlarmPolicyActions(Integer maxAlarmPolicyActions) {
+            this.maxAlarmPolicyActions = maxAlarmPolicyActions;
+        }
+
+        @JsonProperty(value = "max_alarm_policy_actions")
+        public Integer getMaxAlarmPolicyActions() {
+            return this.maxAlarmPolicyActions;
+        }
+
+        private Integer maxAlarmPolicyResources;
+
+        @JsonProperty(value = "max_alarm_policy_resources")
+        public void setMaxAlarmPolicyResources(Integer maxAlarmPolicyResources) {
+            this.maxAlarmPolicyResources = maxAlarmPolicyResources;
+        }
+
+        @JsonProperty(value = "max_alarm_policy_resources")
+        public Integer getMaxAlarmPolicyResources() {
+            return this.maxAlarmPolicyResources;
+        }
+
+        private Integer maxAlarmPolicyRules;
+
+        @JsonProperty(value = "max_alarm_policy_rules")
+        public void setMaxAlarmPolicyRules(Integer maxAlarmPolicyRules) {
+            this.maxAlarmPolicyRules = maxAlarmPolicyRules;
+        }
+
+        @JsonProperty(value = "max_alarm_policy_rules")
+        public Integer getMaxAlarmPolicyRules() {
+            return this.maxAlarmPolicyRules;
+        }
+
+        private Integer maxChangeEIPBillingModeCnt;
+
+        @JsonProperty(value = "max_change_eip_billing_mode_cnt")
+        public void setMaxChangeEIPBillingModeCnt(Integer maxChangeEIPBillingModeCnt) {
+            this.maxChangeEIPBillingModeCnt = maxChangeEIPBillingModeCnt;
+        }
+
+        @JsonProperty(value = "max_change_eip_billing_mode_cnt")
+        public Integer getMaxChangeEIPBillingModeCnt() {
+            return this.maxChangeEIPBillingModeCnt;
+        }
+
+        private Integer maxEIPBandwidth;
+
+        @JsonProperty(value = "max_eip_bandwidth")
+        public void setMaxEIPBandwidth(Integer maxEIPBandwidth) {
+            this.maxEIPBandwidth = maxEIPBandwidth;
+        }
+
+        @JsonProperty(value = "max_eip_bandwidth")
+        public Integer getMaxEIPBandwidth() {
+            return this.maxEIPBandwidth;
+        }
+
+        private Integer maxEIPCount;
+
+        @JsonProperty(value = "max_eip_count")
+        public void setMaxEIPCount(Integer maxEIPCount) {
+            this.maxEIPCount = maxEIPCount;
+        }
+
+        @JsonProperty(value = "max_eip_count")
+        public Integer getMaxEIPCount() {
+            return this.maxEIPCount;
+        }
+
+        private Integer maxGpuCount;
+
+        @JsonProperty(value = "max_gpu_count")
+        public void setMaxGpuCount(Integer maxGpuCount) {
+            this.maxGpuCount = maxGpuCount;
+        }
+
+        @JsonProperty(value = "max_gpu_count")
+        public Integer getMaxGpuCount() {
+            return this.maxGpuCount;
+        }
+
+        private Integer maxHcVolumeSize;
+
+        @JsonProperty(value = "max_hc_volume_size")
+        public void setMaxHcVolumeSize(Integer maxHcVolumeSize) {
+            this.maxHcVolumeSize = maxHcVolumeSize;
+        }
+
+        @JsonProperty(value = "max_hc_volume_size")
+        public Integer getMaxHcVolumeSize() {
+            return this.maxHcVolumeSize;
+        }
+
+        private Integer maxHcsVolumeSize;
+
+        @JsonProperty(value = "max_hcs_volume_size")
+        public void setMaxHcsVolumeSize(Integer maxHcsVolumeSize) {
+            this.maxHcsVolumeSize = maxHcsVolumeSize;
+        }
+
+        @JsonProperty(value = "max_hcs_volume_size")
+        public Integer getMaxHcsVolumeSize() {
+            return this.maxHcsVolumeSize;
+        }
+
+        private Integer maxHpsVolumeSize;
+
+        @JsonProperty(value = "max_hps_volume_size")
+        public void setMaxHpsVolumeSize(Integer maxHpsVolumeSize) {
+            this.maxHpsVolumeSize = maxHpsVolumeSize;
+        }
+
+        @JsonProperty(value = "max_hps_volume_size")
+        public Integer getMaxHpsVolumeSize() {
+            return this.maxHpsVolumeSize;
+        }
+
+        private Integer maxImageSharedUsers;
+
+        @JsonProperty(value = "max_image_shared_users")
+        public void setMaxImageSharedUsers(Integer maxImageSharedUsers) {
+            this.maxImageSharedUsers = maxImageSharedUsers;
+        }
+
+        @JsonProperty(value = "max_image_shared_users")
+        public Integer getMaxImageSharedUsers() {
+            return this.maxImageSharedUsers;
+        }
+
+        private Integer maxInstanceCount;
+
+        @JsonProperty(value = "max_instance_count")
+        public void setMaxInstanceCount(Integer maxInstanceCount) {
+            this.maxInstanceCount = maxInstanceCount;
+        }
+
+        @JsonProperty(value = "max_instance_count")
+        public Integer getMaxInstanceCount() {
+            return this.maxInstanceCount;
+        }
+
+        private Integer maxItemInResourceGroup;
+
+        @JsonProperty(value = "max_item_in_resource_group")
+        public void setMaxItemInResourceGroup(Integer maxItemInResourceGroup) {
+            this.maxItemInResourceGroup = maxItemInResourceGroup;
+        }
+
+        @JsonProperty(value = "max_item_in_resource_group")
+        public Integer getMaxItemInResourceGroup() {
+            return this.maxItemInResourceGroup;
+        }
+
+        private Integer maxListenerBackends;
+
+        @JsonProperty(value = "max_listener_backends")
+        public void setMaxListenerBackends(Integer maxListenerBackends) {
+            this.maxListenerBackends = maxListenerBackends;
+        }
+
+        @JsonProperty(value = "max_listener_backends")
+        public Integer getMaxListenerBackends() {
+            return this.maxListenerBackends;
+        }
+
+        private Integer maxLoadBalancerListeners;
+
+        @JsonProperty(value = "max_loadbalancer_listeners")
+        public void setMaxLoadBalancerListeners(Integer maxLoadBalancerListeners) {
+            this.maxLoadBalancerListeners = maxLoadBalancerListeners;
+        }
+
+        @JsonProperty(value = "max_loadbalancer_listeners")
+        public Integer getMaxLoadBalancerListeners() {
+            return this.maxLoadBalancerListeners;
+        }
+
+        private Integer maxLoadBalancerPolicyRewriteRules;
+
+        @JsonProperty(value = "max_loadbalancer_policy_rewrite_rules")
+        public void setMaxLoadBalancerPolicyRewriteRules(Integer maxLoadBalancerPolicyRewriteRules) {
+            this.maxLoadBalancerPolicyRewriteRules = maxLoadBalancerPolicyRewriteRules;
+        }
+
+        @JsonProperty(value = "max_loadbalancer_policy_rewrite_rules")
+        public Integer getMaxLoadBalancerPolicyRewriteRules() {
+            return this.maxLoadBalancerPolicyRewriteRules;
+        }
+
+        private Integer maxLoadBalancerPolicyRules;
+
+        @JsonProperty(value = "max_loadbalancer_policy_rules")
+        public void setMaxLoadBalancerPolicyRules(Integer maxLoadBalancerPolicyRules) {
+            this.maxLoadBalancerPolicyRules = maxLoadBalancerPolicyRules;
+        }
+
+        @JsonProperty(value = "max_loadbalancer_policy_rules")
+        public Integer getMaxLoadBalancerPolicyRules() {
+            return this.maxLoadBalancerPolicyRules;
+        }
+
+        private Integer maxMemberInUserGroup;
+
+        @JsonProperty(value = "max_member_in_user_group")
+        public void setMaxMemberInUserGroup(Integer maxMemberInUserGroup) {
+            this.maxMemberInUserGroup = maxMemberInUserGroup;
+        }
+
+        @JsonProperty(value = "max_member_in_user_group")
+        public Integer getMaxMemberInUserGroup() {
+            return this.maxMemberInUserGroup;
+        }
+
+        private Integer maxNICPerInstance;
+
+        @JsonProperty(value = "max_nic_per_instance")
+        public void setMaxNICPerInstance(Integer maxNICPerInstance) {
+            this.maxNICPerInstance = maxNICPerInstance;
+        }
+
+        @JsonProperty(value = "max_nic_per_instance")
+        public Integer getMaxNICPerInstance() {
+            return this.maxNICPerInstance;
+        }
+
+        private Integer maxResourceSharedUsers;
+
+        @JsonProperty(value = "max_resource_shared_users")
+        public void setMaxResourceSharedUsers(Integer maxResourceSharedUsers) {
+            this.maxResourceSharedUsers = maxResourceSharedUsers;
+        }
+
+        @JsonProperty(value = "max_resource_shared_users")
+        public Integer getMaxResourceSharedUsers() {
+            return this.maxResourceSharedUsers;
+        }
+
+        private Integer maxRgCntItemCanJoin;
+
+        @JsonProperty(value = "max_rg_cnt_item_can_join")
+        public void setMaxRgCntItemCanJoin(Integer maxRgCntItemCanJoin) {
+            this.maxRgCntItemCanJoin = maxRgCntItemCanJoin;
+        }
+
+        @JsonProperty(value = "max_rg_cnt_item_can_join")
+        public Integer getMaxRgCntItemCanJoin() {
+            return this.maxRgCntItemCanJoin;
+        }
+
+        private Integer maxRouterCount;
+
+        @JsonProperty(value = "max_router_count")
+        public void setMaxRouterCount(Integer maxRouterCount) {
+            this.maxRouterCount = maxRouterCount;
+        }
+
+        @JsonProperty(value = "max_router_count")
+        public Integer getMaxRouterCount() {
+            return this.maxRouterCount;
+        }
+
+        private Integer maxRouterEntries;
+
+        @JsonProperty(value = "max_router_entries")
+        public void setMaxRouterEntries(Integer maxRouterEntries) {
+            this.maxRouterEntries = maxRouterEntries;
+        }
+
+        @JsonProperty(value = "max_router_entries")
+        public Integer getMaxRouterEntries() {
+            return this.maxRouterEntries;
+        }
+
+        private Integer maxRouterStatics;
+
+        @JsonProperty(value = "max_router_statics")
+        public void setMaxRouterStatics(Integer maxRouterStatics) {
+            this.maxRouterStatics = maxRouterStatics;
+        }
+
+        @JsonProperty(value = "max_router_statics")
+        public Integer getMaxRouterStatics() {
+            return this.maxRouterStatics;
+        }
+
+        private Integer maxRouterVxNets;
+
+        @JsonProperty(value = "max_router_vxnets")
+        public void setMaxRouterVxNets(Integer maxRouterVxNets) {
+            this.maxRouterVxNets = maxRouterVxNets;
+        }
+
+        @JsonProperty(value = "max_router_vxnets")
+        public Integer getMaxRouterVxNets() {
+            return this.maxRouterVxNets;
+        }
+
+        private Integer maxRuleInGroupRole;
+
+        @JsonProperty(value = "max_rule_in_group_role")
+        public void setMaxRuleInGroupRole(Integer maxRuleInGroupRole) {
+            this.maxRuleInGroupRole = maxRuleInGroupRole;
+        }
+
+        @JsonProperty(value = "max_rule_in_group_role")
+        public Integer getMaxRuleInGroupRole() {
+            return this.maxRuleInGroupRole;
+        }
+
+        private Integer maxSecurityGroupRules;
+
+        @JsonProperty(value = "max_security_group_rules")
+        public void setMaxSecurityGroupRules(Integer maxSecurityGroupRules) {
+            this.maxSecurityGroupRules = maxSecurityGroupRules;
+        }
+
+        @JsonProperty(value = "max_security_group_rules")
+        public Integer getMaxSecurityGroupRules() {
+            return this.maxSecurityGroupRules;
+        }
+
+        private Integer maxSecurityGroupRulesets;
+
+        @JsonProperty(value = "max_security_group_rulesets")
+        public void setMaxSecurityGroupRulesets(Integer maxSecurityGroupRulesets) {
+            this.maxSecurityGroupRulesets = maxSecurityGroupRulesets;
+        }
+
+        @JsonProperty(value = "max_security_group_rulesets")
+        public Integer getMaxSecurityGroupRulesets() {
+            return this.maxSecurityGroupRulesets;
+        }
+
+        private Integer maxSecurityGroupSnapshots;
+
+        @JsonProperty(value = "max_security_group_snapshots")
+        public void setMaxSecurityGroupSnapshots(Integer maxSecurityGroupSnapshots) {
+            this.maxSecurityGroupSnapshots = maxSecurityGroupSnapshots;
+        }
+
+        @JsonProperty(value = "max_security_group_snapshots")
+        public Integer getMaxSecurityGroupSnapshots() {
+            return this.maxSecurityGroupSnapshots;
+        }
+
+        private Integer maxUsersInOneDepartment;
+
+        @JsonProperty(value = "max_users_in_one_department")
+        public void setMaxUsersInOneDepartment(Integer maxUsersInOneDepartment) {
+            this.maxUsersInOneDepartment = maxUsersInOneDepartment;
+        }
+
+        @JsonProperty(value = "max_users_in_one_department")
+        public Integer getMaxUsersInOneDepartment() {
+            return this.maxUsersInOneDepartment;
+        }
+
+        private Integer maxVolumeCount;
+
+        @JsonProperty(value = "max_volume_count")
+        public void setMaxVolumeCount(Integer maxVolumeCount) {
+            this.maxVolumeCount = maxVolumeCount;
+        }
+
+        @JsonProperty(value = "max_volume_count")
+        public Integer getMaxVolumeCount() {
+            return this.maxVolumeCount;
+        }
+
+        private Integer maxVolumePerInst;
+
+        @JsonProperty(value = "max_volume_per_inst")
+        public void setMaxVolumePerInst(Integer maxVolumePerInst) {
+            this.maxVolumePerInst = maxVolumePerInst;
+        }
+
+        @JsonProperty(value = "max_volume_per_inst")
+        public Integer getMaxVolumePerInst() {
+            return this.maxVolumePerInst;
+        }
+
+        private Integer maxVolumeSize;
+
+        @JsonProperty(value = "max_volume_size")
+        public void setMaxVolumeSize(Integer maxVolumeSize) {
+            this.maxVolumeSize = maxVolumeSize;
+        }
+
+        @JsonProperty(value = "max_volume_size")
+        public Integer getMaxVolumeSize() {
+            return this.maxVolumeSize;
+        }
+
+        private Integer maxVosReplicaCount;
+
+        @JsonProperty(value = "max_vos_replica_count")
+        public void setMaxVosReplicaCount(Integer maxVosReplicaCount) {
+            this.maxVosReplicaCount = maxVosReplicaCount;
+        }
+
+        @JsonProperty(value = "max_vos_replica_count")
+        public Integer getMaxVosReplicaCount() {
+            return this.maxVosReplicaCount;
+        }
+
+        private Integer maxVxNetCount;
+
+        @JsonProperty(value = "max_vxnet_count")
+        public void setMaxVxNetCount(Integer maxVxNetCount) {
+            this.maxVxNetCount = maxVxNetCount;
+        }
+
+        @JsonProperty(value = "max_vxnet_count")
+        public Integer getMaxVxNetCount() {
+            return this.maxVxNetCount;
+        }
+
+        private Integer minAbuseEIPSec;
+
+        @JsonProperty(value = "min_abuse_eip_sec")
+        public void setMinAbuseEIPSec(Integer minAbuseEIPSec) {
+            this.minAbuseEIPSec = minAbuseEIPSec;
+        }
+
+        @JsonProperty(value = "min_abuse_eip_sec")
+        public Integer getMinAbuseEIPSec() {
+            return this.minAbuseEIPSec;
+        }
+
+        private Integer minHcVolumeSize;
+
+        @JsonProperty(value = "min_hc_volume_size")
+        public void setMinHcVolumeSize(Integer minHcVolumeSize) {
+            this.minHcVolumeSize = minHcVolumeSize;
+        }
+
+        @JsonProperty(value = "min_hc_volume_size")
+        public Integer getMinHcVolumeSize() {
+            return this.minHcVolumeSize;
+        }
+
+        private Integer minHcsVolumeSize;
+
+        @JsonProperty(value = "min_hcs_volume_size")
+        public void setMinHcsVolumeSize(Integer minHcsVolumeSize) {
+            this.minHcsVolumeSize = minHcsVolumeSize;
+        }
+
+        @JsonProperty(value = "min_hcs_volume_size")
+        public Integer getMinHcsVolumeSize() {
+            return this.minHcsVolumeSize;
+        }
+
+        private Integer minHostsPerDedicatedGroup;
+
+        @JsonProperty(value = "min_hosts_per_dedicated_group")
+        public void setMinHostsPerDedicatedGroup(Integer minHostsPerDedicatedGroup) {
+            this.minHostsPerDedicatedGroup = minHostsPerDedicatedGroup;
+        }
+
+        @JsonProperty(value = "min_hosts_per_dedicated_group")
+        public Integer getMinHostsPerDedicatedGroup() {
+            return this.minHostsPerDedicatedGroup;
+        }
+
+        private Integer minHpsVolumeSize;
+
+        @JsonProperty(value = "min_hps_volume_size")
+        public void setMinHpsVolumeSize(Integer minHpsVolumeSize) {
+            this.minHpsVolumeSize = minHpsVolumeSize;
+        }
+
+        @JsonProperty(value = "min_hps_volume_size")
+        public Integer getMinHpsVolumeSize() {
+            return this.minHpsVolumeSize;
+        }
+
+        private Integer minReservedHostsInPool;
+
+        @JsonProperty(value = "min_reserved_hosts_in_pool")
+        public void setMinReservedHostsInPool(Integer minReservedHostsInPool) {
+            this.minReservedHostsInPool = minReservedHostsInPool;
+        }
+
+        @JsonProperty(value = "min_reserved_hosts_in_pool")
+        public Integer getMinReservedHostsInPool() {
+            return this.minReservedHostsInPool;
+        }
+
+        private Integer minVolumeSize;
+
+        @JsonProperty(value = "min_volume_size")
+        public void setMinVolumeSize(Integer minVolumeSize) {
+            this.minVolumeSize = minVolumeSize;
+        }
+
+        @JsonProperty(value = "min_volume_size")
+        public Integer getMinVolumeSize() {
+            return this.minVolumeSize;
+        }
+
+        private Integer privilegeOfLxc;
+
+        @JsonProperty(value = "privilege_of_lxc")
+        public void setPrivilegeOfLxc(Integer privilegeOfLxc) {
+            this.privilegeOfLxc = privilegeOfLxc;
+        }
+
+        @JsonProperty(value = "privilege_of_lxc")
+        public Integer getPrivilegeOfLxc() {
+            return this.privilegeOfLxc;
+        }
+
+        private Model sparkTypes;
+
+        @JsonProperty(value = "spark_types")
+        public void setSparkTypes(Model sparkTypes) {
+            this.sparkTypes = sparkTypes;
+        }
+
+        @JsonProperty(value = "spark_types")
+        public Model getSparkTypes() {
+            return this.sparkTypes;
+        }
+
+        private Model stormTypes;
+
+        @JsonProperty(value = "storm_types")
+        public void setStormTypes(Model stormTypes) {
+            this.stormTypes = stormTypes;
+        }
+
+        @JsonProperty(value = "storm_types")
+        public Model getStormTypes() {
+            return this.stormTypes;
+        }
+
+        private List<Integer> validCacheSize;
+
+        @JsonProperty(value = "valid_cache_size")
+        public void setValidCacheSize(List<Integer> validCacheSize) {
+            this.validCacheSize = validCacheSize;
+        }
+
+        @JsonProperty(value = "valid_cache_size")
+        public List<Integer> getValidCacheSize() {
+            return this.validCacheSize;
+        }
+
+        private List<Integer> validCPUCores;
+
+        @JsonProperty(value = "valid_cpu_cores")
+        public void setValidCPUCores(List<Integer> validCPUCores) {
+            this.validCPUCores = validCPUCores;
+        }
+
+        @JsonProperty(value = "valid_cpu_cores")
+        public List<Integer> getValidCPUCores() {
+            return this.validCPUCores;
+        }
+
+        private Model validCPUMemoryPairs;
+
+        @JsonProperty(value = "valid_cpu_memory_pairs")
+        public void setValidCPUMemoryPairs(Model validCPUMemoryPairs) {
+            this.validCPUMemoryPairs = validCPUMemoryPairs;
+        }
+
+        @JsonProperty(value = "valid_cpu_memory_pairs")
+        public Model getValidCPUMemoryPairs() {
+            return this.validCPUMemoryPairs;
+        }
+
+        private List<Integer> validDedicatedHostGroupClasses;
+
+        @JsonProperty(value = "valid_dedicated_host_group_classes")
+        public void setValidDedicatedHostGroupClasses(List<Integer> validDedicatedHostGroupClasses) {
+            this.validDedicatedHostGroupClasses = validDedicatedHostGroupClasses;
+        }
+
+        @JsonProperty(value = "valid_dedicated_host_group_classes")
+        public List<Integer> getValidDedicatedHostGroupClasses() {
+            return this.validDedicatedHostGroupClasses;
+        }
+
+        private List<Integer> validInstanceClasses;
+
+        @JsonProperty(value = "valid_instance_classes")
+        public void setValidInstanceClasses(List<Integer> validInstanceClasses) {
+            this.validInstanceClasses = validInstanceClasses;
+        }
+
+        @JsonProperty(value = "valid_instance_classes")
+        public List<Integer> getValidInstanceClasses() {
+            return this.validInstanceClasses;
+        }
+
+        private List<Integer> validLoadBalancerTypes;
+
+        @JsonProperty(value = "valid_loadbalancer_types")
+        public void setValidLoadBalancerTypes(List<Integer> validLoadBalancerTypes) {
+            this.validLoadBalancerTypes = validLoadBalancerTypes;
+        }
+
+        @JsonProperty(value = "valid_loadbalancer_types")
+        public List<Integer> getValidLoadBalancerTypes() {
+            return this.validLoadBalancerTypes;
+        }
+
+        private List<Integer> validMemorySize;
+
+        @JsonProperty(value = "valid_memory_size")
+        public void setValidMemorySize(List<Integer> validMemorySize) {
+            this.validMemorySize = validMemorySize;
+        }
+
+        @JsonProperty(value = "valid_memory_size")
+        public List<Integer> getValidMemorySize() {
+            return this.validMemorySize;
+        }
+
+        private List<Integer> validResourceClasses;
+
+        @JsonProperty(value = "valid_resource_classes")
+        public void setValidResourceClasses(List<Integer> validResourceClasses) {
+            this.validResourceClasses = validResourceClasses;
+        }
+
+        @JsonProperty(value = "valid_resource_classes")
+        public List<Integer> getValidResourceClasses() {
+            return this.validResourceClasses;
+        }
+
+        private List<Integer> validVolumeTypes;
+
+        @JsonProperty(value = "valid_volume_types")
+        public void setValidVolumeTypes(List<Integer> validVolumeTypes) {
+            this.validVolumeTypes = validVolumeTypes;
+        }
+
+        @JsonProperty(value = "valid_volume_types")
+        public List<Integer> getValidVolumeTypes() {
+            return this.validVolumeTypes;
+        }
+
+        private Integer volumeStep;
+
+        @JsonProperty(value = "volume_step")
+        public void setVolumeStep(Integer volumeStep) {
+            this.volumeStep = volumeStep;
+        }
+
+        @JsonProperty(value = "volume_step")
+        public Integer getVolumeStep() {
+            return this.volumeStep;
+        }
+
+        private Integer vpcIpv6Prefixlen;
+
+        @JsonProperty(value = "vpc_ipv6_prefixlen")
+        public void setVpcIpv6Prefixlen(Integer vpcIpv6Prefixlen) {
+            this.vpcIpv6Prefixlen = vpcIpv6Prefixlen;
+        }
+
+        @JsonProperty(value = "vpc_ipv6_prefixlen")
+        public Integer getVpcIpv6Prefixlen() {
+            return this.vpcIpv6Prefixlen;
+        }
+
+        private Integer vxNetIpv6Prefixlen;
+
+        @JsonProperty(value = "vxnet_ipv6_prefixlen")
+        public void setVxNetIpv6Prefixlen(Integer vxNetIpv6Prefixlen) {
+            this.vxNetIpv6Prefixlen = vxNetIpv6Prefixlen;
+        }
+
+        @JsonProperty(value = "vxnet_ipv6_prefixlen")
+        public Integer getVxNetIpv6Prefixlen() {
+            return this.vxNetIpv6Prefixlen;
+        }
+
+        private String vxNetKsWhiteList;
+
+        @JsonProperty(value = "vxnet_ks_white_list")
+        public void setVxNetKsWhiteList(String vxNetKsWhiteList) {
+            this.vxNetKsWhiteList = vxNetKsWhiteList;
+        }
+
+        @JsonProperty(value = "vxnet_ks_white_list")
+        public String getVxNetKsWhiteList() {
+            return this.vxNetKsWhiteList;
+        }
+
+
+        public String validateParam() throws QCException {
+            return null;
+        }
+    }
+
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class ResourceTagPairModel implements ParamValidate {
         private String resourceID;
 
@@ -8088,18 +9820,6 @@ public class Types {
         @JsonProperty(value = "status")
         public String getStatus() {
             return this.status;
-        }
-
-        private String statusTime;
-
-        @JsonProperty(value = "status_time")
-        public void setStatusTime(String statusTime) {
-            this.statusTime = statusTime;
-        }
-
-        @JsonProperty(value = "status_time")
-        public String getStatusTime() {
-            return this.statusTime;
         }
 
         private String tagID;
@@ -10309,28 +12029,88 @@ public class Types {
 
     @JsonIgnoreProperties(ignoreUnknown = true)
     public static class SnapshotResourceModel implements ParamValidate {
-        private String oSFamily;
+        private String architecture;
 
-        @JsonProperty(value = "os_family")
-        public void setOSFamily(String oSFamily) {
-            this.oSFamily = oSFamily;
+        @JsonProperty(value = "architecture")
+        public void setArchitecture(String architecture) {
+            this.architecture = architecture;
         }
 
-        @JsonProperty(value = "os_family")
-        public String getOSFamily() {
-            return this.oSFamily;
+        @JsonProperty(value = "architecture")
+        public String getArchitecture() {
+            return this.architecture;
         }
 
-        private String platform;
+        private String filesystem;
 
-        @JsonProperty(value = "platform")
-        public void setPlatform(String platform) {
-            this.platform = platform;
+        @JsonProperty(value = "filesystem")
+        public void setFilesystem(String filesystem) {
+            this.filesystem = filesystem;
         }
 
-        @JsonProperty(value = "platform")
-        public String getPlatform() {
-            return this.platform;
+        @JsonProperty(value = "filesystem")
+        public String getFilesystem() {
+            return this.filesystem;
+        }
+
+        private String mountOptions;
+
+        @JsonProperty(value = "mount_options")
+        public void setMountOptions(String mountOptions) {
+            this.mountOptions = mountOptions;
+        }
+
+        @JsonProperty(value = "mount_options")
+        public String getMountOptions() {
+            return this.mountOptions;
+        }
+
+        private String mountPoint;
+
+        @JsonProperty(value = "mount_point")
+        public void setMountPoint(String mountPoint) {
+            this.mountPoint = mountPoint;
+        }
+
+        @JsonProperty(value = "mount_point")
+        public String getMountPoint() {
+            return this.mountPoint;
+        }
+
+        private Integer size;
+
+        @JsonProperty(value = "size")
+        public void setSize(Integer size) {
+            this.size = size;
+        }
+
+        @JsonProperty(value = "size")
+        public Integer getSize() {
+            return this.size;
+        }
+
+        private String volumeID;
+
+        @JsonProperty(value = "volume_id")
+        public void setVolumeID(String volumeID) {
+            this.volumeID = volumeID;
+        }
+
+        @JsonProperty(value = "volume_id")
+        public String getVolumeID() {
+            return this.volumeID;
+        }
+
+        private Integer volumeType;
+
+        @JsonProperty(value = "volume_type")
+        public void setVolumeType(Integer volumeType) {
+            this.volumeType = volumeType;
+        }
+
+        @JsonProperty(value = "volume_type")
+        public Integer getVolumeType() {
+            return this.volumeType;
         }
 
 
@@ -10740,6 +12520,18 @@ public class Types {
             return this.volumeType;
         }
 
+        private String zoneID;
+
+        @JsonProperty(value = "zone_id")
+        public void setZoneID(String zoneID) {
+            this.zoneID = zoneID;
+        }
+
+        @JsonProperty(value = "zone_id")
+        public String getZoneID() {
+            return this.zoneID;
+        }
+
 
         public String validateParam() throws QCException {
             if (this.getInstances() != null && this.getInstances().size() > 0 ) {
@@ -10939,7 +12731,7 @@ public class Types {
             return this.vxNetName;
         }
 
-    	// VxNetType's available values: 0, 1
+    	// VxNetType's available values: 0, 1, 2
         private Integer vxNetType;
 
         @JsonProperty(value = "vxnet_type")
@@ -10950,6 +12742,18 @@ public class Types {
         @JsonProperty(value = "vxnet_type")
         public Integer getVxNetType() {
             return this.vxNetType;
+        }
+
+        private String zoneID;
+
+        @JsonProperty(value = "zone_id")
+        public void setZoneID(String zoneID) {
+            this.zoneID = zoneID;
+        }
+
+        @JsonProperty(value = "zone_id")
+        public String getZoneID() {
+            return this.zoneID;
         }
 
 
@@ -10964,7 +12768,7 @@ public class Types {
                     // }
                 }
             }
-            String[]vxNetTypeValidValues = {"0", "1"};
+            String[]vxNetTypeValidValues = {"0", "1", "2"};
             boolean vxNetTypeIsValid = false;
             for (String v : vxNetTypeValidValues) {
                 if (v.equals(this.getVxNetType()+"")) {

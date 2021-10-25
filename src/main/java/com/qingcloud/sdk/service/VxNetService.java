@@ -663,6 +663,18 @@ public class VxNetService {
             return this.owner;
         }
 
+        private String projectID;
+
+        @JsonProperty(value = "project_id")
+        public void setProjectID(String projectID) {
+            this.projectID = projectID;
+        }
+
+        @JsonProperty(value = "project_id")
+        public String getProjectID() {
+            return this.projectID;
+        }
+
         private String searchWord;
 
         @JsonProperty(value = "search_word")
@@ -700,7 +712,7 @@ public class VxNetService {
             return this.verbose;
         }
 
-    	// VxNetType's available values: 0, 1
+    	// VxNetType's available values: 0, 1, 2
         private Integer vxNetType;
 
         @JsonProperty(value = "vxnet_type")
@@ -725,6 +737,18 @@ public class VxNetService {
             return this.vxNets;
         }
 
+        private String zone;
+
+        @JsonProperty(value = "zone")
+        public void setZone(String zone) {
+            this.zone = zone;
+        }
+
+        @JsonProperty(value = "zone")
+        public String getZone() {
+            return this.zone;
+        }
+
         public String validateParam() throws QCException {
             String[]verboseValidValues = {"0", "1"};
             boolean verboseIsValid = false;
@@ -741,7 +765,7 @@ public class VxNetService {
             if (!verboseIsValid) {
                 throw new QCException("Verbose value " + this.getVerbose() + "is invalid");
             }
-            String[]vxNetTypeValidValues = {"0", "1"};
+            String[]vxNetTypeValidValues = {"0", "1", "2"};
             boolean vxNetTypeIsValid = false;
             for (String v : vxNetTypeValidValues) {
                 if (v.equals(this.getVxNetType()+"")) {

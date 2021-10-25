@@ -612,6 +612,18 @@ public class NicService {
             return this.owner;
         }
 
+        private String projectID;
+
+        @JsonProperty(value = "project_id")
+        public void setProjectID(String projectID) {
+            this.projectID = projectID;
+        }
+
+        @JsonProperty(value = "project_id")
+        public String getProjectID() {
+            return this.projectID;
+        }
+
     	// Status's available values: available, in-use
         private String status;
 
@@ -625,16 +637,15 @@ public class NicService {
             return this.status;
         }
 
-    	// VxNetType's available values: 0, 1
-        private Integer vxNetType;
+        private List<Integer> vxNetType;
 
         @JsonProperty(value = "vxnet_type")
-        public void setVxNetType(Integer vxNetType) {
+        public void setVxNetType(List<Integer> vxNetType) {
             this.vxNetType = vxNetType;
         }
 
         @JsonProperty(value = "vxnet_type")
-        public Integer getVxNetType() {
+        public List<Integer> getVxNetType() {
             return this.vxNetType;
         }
 
@@ -668,21 +679,6 @@ public class NicService {
 
             if (!statusIsValid) {
                 throw new QCException("Status value " + this.getStatus() + "is invalid");
-            }
-            String[]vxNetTypeValidValues = {"0", "1"};
-            boolean vxNetTypeIsValid = false;
-            for (String v : vxNetTypeValidValues) {
-                if (v.equals(this.getVxNetType()+"")) {
-                    vxNetTypeIsValid = true;
-                }
-                Boolean vxNetTypeIsRequired = Boolean.FALSE;
-                if (vxNetTypeIsRequired.equals(Boolean.FALSE) && this.getVxNetType()==null) {
-                    vxNetTypeIsValid = true;
-                }
-            }
-
-            if (!vxNetTypeIsValid) {
-                throw new QCException("VxNetType value " + this.getVxNetType() + "is invalid");
             }
             return null;
         }
