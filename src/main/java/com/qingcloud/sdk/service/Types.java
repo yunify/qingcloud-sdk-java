@@ -10986,6 +10986,19 @@ public class Types {
     @JsonIgnoreProperties(ignoreUnknown = true)
     public static class ZoneModel implements ParamValidate {
     	// Status's available values: active, faulty, defunct
+
+        private String regionID;
+
+        @JsonProperty(value = "region_id")
+        public void setRegionID(String regionID) {
+            this.regionID = regionID;
+        }
+
+        @JsonProperty(value = "region_id")
+        public String getRegionID() {
+            return this.regionID;
+        }
+
         private String status;
 
         @JsonProperty(value = "status")
