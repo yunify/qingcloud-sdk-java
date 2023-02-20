@@ -1760,15 +1760,15 @@ public class Types {
             return this.displayTabs;
         }
 
-        private Model endpoints;
+        private String endpoints;
 
         @JsonProperty(value = "endpoints")
-        public void setEndpoints(Model endpoints) {
+        public void setEndpoints(String endpoints) {
             this.endpoints = endpoints;
         }
 
         @JsonProperty(value = "endpoints")
-        public Model getEndpoints() {
+        public String getEndpoints() {
             return this.endpoints;
         }
 
@@ -2024,15 +2024,15 @@ public class Types {
             return this.transitionStatus;
         }
 
-        private List<String> upgradePolicy;
+        private List<Map<String, Object>> upgradePolicy;
 
         @JsonProperty(value = "upgrade_policy")
-        public void setUpgradePolicy(List<String> upgradePolicy) {
+        public void setUpgradePolicy(List<Map<String, Object>> upgradePolicy) {
             this.upgradePolicy = upgradePolicy;
         }
 
         @JsonProperty(value = "upgrade_policy")
-        public List<String> getUpgradePolicy() {
+        public List<Map<String, Object>> getUpgradePolicy() {
             return this.upgradePolicy;
         }
 
