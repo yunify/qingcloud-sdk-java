@@ -2362,7 +2362,150 @@ public class InstanceService {
             return this.retCode;
         }
 
-    }}
+    }
+    /**
+     * @param input Request parameters and headers in the class
+     * @return CreateBrokersOutput Response body and headers in the class
+     * @throws QCException IOException or network error
+     *
+     * <a href=https://docsv3.qingcloud.com/development_docs/api/command_list/instance/create_brokers/>Documentation URL</a>
+     */
+    @SuppressWarnings({"rawtypes", "unchecked"})
+    public com.qingcloud.sdk.service.InstanceService.CreateBrokersOutput createBrokers(com.qingcloud.sdk.service.InstanceService.CreateBrokersInput input) throws QCException {
+        if (input == null) {
+            input = new com.qingcloud.sdk.service.InstanceService.CreateBrokersInput();
+        }
+        Map context = new HashMap();
+        context.put(QCConstant.ENV_CONTEXT_KEY, this.envContext);
+        context.put("OperationName", "CreateBrokers");
+        context.put("APIName", "CreateBrokers");
+        context.put("ServiceName", "CreateBrokers");
+        context.put("RequestMethod", "GET");
+        context.put("RequestURI", "/iaas/CreateBrokers");
+
+        input.setAction("CreateBrokers");
+        if (QCStringUtil.isEmpty(this.zone)) {
+            input.setZone(this.envContext.getZone());
+        } else {
+            input.setZone(this.zone);
+        }
+
+        Object backModel = ResourceRequestFactory.getResourceRequest().sendApiRequest(context, input, com.qingcloud.sdk.service.InstanceService.CreateBrokersOutput.class);
+        if(backModel != null){
+            return (com.qingcloud.sdk.service.InstanceService.CreateBrokersOutput)backModel;
+        }
+        return null;
+    }
+
+    /**
+     * @param input Request parameters and headers in the class
+     * @param callback Response calls back when success
+     * @throws QCException IOException or network error
+     *
+     * <a href=https://docsv3.qingcloud.com/development_docs/api/command_list/instance/create_brokers/>Documentation URL</a>
+     */
+    @SuppressWarnings({"rawtypes", "unchecked"})
+    public void createBrokers(com.qingcloud.sdk.service.InstanceService.CreateBrokersInput input, ResponseCallBack<com.qingcloud.sdk.service.InstanceService.CreateBrokersOutput> callback) throws QCException {
+        if (input == null) {
+            input = new com.qingcloud.sdk.service.InstanceService.CreateBrokersInput();
+        }
+        Map context = new HashMap();
+        context.put(QCConstant.ENV_CONTEXT_KEY, this.envContext);
+        context.put("OperationName", "CreateBrokers");
+        context.put("APIName", "CreateBrokers");
+        context.put("ServiceName", "CreateBrokers");
+        context.put("RequestMethod", "GET");
+        context.put("RequestURI", "/iaas/CreateBrokers");
+
+        input.setAction("CreateBrokers");
+        if (QCStringUtil.isEmpty(this.zone)) {
+            input.setZone(this.envContext.getZone());
+        } else {
+            input.setZone(this.zone);
+        }
+
+        if(callback == null) {
+            throw new QCException("callback can't be null");
+        }
+
+        ResourceRequestFactory.getResourceRequest().sendApiRequestAsync(context,input,callback);
+    }
+
+    public static class CreateBrokersInput extends IaasParamBody {
+        // Required
+        private List<String> instances;
+
+        @JsonProperty(value = "instances")
+        public void setInstances(List<String> instances) {
+            this.instances = instances;
+        }
+
+        @JsonProperty(value = "instances")
+        public List<String> getInstances() {
+            return this.instances;
+        }
+
+        // Required
+        private String zone;
+
+        @JsonProperty(value = "zone")
+        public void setZone(String zone) {
+            this.zone = zone;
+        }
+
+        @JsonProperty(value = "zone")
+        public String getZone() {
+            return this.zone;
+        }
+
+        public String validateParam() throws QCException {
+            if (QCStringUtil.isEmpty(this.getZone())) {
+                throw new QCException("Zone is required");
+            }
+            return null;
+        }
+    }
+
+    @JsonIgnoreProperties(ignoreUnknown = true)
+    public static class CreateBrokersOutput extends OutputModel {
+        private String action;
+
+        @JsonProperty(value = "action")
+        public void setAction(String action) {
+            this.action = action;
+        }
+
+        @JsonProperty(value = "action")
+        public String getAction() {
+            return this.action;
+        }
+
+        private List<Object> brokers;
+
+        @JsonProperty(value = "brokers")
+        public void setBrokers(List<Object> brokers) {
+            this.brokers = brokers;
+        }
+
+        @JsonProperty(value = "brokers")
+        public List<Object> getBrokers() {
+            return this.brokers;
+        }
+
+        private Integer retCode;
+
+        @JsonProperty(value = "ret_code")
+        public void setRetCode(Integer retCode) {
+            this.retCode = retCode;
+        }
+
+        @JsonProperty(value = "ret_code")
+        public Integer getRetCode() {
+            return this.retCode;
+        }
+
+    }
+}
 
 
 
