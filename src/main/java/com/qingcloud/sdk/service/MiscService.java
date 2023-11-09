@@ -187,6 +187,208 @@ public class MiscService {
             return this.retCode;
         }
 
+    }
+        
+    /**
+      * @param input Request parameters and headers in the class
+      * @return GetResourceLimitOutput Response body and headers in the class
+      * @throws QCException IOException or network error
+      *
+      * <a href=https://docs.qingcloud.com/product/api/action/misc>Documentation URL</a>
+      */
+    @SuppressWarnings({"rawtypes", "unchecked"})
+    public GetResourceLimitOutput getResourceLimit(GetResourceLimitInput input) throws QCException {
+        if (input == null) {
+            input = new GetResourceLimitInput();
+        }
+        Map context = new HashMap();
+        context.put(QCConstant.ENV_CONTEXT_KEY, this.envContext);
+        context.put("OperationName", "GetResourceLimit");
+        context.put("APIName", "GetResourceLimit");
+        context.put("ServiceName", "GetResourceLimit");
+        context.put("RequestMethod", "GET");
+        context.put("RequestURI", "/iaas/GetResourceLimit");
+
+        input.setAction("GetResourceLimit");
+        if (QCStringUtil.isEmpty(this.zone)) {
+            input.setZone(this.envContext.getZone());
+        } else {
+            input.setZone(this.zone);
+        }
+
+        Object backModel = ResourceRequestFactory.getResourceRequest().sendApiRequest(context, input,GetResourceLimitOutput.class);
+        if(backModel != null){
+            return (GetResourceLimitOutput)backModel;
+        }
+        return null;
+    }
+
+     /**
+       * @param input Request parameters and headers in the class
+       * @param callback Response calls back when success
+       * @throws QCException IOException or network error
+       *
+       * <a href=https://docs.qingcloud.com/product/api/action/misc>Documentation URL</a>
+       */
+    @SuppressWarnings({"rawtypes", "unchecked"})
+    public void getResourceLimit(GetResourceLimitInput input, ResponseCallBack<GetResourceLimitOutput> callback) throws QCException {
+        if (input == null) {
+            input = new GetResourceLimitInput();
+        }
+        Map context = new HashMap();
+        context.put(QCConstant.ENV_CONTEXT_KEY, this.envContext);
+        context.put("OperationName", "GetResourceLimit");
+        context.put("APIName", "GetResourceLimit");
+        context.put("ServiceName", "GetResourceLimit");
+        context.put("RequestMethod", "GET");
+        context.put("RequestURI", "/iaas/GetResourceLimit");
+
+        input.setAction("GetResourceLimit");
+        if (QCStringUtil.isEmpty(this.zone)) {
+            input.setZone(this.envContext.getZone());
+        } else {
+            input.setZone(this.zone);
+        }
+
+        if(callback == null) {
+            throw new QCException("callback can't be null");
+        }
+
+        ResourceRequestFactory.getResourceRequest().sendApiRequestAsync(context,input,callback);
+    }
+
+    public static class GetResourceLimitInput extends IaasParamBody {
+        private Integer volumeType;
+
+        @JsonProperty(value = "volume_type")
+        public void setVolumeType(Integer volumeType) {
+            this.volumeType = volumeType;
+        }
+
+        @JsonProperty(value = "volume_type")
+        public Integer getVolumeType() {
+            return this.volumeType;
+        }
+
+        // Required
+        private String zone;
+
+        @JsonProperty(value = "zone")
+        public void setZone(String zone) {
+            this.zone = zone;
+        }
+
+        @JsonProperty(value = "zone")
+        public String getZone() {
+            return this.zone;
+        }
+
+        public String validateParam() throws QCException {
+            if (QCStringUtil.isEmpty(this.getZone())) {
+                throw new QCException("Zone is required");
+            }
+            return null;
+        }
+    }
+
+    @JsonIgnoreProperties(ignoreUnknown = true)
+    public static class GetResourceLimitOutput extends OutputModel {
+        private String action;
+
+        @JsonProperty(value = "action")
+        public void setAction(String action) {
+            this.action = action;
+        }
+
+        @JsonProperty(value = "action")
+        public String getAction() {
+            return this.action;
+        }
+
+        private Integer maxSize;
+
+        @JsonProperty(value = "max-size")
+        public void setMaxSize(Integer maxSize) {
+            this.maxSize = maxSize;
+        }
+
+        @JsonProperty(value = "max-size")
+        public Integer getMaxSize() {
+            return this.maxSize;
+        }
+
+        private Integer minSize;
+
+        @JsonProperty(value = "min-size")
+        public void setMinSize(Integer minSize) {
+            this.minSize = minSize;
+        }
+
+        @JsonProperty(value = "min-size")
+        public Integer getMinSize() {
+            return this.minSize;
+        }
+
+        private ResourceLimitsModel resourceLimits;
+
+        @JsonProperty(value = "resource_limits")
+        public void setResourceLimits(ResourceLimitsModel resourceLimits) {
+            this.resourceLimits = resourceLimits;
+        }
+
+        @JsonProperty(value = "resource_limits")
+        public ResourceLimitsModel getResourceLimits() {
+            return this.resourceLimits;
+        }
+
+        private Integer retCode;
+
+        @JsonProperty(value = "ret_code")
+        public void setRetCode(Integer retCode) {
+            this.retCode = retCode;
+        }
+
+        @JsonProperty(value = "ret_code")
+        public Integer getRetCode() {
+            return this.retCode;
+        }
+
+        private Integer step;
+
+        @JsonProperty(value = "step")
+        public void setStep(Integer step) {
+            this.step = step;
+        }
+
+        @JsonProperty(value = "step")
+        public Integer getStep() {
+            return this.step;
+        }
+
+        private List<String> vxNetSubnets;
+
+        @JsonProperty(value = "vxnet_subnets")
+        public void setVxNetSubnets(List<String> vxNetSubnets) {
+            this.vxNetSubnets = vxNetSubnets;
+        }
+
+        @JsonProperty(value = "vxnet_subnets")
+        public List<String> getVxNetSubnets() {
+            return this.vxNetSubnets;
+        }
+
+        private Integer vxNetVersion;
+
+        @JsonProperty(value = "vxnet_version")
+        public void setVxNetVersion(Integer vxNetVersion) {
+            this.vxNetVersion = vxNetVersion;
+        }
+
+        @JsonProperty(value = "vxnet_version")
+        public Integer getVxNetVersion() {
+            return this.vxNetVersion;
+        }
+
     }}
 
 

@@ -636,6 +636,18 @@ public class ImageService {
             return this.processorType;
         }
 
+        private String projectID;
+
+        @JsonProperty(value = "project_id")
+        public void setProjectID(String projectID) {
+            this.projectID = projectID;
+        }
+
+        @JsonProperty(value = "project_id")
+        public String getProjectID() {
+            return this.projectID;
+        }
+
     	// Provider's available values: system, self
         private String provider;
 
@@ -671,6 +683,18 @@ public class ImageService {
         @JsonProperty(value = "status")
         public List<String> getStatus() {
             return this.status;
+        }
+
+        private List<String> tags;
+
+        @JsonProperty(value = "tags")
+        public void setTags(List<String> tags) {
+            this.tags = tags;
+        }
+
+        @JsonProperty(value = "tags")
+        public List<String> getTags() {
+            return this.tags;
         }
 
     	// Verbose's available values: 0

@@ -1714,6 +1714,18 @@ public class RouterService {
             return this.owner;
         }
 
+        private String projectID;
+
+        @JsonProperty(value = "project_id")
+        public void setProjectID(String projectID) {
+            this.projectID = projectID;
+        }
+
+        @JsonProperty(value = "project_id")
+        public String getProjectID() {
+            return this.projectID;
+        }
+
         private List<String> routers;
 
         @JsonProperty(value = "routers")
