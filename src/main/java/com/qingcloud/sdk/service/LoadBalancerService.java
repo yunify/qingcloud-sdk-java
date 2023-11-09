@@ -838,6 +838,19 @@ public class LoadBalancerService {
     }
 
     public static class CreateLoadBalancerInput extends IaasParamBody {
+    	// ClusterMode's available values: 0, 1
+        private Integer clusterMode;
+
+        @JsonProperty(value = "cluster_mode")
+        public void setClusterMode(Integer clusterMode) {
+            this.clusterMode = clusterMode;
+        }
+
+        @JsonProperty(value = "cluster_mode")
+        public Integer getClusterMode() {
+            return this.clusterMode;
+        }
+
         private List<String> eIPs;
 
         @JsonProperty(value = "eips")
@@ -887,6 +900,19 @@ public class LoadBalancerService {
             return this.loadBalancerType;
         }
 
+    	// Mode's available values: 0, 1
+        private Integer mode;
+
+        @JsonProperty(value = "mode")
+        public void setMode(Integer mode) {
+            this.mode = mode;
+        }
+
+        @JsonProperty(value = "mode")
+        public Integer getMode() {
+            return this.mode;
+        }
+
         private Integer nodeCount;
 
         @JsonProperty(value = "node_count")
@@ -909,6 +935,18 @@ public class LoadBalancerService {
         @JsonProperty(value = "private_ip")
         public String getPrivateIP() {
             return this.privateIP;
+        }
+
+        private String projectID;
+
+        @JsonProperty(value = "project_id")
+        public void setProjectID(String projectID) {
+            this.projectID = projectID;
+        }
+
+        @JsonProperty(value = "project_id")
+        public String getProjectID() {
+            return this.projectID;
         }
 
         private String securityGroup;
@@ -936,6 +974,21 @@ public class LoadBalancerService {
         }
 
         public String validateParam() throws QCException {
+            String[]clusterModeValidValues = {"0", "1"};
+            boolean clusterModeIsValid = false;
+            for (String v : clusterModeValidValues) {
+                if (v.equals(this.getClusterMode()+"")) {
+                    clusterModeIsValid = true;
+                }
+                Boolean clusterModeIsRequired = Boolean.FALSE;
+                if (clusterModeIsRequired.equals(Boolean.FALSE) && this.getClusterMode()==null) {
+                    clusterModeIsValid = true;
+                }
+            }
+
+            if (!clusterModeIsValid) {
+                throw new QCException("ClusterMode value " + this.getClusterMode() + "is invalid");
+            }
             String[]loadBalancerTypeValidValues = {"0", "1", "2", "3", "4", "5"};
             boolean loadBalancerTypeIsValid = false;
             for (String v : loadBalancerTypeValidValues) {
@@ -950,6 +1003,21 @@ public class LoadBalancerService {
 
             if (!loadBalancerTypeIsValid) {
                 throw new QCException("LoadBalancerType value " + this.getLoadBalancerType() + "is invalid");
+            }
+            String[]modeValidValues = {"0", "1"};
+            boolean modeIsValid = false;
+            for (String v : modeValidValues) {
+                if (v.equals(this.getMode()+"")) {
+                    modeIsValid = true;
+                }
+                Boolean modeIsRequired = Boolean.FALSE;
+                if (modeIsRequired.equals(Boolean.FALSE) && this.getMode()==null) {
+                    modeIsValid = true;
+                }
+            }
+
+            if (!modeIsValid) {
+                throw new QCException("Mode value " + this.getMode() + "is invalid");
             }
             return null;
         }
